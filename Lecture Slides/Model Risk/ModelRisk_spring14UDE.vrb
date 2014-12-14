@@ -1,0 +1,12 @@
+\frametitle{Example: Delta Hedge}
+\begin{itemize}
+  \item The loss from the short position in the stock is $428.70 \cdot
+  1=428.70$.
+  \item To compute the gain from the long options position, we have to compute
+  the option price for $S=100$. Using the BS formula, we obtain
+  \begin{align*}
+    Call_{BS}(S=100) = 0.5808.
+  \end{align*}
+  \item The gain from the options position is $2592\cdot(0.5808-0.3858)=505.37$.
+  \item Our profit is $505.37-428.70=76.67$.
+\end{itemize}

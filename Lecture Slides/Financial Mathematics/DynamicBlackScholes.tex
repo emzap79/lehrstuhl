@@ -1,0 +1,1022 @@
+% !TEX root = FinancialMathematics_ws1314UDE.tex
+
+\part{Dynamic Financial Models and Black-Scholes}
+\section{The Financial Market Model}
+\subsection{The Model}
+\frame{\frametitle{ Financial Market Model}
+\begin{itemize}
+\item<1->  
+$T>0$ is a fixed a planning horizon.
+\item<2->  
+Uncertainty in the financial market is modelled by a probability
+space $(\Omega, {\cal F},\prb)$ and an information set  (filtration) $\fil =({\cal
+F}_t)_{0\leq t\leq T}$.
+\item<3->  
+There are $d+1$ primary traded assets, whose price processes are
+given by stochastic processes $S_0, \ldots, S_d$, which represent
+the prices of some traded assets.
+\item<4->  
+A num\'{e}raire is a price process $X(t)$ almost surely strictly
+positive for each $t \in [0,T]$.
+\item<5->  
+\lq {Historically}' the money market account $B(t)=e^{rt}$ with a
+positive constant $r$ was used as a
+num\'{e}raire.
+\end{itemize}
+
+} \frame{\frametitle{ Trading Strategies}
+
+\begin{itemize}
+\item<1->  We call an $\setR^{d+1}$-valued process
+$$
+\varphi(t) = (\varphi_0(t), \ldots, \varphi_d(t)), \A t \in [0,T]
+$$
+a trading strategy (or dynamic portfolio process).
+\item<2->  
+Here $\varphi_i(t)$ denotes the number of shares of asset $i$ held
+in the portfolio at time $t$ - to be determined on the basis of
+information available {\it before} time $t$; i.e. the investor
+selects his time $t$ portfolio after observing the prices $S(t-)$.
+\end{itemize}
+
+} \frame{\frametitle{ Trading Strategies}
+\begin{itemize}
+\item<1->  The value of the portfolio $\varphi$ at time $t$ is
+given by
+$$
+V_\varphi(t) :=  \varphi(t) \cdot S(t) = \sum_{i=0}^d \varphi_i(t)
+S_i(t).
+$$
+$V_\varphi(t)$ is called the value process, or wealth process, of
+the trading strategy $\varphi$.\ \item<2-> The gains process
+$G_\varphi(t)$ is
+$$
+G_\varphi(t) := \sum_{i=0}^d \int_0^t \varphi_i(u) dS_i(u).
+$$
+\item<3-> A trading strategy $\varphi$ is called self-financing if
+the wealth process $V_\varphi(t)$ satisfies
+$$
+V_\varphi(t) = V_\varphi(0) + G_\varphi(t)\A \mbox{for all}\; t\in
+[0,T].
+$$
+\end{itemize}
+
+
+} \frame{\frametitle{ Discounted Processes}
+
+The discounted price process is
+$$
+\td{S}(t) := \frac{S(t)}{S_0(t)} = (1, \td{S}_1(t), \ldots
+\td{S}_d(t))
+$$
+with $\td{S}_i(t) = S_i(t)/S_0(t),\; i=1,2, \ldots, d$. The
+discounted wealth process $\td{V}_\varphi(t)$ is
+$$
+\td{V}_\varphi(t):= \frac{V_\varphi(t)}{S_0(t)} = \varphi_0(t) +
+\sum_{i=1}^d \varphi_i(t) \td{S}_i(t)
+$$
+and the discounted gains process $\td{G}_\varphi(t)$ is
+$$
+\td{G}_\varphi(t) := \sum_{i=1}^d \int_0^t \varphi_i(t)
+d\td{S}_i(t).
+$$
+
+} \frame{\frametitle{ Self-Financing}
+
+$\varphi$ is self-financing if and only if
+$$
+\td{V}_\varphi(t) = \td{V}_\varphi(0) + \td{G}_\varphi(t).
+$$
+
+Thus a self-financing strategy is completely determined by its
+initial value and the components $\varphi_1, \ldots, \varphi_d$.
+Any set of processes $\varphi_1, \ldots, \varphi_d$
+such that the stochastic integrals $\int \varphi_i d\td{S}_i$
+exist can be uniquely extended to a self-financing strategy
+$\varphi$ with specified initial value $\td{V}_\varphi(0)= v$ by
+setting the cash holding as
+$$
+\varphi_0(t) = v + \sum_{i=1}^d \int_0^t \varphi_i(u) d\td{S}_i(u)
+- \sum_{i=1}^d \varphi_i(t) \td{S}_i.
+$$
+
+}
+\subsection{Arbitrage}
+\frame{\frametitle{ Arbitrage Opportunities}
+
+A self-financing trading strategy $\varphi$ is called an arbitrage
+opportunity if the wealth process $V_\varphi$ satisfies the
+following set of conditions:
+$$
+V_\varphi(0)=0,\A \prb(V_\varphi(T) \geq 0) =1,
+$$
+and
+$$
+\prb(V_\varphi(T) > 0) >0.
+$$
+
+}
+\subsection{Equivalent Martingale Measures}
+
+\frame{\frametitle{ Martingale Measure}
+
+A probability measure $\Q$ defined on $(\Om,\F)$ is an equivalent
+martingale measure (EMM) if:\\*[6pt]
+(i) $\Q$ is equivalent to $\prb$,\\
+(ii) the discounted price process $\td{S}$ is a $\Q$ martingale.
+
+
+Assume $S_0(t) = B(t) = e^{rt}$, then $\Q \sim \prb$ is a
+martingale measure if and only if every asset price process $S_i$
+has price dynamics under $\Q$ of the form
+$$
+dS_i(t) = r S_i(t) dt + dM_i(t),
+$$
+where $M_i$ is a $\Q$-martingale.
+
+}
+
+\frame{\frametitle{ EMMs and Arbitrage}
+
+
+Assume $\Q$ is an EMM. Then the market model contains no arbitrage
+opportunities.
+
+
+{\it Proof.} Under $\Q$ we have that $\td{V}_\varphi(t)$ is a
+martingale. That is,
+$$
+\EX_{\Q}\left(\td{V}_\varphi(t)|\F_u\right) = \td{V}_\varphi(u),\;
+\mbox{ for all }\A u \leq t \leq T.
+$$
+For $\varphi \in \Phi$ to be an arbitrage opportunity we must have
+$\td{V}_\varphi(0) =V_\varphi(0)= 0$.  Now
+$$
+\EX_{\Q}\left(\td{V}_\varphi(t)\right) = 0,\; \mbox{ for all } 0
+\leq t \leq T.
+$$
+
+}
+
+\frame{\frametitle{ EMMs and Arbitrage}
+
+Now $\td{V}_\varphi(t)$ is a martingale, so
+$$
+\EX_{\Q}\left(\td{V}_\varphi(t)\right) = 0,\; 0 \leq t \leq T,
+$$
+in particular $ \EX_{\Q}\left(\td{V}_\varphi(T)\right) = 0. $
+
+For an arbitrage opportunity $\varphi$ we have $
+\prb\left(V_\varphi(T) \geq 0\right) =1, $ and since $\Q \sim
+\prb$, this means $ \Q\left(V_\varphi(T) \geq 0\right) =1. $
+
+Both together yield
+$$
+\Q\left(V_\varphi(T) > 0\right) = \prb\left(V_\varphi(T) >
+0\right) =0,
+$$
+and hence the result follows.\hfill \eb
+
+
+}
+
+\frame{\frametitle{ Admissible Strategies}
+\begin{itemize}
+\item<1->  
+A SF strategy $\varphi$ is called ($\prb^*$-)
+admissible if
+$$
+\td{G}_\varphi(t) = \int_0^t \varphi(u) d\td{S}(u)
+$$
+is a ($\prb^*$-) martingale.
+\item<2->  
+By definition $\td{S}$ is a martingale, and $\td{G}$ is the
+stochastic integral with respect to $\td{S}$.
+\item<3->  
+The financial market model $\cal M$ contains no arbitrage
+opportunities wrt admissible strategies.
+\end{itemize}
+}
+
+\section{The Black-Scholes Model}
+\subsection{Valuation Principles}
+
+\frame{\frametitle{ Contingent Claims}
+
+A contingent claims $X$ is a random variable with existing expected value. 
+\begin{itemize}
+\item<1-> A contingent claim $X$ is called attainable if there
+exists at least one admissible trading strategy such that
+$$
+V_\varphi(T) = X.
+$$
+We call such a  trading strategy $\varphi$ a replicating strategy
+for $X$. \item<2-> The financial market model ${\cal M}$ is said
+to be complete if any contingent claim is attainable.
+
+\end{itemize}
+
+
+
+}
+
+
+
+\frame{\frametitle{ No-Arbitrage Price}
+
+If a contingent claim $X$ is attainable, $X$ can be replicated by
+a portfolio $\varphi \in \Phi(\prb^*)$. This means that holding
+the portfolio and holding the contingent claim are equivalent from
+a financial point of view. In the absence of arbitrage the
+(arbitrage) price process $\Pi_X(t)$ of the contingent claim must
+therefore satisfy
+$$
+\Pi_X(t) = V_\varphi(t).
+$$
+
+
+}
+
+
+
+\frame{\frametitle{ Risk-Neutral Valuation}
+
+The arbitrage price process of
+any attainable claim is given by the risk-neutral valuation
+formula
+$$
+\Pi_X(t) = S_0(t)
+\EX_{\prb^*}\left[\left.\frac{X}{S_0(T)}\right|\F_t\right].
+$$
+
+
+Thus, for any two replicating portfolios $\varphi, \psi \in
+\Phi(\prb^*)$
+$$
+V_\varphi(t) = V_\psi(t).
+$$
+
+
+}
+
+
+
+\frame{\frametitle{ Risk-Neutral Valuation}
+
+{\it Proof.} Since $X$ is
+attainable, there exists a replicating strategy $\varphi \in
+\Phi(\prb^*)$ such that $V_\varphi(T) = X$ and $\Pi_X(t) =
+V_\varphi(t)$. Since $\varphi \in \Phi(\prb^*)$ the discounted
+value process $\td{V}_\varphi(t)$ is a martingale, and hence
+$$
+\begin{array}{lll}
+\Pi_X(t) &=&\DSE V_\varphi(t) = S_0(t)\td{V}_\varphi(t) \\*[12pt]
+&=&\DSE S_0(t) \EX_{\prb^*}
+\left[\left.\td{V}_\varphi(T)\right|\F_t\right]\\*[18pt]
+&=&\DSE S_0(t)
+\EX_{\prb^*}
+\left[\left.\frac{V_\varphi(T)}{S_0(T)}\right|\F_t\right]\\*[18pt]
+&=&\DSE S_0(t) \EX_{\prb^*}
+\left[\left.\frac{X}{S_0(T)}\right|\F_t\right]\!.
+\end{array}
+$$
+\hfill \eb
+
+
+}
+
+
+\subsection{BS-Model: Properties}
+
+\frame{\frametitle{ Black-Scholes Model}
+
+The classical Black-Scholes model is
+$$
+\begin{array}{llll}
+dB(t) &=&\DSE r B(t) dt, \A &B(0)= 1,\\ dS(t) &=&\DSE S(t) \left(
+b dt + \sigma dW(t) \right)\!, \A &S(0) = p,
+\end{array}
+$$
+with constant coefficients $b \in \setR,\; r,\s \in \setR_+$.
+
+The Black-Scholes price pro\-cess of a European call is given by
+$$
+\begin{array}{lll}
+C(t) &=&\DSE S(t) \Phi(d_1(S(t), T-t))\\*[12pt] &&- K e^{-r(T-t)}
+\Phi(d_2(S(t), T-t)).
+\end{array}
+$$
+The functions $d_1(s,t)$ and $d_2(s,t)$ are given by
+$$
+\begin{array}{lll}
+d_1(s,t) &=&\DSE \frac{\log(s/K) + (r +
+\frac{\sigma^2}{2})t}{\sigma \sqrt{t}},\\*[12pt] d_2(s,t) &=&\DSE
+ \frac{\log(s/K) + (r -
+\frac{\sigma^2}{2})t}{\sigma \sqrt{t}}
+\end{array}
+$$
+
+}
+\frame{\frametitle{ Black-Scholes Model}
+
+The classical Black-Scholes model is
+$$
+\begin{array}{llll}
+dB(t) &=&\DSE r B(t) dt, \A &B(0)= 1,\\ dS(t) &=&\DSE S(t) \left(
+b dt + \sigma dW(t) \right)\!, \A &S(0) = p,
+\end{array}
+$$
+with constant coefficients $b \in \setR,\; r,\s \in \setR_+$.
+
+We use the bank account being the natural num\'{e}raire and get
+from It\^{o}'s formula
+$$
+d\td{S}(t) = \td{S}(t)\left\{ (b-r) dt + \s dW(t) \right\}\!.
+$$
+
+}
+
+
+
+\frame{\frametitle{ EMM in BS-model}
+
+Any EMM is a Girsanov pair
+$$
+\left.\frac{d\Q}{d\prb}\right|_{\F_t} =L(t)
+$$
+with
+$$
+L(t) = \exp\left\{- \int_0^t \gamma(s) dW(s) - \frac{1}{2}
+\int_0^t \gamma(s)^2 ds\right\}.
+$$
+By Girsanov's theorem
+$$
+dW(t) =  d\td{W}(t) - \gamma(t) dt,
+$$
+where $\td{W}$ is a $\Q$-BM. Thus the $\Q$-dynamics
+for $\td{S}$ are
+$$
+d\td{S}(t) = \td{S}(t)\left\{ (b-r - \s \gamma(t)) dt + \s
+d\td{W}(t) \right\}\!.
+$$
+}
+
+
+
+\frame{\frametitle{ EMM in BS-model}
+
+Since $\td{S}$ has to be a martingale under $\Q$ we must have
+$$
+b-r - \s \gamma(t)= 0\A t \in [0,T],
+$$
+and so we must choose
+$$
+\gamma(t) \equiv \gamma = \frac{b-r}{\s},
+$$
+this argument leads to a
+unique martingale measure. The $\Q$-dynamics of $S$ are
+$$
+dS(t) = S(t) \left\{ r dt + \s d\td{W} \right\}\!.
+$$
+}
+\subsection{Pricing and Hedging Contingent Claims}
+\frame{\frametitle{ Pricing Contingent Claims}
+
+By the risk-neutral
+valuation principle
+
+$$
+\Pi_X(t) = e^{\left\{ -r (T-t)\right\}} \EX^*\left[\left.X
+\right|\F_t\right]\!,
+$$
+
+with $\EX^*$ given via the Girsanov density
+
+$$
+L(t)=\exp\left\{ -\left(\frac{b-r}{\s}\right) W(t) - \frac{1}{2}
+\left(\frac{b-r}{\s}\right)^2 t \right\}\!.
+$$
+
+}
+
+\frame{\frametitle{ Pricing Contingent Claims}
+
+For a European call $X = (S(T)-K)^+$ and  we can evaluate the
+above expected value
+
+The Black-Scholes price
+pro\-cess of a European call is given by
+$$
+\begin{array}{lll}
+C(t) &=&\DSE S(t) \Phi(d_1(S(t), T-t))\\*[12pt]
+&&- K e^{-r(T-t)} \Phi(d_2(S(t), T-t)).
+\end{array}
+$$
+The functions $d_1(s,t)$ and $d_2(s,t)$ are given by
+$$
+\begin{array}{lll}
+d_1(s,t) &=&\DSE \frac{\log(s/K) + (r +
+\frac{\sigma^2}{2})t}{\sigma \sqrt{t}},\\*[12pt] d_2(s,t) &=&\DSE
+ \frac{\log(s/K) + (r -
+\frac{\sigma^2}{2})t}{\sigma \sqrt{t}}
+\end{array}
+$$
+
+
+
+
+
+} \frame{\frametitle{ BS by Arbitrage}
+
+Consider a self-financing portfolio which has dynamics
+$$
+\begin{array}{lll}
+dV_\varphi(t)&=&\DSE \varphi_0(t)dB(t)+\varphi_1(t)dS(t)\\*[12pt]
+&=&\DSE (\varphi_0 r B+\varphi_1b S)dt + \varphi_1\s SdW.
+\end{array}
+$$
+Assume that
+$
+V_\varphi(t)=V(t)=f(t,S(t)).
+$
+Then by It{\^o}'s formula
+$$
+\begin{array}{lll}
+dV &=& \DSE (f_t+f_xSb+\frac{1}{2}S^2\s^2f_{xx})dt\\*[12pt] &&\DSE
++ f_x\s SdW.
+\end{array}
+$$
+
+} \frame{\frametitle{ BS by Arbitrage}
+
+We match coefficients and find
+$$
+\varphi_1=f_x \mbox{ and }
+\varphi_0=\frac{1}{rB}(f_t+\frac{1}{2}\s^2S_t^2f_{xx}).
+$$
+So $f(t,x)$ must satisfy the Black-Scholes  PDE
+$$
+f_t+rxf_x+\frac{1}{2}\s^2x^2f_{xx}-rf=0
+$$
+and initial condition $f(T,x)=(x-K)^+$. }
+\frame{\frametitle{Option Dynamics}
+
+Let us now compute the dynamics of the call option's price $C(t)$
+under the risk-neutral martingale measure $\prb^*$. We find
+$$
+dC(t) = r C(t) dt + \s \Phi(d_1(S(t),T-t)) S(t) d \td{W}(t).
+$$
+Defining the {\it elasticity coefficient} of the option's price as
+$$
+\eta^c(t) = \frac{\Delta(S(t),T-t) S(t)}{C(t)} =
+\frac{\Phi(d_1(S(t),T-t))}{C(t)}
+$$
+we can rewrite the dynamics as
+$$
+dC(t) = r C(t) dt + \s \eta^c(t) C(t) d \td{W}(t).
+$$
+So, as expected in the risk-neutral world, the appreciation rate
+of the call option equals the risk-free rate $r$. The volatility
+coefficient is $\s \eta^c$, and hence stochastic.
+}
+
+\section{Parameters of the Black-Scholes Model}
+\subsection{The Greeks}
+\frame{\frametitle{Greeks}
+ We will now analyse the impact of the
+underlying parameters in the standard Black-Scholes model on the
+prices of call and put options. The Black-Scholes option values
+depend on the (current) stock price, the volatility, the time to
+maturity, the interest rate and the strike price. The
+sensitivities of the option price with respect to the first four
+parameters are called the {\it Greeks} and are widely used for
+hedging purposes. We can determine the impact of these parameters
+by taking partial derivatives. } \frame{\frametitle{BS-formula}
+ Recall the Black-Scholes formula
+for a European call:
+$$
+\pi^{call}(0) = C(S,T,K,r,\s) = S \Phi(d_1(S, T)) - K e^{-rT}
+\Phi(d_2(S, T)),
+$$
+with the functions $d_1(s,t)$ and $d_2(s,t)$ given by
+$$
+\begin{array}{lll}
+d_1(s,t) &=&\DSE \frac{\log(s/K) + (r +
+\frac{\sigma^2}{2})t}{\sigma \sqrt{t}},\\*[12pt] d_2(s,t) &=&\DSE
+d_1(s,t) -\sigma \sqrt{t}= \frac{\log(s/K) + (r -
+\frac{\sigma^2}{2})t}{\sigma \sqrt{t}}.
+\end{array}
+$$
+} \frame{\frametitle{Greeks}
+
+$$
+\begin{array}{lllll}
+\Delta &:=&\DSE \frac{\partial C}{\partial S} &=&\DSE \Phi(d_1) >
+0,\\*[12pt] 
+{\cal V} &:=&\DSE \frac{\partial C}{\partial \s} &=&
+\DSE S \sqrt{T} \varphi(d_1) >0,\\*[12pt]
+ \Theta &:=&\DSE \frac{\partial C}{\partial T} &=& 
+ \DSE \frac{S \s}{2 \sqrt{T}} \varphi(d_1) + K r e^{-rT} \Phi(d_2) >0,\\*[12pt] 
+\rho &:=&\DSE \frac{\partial C}{\partial r} &=& \DSE T K e^{-rT} \Phi(d_2) >0,\\*[12pt] 
+\Gamma
+&:=&\DSE \frac{\partial^2 C}{\partial S^2} &=& \DSE
+\frac{\varphi(d_1)}{S \s \sqrt{T}} >0.\\*[12pt]
+\end{array}
+$$
+} 
+\frame{\frametitle{Greeks} From the definitions it is clear that
+$\Delta$ -- delta -- measures the change in the value of the
+option compared with the change in the value of the underlying
+asset, ${\cal V}$ -- vega -- measures the change of the option
+compared with the change in the volatility of the underlying, and
+similar statements hold for $\Theta$ -- theta -- and $\rho$ -- rho
+}
+\begin{frame}[fragile]
+\frametitle{The Greeks}
+\begin{itemize}
+\item Likewise, in order to quantify the risk associated with an instrument, one looks at
+\emph{ how much the price of the instrument changes if one of the underlying
+risk drivers changes} its value. Those risk measures are also called
+Greeks.
+\item Mathematically speaking, the Greeks are just the derivative of the price
+of the instrument with respect to the value of the risk driver.
+\item Once those Greeks are known for a portfolio, one can easily calculate how
+much the value of an option or a portfolio changes \emph{marginally}, if one of
+the variables changes \emph{marginally}, all others remain fixed.
+\item Again, the most important Greeks are Delta, Gamma, Vega, Rho, and Theta.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{The Delta}
+\begin{itemize}
+\item Delta is the derivative of the instrument price with respect to the price
+of the underlying.
+\item The delta of the underlying security is one.
+\item If the payoff is not linear (for example if the instrument is an option),
+Delta is not constant.
+\item As Delta is the derivative with respect to the underlying, it tells how
+much the value of the instrument changes if the value of the underlying changes
+marginally.
+\item Thus in a continuous time model, Delta is the amount of the underlying
+needed to be sold in order to offset the price change of the instrument. The
+ability to neutralize the trading book with respect to price changes in the
+underlying makes Delta the most important Greek.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Delta Hedging I}
+\begin{itemize}
+  \item Assume that you have an options position with delta $\Delta$. This means
+  that if the price of the underlying moves by a (very) small amount $\epsilon$, the
+  price of the option position moves approximately by $\Delta \epsilon$.
+  \item A \emph{delta hedge} consists of selling $\Delta$ units of the
+  underlying (buying if $\Delta <0$) and gives a portfolio that does not
+  change its value if the price of the underlying changes by a marginal amount.
+  The portfolio has a delta of zero and is called \emph{delta neutral}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Delta Hedging II}
+\begin{itemize}
+  \item BUT: Delta is not constant, so the portfolio has to be rebalanced.
+  \item In the Black-Scholes model, a delta hedge with continuous rebalancing is
+  a perfect hedge.
+  \item In practice, continuous rebalancing is not possible so that the
+  portfolio is not protected against larger market movements. Transaction
+  costs and bid-ask spread also result in losses.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Delta in the Black-Scholes Model}
+In the Black-Scholes model, we have computed the Greeks explicitly for
+European call options. We have:
+\begin{align*}
+  \Delta = \frac{\partial}{\partial S}Call_{BS}(S,K,\sigma,r,t,T) = \Phi(d_1)
+\end{align*}
+where, as usual, $\Phi$ denotes the c.d.f. of the standard normal distribution and
+\begin{align*}
+  d_1 = \frac{\log \left( \frac{S}{K} \right) + \left( r + \frac{\sigma^2}{2}
+  \right)(T-t)}{\sigma \sqrt{T-t}}.
+\end{align*}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Delta of a Call Option in the Black-Scholes Model}
+%\usepackage{graphics} is needed for \includegraphics
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../../../pics/delta}
+  \caption{Delta for a European call in the BS model, $T=1$, $r=1\%$,
+  $\sigma=20\%$, $K=100$.}
+  \label{fig:deltaBS}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Example: Delta Hedge}
+You are long USD $1,000$ in the $104$ call. Interest rate is $5\%$,
+stock price today is $99$, time to maturity $1$ month, and implied volatility is
+$15.7\%$.
+\begin{itemize}
+  \item How can you make your portfolio delta neutral by investing in the stock?
+  \item You set up the delta neutral portfolio and the stock price jumps to
+  USD$100$ immediately. What is your P/L for the portfolio?
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Example: Delta Hedge}
+\begin{itemize}
+  \item Compute the price of the call with the BS formula:
+  \begin{align*}
+    Call_{BS} = 0.3858 \text{USD}.
+  \end{align*}
+  \item The position consists of $N=1,000/Call_{BS}=2592$ call options.
+  \item The delta of each option is
+  \begin{align*}
+    \Delta &= \Phi(d_1) =\Phi\left(\frac{\log \left( S/K \right) + (r+\sigma^2/2)(T-t)
+    }{\sigma\sqrt{T-t}}\right) \\
+    	&= \Phi\left(\frac{\log \left( 99/104 \right) + (0.05+0.157^2/2)(1/12)
+    }{0.157\sqrt{1/12}}\right)\\
+     	&= 0.1654.
+  \end{align*}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Example: Delta Hedge}
+\begin{itemize}
+  \item The delta of the position is long $\Delta_P=N\cdot \Delta=428.70$.
+  \item The stock has $\Delta=1$.
+  \item To make the position delta neutral, you have to enter a short position
+  of $428.70$ shares.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Example: Delta Hedge}
+\begin{itemize}
+  \item The loss from the short position in the stock is $428.70 \cdot
+  1=428.70$.
+  \item To compute the gain from the long options position, we have to compute
+  the option price for $S=100$. Using the BS formula, we obtain
+  \begin{align*}
+    Call_{BS}(S=100) = 0.5808.
+  \end{align*}
+  \item The gain from the options position is $2592\cdot(0.5808-0.3858)=505.37$.
+  \item Our profit is $505.37-428.70=76.67$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{The Gamma}
+\begin{itemize}
+  \item Gamma is the second derivative of the instrument price with respect to
+  the price of the underlying.
+  \item If the instrument has a linear payoff, Gamma is zero.
+  \item As delta is the first derivative of the option price with respect to the
+  underlying, gamma is the derivative of delta with respect to the underlying
+  and thus measures, how much Delta changes if the underlying changes.
+  \item This is an important information in risk management as it tells the
+  trader how much of the underlying he has to buy or sell if the underlying
+  itself changes price.
+  \item Geometrically, gamma might be seen as the slope of Delta.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Gamma Neutral Portfolios}
+As the delta of a portfolio changes with the price of the underlying, a delta
+hedge has to be rebalanced frequently.
+\begin{itemize}
+  \item A delta hedge for a portfolio with a high (absolute) gamma has to be
+  monitored more carefully than a delta hedge of a portfolio with gamma close to
+  zero.
+  \item To decrease the hedging error, a trader might want to make a delta
+  neutral portfolio gamma neutral.
+  \item The gamma cannot be changed by investing in the underlying because its
+  gamma is zero.
+  \item Strategy: Make the portfolio gamma neutral by investing in an option,
+  then make it delta neutral by investing in the underlying.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Gamma in the Black-Scholes Model}
+The gamma of a European call option in the Black-Scholes model is given by
+\begin{align*}
+  \Gamma = \frac{\partial^2}{\partial S^2}Call_{BS}(S,K,\sigma,r,t,T) =
+  \frac{\varphi(d_1)}{S\sigma \sqrt{T-t}}.
+\end{align*}
+Here, $\varphi(x)$ denotes the p.d.f. of the standard normal distribution.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Gamma of a Call Option in the Black-Scholes Model}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../../../pics/gamma}
+  \caption{Gamma for a European call in the BS model, $T=1$, $r=1\%$,
+  $\sigma=20\%$, $K=100$.}
+  \label{fig:gammaBS}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Gamma of a Call Option in the Black-Scholes Model}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../../../pics/gamma2}
+  \caption{Gamma for a European call in the BS model, $T=10$, $r=1\%$,
+  $\sigma=20\%$, $K=100$.}
+  \label{fig:gamma2BS}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Example: Gamma Neutral Portfolio}
+You are in the same position as in the previous example. Additionally, you can
+trade in the $97$ call.
+\begin{itemize}
+  \item Put together a portfolio that is delta and gamma neutral.
+  \item What is your P/L if the stock price jumps to $100$?
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Example: Gamma Neutral Portfolio}
+\begin{itemize}
+  \item The gamma of the $104$ call is
+  \begin{align*}
+  \Gamma_{104C} = \frac{\varphi(d_1)}{S\sigma \sqrt{T-t}} = 0.0554.
+  \end{align*}
+  \item The gamma of the $97$ call is
+  \begin{align*}
+  \Gamma_{97C} = \frac{\varphi(d_1)}{S\sigma \sqrt{T-t}} = 0.0758.
+  \end{align*}
+  \item To make the portfolio gamma neutral, we have to build up a position of
+  $n$ $97$ calls so that $2592\cdot 0.0554 +n\cdot 0.0758 = 0$.
+  \item We find that $n=-1894.74$ makes the portfolio gamma neutral, i.e., we
+  sell $1894.74$ units of the $97$ call.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Example: Gamma Neutral Portfolio}
+\begin{itemize}
+  \item We compute the delta of the portfolio consisting of the two positions in
+  the calls.
+  \item The $97$ call has a delta of $\Delta_{97C}=0.7139$.
+  \item The delta of the position is
+  \begin{align*}
+    \Delta_{P'} = 2592 \cdot 0.1654 - 1894.74 \cdot 0.7139 = -924.02
+  \end{align*}
+  \item We have to buy $924.02$ units of the underlying to make the portfolio
+  delta neutral. By buying the underlying, we do not change the gamma of the
+  portfolio, it remains zero.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Example: Gamma Neutral Portfolio}
+\begin{itemize}
+  \item The price of the $97$ call for $S=99$ is $Call_{BS,97}(S=99)=3.2235$.
+  \item The price of the $97$ call for $S=100$ is $Call_{BS,97}(S=100)=3.9735$.
+  \item The P/L from the position in the $97$ call is
+  $-1894.97*(3.9735-3.2235)=-1421.11$.
+  \item The P/L from the position in the stock is $924.02$.
+  \item The portfolio P/L is $924.02-1421.11+505.37=-8.28.$
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{The Vega}
+\begin{itemize}
+  \item Vega is the derivative of the instrument price with respect to
+  implied volatility.
+  \item Thus, vega indicates how much the option price changes if the implied
+  volatility changes.
+  \item Vega is not a Greek letter.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Vega in the Black-Scholes Model}
+The vega of a European call option in the Black-Scholes model is given by
+\begin{align*}
+  \nu = \frac{\partial}{\partial \sigma}Call_{BS}(S,K,\sigma,r,t,T) =
+  S\sqrt{T-t} \varphi(d_1).
+\end{align*}
+Therefore, we have
+\begin{align*}
+  \nu = S^2 \sigma (T-t) \Gamma.
+\end{align*}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Vega of a Call Option in the Black-Scholes Model II}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../../../pics/vega}
+  \caption{Vega for a European call in the BS model, $T=1$, $r=1\%$,
+  $\sigma=20\%$, $K=100$.}
+  \label{fig:vegaBS}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Vega of a Call Option in the Black-Scholes Model III}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../../../pics/vega_impliedvol}
+  \caption{Vega for a European call in the BS model, $T=1$, $r=1\%$, $K=100$.}
+  \label{fig:vega2BS}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{The Theta}
+\begin{itemize}
+  \item Theta is the derivative of the instrument price with respect to
+  time to maturity.
+  \item Thus, theta indicates how much the option price changes as time moves
+  closer to maturity.
+  \item Theta is usually negative and therefore is also called \emph{time decay}
+  or \emph{rent}.
+  \item Note: The passage of time is deterministic. It does not make sense to
+  hedge against these losses.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Theta of a Call Option in the Black-Scholes Model}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../../../pics/theta}
+  \caption{Theta for a European call in the BS model, $\sigma=20\%$, $r=1\%$,
+  $K=100$.}
+  \label{fig:thetaBS}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{The Rho}
+\begin{itemize}
+  \item Rho is the derivative of the instrument price with respect to the risk
+  free interest rate.
+  \item It measures, how the price of the instrument changes if the interest
+  rate changes.
+  \item Rho is particular important for fixed-income portfolios. If the hedging
+  portfolio of the instrument consists of a large portion of debt and only a
+  small amount of initial capital, the influence of changes in the risk free
+  rate might become quite big.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Rho of a Call Option in the Black-Scholes Model}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../../../pics/rho}
+  \caption{Rho for a European call in the BS model, $\sigma=20\%$, $T=1$,
+  $K=100$.}
+  \label{fig:rhoBS}
+\end{center}
+\end{figure}
+\end{frame}
+
+\subsection{Volatility}
+\frame{\frametitle{Vega}
+
+One of the main issues raised by the Black-Scholes formula is the
+question of modelling the volatility $\s$. Before we can implement
+the Black-Scholes formula to price options, we have to estimate
+$\s$.
+
+Because the formula is explicit, we can, determine the ${\cal V}$
+-- the partial derivative
+$$
+{\cal V} = \partial C/\partial \s,
+$$
+finding
+$$
+{\cal V} = S \sqrt{T} \varphi(d_1).
+$$
+The important thing to note here is that vega is always positive.
+
+} \frame{\frametitle{Implied Volatility}
+
+Next, since vega is positive, $C$ is a continuous -- indeed,
+differentiable -- strictly increasing function of $\s$.  Turning
+this round, $\s$ is a continuous (differentiable) strictly
+increasing function of $C$; indeed,
+$$
+{\cal V} = \frac{\partial C}{\partial \s}, \A \mbox{so} \A
+\frac{1}{\cal V} = \frac{\partial \s}{\partial C}.
+$$
+
+Thus the value $\s = \s(C)$ corresponding to the actual value $C =
+C(\s)$ at which call options are observed to be traded in the
+market can be read off.  The value of $\s$ obtained in this way is
+called the {\it implied volatility}. }
+
+\section{Variants}
+
+\frame{\frametitle{Dividend-Paying Assets}
+
+Let $S_t$ be a dividend-paying stock with continuous-dividend rate
+$\rho$. To price a derivative with expiry $T$ we set
+$$
+X_t=e^{-\rho(T-t)}S_t.
+$$
+Then $X_t$ is a non-dividend paying asset and must have the
+dynamic
+$$
+dX_t= rX_tdt+\sigma X_t dW_t.
+$$
+We can thus compute the dynamics of $S_t$ using It{\^o}'s formula
+(or the product rule)
+$$
+dS_t=(r-\rho)S_tdt+\sigma S_tdW_t
+$$
+} \frame{\frametitle{Dividend-Paying Assets}
+
+ The usual calculation give the European call option price
+$$
+\begin{array}{lll}
+C(t) &=&\DSE S(t)e^{-\rho(T-t)} \Phi(d_1(S(t), T-t))\\*[12pt] &&- K
+e^{-r(T-t)} \Phi(d_2(S(t), T-t)).
+\end{array}
+$$
+The functions $d_1(s,t)$ and $d_2(s,t)$ are given by
+$$
+\begin{array}{lll}
+d_1(s,t) &=&\DSE \frac{\log(s/K) + (r -\rho +
+\frac{\sigma^2}{2})t}{\sigma \sqrt{t}},\\*[12pt] d_2(s,t) &=&\DSE
+ \frac{\log(s/K) + (r - \rho-
+\frac{\sigma^2}{2})t}{\sigma \sqrt{t}}
+\end{array}
+$$
+} \frame{\frametitle{Time-dependent Volatility}
+
+Assume
+$$
+dS_t=r S_t dt + \sigma(t) S_t dW_t
+$$
+We can solve this SDE an find
+$$
+S_t=S_0\exp\left\{ \int_0^t\sigma(s)dW_s + \left(rt +
+\frac{1}{2}\int_0^t\sigma^2(s)ds \right) \right\}.
+$$
+Now
+$$
+\int_0^t\sigma(s)dW_s \sim N\left(0,
+\sqrt{\int_0^t\sigma^2(s)ds}\right)
+$$
+and we set
+$$
+\bar{\sigma}(t,T)=\sqrt{\frac{1}{T-t}\int_t^T\sigma^2(s)ds}.
+$$
+} \frame{\frametitle{Time-dependent Volatility} The usual
+calculation give the European call option price
+$$
+\begin{array}{lll}
+C(t) &=&\DSE S(t) \Phi(d_1(S(t), T-t))\\*[12pt] &&- K e^{-r(T-t)}
+\Phi(d_2(S(t), T-t)).
+\end{array}
+$$
+The functions $d_1(s,t)$ and $d_2(s,t)$ are given by (with
+appropriate time parameter)
+$$
+\begin{array}{lll}
+d_1(s,t) &=&\DSE \frac{\log(s/K) + (r +
+\frac{\bar{\sigma}^2}{2})t}{ \bar{\sigma}\sqrt{t}},\\*[12pt]
+d_2(s,t) &=&\DSE
+ \frac{\log(s/K) + (r -
+\frac{\bar{\sigma}^2}{2})t}{\bar{\sigma} \sqrt{t}}
+\end{array}
+$$
+}
+
+
+
+
+
+
+
+

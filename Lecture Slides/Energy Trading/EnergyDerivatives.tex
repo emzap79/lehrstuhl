@@ -1,0 +1,551 @@
+% !TEX root = EnergyTrading_ss13UDE.tex
+\section{Energy Derivatives}
+\subsection{Caps and  Floors}
+\frame{\frametitle{Caps}
+
+Buying a cap, the option holder has the right (but not the
+obligation) to buy a certain amount of energy at stipulated times
+$t_1,\ldots,t_N$ during the delivery period at a fixed strike
+price $K$. It can be viewed as a strip of
+independent call options, for each time $t_i$ the holder of the cap holds call options with maturity $t_i$ and Strike $K$. \\
+The static factors describing the cap are:
+\begin{itemize}
+\item times $t_1,\ldots,t_N$ (how often? when?)
+\item strike $K$ (price?)
+\item amount of the underlying (how much?)
+\end{itemize}
+
+}
+
+\frame{\frametitle{Cap - Payoff}
+\begin{figure}
+	\centering
+		\includegraphics[width=.80\textwidth]{../../../pics/Cap2}
+	\label{fig:Cap2}
+\end{figure}
+}
+
+\frame{\frametitle{Caps - Pricing}
+
+Whenever the price of the underlying exceeds the strike K at one of the dates $t_1,\ldots,t_N$, the seller of the cap pays the holder of the cap the difference between the price of the underlying and the strike K or - in case one agreed on physical delivery - the underlying is delivered for the price K.
+Typically, the price of a cap is quoted as price per delivery hours to make
+different delivery periods comparable. In this case we get a price
+per MWh. The formula is
+$$U_c(t)=\frac{1}{N}\sum_{i=1}^Ne^{-r(t_i-t)}\EX[\max(S(t_i)-K,0)].$$
+}
+
+\frame{\frametitle{Caps - Hedging}
+The strike price $K$ secures a maximum price for which the option holder is able to buy energy. A cap is used to cover a short position in the underlying (energy) against
+increasing market prices not only at a certain point in time but over the whole period covered by the exercising times $t_1,\ldots,t_N$.
+On the other hand, the option holder is still able to profit from low energy prices as he has the right but not the obligation to exercise the option at each time point.
+}
+
+\frame{\frametitle{Caps - Example}
+Assume you need 100 units of the underlying per day to run your business. Today it costs 100 Euro/unit. You can accept resource cost of up to 110 Euro/unit in order to beneficially run your business. You are afraid of rising prises and want to hedge against this risk but still have the chance to profit from low prices.\\
+Thus, you ask for a cap with daily exercise up to the business horizon of 8 days with volume 100 units and, say, strike 108 Euro/unit which might cost 1600 Euro (2 Euro/unit). Then, your total cost is at most 108 Euro + 2 Euro = 110 Euro/unit but you still participate on low prices.
+}
+
+\frame{\frametitle{Caps - Example}
+The table shows one possible result of the cap on the profit of the company.
+\begin{tabular}{rrrr}
+       Day & Underlying & Cost without Cap & Cost with Cap \\
+\hline
+         1 &        100 &        100 &        102 \\
+         2 &        111 &        111 &        110 \\
+         3 &        116 &        116 &        110 \\
+         4 &        120 &        120 &        110 \\
+         5 &        109 &        109 &        110 \\
+         6 &         97 &         97 &         99 \\
+         7 &         85 &         85 &         87 \\
+         8 &         78 &         78 &         80 \\
+\hline
+   Average &            &        102 &        101 \\
+   S.d.&&14.9&11.7
+\end{tabular}
+}
+
+\frame{\frametitle{Floors}
+Buying a floor, the option holder has the right (but not the
+obligation) to sell a certain amount of energy at stipulated times
+$t_1,\ldots,t_N$ during the delivery period at a fixed strike
+price $K$. It can be viewed as a strip of
+independent put options, for each time $t_i$ the holder of the floor holds put options with maturity $t_i$ and Strike $K$. \\
+Similar to the case of a cap, the pricing formula is
+$$U_f(t)=\frac{1}{N}\sum_{i=1}^Ne^{-r(t_i-t)}\EX[\max(K-S(t_i),0)].$$
+As with the cap, the price is quoted in Euro/MWh.
+}
+
+\frame{\frametitle{Floor - Payoff}
+\begin{figure}
+	\centering
+		\includegraphics[width=.80\textwidth]{../../../pics/Floor}
+	\label{fig:Floor}
+\end{figure}
+}
+
+\frame{\frametitle{Floors - Hedging}
+The strike price $K$ secures a minimum price for which the option holder is able to sell energy. A floor is used to cover a long position in the underlying (energy) against decreasing market prices not only at a certain point in time but over the whole period covered by the exercising times $t_1,\ldots,t_N$.
+On the other hand, the option holder is still able to profit from high energy prices as he has the right but not the obligation to exercise the option at each time point. \\
+The holder of a short position might write a floor to produce liquidity upfront. The maximum gain from the short position is then limited to the strike $K$.
+}
+
+\frame{\frametitle{Example: Caps and Floors}
+For a fixed premium, a buyer of a cap (call) is protected on the market price becoming stronger, while a buyer of a floor (put) is protected on the market price becoming weaker.\\
+\begin{center}
+\includegraphics[height=4.3cm]{../../../pics/cap}
+\end{center}
+}
+
+\frame{\frametitle{Collars}
+A collar is a combination of a cap and a floor such that variable prices are limited to a certain corridor. A long collar position consists of long one cap (with high strike $K_2$) and short one floor (with low strike $K_1$) - a short collar position is short one cap and long one floor. As long as the price of the underlying is between $K_1$ and $K_2$ at one of the dates $t_i$, no cash flows are exchanged. If the underlying is above $K_2$, the holder of the long collar position receives the difference of the actual price and $K_2$. If the underlying is below $K_1$, the short collar position receives the difference between $K_1$ and the actual price.
+}
+
+\frame{\frametitle{Collar - Payoff}
+As a long collar position is a strip of call options minus a strip of put options, the payoff of a collar at each time point $t_i$ is the following:
+\begin{figure}
+	\centering
+		\includegraphics[width=.80\textwidth]{../../../pics/Collar}
+	\label{fig:Collar}
+\end{figure}
+}
+
+\frame{\frametitle{Collar - Pricing}
+Collars might be seen as a strip of bear/bull spreads, or as a strip of call options minus a strip of put options in the case of a long collar position. Consequently, the pricing formula is just the combination of the formulas for the cap and the floor:
+\begin{align*}
+	U^{K_1, K_2}_{collar}(t)&=U^{K_2}_{cap}(t)-U^{K_1}_{floor}(t)\\
+	&=\frac{1}{N}\sum_{i=1}^Ne^{-r(t_i-t)}\EX[(S(t_i)-K_2)^+ - (K_1-S(t_i))^+]
+\end{align*}
+The price of a collar might be positive or negative - or even zero. In case the price is zero, the collar is called zero-cost collar.
+}
+
+\frame{\frametitle{Collars - Hedging}
+The holder of a long position in a collar is protected against increases in the underlying price above $K_2$, but does not profit from falling underlying prices below $K_1$. Thus he is protected against rising prices with limited participation on downside prices. Having a short position in the underlying, a long collar ensures the ability to cover the short position for prices in the range of $[K_1, K_2]$.
+A short collar protects against falling prices. At the same time, the ability to participate on rising prices is limited to $K_2$. Having a long position in the underlying, a short collar ensures that the position can be closed for prices in the range of $[K_1, K_2]$.
+}
+
+\frame{\frametitle{Collars - Example}
+An energy consuming manufacturer bought the energy needed on the futures market. As its competitors did not, the manufacturer is now concerned about falling energy prices which would lead to a competitive disadvantage. Thus, the manufacturer tries to enter a short collar, protecting him against falling prices but leaving the risk of rising prices above $K_2$. This risk might be acceptable for the manufacturer as if prices rise too much, the manufacturer is able to stop its production and selling the energy already bought on the spot market - offsetting the losses of the collar.
+}
+
+
+\frame{\frametitle{Example: Jet Fuel Hedge by an Airline}
+\vspace{-0.4cm}
+$$\includegraphics[scale=0.7]{../../../pics/hedge1}$$
+\vspace{-0.7cm}
+\begin{itemize}
+  \item An airline buys a fixed-price swap from a bank or trader against its jet-fuel price exposure.
+  \item Buying a swap it must lock in its minimum net price receivable at the current perceived swap value.
+\end{itemize}
+}
+
+\frame{\frametitle{Jet Fuel Hedge by an Airline: Collar}
+\vspace{-0.4cm}
+$$\includegraphics[scale=0.6]{../../../pics/hedge2}$$
+}
+
+
+
+\frame{\frametitle{Jet Fuel Hedge by an Airline: Collar}
+\begin{itemize}
+  \item Using a collar structure the airline can still protect itself from a price increase, but can keep its minimum net price receivable locked in at a lower rate than the current swap price.
+  \item The purchase of the cap protects against jet-fuel prices rising above the strike of the cap.
+  \item The sale of the floor reduces the cost of the premium in the purchase of the cap.
+  \item A popular strategy is a zero-cost collar.
+\end{itemize}
+}
+
+\frame{\frametitle{Collars - 3-way-collars}
+A long collar is short one floor with strike $K_1$, long one cap with higher strike $K_2$. A possible extension is to include a short position in one cap with strike $K_3 >> K_2$ in order to reduce the cost of the collar. This extension is called 3-way-collar.
+The price of a 3-way-collar is thus:
+\begin{align*}
+	U^{K_1, K_2, K_3}_{3-way}(t)&=U^{K_2}_{cap}(t)-U^{K_3}_{cap}(t)-U^{K_1}_{floor}(t)&\\
+	&=\frac{1}{N}\sum_{i=1}^Ne^{-r(t_i-t)}\EX[(S(t_i)-K_2)^+ &\\
+	 &- (S(t_i)-K_3)^+ - (K_1-S(t_i))^+]&
+\end{align*}
+}
+
+\frame{\frametitle{3-Way-Collar - Payoff}
+The holder of the 3-way-collar is protected against increases in the underlying price above $K_2$, but only till $K_3$. Afterwards, no protection exists anymore. This strategy might be a good choice if one wants to protect its buying costs but is able to stop its business if prices rally unexpectedly high (above $K_3$).
+\begin{figure}
+	\centering
+		\includegraphics[width=.80\textwidth]{../../../pics/collar3way}
+	\label{fig:collar3way}
+\end{figure}
+}
+
+\subsection{Swing Options}
+\frame{\frametitle{Swing Options}
+A swing option is similar to a cap or floor except that we have
+additional restrictions on the number of option exercises. Let
+$\phi_i\in\{0,1\}$ be the decision whether to exercise
+$(\phi_i=1)$ or not to exercise $(\phi_i=0)$ the option at time
+$t_i$. The option's payoff at time $t_i$ is given by
+$$\phi_i(S(t_i)-K)\quad\mbox{call resp.}\quad\phi_i(K-S(t_i))\quad\mbox{put}.$$
+We now require that the number of exercises is between $E_{\min}$
+and $E_{\max}$.
+}
+\frame{\frametitle{Swing Options}
+To determine the swing option value, we have to find an optimal exercise
+strategy $\Phi=(\phi_1,\ldots,\phi_N)$ maximising the expected
+payoff
+$$\sum_{i=1}^Ne^{-r(t_i-t)}\EX[{\phi_i(S(t_i)-K)}]\quad\rightarrow\max$$
+subject to $$E_{\min}\leq\sum_{i=1}^N\phi_i\leq E_{\max}.$$
+
+To calculate the option value various mathematical techniques are used.
+}
+\frame{\frametitle{Bounds for Swing Options}
+
+\underline{Strategy}\\
+For deterministic spot prices, we
+\begin{itemize}
+  \item  Calculate the discounted payoffs
+  $P(t_i)=e^{-r(t_i-t)}(S(t_i)-K)$.
+  \item  Sort the discounted payoffs $P(t_i)$ in descending order.
+  \item Take the first $E_{\min}$ payoffs regardless of their
+  value and subsequent payoffs up to $E_{\max}$ until their sign
+  become negative.
+\end{itemize}
+}
+\frame{\frametitle{Bounds for Swing Options}
+
+For stochastic spot prices the MC-approach gives an upper bound,
+since information on the whole path is used, but in reality only
+information up to time $t$ is available when deciding at time $t$.
+
+A lower bound is given by the intrinsic value
+$$\sum_{i=1}^Ne^{-r(t_i-t)} \phi_i^F (F(t,t_i)-K) \quad\rightarrow\max$$
+subject to $$E_{\min}\leq\sum_{i=1}^N\phi^F_i\leq E_{\max}$$
+where $\phi_i^F=\IF_{\{F(t,t_i)>K\}}$, unless the restriction on $E_{\min}$ is in force.
+}
+
+
+
+\subsection{Spread Options}
+\frame{\frametitle{Spread Options}
+Some market participants are exposed to the difference of
+commodity prices. Examples are
+\begin{itemize}
+  \item<1-> the dark spread between power and coal (model for a coal-fired power plant)
+  \item<2-> the spark spread between power and gas (model for a gas-fired power plant)
+  \item<3-> the crack spread between different refinements of oil (model for a refinement plant)
+\end{itemize}
+}
+
+\frame{\frametitle{Spread Trading}
+Spreads are used to describe power plants, refineries, storage facilities and transmission lines. Spread positions may be initiated in futures contracts
+\begin{itemize}
+  \item<1-> for different, but related commodities,
+  \item<2-> for different delivery month of the same commodity,
+  \item<3-> for same commodity traded on different exchanges.
+\end{itemize}
+}
+
+\frame{\frametitle{Spread Trading}
+Spread trading involves taking a long position in one futures contract and simultaneously taking a short position in another, related futures contract.
+\begin{itemize}
+  \item<1-> Spread position neutralizes price risk.
+  \item<2-> A profit or loss results only if the relative prices of the two contracts change.
+  \item<3-> If spreads are expected to narrow, buy the lower-priced contract and sell the higher-priced contract.
+  \item<4-> If spreads are expected to widen, buy the higher-priced contract and sell the lower-priced contract.
+\end{itemize}
+}
+
+
+\frame{\frametitle{Spark Spread}
+\begin{itemize}
+  \item<1-> Differential between the price of electricity (output) and the price of natural gas (input).
+  \item<2-> Can be used to financially replicate the physical reality of a gas-fired power plant: Short position in fuels and long position in electricity.
+  \item<3-> Spark spreads are traded OTC.
+\end{itemize}
+}
+
+\frame{\frametitle{Spark Spread}
+
+$$\text{Spark\_Spread}=\text{Power\_Price} - \text{Heat\_Rate}\cdot\text{Fuel\_Price}.$$
+\vspace{0.2cm}
+\begin{itemize}
+  \item<1-> Heat rate provides a conversion factor between fuels used to generate power and the power itself.
+  \item<2-> Heat rate is the number of Btus needed to make 1kWh of electricity.
+  \item<3-> In the absence of any inefficiency it takes 3412Btu to produce 1kWh of electricity.
+\end{itemize}
+}
+
+
+\frame{\frametitle{Example: Spark Spread}
+The price of electricity is currently 42.69EUR/MWh, the price of natural gas is 4.86EUR/MMBtu and the heat rate is 8152Btu/kWh. The spark spread quoted in EUR/MWh is
+$$Spread=42.69\text{EUR/MWh}-0.001\ast8152\text{Btu/kWh}\ast4.86\text{EUR/MMBtu}$$
+$\,\qquad\quad\;\;=3.07\text{EUR/MWh}.$\\
+\vspace{0.2cm}
+The positive spark spread means that it is economical to run the plant (without taking into account additional generating costs).
+}
+
+%\subsection{Clean Spread}
+\frame{\frametitle{Clean Spreads}
+In countries covered by the European Union Emissions Trading Scheme, utilities have to consider also the cost of carbon dioxide emission allowances. Emission trading has started in the EU in January 2005.
+\begin{itemize}
+  \item Clean spark spread represents the net revenue a gas-fired power plant makes from selling power, having bought gas and the required number of carbon allowances.
+  \item Clean dark spread represents the net revenue a coal-fired power plant makes from selling power, having bought coal and the required number of carbon allowances.
+  \item The difference between the clean dark spread and the clean spark spread is known as the climate spread.
+\end{itemize}
+}
+
+
+\frame{\frametitle{Clean Spark Spread}
+Clean Spark Spread = Power Price - Heat Rate $\cdot$ Gas Price -\\- Gas Emission Intensity Factor $\cdot$ Carbon Price\\
+  \vspace{0.6cm}
+Clean Spark Spread reflects the cost of generating power from gas after taking into account gas and carbon allowance costs. A positive spread effectively means that it is profitable to generate electricity, while a negative spread means that generation would be a loss-making activity. However, it is important to note that the Clean Spark Spreads do not take into account additional generating charges beyond gas and carbon, such as operational costs.
+}
+
+
+
+\frame{\frametitle{Clean Dark Spread}
+Clean Dark Spread = Power Price - Heat Rate $\cdot$ Coal Price -\\- Coal Emission Intensity Factor $\cdot$ Carbon Price\\
+  \vspace{0.6cm}
+Clean Dark Spread reflects the cost of generating power from coal after taking into account coal and carbon allowance costs. A positive spread effectively means that it is profitable to generate electricity for the period in question, while a negative spread means that generation would not be profitable. Clean Dark Spreads do not account for additional generating charges beyond coal and carbon.
+}
+
+
+
+\frame{\frametitle{Power Plant as a Clean Dark Spread}
+A coal-fired power plant can be viewed as a call option on the clean dark spread with the variable cost of running the plant (beyond coal and carbon) being the strike and the payoff equal to\\
+$$\Pi=max\{P-HR\cdot Coal - I\cdot Carbon - V\}.$$
+P:\quad\;\;\;\;\; Power Price\\
+HR:\quad\;\;\; Heat Rate\\
+Coal:\quad\, Coal Price\\
+I:\qquad\;\;\; Coal Emission Intensity Factor\\
+Carbon: Carbon Price\\
+V:\qquad\quad Variable cost of running the plant (beyond coal and\\
+\qquad\quad\;\;\; carbon)
+}
+
+\frame{\frametitle{Power Plant as a Clean Dark Spread}
+Indeed, the decision to run or not to run the power plant can be described as follows:
+\begin{itemize}
+  \item If $P-HR\cdot Coal - I\cdot Carbon - V\geq0$, then run the plant. In this case buying fuel and paying variable costs ($HR\cdot Coal + I\cdot Carbon + V$) to run the plant and then selling the generated power for P results in the positive gain.
+  \item If $P-HR\cdot Coal - I\cdot Carbon - V<0$, then do not run the plant. In this case buying fuel and paying variable costs ($HR\cdot Coal + I\cdot Carbon + V$) to run the plant will not be compensated by sold power.
+\end{itemize}
+}
+
+
+%\subsection{Climate Spread}
+\frame{\frametitle{Climate Spread}
+$$\text{Climate Spread = Clean Dark Spread - Clean Spark Spread}$$\\
+  \vspace{0.6cm}
+In a carbon constrained economy a power producer in a geographic area where coal is currently the preferred method by which electricity is generated may eventually encounter a negative climate spread  if carbon credit prices rise. This would mean that when taking into consideration the cost to produce (coal is on average 2.5 times as polluting as natural gas for the same MWh of electricity) the natural gas would be a better decision.
+}
+
+
+\frame{\frametitle{Example: Clean Spark Spread}
+The price of electricity is currently 42.69EUR/MWh, the price of natural gas is 4.86EUR/MMBtu, the carbon price is 12EUR/t$CO_2$, the heat rate is 8152Btu/kWh and the gas emission intensity factor is 0.11t$CO_2$/MWh. The clean spark spread quoted in EUR/MWh is\\
+$\text{Clean Spark Spread}=42.69\text{EUR/MWh}$\\
+$\qquad\qquad\qquad\qquad\;\,-0.001\ast8152\text{Btu/kWh}\ast4.86\text{EUR/MMBtu}$\\
+$\qquad\qquad\qquad\qquad\;\,-0.11tCO_2\text{/MWh}\ast12\text{EUR/t}CO_2$\\
+$\qquad\qquad\qquad\qquad\;\,=1.75\text{EUR/MWh}.$\\
+\vspace{0.2cm}
+It is profitable to generate electricity, if additional generating charges beyond gas and carbon are lower than 1.75EUR/MWh.
+}
+
+\frame{\frametitle{Example: Clean Dark Spread}
+The price of electricity is currently 42.69EUR/MWh, the coal price is 95.04EUR/t or 3.96EUR/MMBtu (with heat content of 24MMBtu/t), the carbon price is 12EUR/t$CO_2$, the heat rate is 9500Btu/kWh and the coal emission intensity factor is 0.26t$CO_2$/MWh. The clean dark spread quoted in EUR/MWh is\\
+$\;\text{Clean Dark Spread}=42.69\text{EUR/MWh}$\\
+$\qquad\qquad\qquad\qquad\;\,-0.001\ast9500\text{Btu/kWh}\ast3.96\text{EUR/MMBtu}$\\
+$\qquad\qquad\qquad\qquad\;\,-0.26tCO_2\text{/MWh}\ast12\text{EUR/t}CO_2$\\
+$\qquad\qquad\qquad\qquad\;\,=1.95\text{EUR/MWh}.$\\
+\vspace{0.2cm}
+It is profitable to generate electricity, if additional generating charges beyond coal and carbon are lower than 1.95EUR/MWh.
+}
+
+
+\frame{\frametitle{Example: Climate Spread}
+Suppose that the price of carbon rises to 19.6EUR/t$CO_2$.\\
+\vspace{0.25cm}
+$\text{Climate Spread = Clean Dark Spread - Clean Spark Spread}$\\
+$\qquad\qquad\qquad\;\;\,=-0.026\text{EUR/MWh}-0.915\text{EUR/MWh}$\\
+$\qquad\qquad\qquad\;\;\,=-0.941\text{EUR/MWh}.$\\
+\vspace{0.25cm}
+The clean dark spread becomes negative (-0.026EUR/MWh), implying that electricity generation by a coal-fired power plant would be a loss-making activity, whereas the clean spark spread remains positive (0.915EUR/MWh), meaning that it is profitable to generate electricity by a gas-fired power plant, if additional generating charges beyond gas and carbon are lower than 0.915EUR/MWh.
+}
+
+\frame{\frametitle{Clean Spark Spread Forward}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=\textwidth]{../../../pics/Spark-Spread-2012.pdf}
+\end{figure}
+}
+
+
+ %%%%%%%%%% Clean Dark Spread
+\frame{\frametitle{Gas Power Plant}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=\textwidth]{../../../pics/GuD-Lingen}
+\label{prices}
+\end{figure}
+}
+
+\frame{\frametitle{Political Risk}
+\begin{itemize}
+\item<1-> Installed capacity: 876 MW
+\item<2-> Variable cost ca. 60 EUR/MWh
+\item<3-> Profitable hours per year
+\begin{itemize}
+\item  2010 (993),
+\item 2011 (2309),
+\item 2012 (737),
+\end{itemize}
+with average profit 6.9 EUR per MWh.
+\item<4-> Typical assumption on investing 
+\begin{itemize}
+\item 3500 profitable hours
+\item 10 EUR per MWh profit
+\end{itemize}
+\item<5-> loss per year 
+\begin{itemize}
+\item  2010: (3500-993)*876*10=21961320 EUR,
+\item 2011:  (3500-2309)*876*10 = 10433160 EUR,
+\item 2012: (3500-737)*876*10= 24203880 EUR.
+\end{itemize}
+
+\end{itemize}
+
+}
+
+
+\frame{\frametitle{A day in august}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=\textwidth]{../../../pics/day-profile-august}
+%\caption{Wind, Sonne und Strompreise}
+\end{figure}
+}
+
+
+\frame{\frametitle{Wind, sun and electricity}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=\textwidth]{../../../pics/week1-14Nov.png}
+%\caption{Wind, Sonne und Strompreise}
+\end{figure}
+}
+
+
+
+
+\frame{\frametitle{Spread Options to Manage Market Risk}
+Spread options can be used by owners of corresponding plants to
+manage the market risk. Instead of spread trading with futures the owner of a power plant can directly purchase/sell a spread option.\\
+\vspace{0.2cm}
+The pay off of a typical spread is
+$$C_{\mbox{spread}}^{(T)}=\max(S_1(T)-S_2(T)-K,0)$$ with $S_i$ the
+underlyings, $K$ the strike.
+}
+
+
+\frame{\frametitle{Spread Options to Manage Market Risk }
+P$\text{\&}$L diagram of a typical spread
+\begin{figure}\label{payoffeurocall}
+\unitlength1cm \thicklines
+\begin{picture}(10,7)
+\put(1,2){\vector(1,0){7}} \put(6,1.5){$S_1(T)-S_2(T)$} \put(4,2){$K$}
+\put(2,1){\vector(0,1){5}} \put(1.4,6.5){P$\text{\&}$L}
+\put(4,1.5){\line(1,1){4}} \put(2,1.5){\line(1,0){2}}
+\end{picture}
+\caption{Profit diagram for a European call}
+\end{figure}
+}
+
+\frame{\frametitle{Example: Hedging with forward spark spread}
+An operator of a gas-fired power plant wants to protect himself from the fluctuation of gas and power prices during the future months of July. The total July power output is 100MWh and the plant's heat rate is 10MBtu/kWh. In order to insure the operational margins equal to the value of the forward spread the operator
+\begin{itemize}
+  \item<1-> sells the financially settled forward spark spreads totalling 100MWh, i.e. sells 100MWh of power and buys 1.000MMBtu of gas.
+  \item<2-> at maturity (end of June) of the forward spark spread contract, buys gas and sells electricity into the spot market for monthly delivery.
+\end{itemize}
+}
+
+
+\frame{\frametitle{Example: Hedging with spark spread options}
+Since the option value always exceeds the value of the spread, the better strategy is to sell the option on the forward spark spread.
+\begin{itemize}
+  \item<1-> Selling the option guarantees protection while providing higher margins than selling the forward spread.
+  \item<2-> All obligations with respect to the option buyer are fulfilled through running the plant.
+\end{itemize}
+}
+
+\frame{\frametitle{Example: Hedging with spark spread options}
+Suppose the spread value is 10USD/MWh and the spread option is sold for 12USD/MWh.
+$$\includegraphics[scale=0.6]{../../../pics/spread3}$$
+$$\includegraphics[scale=0.6]{../../../pics/spread4}$$
+}
+
+
+
+\subsection{Basket Options}
+\frame{\frametitle{Basket Options}
+Assume underlyings
+$$
+dS_i(t)= \mu_i S_i(t)dt + \sigma_i S_i(t)dW_i(t)
+$$
+with $dW_i(t)dW_j(t)=\rho_{ij}dt$.
+
+Here a basket of commodities is the underlying
+$$B(t)=\sum_{i=1}^m w_iS_i(t).$$ Recall that the forward price are
+given by $F_i(t,T)=\EX(S(T)|{\cal F}_t)$.
+
+}
+\frame{\frametitle{Basket Options -- Example}
+
+Basket of energy prices related to power production
+$$B(t)=100 \times\left(30\%\frac{\mbox{oil}(t)}{\mbox{oil}(0)}+
+30\%\frac{\mbox{coal}(t)}{\mbox{coal}(0)}+40\%\frac{\mbox{CO}_2(T)}{\mbox{CO}_2(0)}\right).$$
+At time $0$ the basket is nomalized to $100$. If the oil price
+increases by $100\%$ the basket value increases by $30\%$ to
+$130$.
+}
+\frame{\frametitle{Basket Options}
+
+Pricing is not straightforward even in a BS-framework, since the sum of lognormals is not lognormal.
+
+Typically a lognormal approximation is used, i.e.
+$$
+\tilde{B}(T)=F_B\cdot\exp(-\frac{1}{2}\beta^2+\beta N)\A
+N\sim{\cal N}(0,1).$$
+Now
+$$\begin{array}{lll}
+  \EX(B(T)) & = & \sum_{i=1}^nw_iF_i(t,T) \\*[12pt]
+  \EX[B^2(T)] & = & \sum_{i,j=1}^nw_iw_jF_i(t,T)F_j(t,T) \exp\{\rho_{ij} \sigma_i\sigma_j(T-t)\}
+  \\*[12pt]
+ (\mbox{use}\A \EX_t(S_i(T)) & = & F_i(t,T)).
+\end{array}$$
+}
+\frame{\frametitle{Basket Options}
+
+On the other hand
+$$\EX(\tilde{B}(T))=F_B\quad\EX(\tilde{B}^2(T))=F_B^2\exp(\beta^2).$$
+Setting the first two moments equal
+$$\begin{array}{lll}
+  F_B & = & \sum_{i=1}^nw_iF_i(t,T) \\*[12pt]
+ \beta^2 & = & \log\left(\frac{\sum_{i,j=1}^nw_iw_jF_i(t,T)F_j(t,T)\exp\{\rho_{ij}\sigma_i\sigma_j(T-t)\}}{F_B^2}\right)
+\end{array}$$
+
+Now Black's formula can be use on $\tilde{B}$.
+}
+\frame{\frametitle{Basket Options- Example(continued)}
+
+With volatilities 0.3, 0.2 and 0.4 for
+Oil, Coal, CO2 and correlations $\varphi_{0C}=0.1$,
+$\varphi_{0CO_2}=0.6$, $\varphi_{CCO_2}=-0.2$ one gets for one year
+at the money calls\\*[12pt]
+
+\begin{tabular}{ccc}
+
+   & price& imp vol. \\
+ MC & 8,81 & 22.85\% \\
+  Approx & 8,95 & 23.16\% \\*[12pt]
+\end{tabular}
+
+This implies a small pricing error, which s acceptable given the parameter uncertainty for $\sigma_i$ and $\rho_{ij}$.
+}
+
+
+
+

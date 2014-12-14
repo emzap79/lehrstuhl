@@ -1,0 +1,1304 @@
+% !TEX root = StructuringValuation_ws1314UDE.tex
+\section{Power Plants}
+\subsection{What is the value of a fossile power plant?}
+
+
+%% Hier Strom alleine
+Phelix Base 2002-12 
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.9\textwidth, heigth=0.9\textheigth]{../../../pics/PhelixBase2002_12.pdf}
+\end{figure}
+
+
+%% Strom 2001-- 2008
+Phelix Base 2002-2008 
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.9\textwidth, heigth=0.9\textheigth]{../../../pics/PhelixBase2002_08.pdf}
+%\captionPower, gas and carbon prices.
+\end{figure}
+
+
+%% Strom ab 2008
+Phelix Base 2008-2012 
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.9\textwidth, heigth=0.9\textheigth]{../../../pics/PhelixBase2008_12.pdf}
+\end{figure}
+
+
+%% Installed Photovoltaik
+Photovoltaik 
+\begin{figure}[htp]
+\centering
+\includegraphics[width=\textwidth]{../../../pics/PV-2012.pdf}
+%\captionPower, gas and carbon prices.
+\label{prices} 
+\end{figure}
+
+
+Wind 
+\begin{figure}[htp]
+\centering
+\includegraphics[width=\textwidth]{../../../pics/Wind-2012.pdf}
+%\captionPower, gas and carbon prices.
+\label{prices} 
+\end{figure}
+
+
+Gas power plant 
+\begin{figure}[htp]
+\includegraphics[width=\textwidth]{../../../pics/GuD-Lingen}
+\label{prices} 
+\end{figure}
+
+
+A day in august 
+\begin{figure}[htp]
+\includegraphics[width=\textwidth]{../../../pics/day-profile-august}
+%\captionWind, Sonne und Strompreise
+\end{figure}
+
+
+Wind, sun and electricity 
+\begin{figure}[htp]
+\centering \includegraphics[width=\textwidth]{../../../pics/week1-14Nov.png}
+%\captionWind, Sonne und Strompreise
+\end{figure}
+
+
+Value lost -- back on the envelope calculations 
+	Installed capacity 876 MW 
+	Variable costs ca. 60 Euro/MWh 
+	
+	Profitable hours per year 
+		2010 (993), 
+		2011 (2309), 
+		2012 (737), 
+	with an average profit 6.9 Euro per MWh. 
+
+	Typical investment assumption 
+		3500 profitable hours 
+		10 Euro profit per MWh 
+	loss per year 
+
+	2010: (3500-993){*}876{*}10=21961320 Euro, 
+
+	2011: (3500-2309){*}876{*}10 = 10433160 Euro, 
+
+	2012: (3500-737){*}876{*}10= 24203880 Euro. 
+
+
+%%%%%%%%%% Clean Spark Spread
+
+Does it get better? 
+\begin{figure}[htp]
+\centering \includegraphics[width=\textwidth]{../../../pics/Spark-Spread-2012.pdf}
+\end{figure}
+
+
+RWE Response 14.August 2013 
+\begin{figure}[htp]
+\centering
+\includegraphics[width=0.9\textwidth, heigth= 0.9 \textheigth]{../../../pics/RWE-Decommission}
+%\caption{Wind, Sonne und Strompreise}
+\end{figure}
+
+
+\subsection{Clean Spread Options}
+Clean Spark Spreads
+	A gas power plant is long electricity, short gas and short carbon. 
+	Financially, we can express that as the Clean Spark Spread 
+		\begin{equation}
+		V_{t}=\max\{P_{t}-h\, G_{t}-c_{E}\; E_{t}-C,0\},\label{spark_spread_value}
+		\end{equation}
+	here $P_{t}$ is the price of electricity, $G_{t}$ the price of gas,
+	$E_{t}$ the price of emission certificates and $C$ fixed costs ($h$
+	and $c_{E}$ are conversion factors). 
+
+
+%\subsectionValuation of Spread Options
+Valuation of Simple Spread Options
+	For $K=0$ (exchange option) there is an analytic formula due to Margrabe (1978). 
+	$$\begin{array}{lll}
+	 C_{\mbox{spread}}(t) & = & (S_1(t)\Phi(d_1)-S_2(t)\Phi(d_2))
+	 \\*[12pt]
+	 P_{\mbox{spread}}(t) & = & (S_2(t)\Phi(-d_2)-S_1(t)\Phi(-d_1))
+	 \\*[12pt]
+	 \mbox{where}\quad d_1 & = & \frac{\log(S_1(t)/S_2(t))+\sigma^{2}(T-t)/2}{\sqrt{\sigma^{2}(T-t)}},\quad d_2=d_1-\sqrt{\sigma^{2}(T-t)}
+	 \\*[12pt]
+	 \mbox{and}\quad \sigma & = & \sqrt{\sigma_1^2-2\rho\sigma_1\sigma_2+\sigma_2^2}
+	\end{array}$$
+	where $\rho$ is the correlation between the two underlyings.
+
+	For $K\neq 0$ no easy analytic formula is available.
+
+
+Spread Option Value and Correlation 
+	The value of a spread option depends strongly on the correlation between the two underlyings. 
+	$$\tiny\text{$S_1=S_2=100$, $T=3$, $r=0.02$, $\sigma_1=0.6$, $\sigma_2=0.4$.}$$
+
+	\includegraphics[scale=0.3]{../../../pics/corr}
+
+	The higher the correlation between the two underlyings the lower is
+	the volatility of the spread and hence the value of the spread option. 
+
+
+Approximation by Kirk's Formula (2 Assets)
+	Again for $r=0$ we have the formula $$\begin{array}{lll}
+	 C_{\mbox{K2}}(t) & = & (S_1(t)\Phi(d_{1,K})-(S_2(t)+K)\Phi(d_{2,K}))
+	 \\*[12pt]
+	 \quad d_{1,K} & = & \frac{\log(S_1(t)/(S_2(t)+K))+\sigma_K^{2}(T-t)/2}{\sqrt{\sigma_K^{2}(T-t)}},\\*[12pt] 
+		\quad d_{2,K} &=&d_{1,K}-\sqrt{\sigma_K^{2}(T-t)}
+	 \\*[12pt]
+	 \quad \sigma_K & = & \sqrt{\sigma_1^2-2b_1\rho\sigma_1\sigma_2+b_1^2\sigma_2^2}\\*[12pt]
+	 \quad b_1 &=& \frac{S_2(t)}{S_2(t)+K}
+	\end{array}$$
+	and $\rho$ is the correlation between the two underlyings.
+
+
+Approximation by Kirk's Formula (2 Assets)
+	One can show that with $\tau=T-t$ 
+	$$
+	 C_{\mbox{K2}}(S_1(t), S_2(t), K, \tau) \approx
+	 C_{\mbox{BS}}(S_1(t), S_2(t)+K, \sigma_K, \tau)
+	 $$
+	for  $\tau$ small. 
+
+
+Approximation for three asset case 
+	We consider the payoff 
+	\begin{equation}
+	\max\{S_{1}(T)-S_{2}(T)-S_{3}(T)-K,0\},\label{Three_asset_value}
+	\end{equation}
+
+	We value this as a classical vanilla option with random strike $S_{2}+S_{3}+K$
+	and appropriate volatility. 
+
+
+Approximation by Kirk's Formula (3 Assets)
+	Again for $r=0$ we have for  $\tau$ small the formula 
+	{\small
+	\begin{equation}
+	 C_{\mbox{K3}}(S_1(t), S_2(t), S_3(t), K, \tau) \approx
+	 C_{\mbox{BS}}(S_1(t), S_2(t)+S_3(t)+K, \sigma_S, \tau)
+	\label{kirk3}
+	\end{equation}
+	with
+	 $$
+	 \begin{array}{lll}
+	 \sigma_S & = & \sqrt{\sigma_1^2+b_2^2\sigma_2^2 +b_3^2\sigma_3^2
+	 - 2\rho_{12}\sigma_1\sigma_2b_2 - 2\rho_{13}\sigma_1\sigma_3b_1 + 2\rho_{23}\sigma_2\sigma_3b_2b_3}\\*[12pt]
+	 b_2 &=& \frac{S_2(t)}{S_2(t)+S_3(t) K}
+	 \;\;\mbox{and}  \;\;\
+		b_3 = \frac{S_3(t)}{S_2(t)+S_3(t) K}
+	\end{array}$$
+	}
+	and $\rho_{ij}$ is the correlation between the underlying $i,j$.
+
+
+\subsection{Power Plant Valuation}
+\subsubsection{Prices  Emission}
+Certificates We model the emission price as a geometric Brownian motion
+
+\begin{equation}
+d{E}_{t}=\alpha^{E}\, E_{t}\, d{t}+\sigma^{E}\, E_{t}\, d{W}_{t}^{E},\label{co2}
+\end{equation}
+
+
+Gas Price 
+	We model the gas price as a mean-reverting process 
+		\begin{eqnarray}
+		G_{t} & = & e^{g(t)+Z_{t}},\nonumber \\
+		d{Z}_{t} & = & -\alpha^{G}\, Z_{t}\, d{t}+\sigma^{G}\, d{W}_{t}^{G},\label{gas}
+		\end{eqnarray}
+
+	$\alpha^{G}$ is the speed of mean-reversion for gas prices. 
+
+
+Power Price 
+	We model the power price as a sum of two mean-reverting processes
+		\begin{eqnarray}
+		P_{t} & = & e^{f(t)+X_{t}+Y_{t}},\nonumber \\
+		d{X}_{t} & = & -\alpha^{P}\, X_{t}\, d{t}+\sigma^{P}\, d{W}_{t}^{P},\nonumber \\
+		d{Y}_{t} & = & -\beta\, Y_{t}\, d{t}+J_{t}\, d{N}_{t},\label{power}
+		\end{eqnarray}
+
+	$\alpha^{P}$ and $\beta$ are speeds of mean-reversion for the smooth and the jump component of power prices. 
+
+	$N$ is a Poisson process with intensity $\lambda$. 
+
+	$J_{t}$ are independent identically distributed (i.i.d) random variables representing the jump size. 
+
+
+Seasonal components 
+	$g(t)$ and $f(t)$ are seasonal trend components for gas and power, respectively, defined as
+
+	\begin{eqnarray}
+	f(t) & = & a_{1}+a_{2}\, t+a_{3}\cos(a_{5}+2\pi t)+a_{4}\cos(a_{6}+4\pi t),\nonumber \\
+	g(t) & = & b_{1}+b_{2}\, t+b_{3}\cos(b_{5}+2\pi t)+b_{4}\cos(b_{6}+4\pi t),\nonumber \\
+	\label{grseasonality}
+	\end{eqnarray}
+
+	where $a_{1}$ and $b_{1}$ may be viewed as production expenses,
+	$a_{2}$ and $b_{2}$ are the slopes of increase in these costs. The
+	rest of the parameters are responsible for two seasonal changes in
+	summer and winter respectively. 
+
+	Dependence Structure In the current setting we also assume that
+	$W^{E}$, $W^{G}$ and $N$ are mutually independent processes, but
+	there is some correlation between $W^{P}$ and $W^{G}$
+
+	\begin{equation}
+	d{W}_{t}^{P}\, d{W}_{t}^{G}=\rho\, d{t}.\label{corr}
+	\end{equation}
+
+
+Data sources 
+%\item All the data sets are taken from the European Energy Exchange, \textttwww.eex.com.
+	Phelix Day Base: It is the average price of the hours 1 to 24 for
+	electricity traded on the spot market. It is calculated for all calendar
+	days of the year as the simple average of the auction prices for the
+	hours 1 to 24 in the market area Germany/Austria. (EUR/MWh), 
+
+	NCG: Delivery is possible at the virtual trading hub in the market
+	areas of NetConnect Germany GmbH \& Co KG. daily price (EUR/MWh), 
+
+	Emission certificate daily price: One EU emission allowance confers
+	the right to emit one tonne of carbon dioxide or one tonne of carbon
+	dioxide equivalent. (EUR/EUA). 
+
+	We cover the last three years: 25.09.2009 - 08.06.2012. 
+
+
+Price Paths, 25.09.2009 - 08.06.2012. 
+	\begin{figure}[htp]
+	\centering
+	\includegraphics[width=\textwidth]{../../../pics/prices.pdf}
+	%\caption{Power, gas and carbon prices.}
+	\label{prices}
+	\end{figure}}
+
+
+Clean Spark Spread, 25.09.2009 - 08.06.2012. 
+	\begin{figure}[htp]
+	\centering
+	\includegraphics[width=\textwidth]{../../../pics/spread.pdf}
+	%\caption{Spark spread path.}
+	\label{spread}
+
+
+\subsubsection{Simple Valuation}
+Real Option Approach 
+	Here we value the flexibility of the power plant as well. In particular,
+	the impact of the volatility of the underlying price process on the
+	plant value becomes clear. 
+
+	The approach allows to formulate optimisation problems which allow
+	to maximise the value of the flexibility. 
+
+	Flexibility adds value compared to the discounted cash flow approach. 
+
+
+Real Option Approach -- Forward Based 
+	A first step is to consider the flexibility within a period exactly
+	as in traded forwards (e.g. flexibility only for a whole month), which
+	need to be liquidly traded. 
+
+	Then the power plant is just a sequence of call-options on the clean
+	(spark) spread (as we assume that there are no further restrictions) 
+
+	We can then use Kirk's approximation with the appropriate forward
+	specification. 
+
+
+Heath-Jarrow-Morton (HJM) Approach
+	The Heath-Jarrow-Morton model uses the entire forward rate curve as
+	(infinite-dimensional) state variable. The dynamics of the forward
+	rates $F(t,T)$ are \foreignlanguage{english}{\textit{exogenously}
+	given by 
+	$$
+	dF(t,T)=\alpha(t,T)dt+\s(t,T)dW(t).
+	$$
+	For any fixed maturity $T$, the initial condition of the stochastic
+	differential equation is determined by the current value of the empirical
+	(observed) forward rate for the future date $T$ which prevails at
+	time $0$.}
+
+
+Factor GBM Specification 
+	\textbf{One-Factor GBM:} Here the volatility is 
+	$$
+	\sigma_1(t,T)=e^{-\kappa (T-t)}\sigma
+	$$
+	and
+	$$
+	dF(t,T)=F(t,T)\sigma_1(t,T)dW(t)
+	$$
+
+	\textbf{Two-Factor GBM Specification:} 
+	ere the volatilities are 
+	$$
+	\sigma_1(t,T)=e^{-\kappa (T-t)}\sigma_1 \; \mbox{ and } \; \sigma_2>0
+	$$
+	and
+	$$
+	\frac{dF(t,T)}{F(t,T)}=\sigma_1(t,T)dW_1(t)+\sigma_2dW_2(t)
+	$$
+
+
+Modelling Approach 
+	We use the HJM-framework to model the forward dynamics directly. 
+
+	We distinguish between forward contracts with a fixed time delivery
+	and forward contracts with a delivery period, called \emph{swaps}. 
+
+	A typical lognormal dynamics of the swap price is, 
+	\begin{equation}
+	dF(t,T_{1},T_{2})=\Sigma(t,T_{1},T_{2})F(t,T_{1},T_{2})\, dW(t).\label{eqn: lognormal dynamics}
+	\end{equation}
+	
+	The only parameter in this model is the volatility function $\Sigma$
+	which has to capture all movements of the swap price and especially
+	the time to maturity effect.
+
+Volatility Functions 
+	We assume that the swap price dynamics for
+	all swaps is given by (\ref{eqn: lognormal dynamics}) where $\Sigma(t,T_{1},T_{2})$
+	is a continuously differentiable and positive function.
+
+	Starting out with a given volatility function for a fixed time forward
+	contract the volatility function $\Sigma$ for the swap contract is
+	given by 
+	\begin{equation}
+	\Sigma(t,T_{1},T_{2})=\int_{T_{1}}^{T_{2}}\hat{w}(u,T_{1},T_{2})\sigma(t,u)\, du.\label{eqn: swap volatility creation}
+	\end{equation}
+
+
+Forward Schwartz Volatility 
+	For the related volatility function of the forward we obtain 
+	\begin{equation}
+	\sigma(t,u)=ae^{-b(u-t)}\label{vol-schwartz}
+	\end{equation}
+	where $a,b>0$ are constant. 
+
+	The time to maturity effect is modeled by a negative exponential
+	function. 
+
+	When the time to maturity tends to infinity the volatility function
+	converges to zero. 
+
+	The exponential function causes that the volatility increases as the
+	time to maturity decreases which leads to an increased volatility
+	when the contract approaches the maturity. 
+
+
+Swap Schwartz Volatility
+	Applying this forward volatility to (\ref{eqn: swap volatility creation}) the swap volatility is: 
+		\begin{align}
+		\Sigma(t,T_{1},T_{2}) & =a\,\varphi(T_{1},T_{2})
+		\end{align}
+		where 
+		\begin{align}
+		\varphi(T_{1},T_{2})=\frac{e^{-b(T_{1}-t)}-e^{-b(T_{2}-t)}}{b(T_{2}-T_{1})}\label{volatility function varphi}
+		\end{align}
+	The Black-76 specification of the forward volatility can be obtained
+	if $\varphi(T_{1},T_{2})=1$, that is $b=0$ in (\ref{vol-schwartz}).
+
+	The associated swap price volatility is then given by $\Sigma(t,T_{1},T_{2})=a$.
+
+  
+A Two-Factor Model 
+	For a fixed delivery start $T$ and delivery period 1 month, let
+	the dynamics of a Forward $F_{t,T}$ be given by the two factor model:
+		\begin{eqnarray*}
+		F(t,T) & = & F(0,T)\exp\left\{ \mu(t,T)+\int_{0}^{t}\hat{\sigma_{1}}(s,T)dW_{s}^{(1)}+\sigma_{2}W_{t}^{(2)}\right\} 
+		\end{eqnarray*}
+
+	$W^{(1)}$ and $W^{(2)}$ independent Brownian motions 
+
+	$\hat{\sigma_{1}}(s,T)=\sigma_{1}e^{-\kappa(T-s)}$ 
+
+	$\sigma_{1}$, $\sigma_{2}$, $\kappa>0$ constants 
+
+	$\mu(t,T)$ being the risk-neutral martingale drift 
+
+
+Model Parameters
+$\sigma_{1}$ affects the level at the short end of the volatility curve
+	\begin{center}
+	\includegraphics[height=6cm, width=10cm]{../../../pics/sigma1}
+	\par\end{center}
+
+ $\kappa$ affects the slope of the volatility curve at the short end
+		\begin{center}
+		\includegraphics[height=6cm, width=10cm]{../../../pics/kappa}
+		\end{center}
+
+ $\sigma_{2}$ affects the level at the long end of the volatility curve
+	\begin{center}
+	\includegraphics[height=6cm, width=10cm]{../../../pics/sigma2}
+	\par\end{center}
+
+
+\subsubsection{Simulation-based Valuation}
+
+Present Value of a Power Plant 
+	The operator acts on the spot market. The specific daily configuration
+	of the power plant is not traded, so we use historical probabilities. 
+
+	We don't consider any further restrictions. 
+
+	The plant runs for another few years, so future values will be discounted. 
+
+
+Spark Spread Analysis I
+	In our investigation we will focus on the clean spark spread to model
+	the value of virtual gas power plant. We will now use spot price processes
+	in order to assess the day-by-day risk position of such a plant. Thus,
+	we will model the daily profit (or loss) of a power plant as
+		\begin{equation}
+		V_{t}=\max\{P_{t}-h\, G_{t}-c_{E}\; E_{t},0\},\label{spark_spread_value}
+		\end{equation}
+	where $P_{t}$ is the power price, $G_{t}$ is the gas price, $E_{t}$
+	is the carbon certificate price, $h$ is the heat rate, $c_{E}$ emission
+	conversion rate. 
+
+
+Spark Spread Analysis II 
+	We compute the spark spread value $V_{t}$ given in (\ref{spark_spread_value})
+	for every day $t$ for a time period of three years. 
+
+	The formula for the total value then read 
+		$$VPP(t,T) = \int_{t}^{T}e^{-r(s-t)}\,V(s)\,ds.$$
+
+	Then, by fixing all the parameters except of one (e.g. correlation)
+	and setting the shift value (e.g. 1\%), we compute shifted up and
+	down spark spread values, i.e. $V_{t}^{up}$ and $V_{t}^{down}$,
+	which we may use for sensitivity analysis. 
+
+
+Power Plant Analysis I 
+	We compute the value of the power plant
+	(VPP) by means of Monte Carlo simulations. For a fixed large number
+	$N$ and a fixed period $T=3$ years we have 
+	$$VPP(t,T) = \frac{1}{N}\sum_{i=1}^{N}VPP_i(t,T),$$ where $$VPP_i(t,T) = \sum_{s=t}^{T}e^{-r(T-s)}\,V_i(s).$$
+
+
+Power Plant Analysis II 
+	We also compute shifted both up and down power plant values, i.e.
+	$VPP^{up}(t,T)$ and $VPP^{down}(t,T)$ (i.e. w.r.t. shifted spark
+	spread values) and calculate the sensitivity 
+		$$sVPP(\theta_0) = \frac{VPP^{up}(t,T) - VPP^{down}(t,T)}{2 \cdot shift}.$$
+
+	Finally, we compute the bid and ask prices, i.e. we use the closed
+	formula for AVaR to get the risk-captured prices by subtracting and
+	adding risk-adjustment value to $VPP(t,T)$ respectively. 
+
+	For a specified significance level $\alpha\in(0,1)$ this risk-adjustment
+	value is computed as 
+		$$\frac{\varphi(\Phi^{-1}(\alpha))}{\alpha}\sqrt{\frac{sVPP(\theta_0)' \cdot \Sigma \cdot sVPP(\theta_0) }{N}}.$$
+
+
+Parameter-risk implied bid-ask spread w.r.t. correlation parameter, Gaussian jumps. 
+	\begin{columns}[t]
+	\begin{column}[l]{0.6\textwidth}
+	\includegraphics[width=\textwidth]{../../../pics/ba_prices_alpha_corr_normal_5000.pdf}
+	\end{column}
+	\begin{column}[r]{0.6\textwidth}
+	\includegraphics[width=\textwidth]{../../../pics/ba_width_alpha_corr_normal_5000.pdf}
+	\end{column}
+	\end{columns}
+
+Parameter-risk implied bid-ask spread w.r.t. the gas
+	\begin{columns}[t]
+	\begin{column}[l]{0.6\textwidth}
+	\includegraphics[width=\textwidth]{../../../pics/ba_prices_alpha_gas_normal_5000.pdf}
+	\end{column}
+	\begin{column}[r]{0.6\textwidth}
+	\includegraphics[width=\textwidth]{../../../pics/ba_width_alpha_gas_normal_5000.pdf}
+	\end{column}
+	\end{columns}
+
+
+Estimation Procedures: Emissions and Gas 
+	Apply a standard procedure to de-seasonalize gas (don't change notation). 
+
+	$\log E_{t}$ and $\log G_{t}$ are normally distributed. 
+
+	Thus, we can use standard Maximum Likelihood Methods. 
+
+
+Estimation Procedures: Power I 
+	The estimation procedure for the power price includes several steps: 
+
+	Estimation of the seasonal trend and deseasonalisation. 
+
+	With an iterative procedure we filter out returns with absolute values
+	greater than three times the standard deviation of the returns of
+	the series at the current iteration. The process is repeated until
+	no further outliers can be found. 
+
+	As a result we obtain a standard deviation of the jumps, $\sigma_{j}$,
+	and a cumulative frequency of jumps, $l$. The latter is defined as
+	the total number of filtered jumps divided by the annualised number
+	of observations. 
+
+
+Estimation Procedures: Power II 
+	Once we have filtered the $X_{t}$ process, we can identify it as
+	a first order autoregressive model in continuous time, i.e. so-called
+	AR(1) process. Discretizing the process and estimating it by maximum
+	likelihood method (MLE) yields the estimates. 
+
+%\item To estimate the mean-reversion rate for the jump process one can take an advantage of the approach based on the autocorrelation function (ACF) suggested by Barndorff-Nielsen, %Shephard (2001) (implemented Benth, Nazarova, Kiesel 2011).
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Energy Empirics %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\sectionEmpirical Analysis of Commodity Returns \subsectionMarginal Distributions
+Marginal Distributions %\vspace-1cm
+The analysis consists of following commodities:\\
+ Power (Baseload), Brent Crude Oil, Coal, Natural Gas, CO$_{2}$ allowances
+
+We highlight important features using some of them.
+
+The commodities have a wide variety of different statistical properties,
+e. g. 
+
+\begin{center}
+\begin{figure}
+\includegraphics[width=0.45\textwidth,bb = 0 0 200 100, draft, type=eps]{../../../pics/qqoil.pdf}
+\includegraphics[width=0.45\textwidth,bb = 0 0 200 100, draft, type=eps]{../../../pics/qqpower.pdf} 
+\end{figure}
+
+\par\end{center}
+
+ Marginal Distributions -- Basic Statistics {\small{}}
+\begin{table}[ht]
+{\small{\vspace{0.5cm}
+ }}{\small \par}
+
+\centering{}{\small{}}%
+\begin{tabular}{c|c|c|c|c}
+ & {\small{Power2007}} & {\small{Brent2007}} & {\small{Coal2007}} & {\small{Carbon2007}}\tabularnewline
+\hline 
+{\small{Length}} & \multicolumn{4}{c}{{\small{- 314 -}}}\tabularnewline
+{\small{Minimum}} & {\small{-0.070490}} & {\small{-0.037960}} & {\small{-0.034940}} & {\small{-0.336500}}\tabularnewline
+{\small{Maximum}} & {\small{0.088390}} & {\small{0.059270}} & {\small{0.025550}} & {\small{0.569600}}\tabularnewline
+{\small{Mean}} & {\small{0.001237}} & {\small{0.001497}} & {\small{0.000180}} & {\small{0.000094}}\tabularnewline
+{\small{Median}} & {\small{0.001185}} & {\small{0.001427}} & {\small{0.000658}} & {\small{0.002574}}\tabularnewline
+{\small{SE Mean}} & {\small{0.000721}} & {\small{0.000796}} & {\small{0.000551}} & {\small{0.003025}}\tabularnewline
+{\small{Variance}} & {\small{0.000163}} & {\small{0.000199}} & {\small{0.000095}} & {\small{0.002873}}\tabularnewline
+{\small{Skewness}} & {\small{-0.185179}} & {\small{0.212642}} & {\small{-0.332898}} & {\small{1.967920}}\tabularnewline
+{\small{Excess kurtosis}} & {\small{11.680823}} & {\small{0.584996}} & {\small{0.452510}} & {\small{48.843905}}\tabularnewline
+\end{tabular}{\small{\caption{{\small{Basic statistics of the 2007 log-return series}}}
+}}
+\end{table}
+{\small \par}
+
+ 
+
+Stylized facts %\vspace-1.5cm
+
+
+\begin{center}
+How non-normal are power prices?\\
+ 
+\par\end{center}
+
+Stylized facts %\vspace-1.5cm
+
+
+\begin{center}
+How non-normal are power prices?\\
+ Skewness: 0.07 \hspace{2cm} Excess Kurtosis: 2.31\\
+ \includegraphics[width=0.7\textwidth,height=0.7\textheight,bb = 0 0 200 100, draft, type=eps]{../../../pics/DChistogram.pdf} 
+\par\end{center}
+
+Stylized facts %\vspace-1.5cm
+
+
+\begin{center}
+How non-normal are power prices?\\
+ Skewness: 1.95 \hspace{2cm} Excess Kurtosis: 25.93\\
+ \includegraphics[width=0.7\textwidth,height=0.7\textheight,bb = 0 0 200 100, draft, type=eps]{../../../pics/powerhistogram.pdf} 
+\par\end{center}
+
+
+
+\subsectionMultivariate Parametric Modelling \subsubsectionRequirements for a Joint Distribution
+Towards a multivariate distribution -- Requirements %\vspace-1.5cm
+
+
+Distribution must reflect statistical properties, at least: 
+
+non-normality 
+
+peaked center, heavy tails 
+
+skewness and excess kurtosis 
+
+Distribution must be tractable, i. e. it should allow for: 
+
+Conclusion of portfolio distribution from joint distribution (stable
+under convolution) 
+
+Computation of value-at-risk/expected shortfall 
+
+
+
+Towards a multivariate distribution -- Requirements
+
+Univariate analyses support the use of NIG (applied to spot power
+by Benth \& Saltyte-Benth) and hyperbolic distributions (applied to
+power futures by Eberlein \& Stahl, to oil and natural gas by Kat
+\& Oomen), Multivariate distributional analysis are not available
+thus far.\\
+
+
+Suggestion: Use a multivariate extension of the distributions above,
+i. e. multivariate generalized hyperbolic distributions (GH)
+
+ \subsubsectionGeneralized Hyperbolic Distributions
+
+GH-distributions GH-distribution has a representation as Normal
+mean-variance mixture, i. e. $X\sim GH$ (multivariate) if 
+$$
+X\stackrel{d}{=}\mu+W\gamma+\sqrt{W}AZ
+$$
+where $Z$ is a $k$-dimensional standard Normal, $W$ Generalized
+Inverse Gaussian random variable (mixture variable) independent of
+$Z$, $A\in\mathbb{R}^{d\times k}$ and $\mu,\gamma\in\mathbb{R}^{d}$.
+
+GH-distributions %\vspace-2cm
+$$
+X\stackrel{d}{=}\mu+W\gamma+\sqrt{W}AZ
+$$
+%\vspace-1cm
+
+
+Moments of $X$: 
+
+$\E[X]=\mu+\gamma\E[W]$ 
+
+$\Var[X]=AA'\E[W]+\gamma\gamma'\Var[W]$\\[-1.5cm] 
+
+$\mu$ controls mean value\\[-1.5cm] 
+
+$\gamma$ controls skewness ($\gamma=0$: symmetric)\\[-1.5cm] 
+
+$\Sigma:=AA'$ controls covariance\\[-1.5cm] 
+
+$W\sim GIG(\lambda,\chi,\psi)$ controls tail-behaviour 
+
+GH-distributions %\vspace-1.5cm
+Further important properties are: %\vspace-0.5cm
+
+
+GH-distribution has heavy tails. 
+
+Density is explicitly known $\rightarrow$ Maximum-Likelihood estimation. 
+
+Distribution is closed under linear combinations $\rightarrow$ Portfolio
+is GH-distributed. 
+
+GH-distribution is infinitely divisible $\rightarrow$ Levy-processes 
+
+GH-distributions
+
+Well-known special cases are: 
+
+NIG ($\lambda=-1/2$, successful in power markets)\\[-1.5cm] 
+
+Hyperbolic ($\lambda=1$, successful in power, gas and oil markets)\\[-1.5cm] 
+
+$t$-distribution ($\lambda=-1/2\nu,\chi=\nu,\psi=0,\gamma=0,\nu>0$) 
+
+ %\vspace-2cm
+
+
+\begin{center}
+\begin{figure}
+\includegraphics[width=0.9\textwidth,bb = 0 0 200 100, draft, type=eps]{../../../pics/densitiespower.pdf}
+%\includegraphics[width=0.49\textwidth]pics/logdensitiespower.pdf
+\end{figure}
+
+\par\end{center}
+
+ %\vspace-2cm
+
+
+\begin{center}
+%\includegraphics[width=\textwidth]pics/densitiespower.pdf
+\begin{figure}
+\includegraphics[width=0.9\textwidth,bb = 0 0 200 100, draft, type=eps]{../../../pics/logdensitiespower.pdf} 
+\end{figure}
+
+\par\end{center}
+
+ Further properties of GH-distributions -- Computation of VaR/ES
+%\vspace-1.5cm
+Once the joint distribution is specified, we want to analyze energy
+portfolios, e. g. compute risk measures. We use the following setting: 
+
+$X_{t+1}^{(i)}:=\frac{S_{t+1}^{(i)}-S_{t}^{(i)}}{S_{t}^{(i)}}$ denotes
+relative returns of commodity $i$. 
+
+$X:=-\sum\omega_{i}S_{t}^{(i)}X_{t+1}^{(i)}$ denotes loss of a portfolio
+consisting of $\omega_{i}$ shares of commodity $i$ during the period
+$[t,t+1]$. 
+
+ Further properties of GH-distributions -- Computation of VaR/ES 
+
+If $X_{t}^{(i)}$ are jointly GH-distributed, then $X$ is univariate
+GH-distributed 
+
+Compute value-at-risk (numerically) via $VaR_{\alpha}(X)=F_{X}^{-1}(\alpha)$ 
+
+Expected shortfall is defined (for absolute continuous distributions)
+via $ES_{\alpha}(X)=\frac{1}{1-\alpha}\int_{\alpha}^{1}VaR_{u}(X)du$.
+In case of GH-distributions this can be computed explicitly: 
+\begin{eqnarray*}
+ES_{\alpha}(X) & = & \mu+\gamma\BE(W)+\sigma\frac{\varphi(\Phi^{-1}(\alpha))}{1-\alpha}\BE(\sqrt{W})
+\end{eqnarray*}
+
+
+
+
+\subsubsectionRisk Management Application Some statistical results
+%\vspace-1.5cm
+Results are reported for commodity futures/swaps (power, oil, gas,
+CO$_{2}$) with delivery during 2007. We worked on time series with
+1.5 years of daily prices.
+
+Results are: %\vspace-0.5cm
+
+
+Mardia's tests reject the use of multivariate normal distribution.\\[-1.3cm] 
+
+Likelihood ratio tests prefer any of the alternative distributions
+to the Normal\\[-1.3cm] 
+
+Among all the tested alternatives, we recommend the NIG. 
+
+
+
+Coal-fired Power Plant We consider a portfolio that can be viewed
+roughly as the year production/consumption of a coal-fired power plant
+that has a total output capacity of 1TW: 
+
+$10^{6}$ power contracts (1 contract delivers 1MW during the entire
+year), long \\[-1.5cm] 
+
+330,000 t coal, short\\[-1.5cm] 
+
+900,000 t CO$_{2}$, short 
+
+Coal-fired Power Plant %\vspace-2cm
+\begin{figure}
+%\includegraphics[width=0.49\textwidth]pics/EScoal09ret.pdf
+
+
+\centering{}\includegraphics[width=0.85\textwidth,bb = 0 0 200 100, draft, type=eps]{../../../pics/VARcoal09ret.pdf} 
+\end{figure}
+
+
+Coal-fired Power Plant %\vspace-2cm
+\begin{figure}
+\centering{}\includegraphics[width=0.85\textwidth,bb = 0 0 200 100, draft, type=eps]{../../../pics/EScoal09ret.pdf}
+%\includegraphics[width=0.49\textwidth]pics/VARcoal09ret.pdf
+\end{figure}
+
+
+Coal-fired Power Plant %\vspace-1cm
+
+
+\begin{center}
+Normal VaR $>$ NIG VaR? 
+\par\end{center}
+
+%%\vspace-2cm
+95\%-quantile: \hspace{2cm} 0.034 (Normal) \hspace{1cm}\\
+ %\vspace-1cm
+
+
+\begin{center}
+\includegraphics[width=0.7\textwidth,height=0.7\textheight,bb = 0 0 200 100, draft, type=eps]{../../../pics/DChistogram.pdf} 
+\par\end{center}
+
+Coal-fired Power Plant %\vspace-1cm
+
+
+\begin{center}
+Normal VaR $>$ NIG VaR? 
+\par\end{center}
+
+%%\vspace-2cm
+95\%-quantile: \hspace{1cm} 0.034 (Normal) \hspace{1cm}$<$ \hspace{1cm}
+0.041 (NIG)\\
+ %\vspace-1cm
+
+
+\begin{center}
+\includegraphics[width=0.7\textwidth,height=0.7\textheight,bb = 0 0 200 100, draft, type=eps]{../../../pics/DCNIG.pdf} 
+\par\end{center}
+
+Coal-fired Power Plant %\vspace-1cm
+
+
+\begin{center}
+Normal VaR $>$ NIG VaR? 
+\par\end{center}
+
+95\%-quantile: \hspace{1cm} 0.073 (Normal) \hspace{1cm} \\
+ %\vspace-1cm
+
+
+\begin{center}
+\includegraphics[width=0.7\textwidth,height=0.7\textheight,bb = 0 0 200 100, draft, type=eps]{../../../pics/powerhistogram.pdf} 
+\par\end{center}
+
+Coal-fired Power Plant %\vspace-1cm
+
+
+\begin{center}
+Normal VaR $>$ NIG VaR? 
+\par\end{center}
+
+95\%-quantile: \hspace{1cm} 0.073 (Normal) \hspace{1cm}$>$ \hspace{1cm}
+0.053 (NIG) \\
+ %\vspace-1cm
+
+
+\begin{center}
+\includegraphics[width=0.7\textwidth,height=0.7\textheight,bb = 0 0 200 100, draft, type=eps]{../../../pics/powerNIG.pdf} 
+\par\end{center}
+
+ \subsubsectionDiscussion of multivariate GH-model %\subsectionMarginals
+Shortcomings -- Marginals %\vspace-1.5cm
+
+
+\begin{center}
+QQplot using a fitted joint NIG 
+\begin{figure}
+\centering{}\includegraphics[width=0.4\textwidth,bb = 0 0 200 100, draft, type=eps]{../../../pics/marginalpower.pdf}
+\includegraphics[width=0.4\textwidth,bb = 0 0 200 100, draft, type=eps]{../../../pics/marginalcoal.pdf} 
+\end{figure}
+
+\par\end{center}
+
+ Shortcomings -- Marginals %\vspace-1.5cm
+
+
+\begin{center}
+QQplot using a fitted joint NIG 
+\begin{figure}
+\centering{}\includegraphics[width=0.4\textwidth,bb = 0 0 200 100, draft, type=eps]{../../../pics/marginaloil.pdf}
+\includegraphics[width=0.4\textwidth,bb = 0 0 200 100, draft, type=eps]{../../../pics/marginalcarbon.pdf} 
+\end{figure}
+
+\par\end{center}
+
+
+
+Shortcomings -- Marginals %\vspace-1.5cm
+%\item Unterschiedliches Tail-Verhalten macht auch die implizite Kalibrierung an Optionen mit unterschiedlichen Lieferperioden/Underlyings instabil.
+
+
+Same tail-behaviour in all components of 
+$$
+X\stackrel{d}{=}\mu+W\gamma+\sqrt{W}AZ
+$$
+since $W$ is the determinant for tail - and common to all marginals. 
+
+If $X$ and $Y$ are two GH-distributed random variables driven by
+different $W$s, we loose the convolution property ($X+Y$ is not
+GH-distributed). 
+
+Exception: NIG 
+
+ \subsectionCopula-based Modelling Copula Approach Outline %\vspace-1cm
+
+
+Estimation of marginal distribution of several commodity returns 
+
+Estimation of several Copulas to obtain joint distributions 
+
+Applications: \textbf{Risk Management} (VaR, ES, Portfolio Analysis) 
+
+
+
+\subsubsectionMarginal Distributions Marginal Distributions
+
+For each model 
+
+the estimated parameters 
+
+the Akaike Information Criterion (AIC), which is defined to be 
+$$
+AIC(M_{j})=-2log(L_{j}(\hat{\theta}_{j};X))+2k_{j}\ ,j\in\{1,\ldots,n\}
+$$
+
+
+the log-likelihood 
+
+the p-value of a likelihood ratio test against the asymmetric generalized
+hyperbolic model (which is the most general model we consider) 
+
+are provided.
+
+
+
+Marginal Distributions - Example: Power
+
+
+
+{\tiny{}}
+\begin{table}[ht]
+{\tiny{\vspace{0.5cm}
+ %\begincenter
+ }}%
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
+{\tiny{model}} & {\tiny{$\lambda$}} & {\tiny{$\overline{\alpha}$}} & {\tiny{$\mu$}} & {\tiny{$\sigma$}} & {\tiny{$\gamma$}} & {\tiny{AIC}} & {\tiny{log-likelihood}} & {\tiny{p-value}}\tabularnewline
+\hline 
+{\tiny{t}} & {\tiny{-1.227624}} & {\tiny{0}} & {\tiny{0.001529}} & {\tiny{0.015459}} & {\tiny{0}} & {\tiny{-1976.120}} & {\tiny{991.0599}} & {\tiny{0.793012}}\tabularnewline
+{\tiny{NIG-s}} & {\tiny{-0.5}} & {\tiny{0.316160}} & {\tiny{0.001429}} & {\tiny{0.012340}} & {\tiny{0}} & {\tiny{-1974.458}} & {\tiny{990.2291}} & {\tiny{0.345514}}\tabularnewline
+{\tiny{sk- t}} & {\tiny{-1.239572}} & {\tiny{0}} & {\tiny{0.001713}} & {\tiny{0.015189}} & {\tiny{-0.000614}} & {\tiny{-1974.355}} & {\tiny{991.1773}} & {\tiny{0.632315}}\tabularnewline
+{\tiny{ghyp-s}} & {\tiny{-1.119172}} & {\tiny{0.129836}} & {\tiny{0.001511}} & {\tiny{0.012967}} & {\tiny{00}} & {\tiny{-1974.338}} & {\tiny{991.1689}} & {\tiny{0.620085}}\tabularnewline
+{\tiny{NIG}} & {\tiny{-0.5}} & {\tiny{0.319912}} & {\tiny{0.001582}} & {\tiny{0.012314}} & {\tiny{-0.000346}} & {\tiny{-1972.594}} & {\tiny{990.2971}} & {\tiny{0.158394}}\tabularnewline
+{\tiny{ghyp}} & {\tiny{-1.131927}} & {\tiny{0.130704}} & {\tiny{0.001714}} & {\tiny{0.012900}} & {\tiny{-0.000477}} & {\tiny{-1972.584}} & {\tiny{991.2918}} & {\tiny{NA}}\tabularnewline
+{\tiny{hyp-s}} & {\tiny{1}} & {\tiny{0.000126}} & {\tiny{0.001184}} & {\tiny{0.011303}} & {\tiny{0}} & {\tiny{-1963.430}} & {\tiny{984.7149}} & {\tiny{0.001392}}\tabularnewline
+{\tiny{hyp}} & {\tiny{1}} & {\tiny{0.000003}} & {\tiny{0.001174}} & {\tiny{0.011305}} & {\tiny{0.000057}} & {\tiny{-1961.439}} & {\tiny{984.7197}} & {\tiny{0.000288}}\tabularnewline
+{\tiny{N }} & {\tiny{0}} & {\tiny{0}} & {\tiny{0.001237}} & {\tiny{0.000163}} & {\tiny{0}} & {\tiny{-1846.459}} & {\tiny{924.2295}} & {\tiny{0 }}\tabularnewline
+\end{tabular}{\tiny{\caption{{\tiny{Marginal models for the Power2007 log-return series}}}
+}}{\tiny \par}
+
+{\tiny{%\endcenter
+ }}
+\end{table}
+{\tiny \par}
+
+ \subsubsectionCopulas Copula Modelling
+
+Let $F_{i}(t)$ be a marginal return distribution of asset $i$.
+
+One can use of a copula function $C$ to obtain the multivariate distribution
+$$
+F(t_{1},\ldots t_{n})=C(F_{1}(t_{1}),\ldots,F_{n}(t_{n})).
+$$
+
+
+Flexibility in the choice of copulae allows to consider several features
+of the dependence structure.
+
+
+
+ Facts on Copula Functions
+
+A copula $C$ is a multivariate distribution with standard uniform
+marginal distributions. That is $C$ is a mapping $[0,1]^{m}\rightarrow[0,1]$
+with 
+
+ $C(u_{1},\ldots,u_{m})$ is increasing in each component $u_{i}$ 
+
+ $C(1,\ldots,1,u_{i},1,\ldots,1)=u_{i}$ for all $i\in\{1,\ldots,m\}$,
+$u_{i}\in[0,1]$ 
+
+ For all $(a_{1},\ldots,a_{m}),(b_{1},\ldots,b_{m})\in[0,1]^{m}$
+with $a_{i}\leq b_{i}$ we have: 
+$$
+\sum_{i_{1}=1}^{2}\cdots\sum_{i_{d}=1}^{2}(-1)^{i_{1}+\ldots+i_{d}}C(u_{1,i_{1}},\ldots,u_{m,u_{m}})\geq0,
+$$
+where $u_{j,1}=a_{j}$ and $u_{j,2}=b_{j}$ for all $j\in\{1,\ldots,m\}$. 
+
+
+
+ Facts on Copula Functions
+
+Thus a copula function is a multivariate distribution function such
+that its marginal distributions are standard uniform. We use the notation
+$$
+C:[0,1]^{m}\rightarrow[0,1],\A(u_{1},\ldots,u_{m})\rightarrow C(u_{1},\ldots,u_{m}).
+$$
+
+
+If $\bv{X}=(X_{1},\ldots,X_{m})'$ has joint distribution $F$ with
+continuous marginals $F_{1},\ldots,F_{m}$, then the distribution
+function of the transformed vector 
+$$
+(F_{1}(X_{1}),\ldots,F_{m}(X_{m}))
+$$
+is a copula $C$, and 
+$$
+F(x_{1},\ldots,x_{m})=C(F_{1}(x_{1}),\ldots,F_{m}(x_{m})).
+$$
+
+
+
+
+ Examples of Copula Functions
+
+The Gaussian copula is given by: 
+$$
+C_{\Phi,\Gamma}^{m}(\bv{u})=\bv{\Phi}_{\Gamma}(\Phi^{-1}(u_{1}),\ldots,\Phi^{-1}(u_{m})),
+$$
+where $\bv{\Phi}_{\Gamma}$ denotes the multivariate Gaussian distribution
+function with linear correlation matrix $\Gamma$.
+
+The $t$-copula can be expressed by: 
+$$
+C_{t,\nu,\Gamma}^{m}(\bv{u})=t_{\nu,\Gamma}^{m}(t_{\nu}^{-1}(u_{1}),\ldots,t_{\nu}^{-1}(u_{m})),
+$$
+where $t_{\nu,\Gamma}^{m}$ denotes the distribution function of an
+m-variate $t$-distributed random vector with parameter $\nu>2$ and
+linear correlation matrix $\Gamma$. Furthermore, $t_{\nu}^{-1}$
+is the inverse of the univariate $t$-distribution function with parameter
+$\nu$.
+
+
+
+Examples of Copulas
+
+\begin{center}
+\begin{figure}
+\includegraphics[width=0.6\textwidth,bb = 0 0 200 100, draft, type=eps]{../../../pics/copula-density.pdf} 
+\end{figure}
+
+\par\end{center}
+
+
+
+Archimedean copula
+
+An Archimedean copula function $C:[0,1]^{I}\rightarrow[0,1]$ is a
+copula function which can be represented in the following form 
+$$
+C(\bv{x})=\varphi^{-1}\left(\sum_{i=1}^{I}\varphi(x_{i})\right)
+$$
+with a suitable function $\varphi:[0,1]\rightarrow\mathbb{R}_{t}$
+with $\varphi(0)=\infty,\varphi(1)=0$. The function $\varphi$ is
+called the generator of the copula.
+
+Examples of this class are 
+
+Clayton: $\varphi(t)=(t^{-\theta}-1);\varphi^{-1}(s)=(1+s)^{-1/\theta},\;\theta\geq0$.\\
+ Lower tail dependency, no upper tail dependency. 
+
+Gumbel: $\varphi(t)=(-\log t)^{\theta},\varphi^{-1}(s)=e^{-s1/\theta},\;\theta\geq1$.\\
+ Upper tail dependency, no lower tail dependency. 
+
+
+
+ Copula Examples
+
+\includegraphics[bb = 0 0 200 100, draft, type=eps]{<}1>{[}height=6cm{]}../../../pics/copulaexamples.pdf
+
+
+
+Copulas
+
+We fit 5 copula models (Normal, t, Frank, Gumbel, Clayton) to the
+data. 
+
+Fitting is done via the IFM (Inference for margins) method, which
+means we fit the marginal models separately, employ the quantile transformation
+on each margin and then fit the copula on this transformed dataset. 
+
+For each margin we choose the best (ranked by its AIC) generalized
+hyperbolic model as seen in the tables before. 
+
+We rank the copulas by their AIC values.
+
+
+
+Copula fit
+
+\begin{table}[ht]
+\vspace{0.5cm}
+ 
+
+\centering{}%
+\begin{tabular}{c|c|c|c}
+name & %
+\parbox[c]{3cm}{%
+\centering number of%
+} &  & \tabularnewline
+fitted parameters & AIC & log-likelihood & \tabularnewline
+\hline 
+t & 7 & -229.780909 & 121.890455\tabularnewline
+normal & 6 & -225.226240 & 118.613120\tabularnewline
+clayton & 1 & -92.833737 & 47.416868\tabularnewline
+frank & 1 & -67.382373 & 34.691187\tabularnewline
+gumbel & 1 & -62.799001 & 32.399500\tabularnewline
+\end{tabular}\caption{Copula models for the year 2007 log-return series}
+\end{table}
+
+
+
+
+Copula fit -- Results
+
+t and normal copula provide the best fit, because 
+
+they have way more parameters to capture the dependence structure 
+
+they have more flexibility to fit the dependence between the margins
+of our models. 
+
+
+
+\subsubsectionRisk Management Application Coal-fired Power Plant
+
+We again compute the Value at Risk (VaR) and the one-day Expected
+Shortfall (ES).
+
+Now we need to simulate the loss distribution of the portfolio
+
+Generate $N:=100000$ realizations of our multivariate copula based
+model; i.e. $N$ realizations of the estimated copula. 
+
+Employ the quantile transform for each margin to get $S_{t}^{(i)}$. 
+
+Transform these samples into realizations of our portfolio loss distribution.
+
+ Coal-fired Power Plant
+
+We consider a coal-fired power plant with an output of $1000000$
+MWh of electricity. To produce this amount of electricity one needs
+$330000$ tons of coal and as a byproduct the firing process generates
+$900000$ tons of CO$_{2}$. So our coal-fired power plant is nothing
+else than the following portfolio: 
+
+a long position of $1000000$ MWh of electricity, 
+
+a short position of $330000$ tons of coal, 
+
+and a short position of $900000$ tons of CO$_{2}$. 
+
+ Coal-fired Power Plant -- Margins {\tiny{}}
+\begin{table}[ht]
+\centering{}{\tiny{}}%
+\begin{tabular}{c|c|c|c|c|c|c|c|c}
+{\tiny{model}} & {\tiny{$\lambda$}} & {\tiny{$\overline{\alpha}$}} & {\tiny{$\mu$}} & {\tiny{$\sigma$}} & {\tiny{$\gamma$}} & {\tiny{AIC}} & {\tiny{log-likelihood}} & {\tiny{p-value}}\tabularnewline
+\hline 
+ & \multicolumn{8}{c}{{\tiny{Power2007}}}\tabularnewline
+\hline 
+{\tiny{t}} & {\tiny{-1.203832}} & {\tiny{0}} & {\tiny{0.001321}} & {\tiny{0.014477}} & {\tiny{0}} & {\tiny{-2561.138}} & {\tiny{1283.569}} & {\tiny{0.843597}}\tabularnewline
+\hline 
+ & \multicolumn{8}{c}{{\tiny{Coal2007}}}\tabularnewline
+\hline 
+{\tiny{hyp}} & {\tiny{1}} & {\tiny{3.139811}} & {\tiny{0.003589}} & {\tiny{0.009880}} & {\tiny{-0.003154}} & {\tiny{-2510.830}} & {\tiny{1259.415}} & {\tiny{0.715009}}\tabularnewline
+\hline 
+ & \multicolumn{8}{c}{{\tiny{Carbon2007}}}\tabularnewline
+\hline 
+{\tiny{t}} & {\tiny{-1.007697}} & {\tiny{0}} & {\tiny{0.003084}} & {\tiny{0.193450}} & {\tiny{0}} & {\tiny{-1655.236}} & {\tiny{830.6180}} & {\tiny{0.719724}}\tabularnewline
+\hline 
+ & \multicolumn{8}{c}{{\tiny{Power2008}}}\tabularnewline
+\hline 
+{\tiny{t}} & {\tiny{-1.535741}} & {\tiny{0}} & {\tiny{0.000637}} & {\tiny{0.009909}} & {\tiny{0}} & {\tiny{-3937.290}} & {\tiny{1971.645}} & {\tiny{0.782617}}\tabularnewline
+\hline 
+ & \multicolumn{8}{c}{{\tiny{Coal2008}}}\tabularnewline
+\hline 
+{\tiny{NIG}} & {\tiny{-0.5}} & {\tiny{4.107861}} & {\tiny{0.004122}} & {\tiny{0.009177}} & {\tiny{-0.003702}} & {\tiny{-3804.225}} & {\tiny{1906.112}} & {\tiny{1}}\tabularnewline
+\hline 
+ & \multicolumn{8}{c}{{\tiny{Carbon2008}}}\tabularnewline
+\hline 
+{\tiny{sk t}} & {\tiny{-1.481606}} & {\tiny{0}} & {\tiny{0.004414}} & {\tiny{0.032939}} & {\tiny{-0.004633}} & {\tiny{-2548.610}} & {\tiny{1278.305}} & {\tiny{0.352221}}\tabularnewline
+\hline 
+\end{tabular}{\tiny{\caption{{\tiny{Marginal models for the 3-variate coal-fired power plant data}}}
+}}
+\end{table}
+{\tiny \par}
+
+ Coal-fired Power Plant -- Copula {\small{}}
+\begin{table}[ht]
+\centering{}{\small{}}%
+\begin{tabular}{c|c|c|c}
+{\small{name}} & {\small{}}%
+\parbox[c]{3cm}{%
+\centering number of%
+} &  & \tabularnewline
+{\small{fitted parameters}} & {\small{AIC}} & {\small{log-likelihood}} & \tabularnewline
+\hline 
+ & \multicolumn{3}{c}{{\small{2007}}}\tabularnewline
+\hline 
+{\small{t}} & {\small{4}} & {\small{-238.455625}} & {\small{123.227812}}\tabularnewline
+{\small{normal}} & {\small{3}} & {\small{-236.101537}} & {\small{121.050768}}\tabularnewline
+{\small{gumbel}} & {\small{1}} & {\small{-115.395942}} & {\small{58.697971}}\tabularnewline
+{\small{frank}} & {\small{1}} & {\small{-114.767269}} & {\small{58.383634}}\tabularnewline
+{\small{clayton}} & {\small{1}} & {\small{-114.432476}} & {\small{58.216238}}\tabularnewline
+\hline 
+ & \multicolumn{3}{c}{{\small{2008}}}\tabularnewline
+\hline 
+{\small{normal}} & {\small{3}} & {\small{-308.304908}} & {\small{157.152454}}\tabularnewline
+{\small{t}} & {\small{4}} & {\small{-306.578106}} & {\small{157.289053}}\tabularnewline
+{\small{frank}} & {\small{1}} & {\small{-130.467471}} & {\small{66.233736}}\tabularnewline
+{\small{clayton}} & {\small{1}} & {\small{-118.717110}} & {\small{60.358555}}\tabularnewline
+{\small{gumbel}} & {\small{1}} & {\small{-99.941605}} & {\small{50.970803}}\tabularnewline
+\end{tabular}{\small{\caption{{\small{Copula models for the 3-variate coal-fired power plant data}}}
+}}
+\end{table}
+{\small \par}
+
+ One Day Risk Measures (Mio EURO) 
+
+{\tiny{}}
+\begin{table}[!ht]
+\centering{}{\tiny{}}%
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
+ & {\tiny{t}} & {\tiny{normal}} & {\tiny{gumbel}} & {\tiny{clayton}} & {\tiny{frank}} & {\tiny{t}} & {\tiny{normal}} & {\tiny{gumbel}} & {\tiny{clayton}} & {\tiny{frank}}\tabularnewline
+\hline 
+ & \multicolumn{5}{c||}{{\tiny{2007, 0,9M t CO$_{2}$}}} & \multicolumn{5}{c}{{\tiny{2007, 0,1M t CO$_{2}$}}}\tabularnewline
+\hline 
+{\tiny{VaR$_{0.9}$}} & {\tiny{0.53}} & {\tiny{0.54}} & {\tiny{0.70}} & {\tiny{0.77}} & {\tiny{0.72}} & {\tiny{0.50}} & {\tiny{0.50}} & {\tiny{0.50}} & {\tiny{0.29}} & {\tiny{0.50}}\tabularnewline
+{\tiny{VaR$_{0.95}$}} & {\tiny{0.77}} & {\tiny{0.77}} & {\tiny{1.01}} & {\tiny{1.13}} & {\tiny{1.07}} & {\tiny{0.75}} & {\tiny{0.74}} & {\tiny{0.76}} & {\tiny{0.44}} & {\tiny{0.76}}\tabularnewline
+{\tiny{VaR$_{0.99}$}} & {\tiny{1.65}} & {\tiny{1.74}} & {\tiny{2.16}} & {\tiny{2.79}} & {\tiny{2.38}} & {\tiny{1.63}} & {\tiny{1.64}} & {\tiny{1.68}} & {\tiny{0.86}} & {\tiny{1.68}}\tabularnewline
+{\tiny{ES$_{0.9}$}} & {\tiny{1.21}} & {\tiny{1.20}} & {\tiny{9.23}} & {\tiny{2.39}} & {\tiny{1.59}} & {\tiny{1.01}} & {\tiny{1.00}} & {\tiny{1.89}} & {\tiny{0.64}} & {\tiny{1.02}}\tabularnewline
+{\tiny{ES$_{0.95}$}} & {\tiny{1.79}} & {\tiny{1.77}} & {\tiny{17.63}} & {\tiny{3.86}} & {\tiny{2.32}} & {\tiny{1.41}} & {\tiny{1.40}} & {\tiny{3.17}} & {\tiny{0.91}} & {\tiny{1.44}}\tabularnewline
+{\tiny{ES$_{0.99}$}} & {\tiny{4.81}} & {\tiny{4.60}} & {\tiny{82.61}} & {\tiny{12.85}} & {\tiny{5.68}} & {\tiny{2.96}} & {\tiny{2.87}} & {\tiny{11.62}} & {\tiny{2.21}} & {\tiny{2.95}}\tabularnewline
+\hline 
+ & \multicolumn{5}{c||}{{\tiny{2008, 0,9M t CO$_{2}$}}} & \multicolumn{5}{c}{{\tiny{2008, 0,1M t CO$_{2}$}}}\tabularnewline
+\hline 
+{\tiny{VaR$_{0.9}$}} & {\tiny{0.53}} & {\tiny{0.53}} & {\tiny{0.71}} & {\tiny{0.79}} & {\tiny{0.72}} & {\tiny{0.49}} & {\tiny{0.49}} & {\tiny{0.49}} & {\tiny{0.28}} & {\tiny{0.48}}\tabularnewline
+{\tiny{VaR$_{0.95}$}} & {\tiny{0.71}} & {\tiny{0.71}} & {\tiny{0.97}} & {\tiny{1.04}} & {\tiny{0.98}} & {\tiny{0.69}} & {\tiny{0.69}} & {\tiny{0.71}} & {\tiny{0.40}} & {\tiny{0.69}}\tabularnewline
+{\tiny{VaR$_{0.99}$}} & {\tiny{1.18}} & {\tiny{1.20}} & {\tiny{1.65}} & {\tiny{1.73}} & {\tiny{1.73}} & {\tiny{1.28}} & {\tiny{1.29}} & {\tiny{1.35}} & {\tiny{0.67}} & {\tiny{1.35}}\tabularnewline
+{\tiny{ES$_{0.9}$}} & {\tiny{0.83}} & {\tiny{0.84}} & {\tiny{1.13}} & {\tiny{1.20}} & {\tiny{1.16}} & {\tiny{0.84}} & {\tiny{0.84}} & {\tiny{0.87}} & {\tiny{0.46}} & {\tiny{0.86}}\tabularnewline
+{\tiny{ES$_{0.95}$}} & {\tiny{1.04}} & {\tiny{1.06}} & {\tiny{1.43}} & {\tiny{1.50}} & {\tiny{1.50}} & {\tiny{1.11}} & {\tiny{1.10}} & {\tiny{1.15}} & {\tiny{0.59}} & {\tiny{1.15}}\tabularnewline
+{\tiny{ES$_{0.99}$}} & {\tiny{1.72}} & {\tiny{1.74}} & {\tiny{2.35}} & {\tiny{2.38}} & {\tiny{2.52}} & {\tiny{1.99}} & {\tiny{1.95}} & {\tiny{2.06}} & {\tiny{0.92}} & {\tiny{2.11 }}\tabularnewline
+\end{tabular}{\tiny{\caption{{\tiny{Risk measures for the coal-fired power plant (with CO$_{2}$)}}}
+}}
+\end{table}
+{\tiny \par}
+
+ Coal-fired Power Plant 
+\begin{figure}
+%\includegraphics[width=0.49\textwidth]pics/EScoal09ret.pdf
+
+
+\centering{}\includegraphics[width=7cm,bb = 0 0 200 100, draft, type=eps]{../../../pics/VaRPowerCoalCarbon2007.pdf} 
+\end{figure}
+
+
+Coal-fired Power Plant %\vspace-2cm
+\begin{figure}
+\centering{}\includegraphics[width=7cm,bb = 0 0 200 100, draft, type=eps]{../../../pics/ESPowerCoalCarbon2007.pdf}
+%\includegraphics[width=0.49\textwidth]pics/VARcoal09ret.pdf
+\end{figure}
+
+
+
+
+Comparison of Models 
+
+ Copula-based models produce more accurate Risk Numbers 
+
+ Marginal tails seem to be more important than joint tail behavior
+(see copulas) 
+
+ Parametric approach allows dynamic modelling 
+
+
+

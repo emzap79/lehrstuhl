@@ -1,0 +1,403 @@
+% !TEX root = riskmanagement_ws13UDE.tex
+\part{Risk Measures}
+\section{Value at Risk (VaR)}
+
+
+\subsection{Basic Properties}
+
+Risk Measures
+	For risk management purposes one is primarily concerned with
+	containing the downside risk, i.e. to place bounds on the
+	potential losses, or the amount by which the final value of a
+	trading position falls short of the expected return.
+ 
+	This leads to the definition of measures of risk that focus on the lower tail of
+	the distribution of the random variable representing the final position.
+ 
+	Here, the classical measure - variance - is being replaced using a
+	full (empirical) distribution.
+
+
+Value at Risk (VaR)
+	For a given portfolio, value-at-risk measures the potential future loss (in
+	terms of market value) that, under normal market conditions, will not be exceeded with a defined confidence
+	level $\alpha$ in a defined period.
+
+	More formally, let $X$ be a random variable $X$ that represents the change in value of some position 
+	during some trading period. Then we are looking for the largest number  $x_{\alpha}$, such that the probability 
+		$$
+		\prb(X \geq q_{\alpha})= \alpha.
+		$$
+ 
+	Then $q_{\alpha}$ is the loss level that will be exceeded on $1-\alpha \%$ occassions. 
+		$$
+		-q_\alpha= VaR_\alpha
+		$$ 
+		is called the Value-at-Risk at level $\alpha$.
+ 
+	An equivalent definition uses $Y=-X$ the loss of the position. 
+
+
+Value at Risk
+	The worst $1-\alpha$ scenarios are above the $-VaR_\alpha$, all others are below.
+	\begin{figure}
+		\centering
+			\includegraphics[width=0.8\textwidth]{../../../pics/VaR}
+		\label{fig:VaR}
+	\end{figure}
+	
+
+VaR: Deutsche Bank Risk Report -- Usage of VaR
+Quote p7.: We use the value-at-risk approach to derive quantitative measures for our trading book
+market risks under normal market conditions. Our value-at-risk figures play a role in both internal and
+external (regulatory) reporting. For a given portfolio, value-at-risk measures affect the potential future loss (in
+terms of market value) that, under normal market conditions, will not be exceeded with a defined confidence
+level in a defined period. The value-at-risk for a total portfolio represents a measure of our diversified
+market risk (aggregated, using pre-determined correlations) in that portfolio.
+
+
+VaR: Deutsche Bank Risk Report -- Usage of VaR
+Quote p37: Our primary instrument to manage trading market risk is the limit setting process. Our Management Board,
+supported by Market Risk Management, which is part of our independent legal, risk \& capital function, sets a
+Group-wide value-at-risk and economic capital limits for the market risk in the trading book. Market Risk Management
+sub-allocates this overall limit to our group divisions (e.g., Global Markets and Corporate Finance)
+and individual business areas (e.g., Global Rates, Global Markets Equity, etc.) based on anticipated business
+plans and risk appetite. Within the individual business areas, the business heads or Chief Operating Officers
+may establish business limits by sub-allocating the Market Risk Management limit down to individual portfolios
+or geographical regions.
+
+
+VaR: Deutsche Bank Risk Report -- Assessment of VaR:
+Value-at-risk is a quantitative measure of the potential loss (in value) of trading positions due to market
+movements that will not be exceeded in a defined period of time and with a defined confidence level.\\
+Our value-at-risk for the trading businesses is based on our own internal value-at-risk model. In October 1998,
+the German Banking Supervisory Authority (now the BaFin) approved our internal value-at-risk model for
+calculating the regulatory market risk capital for our general and specific market risks. Since then the model
+has been periodically refined and approval has been maintained.\\
+We calculate value-at-risk using a 99 \% confidence level and a holding period of one day. This means we
+estimate there is a 1 in 100 chance that a mark-to-market loss from our trading positions will be at least as
+large as the reported value-at-risk. For regulatory reporting, the holding period is ten days.\\
+
+
+VaR: Deutsche Bank Risk Report -- Assessment of VaR
+We use historical market data to estimate value-at-risk, with an equally-weighted 261 trading day history. The
+calculation employs a Monte Carlo simulation technique, and we assume that changes in risk factors follow a
+certain distribution, e.g., normal or logarithmic normal distribution. To determine our aggregated value-at-risk,
+we use observed correlations between the risk factors during this 261 trading day period.\\
+Our value-at-risk model is designed to take into account the following risk factors: interest rates, credit
+spreads, equity prices, foreign exchange rates and commodity prices, as well as their implied volatilities and
+common basis risk. The model incorporates both linear and, especially for derivatives, nonlinear effects of the
+risk factors on the portfolio value.
+
+
+VaR: Deutsche Bank Risk Report -- Assessment of VaR
+The value-at-risk measure enables us to apply a constant and uniform measure across all of our trading businesses
+and products. It allows a comparison of risk in different businesses, and also provides a means of
+aggregating and netting positions within a portfolio to reflect correlations and offsets between different asset
+classes. Furthermore, it facilitates comparisons of our market risk both over time and against our daily trading
+results
+
+
+VaR: Deutsche Bank Risk Report -- Limitations of VaR
+The use of historical data may not be a good indicator of potential future events, particularly those that are
+extreme in nature. This backward-looking limitation can cause value-at-risk to understate risk (as in
+2008), but can also cause it to be overstated. In 2009 we observed fewer outliers than would be predicted
+by the model. In a strict statistical sense, the value-at-risk in 2009 was over-conservative, and had overestimated
+the risk in the trading books. As discussed, our value-at-risk model bases estimates of future
+volatility on market data observed over the previous year. For much of 2009, this estimate incorporated
+the extreme market volatility observed in the fourth quarter of 2008 following the bankruptcy of Lehman
+Brothers. As markets normalized in 2009, estimated volatility exceeded actual volatility, and fewer outliers
+occurred than expected.
+
+
+VaR: Deutsche Bank Risk Report -- Limitations of VaR}
+	Assumptions concerning the distribution of changes in risk factors, and the correlation between different
+	risk factors, may not hold true, particularly during market events that are extreme in nature. While we
+	believe our assumptions are reasonable, there is no standard value-at-risk methodology to follow. Different
+	assumptions would produce different results.
+
+	The one day holding period does not fully capture the market risk arising during periods of illiquidity, when
+	positions cannot be closed out or hedged within one day.
+	
+	Value-at-risk does not indicate the potential loss beyond the 99th quantile.
+ 
+	Intra-day risk is not captured.
+	
+	Although we consider the material risks to be covered by our value-at-risk model and we further enhance
+	it, there still may be risks in the trading book that are not covered by the value-at-risk model.
+
+
+Value at Risk - Shortcomings
+	The Value at Risk is a highly aggregated form of a risk measure. It projects the whole distribution of the 
+	risk to just one number.
+	
+	Thus, the VaR is not able to capture all properties of the risk. Particularly, the VaR gives no hint 
+	about what happens beyond the $\alpha$-level.
+	% Deutsche Bank Risk Report p. 40 (also Discussion pp 41)
+
+
+Value at Risk
+The figure illustrates a portfolio with a low VaR compared to its risk.
+\begin{figure}
+	\centering
+		\includegraphics[width=0.7\textwidth]{../../../pics/Shortcoming_VaR}
+	\label{fig:Shortcoming_VaR}
+\end{figure}
+
+
+\subsection{Calculation Approaches}
+
+Value at Risk - Parameters
+	The parameters of the VaR are time horizon and confidence level.
+	
+	If the changes in the portfolio have independent identical normal distributions, then we get for an $N$-period VaR
+		$$
+			VaR(\alpha,N) = \sqrt{N}VaR(\alpha,1).
+		$$
+	
+	This square-root rule is often used as an approximation.
+	
+	The proper time horizon for VaR calculations has to be chosen
+	according to the liquidity of the market. For the trading book of banks
+	typically $N=10$ days. In Solvency II, the horizon is 1 year.
+	
+	Confidence levels between $95\%$ and $99.5\%$
+	are often used. For normally distributed risks, the VaR can be computed as a
+	multiple of the standard deviation.
+
+
+%\subsection{VaR Computation}
+
+
+Absolute and Relative VaR
+	We use the definitions \textcolor{red}{Absolute VaR is the maximum expected loss over a given horizon period
+	at a given level of confidence} and \textcolor{blue}{Relative VaR is the maximum expected loss over a given horizon period
+	at a given level of confidence measured relative to the expected revenue over that period}.
+	
+	The return $R$ on the portfolio is the revenue $REV$ divided by the initial value of the portfolio $W$. If we denote the
+	quantile cut-off points in the distributions by $R^*$ and $REV^*$, then the
+	absolute VaR is 
+		$$
+		VaR_{abs} = -REV^* = -R^* W
+		$$
+	and the relative VaR (distance from the mean) is
+		$$
+		VaR_{rel}= -REV^*+\bar{REV}= -R^*W+\mu W
+		$$
+	where $\bar{REV}$ is the mean revenue and $\mu$ is the mean return.
+
+
+Parametric VaR
+	Now we assume that the return $R$ over the holding period has some density function $f$, then for a level of
+	confidence $\alpha$
+		$$
+		\prob(R <R^*)=\int_{-\infty}^{R^*}f(x)dx = 1-\alpha
+		$$
+ 
+	A typical assumption is that $R \sim N(\mu, \sigma)$. Then we can transform $R$ into a standard normal random variable $Z$
+		$$
+		\prob(R<R^*)=\prob(Z< (R^*-\mu)/\sigma)
+		$$
+ 
+	We can now use the quantiles $q_\alpha$ of a standard normal to compute VaR numbers 
+	(for example $q_{0.05}=-1.65$). So $R^*= \mu + q_\alpha\sigma$ and
+		$$
+		VaR_{abs}=-\mu W-q_\alpha\sigma W \;\; \mbox{ and } \;\; VaR_{rel}= -q_{\alpha}\sigma W.
+		$$
+
+
+Portfolio VaR I
+	Consider a portfolio with value $W$ consisting of two assets, 1 and 2,
+	with a relative amount $w_1$ held in asset 1 and a relative amount $w_2$ held in asset 2 (so $w_1+w_2=1$). 
+	
+	Asset returns have a joint normal distribution with mean $\mu_i$,
+	variance $\sigma^2_i$ for $i=1,2$, and correlation $\rho_{1,2}$.
+	
+	Asset $i$ has a value-at-risk of $VaR_\alpha^{(i)}=-q_{1-\alpha}
+	w_i\sigma_i W$ for $i=1,2$.
+
+
+Portfolio VaR II
+	The variance of the portfolio is
+  	\begin{align*}
+  		\sigma_p^2= \left[w_1^2\sigma_1^2+ w_2^2\sigma_2^2+2
+  		w_1w_2\rho_{1,2}\sigma_1\sigma_2\right]
+		\end{align*}
+  
+The VaR of the portfolio is
+	\begin{align*}
+		\begin{array}{lll}
+			VaR_p &=& - q_{1-\alpha}\sigma_p W \\
+		  &=& -q_{1-\alpha} \sqrt{\left(w_1^2\sigma_1^2+w_2^2\sigma_2^2 +2
+		    w_1w_2\rho_{1,2}\sigma_1\sigma_2\right)}W\\
+		  &=& \sqrt{-q_{1-\alpha}^2\left( w_1^2\sigma_1^2+w_2^2\sigma_2^2 +2
+		    w_1w_2\rho_{1,2}\sigma_1\sigma_2\right) W^2 )}\\
+		  &=& \sqrt{VaR_1^2+ VaR_2^2+2 \rho_{1,2}VaR_1VaR_2}
+		\end{array}
+	\end{align*}
+
+
+\section{Expected Shortfall (ES) }
+
+Expected Shortfall
+	The Expected Shortfall specifies the expectation of the loss in case the loss is above the VaR.
+	ES is also called Tail Value-at-Risk (TVaR) or Conditional Value-at-Risk (CVaR).
+
+
+Illustration of ES
+\begin{figure}
+	\centering
+		\includegraphics[width=1\textwidth]{../../../pics/Expected_Shortfall}
+	\label{fig:Expected_Shortfall}
+\end{figure}
+
+
+Expected Shortfall -- Definition
+	For a loss $X$ with  cdf $F_X$ the expected
+	shortfall at confidence level $\alpha\in(0,1)$ is defined as
+		$$
+		\EX S_{\alpha}=\frac{1}{\alpha}\int_0^{\alpha} q_u(F_X)du
+		=\frac{1}{\alpha}\int_0^{\alpha} VaR_u(X)du
+		$$
+	where $q_u(F_X)=F_X^{\leftarrow}(u)$ is the quantile function of $F_X$.
+	
+	For an integrable loss $X$ with continuous cdf $F_X$ and any $\alpha\in(0,1)$ we have
+		$$
+		\EX S_{\alpha}=\frac{\EX(X; X\leq
+		q_{\alpha}(X))}{\alpha}=\EX(X|X\leq VaR_{\alpha})
+		$$
+	(where we have used the notation $\EX(X; A)=\EX(X \IF_A)$ for $X$ a rv, $A\in\cal F $)
+
+
+\section{Calculating Risk Measures}
+\subsection{Classification of Computational Approaches}
+
+VaR and ES Computation
+% There are many approaches of how to calculate the VaR/ES. For all approaches,
+% the risk factors have to be identified first. The most common approaches of
+% calculating the VaR/ES are:
+	Historical simulation: Estimate the VaR/ES from historical data.
+	Take the return of the last $k$ trading days and estimate the VaR 	
+	as the $\alpha \cdot k$-th highest loss. The ES can be approximated 
+	by the average of the losses larger or equal to the $\alpha \cdot k$-th highest loss.
+	
+	Analytical method: Assume a distribution for market prices and derive an analytical 
+	formula for the VaR and the ES by expansion of the portfolio value in terms of the 
+	driving risk factors.
+	
+	Structured Monte Carlo method: Assume a stochastic model for the risk factors, 
+	simulate $M$ sample paths and determine the portfolio value on those paths. 
+	The  $M \cdot \alpha$-th lowest portfolio value gives an estimate of the VaR 
+	the ES can be obtained by averaging.
+
+
+\subsection{Example: DAX}
+
+VaR and CVaR - historical method
+	We calculate  VaR and CVaR for DAX returns in 2011 and 2012.
+	So we have  512 trading days and  511 daily log-returns.
+
+
+VaR and CVaR - historical method
+	We get the following histogram for the log-returns:
+		\begin{figure}
+			\centering
+			\includegraphics[width=1.00\textwidth]{../../../pics/Histogram}
+		\end{figure}
+
+
+VaR and CVaR - historical method
+	The worst log-returns are:
+
+	\begin{tabular}{r|rr|rr|r}
+
+					 0 &   -6.00\% &           9 &   -3,46\% &	  18 &   -3,02\% \\  
+
+					 1 &   -5.99\% &          10 &   -3,46\% &   	  19 &   -2,90\% \\
+
+					 2 &   -5,42\% &          11 &   -3,42\% &        20 &   -2,88\% \\
+
+					 3 &   -5,27\% &          12 &   -3,42\% &        21 &   -2,87\% \\
+
+					 4 &   -5,15\% &          13 &   -3,41\% &        22 &   -2,82\% \\
+
+					 5 &   -5,13\% &          14 &   -3,41\% &        23 &   -2,76\% \\
+
+					 6 &   -5,09\% &          15 &   -3,28\% &        24 &   -2,52\% \\
+
+					 7 &   -4,12\% &          16 &   -3,24\% &        25 &   -2,52\% \\
+					 
+					 8 &   -3,48\% & 	  17 &   -3,23\% &	  26 &   -2,51\% \\
+
+	\end{tabular}\\
+
+	Thus $VaR_{99\%} = 5.12\%$ (by Interpolation between  5 and 6) and $CVaR_{99\%} = 5.34\%$. Observe, 
+	that  $CVaR_{99\%}$ is the mean of  $1\%$ (0-6)  of the worst results. }
+
+
+VaR and CVaR - parametric method 
+	We estimate the parameters  $\mu$ and  $\sigma$ of the DAX log-returns:
+		$$
+		\mu = 0,0002, \; \sigma = 0,0153
+		$$
+	So from 
+		$$
+		q_\alpha(X) = \EX(X) + q_{\alpha}\sigma(X)
+		$$
+	we find that
+		$$
+		VaR_{99\%} = 3,54\%.
+		$$
+
+
+VaR and CVaR - parametric method
+	From
+		$$
+		CVaR_\alpha(X) = -\EX[X|X \le q_\alpha (X)]
+		$$
+	we get the  parametric CVaR using the above parameters and the addition of a multiple of the standard deviation:\\
+		$$
+		CVaR_\alpha(X)=-\EX(X) + \frac{\varphi(q_{\alpha})}{1-\alpha}\sigma(X),
+		$$
+	So
+		$$
+		CVaR_{99\%} = 4,02\%.
+		$$
+	($\varphi(.)$ is the density of the standard normal distribution .) 
+
+
+Backtesting VaR
+	To backtest VaR we compare the VaR prediction with the actual performance during a (past) time period. 
+	
+	We simply count the number of VaR violations and compare them with the prediction. 
+	
+	For a good VaR model the number of violations should be close to number which is implied by the quantile. 
+	In addition, the violations should be randomly distributed over the observation time period. 
+
+
+Tests of the VaR model 
+	\begin{figure}
+			\centering
+			\includegraphics[width=1.00\textwidth]{../../../pics/VaR-exceedance-sjur.jpg}
+	\end{figure}
+	There exist standard tests for both backtesting approaches (Kupiec 1995, Christoffel 1998).
+
+
+\subsection{General Principles for Risk Measures}
+
+Coherent Risk Measures}
+	A coherent risk measure is a function $\rho$ on abstract risk positions such that
+		\emph{Monotonicity}: if $X\geq 0$, then $\rho(X)\leq 0$;
+		
+		\emph{Translation anti-variance}: if $k \in \R$, then $\rho(X+k)=\rho(X)-k$;
+		
+		\emph{Homogeneity}: if $\lambda \geq 0$ in $\R$, then $\rho(\lambda X) = \lambda \rho (X)$;
+		
+		\emph{Subadditivity}: $\rho(X+Y)\leq \rho(X)+\rho(Y)$.
+
+	What risk measures are coherent?
+		VaR is not a coherent risk measure as it is not subadditive in general.
+		
+		ES is a coherent risk measure.
+
+

@@ -1,0 +1,243 @@
+% !TEX root = FuturesOptions_ss13UDE.tex
+\section{The Black-Scholes Model}
+
+	\begin{center}
+	\color{beamer@blendedblue}{\large{The Black-Scholes Model}}
+	\end{center}
+
+\subsection{The Pricing Formula}
+
+The Black-Scholes Formula for a European Call
+\begin{center}
+\begin{figure}
+  \centering
+   \subfigure[Myron Scholes]{\includegraphics[height=3cm]{../../../pics/myron_scholes.jpg}}\qquad
+   \subfigure[Robert C. Merton]{\includegraphics[height=3cm]{../../../pics/merton.jpg}}\qquad
+   \subfigure[Fisher Black]{\includegraphics[height=3cm]{../../../pics/black.jpg}}
+\end{figure}
+\end{center}
+
+
+% Black-Scholes Model}
+
+%
+%   The classical Black-Scholes model is
+%
+%   $dB(t) = \DSE r B(t) dt, \A B(0)= 1$
+%   $dS(t) = \DSE S(t) (b dt + \sigma dW(t) \!, \A &S(0) = p$
+%
+% with constant coefficients $b \in \setR,\; r,\s \in \setR_+$.
+%
+%}
+
+
+European Call Price
+	For a European call $X = (S(T)-K)^+$ and  we can evaluate the
+	above expected value
+
+	The Black-Scholes price
+	pro\-cess of a European call is given by
+		$$
+		\begin{array}{lll}
+		C(t) &=&\DSE S(t) \Phi(d_1(S(t), T-t))\\*[12pt]
+		&&- K e^{-r(T-t)} \Phi(d_2(S(t), T-t)).
+		\end{array}
+		$$
+	
+	The functions $d_1(s,t)$ and $d_2(s,t)$ are given by
+		$$
+		\begin{array}{lll}
+		d_1(s,\tau) &=&\DSE \frac{\log(s/K) + (r +
+		\frac{\sigma^2}{2})\tau}{\sigma \sqrt{\tau}},\\*[12pt] d_2(s,\tau) &=&\DSE
+		 \frac{\log(s/K) + (r -
+		\frac{\sigma^2}{2})\tau}{\sigma \sqrt{\tau}}
+		\end{array}
+		$$
+
+
+\subsection{The Greeks}
+Greeks (1)
+	We will now analyse the impact of the underlying parameters in the standard Black-Scholes model on the
+	prices of call and put options.
+	
+	The Black-Scholes option values depend on the
+		(current) stock price,
+		the volatility,
+		the time to maturity,
+		the interest rate
+		the strike price.
+
+
+Greeks (2)
+	The sensitivities of the option price with respect to the first four
+	parameters are called the {\it Greeks} and are widely used for
+	hedging purposes.
+
+	We can determine the impact of these parameters by taking partial derivatives.
+
+
+Greeks
+	$$
+	\begin{array}{lllll}
+	\Delta &:=&\DSE \frac{\partial C}{\partial S} &=&\DSE \Phi(d_1) >
+	0,\\*[12pt] 
+	{\cal V} &:=&\DSE \frac{\partial C}{\partial \s} &=&
+	\DSE S \sqrt{\tau} \varphi(d_1) >0,\\*[12pt]
+	 \Theta &:=&\DSE \frac{\partial
+	C}{\partial \tau} &=& \DSE \frac{S \s}{2 \sqrt{\tau}} \varphi(d_1) + K r
+	e^{-r\tau} \Phi(d_2) >0,\\*[12pt] 
+	\rho &:=&\DSE \frac{\partial
+	C}{\partial r} &=& \DSE \tau K e^{-r\tau} \Phi(d_2) >0,\\*[12pt] \Gamma
+	&:=&\DSE \frac{\partial^2 C}{\partial S^2} &=& \DSE
+	\frac{\varphi(d_1)}{S \s \sqrt{\tau}} >0.\\*[12pt]
+	\end{array}
+	$$
+	
+
+Greeks 
+	From the definitions it is clear that
+		$\Delta$ -- delta -- measures the change in the value of the
+		option compared with the change in the value of the underlying
+		asset,
+ 
+		${\cal V}$ -- vega -- measures the change of the option
+		compared with the change in the volatility of the underlying,
+		similar statements hold for $\Theta$ -- theta -- and $\rho$ -- rho
+
+	\includegraphics<1>[height=7cm]{../../../pics/Delta.pdf}
+
+	\includegraphics<1>[height=7cm]{../../../pics/DeltaToZero.pdf}
+
+	\includegraphics<1>[height=7cm]{../../../pics/gamma.pdf}
+
+	\includegraphics<1>[height=7cm]{../../../pics/Vega2.pdf}
+
+Greeks
+	The Black-Scholes partial differential equation can be used to
+	obtain the relation between the Greeks,
+
+	$$
+	r C = \frac{1}{2} s^2 \s^2 \Gamma +rs \Delta -\Theta.
+	$$
+
+
+Vega
+	Before we can implement the Black-Scholes formula to price options, we have to estimate $\s$.
+
+	Because the formula is explicit, we can, determine the ${\cal V}$ -- the partial derivative
+		$$
+		{\cal V} = \partial C/\partial \s,
+		$$
+	finding
+		$$
+		{\cal V} = S \sqrt{T} \Phi(d_1).
+		$$
+	Note here is that vega is always positive.
+
+
+\subsection{Volatility}
+
+Implied Volatility
+	Since vega is positive, $C$ is a continuous -- indeed,
+	differentiable -- strictly increasing function of $\s$.
+ 
+	Turning this round, $\s$ is a continuous (differentiable) strictly
+	increasing function of $C$; indeed,
+		$$
+		{\cal V} = \frac{\partial C}{\partial \s}, \A \mbox{so} \A
+		\frac{1}{\cal V} = \frac{\partial \s}{\partial C}.
+		$$
+
+	Thus the value $\s = \s(C)$ corresponding to the actual value $C =
+	C(\s)$ at which call options are observed to be traded in the
+	market can be read off.  The value of $\s$ obtained in this way is
+	called the {\it implied volatility}.
+
+
+The Black-Scholes Implied Volatility
+	The Black-Scholes model assumes a constant volatility over all maturities and strikes.
+	
+	One can calculate the implicit volatility given the market price of options.
+	
+	The implicit volatility is changing over time and maturity, so contradicting the modelling assumptions.
+	
+	However, it can be used to predict future volatility.
+	
+	Furthermore, volatility can be made an own "asset class".
+
+
+Volatility Smile
+	Volatility Index VDAX-NEW (in percentage points)
+	\begin{center}
+	\includegraphics[scale=0.55]{../../../pics/Volatility-Smile-char.pdf}
+	\end{center}
+
+
+Volatility Surface
+	Volatility Index VDAX-NEW (in percentage points)
+	$$\includegraphics[scale=0.25]{../../../pics/VolatilitySurface.jpg}$$
+
+
+VDAX-NEW: Definition
+	The volatility index VDAX-NEW was developed by Deutsche B{\"o}rse and Goldman Sachs. 
+	It tracks the degree of fluctuation expected by the derivatives market, i.e. the implied volatility, 
+	for the DAX index. The index expresses in percentage terms what degree of volatility is to be expected 
+	for the following 30 days.
+  
+	VDAX-NEW started on 20 April 2005 and will replace VDAX in the medium-term.
+
+
+VDAX-NEW: Examples
+	Examples:\\
+		A DAX of 4,000 and a VDAX-NEW of 10 indicate that the DAX stock index is expected to fluctuate between 3,885 and 4,115 over the next thirty days:
+		$$4000\pm4000\times0.1\times\sqrt{\frac{30}{365}}\approx4000\pm115.$$
+   
+		A DAX of 4,000 and a VDAX-NEW of 20 indicate that the DAX stock index is expected to fluctuate between 3,770 and 4,230 over the next thirty days:
+    $$4000\pm4000\times0.2\times\sqrt{\frac{30}{365}}\approx4000\pm230.$$
+
+
+VDAX-NEW
+	Volatility Index VDAX-NEW (in percentage points)
+	$$\includegraphics[scale=0.6]{../../../pics/VDaxNew.png}$$
+
+
+VDAX-NEW: Calculation
+	Index is based on 8 sub-indices (option series) which include DAX Options from 2-24 months expiration.
+  
+	The main rolling index is calculated 30 days to expiration on linear interpolation of the two sub-indices closest to the 30 days expiration.
+  
+	In addition to at-the-money options (VDAX), out-of-the-money options are also considered (VDAX-NEW).
+  
+	Calculation frequency: Once a minute on every trading day at Eurex between 8.50am and 5.30pm CET.
+
+
+VDAX-NEW: Features
+	Expresses market expectation of the amplitude of fluctuation in DAX.
+  
+	Index is able to react only to changes in volatility.
+  
+	Allows better replication for derivatives and structured products.
+  
+	Due to ATM and OTM options VDAX-NEW captures more of the volatility skew than VDAX.
+  
+	Index establishes volatiliy as a tradable and separate asset class for investors.
+
+
+VDAX-NEW: Use
+	Investment/Trading: Speculation on future levels of volatility.
+	
+	Hedging: Cover short volatility positions.
+  
+	Diversification of German equity portfolios (correlation to DAX is -0.5689, correlation to MDAX is -0.4668).
+  
+	Benchmark for German equity volatility.
+
+
+VDAX-NEW: Diversification
+	Portfolio of 80\% DAX and 20\% VDAX-NEW between
+	1992 and 2004 would have generated a 3.8 percentage
+	points on average higher yield than investments in
+	DAX only. And this with lower risk!
+
+	$$\includegraphics[scale=0.45]{../../../pics/VDax_div.png}$$
+

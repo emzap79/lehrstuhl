@@ -1,0 +1,438 @@
+% !TEX root = FinancialMathematics_ws1314UDE.tex
+
+\part{Stochastic Analysis for Black-Scholes}
+
+\section{Stochastic Analysis Background}
+\section{Brownian Motion}
+
+Brownian Motion - I
+\begin{definition}\label{BM}
+	A stochastic process $X=(X(t))_{t \geq 0}$ is a standard
+	Brownian motion, $BM$, if
+		$X(0) = 0$ a.s., 
+		
+		$X$ has {\it independent increments}: $X(t+u) - X(t)$ is 
+		independent of $\s (X(s): s \leqt)$ for $u \geq 0$, 
+
+		$X$ has {\it stationary increments}: the law of $X(t+u) - X(t)$ depends only on $u$,
+
+		and (iv), (v)
+\end{definition}
+
+
+Brownian Motion - II}
+\begin{definition}\label{BM}
+A stochastic process $X=(X(t))_{t \geq 0}$ is a standard
+Brownian motion, $BM$, if (i) -- (iii) and
+
+$X$ has {\it Gaussian increments}: $X(t+u) - X(t)$ is
+normally distributed with mean $0$ and variance $u$, $X(t+u) -
+X(t) \sim \Phi(0,u)$, 
+
+$X$ has {\it continuous paths}:
+$X(t)$ is a continuous function of $t$, i.e. $t \ra X(t, \om)$ is
+continuous in $t$ for all $\om \in \Om$.
+
+\end{definition}
+
+
+Brownian Motion
+We have Wiener's theorem:
+	\begin{theorem}[Wiener]
+	Brownian motion exists.
+	\end{theorem}
+
+We denote standard Brownian motion $BM(\setR)$ by
+$W = (W(t))$ ($W$ for Wiener), though $B = (B(t))$ ($B$ for Brown)
+is also common.  
+
+Standard Brownian motion $BM({\setR}^d)$ in $d$
+dimensions is defined by $W(t) := (W_1(t),\ldots,W_d(t))$, where
+$W_1, \ldots, W_d$ are independent standard Brownian motions in
+one dimension (independent copies of $BM(\setR)$).
+
+
+
+
+Geometric BM
+	Consider how a stock $S(t)$
+	will change in some small time-interval from the present time $t$
+	to a time $t+dt$ in the near future. 
+	With $dS(t) =  S(t+dt)-S(t)$, the {\it return} on $S$ in this
+	interval is $dS(t)/S(t)$.  
+ 
+	It is economically reasonable to expect
+	this return to decompose into two components, a {\it systematic}
+	part and a {\it random} part. The systematic part could plausibly
+	be modelled by $\mu dt$, where $\mu$ is some parameter
+	representing the mean rate of return of the stock.
+ 
+	The random
+	part could plausibly be modelled by $\sigma dW(t)$, where $dW(t)$
+	represents the noise term driving the stock price dynamics, and
+	$\sigma$ is a second parameter describing how much effect this
+	noise has - how much the stock price fluctuates. Thus $\sigma$
+	governs how volatile the price is, and is called the {\it
+	volatility} of the
+	stock. 
+
+	Putting this together, we have the stochastic differential
+	equation
+		\begin{equation}\label{GBM}
+		dS(t) = S(t) (\mu dt + \sigma dW(t)), \A S(0) > 0,
+		\end{equation}
+	due to It\^{o} in 1944.  This corrects Bachelier's earlier attempt
+	of 1900 (he did not have the factor $S(t)$ on the right - missing
+	the interpretation in terms of returns, and leading to negative
+	stock prices!).  The economic importance of geometric
+	Brownian motion was recognised by Paul A. Samuelson in his work, for which Samuelson received the Nobel
+	Prize in Economics in 1970, and by Robert Merton, in work for which he was similarly
+	honoured in 1997.
+
+
+Quadratic Variation of BM
+
+	 We take a partition
+	$\cal P$ of $[0,t]$ - a finite set of points $0 = t_0 < t_1 <
+	\ldots < t_n = t$ with grid mesh $\norm{\cal P}:= \max\abs{t_i -
+	t_{i-1}}$ small.
+  
+	Writing $ \Delta W(t_i) := W(t_i) -
+	W(t_{i-1})$ and $ \Delta t_i  := t_i - t_{i-1}, $
+	$$ \sum_{i=1}^n (\Delta W(t_i))^2 $$ will closely resemble $$
+	\sum_{i=1}^n \EX((\Delta W(t_i))^2)= \sum_{i=1}^n \Delta t_i =
+	\sum_{i=1}^n (t_i - t_{i-1}) =t. $$ 
+	
+	In fact the {\it quadratic variation} of $W$ over
+	$[0,t]$ is 
+	$$
+	\sum_{i=1}^n {(\Delta W(t_i))}^2 \ra \sum_{i=1}^n \Delta t_i = t
+	%\A \mbox{in probability} 
+	\A (\max \abs{t_i - t_{i-1}} \ra 0). $$
+
+	\begin{theorem} [L\'evy]
+		The quadratic variation of a Brownian path over $[0,t]$ exists and
+		equals $t$:
+		%in mean square (and hence in probability):
+		$$
+		\langle W \rangle_t =t.
+		$$
+		\end{theorem}
+
+
+
+\section{Stochastic Integrals}
+\subsection{Construction}
+
+Motivation
+Stochastic integration was introduced by K. It\^o in 1944, hence
+its name It\^o calculus.  It gives a meaning to $$ \int_0^t X dY =
+\int_0^t X(s,\omega) d Y(s,\omega),
+$$ for suitable stochastic processes $X$
+and $Y$, the integrand and the integrator. We shall confine our
+attention here mainly to the basic case with integrator Brownian
+motion: $Y = W$.
+
+
+
+Indicators 
+	To define It\^o integrals, we begin with the simplest possible
+	integrands $X$, and extend successively in much the same way that
+	we extended the measure-theoretic integral. 
+
+	If $X(t,\omega) = \IF_{[a,b]}(t)$,
+	there is exactly one plausible way to define $\int X dW$: $$
+	\int_0^t X(s,\omega) dW(s,\omega) := \left\{
+	\begin{array}{ll}
+	0 & \mbox{if} \; t \leq a, \\ W(t) - W(a) & \mbox{if}\; a \leq t
+	\leq b, \\ W(b) - W(a) & \mbox{if}\; t \geq b.
+	\end{array}
+	\right. $$
+
+ 
+Simple Functions 
+Extend by linearity: if $X$
+is a linear combination of indicators, $X = \sum_{i=1}^n c_i
+\IF_{[a_i,b_i]}$, we should define $$ \int_0^t X dW :=
+\sum_{i=1}^n c_i \int_0^t \IF_{[a_i,b_i]} dW. $$  } 
+
+
+Simple Processes
+	Call a stochastic process $X$ {\it
+	simple} if there is a partition $ 0 = t_0 < t_1 < \ldots < t_n =T
+	<\infty $ and uniformly bounded $\F_{t_k}$-measurable (we know its value at time $t_k$) random
+	variables ${\xi}_k$ ($\abs{\xi_k} \leq C$ for all $k = 0, \ldots,
+	n$ and $\omega$, for some $C$) and if $X(t,\omega)$ can be written
+	in the form $$ X(t,\omega) = {\xi}_0 (\omega) \IF_{\{0\}} (t) +
+	\sum_{i =0}^n {\xi}_i (\omega) \IF_{(t_i,t_{i+1}]}(t) \A (0 \leq t
+	\leq T, \omega \in \Omega). $$ } 
+
+	Then if  $t_k \leq t < t_{k+1}$, $$
+	\begin{array}{lll}
+	I_t(X) :=\DSE \int_0^t X dW &=&\DSE \sum_{i=0}^{k-1} {\xi}_i
+	(W(t_{i+1}) - W(t_i)) + {\xi}_k (W(t) - W(t_k))\\*[12pt] &=&\DSE
+	\sum_{i=0}^{n} {\xi}_i (W(t \wedge t_{i+1}) - W(t \wedge t_i)).
+	\end{array}
+	$$ Note that by definition $I_0(X) = 0 \A \prb-a.s.\,$.
+
+
+\subsection{Properties of Stochastic Integrals}
+
+Properties of the Stochastic Integral
+	We collect some properties of the stochastic integral:
+	\begin{lemma}
+	(i)$\; I_t (aX + bY) = a I_t (X) + b I_t (Y)$.\\*[12pt]
+	(ii)$\; \EX (I_t
+	(X) | {\F}_s) = I_s(X) \A \prb-a.s. \A (0 \leq s < t < \infty)$,
+	hence $I_t (X)$ is a {\it continuous martingale}.
+	\end{lemma}
+
+	Property (ii) also states the definition of a martingale. Loosely speaking the
+	current value of the process is the best predictor based on current information of future values. 
+	%The stochastic integral for simple integrands is essentially a
+	%martingale transform, and the above is essentially the proof that
+	%martingale transforms are martingales.
+
+
+	We now can add further properties of the stochastic integral for
+	simple functions.
+	
+	\begin{lemma}%\label{Itoisometry}
+	(i) We have the It\^{o} isometry $$ \EX\left((I_t(X))^2\right) =
+	\EX\left(\int_0^t X(s)^2 ds\right)\!. $$ (ii)
+	$\; \EX\left((I_t(X) -
+	I_s(X))^2 | {\F}_s\right) = \EX\left(\int_s^t X(u)^2 du\right) \A
+	\prb-a.s.$
+	\end{lemma}
+
+ 
+Construction of the Stochastic Integral
+	We seek a class of integrands suitably approximable by simple
+	integrands.  It turns out that:
+
+ 	We can define a suitable class of
+	integrands $X$ with (main property) $\int_0^t
+	\EX\left( X(u)^2\right) du < \infty$ for all $t > 0$.\\ 
+  
+	Each such $X$ may be approximated by a sequence of simple integrands
+	$X_n$ so that the stochastic integral $I_t(X) = \int_0^t X dW$ may
+	be defined as the limit of $I_t(X_n) = \int_0^t X_n dW$.
+ 
+	The properties from both lemmas above remain true for the
+	stochastic integral $\int_0^t X dW$.
+
+
+\subsection{Example}
+
+Example
+	We calculate $\int W(u) dW(u)$. We
+	start by approximating the integrand by a sequence of simple
+	functions.
+	$$ X_n(u) = \left\{
+		\begin{array}{ll}
+		W(0)=0 \A &\mbox{if}\A 0 \leq u \leq t/n,\\ W(t/n) \A &\mbox{if}\A
+		t/n < u \leq 2t/n,\\ \vdots &\vdots\\
+		W\!\left(\frac{(n-1)t}{n}\right) \A &\mbox{if}\A (n-1)t/n < u \leq
+		t.
+		\end{array}
+	\right. $$
+
+	By definition,
+		$$ \int_0^t W(u) dW(u) = \lim_{n \ra
+		\infty} \sum_{k=0}^{n-1}
+		 W\!\left(\frac{kt}{n}\right)
+		 \left(W\!\left(\frac{(k+1)t}{n}\right)
+		- W\!\left(\frac{kt}{n}\right)\right)\!. $$ Rearranging terms, we
+	obtain for the sum on the right $$
+	
+	\begin{array}{ll}
+		&\DSE \sum_{k=0}^{n-1} W\!\left(\frac{kt}{n}\right)
+		\left(W\!\left(\frac{(k+1)t}{n}\right) -
+		W\!\left(\frac{kt}{n}\right)\right)\\*[12pt]
+		%=&&
+		%\sum
+		%W\!\left(\frac{kT}{n}\right)
+		%W\!\left(\frac{(k+1)T}{n}\right)
+		%- W\!\left(\frac{kT}{n}\right)^2\\*[12pt]
+		%=& -\frac{1}{2}&
+		%\left[\sum
+		%W\!\left(\frac{kT}{n}\right)^2 -2
+		%W\!\left(\frac{kT}{n}\right) W\!\left(\frac{(k+1)T}{n}\right)
+		%+ W\!\left(\frac{kT}{n}\right)^2\right]\\*[12pt]
+		%=&
+		%\frac{1}{2}&
+		%\left[\sum
+		%W\!\left(\frac{(k+1)T}{n}\right)^2 -
+		%W\!\left(\frac{kT}{n}\right)^2\right]\\*[12pt]
+		%&-\frac{1}{2}&
+		%\left[\sum
+		%W\!\left(\frac{(k+1)T}{n}\right)^2 -2
+		%W\!\left(\frac{kT}{n}\right) W\!\left(\frac{(k+1)T}{n}\right)
+		%+ W\!\left(\frac{kT}{n}\right)^2\right]\\*[12pt]
+		=& \DSE \frac{1}{2} W(t)^2 -\frac{1}{2} \left[\sum_{k=0}^{n-1}
+		\left( W\!\left(\frac{(k+1)t}{n}\right) -
+		W\!\left(\frac{kt}{n}\right)\right)^2 \right]\!.
+		\end{array}
+		$$
+
+Since the second term approximates the quadratic variation of $W$
+and hence tends to $t$ for $n \ra \infty$, we find
+	\begin{equation}\label{BrownInt}
+	\int_0^t W(u)dW(u) = \frac{1}{2}W(t)^2 - \frac{1}{2}t.
+	\end{equation}
+Note the contrast with ordinary (Newton-Leibniz) calculus! It\^{o}
+calculus requires the second term on the right -- the It\^{o}
+correction term -- which arises from the quadratic variation of
+$W$.
+
+
+Quadratic Covariation.
+We shall need to
+extend quadratic variation and quadratic covariation to stochastic
+integrals. The quadratic variation of
+	$$
+	I_t(X) = \int_0^t X(u) dW(u) \;\; \mbox{ is } \int_0^t X(u)^2 du.
+	$$
+This is proved in the same way as the case $X \equiv 1$, that $W$
+has quadratic variation process $t$.
+
+
+\section{Stochastic Calculus}
+\subsection{It{\^o} Processes}
+It{\^o} Processes
+	$$
+	X(t) := x_0 + \int_0^t b(s) ds + \int_0^t \s(s) dW(s)
+	$$
+defines a stochastic process $X$ with $X(0) = x_0$.
+
+We express such an equation
+symbolically in differential form, in terms of the stochastic
+differential equation
+	$$
+	dX(t) = b(t) dt + \s(t) dW(t), \A X(0) = x_0.
+	$$
+
+For $f \in C^2$ we want to give  meaning to the stochastic differential
+$df(X(t))$ of the process $f(X(t))$.
+
+
+Multiplication rules
+	These are just shorthand for the
+	corresponding properties of the quadratic variations.
+
+	\begin{center}
+	\begin{tabular}{|l|ll|}
+	\hline
+	& dt &dW \\\hline
+	dt& 0 & 0\\
+	dW & 0 &dt \\\hline
+	\end{tabular}
+	\end{center}
+
+	We find
+	$$
+	\begin{array}{lll}
+	d\br{X} &=&\DSE (b dt + \s dW)^2 \\*[12pt]
+	&=&\DSE \s^2 dt + 2 b \s dt dW + b^2 (dt)^2 = \s^2 dt
+	\end{array}
+	$$
+
+
+\subsection{It{\^o} Formula}
+
+Basic It{\^o} Formula
+	If $X$ is a  It{\^o} Process and $f\in C^2$,
+	then $f(X)$ has stochastic differential
+		$$
+		\begin{array}{lll}
+		df(X(t)) &=& f'(X(t)) dX(t)\\*[12pt]
+		&& \DSE+ \frac{1}{2} f''(X(t)) d\br{X}(t),
+		\end{array}
+		$$
+	or writing out the integrals,
+		$$
+		\begin{array}{lll}
+		f(X(t)) &=& \DSE f(x_0) + \int_0^t f'(X(u)) dX(u)\\*[12pt]
+		&& \DSE + \frac{1}{2} \int_0^t f''(X(u)) d\br{X}(u).
+		\end{array}
+		$$
+
+
+It{\^o} Formula
+	If $X(t)$ is an It{\^o} process  and $f \in C^{1,2}$ then
+	$f = f(t,X(t))$ has stochastic differential
+		$$
+		df = \left(f_t + b f_x + \frac{1}{2} \s^2 f_{xx}\right) dt + \s
+		f_x dW.
+		$$
+	That is, writing $f_0$ for $f(0, x_0)$, the initial value of $f$,
+		$$
+		f = f_0 + \int_0^t (f_t + b f_x + \frac{1}{2} \s^2 f_{xx})dt +
+		\int_0^t \s f_x dW.
+		$$
+	
+
+Example: GBM
+	The SDE for GBM has the unique
+	solution
+		$$
+		S(t) = S(0) \exp \left\{\left(\mu - \frac{1}{2}\sigma^2\right)t +
+		\sigma dW(t) \right\}\!.
+		$$
+	For, writing
+		$$
+		f(t,x) := \exp\left\{\left(\mu - \frac{1}{2}\sigma^2\right)t +
+		\sigma x \right\}\!,
+		$$
+	we have
+		$$
+		f_t = \left(\mu - \frac{1}{2}\sigma^2\right)f, \A f_x = \sigma f,
+		\A f_{xx} = \sigma^2 f,
+		$$
+	and with $x = W(t)$, one has
+		$$
+		dx = dW(t), \A (dx)^2 = dt.
+		$$
+	
+	Thus It\^{o}'s lemma gives
+		$$
+		\begin{array}{lll}
+		\DSE df &=&\DSE f_t dt + f_x dW + \frac{1}{2} f_{xx}
+		(dW)^2\\*[12pt] &=&\DSE f\left(\left(\mu -
+		\frac{1}{2}{\sigma}^2\right) dt + \sigma dW +
+		\frac{1}{2}{\sigma}^2 dt\right)\\*[12pt] &=&\DSE f(\mu dt + \sigma
+		dW).
+		\end{array}
+		$$
+
+
+\subsection{Girsanov's Theorem}
+Girsanov's Theorem
+	Let $W = (W_1, \ldots W_d)$ be a
+	$d$-dimensional BM.
+		\begin{theorem} [ Girsanov]
+		Define the equivalent probability measure $\td{\prb}$ with Radon-Nikod\'{y}m derivative
+			$$
+			\frac{d\td{\prb}}{d\prb} =L(T)= \exp\left\{- \int_0^T \gamma(s)' dW(s) - \frac{1}{2}
+			\int_0^T \norm{\gamma(s)}^2 ds \right\}\!,
+			$$
+		with $\gamma(t)$ a suitable $d$-dimensional process. Then define
+			$$
+			\td{W}_i(t) := W_i(t) + \int_0^t \gamma_i(s) ds.
+			$$
+		The process $\td{W} = (\td{W}_1, \ldots, \td{W}_d)$ is $d$-dimensional BM.
+		\end{theorem}
+
+		For $\gamma(t)= \gamma$, change of measure by the Radon-Nikod\'{y}m derivative
+			$$
+			\exp\left\{- \gamma W(t) - \frac{1}{2} {\gamma}^2 t\right\}
+			$$
+		corresponds to a change of drift from $c$ to $c - \gamma$.
+
+		In our setting any pair of equivalent probability measures $\Q \sim
+		\prb$ is a Girsanov pair, i.e.
+			$$
+			\frac{d\td{\Q}}{d\prb} =L
+			$$
+		with $L$ defined as above.
+

@@ -1,0 +1,201 @@
+% !TEX root = QCF_ss14UDE.tex
+\section{Capital Market and Renewable Energy Projects}
+\subsection{Renewable Energy Finance}
+
+\frame{\frametitle{Renewable Energy Projects}
+\begin{itemize}
+\item<1-> To meet their 2020 target the EU needs institutional investor (pension funds, insurance companies, wealth managers) money as banks and utilities are facing severe constraints on their long-term capital available.
+\item<2-> Regulatory barriers
+\begin{itemize}
+\item pension funds are not allowed to invest in infrastructure 
+\item unbundling: funds are not allowed to invest in generation, if they are invested in transmission and distribution
+\item Solvency II requires additional regulatory capital for illiquid assets
+\end{itemize}
+\item<3->
+Governmental support schemes seem to be unstable, which increases the investment risk for investing in renewable energy projects. 
+\end{itemize}
+}
+
+\frame{\frametitle{Renewable Investment 2013}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth, height=0.8\textheight]{../../../pics/REInvestment2013.pdf}
+%\caption{Renewable Investment}
+\label{REI2013}
+\end{figure}
+}
+
+
+\frame{\frametitle{Climate Bonds Basics}
+\begin{itemize}
+\item<1-> Climate bonds are fixed-income financial instruments (bonds) linked in some way to climate change solutions., which are issued in order to raise finance for climate change projects. 
+\item<2-> Project can be greenhouse gas emission reduction projects ranging from clean energy  to energy efficiency, or climate change adaptation projects ranging from building Nile  delta flood defences to helping the Great Barrier Reef adapt to warming waters.
+\item<3->
+ Climate Bonds can be issued by governments, multi-national banks or corporations. The issuing entity guarantees to repay the bond over a certain period of time, plus either a fixed or variable rate of return.
+ \item<4-> see \url{ http://www.climatebonds.net}
+\end{itemize}
+}
+
+
+%\frame{\frametitle{Risk Map}
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.9\textwidth, height=0.7\textheight]{../../../pics/lindlein-Risk-REInvestment.pdf}
+%\caption{EUA Time Series}
+%\label{fig:RE-RiskMap}
+%\end{figure}
+%}
+
+\frame{\frametitle{Climate Bonds Basics}
+\begin{itemize}
+\item<1-> Most Climate Bonds are use-of-proceeds bonds, with investors being promised that all funds raised will only go to specified climate-related programs or assets, such as renewable energy plants or climate mitigation focused funding programs
+\item<2-> Examples are
+\begin{itemize}
+\item Project bonds - where the money is in an separate company or special purpose vehicle (SPV) for a particular project.
+\item  Asset-backed securities - where the money is for a portfolio of cash flows that are securitised in one bond, such as a portfolio of loans to renewable energy projects.
+\item Covered bonds - where the investor has dual recourse to the issuer balance sheet (typically a bank) and also a pool of assets that are high quality (usually mortgages too).
+\end{itemize}
+\end{itemize}
+}
+
+
+
+\subsection{Carbon Revenue Bonds}
+\frame{\frametitle{Carbon Revenue Bonds}
+\begin{itemize}
+\item<1-> To finance high initial cost for Renewable Energy (RE) projects future returns of the project are securitized
+\item<2->
+\begin{itemize}
+\item Sell future electricity from RE project
+\item Sell environmental credits from RE project
+\end{itemize}
+\item<3-> Only revenue from environmental credits is used for bond
+\item<4-> Rigorous forecast analysis of revenues, sensitivity tests and risk analysis is required.
+\end{itemize}
+}
+
+
+\frame{\frametitle{Structure of Bond}
+\begin{itemize}
+\item<1-> pass-through: all revenues are directly passed trough to the owner of the bond
+\item<2->
+\begin{itemize}
+\item maturity: T
+\item revenues in year 1: $c_i$
+\item rate of return: $r$
+\item initial price: $x$
+\end{itemize}
+\item<3-> Fair price
+$$
+x= \sum_{i=1}^T \frac{c_i}{(1+r)^i}
+$$
+\end{itemize}
+}
+
+\frame{\frametitle{EUA Time Series}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth, height=0.7\textheight]{../../../pics/EUA-TimeSeries.pdf}
+%\caption{EUA Time Series}
+\label{fig:EUA-TS}
+\end{figure}
+}
+\frame{\frametitle{QQ-Plots for EUA fits}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth, height=0.7\textheight]{../../../pics/QQ-CarbonFit.pdf}
+%\caption{EUA fits}
+\label{fig:EUA-fits}
+\end{figure}
+}
+\frame{\frametitle{Carbon Bond Histogram}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth, height=0.7\textheight]{../../../pics/carbon-bond-histogram.pdf}
+%\caption{Carbon Bond Histogram}
+\label{fig:Carbon-Bond-Histogram}
+\end{figure}
+
+}
+
+\subsection{Impact of Carbon Markets on Investment Markets}
+
+\frame{\frametitle{Financial Implications of Carbon Policies}
+\begin{itemize}
+\item<1-> Modern risk management has to include the consequences of climate change.
+\item<2-> Regulatory risk (reduction targets for carbon emissions) transforms into financial risk  for several asset classes.
+\item<3-> Carbon inefficient firms tend to have a higher credit spread and higher refinancing costs.
+\end{itemize}
+}
+
+\frame{\frametitle{Factors Affecting Carbon Risk}
+\begin{itemize}
+\item<1-> Energy intensity and fuel mix -- firms that are dependent on fossil fuels face higher costs.
+\item<2-> Direct, indirect and embedded emissions of a firm's product affect market position.
+\item<3-> Marginal abatement costs.
+\item<4-> Technology trajectory -- progress in adapting low-carbon emission technologies.
+\end{itemize}
+}
+
+\frame{\frametitle{Motivation for Investors to Invest in Carbon-related Assets}
+\begin{itemize}
+\item<1-> Financial Motivation
+\begin{itemize}
+\item Portfolio diversification
+\item Potential fundamental price appreciation of carbon
+\item Hedging financial risk due to carbon price increases
+\end{itemize}
+\item<2-> Green Motivation
+\begin{itemize}
+\item Compliance with UN principles of responsible investment (UN PRI)
+\item Public opinion, behaviour as corporate citizen
+\item Incentivizing the corporate sector by taking carbon credits from the market
+\end{itemize}
+\end{itemize}
+}
+
+\frame{\frametitle{Risk In Renewable Energy Companies}
+\begin{itemize}
+\item<1-> Costs: as the costs of producing RE come down while the costs of producing fossil fuels rise, a
+substitution will occur.
+\item<2-> Capital: Government and private capita
+\item<3-> Competition: between governments as they try to build greener economies
+\item<4-> China: huge efforts to establish a green economy
+\item<5-> Consumers: demand products with less impact on the economy
+\item<6-> Climate Change: will be tackled by investment in greener technologies.
+\end{itemize}
+}
+
+\frame{\frametitle{CAPM Analysis of RE Companies}
+\begin{itemize}
+\item<1-> Empirical evidence shows that RE companies have a $\beta$ close to two.
+\item<2-> Model: $i$ firm, $t$ time
+$$
+R_{it}= \alpha_i + \beta_{it} R_{mt}+\epsilon_{it}
+$$
+$R$ returns, $\alpha$ component that is independent of the market.
+\item<3-> Higher beta values indicate a higher equity cost of capital.Investors must then be compensated
+through higher expected returns in order to take on the higher risk. A higher equity cost of capital can affect borrowing costs and
+it can also affect the discount rate used in net present value calculations.
+\end{itemize}
+}
+
+\frame{\frametitle{CAPM Analysis of RE Companies II}
+\begin{itemize}
+\item<1-> Which factors affect systematic risk (the $\beta$)?
+\item<2-> Empirical analysis shows:
+\begin{itemize}
+\item Increases in sales growth reduce market risk
+\item Increases in oil price returns increases systematic risk
+\end{itemize}
+\item<3-> In order to foster RE companies governments can implement policies to increase sales of such companies (e.g. PV-industry and feed-in tariffs).
+\end{itemize}
+}
+
+
+	
+
+
+
+
+

@@ -1,0 +1,9 @@
+\frametitle{Rho of a Call Option in the Black-Scholes Model}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../../../pics/rho}
+  \caption{Rho for a European call in the BS model, $\sigma=20\%$, $T=1$,
+  $K=100$.}
+  \label{fig:rhoBS}
+\end{center}
+\end{figure}

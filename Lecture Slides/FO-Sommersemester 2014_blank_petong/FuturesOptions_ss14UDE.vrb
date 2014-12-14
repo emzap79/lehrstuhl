@@ -1,9 +1,0 @@
-\frametitle{Example: Gamma Neutral Portfolio}
-\begin{itemize}
-  \item The price of the $97$ call for $S=99$ is $Call_{BS,97}(S=99)=3.2235$.
-  \item The price of the $97$ call for $S=100$ is $Call_{BS,97}(S=100)=3.9735$.
-  \item The P/L from the position in the $97$ call is
-  $-1894.97*(3.9735-3.2235)=-1421.11$.
-  \item The P/L from the position in the stock is $924.02$.
-  \item The portfolio P/L is $924.02-1421.11+505.37=-8.28.$
-\end{itemize}

@@ -212,7 +212,9 @@ $$
 %\subsection[2006 Price Slump]{Theoretical discussion of permit price slump in 2006}
 
 %18. Folie
-\frame{\frametitle{Permit price Delta}
+
+% frametitle
+{Permit price Delta}
 For $t \in [0,T)$ and $q_{[0,t]} < N$
 \begin{itemize}
 \item<1->
@@ -267,7 +269,9 @@ $$
 \end{center}
 \end{frame}
 
-\frame{\frametitle{Price Floor Using a Subsidy}
+
+% frametitle
+{Price Floor Using a Subsidy}
 \begin{itemize}
 \item<1-> The severe permit price drop, followed by a price hovering above zero for more than five months during the first phase of the EU ETS, persuaded several policy makers that new cap-and-trade schemes would need additional safety-valve features.
 \item<2-> In particular, policy makers have been concerned about permit prices that are either too low or too high.
@@ -275,14 +279,18 @@ $$
 \end{itemize}
 
 
-\frame{\frametitle{Price Floor Using a Subsidy -- Regulation}
+
+% frametitle
+{Price Floor Using a Subsidy -- Regulation}
 \begin{itemize}
 \item<1-> A company with a permit shortage at compliance date faces a penalty $P$.
 \item<2-> If a company ends up with an excess of permits, it receives a subsidy $S$ per unit of permit.
 \item<3-> Let $0<S\leq P$ and let $N$ be the initial amount of permits allocated to relevant companies.
 \end{itemize}
 
-\frame{\frametitle{Permit Price in hybrid system}
+
+% frametitle
+{Permit Price in hybrid system}
 Denote the futures permit price by $\tilde{F}(t,T)$:
 \begin{align*}
 \tilde{F}(t,T) =& \ P \cdot \PM \left( q_{[0,T]} > N \mid \Ft \right) + S \cdot \PM \left( q_{[0,T]} \le N \mid \Ft \right) \\
@@ -294,7 +302,9 @@ Denote the futures permit price by $\tilde{F}(t,T)$:
 where $F(t,T) = P \cdot \PM \left( q_{[0,T]} > N \mid \Ft \right)$ is the futures permit price in an ordinary system.
 
 
-\frame{\frametitle{Decomposition of permit price in hybrid system}
+
+% frametitle
+{Decomposition of permit price in hybrid system}
 Computing the value of a put with strike $S$ shows that the price in the hybrid scheme is the price in the ordinary scheme plus the value of a put option on the price in the ordinary scheme with strike $S$ and maturity $T$:
 $$
 \begin{array}{ll}
@@ -306,7 +316,9 @@ $$
 $$
 
 
-\frame{\frametitle{Expected enforcement costs for regulated companies}
+
+% frametitle
+{Expected enforcement costs for regulated companies}
  Let $f_q$ be the probability density function of the cumulative emissions $q_{[0,T]}$ in the entire regulated period. The expected enforcement costs for relevant companies in an ordinary system are
 $$
 EEC = \ P \int_N^{\infty} (x-N) f_q(x) dx \ge 0.
@@ -321,7 +333,9 @@ EEC - EEC^{PF} = \ S \int_0^N (N-x) f_q(x) dx \ \ge 0.
 $$
 
 
-\frame{\frametitle{Enforcement costs for regulator}
+
+% frametitle
+{Enforcement costs for regulator}
 \begin{itemize}
 \item<1-> A price floor ensured by the presence of a subsidy is relatively easy to implement and has the further advantage of lowering the expected enforcement costs for regulated companies.
 \item<2-> The presence of the subsidy could induce a higher stimulus in technology and abatement investments, favoring the achievement of emission reduction targets.
@@ -330,7 +344,9 @@ $$
 
 
 
-\frame{\frametitle{Hybrid systems }
+
+% frametitle
+{Hybrid systems }
 {\tiny
 \begin{table}
 \centering
@@ -429,7 +445,9 @@ $$
 \end{itemize}
 \end{frame}
 
-\frame{\frametitle{Reduced-Form Dynamics}
+
+% frametitle
+{Reduced-Form Dynamics}
 The martingale
 $$
 a_t = \EX^\Q\left[\IF_{\{\Gamma_T>1\}} |\F_t\right]
@@ -447,7 +465,9 @@ $$
 z_t=\frac{\sigma_t^2}{\int_t^T \sigma^2_u du}
 $$
 
-\frame{\frametitle{Reduced-Form Dynamics -- Proof}
+
+% frametitle
+{Reduced-Form Dynamics -- Proof}
 \begin{itemize}
 \item<1-> $a_t$ formula is straightforward calculation
 \item<2-> For dynamics use that
@@ -463,7 +483,9 @@ Starting with the dynamics of $\xi_t$ an application of It{\^o}'s formula gives 
 
 
 %\subsection{Historical Calibration}
-\frame{\frametitle{Model Parametrization}
+
+% frametitle
+{Model Parametrization}
 \begin{itemize}
 \item<1-> For constant $\sigma$ we find $z_t=(T-t)^{-1}$, so a richer specification is needed.
 \item<2-> A standard model is
@@ -487,7 +509,9 @@ $$
 $$
 \end{itemize}
 
-\frame{\frametitle{Objective Measure}
+
+% frametitle
+{Objective Measure}
 \begin{itemize}
 \item<1-> We do a historical calibration and change measure to the objective measure.
 \item<2-> The standard change of measure gives
@@ -502,7 +526,9 @@ $$
 is a $\prb$ Brownian motion.
 \end{itemize}
 
-\frame{\frametitle{Objective Measure}
+
+% frametitle
+{Objective Measure}
 \begin{itemize}
 \item<1->
 Under $\prb$
@@ -517,7 +543,9 @@ estimates for $\alpha$ and $\beta$.
 
 
 %\subsection{Option Pricing}
-\frame{\frametitle{Pricing Formula}
+
+% frametitle
+{Pricing Formula}
 For a European call with strike $K$ and maturity $\tau$ the option price is
 $$
 C_t = e^{-\int_t^\tau r_s ds} \int_{-\infty}^\infty (P\Phi(x)-K)^+ \Phi_{\mu_{t,\tau}, \sigma_{t,\tau}}(dx)
@@ -548,7 +576,9 @@ $$
 
 
 %\subsection{Reduced Form Option Pricing in Multi-period Models}
-\frame{\frametitle{Two-period Model}
+
+% frametitle
+{Two-period Model}
 \begin{itemize}
 \item<1-> We consider a two-period model, $[0,T]$ and $[T,T']$, with banking and withdrawal
 \item<2-> Let $\Q$ be a martingale measure and $(A_t)_{t\in[0,T]}$ and $(A'_t)_{t\in[0,T']}$
@@ -556,7 +586,9 @@ be the futures contracts which are $\Q$ martingales.
 \item<3-> Let $N\in \F_T$ resp. $N' \in \F_{T'}$ be non-compliance in the first resp. second period.
 \end{itemize}
 
-\frame{\frametitle{(Non-) Compliance at $T$}
+
+% frametitle
+{(Non-) Compliance at $T$}
 \begin{itemize}
 \item<1-> In case of compliance, i.e. event $\Omega-N$, since $A_T$ is the spot price at $T$ and the permit can be banked,  we have
 $$
@@ -574,7 +606,9 @@ $$
 \end{itemize}
 
 
-\frame{\frametitle{Reduced-Form Model}
+
+% frametitle
+{Reduced-Form Model}
 \begin{itemize}
 \item<1-> As in the one period case,  we set
 $$
@@ -588,7 +622,9 @@ $$
 with $\xi^2_t$ a Gaussian process driven by a Brownian motion $W^2_t$.
 \end{itemize}
 
-\frame{\frametitle{Pricing Formula}
+
+% frametitle
+{Pricing Formula}
 For a European call written on a futures in the first period with strike $K$ and maturity $\tau$ we decompose the payoff
 $$
 (A_\tau-K)^+= (A_\tau - \kappa A'_\tau + \kappa A'_\tau -K )^+= (P\Phi(\xi^1_t) + \kappa P \Phi(\xi_t^2) -K)^+
@@ -602,7 +638,9 @@ of $\xi^1$ and $\xi^2$.
 
 
 
-\frame{\frametitle{Parameters of the Pricing Formula}
+
+% frametitle
+{Parameters of the Pricing Formula}
 The means are
 \begin{eqnarray}\nonumber
 \mu^1_{t,\tau} &=& \Phi^{-1}\left(\frac{A_t - \kappa A'_t}{P}\right) \sqrt{\left(\frac{T-t}{T-\tau}\right)\beta_1}\\\nonumber

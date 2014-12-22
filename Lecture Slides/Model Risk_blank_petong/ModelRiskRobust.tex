@@ -5,7 +5,9 @@
 %Analytic examples of Model Risk in Credit Modelling
 
 \section{Model Comparison}
-\frame{\frametitle{How to compare models?}
+
+% frametitle
+{How to compare models?}
 We may have two "equally sound" but different models, which give considerably different prices to derivatives (see Schoutens).
 
 \begin{itemize}
@@ -16,14 +18,18 @@ We may have two "equally sound" but different models, which give considerably di
 
 
 
-\frame{\frametitle{Comparing equally sound models}
+
+% frametitle
+{Comparing equally sound models}
 What are the crucial risk factors for the payoff to be priced (these are more important than the relevant factors)?
 \begin{itemize}
 \item<1-> Reality Check: analyse the crucial risk factors to decide which ones will be important for future price movements. This is not so important in case we do not have a liquid market and intend to keep a derivative until maturity.
 \item<2-> Market Intelligence: perform reverse engineering on prices from other market participants we observe in order to judge the market opinion.
 \end{itemize}
 
-\frame{\frametitle{Example: Leveraged Credit Default Note}
+
+% frametitle
+{Example: Leveraged Credit Default Note}
 \begin{itemize}
 \item<1-> The banks sells credit default protection to a client (notational 1).
 \item<2-> For a leveraged credit default note the banks sells protection for a notational $l_v>1$.
@@ -34,7 +40,9 @@ What are the crucial risk factors for the payoff to be priced (these are more im
 
 
 
-\frame{\frametitle{Gap Risk}
+
+% frametitle
+{Gap Risk}
 \begin{itemize}
 \item<1-> Which fee should the client pay to the bank?
 \item<2-> In case of default the clients loss is not larger than the notational $1$, but the loss may be higher $I_v \times l_d$, with $l_d$ the loss-given-default.
@@ -50,7 +58,9 @@ with $\tau_d$ the default time.
 
 
 
-\frame{\frametitle{Specifying a Trigger}
+
+% frametitle
+{Specifying a Trigger}
 \begin{itemize}
 \item<1-> To mitigate the gap risk and thus reduce the price of the leveraged note a trigger can be introduced: the contract is terminated early if $S_T(t)$, the spread of the CDS of the reference entity touches a certain level  $s_{tr}$.
 \item<2-> We set $\tau_{tr}= \inf\{t: S_T(t) \geq s_{tr}\}$, then the leveraged note is unwind at $\tau_{term}= \min\{\tau_{tr}, \tau_{d} \}$.
@@ -63,7 +73,9 @@ with $\tau_d$ the default time.
 
 \section{Credit Risk Models}
 \subsection{Credit Default Swap (CDS)}
-\frame{ \frametitle{Definition}
+
+% frametitle
+{Definition}
 A credit default swap is an exchange of a periodic payment against
 a one-off contingent payment if some credit event occurs on a
 reference asset.
@@ -80,7 +92,9 @@ Buyer & $\longrightarrow $& Seller\\
 \end{table}
 
 
-\frame{ \frametitle{Structure}
+
+% frametitle
+{Structure}
 
 The ingredients of the basic structure are the specification of
 \begin{itemize}
@@ -91,7 +105,9 @@ default, bankruptcy, downgrade.
 \end{itemize}
 
 
-\frame{ \frametitle{Valuation}
+
+% frametitle
+{Valuation}
 
 \begin{itemize}
 \item<1-> Assume a deterministic term structure of interest rates with short rate $r>0$.
@@ -107,7 +123,9 @@ of the payment is set so that contract value is zero at
 initiation.
 \end{itemize}
 
-\frame{ \frametitle{Valuation}
+
+% frametitle
+{Valuation}
 
 Thus, since the cash flow at coupon date $t_i$ for the protection
 buyer is $S_T(0)\IF_{\{\tau>t_i\}}$ and the payment for the protection
@@ -126,7 +144,9 @@ T\}}\right)} {\DSE\sum_{i=1}^n e^{-rt_i} \EX^*\left(\IF_{\{\tau
 $$
 
 
-\frame{ \frametitle{Spread Calculation}
+
+% frametitle
+{Spread Calculation}
 
 \begin{itemize}
 \item<1-> At a time $t_{j-1} < t \leq t_j$ we have
@@ -144,8 +164,9 @@ $$\prb^*\left(\tau >t_i | \tau >t\right)$$ within our models.
 
 
 \subsection{Structural Models}
-\frame{
-\frametitle{Basic Merton Model}
+
+% frametitle
+{Basic Merton Model}
 
 Merton (1974)
 assumes that a firm is financed by
@@ -161,7 +182,9 @@ under an equivalent martingale (pricing) measure $\mathbb{P^*},$ with $r,
 (dividend) rate $\delta,$ which may be negative (i.e. pay-in).
 
 
-\frame{ \frametitle{Basic Merton Model}
+
+% frametitle
+{Basic Merton Model}
 
 Default is only possible at maturity. There are two possibilities:
 $$
@@ -172,7 +195,9 @@ $$
 V_T < F, \quad \mbox{thus} \quad p^d(T,T)=V_T.
 $$
 
-\frame{ \frametitle{Equity Owners}
+
+% frametitle
+{Equity Owners}
 
 For equity owners the payoff  is
 $$
@@ -188,7 +213,9 @@ $$
 d_1=\frac{\log(\bar{V}_t/F)+(r-\delta+\sigma^2/2)(T-t)}{\sigma\sqrt{T-t}}=d_2+\sigma\sqrt{T-t}.
 $$
 
-\frame{ \frametitle{Bond Owners}
+
+% frametitle
+{Bond Owners}
 
 For bond owners the payoff is
 $$
@@ -214,7 +241,9 @@ $$
 
 
 
-\frame{ \frametitle{Bond Credit Spreads}
+
+% frametitle
+{Bond Credit Spreads}
 
 For spreads  $S(0,T)$ we use $p^d(0,T)=e^{-(r+S(0,T))T}$ and
 find
@@ -228,7 +257,9 @@ $$
 the leverage ratio.
 
 
-\frame{ \frametitle{Calculated Bond Credit Spreads  }
+
+% frametitle
+{Calculated Bond Credit Spreads  }
 
 \includegraphics<1>[height=6cm]{../../../pics/merton_spreads.pdf}%
 
@@ -238,7 +269,9 @@ the leverage ratio.
 
 \subsection{Reduced Form  Models}
 
-\frame{ \frametitle{Counting Process}
+
+% frametitle
+{Counting Process}
 
 Define the stopping time (= time of default) $$\tau = \inf \{ t :
 X(t) = D \}
@@ -249,7 +282,9 @@ N(t) = \begin{cases} 0 \;\;\; \mbox{if $\tau >t$}\\ 1 \;\;\; \mbox{if $\tau \leq
 $$
 $N(t)$ is the number of defaults up to and including time $t$.
 
-\frame{ \frametitle{Calculation in Standard Model}
+
+% frametitle
+{Calculation in Standard Model}
 
 Let $r_t$ be the (stochastic) short rate, $\delta$ the (stochastic, independent) recovery rate.
 The valuation formula for a corporate bond is
@@ -271,7 +306,9 @@ $$
 
 
 
-\frame{ \frametitle{Calculation in Standard Model II}
+
+% frametitle
+{Calculation in Standard Model II}
 
 Now $\delta=0$ i.e. zero recovery
 $$
@@ -286,7 +323,9 @@ p^d (t,T) =  p(t,T) \EX^* \left[ \left.e^{-\int_t^T \lambda_s ds} \right| \F_t\r
 $$
 
 
-\frame{ \frametitle{Survival Probability}
+
+% frametitle
+{Survival Probability}
 
 The standard "memory-less" property of exponential random variables gives for deterministic intensity
 $$
@@ -300,8 +339,9 @@ $$
 
 \section{Assessing the Gap Risk}
 
-\frame{
-\frametitle{Structural Model}
+
+% frametitle
+{Structural Model}
 
 \begin{itemize}
 \item<1-> In Merton's model the survival probability is dependent on the firm's value process and the barrier level (induced by the trigger).
@@ -318,8 +358,9 @@ $$
 
 
 
-\frame{
-\frametitle{Reduced Form Model}
+
+% frametitle
+{Reduced Form Model}
 
 \begin{itemize}
 \item<1->

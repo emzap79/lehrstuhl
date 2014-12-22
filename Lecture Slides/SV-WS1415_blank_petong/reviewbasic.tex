@@ -6,7 +6,9 @@
 
 
 \section{Derivatives}
-\frame{\frametitle{Options}
+
+% frametitle
+{Options}
 
 \begin{itemize}
  \item<1->  An option is a financial instrument giving one the {\it right, but
@@ -21,7 +23,9 @@ prior to or at expiry.
 \end{itemize}
 
 
-\frame{\frametitle{Options - Terminology (1)}
+
+% frametitle
+{Options - Terminology (1)}
 
 \begin{itemize}
 \item<1-> The asset to which the option refers is called the {\it underlying
@@ -39,7 +43,9 @@ final time.
 
 
 
-\frame{\frametitle{Options - Terminology (2)}
+
+% frametitle
+{Options - Terminology (2)}
 
 Consider, say, a European call option, with strike price $K$;
 write $S(t)$ for the value (or price) of the underlying at time
@@ -51,7 +57,9 @@ $t$.\\*[12pt]
 \end{itemize}
 
 
-\frame{\frametitle{Options - Payoff}
+
+% frametitle
+{Options - Payoff}
 
 \begin{itemize}
   \item<1-> The payoff from a call option is $$ S(T) - K \mbox{ if } S(T)
@@ -62,7 +70,9 @@ written as  $(S(T) - K)^+$).
 %}
 
 
-\frame{\frametitle{Options - Payoff/Profit diagram }
+
+% frametitle
+{Options - Payoff/Profit diagram }
 
 Considering only the option payoff, we obtain the payoff diagram, taking into account the initial payment of an investor one obtains the profit diagram below.\\*[12pt]
 
@@ -71,7 +81,9 @@ Considering only the option payoff, we obtain the payoff diagram, taking into ac
 \end{center}
 
 
-\frame{\frametitle{Options - Profit diagrams of vanilla options}
+
+% frametitle
+{Options - Profit diagrams of vanilla options}
 \begin{figure}
   \centering
    \subfigure[long call]{\includegraphics[height=3cm]{../../../pics//longcall.png}}\qquad
@@ -83,7 +95,9 @@ Considering only the option payoff, we obtain the payoff diagram, taking into ac
 
 %\subsection{Forwards and Futures}
 
-\frame{\frametitle{Forwards - Basic Structure}
+
+% frametitle
+{Forwards - Basic Structure}
 
 \begin{itemize}
 \item<1->
@@ -100,7 +114,9 @@ referred to as {\it delivery price}.
 \end{itemize}
 
 
-\frame{\frametitle{Forwards}
+
+% frametitle
+{Forwards}
 \begin{itemize}
 \item<1-> The {\it forward
 price} $F(t,T)$ is the delivery price which would make the
@@ -115,7 +131,9 @@ life-time of the contract.
 \end{itemize}
 
 
-\frame{\frametitle{Forwards}
+
+% frametitle
+{Forwards}
 \begin{itemize}
 \item<1->
 The payoff from a long position in a forward contract on one unit
@@ -127,7 +145,9 @@ risk, too. He has the obligation to buy the asset for price $K$.
 \end{itemize}
 
 
-\frame{\frametitle{Spot-Forward Relationship}
+
+% frametitle
+{Spot-Forward Relationship}
 Under the no-arbitrage assumption we have
 
 \begin{center}
@@ -147,7 +167,9 @@ All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow 
 
 
 
-\frame{\frametitle{Futures}
+
+% frametitle
+{Futures}
 \begin{itemize}
 \item<1-> Futures can be defined as standardised forward contracts traded at exchanges where a clearing house acts as a central counterparty for all transactions.
 \item<2-> Usually an initial margin is paid as a guarantee.
@@ -160,7 +182,9 @@ All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow 
 
 
 
-\frame{\frametitle{Payoff from a forward/futures contract}
+
+% frametitle
+{Payoff from a forward/futures contract}
 \begin{figure}
   \centering
    \subfigure[long position]{\includegraphics[height=4cm]{../../../pics//forwardlong.png}}\qquad
@@ -168,7 +192,9 @@ All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow 
 \end{figure}
 
 
-\frame{\frametitle{Swaps}
+
+% frametitle
+{Swaps}
 \begin{itemize}
 \item<1->
 A {\it swap} is an agreement whereby two parties
@@ -187,7 +213,9 @@ interest payments).
 
 \section{How to Model Price Movements?}
 \subsection{Price Processes}
-\frame{\frametitle{Stock Price Return}
+
+% frametitle
+{Stock Price Return}
 \begin{itemize}
 \item<1-> We wish to model the time evolution of a stock price
 $S(t)$ and consider how $S$
@@ -212,7 +240,9 @@ stock.
 
 
 
-\frame{\frametitle{Geometric Brownian Motion}
+
+% frametitle
+{Geometric Brownian Motion}
 
 Putting this together, we have the stochastic differential
 equation (SDE)
@@ -228,7 +258,9 @@ honoured in 1997.
 
 
 
-\frame{\frametitle{Brownian Motion I}
+
+% frametitle
+{Brownian Motion I}
 \begin{itemize}
 \item<1-> For the random noise we use Brownian Motion (introduced by the Botanist Robert Brown in
 1828. It was introduced into finance by Louis Bachelier in 1900, and developed in physics by Albert Einstein in 1905.
@@ -244,7 +276,9 @@ and (iv), (v)
 
 
 
-\frame{\frametitle{Brownian Motion II}
+
+% frametitle
+{Brownian Motion II}
 
 A stochastic process $X=(X(t))_{t \geq 0}$ is a standard
 Brownian motion, $BM$, if (i) -- (iii) and
@@ -260,7 +294,9 @@ $X(t)$ is a continuous function of $t$.
 
 
 
-\frame{\frametitle{ It{\^o} Processes}
+
+% frametitle
+{ It{\^o} Processes}
 \begin{itemize}
 \item<1-> We will use the following type of process expressed
 in terms of the stochastic differential equation
@@ -280,7 +316,9 @@ $$
 
 
 
-\frame{\frametitle{Multiplication rules}
+
+% frametitle
+{Multiplication rules}
 \begin{itemize}
 \item<1-> The second term above corrects for special path properties of
 Brownian Motion and needs the quadratic variation of the process.
@@ -305,7 +343,9 @@ dW & 0 &dt \\\hline
 
 
 
-\frame{\frametitle{ General It{\^o} Formula}
+
+% frametitle
+{ General It{\^o} Formula}
 
 If $X(t)$ is an It{\^o} process  and $f(t,x)$ a function with time and location variable, then
 $f = f(t,X(t))$ has stochastic differential
@@ -317,7 +357,9 @@ Observe, that we left out all function arguments
 
 
 
-\frame{\frametitle{ Example: Geometric Brownian Motion}
+
+% frametitle
+{ Example: Geometric Brownian Motion}
 
 The SDE for GBM has the unique
 solution
@@ -342,7 +384,9 @@ $$
 
 
 
-\frame{\frametitle{ Example: GBM}
+
+% frametitle
+{ Example: GBM}
 
 
 Thus It\^{o}'s lemma gives
@@ -358,7 +402,9 @@ $$
 
 
 \section{Electricity Trading}
-\frame{\frametitle{Electricity Markets}
+
+% frametitle
+{Electricity Markets}
 
 A centralized platform where participants can exchange electricity transparently
 according to the price they are will to pay or receive, and according to the capacity of
@@ -384,7 +430,9 @@ the electrical network.
 
 
 
-\frame{\frametitle{Electricity Exchanges}
+
+% frametitle
+{Electricity Exchanges}
 
 Electricity related contracts  can be traded at exchanges such as
 \begin{itemize}
@@ -397,7 +445,9 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 \end{itemize}
 
 
-\frame{\frametitle{EEX -- traded products}
+
+% frametitle
+{EEX -- traded products}
 \begin{itemize}
 \item<1-> Futures contracts for Germany and France with delivery periods week, month, quarter, year.
 \item<2-> For Germany single days and weekends are available.
@@ -405,7 +455,9 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 \end{itemize}
 
 
-\frame{\frametitle{EPEX -- traded products}
+
+% frametitle
+{EPEX -- traded products}
 \begin{itemize}
 \item<1-> Auction day-ahead and continuous intra-day market.
 \item<2-> Products are individual hours, baseload, peakload, blocks of contiguous hours.
@@ -415,7 +467,9 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 
 
 
-\frame{\frametitle{Auction EPEX}
+
+% frametitle
+{Auction EPEX}
 \begin{center}
 \includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/auction-epex07042014}
 \end{center}
@@ -423,7 +477,9 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 
 
 
-\frame{\frametitle{Spot price EPEX}
+
+% frametitle
+{Spot price EPEX}
 \begin{center}
 \includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/pricevolume-epex07042014}
 \end{center}
@@ -432,7 +488,9 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 
 
 
-\frame{\frametitle{Day-Ahead Market }
+
+% frametitle
+{Day-Ahead Market }
 \begin{itemize}
 \item<1-> Possibility to correct long-term production schedule  (build on the forward markets) in terms of hourly production schedule of power plants (Delta Hedging) -- sell more expensive hours, buy cheaper hours for flexible power plants.
 \item<2-> Adjust for residual load profiles on an hourly basis
@@ -440,14 +498,18 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 \end{itemize}
 
 
-\frame{\frametitle{Intra-Day Market }
+
+% frametitle
+{Intra-Day Market }
 \begin{itemize}
 \item<1-> Trading of hours, quarter-hours until 45 min before start of period continuously during the day
 \item<2-> From 15:00 hours of next day, from 16:00 quarter-hours of next day
 \end{itemize}
 
 
-\frame{\frametitle{Motivation for Trading Intra-Day Market }
+
+% frametitle
+{Motivation for Trading Intra-Day Market }
 \begin{itemize}
 \item<1-> Correction or optimisation of Day-Ahead position
 \begin{itemize}
@@ -462,7 +524,9 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 
 
 
-\frame{\frametitle{Structure of Balancing and Reserve Markets }
+
+% frametitle
+{Structure of Balancing and Reserve Markets }
 In Europe, the {\it European Network of Transmission System Operators for Electricity,(ENTSO-E)} coordinates overarching grid topics. The main task of a TSO is to ensure a constant power frequency in the transmission system. The following control actions are applied
 \begin{itemize}
 \item<1->{\it Primary Reserve}   starts within seconds as a joined action of all TSOs in the system.
@@ -474,7 +538,9 @@ The TSO tenders the required products for fulfilling these functions. Reserve pr
 
 
 
-\frame{\frametitle{Timing Electricity Trading}
+
+% frametitle
+{Timing Electricity Trading}
 \begin{center}
 \includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/TimeLineElectricityTrading}
 \end{center}
@@ -484,7 +550,9 @@ The TSO tenders the required products for fulfilling these functions. Reserve pr
 
 \section{A structural model -- Barlow (2002)}
 
-\frame{\frametitle{Set-up}
+
+% frametitle
+{Set-up}
 \begin{itemize}
 \item<1-> $u_t(x)$ is supply at time $t$, if price is $x$; an increasing function.
 \item<2-> $d_t(x)$ is demand at time $t$, if price is $x$; a decreasing function.
@@ -495,7 +563,9 @@ $$
 \item<4-> Need to specify $u_t$ and $d_t$.
 \end{itemize}
 
-\frame{\frametitle{Barlow (2002) Specification}
+
+% frametitle
+{Barlow (2002) Specification}
 \begin{itemize}
 \item<1-> Supply is non-random, independent of $t$
 $$u_t(x)=g(x).$$
@@ -523,7 +593,9 @@ $$
 \end{itemize}
 
 
-\frame{\frametitle{Mean-reverting Processes}
+
+% frametitle
+{Mean-reverting Processes}
 $X_t$ follows a stochastic process which can be described as follows:
 $$
 dX_t= \kappa \left( \theta -X_t \right) dt + \sigma dW_t.

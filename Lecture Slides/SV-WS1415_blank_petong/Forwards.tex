@@ -2,7 +2,9 @@
 \part{Forward Markets}
 \section{Basic Definitions and Models}
 \subsection{Basic Pricing Relations for Futures}
-\frame{\frametitle{Storage, Inventory and Convenience Yield}
+
+% frametitle
+{Storage, Inventory and Convenience Yield}
 \begin{itemize}
 \item<1-> The theory of storage aims to explain the differences between spot
 and Futures (Forward) prices by analyzing why agents hold inventories.
@@ -19,7 +21,9 @@ and hold it when the prices are low.
 \end{itemize}
 
 
-\frame{\frametitle{Spot-Forward Relationship in Commodity Markets }
+
+% frametitle
+{Spot-Forward Relationship in Commodity Markets }
 Under the no-arbitrage assumption we have
 \begin{equation}\label{SF-rel}
 F(t,T)=S(t)e^{(r-y)(T-t)}
@@ -29,7 +33,9 @@ where $r$ is the interest rate at time $t$ for maturity $T$ and $y$ is the conve
 
 
 
-\frame{\frametitle{Spot-Forward Relationship in Commodity Markets }
+
+% frametitle
+{Spot-Forward Relationship in Commodity Markets }
 
 
 Observe that (\ref{SF-rel}) implies
@@ -43,7 +49,9 @@ linear relationship (unlike options)
 
 
 
-\frame{\frametitle{Spot-Forward Relationship: Classical theory}
+
+% frametitle
+{Spot-Forward Relationship: Classical theory}
 \begin{itemize}
 \item<1-> In a stochastic model we use
 $$
@@ -58,7 +66,9 @@ where $\F_t$ is the accumulated available market information (in most models the
 \end{itemize}
 
 
-\frame{\frametitle{Market Risk Premium}
+
+% frametitle
+{Market Risk Premium}
 \begin{itemize}
 \item<1-> The \emph{market risk premium} or \emph{forward bias} $\pi (t,T)$
 relates forward and expected spot prices.
@@ -76,7 +86,9 @@ $S(T)$ is the spot price at time $T$.
 
 
 \subsection{Black's Formula}
-\frame{\frametitle{Simple Futures Market Model}
+
+% frametitle
+{Simple Futures Market Model}
 \begin{itemize}
 \item<1-> We assume for the futures dynamics
 $$
@@ -87,7 +99,9 @@ Thus financing for buying a traded asset is not relevant.
 \end{itemize}
 
 
-\frame{\frametitle{Black's Formula}
+
+% frametitle
+{Black's Formula}
 
 \begin{itemize}
 \item<1-> We use the usual notation -
@@ -106,7 +120,9 @@ $$
 \end{itemize}
 
 
-\frame{\frametitle{Black's Formula}
+
+% frametitle
+{Black's Formula}
 \begin{itemize}
 \item<1->
 Observe that the quantities $d_1$ and $d_2$ do not depend on the
@@ -121,7 +137,9 @@ interest.
 
 
 \section{Bessembinder - Lemon model}
-\frame{\frametitle{Bessembinder- Lemon Model specification}
+
+% frametitle
+{Bessembinder- Lemon Model specification}
 \begin{itemize}
 \item<1-> One-period model
 \item<2-> Power companies are able to forecast demand in the immediate future with precision
@@ -132,7 +150,9 @@ interest.
 
 
 
-\frame{\frametitle{The cost function}
+
+% frametitle
+{The cost function}
 \begin{itemize}
 \item<1-> Each producer $i$ has cost function
 $$
@@ -145,7 +165,9 @@ where $F$ are fixed costs, $Q_{P_i}$ is the output of producer $i$, and $c\geq 2
 \end{itemize}
 
 
-\frame{\frametitle{Clearing prices}
+
+% frametitle
+{Clearing prices}
 \begin{itemize}
 \item<1-> First, assume that forward prices are gives
 \item<2-> Obtain optimal behaviour in the spot market
@@ -153,7 +175,9 @@ where $F$ are fixed costs, $Q_{P_i}$ is the output of producer $i$, and $c\geq 2
 \end{itemize}
 
 
-\frame{\frametitle{The wholesale spot market}
+
+% frametitle
+{The wholesale spot market}
 \begin{itemize}
 \item<1-> Producers sell to retailers who in turn distribute to power consumers
 \item<2-> $P_W$ denotes the wholesale spot price, $Q_{P_i}^W$ quantity sold by producer $i$ in the wholesale spot market, $Q_{P_i}^F$ quantity
@@ -166,7 +190,9 @@ where each producer's physical production, $Q_{P_i}$, is the sum of its spot and
 \end{itemize}
 
 
-\frame{\frametitle{The wholesale spot market}
+
+% frametitle
+{The wholesale spot market}
 \begin{itemize}
 \item<1-> Retailers buy in the real-time wholesale market the difference between realised retail demand and their forward positions
 \item<2-> $Q_{R_j}^F$ quantity sold (purchased if negative) forward by retailer $j$, $P_R$ fixed retail price per unit
@@ -178,7 +204,9 @@ $$Q_{P_i}^W=\left(\frac{P_W}{a}\right)^{x}-Q_{P_i}^F$$
 with $x=1/(c-1)$
 \end{itemize}
 
-\frame{\frametitle{The wholesale spot market}
+
+% frametitle
+{The wholesale spot market}
 \begin{itemize}
 \item<1-> The equilibrium total retail demand is equal to total production and forward contracts are in zero net supply
 \item<2-> Hence we must have that summing over all producers production must equal total demand from retailers
@@ -188,7 +216,9 @@ $$
 \end{itemize}
 
 
-\frame{\frametitle{The wholesale spot market}
+
+% frametitle
+{The wholesale spot market}
 \begin{itemize}
 \item<1-> Therefore the market-clearing wholesale price is
 $$
@@ -201,7 +231,9 @@ $$
 \end{itemize}
 
 
-\frame{\frametitle{Demand for forward positions}
+
+% frametitle
+{Demand for forward positions}
 \begin{itemize}
 \item<1-> Producers profit (with no forwards) is
 $$
@@ -214,7 +246,9 @@ $$
 
 
 
-\frame{\frametitle{Mean-Variance Analysis for optimal forward position}
+
+% frametitle
+{Mean-Variance Analysis for optimal forward position}
 Assume that market players
 $$
 \max_{Q^F_{\{P_i,R_j\}}}\EX[\pi_{\{P_i,R_j\}}]-\frac{A}{2}\var[\pi_{\{P_i,R_j\}}]
@@ -229,7 +263,9 @@ Q^F_{\{P_i,R_j\}}= \frac{P^F-\EX[P_W]}{A\var[P_W]}+\frac{\Cov[\rho_{\{P_i,R_j\}}
 $$
 
 
-\frame{\frametitle{Mean-Variance Analysis for optimal forward position}
+
+% frametitle
+{Mean-Variance Analysis for optimal forward position}
 \begin{itemize}
 \item<1-> The optimal forward position contains two components
 \begin{itemize}
@@ -242,7 +278,9 @@ $$
 
 
 
-\frame{\frametitle{The equilibrium forward price}
+
+% frametitle
+{The equilibrium forward price}
 \begin{itemize}
 \item<1-> One can show that
 $$

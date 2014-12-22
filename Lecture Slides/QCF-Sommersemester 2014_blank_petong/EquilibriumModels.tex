@@ -260,7 +260,9 @@ S_t^{*k} = \max_{i,j} \left\{ \left(C_t^{i,j,k} + e^{i,j,k} A_t^* \right) \chi_{
 
 \subsection{Dynamics of CO2 permit prices}
 \subsubsection{Reduced Equilibrium Model}
-\frame{\frametitle{Basic Model}
+
+% frametitle
+{Basic Model}
 \begin{itemize}
 \item<1-> Risk-neutral companies with total initial endowment $e_0$
 \item<2-> Total emissions dynamics are
@@ -274,7 +276,9 @@ whether to costly abate some of the CO2 emissions or not.
 \end{itemize}
 
 
-\frame{\frametitle{Basic Model II}
+
+% frametitle
+{Basic Model II}
 \begin{itemize}
 \item<1-> $x_t$ are the total expected emissions over the trading period
 \item<2-> Then
@@ -286,7 +290,9 @@ x_t=-\int_0^tu_s ds + \EX_t\left[\int_0^T y_s ds \right]
 \end{itemize}
 
 
-\frame{\frametitle{Total Emissions}
+
+% frametitle
+{Total Emissions}
 \begin{itemize}
 \item<1-> $x_T$ are the realized emissions that relate to a potential penalty function
 \item<2-> Without abatement total expected emissions  are
@@ -302,7 +308,9 @@ and the volatility $\sigma(t,y_t)$ of the emission rate.
 \end{itemize}
 
 
-\frame{\frametitle{Optimisation problem of the central planner I}
+
+% frametitle
+{Optimisation problem of the central planner I}
 \begin{equation}
 \max_{u_t} \EX_0\left[\int_0^Te^{-rt}C(t,u_t)dt + e^{-rT}P(x_T)\right]
 \end{equation}
@@ -315,7 +323,9 @@ P(x_T) &=& \min[0,p(e_0-x_T)]
 $$
 
 
-\frame{\frametitle{Optimisation problem of the central planner II}
+
+% frametitle
+{Optimisation problem of the central planner II}
 \begin{itemize}
 \item<1-> $C(t,u_t)$ are the abatement costs per unit of time. $c$ constant implies no change in technology occurs.
 The quadratic form implies linearly increasing marginal abatement costs.
@@ -324,7 +334,9 @@ The quadratic form implies linearly increasing marginal abatement costs.
 \end{itemize}
 
 
-\frame{\frametitle{Solution of the control problem}
+
+% frametitle
+{Solution of the control problem}
 Let $V(t,x_t)$ be the expected value of the optimal policy given $x_t$. By a standard
 Hamilton-Jacobi-Bellman argument we arrive at
 \begin{equation}
@@ -352,7 +364,9 @@ $$
 \end{center}
 \end{frame}
 
-\frame{\frametitle{Permit Price Dynamics}
+
+% frametitle
+{Permit Price Dynamics}
 \begin{itemize}
 \item<1-> Recall that the permit price must equal the marginal abatement costs, so
 \begin{equation}
@@ -380,7 +394,9 @@ dS(t,x_t)= G(t)S_x(t,x_t) dW_t
 \end{frame}
 
 \subsubsection{Central Planner and Equilibrium}
-\frame{\frametitle{Individual Company Models}
+
+% frametitle
+{Individual Company Models}
 \begin{itemize}
 \item<1-> Each individual company has an endowment $e_{i0}$
 \item<2-> Individual emissions dynamics are
@@ -391,7 +407,9 @@ with deterministic drift and volatility.
 \end{itemize}
 
 
-\frame{\frametitle{Individual Emissions}
+
+% frametitle
+{Individual Emissions}
 \begin{itemize}
 \item<1-> $x_{it}$ are the total expected emissions of company $i$ over the trading period
 \item<2-> Then
@@ -402,7 +420,9 @@ x_{it}=-\int_0^tu_{is} ds -\int_0^tz_{is}ds + \EX_t\left[\int_0^T y_{is} ds \rig
 \item<4-> and $z_{it}$ is the instantaneous amount of permits bought or sold.
 \end{itemize}
 
-\frame{\frametitle{Individual Emissions Dynamics}
+
+% frametitle
+{Individual Emissions Dynamics}
 \begin{itemize}
 \item<1-> The dynamics of the total expected emissions are
 \begin{equation}
@@ -413,7 +433,9 @@ and the volatility $\sigma_i(t,y_{it})$ of the emission rate.
 \end{itemize}
 
 
-\frame{\frametitle{Optimisation Problem for the individual Company}
+
+% frametitle
+{Optimisation Problem for the individual Company}
 \begin{equation}
 \max_{u_{it}, z_{it}} \EX\left[\int_0^Te^{-rt}C_i(t,u_{it})dt - \int_0^T e^{-rt}S(t)z_{it}dt+ e^{-rT}P_i(x_{iT})\right]
 \end{equation}
@@ -426,7 +448,9 @@ P_i(x_{iT}) &=& \min[0,p(e_{i0}-x_{iT})]
 $$
 
 
-\frame{\frametitle{Solution of the control problem}
+
+% frametitle
+{Solution of the control problem}
 Let $V^i(t,x_{it})$ be the expected value of the optimal policy for company $i$. By a standard
 Hamilton-Jacobi-Bellman argument we arrive at
 $$
@@ -441,7 +465,9 @@ V^i(T, x_{iT})=e^{-rT}P_i(x_{iT}).
 $$
 
 
-\frame{\frametitle{Equilibrium Solution}
+
+% frametitle
+{Equilibrium Solution}
 \begin{itemize}
 \item<1-> We solve the HJB for $N$ companies and use the market clearing condition
 $$
@@ -460,7 +486,9 @@ S(t) = c_i u_{it}^*, \; i=1, \ldots N.
 $$
 \end{itemize}
 
-\frame{\frametitle{Joint Cost Problem I}
+
+% frametitle
+{Joint Cost Problem I}
 Again we image a central planner who has to solve
 \begin{equation}
 \max_{u_{it}} \EX\left[\int_0^Te^{-rt}\sum_{i=1}^N C_i(t,u_{it})dt + e^{-rT} \sum_{i=1}^N P_i(x_{iT})\right]
@@ -475,7 +503,9 @@ $$
 %Here, $z_{it}$ are irrelevant due to the market clearing condition.
 
 
-\frame{\frametitle{Joint Cost Problem II}
+
+% frametitle
+{Joint Cost Problem II}
 The joint cost problem now is
 $$
 \begin{array}{lll}
@@ -489,7 +519,9 @@ $$
 $$
 
 
-\frame{\frametitle{Joint Problem Solution}
+
+% frametitle
+{Joint Problem Solution}
 \begin{itemize}
 \item<1-> The first-order conditions give
 $$
@@ -507,7 +539,9 @@ $$
 \end{itemize}
 
 
-\frame{\frametitle{Equivalence to Equilibrium Solution}
+
+% frametitle
+{Equivalence to Equilibrium Solution}
 $$
 \begin{array}{lll}
 &u_{it}^{**}&\\*[12pt]
@@ -523,7 +557,9 @@ $$
 
 \subsubsection{Multi-Period Models}
 % \subsection{General Equilibrium model}
-\frame{\frametitle{Basic Model}
+
+% frametitle
+{Basic Model}
 \begin{itemize}
 \item<1-> Total emissions dynamics are
 \begin{equation}
@@ -536,7 +572,9 @@ with deterministic drift and volatility.
 \end{itemize}
 
 
-\frame{\frametitle{Basic Model II}
+
+% frametitle
+{Basic Model II}
 \begin{itemize}
 \item<1-> $x_{t,T_k}$ are the total expected emissions in $[0,T_k]$
 \item<2-> Then
@@ -546,7 +584,9 @@ x_{t,T_k}=-\int_0^tu_s ds  -\int_0^t z_u du + \EX_t\left[\int_0^{T_k} y_s ds \ri
 \end{itemize}
 
 
-\frame{\frametitle{Multi-period Framework}
+
+% frametitle
+{Multi-period Framework}
 \begin{itemize}
 \item<1-> Consider $n$ consecutive trading periods $[0,T_1], [T_1, T_2], \ldots [T_{n-1}, T_n]$ with inter-period banking (no borrowing).
 \item<2-> Initial endowment of $e_{T_{k-1}}$ at the beginning of each period $[T_{k-1}, T_k]$.
@@ -560,7 +600,9 @@ P(x_{T_k}) = P \min\{0, R(x_{T_k})\}
 $$
 \end{itemize}
 
-\frame{\frametitle{Multi-period Optimisation problem}
+
+% frametitle
+{Multi-period Optimisation problem}
 $$
 \begin{array}{lll}
 \max_{u_t, z_t} & \EX_0& \left[ \displaystyle\int_0^{T_n}e^{-rt}C(u_t)dt - \int_0^{T_n}e^{-rt}S(t) z_tdt \right. \\*[12pt]
@@ -568,7 +610,9 @@ $$
 \end{array}
 $$
 
-\frame{\frametitle{Equilibrium Solution}
+
+% frametitle
+{Equilibrium Solution}
 N companies with
 \begin{itemize}
 \item<1-> $u_{it}$ is the individual rate of abatement
@@ -580,7 +624,9 @@ $$
 $$
 \end{itemize}
 
-\frame{\frametitle{Permit Price Process}
+
+% frametitle
+{Permit Price Process}
 \begin{itemize}
 \item<1-> The general structure is still
 $$
@@ -594,7 +640,9 @@ $$
 
 
 
-\frame{\frametitle{Solution Strategy}
+
+% frametitle
+{Solution Strategy}
 \begin{itemize}
 \item<1-> Start with the last period
 \begin{itemize}

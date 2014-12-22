@@ -13,7 +13,9 @@
 \subsection{Valuation Principles}
 
 
-\frame{\frametitle{Valuation by Replication}
+
+% frametitle
+{Valuation by Replication}
 \begin{itemize}
 \item We now want to find the fair price of a derivative, i.e. we want to find the option premium
 \vspace{0.3cm}
@@ -24,7 +26,9 @@ derivative on a stock $S$ with maturity $T$.
 \end{itemize}
 
 
-\frame{\frametitle{Valuation by Replication - Idea}
+
+% frametitle
+{Valuation by Replication - Idea}
 \begin{itemize}
   \item If it is possible to duplicate the payoff $H$ of a derivative
 using a portfolio $V$ of underlying (basic) securities, the price of the
@@ -33,7 +37,9 @@ $t=0$.
 \end{itemize}
 
 
-\frame{\frametitle{Valuation by Replication - Example (1)}
+
+% frametitle
+{Valuation by Replication - Example (1)}
 \begin{itemize}
   \item We have a stock $S$ with $S(0)=20$ and a European Call option with strike $K=21$ and maturity $T$.
   \item In $T$, there are two possible states: an up- and a down state
@@ -47,7 +53,9 @@ $t=0$.
 \end{itemize}
 
 
-\frame{\frametitle{Valuation by Replication - Example (2)}
+
+% frametitle
+{Valuation by Replication - Example (2)}
 \begin{itemize}
   \item The key idea now is to try to find a portfolio combining bond and
 stock, which synthesizes the cash flow of the option.
@@ -61,7 +69,9 @@ riskfree profit today.
 \end{itemize}
 
 
-\frame{\frametitle{Valuation by Replication - Example (3)}
+
+% frametitle
+{Valuation by Replication - Example (3)}
 We construct the portfolio from
 \begin{itemize}
 \item a riskfree bond (bank account) with $B(0)=1$ and $B(T)=B(t) \cdot (1+r) = 1.05$,
@@ -76,7 +86,9 @@ possible values at $t=T$,
 
 
 
-\frame{\frametitle{Valuation by Replication - Example (4)}
+
+% frametitle
+{Valuation by Replication - Example (4)}
 \begin{itemize}
   \item we invest $\theta_0$ in the bank account and buy
   \item $\theta_1$ stocks
@@ -87,7 +99,9 @@ possible values at $t=T$,
 \end{itemize}
 
 
-\frame{\frametitle{Valuation by Replication - Example (5)}
+
+% frametitle
+{Valuation by Replication - Example (5)}
 \begin{itemize}
   \item at expiry date $t=T$, the value of the portfolio depends on the value of the stock $S(T)$, which can be 18 or 22 $\$$.
   \begin{itemize}
@@ -97,7 +111,9 @@ possible values at $t=T$,
  \end{itemize}
 
 
-\frame{\frametitle{Valuation by Replication - Example (6)}
+
+% frametitle
+{Valuation by Replication - Example (6)}
 \begin{itemize}
   \item We can reproduce the call-option with the stock and the bank account if we find the values $\theta_0$ and $\theta_1$ which replicate the payoff from the call-option.
   \item The problem is a linear system with two equations and two unknown variables
@@ -110,7 +126,9 @@ possible values at $t=T$,
 \end{itemize}
 
 
-\frame{\frametitle{Valuation by Replication - Example (7)}
+
+% frametitle
+{Valuation by Replication - Example (7)}
 \begin{itemize}
 \item To replicate the option payoff in $t$, we need $-4.286+0.25 \cdot 20 = 0.714 \$$. This is the value of the call-option in $t=0$, where $C(0)=V(0)$
 \item V(0) is called the no-arbitrage price. Every other price allows a
@@ -123,7 +141,9 @@ market) and cover yourself by setting up the above portfolio.
 \end{itemize}
 
 
-\frame{\frametitle{No-Arbitrage and Expectation (1)}
+
+% frametitle
+{No-Arbitrage and Expectation (1)}
 \begin{itemize}
   \item Let us now assume the probability of the stock rising is $p$, the probability of the stock falling is $1-p$
   \item The probability $p$ is unkown to the market because the future development of the stock is unknown
@@ -133,7 +153,9 @@ market) and cover yourself by setting up the above portfolio.
 \end{itemize}
 
 
-\frame{\frametitle{No-Arbitrage and Expectation (2)}
+
+% frametitle
+{No-Arbitrage and Expectation (2)}
 \begin{itemize}
   \item This means that the following equation must hold:
   \begin{align*}
@@ -151,7 +173,9 @@ market) and cover yourself by setting up the above portfolio.
 \end{itemize}
 
 
-\frame{\frametitle{No-Arbitrage and Expectation - General Principle}
+
+% frametitle
+{No-Arbitrage and Expectation - General Principle}
 \begin{itemize}
   \item Using the risk-neutral probabilities we state the following general pricing principle:
   \item The Arbitrage-free price of a derivative $H$ on an asset $S$ in $t$ with maturity in $T$ is given by
@@ -171,7 +195,9 @@ market) and cover yourself by setting up the above portfolio.
 
 \subsection{The Cox-Ross-Rubinstein model}
 \subsubsection{The Model}
-\frame{\frametitle{ The Cox-Ross-Rubinstein model}
+
+% frametitle
+{ The Cox-Ross-Rubinstein model}
 
 \begin{itemize}
   \item Our model consists of two basic securities. Recall that the essence of the relative pricing theory
@@ -190,7 +216,9 @@ interval $[t,t+1]$, i.e.
 \end{itemize}
 
 
-\frame{\frametitle{ The CRR Model}
+
+% frametitle
+{ The CRR Model}
 
 \begin{itemize}
   \item Furthermore, we have a risky asset (stock) $S$ with price process
@@ -208,7 +236,9 @@ for $ t = 0,1,\ldots,T-1.$
 \end{itemize}
 
 
-\frame{\frametitle{ The CRR Model}
+
+% frametitle
+{ The CRR Model}
 
 
 \begin{figure}\label{one-step-tree}
@@ -226,7 +256,9 @@ for $ t = 0,1,\ldots,T-1.$
 
 
 
-\frame{\frametitle{ The CRR Model}
+
+% frametitle
+{ The CRR Model}
 
 \begin{itemize}
   \item This construction emphasises again that a multi-period model can
@@ -243,7 +275,9 @@ time period in practical applications.
 
 
 %\section{Derivative Pricing}
-\frame{\frametitle{Pricing in the CRR Model}
+
+% frametitle
+{Pricing in the CRR Model}
 
 \begin{itemize}
   \item We now turn to the pricing of derivative assets in the
@@ -260,7 +294,9 @@ num\'{e}raire.
 
 
 
-\frame{\frametitle{Pricing measure}
+
+% frametitle
+{Pricing measure}
 
 
 (i) A pricing probabilities for the discounted stock price
@@ -277,7 +313,9 @@ q=\frac{r-d}{u-d}.
 
 
 
-\frame{\frametitle{Pricing Formula}
+
+% frametitle
+{Pricing Formula}
 
 \begin{itemize}
   \item We can now use the risk-neutral valuation formula to price {\it
@@ -294,7 +332,9 @@ $q= (r-d)/(u-d).$
 
 
 
-\frame{\frametitle{Pricing Formula}
+
+% frametitle
+{Pricing Formula}
 
 
 \begin{itemize}
@@ -314,7 +354,9 @@ values $d, u$.
 \end{itemize}
 
 
-\frame{\frametitle{European claims}
+
+% frametitle
+{European claims}
 \begin{itemize}
   \item Consider a European contingent claim with expiry $T$ given by
 $X=f(S_T)$. The arbitrage price process $\pi_X(t), \; t=0, 1,
@@ -326,7 +368,9 @@ $X=f(S_T)$. The arbitrage price process $\pi_X(t), \; t=0, 1,
 
 
 
-\frame{\frametitle{European call}
+
+% frametitle
+{European call}
 \begin{itemize}
   \item Consider a European call option with expiry $T$ and strike price
 $K$ written on (one share of) the stock $S$. The arbitrage price
@@ -343,7 +387,9 @@ put-call parity.
 \end{itemize}
 
 
-\frame{\frametitle{ A Three-period Example (1)}
+
+% frametitle
+{ A Three-period Example (1)}
 
 \begin{itemize}
   \item<1->  We consider a continuous-time model with one-year risk-free interest rate (continuously compounded) $\rho=0.06$ and the volatility of the stock is 20\%, so $\s = 0.2$.
@@ -369,7 +415,9 @@ $$
 \end{itemize}
 
 
-\frame{\frametitle{ A Three-period Example (2)}
+
+% frametitle
+{ A Three-period Example (2)}
 \begin{itemize}
   \item We assume that $S(0)=100$.
 Prices of the stock and the call  with strike $K=100$ are given below.
@@ -409,7 +457,9 @@ Prices of the stock and the call  with strike $K=100$ are given below.
 %(\ref{crrcallprice}), (\ref{crrpricen}) to the Black-Scholes price.
 
 
-\frame{\frametitle{ A Three-period Example (3)}
+
+% frametitle
+{ A Three-period Example (3)}
 \begin{itemize}
 \item To price a European call option with maturity one year ($N=3$) and
 strike $K=100)$ we can either use the explicit valuation formula or work our way backwards through the tree.
@@ -420,7 +470,9 @@ $S=100, K=90, \rho=0.06, \s=0.2, T=1$.
 
 
 
-\frame{\frametitle{Delta  of an option}
+
+% frametitle
+{Delta  of an option}
 \begin{itemize}
 \item<1-> The delta $\Delta$ of an option is the ration of the change in the price of the option to the
 change of the price of the underlying.
@@ -432,7 +484,9 @@ create a riskfree portfolio -- the delta hedge.
 
 
 
-\frame{\frametitle{Example of the Delta}
+
+% frametitle
+{Example of the Delta}
 \begin{itemize}
 \item<1->
 $$
@@ -454,7 +508,9 @@ $$
 
 \subsubsection{Binomial approximation}
 
-\frame{\frametitle{Binomial Approximations (1)}
+
+% frametitle
+{Binomial Approximations (1)}
 
 \begin{itemize}
   \item Suppose we observe financial assets during a continuous time
@@ -476,7 +532,9 @@ discrete-time stochastic processes in a suitable sense.
 
 
 
-\frame{\frametitle{Binomial Approximations (2)}
+
+% frametitle
+{Binomial Approximations (2)}
 
 \begin{itemize}
  \item
@@ -498,7 +556,9 @@ with $\Pi_C^{BS}(0)$ given by the Black-Scholes formula.
 
 
 
-\frame{\frametitle{The Black-Scholes Formula}
+
+% frametitle
+{The Black-Scholes Formula}
 
 \begin{itemize}
 \item The Black-Schole Formula for the price $\Pi_C^{BS}(0)$ of a European call  (we use
@@ -522,7 +582,9 @@ $$
 
 \subsubsection{American Options}
 
-\frame{\frametitle{ American Options in the CRR model (1)}
+
+% frametitle
+{ American Options in the CRR model (1)}
 \begin{itemize}
   \item We now consider how to evaluate an American put option in a
 standard CRR model.
@@ -534,7 +596,9 @@ rate of interest in each subinterval by $r$).
 \end{itemize}
 
 
-\frame{\frametitle{ American Options in the CRR model (2)}
+
+% frametitle
+{ American Options in the CRR model (2)}
 \begin{itemize}
   \item The remaining
 degrees of freedom are resolved by choosing $u$ and $d$ as
@@ -554,7 +618,9 @@ $$
 \end{itemize}
 
 
-\frame{\frametitle{ American Options in the CRR model (3)}
+
+% frametitle
+{ American Options in the CRR model (3)}
 \begin{itemize}
   \item Thus the stock with initial value $S = S(0)$ is worth $S (1+u)^i
 (1+d)^j$ after $i$ steps up and $j$ steps down.
@@ -565,7 +631,9 @@ through the tree.
 \end{itemize}
 
 
-\frame{\frametitle{ American Options in the CRR model (4)}
+
+% frametitle
+{ American Options in the CRR model (4)}
 \begin{itemize}
   \item It is common to take $N$ of the order of 30, for
 two reasons:
@@ -580,7 +648,9 @@ $2^{30}$ is somewhat over a billion).
 \end{itemize}
 
 
-\frame{\frametitle{ American Options in the CRR model (5)}
+
+% frametitle
+{ American Options in the CRR model (5)}
 
 \begin{itemize}
   \item We can now calculate both the value of an American put option and
@@ -594,7 +664,9 @@ optimisation and Operational Research.
 
 
 
-\frame{\frametitle{American Options in the CRR model - Step (1)}
+
+% frametitle
+{American Options in the CRR model - Step (1)}
 
 
 \begin{enumerate}
@@ -614,7 +686,9 @@ at the terminal nodes underneath the terminal prices.
 \end{enumerate}
 
 
-\frame{\frametitle{American Options in the CRR model - Step (2)}
+
+% frametitle
+{American Options in the CRR model - Step (2)}
 \begin{enumerate}
 \setcounter{enumi}{3}
 \item  Work back down the tree, from right to left. The no-exercise
@@ -636,7 +710,9 @@ $$
 \end{enumerate}
 
 
-\frame{\frametitle{American Options in the CRR model - Step (3)}
+
+% frametitle
+{American Options in the CRR model - Step (3)}
 \begin{itemize}
   \item The value of
 the American put is the higher of these:
@@ -651,7 +727,9 @@ $$
 \end{itemize}
 
 
-\frame{\frametitle{American Options in the CRR model - Step (4)}
+
+% frametitle
+{American Options in the CRR model - Step (4)}
 \begin{enumerate}
 \setcounter{enumi}{4}
   \item The initial value of the option is the value $f^A_0$ filled in
@@ -665,7 +743,9 @@ expected discounted future payoff.
 
 
 
-\frame{\frametitle{ A Three-period Example (4)}
+
+% frametitle
+{ A Three-period Example (4)}
 
 \begin{figure}[htb]
 \begin{center}
@@ -683,7 +763,9 @@ expected discounted future payoff.
 
 
 
-\frame{\frametitle{ A Three-period Example (5)}
+
+% frametitle
+{ A Three-period Example (5)}
 
 \begin{itemize}
   \item To price a European put, with price process denoted by $p(t)$, and
@@ -698,7 +780,9 @@ corresponding European put.
 \end{itemize}
 
 
-\frame{\frametitle{ A Three-period Example (6)}
+
+% frametitle
+{ A Three-period Example (6)}
 
 \begin{figure}[hbtp]
 \unitlength1cm \thicklines

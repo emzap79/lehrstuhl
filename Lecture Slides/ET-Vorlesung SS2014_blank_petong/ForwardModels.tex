@@ -1,7 +1,9 @@
 % !TEX root = EnergyTrading_ss14UDE.tex
 \section{Forward Models}
 \subsection{Basic Pricing Relations for Forwards/Futures}
-\frame{\frametitle{Storage, Inventory and Convenience Yield}
+
+% frametitle
+{Storage, Inventory and Convenience Yield}
 \begin{itemize}
 \item<1-> The theory of storage aims to explain the differences between spot
 and Futures (Forward) prices by analyzing why agents hold inventories.
@@ -18,7 +20,9 @@ and hold it when the prices are low.
 \end{itemize}
 
 
-\frame{\frametitle{Spot-Forward Relationship in Commodity Markets }
+
+% frametitle
+{Spot-Forward Relationship in Commodity Markets }
 Under the no-arbitrage assumption we have
 \begin{equation}\label{SF-rel}
 F(t,T)=S(t)e^{(r-y)(T-t)}
@@ -28,7 +32,9 @@ where $r$ is the interest rate at time $t$ for maturity $T$ and $y$ is the conve
 
 
 
-\frame{\frametitle{Spot-Forward Relationship in Commodity Markets }
+
+% frametitle
+{Spot-Forward Relationship in Commodity Markets }
 
 
 Observe that (\ref{SF-rel}) implies
@@ -42,7 +48,9 @@ linear relationship (unlike options)
 
 
 
-\frame{\frametitle{Spot-Forward Relationship: Classical theory}
+
+% frametitle
+{Spot-Forward Relationship: Classical theory}
 \begin{itemize}
 \item<1-> In a stochastic model we use
 $$
@@ -57,7 +65,9 @@ where $\F_t$ is the accumulated available market information (in most models the
 \end{itemize}
 
 
-\frame{\frametitle{Forward Prices and Expectation of Future Spot Prices}
+
+% frametitle
+{Forward Prices and Expectation of Future Spot Prices}
 The rational expectation hypothesis (REH) states that the current forward price $F(t,T)$ for a commodity with
 delivery a time $T>t$ is the best estimator for the price $S(T)$ of the commodity.
 In mathematical terms
@@ -68,7 +78,9 @@ where $\F_t$ represents the information available at time $t$. The REH has been 
 tested in many studies for a wide range of commodities.
 
 
-\frame{\frametitle{Futures Prices and Expectation of Future Spot Prices}
+
+% frametitle
+{Futures Prices and Expectation of Future Spot Prices}
 When equality in (\ref{REH}) does not hold forward prices are biased estimators of
 future spot prices. If
 \begin{itemize}
@@ -81,7 +93,9 @@ perception of excess supply in the future.
 
 
 
-\frame{\frametitle{Market Risk Premium}
+
+% frametitle
+{Market Risk Premium}
 \begin{itemize}
 \item<1-> The \emph{market risk premium} or \emph{forward bias} $\pi (t,T)$
 relates forward and expected spot prices.
@@ -98,7 +112,9 @@ $S(T)$ is the spot price at time $T$.
 
 
 \subsection{HJM-type models}
-\frame{\frametitle{ Heath-Jarrow-Morton (HJM) model}
+
+% frametitle
+{ Heath-Jarrow-Morton (HJM) model}
 
 The Heath-Jarrow-Morton model uses the entire forward rate curve as
 (infinite-dimensional) state variable. The dynamics of the forward rates $F(t,T)$ are {\it exogenously} given by
@@ -113,7 +129,9 @@ of the empirical (observed) forward rate for the future date $T$
 which prevails at time $0$.
 
 
-\frame{\frametitle{One-Factor GBM Specification}
+
+% frametitle
+{One-Factor GBM Specification}
 Here the volatility is
 $$
 \sigma_1(t,T)=e^{-\kappa (T-t)}\sigma
@@ -123,7 +141,9 @@ $$
 dF(t,T)=F(t,T)\sigma_1(t,T)dW(t)
 $$
 
-\frame{\frametitle{Two-Factor GBM Specification}
+
+% frametitle
+{Two-Factor GBM Specification}
 Here the volatilities are
 $$
 \sigma_1(t,T)=e^{-\kappa (T-t)}\sigma_1 \; \mbox{ and } \; \sigma_2>0
@@ -135,7 +155,9 @@ $$
 
 
 \subsection{A Market Model}
-\frame{\frametitle{Modelling Approach}
+
+% frametitle
+{Modelling Approach}
 \begin{itemize}
 \item<1-> We use the HJM-framework to model the forward dynamics directly.
 \item<2-> We distinguish between forward contracts with a fixed time delivery and forward contracts with a delivery period, called \emph{swaps}.
@@ -143,14 +165,18 @@ $$
 \end{itemize}
 
 
-\frame{\frametitle{Modelling Approach}
+
+% frametitle
+{Modelling Approach}
 The dynamics of a decomposable swap with delivery period $[T_1,T_{N}]$ can than be obtained from $N-1$ atomic swaps by
 \begin{align}
 F(t,T_1,T_N)=\sum\limits_{i=1}^{N-1} \frac{T_{i+1}-T_i}{T_N-T_1} F(t,T_i,T_{i+1})\label{eqn: decomposbale swap}
 \end{align}
 
 
-\frame{\frametitle{Modelling Approach}
+
+% frametitle
+{Modelling Approach}
 We discuss several lognormal dynamics of the swap price,
 \begin{equation}
 dF(t,T_1,T_2)=\Sigma(t,T_1,T_2)F(t,T_1,T_2)\, dW(t). \label{eqn: lognormal dynamics}
@@ -158,7 +184,9 @@ dF(t,T_1,T_2)=\Sigma(t,T_1,T_2)F(t,T_1,T_2)\, dW(t). \label{eqn: lognormal dynam
 The only parameter in this model is the volatility function $\Sigma$ which has to capture all movements of the swap price and especially the time to maturity effect.
 
 
-\frame{\frametitle{Volatility Functions}
+
+% frametitle
+{Volatility Functions}
 We assume that the swap price dynamics \emph{for all atomic swaps} is given by (\ref{eqn: lognormal dynamics})
 where $\Sigma(t,T_1,T_2)$ is a continuously differentiable and positive function.
 
@@ -168,7 +196,9 @@ Starting out with a given volatility function for a fixed time forward contract 
 \end{equation}
 
 
-\frame{\frametitle{Schwartz}
+
+% frametitle
+{Schwartz}
 For the volatility function of the forward we use
 \begin{equation}\label{vol-schwartz}
 \sigma(t,u)=a e^{-b(u-t)}
@@ -176,7 +206,9 @@ For the volatility function of the forward we use
 where $a,b >0 $ are constant.
 
 
-\frame{\frametitle{Schwartz}
+
+% frametitle
+{Schwartz}
 The time to maturity effect is modeled by a negative exponential function.
 \begin{itemize}
 \item<1-> When the time to maturity tends to infinity the volatility function converges to zero.
@@ -186,7 +218,9 @@ The time to maturity effect is modeled by a negative exponential function.
 
 
 
-\frame{\frametitle{Schwartz}
+
+% frametitle
+{Schwartz}
 
 Applying this forward volatility to (\ref{eqn: swap volatility creation}) the swap volatility is:
 \begin{align}
@@ -205,7 +239,9 @@ The associated swap price volatility is then given by $\Sigma(t,T_1,T_2)=a$.
 
 
 
-\frame{\frametitle{Fackler-Tian}
+
+% frametitle
+{Fackler-Tian}
 \emph{Fackler and Tian}  replaced the factor $a$ by a seasonality function $a(t)$.
 \begin{equation}
 \sigma(t,u) = a(t)e^{-b(u-t)}
@@ -217,7 +253,9 @@ a(t)=a+\sum_{j=1}^{7}(\alpha_j\, \cos(2\pi jt)+ \beta_j \, sin(2\pi jt)) \label{
 with $t$  measured in years. The parameters $\alpha_j$ and $\beta_j$ are real numbers and $a \ge 0, b > 0$.
 
 
-\frame{\frametitle{Fackler-Tian}
+
+% frametitle
+{Fackler-Tian}
 
 The volatility function of the swap price is therefore
 \begin{equation}
@@ -226,7 +264,9 @@ The volatility function of the swap price is therefore
 where $\varphi(T_1,T_2)$ is given by (\ref{volatility function varphi}).\\
 
 
-\frame{\frametitle{Clewlow - Strickland}
+
+% frametitle
+{Clewlow - Strickland}
 \begin{itemize}
 \item<1-> Empirical observations show that in energy markets we can observe that the volatility increases strictly as the contract approaches maturity.
 \item<2-> Such a sharp raise can be modeled by a high value for $b$.
@@ -234,7 +274,9 @@ where $\varphi(T_1,T_2)$ is given by (\ref{volatility function varphi}).\\
 \end{itemize}
 
 
-\frame{\frametitle{Clewlow - Strickland}
+
+% frametitle
+{Clewlow - Strickland}
 
 For this reason \emph{Clewlow and Strickland} suggested
 \begin{equation}
@@ -243,7 +285,9 @@ For this reason \emph{Clewlow and Strickland} suggested
 where $a\ge 0, b > 0$ and $ 0 \le c\le 1$.
 
 
-\frame{\frametitle{Clewlow - Strickland}
+
+% frametitle
+{Clewlow - Strickland}
 
 The associated swap volatility model becomes
 \begin{equation}
@@ -253,7 +297,9 @@ where $\varphi(T_1,T_2)$ is defined as in (\ref{volatility function varphi}).\\
 
 
 
-\frame{\frametitle{Koekenbakker -- Lien}
+
+% frametitle
+{Koekenbakker -- Lien}
 \emph{Koekenbakker and Lien} suggested to use a seasonality function in the \emph{Strickland} model (\ref{Strickland model}) and proposed a volatility which is given by
 \begin{equation}
 \sigma(t,u)=a(t)\, ((1-c)e^{-b(u-t)}+c)
@@ -261,7 +307,9 @@ where $\varphi(T_1,T_2)$ is defined as in (\ref{volatility function varphi}).\\
 where $a(t)$ is defined as in (\ref{seasonality function}) and with parameters $a \ge 0, b > 0\, ,\, 0 \le c \le 1, \,\alpha_j, \, \beta_j$ are real constants.
 
 
-\frame{\frametitle{Koekenbakker -- Lien}
+
+% frametitle
+{Koekenbakker -- Lien}
 \begin{itemize}
 \item<1-> Observe that $\lim \limits_{u \to t} \sigma(t,u)$ exists and $\sigma(t,t)=a(t)$.
 \item<2-> Hence the spot volatility is modeled by the seasonal function.
@@ -270,14 +318,18 @@ where $a(t)$ is defined as in (\ref{seasonality function}) and with parameters $
 \end{itemize}
 
 
-\frame{\frametitle{Koekenbakker -- Lien}
+
+% frametitle
+{Koekenbakker -- Lien}
 We obtain the swap volatility model
 \begin{equation}
 \Sigma(t,T_1,T_2)=a(t) ((1-c)\, \varphi(T_1,T_2)+c).
 \end{equation}
 
 
-\frame{\frametitle{Benth -- Koekenbakker}
+
+% frametitle
+{Benth -- Koekenbakker}
 \emph{Benth and Koekebakker} suggested the following forward curve model
 \begin{equation}
 \sigma(t,u)=\hat{a} e^{-b(u-t)}+a(t)
@@ -288,7 +340,9 @@ In this model the seasonality effect is separated from the maturity effect. For 
 
 
 
-\frame{\frametitle{Benth -- Koekenbakker}
+
+% frametitle
+{Benth -- Koekenbakker}
 
 
 The associated swap volatility is given by
@@ -299,7 +353,9 @@ The associated swap volatility is given by
 
 
 
-\frame{\frametitle{Model Summary}
+
+% frametitle
+{Model Summary}
 A summary of the different models  is listed in Table \ref{tab: lognormal models}.
 \begin{table}[h]
  \small \centering {\sf

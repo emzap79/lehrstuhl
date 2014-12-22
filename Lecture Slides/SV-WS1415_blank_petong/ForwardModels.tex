@@ -1,7 +1,9 @@
 \section{HJM-models with delivery period}
 \subsection{Classical Model Specification}
 
-\frame{\frametitle{ Heath-Jarrow-Morton (HJM) model}
+
+% frametitle
+{ Heath-Jarrow-Morton (HJM) model}
 
 The Heath-Jarrow-Morton model uses the entire forward rate curve as
 (infinite-dimensional) state variable. The dynamics of the forward rates $f(t,T)$ are {\it exogenously} given by
@@ -19,7 +21,9 @@ which prevails at time $0$.
 
 
 
-\frame{\frametitle{One-Factor GBM Specification}
+
+% frametitle
+{One-Factor GBM Specification}
 Here the volatility is
 $$
 \sigma_1(t,T)=e^{-\kappa (T-t)}\sigma
@@ -30,7 +34,9 @@ dF(t,T)=F(t,T)\sigma_1(t,T)dW(t)
 $$
 
 
-\frame{\frametitle{Two-Factor GBM Specification}
+
+% frametitle
+{Two-Factor GBM Specification}
 Here the volatilities are
 $$
 \sigma_1(t,T)=e^{-\kappa (T-t)}\sigma_1 \; \mbox{ and } \; \sigma_2>0
@@ -42,7 +48,9 @@ $$
 
 
 \subsection{HJM-type Forward Models}
-\frame{\frametitle{Modelling Approach}
+
+% frametitle
+{Modelling Approach}
 \begin{itemize}
 \item<1-> We use the HJM-framework to model the forward dynamics directly.
 \item<2-> We distinguish between forward contracts with a fixed time delivery and forward contracts with a delivery period, called \emph{swaps}.
@@ -57,7 +65,9 @@ The only parameter in this model is the volatility function $\Sigma$ which has t
 
 
 
-\frame{\frametitle{Volatility Functions}
+
+% frametitle
+{Volatility Functions}
 We assume that the swap price dynamics for all swaps is given by (\ref{eqn: lognormal dynamics})
 where $\Sigma(t,T_1,T_2)$ is a continuously differentiable and positive function.
 
@@ -67,7 +77,9 @@ Starting out with a given volatility function for a fixed time forward contract 
 \end{equation}
 
 
-\frame{\frametitle{Schwartz Volatility}
+
+% frametitle
+{Schwartz Volatility}
 For the related volatility function of the forward we obtain
 \begin{equation}\label{vol-schwartz}
 \sigma(t,u)=a e^{-b(u-t)}
@@ -75,7 +87,9 @@ For the related volatility function of the forward we obtain
 where $a,b >0 $ are constant.
 
 
-\frame{\frametitle{Schwartz Volatility}
+
+% frametitle
+{Schwartz Volatility}
 The time to maturity effect is modeled by a negative exponential function.
 \begin{itemize}
 \item<1-> When the time to maturity tends to infinity the volatility function converges to zero.
@@ -85,7 +99,9 @@ The time to maturity effect is modeled by a negative exponential function.
 
 
 
-\frame{\frametitle{Schwartz Volatility}
+
+% frametitle
+{Schwartz Volatility}
 
 Applying this forward volatility to (\ref{eqn: swap volatility creation}) the swap volatility is:
 \begin{align}
@@ -106,7 +122,9 @@ The associated swap price volatility is then given by $\Sigma(t,T_1,T_2)=a$.
 
 \subsection{The Brownian Factor Model}
 
-\frame{ \frametitle{The Model Framework}
+
+% frametitle
+{The Model Framework}
 \begin{itemize}
 \item<1-> Use observable products, e.g. month futures as building blocks,
 \item<2-> Under a risk-neutral measure month forward prices $F(t,T,T+m)=F(t,T)$ have to be martingales,
@@ -118,7 +136,9 @@ $W(t)$ a $d$-dimensional Brownian motion.
 \end{itemize}
 
 
-\frame{ \frametitle{Options on Building Blocks}
+
+% frametitle
+{Options on Building Blocks}
 A European call option on $F(t,T)$ with maturity $T_0$ and strike
 $K$ can be easily evaluated by the Black-formula
 \begin{eqnarray}\label{eq:month-option}
@@ -132,7 +152,9 @@ d_2 & = & d_1 - \sqrt{\Sigma(T_0,T)}
 
 
 
-\frame{ \frametitle{The Model Framework -- $n$-period futures}
+
+% frametitle
+{The Model Framework -- $n$-period futures}
 \begin{itemize}
 \item<1-> Use observable products, e.g. month futures as building blocks,
 \item<2-> Express an $n$-period delivery futures as
@@ -143,7 +165,9 @@ which can be also observed in the market.
 \end{itemize}
 
 
-\frame{ \frametitle{Implied Prices of Futures}
+
+% frametitle
+{Implied Prices of Futures}
 \begin{center}
 \includegraphics[height=6cm, width=10cm]{../../../pics/forwardcurve2}
 \end{center}
@@ -151,7 +175,9 @@ which can be also observed in the market.
 
 
 
-\frame{ \frametitle{Options on $n$-period futures}
+
+% frametitle
+{Options on $n$-period futures}
 \begin{itemize}
 \item<1-> We need to compute
 $$e^{-rT_0} \EX \left[\left(Y(T_0)-K\right)^+\right],$$
@@ -171,7 +197,9 @@ can be found in Brigo-Mercurio (2003).
 
 
 
-\frame{ \frametitle{Options on $n$-period futures}
+
+% frametitle
+{Options on $n$-period futures}
 
 Using this approximation, it
 is possible to apply a Black-Option formula again to obtain the
@@ -190,7 +218,9 @@ d_2 & = & d_1 - s
 
 
 \subsection{A two-factor model}
-\frame{ \frametitle{A Two-Factor Model}
+
+% frametitle
+{A Two-Factor Model}
 
 \begin{itemize}
 \item<1-> For a fixed delivery start $T$ and delivery period 1 month, let the dynamics of a Future $F_{t,T}$ be given by the two factor model:
@@ -205,7 +235,9 @@ F(t,T)& =&F(0,T)\exp\left\{\mu(t,T)  +\int_0^t\hat{\sigma_1}(s,T)dW_s^{(1)}+\sig
 \end{itemize}
 
 
-\frame{ \frametitle{Model Parameters}
+
+% frametitle
+{Model Parameters}
 $\sigma_1$ affects the level at the short end of the volatility curve
 
 \begin{center}
@@ -214,7 +246,9 @@ $\sigma_1$ affects the level at the short end of the volatility curve
 
 
 
-\frame{ \frametitle{Model Parameters}
+
+% frametitle
+{Model Parameters}
 $\kappa$ affects the slope of the volatility curve at the short end
 
 \begin{center}
@@ -223,7 +257,9 @@ $\kappa$ affects the slope of the volatility curve at the short end
 
 
 
-\frame{ \frametitle{Model Parameters}
+
+% frametitle
+{Model Parameters}
 $\sigma_2$ affects the level at the long end of the volatility curve
 
 \begin{center}
@@ -232,7 +268,9 @@ $\sigma_2$ affects the level at the long end of the volatility curve
 
 
 
-\frame{ \frametitle{Pricing of Futures}
+
+% frametitle
+{Pricing of Futures}
 \begin{itemize}
 \item<1-> In this model, all products are expressed using Month-Futures
 \item<2-> Prices of quarterly and yearly Futures are given as an
@@ -241,7 +279,9 @@ average of the  $n$ corresponding monthly Futures.
 is the forward price of a $n$-month forward quoted in the market (cp. swap rate)
 \end{itemize}
 
-\frame{ \frametitle{Pricing of Options on Month-Futures}
+
+% frametitle
+{Pricing of Options on Month-Futures}
 \begin{itemize}
 \item<1-> At time $t=0$, the price of a  Call-Option with strike $K$ and maturity $T_0$ on a Month-Future $F_{t,T}$ is given by
 $$e^{-rT_0}\EX\left[\left(F_{T_0,T}-K\right)^+\right]$$
@@ -256,7 +296,9 @@ e^{-rT_0}\left(F_{0,T}\mathcal{N}(d_1)-K\mathcal{N}(d_2)\right)
 \end{eqnarray*}with $d_{1,2}$ depending on the parameters $\sigma_1, \sigma_2, \kappa$.
 \end{itemize}
 
-\frame{ \frametitle{Pricing of Options on quarterly and yearly Futures}
+
+% frametitle
+{Pricing of Options on quarterly and yearly Futures}
 \begin{itemize}
 \item<1-> At time $t=0$, the price of a  Call-Option with strike $K$ and maturity $T_0$ on a $n$-Month-Future
 $Y$ is given by
@@ -268,7 +310,9 @@ e^{-rT_0}\EX\left[\left(Y-K\right)^+\right]=e^{-rT_0}\EX
 with same mean and variance (depending on the model parameters)
 \end{itemize}
 
-\frame{ \frametitle{Matching the Variance}
+
+% frametitle
+{Matching the Variance}
 Using the moment-generating function of a normal random variable, we get
 $$
 \exp (s^2) = \frac{\textrm{Var}(Y)}{\left(\EX (Y)\right)^2} + 1  = \frac{\EX(Y^2)}{\EX(Y)^2}
@@ -278,7 +322,9 @@ $\EX (F_{T_0,T_i}) =  F_{0,T_i} $ and
 $$ \EX (Y_{T_1, \ldots T_n}(T_0))  =
 \frac{\sum e^{-r(T_i-T_0)} F_{0,T_i}}{\sum e^{-r(T_i-T_0)}}.$$
 
-\frame{ \frametitle{Matching the Variance}
+
+% frametitle
+{Matching the Variance}
 
 So
 $$
@@ -295,7 +341,9 @@ $$\begin{array}{ll}
 \end{array}
 $$
 
-\frame{ \frametitle{Pricing of Options on quarterly and yearly Futures}
+
+% frametitle
+{Pricing of Options on quarterly and yearly Futures}
 The option value can be computed by Black's formula
 \begin{eqnarray*}
 e^{-rT_0}\EX\left[\left(Y-K\right)^+\right]&\approx & e^{-rT_0}\EX\left[\left(\hat{Y}-K\right)^+\right]\\
@@ -305,7 +353,9 @@ with $d_{1,2}$ depending on the parameters $\sigma_1, \sigma_2, \kappa$.
 
 
 
-\frame{ \frametitle{Parameter Estimation}
+
+% frametitle
+{Parameter Estimation}
 \begin{itemize}
 \item<1-> Use the approximating Black-formula
     \begin{eqnarray*}
@@ -321,7 +371,9 @@ to the market variances in a given metric (in the least-square sense)
 \end{itemize}
 
 
-\frame{ \frametitle{Data}
+
+% frametitle
+{Data}
 {\small \begin{table}[btp]
 \begin{center}
 \begin{tabular}{ccrrrr}
@@ -346,7 +398,9 @@ Year    &January 08     &42 &42.70&4.286&17.46\%\\
 \end{center}
 \end{table}
 }
-\frame{ \frametitle{Parameter Estimates}
+
+% frametitle
+{Parameter Estimates}
  \begin{table}[btp]
  \begin{center}
 \begin{tabular}{p{4cm}cccrrrrcc}

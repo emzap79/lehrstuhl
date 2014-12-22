@@ -210,7 +210,9 @@ S_t^{*k} = \max_{i,j} \left\{ \left(C_t^{i,j,k} + e^{i,j,k} A_t^* \right) \IF_{\
 \end{frame}
 
 \subsection{Dynamics of CO2 permit prices}
-\frame{\frametitle{Basic Model}
+
+% frametitle
+{Basic Model}
 \begin{itemize}
 \item<1-> Risk-neutral companies with total initial endowment $e_0$
 \item<2-> Total emissions dynamics are
@@ -224,7 +226,9 @@ whether to costly abate some of the CO2 emissions or not.
 \end{itemize}
 
 
-\frame{\frametitle{Basic Model II}
+
+% frametitle
+{Basic Model II}
 \begin{itemize}
 \item<1-> $x_t$ are the total expected emissions over the trading period
 \item<2-> Then
@@ -236,7 +240,9 @@ x_t=-\int_0^tu_s ds + \EX_t\left[\int_0^T y_s ds \right]
 \end{itemize}
 
 
-\frame{\frametitle{Total Emissions}
+
+% frametitle
+{Total Emissions}
 \begin{itemize}
 \item<1-> $x_T$ are the realized emissions that relate to a potential penalty function
 \item<2-> Without abatement total expected emissions  are
@@ -252,7 +258,9 @@ and the volatility $\sigma(t,y_t)$ of the emission rate.
 \end{itemize}
 
 
-\frame{\frametitle{Optimisation problem of the central planner I}
+
+% frametitle
+{Optimisation problem of the central planner I}
 \begin{equation}
 \max_{u_t} \EX_0\left[\int_0^Te^{-rt}C(t,u_t)dt + e^{-rT}P(x_T)\right]
 \end{equation}
@@ -265,7 +273,9 @@ P(x_T) &=& \min[0,p(e_0-x_T)]
 $$
 
 
-\frame{\frametitle{Optimisation problem of the central planner II}
+
+% frametitle
+{Optimisation problem of the central planner II}
 \begin{itemize}
 \item<1-> $C(t,u_t)$ are the abatement costs per unit of time. $c$ constant implies no change in technology occurs.
 The quadratic form implies linearly increasing marginal abatement costs.
@@ -274,7 +284,9 @@ The quadratic form implies linearly increasing marginal abatement costs.
 \end{itemize}
 
 
-\frame{\frametitle{Solution of the control problem}
+
+% frametitle
+{Solution of the control problem}
 Let $V(t,x_t)$ be the expected value of the optimal policy given $x_t$. By a standard
 Hamilton-Jacobi-Bellman argument we arrive at
 \begin{equation}
@@ -302,7 +314,9 @@ $$
 \end{center}
 \end{frame}
 
-\frame{\frametitle{Permit Price Dynamics}
+
+% frametitle
+{Permit Price Dynamics}
 \begin{itemize}
 \item<1-> Recall that the permit price must equal the marginal abatement costs, so
 \begin{equation}
@@ -330,7 +344,9 @@ dS(t,x_t)= G(t)S_x(t,x_t) dW_t
 \end{frame}
 
 \subsubsection{Central Planner and Equilibrium}
-\frame{\frametitle{Individual Company Models}
+
+% frametitle
+{Individual Company Models}
 \begin{itemize}
 \item<1-> Each individual company has an endowment $e_{i0}$
 \item<2-> Individual emissions dynamics are
@@ -341,7 +357,9 @@ with deterministic drift and volatility.
 \end{itemize}
 
 
-\frame{\frametitle{Individual Emissions}
+
+% frametitle
+{Individual Emissions}
 \begin{itemize}
 \item<1-> $x_{it}$ are the total expected emissions of company $i$ over the trading period
 \item<2-> Then
@@ -352,7 +370,9 @@ x_{it}=-\int_0^tu_{is} ds -\int_0^tz_{is}ds + \EX_t\left[\int_0^T y_{is} ds \rig
 \item<4-> and $z_{it}$ is the instantaneous amount of permits bought or sold.
 \end{itemize}
 
-\frame{\frametitle{Individual Emissions Dynamics}
+
+% frametitle
+{Individual Emissions Dynamics}
 \begin{itemize}
 \item<1-> The dynamics of the total expected emissions are
 \begin{equation}
@@ -363,7 +383,9 @@ and the volatility $\sigma_i(t,y_{it})$ of the emission rate.
 \end{itemize}
 
 
-\frame{\frametitle{Optimisation Problem for the individual Company}
+
+% frametitle
+{Optimisation Problem for the individual Company}
 \begin{equation}
 \max_{u_{it}, z_{it}} \EX\left[\int_0^Te^{-rt}C_i(t,u_{it})dt - \int_0^T e^{-rt}S(t)z_{it}dt+ e^{-rT}P_i(x_{iT})\right]
 \end{equation}
@@ -376,7 +398,9 @@ P_i(x_{iT}) &=& \min[0,p(e_{i0}-x_{iT})]
 $$
 
 
-\frame{\frametitle{Solution of the control problem}
+
+% frametitle
+{Solution of the control problem}
 Let $V^i(t,x_{it})$ be the expected value of the optimal policy for company $i$. By a standard
 Hamilton-Jacobi-Bellman argument we arrive at
 $$
@@ -391,7 +415,9 @@ V^i(T, x_{iT})=e^{-rT}P_i(x_{iT}).
 $$
 
 
-\frame{\frametitle{Equilibrium Solution}
+
+% frametitle
+{Equilibrium Solution}
 \begin{itemize}
 \item<1-> We solve the HJB for $N$ companies and use the market clearing condition
 $$
@@ -410,7 +436,9 @@ S(t) = c_i u_{it}^*, \; i=1, \ldots N.
 $$
 \end{itemize}
 
-\frame{\frametitle{Joint Cost Problem I}
+
+% frametitle
+{Joint Cost Problem I}
 Again we image a central planner who has to solve
 \begin{equation}
 \max_{u_{it}} \EX\left[\int_0^Te^{-rt}\sum_{i=1}^N C_i(t,u_{it})dt + e^{-rT} \sum_{i=1}^N P_i(x_{iT})\right]
@@ -425,7 +453,9 @@ $$
 %Here, $z_{it}$ are irrelevant due to the market clearing condition.
 
 
-\frame{\frametitle{Joint Cost Problem II}
+
+% frametitle
+{Joint Cost Problem II}
 The joint cost problem now is
 $$
 \begin{array}{lll}
@@ -439,7 +469,9 @@ $$
 $$
 
 
-\frame{\frametitle{Joint Problem Solution}
+
+% frametitle
+{Joint Problem Solution}
 \begin{itemize}
 \item<1-> The first-order conditions give
 $$
@@ -457,7 +489,9 @@ $$
 \end{itemize}
 
 
-\frame{\frametitle{Equivalence to Equilibrium Solution}
+
+% frametitle
+{Equivalence to Equilibrium Solution}
 $$
 \begin{array}{lll}
 &u_{it}^{**}&\\*[12pt]
@@ -531,7 +565,9 @@ $$
 \end{itemize}
 \end{frame}
 
-\frame{\frametitle{Reduced-Form Dynamics}
+
+% frametitle
+{Reduced-Form Dynamics}
 The martingale
 $$
 a_t = \EX^\Q\left[\IF_{\{\Gamma_T>1\}} |\F_t\right]
@@ -549,7 +585,9 @@ $$
 z_t=\frac{\sigma_t^2}{\int_t^T \sigma^2_u du}
 $$
 
-\frame{\frametitle{Reduced-Form Dynamics -- Proof}
+
+% frametitle
+{Reduced-Form Dynamics -- Proof}
 \begin{itemize}
 \item<1-> $a_t$ formula is straightforward calculation
 \item<2-> For dynamics use that
@@ -565,7 +603,9 @@ Starting with the dynamics of $\xi_t$ an application of It{\^o}'s formula gives 
 
 
 %\subsection{Historical Calibration}
-\frame{\frametitle{Model Parametrization}
+
+% frametitle
+{Model Parametrization}
 \begin{itemize}
 \item<1-> For constant $\sigma$ we find $z_t=(T-t)^{-1}$, so a richer specification is needed.
 \item<2-> A standard model is
@@ -589,7 +629,9 @@ $$
 $$
 \end{itemize}
 
-\frame{\frametitle{Objective Measure}
+
+% frametitle
+{Objective Measure}
 \begin{itemize}
 \item<1-> We do a historical calibration and change measure to the objective measure.
 \item<2-> The standard change of measure gives
@@ -604,7 +646,9 @@ $$
 is a $\prb$ Brownian motion.
 \end{itemize}
 
-\frame{\frametitle{Objective Measure}
+
+% frametitle
+{Objective Measure}
 \begin{itemize}
 \item<1->
 Under $\prb$
@@ -619,7 +663,9 @@ estimates for $\alpha$ and $\beta$.
 
 
 %\subsection{Option Pricing}
-\frame{\frametitle{Pricing Formula}
+
+% frametitle
+{Pricing Formula}
 For a European call with strike $K$ and maturity $\tau$ the option price is
 $$
 C_t = e^{-\int_t^\tau r_s ds} \int_{-\infty}^\infty (P\Phi(x)-K)^+ \Phi_{\mu_{t,\tau}, \sigma_{t,\tau}}(dx)
@@ -650,7 +696,9 @@ $$
 
 
 %\subsection{Reduced Form Option Pricing in Multi-period Models}
-\frame{\frametitle{Two-period Model}
+
+% frametitle
+{Two-period Model}
 \begin{itemize}
 \item<1-> We consider a two-period model, $[0,T]$ and $[T,T']$, with banking and withdrawal
 \item<2-> Let $\Q$ be a martingale measure and $(A_t)_{t\in[0,T]}$ and $(A'_t)_{t\in[0,T']}$
@@ -658,7 +706,9 @@ be the futures contracts which are $\Q$ martingales.
 \item<3-> Let $N\in \F_T$ resp. $N' \in \F_{T'}$ be non-compliance in the first resp. second period.
 \end{itemize}
 
-\frame{\frametitle{(Non-) Compliance at $T$}
+
+% frametitle
+{(Non-) Compliance at $T$}
 \begin{itemize}
 \item<1-> In case of compliance, i.e. event $\Omega-N$, since $A_T$ is the spot price at $T$ and the permit can be banked,  we have
 $$
@@ -676,7 +726,9 @@ $$
 \end{itemize}
 
 
-\frame{\frametitle{Reduced-Form Model}
+
+% frametitle
+{Reduced-Form Model}
 \begin{itemize}
 \item<1-> As in the one period case,  we set
 $$
@@ -690,7 +742,9 @@ $$
 with $\xi^2_t$ a Gaussian process driven by a Brownian motion $W^2_t$.
 \end{itemize}
 
-\frame{\frametitle{Pricing Formula}
+
+% frametitle
+{Pricing Formula}
 For a European call written on a futures in the first period with strike $K$ and maturity $\tau$ we decompose the payoff
 $$
 (A_\tau-K)^+= (A_\tau - \kappa A'_\tau + \kappa A'_\tau -K )^+= (P\Phi(\xi^1_t) + \kappa P \Phi(\xi_t^2) -K)^+
@@ -704,7 +758,9 @@ of $\xi^1$ and $\xi^2$.
 
 
 
-\frame{\frametitle{Parameters of the Pricing Formula}
+
+% frametitle
+{Parameters of the Pricing Formula}
 The means are
 \begin{eqnarray}\nonumber
 \mu^1_{t,\tau} &=& \Phi^{-1}\left(\frac{A_t - \kappa A'_t}{P}\right) \sqrt{\left(\frac{T-t}{T-\tau}\right)\beta_1}\\\nonumber

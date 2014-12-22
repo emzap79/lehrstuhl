@@ -1,7 +1,7 @@
 % !TEX root = FuturesOptions_ss14UDE.tex
 \section{The Black-Scholes Model}
 
-\begin{frame}
+\begin{frame}  
     \frametitle{}
 \vspace{0cm}
 \begin{center}
@@ -94,12 +94,12 @@ by taking partial derivatives.
 $$
 \begin{array}{lllll}
 \Delta &:=&\DSE \frac{\partial C}{\partial S} &=&\DSE \Phi(d_1) >
-0,\\*[12pt] 
+0,\\*[12pt]
 {\cal V} &:=&\DSE \frac{\partial C}{\partial \s} &=&
 \DSE S \sqrt{\tau} \varphi(d_1) >0,\\*[12pt]
  \Theta &:=&\DSE \frac{\partial
 C}{\partial \tau} &=& \DSE \frac{S \s}{2 \sqrt{\tau}} \varphi(d_1) + K r
-e^{-r\tau} \Phi(d_2) >0,\\*[12pt] 
+e^{-r\tau} \Phi(d_2) >0,\\*[12pt]
 \rho &:=&\DSE \frac{\partial
 C}{\partial r} &=& \DSE \tau K e^{-r\tau} \Phi(d_2) >0,\\*[12pt] \Gamma
 &:=&\DSE \frac{\partial^2 C}{\partial S^2} &=& \DSE
@@ -300,7 +300,7 @@ underlying stock).
 
 \begin{frame}[fragile]
 \frametitle{A simple Hedging Strategy: Stop-Loss}
-We consider a short position in one European call option with strike $K$. 
+We consider a short position in one European call option with strike $K$.
 \begin{itemize}
   \item A stop-loss hedge involves buying one share of the underlying stock when
   the price moves above $K$ and selling it again when the price falls below $K$.
@@ -336,15 +336,15 @@ We consider a short position in one European call option with strike $K$.
   portfolio is not protected against larger market movements. Transaction
   costs and bid-ask spread also result in losses.
 \end{itemize}
-\end{frame} 
- 
+\end{frame}
+
 
 
 \begin{frame}[fragile]
 \frametitle{Example: Delta Hedge}
 You are long USD $1,000$ in the $104$ call. Interest rate is $5\%$,
 stock price today is $99$, time to maturity $1$ month, and implied volatility is
-$15.7\%$. 
+$15.7\%$.
 \begin{itemize}
   \item How can you make your portfolio delta neutral by investing in the stock?
   \item You set up the delta neutral portfolio and the stock price jumps to
@@ -361,7 +361,7 @@ $15.7\%$.
     Call_{BS} = 0.3858 \text{USD}.
   \end{align*}
   \item The position consists of $N=1,000/Call_{BS}=2592$ call options.
-  \item The delta of each option is 
+  \item The delta of each option is
   \begin{align*}
     \Delta &= \Phi(d_1) =\Phi\left(\frac{\log \left( S/K \right) + (r+\sigma^2/2)(T-t)
     }{\sigma\sqrt{T-t}}\right) \\
@@ -402,7 +402,7 @@ $15.7\%$.
 \begin{frame}[fragile]
 \frametitle{Gamma Neutral Portfolios}
 As the delta of a portfolio changes with the price of the underlying, a delta
-hedge has to be rebalanced frequently. 
+hedge has to be rebalanced frequently.
 \begin{itemize}
   \item A delta hedge for a portfolio with a high (absolute) gamma has to be
   monitored more carefully than a delta hedge of a portfolio with gamma close to
@@ -421,7 +421,7 @@ hedge has to be rebalanced frequently.
 \begin{frame}[fragile]
 \frametitle{Example: Gamma Neutral Portfolio}
 You are in the same position as in the previous example. Additionally, you can
-trade in the $97$ call. 
+trade in the $97$ call.
 \begin{itemize}
   \item Put together a portfolio that is delta and gamma neutral.
   \item What is your P/L if the stock price jumps to $100$?
@@ -431,11 +431,11 @@ trade in the $97$ call.
 \begin{frame}[fragile]
 \frametitle{Example: Gamma Neutral Portfolio}
 \begin{itemize}
-  \item The gamma of the $104$ call is 
+  \item The gamma of the $104$ call is
   \begin{align*}
   \Gamma_{104C} = \frac{\varphi(d_1)}{S\sigma \sqrt{T-t}} = 0.0554.
   \end{align*}
-  \item The gamma of the $97$ call is 
+  \item The gamma of the $97$ call is
   \begin{align*}
   \Gamma_{97C} = \frac{\varphi(d_1)}{S\sigma \sqrt{T-t}} = 0.0758.
   \end{align*}

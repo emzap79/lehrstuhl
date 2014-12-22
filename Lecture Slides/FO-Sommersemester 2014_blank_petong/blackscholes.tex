@@ -1,8 +1,9 @@
 % !TEX root = FuturesOptions_ss14UDE.tex
 \section{The Black-Scholes Model}
 
-\begin{frame}
-    \frametitle{}
+
+% frametitle
+{}
 \vspace{0cm}
 \begin{center}
 \color{beamer@blendedblue}{\large{The Black-Scholes Model}}
@@ -321,8 +322,9 @@ $$\includegraphics[scale=0.45]{../../../pics/VDax_div.png}$$
 \subsection{Derivatives Risk Management}
 
 %\subsection{Introduction}
-\begin{frame}[fragile]
-\frametitle{Motivation}
+
+% frametitle
+{Motivation}
 A bank (option seller) tries to control the risk of its short position and has to ask the folkowing questions:
 \begin{itemize}
   \item How does the value of the position change if the value of the underlying changes?
@@ -330,8 +332,9 @@ A bank (option seller) tries to control the risk of its short position and has t
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Some Terms}
+
+% frametitle
+{Some Terms}
 A \emph{hedge} is a trade that reduces the risk of a position.
 \begin{itemize}
   \item A \emph{static} hedge is set up once and not touched until maturity of
@@ -346,8 +349,9 @@ that is fully hedged is called \emph{covered} (e.g., sell a forward and buy the
 underlying stock).
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{A simple Hedging Strategy: Stop-Loss}
+
+% frametitle
+{A simple Hedging Strategy: Stop-Loss}
 We consider a short position in one European call option with strike $K$.
 \begin{itemize}
   \item A stop-loss hedge involves buying one share of the underlying stock when
@@ -361,8 +365,9 @@ We consider a short position in one European call option with strike $K$.
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Delta Hedging I}
+
+% frametitle
+{Delta Hedging I}
 \begin{itemize}
   \item Assume that you have an options position with delta $\Delta$. This means
   that if the price of the underlying moves by a (very) small amount $\epsilon$, the
@@ -374,8 +379,9 @@ We consider a short position in one European call option with strike $K$.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Delta Hedging II}
+
+% frametitle
+{Delta Hedging II}
 \begin{itemize}
   \item BUT: Delta is not constant, so the portfolio has to be rebalanced.
   \item In the Black-Scholes model, a delta hedge with continuous rebalancing is
@@ -388,8 +394,9 @@ We consider a short position in one European call option with strike $K$.
 
 
 
-\begin{frame}[fragile]
-\frametitle{Example: Delta Hedge}
+
+% frametitle
+{Example: Delta Hedge}
 You are long USD $1,000$ in the $104$ call. Interest rate is $5\%$,
 stock price today is $99$, time to maturity $1$ month, and implied volatility is
 $15.7\%$.
@@ -401,8 +408,9 @@ $15.7\%$.
 
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Example: Delta Hedge}
+
+% frametitle
+{Example: Delta Hedge}
 \begin{itemize}
   \item Compute the price of the call with the BS formula:
   \begin{align*}
@@ -421,8 +429,9 @@ $15.7\%$.
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Example: Delta Hedge}
+
+% frametitle
+{Example: Delta Hedge}
 \begin{itemize}
   \item The delta of the position is long $\Delta_P=N\cdot \Delta=428.70$.
   \item The stock has $\Delta=1$.
@@ -431,8 +440,9 @@ $15.7\%$.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Example: Delta Hedge}
+
+% frametitle
+{Example: Delta Hedge}
 \begin{itemize}
   \item The loss from the short position in the stock is $428.70 \cdot
   1=428.70$.
@@ -447,8 +457,9 @@ $15.7\%$.
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Gamma Neutral Portfolios}
+
+% frametitle
+{Gamma Neutral Portfolios}
 As the delta of a portfolio changes with the price of the underlying, a delta
 hedge has to be rebalanced frequently.
 \begin{itemize}
@@ -466,8 +477,9 @@ hedge has to be rebalanced frequently.
 
 
 
-\begin{frame}[fragile]
-\frametitle{Example: Gamma Neutral Portfolio}
+
+% frametitle
+{Example: Gamma Neutral Portfolio}
 You are in the same position as in the previous example. Additionally, you can
 trade in the $97$ call.
 \begin{itemize}
@@ -476,8 +488,9 @@ trade in the $97$ call.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Example: Gamma Neutral Portfolio}
+
+% frametitle
+{Example: Gamma Neutral Portfolio}
 \begin{itemize}
   \item The gamma of the $104$ call is
   \begin{align*}
@@ -494,8 +507,9 @@ trade in the $97$ call.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Example: Gamma Neutral Portfolio}
+
+% frametitle
+{Example: Gamma Neutral Portfolio}
 \begin{itemize}
   \item We compute the delta of the portfolio consisting of the two positions in
   the calls.
@@ -510,8 +524,9 @@ trade in the $97$ call.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Example: Gamma Neutral Portfolio}
+
+% frametitle
+{Example: Gamma Neutral Portfolio}
 \begin{itemize}
   \item The price of the $97$ call for $S=99$ is $Call_{BS,97}(S=99)=3.2235$.
   \item The price of the $97$ call for $S=100$ is $Call_{BS,97}(S=100)=3.9735$.

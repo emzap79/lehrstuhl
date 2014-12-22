@@ -190,8 +190,9 @@ The value of Cont's measure for model risk is then $1.1$.
 
 \subsection{Robustness of Hedging Strategies}
 
-\begin{frame}[fragile]
-\frametitle{Delta in the Black-Scholes Model}
+
+% frametitle
+{Delta in the Black-Scholes Model}
 In the Black-Scholes model, we have computed the Greeks explicitly for
 European call options. We have:
 \begin{align*}
@@ -204,8 +205,9 @@ where, as usual, $\Phi$ denotes the c.d.f. of the standard normal distribution a
 \end{align*}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Delta of a Call Option in the Black-Scholes Model}
+
+% frametitle
+{Delta of a Call Option in the Black-Scholes Model}
 %\usepackage{graphics} is needed for \includegraphics
 \begin{figure}[htp]
 \begin{center}
@@ -217,8 +219,9 @@ where, as usual, $\Phi$ denotes the c.d.f. of the standard normal distribution a
 \end{figure}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Example: Delta Hedge}
+
+% frametitle
+{Example: Delta Hedge}
 You are long USD $1,000$ in the $104$ call. Interest rate is $5\%$,
 stock price today is $99$, time to maturity $1$ month, and implied volatility is
 $15.7\%$.
@@ -230,8 +233,9 @@ $15.7\%$.
 
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Example: Delta Hedge}
+
+% frametitle
+{Example: Delta Hedge}
 \begin{itemize}
   \item Compute the price of the call with the BS formula:
   \begin{align*}
@@ -250,8 +254,9 @@ $15.7\%$.
 \end{frame}
 
 
-\begin{frame}[fragile]
-\frametitle{Example: Delta Hedge}
+
+% frametitle
+{Example: Delta Hedge}
 \begin{itemize}
   \item The delta of the position is long $\Delta_P=N\cdot \Delta=428.70$.
   \item The stock has $\Delta=1$.
@@ -260,8 +265,9 @@ $15.7\%$.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-\frametitle{Example: Delta Hedge}
+
+% frametitle
+{Example: Delta Hedge}
 \begin{itemize}
   \item The loss from the short position in the stock is $428.70 \cdot
   1=428.70$.
@@ -823,8 +829,9 @@ Interest rate  &   &  $r$ = 3\%&  \\
 
 \subsection{Energy Model Risk Results}
 %\subsection{Calculation Procedure}
-\begin{frame}
-\frametitle{We will be capturing model risk in}
+
+% frametitle
+{We will be capturing model risk in}
 \vspace{0cm}
 \begin{itemize}
 \item Jump size distribution;
@@ -894,8 +901,9 @@ with $i$ referring to the simulation run.
 %\subsection{Risk Pictures}
 
 
-\begin{frame}
-\frametitle{Parameter-risk implied bid-ask spread w.r.t. correlation parameter, Laplace jumps.}
+
+% frametitle
+{Parameter-risk implied bid-ask spread w.r.t. correlation parameter, Laplace jumps.}
 \begin{columns}[t]
 \begin{column}[l]{0.6\textwidth}
 \includegraphics[width=\textwidth]{../../../pics/ba_prices_alpha_corr_laplace_5000.pdf}
@@ -911,8 +919,9 @@ with $i$ referring to the simulation run.
 
 %\subsection{Base Price Risk}
 
-\begin{frame}
-\frametitle{Parameter-risk implied bid-ask spread w.r.t. the gas and power base processes, Gaussian jumps.}
+
+% frametitle
+{Parameter-risk implied bid-ask spread w.r.t. the gas and power base processes, Gaussian jumps.}
 \begin{columns}[t]
 \begin{column}[l]{0.6\textwidth}
 \includegraphics[width=\textwidth]{../../../pics/ba_prices_alpha_base_multivar_normal_5000.pdf}
@@ -924,8 +933,9 @@ with $i$ referring to the simulation run.
 \end{frame}
 
 
-\begin{frame}
-\frametitle{Parameter-risk implied bid-ask spread w.r.t. jump size distribution: Gaussian.}
+
+% frametitle
+{Parameter-risk implied bid-ask spread w.r.t. jump size distribution: Gaussian.}
 \begin{columns}[t]
 \begin{column}[l]{0.6\textwidth}
 \includegraphics[width=\textwidth]{../../../pics/ba_prices_alpha_normal_5000.pdf}
@@ -936,8 +946,9 @@ with $i$ referring to the simulation run.
 \end{columns}
 \end{frame}
 
-\begin{frame}
-\frametitle{Parameter-risk implied bid-ask spread w.r.t. jump size distribution: Laplace.}
+
+% frametitle
+{Parameter-risk implied bid-ask spread w.r.t. jump size distribution: Laplace.}
 \begin{columns}[t]
 \begin{column}[l]{0.6\textwidth}
 \includegraphics[width=\textwidth]{../../../pics/ba_prices_alpha_laplace_5000.pdf}
@@ -951,9 +962,9 @@ with $i$ referring to the simulation run.
 
 %\subsection{Risk Table}
 
-\begin{frame}
-\scriptsize
-\frametitle{Resulting values for the relative width of the bid-ask spread for various model risk sources. ${\alpha}_{1}$ = 0.01, ${\alpha}_{2}$ = 0.1, ${\alpha}_{3}$= 0.5.}
+
+% frametitle
+{Resulting values for the relative width of the bid-ask spread for various model risk sources. ${\alpha}_{1}$ = 0.01, ${\alpha}_{2}$ = 0.1, ${\alpha}_{3}$= 0.5.}
 \begin{table}
 \renewcommand{\arraystretch}{1.275}
 \hspace{-1.4cm}\begin{tabularx}{\textwidth}{ccc|c|c|c|c|c}

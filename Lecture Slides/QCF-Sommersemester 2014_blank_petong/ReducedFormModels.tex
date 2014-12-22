@@ -1,8 +1,9 @@
 % !TEX root = QCF_ss14UDE.tex
 \section{Reduced Form Models}
 \subsection{EU ETS First Phase Price Collapse}
-\begin{frame}
-  \frametitle{Permit price in the EU ETS during the first phase}
+
+% frametitle
+{Permit price in the EU ETS during the first phase}
 \begin{center}
 \begin{figure}[h!]
 \centering
@@ -17,8 +18,9 @@
 
 
 %\subsection{Calculating Permit Prices}
-\begin{frame}
-  \frametitle{Cumulative Emissions}
+
+% frametitle
+{Cumulative Emissions}
     To calculate permit prices, we specify the process for the cumulative emissions in the framework of Carmona et al. by
     $$
       q_{[0,t]} = \int_0^t Q_s ds
@@ -31,8 +33,9 @@
 \end{frame}
 
 %8. Folie
-\begin{frame}
-  \frametitle{Approximation Approaches}
+
+% frametitle
+{Approximation Approaches}
 \begin{itemize}
 \item<1-> Linear approximation approach of Chesney and Taschini (2008)
    $$
@@ -48,8 +51,9 @@ where the parameters $\mu_L(t_1,t_2)$, $\sigma_L(t_1,t_2)$ are chosen such that 
 \end{frame}
 
 %9. Folie
-\begin{frame}
-  \frametitle{Moment matching requires two steps}
+
+% frametitle
+{Moment matching requires two steps}
     \begin{itemize}
    \item<1-> Compute the first two moments $m_k$ of a log-normal random variable and solve for the parameters. \\
      In the log-normal case we have that $m_k = e^{k\mu + k^2 \frac{\sigma^2}{2}}$ and
@@ -66,8 +70,9 @@ $$
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Auxiliary functions for moments of integral over GBM}
+
+% frametitle
+{Auxiliary functions for moments of integral over GBM}
 \begin{align}
 \alpha_{t_2-t_1}    =& \ \left\{
          \begin{array}{ll}
@@ -89,8 +94,9 @@ $$
 
 %11. Folie
 %\subsection[Permit Prices]{Permit prices for different approximation approaches}
-\begin{frame}
-  \frametitle{Permit price - linear approximation}
+
+% frametitle
+{Permit price - linear approximation}
     \begin{block}{}
     The permit price at time t is given by
   $$
@@ -108,8 +114,9 @@ $\Phi(\cdot)$ denotes the c.d.f. of a standard normal random variable.
 \end{frame}
 
 %12. Folie
-\begin{frame}
-  \frametitle{Permit price - log-normal moment matching}
+
+% frametitle
+{Permit price - log-normal moment matching}
     \begin{block}{}
     The permit price at time t is given by
 $$
@@ -127,8 +134,9 @@ $\Phi(\cdot)$ denotes the c.d.f. of a standard normal random variable.
     \end{block}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Permit price - reciprocal gamma moment matching}
+
+% frametitle
+{Permit price - reciprocal gamma moment matching}
     \begin{block}{}
     The permit price at time t is given by
 $$
@@ -148,8 +156,9 @@ $G(x|a,b)$ denotes the c.d.f. of a gamma random variable with shape parameter $a
 \end{frame}
 
 %14. Folie
-\begin{frame}
-  \frametitle{Relating theoretical permit prices to allocation}
+
+% frametitle
+{Relating theoretical permit prices to allocation}
     We introduce the following two random variables that are very easy to interpret
     \begin{block}{Time needed to exhaust the remaining permits}
 $$
@@ -165,8 +174,9 @@ $$
 \end{frame}
 
 %15. Folie
-\begin{frame}
-  \frametitle{Numerical illustrations }
+
+% frametitle
+{Numerical illustrations }
 \begin{center}
 \begin{figure}[h!]
 \centering
@@ -179,8 +189,9 @@ $$
 \end{center}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Numerical illustrations}
+
+% frametitle
+{Numerical illustrations}
 \begin{center}
 \begin{figure}[h!]
 \centering
@@ -194,8 +205,9 @@ $$
 \end{frame}
 
 
-\begin{frame}
-  \frametitle{Implied over-/underallocation during the first phase of the EU ETS}
+
+% frametitle
+{Implied over-/underallocation during the first phase of the EU ETS}
 \begin{center}
 \begin{figure}[h!]
 \centering
@@ -230,8 +242,9 @@ $$
 
 
 
-\begin{frame}
-  \frametitle{Price slumps and allocation}
+
+% frametitle
+{Price slumps and allocation}
 We show that a price slump of more than 50\% can be related to an implicit change in $x_t$ of less than $5\%$.\\
 
 We introduce the following notation
@@ -241,8 +254,9 @@ We introduce the following notation
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Price slumps and allocation}
+
+% frametitle
+{Price slumps and allocation}
 Using
 \begin{itemize}
   \item the cumulative emissions until $t$ denoted by $q_{[0,t]}$
@@ -255,8 +269,9 @@ $$
 \end{frame}
 
 %19. Folie
-\begin{frame}
-  \frametitle{Price slumps and allocation}
+
+% frametitle
+{Price slumps and allocation}
 \begin{center}
 \begin{figure}[h!]
 \centering
@@ -388,8 +403,9 @@ options                        &       Lower         & of options)    &    &  at
 
 
 \subsection{Dynamic Reduced Form Models}
-\begin{frame}
-\frametitle{Permit Prices}
+
+% frametitle
+{Permit Prices}
 \begin{itemize}
 \item<1-> Recall the emission rate
 $$
@@ -408,8 +424,9 @@ $$
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Approximative Pricing}
+
+% frametitle
+{Approximative Pricing}
 \begin{itemize}
 \item<1-> Linear approximation approach
 $$
@@ -430,8 +447,9 @@ where the functions $\mu_t$ and $\sigma_t$ are defined by the functions $\alpha_
 \end{frame}
 %\subsection[Reduced Form Dynamics]{Dynamics of the permit process in the reduced form model}
 
-\begin{frame}
-\frametitle{Carmona-Hinz Approach}
+
+% frametitle
+{Carmona-Hinz Approach}
 \begin{itemize}
 \item<1-> Use a lognormal process
 $$

@@ -2,8 +2,9 @@
 \section{Modelling Permit Price Dynamics}
 \section{Equilibrium Models}
 \subsection{Deterministic Equilibrium Model}
-\begin{frame}
-\frametitle{Rubin 1996: Firm i's optimization problem}
+
+% frametitle
+{Rubin 1996: Firm i's optimization problem}
 Firm i minimizes its cost by buying/selling an optimal quantity of emission permits and by emitting an optimal quantity of emissions, i.e.
 \begin{align}
 \min_{\theta_i, e_i} & \left\{ \int_0^T e^{-rt} [C_i(e_i(t)) + P(t)\theta_i(t)]dt \right\} \\
@@ -28,8 +29,9 @@ $r$ & interest rate \\
 \end{frame}
 
 %16. Folie
-\begin{frame}
-\frametitle{Rubin 1996: Market equilibrium}
+
+% frametitle
+{Rubin 1996: Market equilibrium}
 An intertemporal market equilibrium in emission permits over a T-period horizon consists of \\
 $\qquad P^*(t) \ge 0$ (permit price) \\
 $\qquad \theta^*(t) = (\theta^*_1(t), \ldots, \theta^*_N(t))$ (vector of optimal trading volumes) \\
@@ -50,8 +52,9 @@ $
 \end{frame}
 
 %17. Folie
-\begin{frame}
-\frametitle{Rubin 1996: Joint optimization problem}
+
+% frametitle
+{Rubin 1996: Joint optimization problem}
 A fictitious central planner minimizes total costs by choosing optimal quantities of emissions, i.e.
 \begin{align}
 \min_{e_1, \ldots, e_N} &\left\{ \int_0^T e^{-rt} \sum_{i=1}^N C_i(e_i(t)) dt \right\} \\
@@ -72,8 +75,9 @@ $r$ & interest rate \\
 \end{frame}
 
 %18. Folie
-\begin{frame}
-\frametitle{Rubin 1996: Theorem (Market equilibrium and joint optimization problem)}
+
+% frametitle
+{Rubin 1996: Theorem (Market equilibrium and joint optimization problem)}
 \begin{enumerate}[(a)]
 \item There exists an intertemporal market equilibrium in emission permits over a T-period horizon
 \item The market equilibrium solution is at least as inexpensive as the result of the joint cost optimization
@@ -82,8 +86,9 @@ $r$ & interest rate \\
 
 
 %19. Folie
-\begin{frame}
-\frametitle{Rubin 1996: Theorem (Permit price)}
+
+% frametitle
+{Rubin 1996: Theorem (Permit price)}
 \begin{enumerate}[(a)]
 \item The permit price equals the marginal abatement costs
 \[
@@ -113,8 +118,9 @@ Follows from evaluating the necessary conditions (hereby use the Hamiltonian)
 
 
 %20. Folie
-\begin{frame}
-\frametitle{Rubin 1996: Necessary (and sufficient) conditions for firm i's minimization problem}
+
+% frametitle
+{Rubin 1996: Necessary (and sufficient) conditions for firm i's minimization problem}
 \begin{tiny}
 The \textbf{Hamiltonian} is given by
 \[
@@ -138,16 +144,18 @@ B_i(T) &\ge 0, \quad \lambda_i(T) \le 0, \quad B_i(T) \lambda_i(T) = 0
 
 \subsection{Stochastic Equilibrium Model}
 %\subsubsection{Full Economy Model}
-\begin{frame}
-\frametitle{Carmona et al. 2008: Firm i's optimization problem}
+
+% frametitle
+{Carmona et al. 2008: Firm i's optimization problem}
 For given forward permit price $A$ and prices of the produced goods $S$ the firm i maximizes its expected terminal wealth by  buying/selling an optimal number of permits and producing an optimal quantity of goods, i.e.
 \begin{align}
 \sup_{\theta^i, \xi^i} \mathbb{E} \left[ \underbrace{S^i(\xi^i) - C^i(\xi^i)}_{production} + \underbrace{T^i(\theta^i)}_{trading} - \underbrace{\Pi \left(\varepsilon^i + e^i(\xi^i) - \Delta^i - \theta^i_T \right)^+}_{penalty} \right]
 \end{align}
 \end{frame}
 
-\begin{frame}
-\frametitle{Variables}
+
+% frametitle
+{Variables}
 
 \begin{tiny}
 \begin{tabular}{ll}
@@ -170,8 +178,9 @@ $e_t^{i,j,k}$ & emission factor of firm i, production technology j and product k
 \end{frame}
 
 %22. Folie
-\begin{frame}
-\frametitle{Market equilibrium}
+
+% frametitle
+{Market equilibrium}
 A market equilibrium in emission permits consists of
 \begin{itemize}
 \item<1->
@@ -184,8 +193,9 @@ such that for given $A^*$ and $S^*$,
 $\theta^*$ and $\xi^*$ lead to a situation where all the firms are satisfied by their strategy.
 \end{frame}
 
-\begin{frame}
-\frametitle{Market equilibrium}
+
+% frametitle
+{Market equilibrium}
 Formally
 $
 \qquad \mathbb{E}\left[ L^{A^*, S^*, i}\left(\theta^{*i},\xi^{*i}\right) \right] \ge \mathbb{E}\left[ L^{A^*, S^*, i}\left(\theta^{i},\xi^{i}\right) \right] \textnormal{ for all } \left(\theta^i, \xi^i \right)
@@ -205,8 +215,9 @@ $$
 
 
 %23. Folie
-\begin{frame}
-\frametitle{Global optimization problem}
+
+% frametitle
+{Global optimization problem}
 A fictitious central planner minimizes expected total costs by producing an optimal quantity of goods $\xi^*$, i.e. it faces the optimization problem
 \begin{align}
 \inf_{\xi} \mathbb{E} \left[ \underbrace{C(\xi)}_{production} - \underbrace{\Pi \left(\varepsilon + e(\xi) - \Delta \right)^+}_{penalty} \right]
@@ -224,8 +235,9 @@ $\Pi$ & penalty per emission unit \\
 
 
 %24. Folie
-\begin{frame}
-\frametitle{Theorem: Market equilibrium and joint optimization problem}
+
+% frametitle
+{Theorem: Market equilibrium and joint optimization problem}
 \begin{enumerate}[(a)]
 \item If $(A^*,S^*)$ is a market equilibrium with associated strategies $(\theta^*,\xi^*)$ then $\xi^*$ is a solution of the global optimization problem
 \item There exists a solution $\bar{\xi}$ of the global optimization problem
@@ -235,7 +247,9 @@ $\Pi$ & penalty per emission unit \\
 
 
 %25. Folie
-\begin{frame}\frametitle{Theorem: Equilibrium prices}
+
+% frametitle
+{Theorem: Equilibrium prices}
 Let $(A^*,S^*)$ be a market equilibrium with associated strategies $(\theta^*,\xi^*)$ then
 %\vspace{-0.5cm}
 
@@ -246,7 +260,9 @@ A^*_t = \Pi \cdot \mathbb{E} \left[ \chi_{\left\{ \varepsilon + e(\xi) - \Delta 
 \end{frame}
 
 
-\begin{frame}\frametitle{Theorem: Equilibrium prices}
+
+% frametitle
+{Theorem: Equilibrium prices}
  Spot prices $S^{*k}$ of the goods and the optimal production strategy $\xi^{*i}$ correspond to a merit-order-type equilibrium with adjusted costs $C_t^{i,j,k} + e^{i,j,k} A_t^*$, i.e. at time t and for each good k
 \begin{itemize}
 \item all the production means of the economy are ranked by increasing adjusted production costs
@@ -351,8 +367,9 @@ $$
 u_t=-\frac{1}{c} e^{rt}V_x
 $$
 
-\begin{frame}
-  \frametitle{Permit Prices}
+
+% frametitle
+{Permit Prices}
 \begin{center}
 \begin{figure}[h!]
 \centering
@@ -380,8 +397,9 @@ dS(t,x_t)= G(t)S_x(t,x_t) dW_t
 \end{itemize}
 
 
-\begin{frame}
-  \frametitle{Implied Permit Price Volatility}
+
+% frametitle
+{Implied Permit Price Volatility}
 \begin{center}
 \begin{figure}[h!]
 \centering

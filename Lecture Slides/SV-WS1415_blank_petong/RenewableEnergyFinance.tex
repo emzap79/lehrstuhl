@@ -1,8 +1,9 @@
 % !TEX root = StructuringValuation_ws1314UDE.tex
 \section{Renewable Energy Finance}
 \subsection{Emission Certificates}
-\begin{frame}
-  \frametitle{Basic idea of cap-and-trade systems}
+
+% frametitle
+{Basic idea of cap-and-trade systems}
   \begin{itemize}
   \item<1-> \textbf{At the beginning} of the compliance period, the regulator \textbf{allocates} permits to the companies
   \item<2-> \textbf{During} the compliance period, the companies can \textbf{trade} permits among each other
@@ -10,8 +11,9 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Permit price in the EU ETS during the first phase}
+
+% frametitle
+{Permit price in the EU ETS during the first phase}
 \begin{center}
 \begin{figure}[h!]
 \centering
@@ -26,8 +28,9 @@
 
 
 %\subsection{Calculating Permit Prices}
-\begin{frame}
-  \frametitle{Cumulative Emissions}
+
+% frametitle
+{Cumulative Emissions}
     To calculate permit prices, we specify the process for the cumulative emissions e.g. as     $$
       q_{[0,t]} = \int_0^t Q_s ds
     $$
@@ -39,8 +42,9 @@
 \end{frame}
 
 %8. Folie
-\begin{frame}
-  \frametitle{Approximation Approaches}
+
+% frametitle
+{Approximation Approaches}
 \begin{itemize}
 \item<1-> Linear approximation approach
    $$
@@ -56,8 +60,9 @@ where the parameters $\mu_L(t_1,t_2)$, $\sigma_L(t_1,t_2)$ are chosen such that 
 \end{frame}
 
 %9. Folie
-\begin{frame}
-  \frametitle{Moment matching requires two steps}
+
+% frametitle
+{Moment matching requires two steps}
     \begin{itemize}
    \item<1-> Compute the first two moments $m_k$ of a log-normal random variable and solve for the parameters. \\
      In the log-normal case we have that $m_k = e^{k\mu + k^2 \frac{\sigma^2}{2}}$ and
@@ -74,8 +79,9 @@ $$
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Auxiliary functions for moments of integral over GBM}
+
+% frametitle
+{Auxiliary functions for moments of integral over GBM}
 \begin{align}
 \alpha_{t_2-t_1}    =& \ \left\{
          \begin{array}{ll}
@@ -97,8 +103,9 @@ $$
 
 %11. Folie
 %\subsection[Permit Prices]{Permit prices for different approximation approaches}
-\begin{frame}
-  \frametitle{Permit price - linear approximation}
+
+% frametitle
+{Permit price - linear approximation}
 
     The permit price at time t is given by
   $$
@@ -116,8 +123,9 @@ $\Phi(\cdot)$ denotes the c.d.f. of a standard normal random variable.
 \end{frame}
 
 %12. Folie
-\begin{frame}
-  \frametitle{Permit price - log-normal moment matching}
+
+% frametitle
+{Permit price - log-normal moment matching}
 
     The permit price at time t is given by
 $$
@@ -137,8 +145,9 @@ $\Phi(\cdot)$ denotes the c.d.f. of a standard normal random variable.
 
 
 %14. Folie
-\begin{frame}
-  \frametitle{Relating theoretical permit prices to allocation}
+
+% frametitle
+{Relating theoretical permit prices to allocation}
     We introduce the following two random variables that are very easy to interpret\\
     {\bf Time needed to exhaust the remaining permits}
 $$
@@ -154,8 +163,9 @@ $$
 
 
 
-\begin{frame}
-  \frametitle{Implied over-/underallocation during the first phase of the EU ETS}
+
+% frametitle
+{Implied over-/underallocation during the first phase of the EU ETS}
 \begin{center}
 \begin{figure}[h!]
 \centering
@@ -234,8 +244,9 @@ $$
 
 
 %\subsection{Dynamic Reduced Form Models}
-\begin{frame}
-\frametitle{Permit Prices}
+
+% frametitle
+{Permit Prices}
 \begin{itemize}
 \item<1-> Recall the emission rate
 $$
@@ -254,8 +265,9 @@ $$
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-\frametitle{Approximative Pricing}
+
+% frametitle
+{Approximative Pricing}
 \begin{itemize}
 \item<1-> Linear approximation approach
 $$
@@ -276,8 +288,9 @@ where the functions $\mu_t$ and $\sigma_t$ are defined by the functions $\alpha_
 \end{frame}
 %\subsection[Reduced Form Dynamics]{Dynamics of the permit process in the reduced form model}
 
-\begin{frame}
-\frametitle{Carmona-Hinz Approach}
+
+% frametitle
+{Carmona-Hinz Approach}
 \begin{itemize}
 \item<1-> Use a lognormal process
 $$

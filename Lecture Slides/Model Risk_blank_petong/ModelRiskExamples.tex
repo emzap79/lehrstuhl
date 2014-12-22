@@ -22,9 +22,6 @@ Assume traded European calls with prices $C^*$, then we calibrate the models suc
 where $\Sigma$ is the implied Black-Scholes volatility.
 \end{itemize}
 
-
-
-
 % frametitle
 {Calibration}
 \begin{itemize}
@@ -45,10 +42,6 @@ $$
 $$
 \end{itemize}
 
-
-
-
-
 % frametitle
 {Model Risk}
 \begin{itemize}
@@ -62,8 +55,6 @@ $$
 \Gamma^u(X)=C^{BS}(K, T_1; \bar{a})  \A \Gamma^l(X)=C^{BS}(K, T_1; \underline{a}).$$
 
 \end{itemize}
-
-
 
 \subsection{Local Volatility vs Jumps}
 
@@ -84,8 +75,6 @@ $V_i= 1+\epsilon_i$ are log-normally distributed and
 with $k = \int x F(dx)$.
 \end{itemize}
 
-
-
 % frametitle
 {Review: Classical Construction JD-model}
 If $1+\epsilon$ is log-normally distributed  with parameters
@@ -104,8 +93,6 @@ $$
 $$
 under $\prb^*$.
 
-
-
 % frametitle
 {Review: Option Pricing JD-model}
 We find for the price of a European call
@@ -121,8 +108,6 @@ $$
 = \frac{1}{T}\left(\s^2T +\frac{n\delta^2}{2}\right).
 $$
 
-
-
 % frametitle
 {Local Volatility Model}
 \begin{itemize}
@@ -135,8 +120,6 @@ where $ \sigma(t, S)$ is calibrated to the implied volatilities in figure (\ref{
 \item<2->The resulting volatility function is in figure (\ref{CFig43})
 \end{itemize}
 
-
-
 % frametitle
 {Jump Sizes and Local Volatiliy}
 \begin{figure}[htp]
@@ -144,8 +127,6 @@ where $ \sigma(t, S)$ is calibrated to the implied volatilities in figure (\ref{
 \includegraphics[width=\textwidth]{../../../pics/CFig43}
 \caption{Jump Sizes and Local Volatiliy, from Cont (2006)}\label{CFig43}
 \end{figure}
-
-
 
 % frametitle
 {Implied Volatility (Both Models)}
@@ -156,8 +137,6 @@ where $ \sigma(t, S)$ is calibrated to the implied volatilities in figure (\ref{
 \label{CFig44}
 \end{figure}
 
-
-
 % frametitle
 {Sample Paths}
 \begin{figure}[htp]
@@ -165,9 +144,6 @@ where $ \sigma(t, S)$ is calibrated to the implied volatilities in figure (\ref{
 \includegraphics[width=\textwidth]{../../../pics/CFig45}
 \caption{Sample Path, from Cont (2006)}\label{CFig45}
 \end{figure}
-
-
-
 
 % frametitle
 {Pricing a Barrier Option}
@@ -187,9 +163,7 @@ Barrier & 2.73 & 1.63 \\\hline
 The value of Cont's measure for model risk is then $1.1$.
 \end{itemize}
 
-
 \subsection{Robustness of Hedging Strategies}
-
 
 % frametitle
 {Delta in the Black-Scholes Model}
@@ -205,7 +179,6 @@ where, as usual, $\Phi$ denotes the c.d.f. of the standard normal distribution a
 \end{align*}
 \end{frame}
 
-
 % frametitle
 {Delta of a Call Option in the Black-Scholes Model}
 %\usepackage{graphics} is needed for \includegraphics
@@ -219,7 +192,6 @@ where, as usual, $\Phi$ denotes the c.d.f. of the standard normal distribution a
 \end{figure}
 \end{frame}
 
-
 % frametitle
 {Example: Delta Hedge}
 You are long USD $1,000$ in the $104$ call. Interest rate is $5\%$,
@@ -232,7 +204,6 @@ $15.7\%$.
 \end{itemize}
 
 \end{frame}
-
 
 % frametitle
 {Example: Delta Hedge}
@@ -253,8 +224,6 @@ $15.7\%$.
 \end{itemize}
 \end{frame}
 
-
-
 % frametitle
 {Example: Delta Hedge}
 \begin{itemize}
@@ -264,7 +233,6 @@ $15.7\%$.
   of $428.70$ shares.
 \end{itemize}
 \end{frame}
-
 
 % frametitle
 {Example: Delta Hedge}
@@ -281,8 +249,6 @@ $15.7\%$.
 \end{itemize}
 \end{frame}
 
-
-
 % frametitle
 {$\Delta-$ Hedging Strategies}
 \begin{itemize}
@@ -298,9 +264,6 @@ Calculate $\Delta-$Hedges according to a Black-Scholes model with (updated) impl
 Figure (\ref{CFig46}) shows the distribution of the P\&L of such hedges as a percentage of the option price at inception.
 \end{itemize}
 
-
-
-
 % frametitle
 {Black-Scholes Delta Hedge}
 \begin{figure}[htp]
@@ -309,9 +272,7 @@ Figure (\ref{CFig46}) shows the distribution of the P\&L of such hedges as a per
 \caption{Delta Hedges with static and updated implied volatility, from Cont (2006)}\label{CFig46}
 \end{figure}
 
-
 \section{Model Risk For Interest Rates}
-
 
 % frametitle
 { Swaps}
@@ -329,11 +290,6 @@ simple rate defined as
 $$
 p(T_i, T_{i+1}) = \frac{1}{1 + \tau L(T_i,T_{i+1})}.
 $$
-
-
-
-
-
 
 % frametitle
 {Pricing Formula for  Swaps}
@@ -359,11 +315,6 @@ $$
 with $c_i=\tau R, i=1, \ldots, n-1$ and $c_n = 1+\tau R$. So we obtain the
 swap price as a linear combination of zero-coupon bond prices.
 
-
-
-
-
-
 % frametitle
 {Interest-Rate Swap}
 
@@ -383,9 +334,6 @@ S_{\alpha,\beta}(t)=\frac{p(t,T_{\alpha})-p(t,T_{\beta})}{\sum_{i=\alpha+1}^{\be
 \end{equation}
 \end{itemize}
 
-
-
-
 % frametitle
 {Swaptions}
 \begin{itemize}
@@ -403,7 +351,6 @@ S_{T_{ex}}^{ex,b}(K)= \sum_{i=ex+1}^{\beta} p(T_{ex},T_i)\tau_i(S_{\alpha,\beta}
 $$
 \end{itemize}
 
-
 % frametitle
 {Vasicek model:}
 \begin{itemize}
@@ -417,9 +364,6 @@ p(t,T) = \EX_{\Q} \left[\left. e^{- \int_t^T r(u) du} 1
 \right| \F_t \right].
 $$
 \end{itemize}
-
-
-
 
 % frametitle
 {Swap Market Models (SMM)}
@@ -442,8 +386,6 @@ forward swap model.}
 $S_{\alpha,\beta}, S_{\alpha+1,\beta}, \ldots, S_{\beta-1,\beta}$ and their correlations $\rho_{i,j}$ simultanously.
 \end{itemize}
 
-
-
 % frametitle
 {Bermudan Pricing}
 \begin{itemize}
@@ -451,10 +393,6 @@ $S_{\alpha,\beta}, S_{\alpha+1,\beta}, \ldots, S_{\beta-1,\beta}$ and their corr
 If the correlation of the swap rates is high, then the payoffs behaviour simultaneously and there is not much value in the right to exercise in the future.
 \item<2-> If the correlation of the swap rates is low (or even negative), then the payoff structure may change  and the right to exercise in the future may become valuable.
 \item<3-> One-factor models, such as the Vasicek model, do not allow for a correlation structure. On the other hand SMM allow to model a more realistic correlation structure. \end{itemize}
-
-
-
-
 
 \section{Model Risk For Energy Derivatives}
 
@@ -466,10 +404,6 @@ If the correlation of the swap rates is high, then the payoffs behaviour simulta
 \item<3-> We use the Bann{\"o}r, Scherer (2011) approach to discuss the model risk in such a valuation problem.
 \end{itemize}
 
-
-
-
-
 % frametitle
 {Gas Power Plant}
 \begin{figure}[htp]
@@ -477,7 +411,6 @@ If the correlation of the swap rates is high, then the payoffs behaviour simulta
 \includegraphics[width=\textwidth]{../../../pics/GuD-Lingen}
 \label{prices}
 \end{figure}
-
 
 %% Strom 2001-- 2008
 
@@ -489,9 +422,6 @@ If the correlation of the swap rates is high, then the payoffs behaviour simulta
 %\caption{Power, gas and carbon prices.}
 
 \end{figure}
-
-
-
 
 \subsection{Spread Options}
 %\subsection{Concept}
@@ -506,8 +436,6 @@ commodity prices. Examples are
   \item In countries covered by the European Union Emissions Trading Scheme, utilities have to consider also the cost of carbon dioxide emission allowances. Emission trading has started in the EU in January 2005.
 
 \end{itemize}
-
-
 
 % frametitle
 {Clean Spark Spread}
@@ -531,11 +459,7 @@ The clean spark spread reflects the profit/loss of generating power from gas aft
 \item Note that the clean spark spreads do not take into account additional generating charges beyond gas and carbon.
 \end{itemize}
 
-
-
-
 %\subsection{Valuation}
-
 
 % frametitle
 {Spread Options to Manage Market Risk}
@@ -547,8 +471,6 @@ The payoff of a typical spread option with maturity $\tau$ is
 $$C_{\mbox{spread}}{(\tau)}=\max(S_1(\tau)-S_2(\tau)-K,0)$$ with $S_i$ the
 underlyings, $K$ the strike.
 \end{itemize}
-
-
 
 % frametitle
 {Valuation of Spread Options}
@@ -568,8 +490,6 @@ where $\rho$ is the correlation between the two underlyings.
 
 For $K\neq 0$ no easy analytic formula is available.
 
-
-
 % frametitle
 {Valuation of Spread Options - Price}
 %In this case, the price of the option depending on the underlying prices has the following structure:
@@ -579,7 +499,6 @@ For $K\neq 0$ no easy analytic formula is available.
 %	\label{fig:spreadprice}
 %\end{figure}
 %}
-
 
 % frametitle
 {Spread Option Value and Correlation}
@@ -592,16 +511,12 @@ $$\includegraphics[scale=0.3]{../../../pics/corr}$$
 \item The higher the correlation between the two underlyings the lower is the volatility of the spread and hence the value of the spread option.
 \end{itemize}
 
-
-
 % frametitle
 {Approximative Spread Option Valuation}
 \begin{itemize}
 \item<1-> A very good reference is Carmona, Durrleman (2003), Siam Review 45 (4), 627-685.
 \item<2-> There is also a survey by Krekel, de Kok, Korn, Man in Wilmott Magazine (2004) available.
 \end{itemize}
-
-
 
 % frametitle
 {Approximation by Kirk's Formula (3 Assets)}
@@ -625,10 +540,6 @@ with
 }
 and $\rho_{ij}$ is the correlation between the underlying $i,j$.
 
-
-
-
-
 % frametitle
 {Present Value of a Power Plant}
 \begin{itemize}
@@ -642,12 +553,7 @@ present a valuation approach using a full structural model
 \item<3-> We aim to study the model risk within a simulation approach.
 \end{itemize}
 
-
-
-
-
 \subsection{Commodity Models}
-
 
 % frametitle
 { Emission Certificates}
@@ -657,7 +563,6 @@ We model the emission price as a geometric Brownian motion
 \uds{E}_t = \alpha^E\,E_t\,\uds{t} + \sigma^E\,E_t\,\uds{W}^E_t,
 \label{co2}
 \end{equation}
-
 
 % frametitle
 {Gas Price}
@@ -670,7 +575,6 @@ G_t & = & e^{g(t) + Z_t},  \nonumber \\
 \end{eqnarray}
 \item $\alpha^G$ is the speed of mean-reversion for gas prices.
 \end{itemize}
-
 
 % frametitle
 {Power Price}
@@ -687,8 +591,6 @@ P_t & = & e^{f(t) + X_t + Y_t},  \nonumber \\
 \item $J_t$ are independent identically distributed (i.i.d) random variables representing the jump size.
 \end{itemize}
 
-
-
 % frametitle
 {Seasonal components}
 $g(t)$ and $f(t)$ are seasonal trend components for gas and power, respectively, defined as
@@ -701,8 +603,6 @@ g(t) &=& b_1 + b_2\,t + b_3\cos(b_5 + 2\pi t) + b_4\cos(b_6 + 4\pi t), \nonumber
 
 where $a_1$ and $b_1$ may be viewed as production expenses, $a_2$ and $b_2$ are the slopes of increase in these costs. The rest of the parameters are responsible for two seasonal changes in summer and winter respectively.
 
-
-
 % frametitle
 {Dependence Structure}
 In the current setting we also assume that $W^E$, $W^G$ and $N$ are mutually independent processes, but there is some correlation between  $W^P$ and $W^G$
@@ -711,8 +611,6 @@ In the current setting we also assume that $W^E$, $W^G$ and $N$ are mutually ind
 \uds{W}^P_t\,\uds{W}^G_t = \rho\,\uds{t}.
 \label{corr}
 \end{equation}
-
-
 
 % frametitle
 {Parameter Uncertainty}
@@ -723,7 +621,6 @@ In the current setting we also assume that $W^E$, $W^G$ and $N$ are mutually ind
 \end{itemize}
 
 %\subsection{Data}
-
 
 % frametitle
 {Data sources}
@@ -739,7 +636,6 @@ carbon dioxide equivalent. (EUR/EUA).
 \item We cover the last three years: 25.09.2009 - 08.06.2012.
 \end{itemize}
 
-
 % frametitle
 {Price Paths, 25.09.2009 - 08.06.2012.}
 \begin{figure}[htp]
@@ -748,7 +644,6 @@ carbon dioxide equivalent. (EUR/EUA).
 %\caption{Power, gas and carbon prices.}
 \label{prices}
 \end{figure}
-
 
 % frametitle
 {Clean Spark Spread, 25.09.2009 - 08.06.2012.}
@@ -769,7 +664,6 @@ carbon dioxide equivalent. (EUR/EUA).
 \item Thus, we can use standard Maximum Likelihood Methods.
 \end{itemize}
 
-
 % frametitle
 {Power I}
 The estimation procedure for the power price includes several steps:
@@ -779,16 +673,12 @@ The estimation procedure for the power price includes several steps:
 \item As a result we obtain a standard deviation of the jumps, $\sigma_j$, and a cumulative frequency of jumps, $l$. The latter is defined as the total number of filtered jumps divided by the annualised number of observations.
 \end{itemize}
 
-
-
 % frametitle
 {Power II}
 \begin{itemize}
 \item Once we have filtered the $X_t$ process, we can identify it as a first order autoregressive model in continuous time, i.e. so-called AR(1) process. Discretizing the process and estimating it by maximum likelihood method (MLE) yields the estimates.
 %\item To estimate the mean-reversion rate for the jump process one can take an advantage of the approach based on the autocorrelation function (ACF) suggested by Barndorff-Nielsen, %Shephard (2001) (implemented Benth, Nazarova, Kiesel 2011).
 \end{itemize}
-
-
 
 % frametitle
 {Estimation Results}
@@ -842,7 +732,6 @@ Interest rate  &   &  $r$ = 3\%&  \\
 \end{itemize}
 \end{frame}
 
-
 % frametitle
 { General Procedure}
 \begin{itemize}
@@ -852,8 +741,6 @@ Each parameter $\theta_j$ is to be estimated by an estimator $\hat{\theta}_j(X_1
 \item<3->
  We calculate the parameter risk-captured prices which are generated by the Average-Value-at-Risk (AVaR) w.r.t.\ different significance levels $\alpha\in(0,1]$.
 \end{itemize}
-
-
 
 % frametitle
 {Spark Spread Analysis I}
@@ -867,8 +754,6 @@ V_t = \max\{P_t - h\,G_t - c_E\;E_t, 0\},
 
 where $P_t$ is the power price, $G_t$ is the gas price, $E_t$ is the carbon certificate price, $h$ is the heat rate, $c_E$ emission conversion rate.
 
-
-
 % frametitle
 {Spark Spread Analysis II}
 \begin{itemize}
@@ -880,13 +765,9 @@ with $i$ referring to the simulation run.
 \item<2-> Then, by fixing all the parameters except of one (e.g. correlation) and setting the shift value (e.g. 1\%), we compute shifted up and down spark spread values, i.e. $V^{up}_t$ and $V^{down}_t$.
 \end{itemize}
 
-
-
 % frametitle
 {Power Plant Analysis I}
   We compute the value of the power plant (VPP) by means of Monte Carlo simulations. For a fixed large number $N$ and a fixed period $T=3$ years we have $$VPP(t,T) = \frac{1}{N}\sum_{i=1}^{N}VPP_i(t,T),$$ where $$VPP_i(t,T) = \sum_{s=t}^{T}e^{-r(T-s)}\,V_i(s).$$
-
-
 
 % frametitle
 {Power Plant Analysis II}
@@ -896,11 +777,7 @@ with $i$ referring to the simulation run.
 \item<3-> For a specified significance level $\alpha \in (0, 1)$ this risk-adjustment value is computed as $$\frac{\varphi(\Phi^{-1}(\alpha))}{\alpha}\sqrt{\frac{sVPP(\theta_0)' \cdot \Sigma \cdot sVPP(\theta_0) }{N}}.$$
 \end{itemize}
 
-
-
 %\subsection{Risk Pictures}
-
-
 
 % frametitle
 {Parameter-risk implied bid-ask spread w.r.t. correlation parameter, Laplace jumps.}
@@ -914,11 +791,7 @@ with $i$ referring to the simulation run.
 \end{columns}
 \end{frame}
 
-
-
-
 %\subsection{Base Price Risk}
-
 
 % frametitle
 {Parameter-risk implied bid-ask spread w.r.t. the gas and power base processes, Gaussian jumps.}
@@ -932,8 +805,6 @@ with $i$ referring to the simulation run.
 \end{columns}
 \end{frame}
 
-
-
 % frametitle
 {Parameter-risk implied bid-ask spread w.r.t. jump size distribution: Gaussian.}
 \begin{columns}[t]
@@ -945,7 +816,6 @@ with $i$ referring to the simulation run.
 \end{column}
 \end{columns}
 \end{frame}
-
 
 % frametitle
 {Parameter-risk implied bid-ask spread w.r.t. jump size distribution: Laplace.}
@@ -959,9 +829,7 @@ with $i$ referring to the simulation run.
 \end{columns}
 \end{frame}
 
-
 %\subsection{Risk Table}
-
 
 % frametitle
 {Resulting values for the relative width of the bid-ask spread for various model risk sources. ${\alpha}_{1}$ = 0.01, ${\alpha}_{2}$ = 0.1, ${\alpha}_{3}$= 0.5.}
@@ -987,7 +855,6 @@ with $i$ referring to the simulation run.
 \end{table}
 \end{frame}
 
-
 \subsection{Political Risk}
 
 % frametitle
@@ -997,7 +864,6 @@ with $i$ referring to the simulation run.
 \includegraphics[width=\textwidth]{../../../pics/GuD-Lingen}
 \label{prices}
 \end{figure}
-
 
 %% Strom 2001-- 2008
 
@@ -1010,9 +876,6 @@ with $i$ referring to the simulation run.
 
 \end{figure}
 
-
-
-
 % frametitle
 {Phelix Base 2008-2012}
 \begin{figure}[htp]
@@ -1020,7 +883,6 @@ with $i$ referring to the simulation run.
 \includegraphics[width=0.9\textwidth, heigth=0.9\textheigth]{../../../pics/PhelixBase2008_12.pdf}
 
 \end{figure}
-
 
 %% Installed Photovoltaik
 
@@ -1033,8 +895,6 @@ with $i$ referring to the simulation run.
 \label{prices}
 \end{figure}
 
-
-
 % frametitle
 {Wind}
 \begin{figure}[htp]
@@ -1044,10 +904,6 @@ with $i$ referring to the simulation run.
 \label{prices}
 \end{figure}
 
-
-
-
-
 % frametitle
 {A day in July}
 \begin{figure}[htp]
@@ -1055,8 +911,6 @@ with $i$ referring to the simulation run.
 \includegraphics[width=\textwidth]{../../../pics/July2013}
 %\caption{Wind, Sonne und Strompreise}
 \end{figure}
-
-
 
 % frametitle
 {A day in December}
@@ -1066,8 +920,6 @@ with $i$ referring to the simulation run.
 %\caption{Wind, Sonne und Strompreise}
 \end{figure}
 
-
-
 % frametitle
 {Wind, sun and electricity}
 \begin{figure}[htp]
@@ -1076,17 +928,12 @@ with $i$ referring to the simulation run.
 %\caption{Wind, Sonne und Strompreise}
 \end{figure}
 
-
-
 % frametitle
 {Does it get better?}
 \begin{figure}[htp]
 \centering
 \includegraphics[width=\textwidth]{../../../pics/Spark-Spread-2012.pdf}
 \end{figure}
-
-
-
 
 % frametitle
 {..or worse?}
@@ -1095,8 +942,6 @@ with $i$ referring to the simulation run.
 \includegraphics[width=\textwidth]{../../../pics/Spark-Spread-2013.pdf}
 \end{figure}
 
-
-
 % frametitle
 {RWE Response 14.August 2013}
 \begin{figure}[htp]
@@ -1104,15 +949,4 @@ with $i$ referring to the simulation run.
 \includegraphics[width=0.9\textwidth, heigth= 0.9 \textheigth]{../../../pics/RWE-Decommission}
 %\caption{Wind, Sonne und Strompreise}
 \end{figure}
-
-
-
-
-
-
-
-
-
-
-
 

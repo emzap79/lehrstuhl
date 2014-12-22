@@ -14,7 +14,6 @@ Firm i minimizes its cost by buying/selling an optimal quantity of emission perm
 &            e_i(t) \ge 0
 \end{align}
 
-
 {Explanation of variables}
 \begin{tiny}
 \begin{tabular}{cl}
@@ -84,7 +83,6 @@ $r$ & interest rate \\
 \end{enumerate}
 \end{frame}
 
-
 %19. Folie
 
 % frametitle
@@ -114,8 +112,6 @@ where $\Phi_i$ is the adjoint variable of the borrowing constraint
 Proof: \\
 Follows from evaluating the necessary conditions (hereby use the Hamiltonian)
 \end{frame}
-
-
 
 %20. Folie
 
@@ -152,7 +148,6 @@ For given forward permit price $A$ and prices of the produced goods $S$ the firm
 \sup_{\theta^i, \xi^i} \mathbb{E} \left[ \underbrace{S^i(\xi^i) - C^i(\xi^i)}_{production} + \underbrace{T^i(\theta^i)}_{trading} - \underbrace{\Pi \left(\varepsilon^i + e^i(\xi^i) - \Delta^i - \theta^i_T \right)^+}_{penalty} \right]
 \end{align}
 \end{frame}
-
 
 % frametitle
 {Variables}
@@ -193,7 +188,6 @@ such that for given $A^*$ and $S^*$,
 $\theta^*$ and $\xi^*$ lead to a situation where all the firms are satisfied by their strategy.
 \end{frame}
 
-
 % frametitle
 {Market equilibrium}
 Formally
@@ -212,7 +206,6 @@ $$
 $$
 \end{itemize}
 \end{frame}
-
 
 %23. Folie
 
@@ -233,7 +226,6 @@ $\Pi$ & penalty per emission unit \\
 
 \end{frame}
 
-
 %24. Folie
 
 % frametitle
@@ -244,7 +236,6 @@ $\Pi$ & penalty per emission unit \\
 \item If $\bar{\xi}$ is a a solution of the global optimization problem then $(\bar{A}, \bar{S})$ is a market equilibrium and the equilibrium allowance price process is almost surely unique
 \end{enumerate}
 \end{frame}
-
 
 %25. Folie
 
@@ -258,8 +249,6 @@ A^*_t = \Pi \cdot \mathbb{E} \left[ \chi_{\left\{ \varepsilon + e(\xi) - \Delta 
 \]
 
 \end{frame}
-
-
 
 % frametitle
 {Theorem: Equilibrium prices}
@@ -291,8 +280,6 @@ whether to costly abate some of the CO2 emissions or not.
 \item<4-> At the end of the period actual accumulated emissions and penalty costs are determined.
 \end{itemize}
 
-
-
 % frametitle
 {Basic Model II}
 \begin{itemize}
@@ -304,8 +291,6 @@ x_t=-\int_0^tu_s ds + \EX_t\left[\int_0^T y_s ds \right]
 \item<3-> $u_t$ is the optimal rate of abatement which is  actively chosen by the central planner.
 \item<4-> So $x_t$ is a controlled stochastic process.
 \end{itemize}
-
-
 
 % frametitle
 {Total Emissions}
@@ -323,8 +308,6 @@ dx_t=-u_t dt + G(t) dW_t
 and the volatility $\sigma(t,y_t)$ of the emission rate.
 \end{itemize}
 
-
-
 % frametitle
 {Optimisation problem of the central planner I}
 \begin{equation}
@@ -338,8 +321,6 @@ P(x_T) &=& \min[0,p(e_0-x_T)]
 \end{array}
 $$
 
-
-
 % frametitle
 {Optimisation problem of the central planner II}
 \begin{itemize}
@@ -348,8 +329,6 @@ The quadratic form implies linearly increasing marginal abatement costs.
 \item<2-> $P(x_T)$ is the penalty function, with $p$ the penalty including all costs.
 \item<3-> $r$ is the constant interest rate.
 \end{itemize}
-
-
 
 % frametitle
 {Solution of the control problem}
@@ -367,7 +346,6 @@ $$
 u_t=-\frac{1}{c} e^{rt}V_x
 $$
 
-
 % frametitle
 {Permit Prices}
 \begin{center}
@@ -380,7 +358,6 @@ $$
 \end{figure}
 \end{center}
 \end{frame}
-
 
 % frametitle
 {Permit Price Dynamics}
@@ -395,8 +372,6 @@ S(t,x_t) = c u_t = -e^{rt} V_x(t,x_t)
 dS(t,x_t)= G(t)S_x(t,x_t) dW_t
 \end{equation}
 \end{itemize}
-
-
 
 % frametitle
 {Implied Permit Price Volatility}
@@ -424,8 +399,6 @@ dy_{it}= \mu(t, y_{it})dt + \sigma(t, y_{it})dW_{it}
 with deterministic drift and volatility.
 \end{itemize}
 
-
-
 % frametitle
 {Individual Emissions}
 \begin{itemize}
@@ -438,7 +411,6 @@ x_{it}=-\int_0^tu_{is} ds -\int_0^tz_{is}ds + \EX_t\left[\int_0^T y_{is} ds \rig
 \item<4-> and $z_{it}$ is the instantaneous amount of permits bought or sold.
 \end{itemize}
 
-
 % frametitle
 {Individual Emissions Dynamics}
 \begin{itemize}
@@ -449,8 +421,6 @@ dx_{it}=-[u_{it}+z_{it}] dt + G_i(t) dW_{it}
 \item<2-> $G_i(t)$ is the volatility of the uncontrolled part of $x_{it}$ and depends both on the drift $\mu_i(t, y_{it})$
 and the volatility $\sigma_i(t,y_{it})$ of the emission rate.
 \end{itemize}
-
-
 
 % frametitle
 {Optimisation Problem for the individual Company}
@@ -464,8 +434,6 @@ C_i(t,u_{it}) &=& - \frac{1}{2}c_i u_{it}^2 \\*[12pt]
 P_i(x_{iT}) &=& \min[0,p(e_{i0}-x_{iT})]
 \end{array}
 $$
-
-
 
 % frametitle
 {Solution of the control problem}
@@ -481,8 +449,6 @@ with boundary condition
 $$
 V^i(T, x_{iT})=e^{-rT}P_i(x_{iT}).
 $$
-
-
 
 % frametitle
 {Equilibrium Solution}
@@ -504,7 +470,6 @@ S(t) = c_i u_{it}^*, \; i=1, \ldots N.
 $$
 \end{itemize}
 
-
 % frametitle
 {Joint Cost Problem I}
 Again we image a central planner who has to solve
@@ -520,8 +485,6 @@ $$
 
 %Here, $z_{it}$ are irrelevant due to the market clearing condition.
 
-
-
 % frametitle
 {Joint Cost Problem II}
 The joint cost problem now is
@@ -535,8 +498,6 @@ with boundary condition
 $$
 \sum_{i=1}^N V^i(T, x_{iT})=e^{-rT}\sum_{i=1}^N P_i(x_{iT}).
 $$
-
-
 
 % frametitle
 {Joint Problem Solution}
@@ -555,8 +516,6 @@ $$
 S(t) = c_i u_{it}^{**}= -e^{rt}V^i_x, \; i=1, \ldots N.
 $$
 \end{itemize}
-
-
 
 % frametitle
 {Equivalence to Equilibrium Solution}
@@ -589,8 +548,6 @@ with deterministic drift and volatility.
 \item<4-> pay penalty costs
 \end{itemize}
 
-
-
 % frametitle
 {Basic Model II}
 \begin{itemize}
@@ -600,8 +557,6 @@ with deterministic drift and volatility.
 x_{t,T_k}=-\int_0^tu_s ds  -\int_0^t z_u du + \EX_t\left[\int_0^{T_k} y_s ds \right]
 \end{equation}
 \end{itemize}
-
-
 
 % frametitle
 {Multi-period Framework}
@@ -618,7 +573,6 @@ P(x_{T_k}) = P \min\{0, R(x_{T_k})\}
 $$
 \end{itemize}
 
-
 % frametitle
 {Multi-period Optimisation problem}
 $$
@@ -627,7 +581,6 @@ $$
 & & \displaystyle \left. + \sum_{j=1}^n e^{-rT_j}P(x_{T_j}) + R(X_{T_n}) S_{end}\right]
 \end{array}
 $$
-
 
 % frametitle
 {Equilibrium Solution}
@@ -642,7 +595,6 @@ $$
 $$
 \end{itemize}
 
-
 % frametitle
 {Permit Price Process}
 \begin{itemize}
@@ -655,9 +607,6 @@ $$
 S(t) = c_i u_{it}^*, \; i=1, \ldots N.
 $$
 \end{itemize}
-
-
-
 
 % frametitle
 {Solution Strategy}

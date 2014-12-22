@@ -8,74 +8,83 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 ./Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskExamples.tex
-badd +0 ./Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskBasics.tex
-badd +0 ./Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskRobust.tex
-badd +0 ./Lecture\ Slides/SV-WS1415_blank_petong/Review.tex
-badd +0 ./Lecture\ Slides/SV-WS1415_blank_petong/StructuredContracts.tex
-badd +0 ./Lecture\ Slides/SV-WS1415_blank_petong/ForwardsPart2.tex
-badd +0 ./Lecture\ Slides/SV-WS1415_blank_petong/EnergyEmpirics.tex
-badd +0 ./Lecture\ Slides/SV-WS1415_blank_petong/EnergyDerivatives.tex
-badd +0 ./Lecture\ Slides/SV-WS1415_blank_petong/forwards-2.tex
-badd +0 ./Lecture\ Slides/SV-WS1415_blank_petong/PowerPlants.tex
-badd +0 ./Lecture\ Slides/SV-WS1415_blank_petong/RenewableEnergyFinance.tex
-badd +0 ./Lecture\ Slides/SV-WS1415_blank_petong/ForwardModels.tex
-badd +0 ./Lecture\ Slides/SV-WS1415_blank_petong/Forwards.tex
-badd +0 ./Lecture\ Slides/SV-WS1415_blank_petong/reviewbasic.tex
-badd +0 ./Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/InterestRates.tex
-badd +0 ./Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/blackscholes.tex
-badd +0 ./Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/derivatives.tex
-badd +0 ./Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/valuation.tex
-badd +0 ./Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/introduction.tex
-badd +0 ./Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/EnergyDerivatives.tex
-badd +0 ./Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/ForwardModels.tex
-badd +0 ./Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/MarketObjects.tex
-badd +0 ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/Cap-and-trade-Design.tex
-badd +0 ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/Introduction.tex
-badd +0 ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/PermitPriceDynamics.tex
-badd +0 ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/FlexibleMechanism.tex
-badd +0 ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/ReducedFormModels.tex
-badd +0 ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/CDM.tex
-badd +0 ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/EquilibriumModels.tex
+badd +1 /tmp/foo.bar
+badd +749 ~/.vim/vimrc_mappings
+badd +1 Lecture\ Slides/SV-WS1415_blank_petong/EnergyDerivatives.tex
+badd +1 Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/EquilibriumModels.tex
+badd +1 Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/blackscholes.tex
+badd +1 Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskExamples.tex
+badd +32 Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskBasics.tex
+badd +3 Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskRobust.tex
+badd +7 Lecture\ Slides/SV-WS1415_blank_petong/Review.tex
+badd +41 Lecture\ Slides/SV-WS1415_blank_petong/StructuredContracts.tex
+badd +4 Lecture\ Slides/SV-WS1415_blank_petong/ForwardsPart2.tex
+badd +4 Lecture\ Slides/SV-WS1415_blank_petong/EnergyEmpirics.tex
+badd +1 Lecture\ Slides/SV-WS1415_blank_petong/forwards-2.tex
+badd +1 Lecture\ Slides/SV-WS1415_blank_petong/PowerPlants.tex
+badd +28 Lecture\ Slides/SV-WS1415_blank_petong/RenewableEnergyFinance.tex
+badd +5 Lecture\ Slides/SV-WS1415_blank_petong/ForwardModels.tex
+badd +1 Lecture\ Slides/SV-WS1415_blank_petong/Forwards.tex
+badd +1 Lecture\ Slides/SV-WS1415_blank_petong/reviewbasic.tex
+badd +1 Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/InterestRates.tex
+badd +1 Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/derivatives.tex
+badd +1 Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/valuation.tex
+badd +1 Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/introduction.tex
+badd +1 Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/EnergyDerivatives.tex
+badd +22 Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/ForwardModels.tex
+badd +2 Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/MarketObjects.tex
+badd +1 Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/Cap-and-trade-Design.tex
+badd +1 Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/Introduction.tex
+badd +1 Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/PermitPriceDynamics.tex
+badd +1 Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/FlexibleMechanism.tex
+badd +1 Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/ReducedFormModels.tex
+badd +1 Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/CDM.tex
+badd +1 Lecture\ Slides/Model\ Risk_blank_petong/question.tex
+badd +95 Lecture\ Slides/Model\ Risk_blank_petong/ModelRisk_spring14UDE.tex
+badd +96 Lecture\ Slides/SV-WS1415_blank_petong/StructuringValuation_ws1415UDE.tex
+badd +10 Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/Uebungen/Klausur_Termin_1_140806_1648.tex
+badd +94 Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/FuturesOptions_ss14UDE.tex
+badd +94 Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/EnergyTrading_ss14UDE.tex
+badd +1 Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/QCF_ss14UDE.tex
 argglobal
 silent! argdel *
-argadd ./Lecture\ Slides/Model\ Risk_blank_petong/question.tex
-argadd ./Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskExamples.tex
-argadd ./Lecture\ Slides/Model\ Risk_blank_petong/ModelRisk_spring14UDE.tex
-argadd ./Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskBasics.tex
-argadd ./Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskRobust.tex
-argadd ./Lecture\ Slides/SV-WS1415_blank_petong/Review.tex
-argadd ./Lecture\ Slides/SV-WS1415_blank_petong/StructuringValuation_ws1415UDE.tex
-argadd ./Lecture\ Slides/SV-WS1415_blank_petong/StructuredContracts.tex
-argadd ./Lecture\ Slides/SV-WS1415_blank_petong/ForwardsPart2.tex
-argadd ./Lecture\ Slides/SV-WS1415_blank_petong/EnergyEmpirics.tex
-argadd ./Lecture\ Slides/SV-WS1415_blank_petong/EnergyDerivatives.tex
-argadd ./Lecture\ Slides/SV-WS1415_blank_petong/forwards-2.tex
-argadd ./Lecture\ Slides/SV-WS1415_blank_petong/PowerPlants.tex
-argadd ./Lecture\ Slides/SV-WS1415_blank_petong/RenewableEnergyFinance.tex
-argadd ./Lecture\ Slides/SV-WS1415_blank_petong/ForwardModels.tex
-argadd ./Lecture\ Slides/SV-WS1415_blank_petong/Forwards.tex
-argadd ./Lecture\ Slides/SV-WS1415_blank_petong/reviewbasic.tex
-argadd ./Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/InterestRates.tex
-argadd ./Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/blackscholes.tex
-argadd ./Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/Uebungen/Klausur_Termin_1_140806_1648.tex
-argadd ./Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/derivatives.tex
-argadd ./Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/FuturesOptions_ss14UDE.tex
-argadd ./Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/valuation.tex
-argadd ./Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/introduction.tex
-argadd ./Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/EnergyTrading_ss14UDE.tex
-argadd ./Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/EnergyDerivatives.tex
-argadd ./Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/ForwardModels.tex
-argadd ./Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/MarketObjects.tex
-argadd ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/Cap-and-trade-Design.tex
-argadd ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/Introduction.tex
-argadd ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/QCF_ss14UDE.tex
-argadd ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/PermitPriceDynamics.tex
-argadd ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/FlexibleMechanism.tex
-argadd ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/ReducedFormModels.tex
-argadd ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/CDM.tex
-argadd ./Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/EquilibriumModels.tex
-edit ./Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskExamples.tex
+argadd Lecture\ Slides/Model\ Risk_blank_petong/question.tex
+argadd Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskExamples.tex
+argadd Lecture\ Slides/Model\ Risk_blank_petong/ModelRisk_spring14UDE.tex
+argadd Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskBasics.tex
+argadd Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskRobust.tex
+argadd Lecture\ Slides/SV-WS1415_blank_petong/Review.tex
+argadd Lecture\ Slides/SV-WS1415_blank_petong/StructuringValuation_ws1415UDE.tex
+argadd Lecture\ Slides/SV-WS1415_blank_petong/StructuredContracts.tex
+argadd Lecture\ Slides/SV-WS1415_blank_petong/ForwardsPart2.tex
+argadd Lecture\ Slides/SV-WS1415_blank_petong/EnergyEmpirics.tex
+argadd Lecture\ Slides/SV-WS1415_blank_petong/EnergyDerivatives.tex
+argadd Lecture\ Slides/SV-WS1415_blank_petong/forwards-2.tex
+argadd Lecture\ Slides/SV-WS1415_blank_petong/PowerPlants.tex
+argadd Lecture\ Slides/SV-WS1415_blank_petong/RenewableEnergyFinance.tex
+argadd Lecture\ Slides/SV-WS1415_blank_petong/ForwardModels.tex
+argadd Lecture\ Slides/SV-WS1415_blank_petong/Forwards.tex
+argadd Lecture\ Slides/SV-WS1415_blank_petong/reviewbasic.tex
+argadd Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/InterestRates.tex
+argadd Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/blackscholes.tex
+argadd Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/Uebungen/Klausur_Termin_1_140806_1648.tex
+argadd Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/derivatives.tex
+argadd Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/FuturesOptions_ss14UDE.tex
+argadd Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/valuation.tex
+argadd Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/introduction.tex
+argadd Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/EnergyTrading_ss14UDE.tex
+argadd Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/EnergyDerivatives.tex
+argadd Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/ForwardModels.tex
+argadd Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/MarketObjects.tex
+argadd Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/Cap-and-trade-Design.tex
+argadd Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/Introduction.tex
+argadd Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/QCF_ss14UDE.tex
+argadd Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/PermitPriceDynamics.tex
+argadd Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/FlexibleMechanism.tex
+argadd Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/ReducedFormModels.tex
+argadd Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/CDM.tex
+argadd Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/EquilibriumModels.tex
+edit Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/QCF_ss14UDE.tex
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -164,8 +173,8 @@ wincmd w
 wincmd w
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 12 + 22) / 44)
-exe '2resize ' . ((&lines * 0 + 22) / 44)
+exe '1resize ' . ((&lines * 0 + 22) / 44)
+exe '2resize ' . ((&lines * 12 + 22) / 44)
 exe '3resize ' . ((&lines * 0 + 22) / 44)
 exe '4resize ' . ((&lines * 0 + 22) / 44)
 exe '5resize ' . ((&lines * 0 + 22) / 44)
@@ -195,6 +204,7 @@ exe '28resize ' . ((&lines * 0 + 22) / 44)
 exe '29resize ' . ((&lines * 0 + 22) / 44)
 argglobal
 2argu
+edit Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/QCF_ss14UDE.tex
 setlocal fdm=expr
 setlocal fde=TeXFold(v:lnum)
 setlocal fmr={{{,}}}
@@ -203,7 +213,7 @@ setlocal fdl=0
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 6) / 12)
+let s:l = 1 - ((0 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -212,19 +222,21 @@ normal! 0
 wincmd w
 argglobal
 4argu
-setlocal fdm=expr
-setlocal fde=TeXFold(v:lnum)
+edit Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/QCF_ss14UDE.tex
+setlocal fdm=manual
+setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 8 - ((7 * winheight(0) + 0) / 0)
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 6) / 12)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
+1
 normal! 0
 wincmd w
 argglobal
@@ -373,11 +385,11 @@ setlocal fdl=0
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 0) / 0)
+let s:l = 28 - ((27 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+28
 normal! 0
 wincmd w
 argglobal
@@ -386,15 +398,15 @@ setlocal fdm=expr
 setlocal fde=TeXFold(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=3
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 0) / 0)
+let s:l = 5 - ((4 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+5
 normal! 0
 wincmd w
 argglobal
@@ -539,15 +551,15 @@ setlocal fdm=expr
 setlocal fde=TeXFold(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=3
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 0) / 0)
+let s:l = 22 - ((5 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+22
 normal! 0
 wincmd w
 argglobal
@@ -686,8 +698,9 @@ normal! zt
 1
 normal! 0
 wincmd w
-exe '1resize ' . ((&lines * 12 + 22) / 44)
-exe '2resize ' . ((&lines * 0 + 22) / 44)
+2wincmd w
+exe '1resize ' . ((&lines * 0 + 22) / 44)
+exe '2resize ' . ((&lines * 12 + 22) / 44)
 exe '3resize ' . ((&lines * 0 + 22) / 44)
 exe '4resize ' . ((&lines * 0 + 22) / 44)
 exe '5resize ' . ((&lines * 0 + 22) / 44)

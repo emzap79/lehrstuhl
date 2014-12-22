@@ -2,9 +2,6 @@
 \section{Review -- Markets and Objects}
 \subsection{Energy Markets}
 
-
-
-
 % frametitle
 {Markets}
 
@@ -13,12 +10,7 @@ Since the deregulation of electricity markets in the end of the
 European Energy Exchange (EEX), http://www.eex.com/en. All exchanges have established
 spot and futures markets.
 
-
-
-
-
 %\subsection{Spot market}
-
 
 % frametitle
 {EEX spot market}
@@ -29,8 +21,6 @@ spot and futures markets.
 \item<4->Continuous Power intraday trading for Germany and France until 75 minutes before the beginning of delivery with delivery on the same or the following day in single hours or blocks.
 \end{itemize}
 
-
-
 % frametitle
 {EEX spot market}
 \begin{itemize}
@@ -39,28 +29,20 @@ spot and futures markets.
 \item<3-> similar structures can be found on other power exchanges(Nord Pool, APX, etc.).
 \end{itemize}
 
-
-
 % frametitle
 {EEX Spot Market Price Processes}
 
 \includegraphics[width=\textwidth, height=6.7cm]{../../../pics/PhelixBase2002_12}
-
 
 % frametitle
 {EEX Spot Market Price Processes}
 
 \includegraphics[width=\textwidth, height=6.7cm]{../../../pics/PhelixBase2002_08}
 
-
-
 % frametitle
 {EEX Spot Market Price Processes}
 
 \includegraphics[width=\textwidth, height=6.7cm]{../../../pics/PhelixBase2008_12}
-
-
-
 
 % frametitle
 {Electricity is special}
@@ -74,11 +56,7 @@ spot and futures markets.
 \item<7-> there is a high price volatility due to renewable in-feed
 \end{itemize}
 
-
-
 %\subsection{Futures market}
-
-
 
 % frametitle
 {Futures Market} Traded products are
@@ -90,21 +68,12 @@ spot and futures markets.
 \item<5-> In addition, OTC transactions.
 \end{itemize}
 
-
-
-
-
-
-
-
 % frametitle
 {Futures Market}
 
 %\includegraphics[width=\textwidth, height=6cm]{../../../pics/bbgfutures}
 
 %}
-
-
 
 % frametitle
 {Futures Market}
@@ -113,41 +82,23 @@ spot and futures markets.
 
 } \frame{\frametitle{Futures Market}
 
-
 %\includegraphics[width=\textwidth, height=6cm]{../../../pics/future1}
 
 %}
-
-
 
 % frametitle
 {Futures Market}
 
 \includegraphics[width=\textwidth, height=6cm]{../../../pics/lec2_2}
 
-
-
-
 % frametitle
 {Futures Market}
 Returns seem to be stationary, no seasonality.
 \includegraphics[width=\textwidth, height=6cm]{../../../pics/lec2_3}
 
-
-
-
-
 % frametitle
 {Forward Selling Activity}
 \includegraphics[width=\textwidth, height=6cm]{../../../pics/RWE-forward-activity}
-
-
-
-
-
-
-
-
 
 % frametitle
 {Characteristics}
@@ -157,19 +108,11 @@ Returns seem to be stationary, no seasonality.
 \item<3-> Level of volatility depends on length of delivery period.
 \end{itemize}
 
-
-
 % frametitle
 {Prices of Futures}
 \begin{center}
 \includegraphics[height=6cm, width=10cm]{../../../pics/forwardcurve}
 \end{center}
-
-
-
-
-
-
 
 % frametitle
 {Simple Futures Market Model}
@@ -181,8 +124,6 @@ $$
 \item<2-> But since it costs nothing to enter a futures position, we can constantly change our futures portfolio.
 Thus financing for buying a traded asset is not relevant.
 \end{itemize}
-
-
 
 % frametitle
 {Black's Formula}
@@ -206,8 +147,6 @@ $$
 $$
 }
 
-
-
 % frametitle
 {Black's Formula}
 
@@ -218,8 +157,6 @@ consisting of a position in futures options and an offsetting
 position in the underlying futures contract. The portfolio
 requires no initial investment and therefore should not earn any
 interest.
-
-
 
 \subsection{Basic Pricing Relations for Futures}
 
@@ -240,8 +177,6 @@ allows to put the commodity to the market when prices are high
 and hold it when the prices are low.
 \end{itemize}
 
-
-
 % frametitle
 {Spot-Forward Relationship in Commodity Markets }
 Under the no-arbitrage assumption we have
@@ -250,13 +185,8 @@ F(t,T)=S(t)e^{(r-y)(T-t)}
 \end{equation}
 where $r$ is the interest rate at time $t$ for maturity $T$ and $y$ is the convenience yield.
 
-
-
-
-
 % frametitle
 {Spot-Forward Relationship in Commodity Markets }
-
 
 Observe that (\ref{SF-rel}) implies
 \begin{itemize}
@@ -266,9 +196,6 @@ linear relationship (unlike options)
 \item<3-> knowledge of $S(t)$ and $y$ allows us to construct the whole forward curve
 \item<4-> for $r-y <0$ we have backwardation; for $r-y>0$ we have contango.
 \end{itemize}
-
-
-
 
 % frametitle
 {Spot-Forward Relationship: Classical theory}
@@ -285,8 +212,6 @@ where $\F_t$ is the accumulated available market information (in most models the
 \end{itemize}
 \end{itemize}
 
-
-
 % frametitle
 {Futures Prices and Expectation of Future Spot Prices}
 The rational expectation hypothesis (REH) states that the current futures price $f(t,T)$ for a commodity with
@@ -297,8 +222,6 @@ f(t,T) = \EX[S(T) |\F_t].
 \end{equation}
 where $\F_t$ represents the information available at time $t$. The REH has been statistically
 tested in many studies for a wide range of commodities.
-
-
 
 % frametitle
 {Futures Prices and Expectation of Future Spot Prices}
@@ -311,9 +234,6 @@ spot price in order to secure access to the commodity at time $T$ (political unr
 \item[$<$] holds, then $f(t,T)$ is an down-ward biased estimate, this may reflect a
 perception of excess supply in the future.
 \end{itemize}
-
-
-
 
 % frametitle
 {Market Risk Premium}
@@ -331,12 +251,8 @@ historical measure $\prb$, with information up until time $t$ and
 $S(T)$ is the spot price at time $T$.
 \end{itemize}
 
-
-
 \subsection[Mean-Reversion Model]{A Mean-Reversion Diffusion Model}
 %\subsection{A simple Valuation Framework}
-
-
 
 % frametitle
 {Definition of the model}
@@ -353,8 +269,6 @@ Thus, the logarithm of the prices follow a mean reverting diffusion process, the
 \item $dW_t$ - Brownian increments
 \end{itemize}
 
-
-
 % frametitle
 {Sample paths of the model}
 We simulate $S_t$ (with $S_0=20, \theta = 20, \kappa = 1, \sigma = 0.2$) and get sample paths
@@ -364,18 +278,12 @@ We simulate $S_t$ (with $S_0=20, \theta = 20, \kappa = 1, \sigma = 0.2$) and get
 	\label{fig:samplepahts}
 \end{figure}
 
-
-
-
-
 % frametitle
 {Why this model?}
 \begin{itemize}
 \item<1-> The \textcolor{red}{mean-reversion} process has been considered the natural choice for commodities. Basic microeconomics theory tells that, in the long run, the price of a commodity ought to be tied to its long-run marginal production cost or, "in case of a cartelized commodity like oil, the long-run profit-maximizing price sought by cartel managers" (Laughton \& Jacoby, 1995, p.188).
 \item<2->  The model was introduced by Eduardo Schwartz ("The Stochastic Behavior of Commodity Prices: Implications for Valuation and Hedging", Journal of Finance, vol.52, n. 3, July 1997, pp.923-973) and is often used in academic studies (and for practical pricing?).
 \end{itemize}
-
-
 
 % frametitle
 {Properties of the model}
@@ -388,9 +296,7 @@ We simulate $S_t$ (with $S_0=20, \theta = 20, \kappa = 1, \sigma = 0.2$) and get
 \item<6-> \textcolor{red}{Calibration} easily possible
 \end{itemize}
 
-
 %\subsection{Prices in the Model}
-
 
 % frametitle
 {Spot prices in the model}
@@ -398,8 +304,6 @@ The spot price at any time $t$ is
 \begin{align*}
 	S_t = \exp \left( e^{-\kappa t} \ln S_0 + (1-e^{-\kappa t}) \ln \theta + \int_0^t{\sigma e^{-\kappa (t-s)}}dW_s \right).
 \end{align*}
-
-
 
 % frametitle
 {Forward prices in the model}
@@ -412,8 +316,6 @@ we get the formula for the forward price at time $t$ for the forward expiring in
 \end{align*}
 We can see that the forward prices converge to the spot price with time to maturity tending to zero.
 
-
-
 % frametitle
 {Forward curves in the model}
 Assuming the same parameters as before and varying $S_t$ we get the forward curves:
@@ -422,10 +324,6 @@ Assuming the same parameters as before and varying $S_t$ we get the forward curv
 		\includegraphics[width=1.00\textwidth]{../../../pics/forwardcurves}
 	\label{fig:forwardcurves}
 \end{figure}
-
-
-
-
 
 % frametitle
 {Properties of the forward curve in the model}
@@ -436,9 +334,7 @@ Assuming the same parameters as before and varying $S_t$ we get the forward curv
 \item<4-> If the spot price is close to the long term mean, the forward curve might be humped-shaped.
 \end{itemize}
 
-
 \subsection{A structural model -- Barlow (2002)}
-
 
 % frametitle
 {Set-up}
@@ -451,7 +347,6 @@ u_t(S_t)=d_t(S_t)
 $$
 \item<4-> Need to specify $u_t$ and $d_t$.
 \end{itemize}
-
 
 % frametitle
 {Barlow (2002) specification}
@@ -480,5 +375,4 @@ f_\alpha(X_t) & 1+\alpha  X_t> \epsilon_0 \\*[12pt]
 $$
 
 \end{itemize}
-
 

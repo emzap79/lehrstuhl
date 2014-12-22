@@ -15,10 +15,6 @@ We may have two "equally sound" but different models, which give considerably di
 \item<2-> Calibration: use liquid markets which contain relevant information for pricing the payoff (Schoutens: plain vanilla options). Models should produce results consistent with market practice.
 \end{itemize}
 
-
-
-
-
 % frametitle
 {Comparing equally sound models}
 What are the crucial risk factors for the payoff to be priced (these are more important than the relevant factors)?
@@ -26,7 +22,6 @@ What are the crucial risk factors for the payoff to be priced (these are more im
 \item<1-> Reality Check: analyse the crucial risk factors to decide which ones will be important for future price movements. This is not so important in case we do not have a liquid market and intend to keep a derivative until maturity.
 \item<2-> Market Intelligence: perform reverse engineering on prices from other market participants we observe in order to judge the market opinion.
 \end{itemize}
-
 
 % frametitle
 {Example: Leveraged Credit Default Note}
@@ -36,10 +31,6 @@ What are the crucial risk factors for the payoff to be priced (these are more im
 \item<3-> Bank pays $l_v \times S_T(0)$, with $S_T(0)$ the spread for the reference entity for maturity at $T$.
 \item<4-> At maturity clients receives notational in case of no default. Otherwise, the client will receive the notational minus the leveraged default loss (nothing if this is below 0).
 \end{itemize}
-
-
-
-
 
 % frametitle
 {Gap Risk}
@@ -55,10 +46,6 @@ with $\tau_d$ the default time.
 
 \end{itemize}
 
-
-
-
-
 % frametitle
 {Specifying a Trigger}
 \begin{itemize}
@@ -66,10 +53,6 @@ with $\tau_d$ the default time.
 \item<2-> We set $\tau_{tr}= \inf\{t: S_T(t) \geq s_{tr}\}$, then the leveraged note is unwind at $\tau_{term}= \min\{\tau_{tr}, \tau_{d} \}$.
 \item<3-> The bank can try to set $s_{tr}$ in such a way that the cost of unwinding the leveraged note is just the notational, i.e. there should be no gap risk.
 \end{itemize}
-
-
-
-
 
 \section{Credit Risk Models}
 \subsection{Credit Default Swap (CDS)}
@@ -91,8 +74,6 @@ Buyer & $\longrightarrow $& Seller\\
 \end{center}
 \end{table}
 
-
-
 % frametitle
 {Structure}
 
@@ -103,8 +84,6 @@ The ingredients of the basic structure are the specification of
 underlying: corporate or sovereign, \item<3-> credit event:
 default, bankruptcy, downgrade.
 \end{itemize}
-
-
 
 % frametitle
 {Valuation}
@@ -122,7 +101,6 @@ amount of the bond and the recovery value $\delta$, i.e. the loss given default 
 of the payment is set so that contract value is zero at
 initiation.
 \end{itemize}
-
 
 % frametitle
 {Valuation}
@@ -143,8 +121,6 @@ T\}}\right)} {\DSE\sum_{i=1}^n e^{-rt_i} \EX^*\left(\IF_{\{\tau
 >t_i\}}\right)}.
 $$
 
-
-
 % frametitle
 {Spread Calculation}
 
@@ -160,8 +136,6 @@ $$
 $$\prb^*\left(\tau\leq T\ | \tau >t \right)$$ and
 $$\prb^*\left(\tau >t_i | \tau >t\right)$$ within our models.
 \item<2-> So, to evaluate the gap risk these quantities are crucial.  \end{itemize}
-
-
 
 \subsection{Structural Models}
 
@@ -181,8 +155,6 @@ under an equivalent martingale (pricing) measure $\mathbb{P^*},$ with $r,
 \sigma$ constant, $W$ Brownian motion and constant payout
 (dividend) rate $\delta,$ which may be negative (i.e. pay-in).
 
-
-
 % frametitle
 {Basic Merton Model}
 
@@ -194,7 +166,6 @@ or
 $$
 V_T < F, \quad \mbox{thus} \quad p^d(T,T)=V_T.
 $$
-
 
 % frametitle
 {Equity Owners}
@@ -212,7 +183,6 @@ and
 $$
 d_1=\frac{\log(\bar{V}_t/F)+(r-\delta+\sigma^2/2)(T-t)}{\sigma\sqrt{T-t}}=d_2+\sigma\sqrt{T-t}.
 $$
-
 
 % frametitle
 {Bond Owners}
@@ -238,10 +208,6 @@ p^d(t,T)= V_t e^{-\delta(T-t)} \Phi(-d_1(\bar{V}_t,T-t))+
 Fe^{-r(T-t)}\Phi(d_2(\bar{V}_t,T-t)).
 $$
 
-
-
-
-
 % frametitle
 {Bond Credit Spreads}
 
@@ -256,19 +222,12 @@ l_t=\frac{F e^{-rt}}{V_t}
 $$
 the leverage ratio.
 
-
-
 % frametitle
 {Calculated Bond Credit Spreads  }
 
 \includegraphics<1>[height=6cm]{../../../pics/merton_spreads.pdf}%
 
-
-
-
-
 \subsection{Reduced Form  Models}
-
 
 % frametitle
 {Counting Process}
@@ -281,7 +240,6 @@ $$
 N(t) = \begin{cases} 0 \;\;\; \mbox{if $\tau >t$}\\ 1 \;\;\; \mbox{if $\tau \leq t$}\end{cases}
 $$
 $N(t)$ is the number of defaults up to and including time $t$.
-
 
 % frametitle
 {Calculation in Standard Model}
@@ -304,9 +262,6 @@ $$
 +\EX^* \left[ \left. (1-\delta) e^{-\int_t^T (r_s+ \lambda_s) ds} \right| \F_t\right]
 $$
 
-
-
-
 % frametitle
 {Calculation in Standard Model II}
 
@@ -322,8 +277,6 @@ $$
 p^d (t,T) =  p(t,T) \EX^* \left[ \left.e^{-\int_t^T \lambda_s ds} \right| \F_t\right].
 $$
 
-
-
 % frametitle
 {Survival Probability}
 
@@ -336,9 +289,7 @@ $$
 \frac{\prb(\tau > T)}{\prb(\tau>s)}=  e^{-\int_s^T \lambda_udu}.
 $$
 
-
 \section{Assessing the Gap Risk}
-
 
 % frametitle
 {Structural Model}
@@ -356,9 +307,6 @@ $$
 \item<3-> No gap risk
 \end{itemize}
 
-
-
-
 % frametitle
 {Reduced Form Model}
 
@@ -369,11 +317,4 @@ For deterministic intensity we know the behaviour of the spread  in advance!
 Even with stochastic intensity the default event and the spread level show little correlation.
 \item<3->  So, in any case  -- maximal gap risk!
 \end{itemize}
-
-
-
-
-
-
-
 

@@ -4,8 +4,6 @@
 
 \section{What is Model Risk?}
 
-
-
 % frametitle
 {SST Classification of Risk Types}
 \begin{figure}
@@ -14,8 +12,6 @@
 	\label{fig:Risk_map1}
 \end{figure}
 
-
-
 % frametitle
 {Deutsche Bank Risk Types}
 \begin{figure}
@@ -23,7 +19,6 @@
 		\includegraphics[width=0.8\textwidth]{../../../pics/DeutscheBank-RiskTypes}
 	\label{fig:Risk_map2}
 \end{figure}
-
 
 % frametitle
 {Deutsche Bank Annual Report 2012}
@@ -36,11 +31,6 @@ Credit risk, market risk and operational risk attract regulatory capital.
 \item<5->Furthermore, they mention Insurance specific risk and risk concentration.
 \end{itemize}
 
-
-
-
-
-
 % frametitle
 {Basel Regulation I}
 Regulators formulate some principles for models
@@ -49,7 +39,6 @@ Regulators formulate some principles for models
 \item<2-> A bank is expected to consider all relevant market information likely to have a material effect on an instrument's fair value when selecting the appropriate inputs.
 \item<3->Observable inputs or transactions may not be relevant. In such cases, the observable data should be considered, but   may not be determinative.
 \end{itemize}
-
 
 % frametitle
 {Basel Regulation II}
@@ -65,10 +54,7 @@ Regulators formulate some principles for models
 \item<2->
 Basel III introduces a risk-invariant leverage ratio of 3 percent in recognition that models may be biased.
 
-
 \end{itemize}
-
-
 
 % frametitle
 {Motivation}
@@ -89,17 +75,12 @@ Recently, a number of authors addressed this issue:
 
 \end{itemize}
 
-
-
-
 % frametitle
 {Schoutens - CallFit, NIGCIR}
 \begin{figure}[htp]
 \centering
 \includegraphics[width=\textwidth]{../../../pics/WS-CallFit.pdf}
 \end{figure}
-
-
 
 % frametitle
 {Schoutens - CallFit, BNS}
@@ -108,16 +89,12 @@ Recently, a number of authors addressed this issue:
 \includegraphics[width=\textwidth]{../../../pics/WS-CallFitBNS.pdf}
 \end{figure}
 
-
-
 % frametitle
 {Schoutens - Exotic Fit}
 \begin{figure}[htp]
 \centering
 \includegraphics[width=0.7\textwidth, heigth=0.5\textheigth]{../../../pics/WS-ExoticFit.pdf}
 \end{figure}
-
-
 
 % frametitle
 {Schoutens - Clique Fit}
@@ -126,17 +103,11 @@ Recently, a number of authors addressed this issue:
 \includegraphics[width=0.7\textwidth, heigth=0.5\textheigth]{../../../pics/WS-CliqueFit.pdf}
 \end{figure}
 
-
-
-
 % frametitle
 {How to define model risk?}
 \begin{itemize}
 \item {\it Simple Idea:} Model risk is the possibility that a (financial) institution suffers losses due to mistakes in the development and application of (validation) models.
 \end{itemize}
-
-
-
 
 % frametitle
 {Derman (1996) -- Value Approach}
@@ -148,9 +119,6 @@ Recently, a number of authors addressed this issue:
 \end{itemize}
 Last point: Residual risk relating to the factors -- model risk?
 
-
-
-
 % frametitle
 {Rebonato (2003) -- Price Approach}
 
@@ -159,9 +127,6 @@ Last point: Residual risk relating to the factors -- model risk?
 \item<2-> Thus, models can be counterintuitive, unreasonable, maybe not even free of arbitrage, as long as the market agrees with the valuation.
 \item<3-> So, large losses  can only happen when a sudden gap opens between market prices and model valuation.
 \end{itemize}
-
-
-
 
 % frametitle
 {J. Hull: Risk Management and Financial Institutions}
@@ -179,7 +144,6 @@ Incorrect price at time product is bought or sold
 \item<2-> Incorrect hedging
 \end{itemize}
 
-
 % frametitle
 {Marking Prices of an Instrument to Market}
 \begin{itemize}
@@ -191,8 +155,6 @@ Use price quoted by market maker (usually financial institutions mark to mid of 
 \item<5-> Use model (marking to model)
 \item<6-> Contact member of the trading community
 \end{itemize}
-
-
 
 % frametitle
 {Products}
@@ -210,7 +172,6 @@ Use price quoted by market maker (usually financial institutions mark to mid of 
 \item It is a good idea to use more that one model whenever possible
 \end{itemize}
 \end{itemize}
-
 
 % frametitle
 {Hull: Model Risk}
@@ -235,11 +196,8 @@ Use price quoted by market maker (usually financial institutions mark to mid of 
 \end{itemize}
 \end{itemize}
 
-
 \section{Tools to Assess Model Risk}
 \subsection{Risk, Uncertainty, and Ambiguity}
-
-
 
 % frametitle
 {Definitions}
@@ -253,8 +211,6 @@ probability measure $\prob$ on these outcomes.
 \item {\it Ambiguity:}  we are facing several possible specifications $\prob_1, \prob_2, \ldots$\end{itemize}
 \item<3-> Approaches to deal with ambiguity are "averaging" and "worst-case".
 \end{itemize}
-
-
 
 % frametitle
 {Bayesian Model Averaging}
@@ -275,8 +231,6 @@ p(y|M_j)=\int_{\Theta_j} \prob(y|\theta_j, M_j)p(\theta_j|M_j) d\theta_j.
 $$
 \end{itemize}
 
-
-
 % frametitle
 {Bayesian Model Averaging -- Valuation}
 \begin{itemize}
@@ -293,9 +247,6 @@ $$
 
 \end{itemize}
 
-
-
-
 % frametitle
 {Worst-Case Approach}
 \begin{itemize}
@@ -310,8 +261,6 @@ $$
 \end{itemize}
 
 \end{itemize}
-
-
 
 \subsection{Risk Measures}
 
@@ -330,9 +279,6 @@ is a convex risk measure with $\pi$ translation invariance iff
 \item $\rho$ is $\pi$-translation invariant: $$\forall Y \in {\cal Y}: \rho(X+Y) = \rho(X) + \pi(Y).$$
 \end{itemize}
 
-
-
-
 % frametitle
 {Coherent Risk Measures}
 
@@ -346,11 +292,6 @@ $\rho(X+k)=\rho(X)-k$;
 \item<4-> \emph{Subadditivity}: $\rho(X+Y)\leq \rho(X)+\rho(Y)$.
 \end{itemize}
 
-
-
-
-
-
 % frametitle
 {Convex Risk Measures -- Properties}
 
@@ -360,8 +301,6 @@ $\rho(X+k)=\rho(X)-k$;
 \item Let $\prb$ be a probability measure on $(\Omega, \F)$.\\
 $\rho$ is $\prb$-law invariant $\Leftrightarrow \; \prb^X = \prb^Y $ implies $\rho(X) = \rho(Y)$.
 \end{itemize}
-
-
 
 % frametitle
 {Examples: VaR and AVaR}
@@ -378,9 +317,6 @@ $$
 \item AVaR$_\alpha$ is a convex risk measure (coherent and law-invariant).
 \end{itemize}
 
-
-
-
 % frametitle
 {Value at Risk}
 The worst $1-\alpha$ scenarios are below the $-VaR_\alpha$, all others are below.
@@ -389,7 +325,6 @@ The worst $1-\alpha$ scenarios are below the $-VaR_\alpha$, all others are below
 		\includegraphics[width=0.8\textwidth]{../../../pics/VaR}
 	\label{fig:VaR}
 \end{figure}
-
 
 % frametitle
 {Value at Risk}
@@ -400,9 +335,6 @@ The figure illustrates a portfolio with a low VaR compared to its risk.
 	\label{fig:Shortcoming_VaR}
 \end{figure}
 
-
-
-
 % frametitle
 {Average Value-at-Risk (AVaR) }
 \begin{itemize}
@@ -411,8 +343,6 @@ The figure illustrates a portfolio with a low VaR compared to its risk.
 Value-at-Risk (CVaR) or  Expected Shortfall (ES).
 \end{itemize}
 
-
-
 % frametitle
 {Illustration of AVaR}
 \begin{figure}
@@ -420,8 +350,6 @@ Value-at-Risk (CVaR) or  Expected Shortfall (ES).
 		\includegraphics[width=1\textwidth]{../../../pics/Expected_Shortfall}
 	\label{fig:Expected_Shortfall}
 \end{figure}
-
-
 
 \section{Stochastic Models of Financial Markets}
 \subsection{Model Setting}
@@ -448,7 +376,6 @@ positive constant $r$ was used as a
 num\'{e}raire.
 \end{itemize}
 
-
 % frametitle
 { Trading Strategies}
 
@@ -464,7 +391,6 @@ in the portfolio at time $t$ - to be determined on the basis of
 information available {\it before} time $t$; i.e. the investor
 selects his time $t$ portfolio after observing the prices $S(t-)$.
 \end{itemize}
-
 
 % frametitle
 { Trading Strategies}
@@ -489,8 +415,6 @@ V_\varphi(t) = V_\varphi(0) + G_\varphi(t)\A \mbox{for all}\; t\in
 $$
 \end{itemize}
 
-
-
 % frametitle
 { Discounted Processes}
 
@@ -510,7 +434,6 @@ $$
 \td{G}_\varphi(t) := \sum_{i=1}^d \int_0^t \varphi_i(t)
 d\td{S}_i(t).
 $$
-
 
 % frametitle
 { Self-Financing}
@@ -532,7 +455,6 @@ $$
 - \sum_{i=1}^d \varphi_i(t) \td{S}_i.
 $$
 
-
 \subsection{Arbitrage and Equivalent Martingale Measures}
 
 % frametitle
@@ -549,9 +471,7 @@ $$
 \prb(V_\varphi(T) > 0) >0.
 $$
 
-
 %\subsection{Equivalent Martingale Measures}
-
 
 % frametitle
 { Martingale Measure}
@@ -561,7 +481,6 @@ martingale measure (EMM) if:\\*[6pt]
 (i) $\Q$ is equivalent to $\prb$,\\
 (ii) the discounted price process $\td{S}$ is a $\Q$ martingale.
 
-
 Assume $S_0(t) = B(t) = e^{rt}$, then $\Q \sim \prb$ is a
 martingale measure if and only if every asset price process $S_i$
 has price dynamics under $\Q$ of the form
@@ -570,16 +489,11 @@ dS_i(t) = r S_i(t) dt + dM_i(t),
 $$
 where $M_i$ is a $\Q$-martingale.
 
-
-
-
 % frametitle
 { EMMs and Arbitrage}
 
-
 Assume $\Q$ is an EMM. Then the market model contains no arbitrage
 opportunities.
-
 
 {\it Proof.} Under $\Q$ we have that $\td{V}_\varphi(t)$ is a
 martingale. That is,
@@ -593,9 +507,6 @@ $$
 \EX_{\Q}\left(\td{V}_\varphi(t)\right) = 0,\; \mbox{ for all } 0
 \leq t \leq T.
 $$
-
-
-
 
 % frametitle
 { EMMs and Arbitrage}
@@ -617,10 +528,6 @@ $$
 $$
 and hence the result follows.\hfill \eb
 
-
-
-
-
 % frametitle
 { Contingent Claims}
 
@@ -637,13 +544,6 @@ to be complete if any contingent claim is attainable.
 
 \end{itemize}
 
-
-
-
-
-
-
-
 % frametitle
 { No-Arbitrage Price}
 
@@ -657,12 +557,6 @@ $$
 \Pi_X(t) = V_\varphi(t).
 $$
 
-
-
-
-
-
-
 % frametitle
 { Risk-Neutral Valuation}
 
@@ -674,18 +568,11 @@ $$
 \EX_{\prb^*}\left[\left.\frac{X}{S_0(T)}\right|\F_t\right].
 $$
 
-
 Thus, for any two replicating portfolios $\varphi, \psi \in
 \Phi(\prb^*)$
 $$
 V_\varphi(t) = V_\psi(t).
 $$
-
-
-
-
-
-
 
 % frametitle
 { Risk-Neutral Valuation}
@@ -709,12 +596,7 @@ $$
 $$
 \hfill \eb
 
-
-
-
-
 \subsection{Black-Scholes Model}
-
 
 % frametitle
 { Black-Scholes Model}
@@ -745,11 +627,6 @@ d_1(s,t) &=&\DSE \frac{\log(s/K) + (r +
 \end{array}
 $$
 
-
-
-
-
-
 \section{Quantitative Frameworks for Model Risk}
 \subsection{Parametric Model Risk}
 
@@ -765,11 +642,7 @@ $$
 \theta \rightarrow \EX_\theta(X) := \EX_{\Q_\theta}(X).
 $$
 
-
 \end{itemize}
-
-
-
 
 % frametitle
 {Parameter Uncertainty}
@@ -795,9 +668,6 @@ $$
 \end{itemize}
 \end{itemize}
 
-
-
-
 % frametitle
 {Bann{\"o}r-Scherer Approach}
 \begin{itemize}
@@ -811,9 +681,6 @@ $$
 \item Cont's (2006, Math. Finance, 16(3), 519 -547) suggestion is an extreme points
 \end{itemize}
 \end{itemize}
-
-
-
 
 % frametitle
 {Risk Capturing Functionals}
@@ -835,7 +702,6 @@ $$
 $$
 \end{itemize}
 
-
 % frametitle
 {Model Risk -- Cont's Suggestion}
 \begin{itemize}
@@ -849,9 +715,7 @@ $$
 This approach produces typically a wide bid-ask spread.
 \end{itemize}
 
-
 \subsection{Risk Capturing Functional}
-
 
 % frametitle
 {Construction of Risk Capturing Functionals}
@@ -870,8 +734,6 @@ Define the parameter risk capturing function
 \end{equation}
 \end{itemize}
 
-
-
 % frametitle
 {Parameter Risk-Capturing Valuation}
 \begin{center}
@@ -879,10 +741,7 @@ Define the parameter risk capturing function
 %\caption{Steps of parameter risk-capturing valuation.}
 \end{center}
 
-
-
 \subsection{AVaR$_\alpha$ induced risk capturing functional}
-
 
 % frametitle
 {Definition AVaR}
@@ -897,8 +756,6 @@ AVaR_\alpha(X) = \frac{1}{\alpha} \int_0^\alpha VaR_\beta(X) d\beta.
 $$
 \item AVaR$_\alpha$ is a convex risk measure (coherent and law-invariant).
 \end{itemize}
-
-
 
 % frametitle
 {Definition AVaR risk capturing functional}
@@ -916,8 +773,6 @@ R \star AVaR_\alpha(X) := AVaR_\alpha\left(\theta \rightarrow \EX_\theta(X) \rig
 $$
 \end{itemize}
 
-
-
 % frametitle
 {Convergence Property of AVaR}
 \begin{itemize}
@@ -930,16 +785,12 @@ $$
 \item AVaR -induced risk-capturing functionals fulfill (CP) for $\Theta$ compact.
 \end{itemize}
 
-
-
 % frametitle
 {Using asymptotic distributions}
 \begin{itemize}
 \item (CP) allows us, if the parameter distribution $R$ is complicated to calculate or even unknown, to use a parameter distribution $\tilde{R}$ which is ``close'' to the original distribution $R$ (in the sense of weak convergence, like, e.g., some asymptotic distribution) and calculate the risk-captured price with the parameter distribution $\tilde{R}$ instead.
 \item In particular, if the distribution $R$ is propagated from an estimator $\hat{\theta}_N$ and the asymptotic distribution of the estimator $\hat{\theta}_N$ is known (let us, e.g., denote the asymptotic distribution by $R_\infty$), we can use the distribution $R_\infty$ instead, if the sample size $N\in\setN$ is large enough.
 \end{itemize}
-
-
 
 % frametitle
 {Calculating AVaR}
@@ -958,9 +809,4 @@ $$
 $$
 %$\varphi$resp. $\Phi$ density resp. distribution function of a standard normal.
 \end{itemize}
-
-
-
-
-
 

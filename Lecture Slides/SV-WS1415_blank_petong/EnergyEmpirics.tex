@@ -20,7 +20,6 @@ properties, e. g.
 \end{figure}
 \end{center}
 
-
 % frametitle
 {Marginal Distributions -- Basic Statistics}
 {\small
@@ -44,17 +43,12 @@ properties, e. g.
         \end{table}
 }
 
-
-
-
-
 % frametitle
 {Stylized facts}
 %\vspace{-1.5cm}
 \begin{center}
 How non-normal are power prices?\\
 \end{center}
-
 
 % frametitle
 {Stylized facts}
@@ -65,7 +59,6 @@ Skewness: 0.07 \hspace{2cm} Excess Kurtosis: 2.31\\
 \includegraphics[width=0.7\textwidth,  height=0.7\textheight]{../../../pics/DChistogram.pdf}
 \end{center}
 
-
 % frametitle
 {Stylized facts} %\vspace{-1.5cm}
 \begin{center}
@@ -73,11 +66,6 @@ How non-normal are power prices?\\
 Skewness: 1.95 \hspace{2cm} Excess Kurtosis: 25.93\\
 \includegraphics[width=0.7\textwidth,height=0.7\textheight]{../../../pics/powerhistogram.pdf}
 \end{center}
-
-
-
-
-
 
 \subsection{Multivariate Parametric Modelling}
 \subsubsection{Requirements for a Joint Distribution}
@@ -98,11 +86,8 @@ Skewness: 1.95 \hspace{2cm} Excess Kurtosis: 25.93\\
     \end{itemize}
 \end{itemize}
 
-
-
 % frametitle
 {Generalized Hyperbolic Distributions}
-
 
 % frametitle
 {GH-distributions} GH-distribution has a
@@ -113,7 +98,6 @@ where $Z$ is a $k$-dimensional standard Normal, $W$ Generalized
 Inverse Gaussian random variable (mixture variable) independent of
 $Z$, $A\in\mathbb{R}^{d\times k}$ and $\mu, \gamma \in
 \mathbb{R}^d$.
-
 
 % frametitle
 {GH-distributions} %\vspace{-2cm}
@@ -131,7 +115,6 @@ $$X\stackrel{d}{=}\mu+W\gamma+\sqrt{W}AZ$$
 \item $W\sim GIG(\lambda,\chi,\psi)$ controls tail-behaviour
 \end{itemize}
 
-
 % frametitle
 {GH-distributions} %\vspace{-1.5cm}
 Further important properties
@@ -144,8 +127,6 @@ Portfolio is GH-distributed. \item GH-distribution is infinitely
 divisible $\rightarrow$ Levy-processes
 \end{itemize}
 
-
-
 % frametitle
 {GH-distributions}
 
@@ -157,7 +138,6 @@ Well-known special cases are:
 \gamma=0, \nu>0$)
 \end{itemize}
 
-
 % frametitle
 {} %\vspace{-2cm}
 \begin{center}
@@ -167,7 +147,6 @@ Well-known special cases are:
 \end{figure}
 \end{center}
 
-
 % frametitle
 {} %\vspace{-2cm}
 \begin{center}
@@ -176,7 +155,6 @@ Well-known special cases are:
 \includegraphics[width=0.9\textwidth]{../../../pics/logdensitiespower.pdf}
 \end{figure}
 \end{center}
-
 
 % frametitle
 {-1.5cm}
@@ -191,7 +169,6 @@ portfolio consisting of $\omega_i$ shares of commodity $i$ during
 the period $[t,t+1]$.
 \end{itemize}
 
-
 % frametitle
 {itemize}
 \item If $X_t^{(i)}$ are jointly GH-distributed, then $X$ is
@@ -205,7 +182,6 @@ GH-distributions this can be computed explicitly:
 ES_{\alpha}(X)&=&\mu+\gamma\BE(W)+\sigma\frac{\varphi(\Phi^{-1}(\alpha))}{1-\alpha}\BE(\sqrt{W})
 \end{eqnarray*}
 \end{itemize}
-
 
 \subsubsection{Risk Management Application}
 
@@ -222,8 +198,6 @@ Results are: %\vspace{-0.5cm}
 \item Among all the tested alternatives, we recommend the NIG.
 \end{itemize}
 
-
-
 % frametitle
 {Coal-fired Power Plant} We consider a portfolio
 that can be viewed roughly as the year production/consumption of a
@@ -234,7 +208,6 @@ coal-fired power plant that has a total output capacity of 1TW:
 \item 900,000 t CO$_2$, short
 \end{itemize}
 
-
 % frametitle
 {-2cm}
 \begin{figure}
@@ -244,7 +217,6 @@ coal-fired power plant that has a total output capacity of 1TW:
 \end{center}
 \end{figure}
 
-
 % frametitle
 {-2cm}
 \begin{figure}
@@ -253,7 +225,6 @@ coal-fired power plant that has a total output capacity of 1TW:
 %\includegraphics[width=0.49\textwidth]{pics/VARcoal09ret.pdf}
 \end{center}
 \end{figure}
-
 
 % frametitle
 {-1cm}
@@ -267,7 +238,6 @@ Normal VaR $>$ NIG VaR?
 \includegraphics[width=0.7\textwidth, height= 0.7\textheight]{../../../pics/DChistogram.pdf}
 \end{center}
 
-
 % frametitle
 {-1cm}
 \begin{center}
@@ -280,7 +250,6 @@ Normal VaR $>$ NIG VaR?
 \includegraphics[width=0.7\textwidth, height= 0.7\textheight]{../../../pics/DCNIG.pdf}
 \end{center}
 
-
 % frametitle
 {-1cm}
 \begin{center}
@@ -291,7 +260,6 @@ Normal VaR $>$ NIG VaR?
 %\vspace{-1cm}
 \includegraphics[width=0.7\textwidth, , height= 0.7\textheight]{../../../pics/powerhistogram.pdf}
 \end{center}
-
 
 % frametitle
 {-1cm}
@@ -319,8 +287,6 @@ QQplot using a fitted joint NIG
 \end{figure}
 \end{center}
 
-
-
 % frametitle
 {Shortcomings -- Marginals} %\vspace{-1.5cm}
 \begin{center}
@@ -332,9 +298,6 @@ QQplot using a fitted joint NIG
 \end{center}
 \end{figure}
 \end{center}
-
-
-
 
 % frametitle
 {Shortcomings -- Marginals} %\vspace{-1.5cm}
@@ -348,7 +311,6 @@ variables driven by different $W$s, we loose the convolution
 property ($X+Y$ is not GH-distributed). \item Exception: NIG
 \end{itemize}
 
-
 \subsection{Copula-based Modelling}
 
 % frametitle
@@ -359,8 +321,6 @@ returns \item Estimation of several Copulas to obtain joint
 distributions \item Applications: \textbf{Risk Management} (VaR,
 ES, Portfolio Analysis)
 \end{itemize}
-
-
 
 \subsubsection{Marginal Distributions}
 
@@ -377,10 +337,6 @@ test against the asymmetric generalized hyperbolic model (which is
 the most general model we consider)
 \end{itemize}
 are provided.
-
-
-
-
 
 % frametitle
 {Marginal Distributions - Example: Power}
@@ -407,7 +363,6 @@ are provided.
         \end{table}
 }
 
-
 \subsubsection{Copulas}
 
 % frametitle
@@ -426,13 +381,8 @@ Flexibility in the choice of copulae allows to consider several
 features of the dependence
 structure.
 
-
-
-
-
 % frametitle
 {Facts on Copula Functions}
-
 
 A copula $C$ is a multivariate distribution with standard uniform
 marginal distributions. That is $C$ is a mapping $[0,1]^m
@@ -450,9 +400,6 @@ $$
 where $u_{j,1}=a_j$ and $u_{j,2}=b_j$ for all $j \in
 \{1,\ldots,m\}$.
 \end{itemize}
-
-
-
 
 % frametitle
 {Facts on Copula Functions}
@@ -476,13 +423,8 @@ $$
 F(x_1,\ldots,x_m)=C(F_1(x_1),\ldots,F_m(x_m)).
 $$
 
-
-
-
-
 % frametitle
 {Examples of Copula Functions}
-
 
 The Gaussian copula is given by:
 $$
@@ -490,7 +432,6 @@ C^m_{\Phi,\Gamma}(\bv{u})=\bv{\Phi}_{\Gamma}(\Phi^{-1}(u_1),\ldots,\Phi^{-1}(u_m
 $$
 where $\bv{\Phi}_{\Gamma}$ denotes the multivariate Gaussian
 distribution function with linear correlation matrix $\Gamma$.
-
 
 The $t$-copula can be expressed by:
 $$
@@ -502,10 +443,6 @@ linear correlation matrix $\Gamma$. Furthermore, $t^{-1}_\nu$ is
 the inverse of  the univariate $t$-distribution function with
 parameter $\nu$.
 
-
-
-
-
 % frametitle
 {Examples of Copulas}
 
@@ -514,13 +451,6 @@ parameter $\nu$.
 \includegraphics[width=0.6\textwidth]{../../../pics/copula-density.pdf}
 \end{figure}
 \end{center}
-
-
-
-
-
-
-
 
 % frametitle
 {Archimedean copula}
@@ -545,17 +475,10 @@ Gumbel: $\varphi(t)=(-\log t)^{\theta},
 Upper tail dependency, no lower tail dependency.
 \end{itemize}
 
-
-
 % frametitle
 {Copula Examples}
 
-
 \includegraphics<1>[height=6cm]{../../../pics/copula_examples.pdf}%
-
-
-
-
 
 % frametitle
 {Copulas}
@@ -571,9 +494,6 @@ hyperbolic model as seen in the tables before. \item We rank the
 copulas by their AIC values.
 
 \end{itemize}
-
-
-
 
 % frametitle
 {Copula fit}
@@ -593,10 +513,6 @@ copulas by their AIC values.
             \end{center}
         \end{table}
 
-
-
-
-
 % frametitle
 {Copula fit -- Results}
 
@@ -606,10 +522,6 @@ t and normal copula provide the best fit,  because
 structure \item they have more flexibility to fit the dependence
 between the margins of our models.
 \end{itemize}
-
-
-
-
 
 \subsubsection{Risk Management Application}
 
@@ -630,7 +542,6 @@ loss distribution.
 
 \end{itemize}
 
-
 % frametitle
 {Coal-fired Power Plant}
 
@@ -644,7 +555,6 @@ is nothing else than the following portfolio:
             \item a short position of $330000$ tons of coal,
             \item and a short position of $900000$ tons of CO$_2$.
         \end{itemize}
-
 
 % frametitle
 {Coal-fired Power Plant -- Margins} \tiny
@@ -731,8 +641,6 @@ Power Plant} %\vspace{-2cm}
 \end{figure}
 
 }
-
-
 
 % frametitle
 {Comparison of Models}

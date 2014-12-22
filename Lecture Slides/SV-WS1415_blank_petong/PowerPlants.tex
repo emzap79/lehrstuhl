@@ -10,7 +10,6 @@
 \includegraphics[width=0.9\textwidth, heigth=0.9\textheigth]{../../../pics/PhelixBase2002_12.pdf}
 \end{figure}
 
-
 %% Strom 2001-- 2008
 
 % frametitle
@@ -22,8 +21,6 @@
 
 \end{figure}
 
-
-
 %% Strom ab 2008
 
 % frametitle
@@ -33,7 +30,6 @@
 \includegraphics[width=0.9\textwidth, heigth=0.9\textheigth]{../../../pics/PhelixBase2008_12.pdf}
 
 \end{figure}
-
 
 %% Installed Photovoltaik
 
@@ -46,8 +42,6 @@
 \label{prices}
 \end{figure}
 
-
-
 % frametitle
 {Wind}
 \begin{figure}[htp]
@@ -57,8 +51,6 @@
 \label{prices}
 \end{figure}
 
-
-
 % frametitle
 {Gas power plant}
 \begin{figure}[htp]
@@ -66,8 +58,6 @@
 \includegraphics[width=\textwidth]{../../../pics/GuD-Lingen}
 \label{prices}
 \end{figure}
-
-
 
 % frametitle
 {A day in august}
@@ -77,9 +67,6 @@
 %\caption{Wind, Sonne und Strompreise}
 \end{figure}
 
-
-
-
 % frametitle
 {Wind, sun and electricity}
 \begin{figure}[htp]
@@ -87,11 +74,6 @@
 \includegraphics[width=\textwidth]{../../../pics/week1-14Nov.png}
 %\caption{Wind, Sonne und Strompreise}
 \end{figure}
-
-
-
-
-
 
 % frametitle
 {Value lost -- back on the envelope calculations}
@@ -119,10 +101,7 @@ with an average profit 6.9 Euro per MWh.
 
 \end{itemize}
 
-
-
  %%%%%%%%%% Clean Spark Spread
-
 
 % frametitle
 {Does it get better?}
@@ -131,9 +110,6 @@ with an average profit 6.9 Euro per MWh.
 \includegraphics[width=\textwidth]{../../../pics/Spark-Spread-2012.pdf}
 \end{figure}
 
-
-
-
 % frametitle
 {RWE Response 14.August 2013}
 \begin{figure}[htp]
@@ -141,9 +117,6 @@ with an average profit 6.9 Euro per MWh.
 \includegraphics[width=0.9\textwidth, heigth= 0.9 \textheigth]{../../../pics/RWE-Decommission}
 %\caption{Wind, Sonne und Strompreise}
 \end{figure}
-
-
-
 
 \subsection{Clean Spread Options}
 
@@ -158,14 +131,6 @@ V_t = \max\{P_t - h\,G_t - c_E\;E_t - C, 0\},
 \end{equation}
 here  $P_t$ is the price of electricity, $G_t$ the price of gas, $E_t$ the price of emission certificates  and $C$ fixed costs ($h$ and $c_E$ are conversion factors).
 \end{itemize}
-
-
-
-
-
-
-
-
 
 %\subsection{Valuation of Spread Options}
 
@@ -187,10 +152,6 @@ where $\rho$ is the correlation between the two underlyings.
 
 For $K\neq 0$ no easy analytic formula is available.
 
-
-
-
-
 % frametitle
 {Spread Option Value and Correlation}
 The value of a spread option depends strongly on the correlation between the two underlyings.
@@ -201,9 +162,6 @@ $$\includegraphics[scale=0.3]{../../../pics/corr}$$
 \vspace{-1cm}
 \item The higher the correlation between the two underlyings the lower is the volatility of the spread and hence the value of the spread option.
 \end{itemize}
-
-
-
 
 % frametitle
 {Approximation by Kirk's Formula (2 Assets)}
@@ -219,8 +177,6 @@ Again for $r=0$ we have the formula $$\begin{array}{lll}
 \end{array}$$
 and $\rho$ is the correlation between the two underlyings.
 
-
-
 % frametitle
 {Approximation by Kirk's Formula (2 Assets)}
 
@@ -230,9 +186,6 @@ $$
  C_{\mbox{BS}}(S_1(t), S_2(t)+K, \sigma_K, \tau)
  $$
   for  $\tau$ small.
-
-
-
 
 % frametitle
 {Approximation for three asset case}
@@ -244,9 +197,6 @@ $$
 \end{equation}
 \item<2-> We value this as a classical vanilla option with random strike $S_2+S_3+K$ and appropriate volatility.
 \end{itemize}
-
-
-
 
 % frametitle
 {Approximation by Kirk's Formula (3 Assets)}
@@ -270,10 +220,6 @@ with
 }
 and $\rho_{ij}$ is the correlation between the underlying $i,j$.
 
-
-
-
-
 \subsection{Power Plant Valuation}
 \subsubsection{Prices}
 
@@ -286,7 +232,6 @@ d{E}_t = \alpha^E\,E_t\,d{t} + \sigma^E\,E_t\,d{W}^E_t,
 \label{co2}
 \end{equation}
 
-
 % frametitle
 {Gas Price}
 \begin{itemize}
@@ -298,7 +243,6 @@ d{Z}_t & = & -\alpha^G\,Z_t\,d{t} + \sigma^G\,d{W}^G_t,
 \end{eqnarray}
 \item $\alpha^G$ is the speed of mean-reversion for gas prices.
 \end{itemize}
-
 
 % frametitle
 {Power Price}
@@ -315,8 +259,6 @@ d{Y}_t & = & -\beta\,Y_t\,d{t} + J_t\,d{N}_t,
 \item $J_t$ are independent identically distributed (i.i.d) random variables representing the jump size.
 \end{itemize}
 
-
-
 % frametitle
 {Seasonal components}
 $g(t)$ and $f(t)$ are seasonal trend components for gas and power, respectively, defined as
@@ -329,8 +271,6 @@ g(t) &=& b_1 + b_2\,t + b_3\cos(b_5 + 2\pi t) + b_4\cos(b_6 + 4\pi t), \nonumber
 
 where $a_1$ and $b_1$ may be viewed as production expenses, $a_2$ and $b_2$ are the slopes of increase in these costs. The rest of the parameters are responsible for two seasonal changes in summer and winter respectively.
 
-
-
 % frametitle
 {Dependence Structure}
 In the current setting we also assume that $W^E$, $W^G$ and $N$ are mutually independent processes, but there is some correlation between  $W^P$ and $W^G$
@@ -339,8 +279,6 @@ In the current setting we also assume that $W^E$, $W^G$ and $N$ are mutually ind
 d{W}^P_t\,d{W}^G_t = \rho\,d{t}.
 \label{corr}
 \end{equation}
-
-
 
 % frametitle
 {Data sources}
@@ -356,7 +294,6 @@ carbon dioxide equivalent. (EUR/EUA).
 \item We cover the last three years: 25.09.2009 - 08.06.2012.
 \end{itemize}
 
-
 % frametitle
 {Price Paths, 25.09.2009 - 08.06.2012.}
 \begin{figure}[htp]
@@ -365,7 +302,6 @@ carbon dioxide equivalent. (EUR/EUA).
 %\caption{Power, gas and carbon prices.}
 \label{prices}
 \end{figure}
-
 
 % frametitle
 {Clean Spark Spread, 25.09.2009 - 08.06.2012.}
@@ -376,9 +312,7 @@ carbon dioxide equivalent. (EUR/EUA).
 \label{spread}
 \end{figure}
 
-
 \subsubsection{Simple Valuation}
-
 
 % frametitle
 {Real Option Approach}
@@ -388,9 +322,6 @@ carbon dioxide equivalent. (EUR/EUA).
 \item<3-> Flexibility adds value compared to the discounted cash flow approach.
 \end{itemize}
 
-
-
-
 % frametitle
 {Real Option Approach -- Forward Based}
 \begin{itemize}
@@ -399,10 +330,6 @@ carbon dioxide equivalent. (EUR/EUA).
 (as we assume that there are no further restrictions)
 \item<3-> We can then use Kirk's approximation with the appropriate forward specification.
 \end{itemize}
-
-
-
-
 
 % frametitle
 {Heath-Jarrow-Morton (HJM) Approach}
@@ -418,11 +345,6 @@ initial condition of the stochastic differential equation
 is determined by the current value
 of the empirical (observed) forward rate for the future date $T$
 which prevails at time $0$.
-
-
-
-
-
 
 % frametitle
 {Factor GBM Specification}
@@ -446,8 +368,6 @@ $$
 $$
 \end{itemize}
 
-
-
 % frametitle
 {Modelling Approach}
 \begin{itemize}
@@ -461,10 +381,6 @@ The only parameter in this model is the volatility function $\Sigma$ which has t
 
 \end{itemize}
 
-
-
-
-
 % frametitle
 {Volatility Functions}
 We assume that the swap price dynamics for all swaps is given by (\ref{eqn: lognormal dynamics})
@@ -474,8 +390,6 @@ Starting out with a given volatility function for a fixed time forward contract 
 \begin{equation}
 \Sigma(t,T_1,T_2)=\int_{T_1}^{T_2} \hat{w}(u,T_1,T_2) \sigma(t,u) \, du. \label{eqn: swap volatility creation}
 \end{equation}
-
-
 
 % frametitle
 {Forward Schwartz Volatility}
@@ -492,9 +406,6 @@ The time to maturity effect is modeled by a negative exponential function.
 \item The exponential function causes that the volatility increases as the time to maturity decreases which leads to an increased volatility when the contract approaches the maturity.
 \end{itemize}
 \end{itemize}
-
-
-
 
 % frametitle
 {Swap Schwartz Volatility}
@@ -513,9 +424,6 @@ in (\ref{vol-schwartz}).
 
 The associated swap price volatility is then given by $\Sigma(t,T_1,T_2)=a$.
 
-
-
-
 % frametitle
 {A Two-Factor Model}
 \begin{itemize}
@@ -530,8 +438,6 @@ F(t,T)& =&F(0,T)\exp\left\{\mu(t,T)  +\int_0^t\hat{\sigma_1}(s,T)dW_s^{(1)}+\sig
 \item<5-> $\mu(t,T)$ being the risk-neutral martingale drift
 \end{itemize}
 
-
-
 % frametitle
 {Model Parameters}
 $\sigma_1$ affects the level at the short end of the volatility curve
@@ -539,9 +445,6 @@ $\sigma_1$ affects the level at the short end of the volatility curve
 \begin{center}
 \includegraphics[height=6cm, width=10cm]{../../../pics/sigma1}
 \end{center}
-
-
-
 
 % frametitle
 {Model Parameters}
@@ -551,9 +454,6 @@ $\kappa$ affects the slope of the volatility curve at the short end
 \includegraphics[height=6cm, width=10cm]{../../../pics/kappa}
 \end{center}
 
-
-
-
 % frametitle
 {Model Parameters}
 $\sigma_2$ affects the level at the long end of the volatility curve
@@ -562,10 +462,7 @@ $\sigma_2$ affects the level at the long end of the volatility curve
 \includegraphics[height=6cm, width=10cm]{../../../pics/sigma2}
 \end{center}
 
-
-
 \subsubsection{Simulation-based Valuation}
-
 
 % frametitle
 {Present Value of a Power Plant}
@@ -574,9 +471,6 @@ $\sigma_2$ affects the level at the long end of the volatility curve
 \item<2-> We don't consider any further restrictions.
 \item<3-> The plant runs for another few years, so future values will be discounted.
 \end{itemize}
-
-
-
 
 % frametitle
 {Spark Spread Analysis I}
@@ -590,8 +484,6 @@ V_t = \max\{P_t - h\,G_t - c_E\;E_t, 0\},
 
 where $P_t$ is the power price, $G_t$ is the gas price, $E_t$ is the carbon certificate price, $h$ is the heat rate, $c_E$ emission conversion rate.
 
-
-
 % frametitle
 {Spark Spread Analysis II}
 \begin{itemize}
@@ -603,13 +495,9 @@ $$VPP(t,T) = \int_{t}^{T}e^{-r(s-t)}\,V(s)\,ds.$$
 \item<3-> Then, by fixing all the parameters except of one (e.g. correlation) and setting the shift value (e.g. 1\%), we compute shifted up and down spark spread values, i.e. $V^{up}_t$ and $V^{down}_t$, which we may use for sensitivity analysis.
 \end{itemize}
 
-
-
 % frametitle
 {Power Plant Analysis I}
   We compute the value of the power plant (VPP) by means of Monte Carlo simulations. For a fixed large number $N$ and a fixed period $T=3$ years we have $$VPP(t,T) = \frac{1}{N}\sum_{i=1}^{N}VPP_i(t,T),$$ where $$VPP_i(t,T) = \sum_{s=t}^{T}e^{-r(T-s)}\,V_i(s).$$
-
-
 
 % frametitle
 {Power Plant Analysis II}
@@ -618,9 +506,6 @@ $$VPP(t,T) = \int_{t}^{T}e^{-r(s-t)}\,V(s)\,ds.$$
 \item<2-> Finally, we compute the bid and ask prices, i.e. we use the closed formula for AVaR to get the risk-captured prices by subtracting and adding risk-adjustment value to $VPP(t,T)$ respectively.
 \item<3-> For a specified significance level $\alpha \in (0, 1)$ this risk-adjustment value is computed as $$\frac{\varphi(\Phi^{-1}(\alpha))}{\alpha}\sqrt{\frac{sVPP(\theta_0)' \cdot \Sigma \cdot sVPP(\theta_0) }{N}}.$$
 \end{itemize}
-
-
-
 
 % frametitle
 {Parameter-risk implied bid-ask spread w.r.t. correlation parameter, Gaussian jumps.}
@@ -634,12 +519,6 @@ $$VPP(t,T) = \int_{t}^{T}e^{-r(s-t)}\,V(s)\,ds.$$
 \end{columns}
 \end{frame}
 
-
-
-
-
-
-
 % frametitle
 {Parameter-risk implied bid-ask spread w.r.t. the gas price process, Gaussian jumps.}
 \begin{columns}[t]
@@ -652,9 +531,6 @@ $$VPP(t,T) = \int_{t}^{T}e^{-r(s-t)}\,V(s)\,ds.$$
 \end{columns}
 \end{frame}
 
-
-
-
 % frametitle
 {Estimation Procedures: Emissions and Gas}
 \begin{itemize}
@@ -662,7 +538,6 @@ $$VPP(t,T) = \int_{t}^{T}e^{-r(s-t)}\,V(s)\,ds.$$
 \item $\log E_t$ and $\log G_t$ are normally distributed.
 \item Thus, we can use standard Maximum Likelihood Methods.
 \end{itemize}
-
 
 % frametitle
 {Estimation Procedures: Power I}
@@ -673,14 +548,10 @@ The estimation procedure for the power price includes several steps:
 \item As a result we obtain a standard deviation of the jumps, $\sigma_j$, and a cumulative frequency of jumps, $l$. The latter is defined as the total number of filtered jumps divided by the annualised number of observations.
 \end{itemize}
 
-
-
 % frametitle
 {Estimation Procedures: Power II}
 \begin{itemize}
 \item Once we have filtered the $X_t$ process, we can identify it as a first order autoregressive model in continuous time, i.e. so-called AR(1) process. Discretizing the process and estimating it by maximum likelihood method (MLE) yields the estimates.
 %\item To estimate the mean-reversion rate for the jump process one can take an advantage of the approach based on the autocorrelation function (ACF) suggested by Barndorff-Nielsen, %Shephard (2001) (implemented Benth, Nazarova, Kiesel 2011).
 \end{itemize}
-
-
 

@@ -1,9 +1,7 @@
 % !TEX root = StructuringValuation_ws1415UDE.tex
 
-
 %% This is taken from F&O Derivatives section
 \part{Review of Basic Objects}
-
 
 \section{Derivatives}
 
@@ -22,8 +20,6 @@ matures. {\it American} options give one the right to buy/sell at any time
 prior to or at expiry.
 \end{itemize}
 
-
-
 % frametitle
 {Options - Terminology (1)}
 
@@ -40,10 +36,6 @@ seller of the option is struck), time $t = T$ for the expiry or
 final time.
 \end{itemize}
 
-
-
-
-
 % frametitle
 {Options - Terminology (2)}
 
@@ -56,8 +48,6 @@ $t$.\\*[12pt]
   \item<3-> if $S(t) < K$, the option is {\it out of the money}.
 \end{itemize}
 
-
-
 % frametitle
 {Options - Payoff}
 
@@ -69,8 +59,6 @@ written as  $(S(T) - K)^+$).
 \end{itemize}
 %}
 
-
-
 % frametitle
 {Options - Payoff/Profit diagram }
 
@@ -79,8 +67,6 @@ Considering only the option payoff, we obtain the payoff diagram, taking into ac
 \begin{center}
 \includegraphics[height=5cm]{../../../pics/payoffprofit.png}
 \end{center}
-
-
 
 % frametitle
 {Options - Profit diagrams of vanilla options}
@@ -92,9 +78,7 @@ Considering only the option payoff, we obtain the payoff diagram, taking into ac
    \subfigure[short put]{\includegraphics[height=3cm]{../../../pics//shortput.png}}
 \end{figure}
 
-
 %\subsection{Forwards and Futures}
-
 
 % frametitle
 {Forwards - Basic Structure}
@@ -113,8 +97,6 @@ date is called {\it delivery date} and the specified price is
 referred to as {\it delivery price}.
 \end{itemize}
 
-
-
 % frametitle
 {Forwards}
 \begin{itemize}
@@ -130,8 +112,6 @@ necessarily be equal to the delivery price $K$ during the
 life-time of the contract.
 \end{itemize}
 
-
-
 % frametitle
 {Forwards}
 \begin{itemize}
@@ -143,8 +123,6 @@ $$ S(T)-K.$$
 and strike price $K$ we see that the investor now faces a downside
 risk, too. He has the obligation to buy the asset for price $K$.
 \end{itemize}
-
-
 
 % frametitle
 {Spot-Forward Relationship}
@@ -164,10 +142,6 @@ Under the no-arbitrage assumption we have
 
 All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow at T needs to be zero so we have $$F(t,T) = S(t)e^{r(T-t)}$$
 
-
-
-
-
 % frametitle
 {Futures}
 \begin{itemize}
@@ -178,11 +152,6 @@ All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow 
 
 \end{itemize}
 
-
-
-
-
-
 % frametitle
 {Payoff from a forward/futures contract}
 \begin{figure}
@@ -190,8 +159,6 @@ All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow 
    \subfigure[long position]{\includegraphics[height=4cm]{../../../pics//forwardlong.png}}\qquad
    \subfigure[short position]{\includegraphics[height=4cm]{../../../pics//forwardshort.png}}
 \end{figure}
-
-
 
 % frametitle
 {Swaps}
@@ -207,9 +174,6 @@ Examples are currency swaps (exchange currencies) and
 interest-rate swaps (exchange of fixed for floating set of
 interest payments).
 \end{itemize}
-
-
-
 
 \section{How to Model Price Movements?}
 \subsection{Price Processes}
@@ -237,10 +201,6 @@ volatility} of the
 stock.
 \end{itemize}
 
-
-
-
-
 % frametitle
 {Geometric Brownian Motion}
 
@@ -255,9 +215,6 @@ The economic importance of geometric
 Brownian motion was recognised by Paul A. Samuelson in his work, for which Samuelson received the Nobel
 Prize in Economics in 1970, and by Robert Merton, in work for which he was similarly
 honoured in 1997.
-
-
-
 
 % frametitle
 {Brownian Motion I}
@@ -274,9 +231,6 @@ increments}: the law of $X(t+u) - X(t)$ depends only on $u$,
 \end{itemize}
 and (iv), (v)
 
-
-
-
 % frametitle
 {Brownian Motion II}
 
@@ -289,11 +243,7 @@ X(t) \sim N(0,u)$, \item[(v)]  $X$ has {\it continuous paths}:
 $X(t)$ is a continuous function of $t$.
 \end{itemize}
 
-
 \subsection{Basic Stochastic Calculus}
-
-
-
 
 % frametitle
 { It{\^o} Processes}
@@ -313,9 +263,6 @@ df(X(t)) &=& f'(X(t)) dX(t)\\*[12pt]
 \end{array}
 $$
 \end{itemize}
-
-
-
 
 % frametitle
 {Multiplication rules}
@@ -341,9 +288,6 @@ dW & 0 &dt \\\hline
 \end{center}
 \end{itemize}
 
-
-
-
 % frametitle
 { General It{\^o} Formula}
 
@@ -354,9 +298,6 @@ df = \left(f_t + b f_x + \frac{1}{2} \s^2 f_{xx}\right) dt + \s
 f_x dW.
 $$
 Observe, that we left out all function arguments
-
-
-
 
 % frametitle
 { Example: Geometric Brownian Motion}
@@ -382,12 +323,8 @@ $$
 dx = dW(t), \A (dx)^2 = dt.
 $$
 
-
-
-
 % frametitle
 { Example: GBM}
-
 
 Thus It\^{o}'s lemma gives
 $$
@@ -400,7 +337,6 @@ dW).
 \end{array}
 $$
 
-
 \section{Electricity Trading}
 
 % frametitle
@@ -409,7 +345,6 @@ $$
 A centralized platform where participants can exchange electricity transparently
 according to the price they are will to pay or receive, and according to the capacity of
 the electrical network.
-
 
 \begin{itemize}
 \item<1-> Fixed Gate Auction
@@ -428,9 +363,6 @@ the electrical network.
 
 \end{itemize}
 
-
-
-
 % frametitle
 {Electricity Exchanges}
 
@@ -444,8 +376,6 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 \item<4-> Amsterdam Power Exchange (APX), covers the Netherlands, Belgium and the UK, \url{http://www.apxgroup.com}
 \end{itemize}
 
-
-
 % frametitle
 {EEX -- traded products}
 \begin{itemize}
@@ -453,8 +383,6 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 \item<2-> For Germany single days and weekends are available.
 \item<3-> European style options on futures.
 \end{itemize}
-
-
 
 % frametitle
 {EPEX -- traded products}
@@ -465,29 +393,17 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 \item<4-> in Germany 15 minutes contracts can be traded.
 \end{itemize}
 
-
-
-
 % frametitle
 {Auction EPEX}
 \begin{center}
 \includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/auction-epex07042014}
 \end{center}
 
-
-
-
-
 % frametitle
 {Spot price EPEX}
 \begin{center}
 \includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/pricevolume-epex07042014}
 \end{center}
-
-
-
-
-
 
 % frametitle
 {Day-Ahead Market }
@@ -497,16 +413,12 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 \item<3-> Market for production from renewable energy sources (wind, solar) as on long-term markets only averages can be traded
 \end{itemize}
 
-
-
 % frametitle
 {Intra-Day Market }
 \begin{itemize}
 \item<1-> Trading of hours, quarter-hours until 45 min before start of period continuously during the day
 \item<2-> From 15:00 hours of next day, from 16:00 quarter-hours of next day
 \end{itemize}
-
-
 
 % frametitle
 {Motivation for Trading Intra-Day Market }
@@ -522,9 +434,6 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 \item<3-> proprietary trading
 \end{itemize}
 
-
-
-
 % frametitle
 {Structure of Balancing and Reserve Markets }
 In Europe, the {\it European Network of Transmission System Operators for Electricity,(ENTSO-E)} coordinates overarching grid topics. The main task of a TSO is to ensure a constant power frequency in the transmission system. The following control actions are applied
@@ -535,21 +444,13 @@ In Europe, the {\it European Network of Transmission System Operators for Electr
 \end{itemize}
 The TSO tenders the required products for fulfilling these functions. Reserve products may involve payments for the availability of the reserved capacity.
 
-
-
-
-
 % frametitle
 {Timing Electricity Trading}
 \begin{center}
 \includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/TimeLineElectricityTrading}
 \end{center}
 
-
-
-
 \section{A structural model -- Barlow (2002)}
-
 
 % frametitle
 {Set-up}
@@ -562,7 +463,6 @@ u_t(S_t)=d_t(S_t)
 $$
 \item<4-> Need to specify $u_t$ and $d_t$.
 \end{itemize}
-
 
 % frametitle
 {Barlow (2002) Specification}
@@ -592,8 +492,6 @@ $$
 
 \end{itemize}
 
-
-
 % frametitle
 {Mean-reverting Processes}
 $X_t$ follows a stochastic process which can be described as follows:
@@ -607,6 +505,4 @@ The parameters can be interpreted as
 \item $\theta$ - level of mean reversion
 \item $\sigma$ - volatility of the process
 \end{itemize}
-
-
 

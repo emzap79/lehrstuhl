@@ -2,7 +2,6 @@
 
 \section{Basic Derivatives}
 
-
 % frametitle
 {}
 \vspace{0cm}
@@ -11,10 +10,7 @@
 \end{center}
 \end{frame}
 
-
 \subsection{Modelling Assumptions}
-
-
 
 % frametitle
 {Derivative Background (1)}
@@ -32,8 +28,6 @@ interval $[0,T]$).
 \end{itemize}
 \end{itemize}
 
-
-
 % frametitle
 {Derivative Background (2)}
 \begin{itemize}
@@ -41,8 +35,6 @@ interval $[0,T]$).
 {\it Options, Forwards and Futures} and {\it Swaps}.
 \item During this lectures we will encounter all this structures and further variants.
 \end{itemize}
-
-
 
 % frametitle
 { Modelling Assumptions (1)}
@@ -57,10 +49,6 @@ spread, no taxes,
 and lending
 \end{itemize}
 
-
-
-
-
 % frametitle
 { Modelling Assumptions (2)}
 \begin{itemize}
@@ -69,8 +57,6 @@ act as price takers, infinite number of participants\\*[12pt]
 \item<2-> {\it Rational agents} Market
 participants prefer more to less
 \end{itemize}
-
-
 
 % frametitle
 { Arbitrage (1)}
@@ -82,7 +68,6 @@ more to less, or more precisely, an increase in consumption
 without any costs will always be accepted.
 \end{itemize}
 
-
 % frametitle
 { Arbitrage (2)}
 \begin{itemize}
@@ -93,7 +78,6 @@ using the market as a \lq {money-pump}' to extract arbitrarily
 large quantities of riskless profit.
   \item {\it We assume that arbitrage opportunities do not exist!}
 \end{itemize}
-
 
 % frametitle
 {Continuous and Discrete Compounding}
@@ -109,10 +93,6 @@ large quantities of riskless profit.
       \end{itemize}
  \end{itemize}
 
-
-
-
-
 % frametitle
 {Derivate Markets}
 \begin{itemize}
@@ -120,9 +100,6 @@ large quantities of riskless profit.
   \item<2-> Products at exchanges are standardized contracts that are defined by the exchange. Important exchanges for commodities are the Chicago Mercantile Exchange (CME), the Intercontinental Exchange (ICE) in London or the European Energy Exchange (EEX) in Leipzig.
   \item<3-> OTC trading takes place via computers and phones between various commercials and investment banks. OTC contracts are non-standardized and can be flexible adjusted to the demand of the parties.
 \end{itemize}
-
-
-
 
 % frametitle
 {Underlying Securities}
@@ -134,9 +111,6 @@ large quantities of riskless profit.
 \item<4-> Currencies (FX);
 \item<5-> Also Derivatives may be used as underlying for compound derivatives (call on call).
 \end{itemize}
-
-
-
 
 \subsection{Options}
 
@@ -155,8 +129,6 @@ matures. {\it American} options give one the right to buy/sell at any time
 prior to or at expiry.
 \end{itemize}
 
-
-
 % frametitle
 {Exotic Options}
 Many kinds of options now exist, including so-called {\it exotic}
@@ -169,8 +141,6 @@ attained or not.
 \item<3-> {\it lookback} options, which
 depend on the  {\it maximum} or {\it minimum} price over a period.
 \end{itemize}
-
-
 
 % frametitle
 {Options - Terminology (1)}
@@ -188,10 +158,6 @@ seller of the option is struck), time $t = T$ for the expiry or
 final time.
 \end{itemize}
 
-
-
-
-
 % frametitle
 {Options - Terminology (2)}
 
@@ -204,8 +170,6 @@ $t$.\\*[12pt]
   \item<3-> if $S(t) < K$, the option is {\it out of the money}.
 \end{itemize}
 
-
-
 % frametitle
 {Options - Payoff}
 
@@ -217,8 +181,6 @@ written as  $(S(T) - K)^+$).
 \end{itemize}
 %}
 
-
-
 % frametitle
 {Options - Payoff/Profit diagram }
 
@@ -227,8 +189,6 @@ Considering only the option payoff, we obtain the payoff diagram, taking into ac
 \begin{center}
 \includegraphics[height=5cm]{../../../pics/payoffprofit.png}
 \end{center}
-
-
 
 % frametitle
 {Options - Profit diagrams of vanilla options}
@@ -241,7 +201,6 @@ Considering only the option payoff, we obtain the payoff diagram, taking into ac
 \end{figure}
 
 \subsection{Forwards and Futures}
-
 
 % frametitle
 {Forwards - Basic Structure}
@@ -260,8 +219,6 @@ date is called {\it delivery date} and the specified price is
 referred to as {\it delivery price}.
 \end{itemize}
 
-
-
 % frametitle
 {Forwards}
 \begin{itemize}
@@ -277,8 +234,6 @@ necessarily be equal to the delivery price $K$ during the
 life-time of the contract.
 \end{itemize}
 
-
-
 % frametitle
 {Forwards}
 \begin{itemize}
@@ -290,8 +245,6 @@ $$ S(T)-K.$$
 and strike price $K$ we see that the investor now faces a downside
 risk, too. He has the obligation to buy the asset for price $K$.
 \end{itemize}
-
-
 
 % frametitle
 {Spot-Forward Relationship}
@@ -311,10 +264,6 @@ Under the no-arbitrage assumption we have
 
 All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow at T needs to be zero so we have $$F(t,T) = S(t)e^{r(T-t)}$$
 
-
-
-
-
 % frametitle
 {Futures}
 \begin{itemize}
@@ -325,11 +274,6 @@ All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow 
 
 \end{itemize}
 
-
-
-
-
-
 % frametitle
 {Payoff from a forward/futures contract}
 \begin{figure}
@@ -337,8 +281,6 @@ All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow 
    \subfigure[long position]{\includegraphics[height=4cm]{../../../pics//forwardlong.png}}\qquad
    \subfigure[short position]{\includegraphics[height=4cm]{../../../pics//forwardshort.png}}
 \end{figure}
-
-
 
 % frametitle
 {Swaps}
@@ -354,5 +296,4 @@ Examples are currency swaps (exchange currencies) and
 interest-rate swaps (exchange of fixed for floating set of
 interest payments).
 \end{itemize}
-
 

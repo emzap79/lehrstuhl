@@ -1,7 +1,6 @@
 % !TEX root = FuturesOptions_ss14UDE.tex
 \section{The Black-Scholes Model}
 
-
 % frametitle
 {}
 \vspace{0cm}
@@ -11,7 +10,6 @@
 \end{frame}
 
 \subsection{The Pricing Formula}
-
 
 % frametitle
 {The Black-Scholes Formula for a European Call}
@@ -23,9 +21,6 @@
    \subfigure[Fisher Black]{\includegraphics[height=3cm]{../../../pics/black.jpg}}
 \end{figure}
 \end{center}
-
-
-
 
 % frametitle
 { Black-Scholes Model}
@@ -39,8 +34,6 @@
 %\item with constant coefficients $b \in \setR,\; r,\s \in \setR_+$.
 %\end{itemize}
 %}
-
-
 
 % frametitle
 {European Call Price}
@@ -66,7 +59,6 @@ d_1(s,\tau) &=&\DSE \frac{\log(s/K) + (r +
 \end{array}
 $$
 
-
 \subsection{The Greeks}
 
 % frametitle
@@ -87,7 +79,6 @@ depend on the
 \end{enumerate}
 \end{itemize}
 
-
 % frametitle
 {Greeks (2)}
 \begin{itemize}
@@ -99,7 +90,6 @@ hedging purposes.
 We can determine the impact of these parameters
 by taking partial derivatives.
 \end{itemize}
-
 
 % frametitle
 {Greeks}
@@ -132,29 +122,21 @@ compared with the change in the volatility of the underlying,
 \item<3-> similar statements hold for $\Theta$ -- theta -- and $\rho$ -- rho
 \end{itemize}
 
-
 % frametitle
 {Greeks}
 \includegraphics<1>[height=7cm]{../../../pics/Delta.pdf}
-
 
 % frametitle
 {Greeks}
 \includegraphics<1>[height=7cm]{../../../pics/DeltaToZero.pdf}
 
-
 % frametitle
 {Greeks}
 \includegraphics<1>[height=7cm]{../../../pics/gamma.pdf}
 
-
 % frametitle
 {Greeks}
 \includegraphics<1>[height=7cm]{../../../pics/Vega2.pdf}
-
-
-
-
 
 % frametitle
 {Greeks}
@@ -167,8 +149,6 @@ $$
 r C = \frac{1}{2} s^2 \s^2 \Gamma +rs \Delta -\Theta.
 $$
 \end{itemize}
-
-
 
 % frametitle
 {Vega}
@@ -189,7 +169,6 @@ $$
 $$
 \item<3-> Note here is that vega is always positive.
 \end{itemize}
-
 
 \subsection{Volatility}
 
@@ -223,9 +202,6 @@ called the {\it implied volatility}.
 \item<5-> Furthermore, volatility can be made an own "asset class".
 \end{itemize}
 
-
-
-
 % frametitle
 {Volatility Smile}
 Volatility Index VDAX-NEW (in percentage points)
@@ -233,14 +209,10 @@ Volatility Index VDAX-NEW (in percentage points)
 \includegraphics[scale=0.55]{../../../pics/Volatility-Smile-char.pdf}
 \end{center}
 
-
 % frametitle
 {Volatility Surface}
 Volatility Index VDAX-NEW (in percentage points)
 $$\includegraphics[scale=0.25]{../../../pics/VolatilitySurface.jpg}$$
-
-
-
 
 % frametitle
 {VDAX-NEW: Definition}
@@ -248,9 +220,6 @@ $$\includegraphics[scale=0.25]{../../../pics/VolatilitySurface.jpg}$$
   \item The volatility index VDAX-NEW was developed by Deutsche B{\"o}rse and Goldman Sachs. It tracks the degree of fluctuation expected by the derivatives market, i.e. the implied volatility, for the DAX index. The index expresses in percentage terms what degree of volatility is to be expected for the following 30 days.
   \item VDAX-NEW started on 20 April 2005 and will replace VDAX in the medium-term.
 \end{itemize}
-
-
-
 
 % frametitle
 {VDAX-NEW: Examples}
@@ -263,16 +232,10 @@ Examples:\\
     $$4000\pm4000\times0.2\times\sqrt{\frac{30}{365}}\approx4000\pm230.$$
 \end{itemize}
 
-
-
-
 % frametitle
 {VDAX-NEW}
 Volatility Index VDAX-NEW (in percentage points)
 $$\includegraphics[scale=0.6]{../../../pics/VDaxNew.png}$$
-
-
-
 
 % frametitle
 {VDAX-NEW: Calculation}
@@ -282,8 +245,6 @@ $$\includegraphics[scale=0.6]{../../../pics/VDaxNew.png}$$
   \item <3-> In addition to at-the-money options (VDAX), out-of-the-money options are also considered (VDAX-NEW).
   \item <4-> Calculation frequency: Once a minute on every trading day at Eurex between 8.50am and 5.30pm CET.
 \end{itemize}
-
-
 
 % frametitle
 {VDAX-NEW: Features}
@@ -295,8 +256,6 @@ $$\includegraphics[scale=0.6]{../../../pics/VDaxNew.png}$$
   \item <5-> Index establishes volatiliy as a tradable and separate asset class for investors.
 \end{itemize}
 
-
-
 % frametitle
 {VDAX-NEW: Use}
 \begin{itemize}
@@ -305,8 +264,6 @@ $$\includegraphics[scale=0.6]{../../../pics/VDaxNew.png}$$
   \item <3-> Diversification of German equity portfolios (correlation to DAX is -0.5689, correlation to MDAX is -0.4668).
   \item <4-> Benchmark for German equity volatility.
 \end{itemize}
-
-
 
 % frametitle
 {VDAX-NEW: Diversification}
@@ -317,7 +274,6 @@ points on average higher yield than investments in
 DAX only. And this with lower risk!
 $$\includegraphics[scale=0.45]{../../../pics/VDax_div.png}$$
 \end{itemize}
-
 
 \subsection{Derivatives Risk Management}
 
@@ -331,7 +287,6 @@ A bank (option seller) tries to control the risk of its short position and has t
   \item How can you protect (i.e., hedge) yourself against those risk?
 \end{itemize}
 \end{frame}
-
 
 % frametitle
 {Some Terms}
@@ -349,7 +304,6 @@ that is fully hedged is called \emph{covered} (e.g., sell a forward and buy the
 underlying stock).
 \end{frame}
 
-
 % frametitle
 {A simple Hedging Strategy: Stop-Loss}
 We consider a short position in one European call option with strike $K$.
@@ -364,8 +318,6 @@ We consider a short position in one European call option with strike $K$.
 \end{itemize}
 \end{frame}
 
-
-
 % frametitle
 {Delta Hedging I}
 \begin{itemize}
@@ -379,7 +331,6 @@ We consider a short position in one European call option with strike $K$.
 \end{itemize}
 \end{frame}
 
-
 % frametitle
 {Delta Hedging II}
 \begin{itemize}
@@ -391,9 +342,6 @@ We consider a short position in one European call option with strike $K$.
   costs and bid-ask spread also result in losses.
 \end{itemize}
 \end{frame}
-
-
-
 
 % frametitle
 {Example: Delta Hedge}
@@ -407,7 +355,6 @@ $15.7\%$.
 \end{itemize}
 
 \end{frame}
-
 
 % frametitle
 {Example: Delta Hedge}
@@ -428,8 +375,6 @@ $15.7\%$.
 \end{itemize}
 \end{frame}
 
-
-
 % frametitle
 {Example: Delta Hedge}
 \begin{itemize}
@@ -439,7 +384,6 @@ $15.7\%$.
   of $428.70$ shares.
 \end{itemize}
 \end{frame}
-
 
 % frametitle
 {Example: Delta Hedge}
@@ -455,8 +399,6 @@ $15.7\%$.
   \item Our profit is $505.37-428.70=76.67$.
 \end{itemize}
 \end{frame}
-
-
 
 % frametitle
 {Gamma Neutral Portfolios}
@@ -475,9 +417,6 @@ hedge has to be rebalanced frequently.
 \end{itemize}
 \end{frame}
 
-
-
-
 % frametitle
 {Example: Gamma Neutral Portfolio}
 You are in the same position as in the previous example. Additionally, you can
@@ -487,7 +426,6 @@ trade in the $97$ call.
   \item What is your P/L if the stock price jumps to $100$?
 \end{itemize}
 \end{frame}
-
 
 % frametitle
 {Example: Gamma Neutral Portfolio}
@@ -507,7 +445,6 @@ trade in the $97$ call.
 \end{itemize}
 \end{frame}
 
-
 % frametitle
 {Example: Gamma Neutral Portfolio}
 \begin{itemize}
@@ -524,7 +461,6 @@ trade in the $97$ call.
 \end{itemize}
 \end{frame}
 
-
 % frametitle
 {Example: Gamma Neutral Portfolio}
 \begin{itemize}
@@ -539,72 +475,53 @@ trade in the $97$ call.
 
 \subsection{Goldman-Sachs Example}
 
-
 % frametitle
 {Option Portfolio}
 
 $$\includegraphics[scale=0.4]{../../../pics/gs-akademie-OS.pdf}$$
-
-
 
 % frametitle
 {Delta Position}
 
 $$\includegraphics[scale=0.6]{../../../pics/gs-akademie-Delta.pdf}$$
 
-
-
 % frametitle
 {Gamma Position}
 
 $$\includegraphics[scale=1.3]{../../../pics/gs-akademie-Gamma.pdf}$$
-
-
 
 % frametitle
 {Vega Position}
 
 $$\includegraphics[scale=1.2]{../../../pics/gs-akademie-Vega.pdf}$$
 
-
-
 % frametitle
 {Gamma vs Vega Position}
 
 $$\includegraphics[scale=1.3]{../../../pics/gs-akademie-GammaVega.pdf}$$
-
-
 
 % frametitle
 {Total Hedge}
 
 $$\includegraphics[scale=0.91]{../../../pics/gs-akademie-TotalHedge.pdf}$$
 
-
-
 % frametitle
 {Partial Hedges}
 
 $$\includegraphics[scale=1.4]{../../../pics/gs-akademie-PartialHedges.pdf}$$
-
-
-
 
 % frametitle
 {Hedged Delta Position}
 
 $$\includegraphics[scale=1.2]{../../../pics/gs-akademie-HedgedDelta.pdf}$$
 
-
 % frametitle
 {Hedged Gamma Position}
 
 $$\includegraphics[scale=1.2]{../../../pics/gs-akademie-HedgedGamma.pdf}$$
 
-
 % frametitle
 {Hedged Vega Position}
 
 $$\includegraphics[scale=1.2]{../../../pics/gs-akademie-HedgedVega.pdf}$$
-
 

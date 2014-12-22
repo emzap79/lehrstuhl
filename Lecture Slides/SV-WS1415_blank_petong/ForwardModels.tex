@@ -15,7 +15,7 @@ is determined by the current value
 of the empirical (observed) forward rate for the future date $T$
 which prevails at time $0$.
 
-}
+
 
 
 
@@ -28,7 +28,7 @@ and
 $$
 dF(t,T)=F(t,T)\sigma_1(t,T)dW(t)
 $$
-}
+
 
 \frame{\frametitle{Two-Factor GBM Specification}
 Here the volatilities are
@@ -39,7 +39,7 @@ and
 $$
 \frac{dF(t,T)}{F(t,T)}=\sigma_1(t,T)dW_1(t)+\sigma_2dW_2(t)
 $$
-}
+
 
 \subsection{HJM-type Forward Models}
 \frame{\frametitle{Modelling Approach}
@@ -54,7 +54,7 @@ The only parameter in this model is the volatility function $\Sigma$ which has t
 
 \end{itemize}
 
-}
+
 
 
 \frame{\frametitle{Volatility Functions}
@@ -66,14 +66,14 @@ Starting out with a given volatility function for a fixed time forward contract 
 \Sigma(t,T_1,T_2)=\int_{T_1}^{T_2} \hat{w}(u,T_1,T_2) \sigma(t,u) \, du. \label{eqn: swap volatility creation}
 \end{equation}
 
-}
+
 \frame{\frametitle{Schwartz Volatility}
 For the related volatility function of the forward we obtain
 \begin{equation}\label{vol-schwartz}
 \sigma(t,u)=a e^{-b(u-t)}
 \end{equation}
 where $a,b >0 $ are constant.
-}
+
 
 \frame{\frametitle{Schwartz Volatility}
 The time to maturity effect is modeled by a negative exponential function.
@@ -83,7 +83,7 @@ The time to maturity effect is modeled by a negative exponential function.
 \end{itemize}
 
 
-}
+
 
 \frame{\frametitle{Schwartz Volatility}
 
@@ -102,7 +102,7 @@ in (\ref{vol-schwartz}).
 The associated swap price volatility is then given by $\Sigma(t,T_1,T_2)=a$.
 
 
-}
+
 
 \subsection{The Brownian Factor Model}
 
@@ -116,7 +116,7 @@ where $\sigma(t,T)$ is an adapted $d$-dimensional deterministic function and
 $W(t)$ a $d$-dimensional Brownian motion.
 \item<4-> Initial value of this SDE is the initial forward curve observed at the market.
 \end{itemize}
-}
+
 
 \frame{ \frametitle{Options on Building Blocks}
 A European call option on $F(t,T)$ with maturity $T_0$ and strike
@@ -130,7 +130,7 @@ d_1& = & \frac{\log \frac{F(0,T)}{K}+\frac{1}{2}\Sigma(T_0,T)}{\sqrt{\Sigma(T_0,
 d_2 & = & d_1 - \sqrt{\Sigma(T_0,T)}
 \end{eqnarray*}
 
-}
+
 
 \frame{ \frametitle{The Model Framework -- $n$-period futures}
 \begin{itemize}
@@ -141,14 +141,14 @@ $$Y_{T_1, \ldots, T_n}(t)=\frac{\sum_{i=1}^n e^{-r(T_i-t)}F(t,T_i)}{\sum_{i=1}^n
 \item<3-> In case of 1-year-futures, the swap rate is the forward price of the 1-year-futures,
 which can be also observed in the market.
 \end{itemize}
-}
+
 
 \frame{ \frametitle{Implied Prices of Futures}
 \begin{center}
 \includegraphics[height=6cm, width=10cm]{../../../pics/forwardcurve2}
 \end{center}
 
-}
+
 
 
 \frame{ \frametitle{Options on $n$-period futures}
@@ -169,7 +169,7 @@ An analysis of the goodness of the approximation
 can be found in Brigo-Mercurio (2003).
 \end{itemize}
 
-}
+
 
 \frame{ \frametitle{Options on $n$-period futures}
 
@@ -186,7 +186,7 @@ with
 d_1& = & \frac{\log \frac{Y(0)}{K}+\frac{1}{2}s^2}{s}\\
 d_2 & = & d_1 - s
 \end{eqnarray*}
-}
+
 
 
 \subsection{A two-factor model}
@@ -203,7 +203,7 @@ F(t,T)& =&F(0,T)\exp\left\{\mu(t,T)  +\int_0^t\hat{\sigma_1}(s,T)dW_s^{(1)}+\sig
 \item<4-> $\sigma_1$, $\sigma_2$, $\kappa>0$ constants
 \item<5-> $\mu(t,T)$ being the risk-neutral martingale drift
 \end{itemize}
-}
+
 
 \frame{ \frametitle{Model Parameters}
 $\sigma_1$ affects the level at the short end of the volatility curve
@@ -212,7 +212,7 @@ $\sigma_1$ affects the level at the short end of the volatility curve
 \includegraphics[height=6cm, width=10cm]{../../../pics/sigma1}
 \end{center}
 
-}
+
 
 \frame{ \frametitle{Model Parameters}
 $\kappa$ affects the slope of the volatility curve at the short end
@@ -221,7 +221,7 @@ $\kappa$ affects the slope of the volatility curve at the short end
 \includegraphics[height=6cm, width=10cm]{../../../pics/kappa}
 \end{center}
 
-}
+
 
 \frame{ \frametitle{Model Parameters}
 $\sigma_2$ affects the level at the long end of the volatility curve
@@ -230,7 +230,7 @@ $\sigma_2$ affects the level at the long end of the volatility curve
 \includegraphics[height=6cm, width=10cm]{../../../pics/sigma2}
 \end{center}
 
-}
+
 
 \frame{ \frametitle{Pricing of Futures}
 \begin{itemize}
@@ -240,7 +240,7 @@ average of the  $n$ corresponding monthly Futures.
 \item<3-> $Y_{t,T_1, \ldots T_n}=Y=\frac{\sum e^{-rT_i}F_{t,T_i}}{\sum e^{-rT_i}}$
 is the forward price of a $n$-month forward quoted in the market (cp. swap rate)
 \end{itemize}
-}
+
 \frame{ \frametitle{Pricing of Options on Month-Futures}
 \begin{itemize}
 \item<1-> At time $t=0$, the price of a  Call-Option with strike $K$ and maturity $T_0$ on a Month-Future $F_{t,T}$ is given by
@@ -255,7 +255,7 @@ e^{-rT_0}\EX\left[\left(F_{T_0,T}-K\right)^+\right] & = &
 e^{-rT_0}\left(F_{0,T}\mathcal{N}(d_1)-K\mathcal{N}(d_2)\right)
 \end{eqnarray*}with $d_{1,2}$ depending on the parameters $\sigma_1, \sigma_2, \kappa$.
 \end{itemize}
-}
+
 \frame{ \frametitle{Pricing of Options on quarterly and yearly Futures}
 \begin{itemize}
 \item<1-> At time $t=0$, the price of a  Call-Option with strike $K$ and maturity $T_0$ on a $n$-Month-Future
@@ -267,7 +267,7 @@ e^{-rT_0}\EX\left[\left(Y-K\right)^+\right]=e^{-rT_0}\EX
 \item<3-> Approximate the random variable $Y$ by a log-normal random variable $\hat{Y}$
 with same mean and variance (depending on the model parameters)
 \end{itemize}
-}
+
 \frame{ \frametitle{Matching the Variance}
 Using the moment-generating function of a normal random variable, we get
 $$
@@ -277,7 +277,7 @@ From the martingale property
 $\EX (F_{T_0,T_i}) =  F_{0,T_i} $ and
 $$ \EX (Y_{T_1, \ldots T_n}(T_0))  =
 \frac{\sum e^{-r(T_i-T_0)} F_{0,T_i}}{\sum e^{-r(T_i-T_0)}}.$$
-}
+
 \frame{ \frametitle{Matching the Variance}
 
 So
@@ -293,7 +293,7 @@ $$\begin{array}{ll}
  = & \DSE
  e^{-\kappa(T_i+T_j-2T_0)}\frac{\sigma_1^2}{2\kappa}(1-e^{-2\kappa T_0})+\sigma_2^2 T_0
 \end{array}
-$$}
+$$
 
 \frame{ \frametitle{Pricing of Options on quarterly and yearly Futures}
 The option value can be computed by Black's formula
@@ -303,7 +303,7 @@ e^{-rT_0}\EX\left[\left(Y-K\right)^+\right]&\approx & e^{-rT_0}\EX\left[\left(\h
 \end{eqnarray*}
 with $d_{1,2}$ depending on the parameters $\sigma_1, \sigma_2, \kappa$.
 
-}
+
 
 \frame{ \frametitle{Parameter Estimation}
 \begin{itemize}
@@ -319,7 +319,7 @@ with $d_{1,2}$ depending on the parameters $\sigma_1, \sigma_2, \kappa$.
 \item<3-> Choose parameter $\sigma_1$, $\sigma_2$ and $\kappa$ to minimize the distance of the model variances
 to the market variances in a given metric (in the least-square sense)
 \end{itemize}
-}
+
 
 \frame{ \frametitle{Data}
 {\small \begin{table}[btp]
@@ -345,7 +345,7 @@ Year    &January 08     &42 &42.70&4.286&17.46\%\\
 \label{fig:data}
 \end{center}
 \end{table}
-}}
+}
 \frame{ \frametitle{Parameter Estimates}
  \begin{table}[btp]
  \begin{center}
@@ -365,5 +365,5 @@ which can add up to more than $50\%$, when time to maturity decreases.
 
 A $\kappa$ value of 1.40 indicates, that disturbances in the futures market
 halve in $\frac{1}{\kappa}\cdot \log 2 \approx 0.69$ years.
-}
+
 

@@ -18,7 +18,7 @@ properties, e. g.
 \end{figure}
 \end{center}
 
-} \frame{\frametitle{Marginal Distributions -- Basic Statistics}
+ \frame{\frametitle{Marginal Distributions -- Basic Statistics}
 {\small
 \begin{table}[ht]
             \vspace{0.5cm}
@@ -39,7 +39,7 @@ properties, e. g.
             \end{center}
         \end{table}
 }
-}
+
 
 
 
@@ -49,7 +49,7 @@ properties, e. g.
 How non-normal are power prices?\\
 \end{center}
 
-}\frame{\frametitle{Stylized facts}
+\frame{\frametitle{Stylized facts}
 %\vspace{-1.5cm}
 \begin{center}
 How non-normal are power prices?\\
@@ -57,14 +57,14 @@ Skewness: 0.07 \hspace{2cm} Excess Kurtosis: 2.31\\
 \includegraphics[width=0.7\textwidth,  height=0.7\textheight]{../../../pics/DChistogram.pdf}
 \end{center}
 
-}\frame{\frametitle{Stylized facts} %\vspace{-1.5cm}
+\frame{\frametitle{Stylized facts} %\vspace{-1.5cm}
 \begin{center}
 How non-normal are power prices?\\
 Skewness: 1.95 \hspace{2cm} Excess Kurtosis: 25.93\\
 \includegraphics[width=0.7\textwidth,height=0.7\textheight]{../../../pics/powerhistogram.pdf}
 \end{center}
 
-}
+
 
 
 
@@ -86,7 +86,7 @@ Requirements} %\vspace{-1.5cm}
     \item Computation of value-at-risk/expected shortfall
     \end{itemize}
 \end{itemize}
-}
+
 
 \frame{\frametitle{Towards a multivariate distribution --
 Requirements}
@@ -101,7 +101,7 @@ Suggestion: Use a multivariate extension of the distributions
 above, i. e. multivariate generalized hyperbolic distributions
 (GH)
 
-} \subsubsection{Generalized Hyperbolic Distributions}
+ \subsubsection{Generalized Hyperbolic Distributions}
 
 \frame{\frametitle{GH-distributions} GH-distribution has a
 representation as Normal mean-variance mixture, i. e. $X\sim GH$
@@ -112,7 +112,7 @@ Inverse Gaussian random variable (mixture variable) independent of
 $Z$, $A\in\mathbb{R}^{d\times k}$ and $\mu, \gamma \in
 \mathbb{R}^d$.
 
-}\frame{\frametitle{GH-distributions} %\vspace{-2cm}
+\frame{\frametitle{GH-distributions} %\vspace{-2cm}
 $$X\stackrel{d}{=}\mu+W\gamma+\sqrt{W}AZ$$
 %\vspace{-1cm}
 \begin{itemize}
@@ -127,7 +127,7 @@ $$X\stackrel{d}{=}\mu+W\gamma+\sqrt{W}AZ$$
 \item $W\sim GIG(\lambda,\chi,\psi)$ controls tail-behaviour
 \end{itemize}
 
-}\frame{\frametitle{GH-distributions} %\vspace{-1.5cm}
+\frame{\frametitle{GH-distributions} %\vspace{-1.5cm}
 Further important properties
 are: %\vspace{-0.5cm}
 \begin{itemize}
@@ -139,7 +139,7 @@ divisible $\rightarrow$ Levy-processes
 \end{itemize}
 
 
-}\frame{\frametitle{GH-distributions}
+\frame{\frametitle{GH-distributions}
 
 Well-known special cases are:
 \begin{itemize}
@@ -149,7 +149,7 @@ Well-known special cases are:
 \gamma=0, \nu>0$)
 \end{itemize}
 
-}\frame{\frametitle{} %\vspace{-2cm}
+\frame{\frametitle{} %\vspace{-2cm}
 \begin{center}
 \begin{figure}
 \includegraphics[width=0.9\textwidth]{../../../pics/densitiespower.pdf}
@@ -157,7 +157,7 @@ Well-known special cases are:
 \end{figure}
 \end{center}
 
-}\frame{\frametitle{} %\vspace{-2cm}
+\frame{\frametitle{} %\vspace{-2cm}
 \begin{center}
 \begin{figure}
 %\includegraphics[width=\textwidth]{pics/densitiespower.pdf}
@@ -165,7 +165,7 @@ Well-known special cases are:
 \end{figure}
 \end{center}
 
-} \frame{\frametitle{Further properties of GH-distributions --
+ \frame{\frametitle{Further properties of GH-distributions --
 Computation of VaR/ES} %\vspace{-1.5cm}
 Once the joint distribution is specified, we want to analyze
 energy portfolios, e. g. compute risk measures. We use the
@@ -177,7 +177,7 @@ $X:=-\sum\omega_iS_t^{(i)}X_{t+1}^{(i)}$ denotes loss of a
 portfolio consisting of $\omega_i$ shares of commodity $i$ during
 the period $[t,t+1]$.
 \end{itemize}
-}
+
 \frame{\frametitle{Further properties of GH-distributions --
 Computation of VaR/ES}
 \begin{itemize}
@@ -192,7 +192,7 @@ GH-distributions this can be computed explicitly:
 ES_{\alpha}(X)&=&\mu+\gamma\BE(W)+\sigma\frac{\varphi(\Phi^{-1}(\alpha))}{1-\alpha}\BE(\sqrt{W})
 \end{eqnarray*}
 \end{itemize}
-}
+
 
 \subsubsection{Risk Management Application}
 \frame{\frametitle{Some statistical results} %\vspace{-1.5cm}
@@ -206,7 +206,7 @@ Results are: %\vspace{-0.5cm}
 \item Likelihood ratio tests prefer any of the alternative distributions to the Normal\\[-1.3cm]
 \item Among all the tested alternatives, we recommend the NIG.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Coal-fired Power Plant} We consider a portfolio
 that can be viewed roughly as the year production/consumption of a
@@ -217,7 +217,7 @@ coal-fired power plant that has a total output capacity of 1TW:
 \item 900,000 t CO$_2$, short
 \end{itemize}
 
-}\frame{\frametitle{Coal-fired
+\frame{\frametitle{Coal-fired
 Power Plant} %\vspace{-2cm}
 \begin{figure}
 \begin{center}
@@ -226,7 +226,7 @@ Power Plant} %\vspace{-2cm}
 \end{center}
 \end{figure}
 
-}\frame{\frametitle{Coal-fired
+\frame{\frametitle{Coal-fired
 Power Plant} %\vspace{-2cm}
 \begin{figure}
 \begin{center}
@@ -235,7 +235,7 @@ Power Plant} %\vspace{-2cm}
 \end{center}
 \end{figure}
 
-}\frame{\frametitle{Coal-fired
+\frame{\frametitle{Coal-fired
 Power Plant} %\vspace{-1cm}
 \begin{center}
 Normal VaR $>$ NIG VaR?
@@ -247,7 +247,7 @@ Normal VaR $>$ NIG VaR?
 \includegraphics[width=0.7\textwidth, height= 0.7\textheight]{../../../pics/DChistogram.pdf}
 \end{center}
 
-}\frame{\frametitle{Coal-fired
+\frame{\frametitle{Coal-fired
 Power Plant} %\vspace{-1cm}
 \begin{center}
 Normal VaR $>$ NIG VaR?
@@ -259,7 +259,7 @@ Normal VaR $>$ NIG VaR?
 \includegraphics[width=0.7\textwidth, height= 0.7\textheight]{../../../pics/DCNIG.pdf}
 \end{center}
 
-}\frame{\frametitle{Coal-fired
+\frame{\frametitle{Coal-fired
 Power Plant} %\vspace{-1cm}
 \begin{center}
 Normal VaR $>$ NIG VaR?
@@ -270,7 +270,7 @@ Normal VaR $>$ NIG VaR?
 \includegraphics[width=0.7\textwidth, , height= 0.7\textheight]{../../../pics/powerhistogram.pdf}
 \end{center}
 
-}\frame{\frametitle{Coal-fired
+\frame{\frametitle{Coal-fired
 Power Plant} %\vspace{-1cm}
 \begin{center}
 Normal VaR $>$ NIG VaR?
@@ -281,7 +281,7 @@ Normal VaR $>$ NIG VaR?
 \includegraphics[width=0.7\textwidth, , height= 0.7\textheight]{../../../pics/powerNIG.pdf}
 \end{center}
 
-} \subsubsection{Discussion of multivariate GH-model}
+ \subsubsection{Discussion of multivariate GH-model}
 %\subsection{Marginals}
 \frame{\frametitle{Shortcomings -- Marginals} %\vspace{-1.5cm}
 \begin{center}
@@ -294,7 +294,7 @@ QQplot using a fitted joint NIG
 \end{figure}
 \end{center}
 
-}
+
 \frame{\frametitle{Shortcomings -- Marginals} %\vspace{-1.5cm}
 \begin{center}
 QQplot using a fitted joint NIG
@@ -306,7 +306,7 @@ QQplot using a fitted joint NIG
 \end{figure}
 \end{center}
 
-}
+
 
 \frame{\frametitle{Shortcomings -- Marginals} %\vspace{-1.5cm}
 \begin{itemize}
@@ -319,7 +319,7 @@ variables driven by different $W$s, we loose the convolution
 property ($X+Y$ is not GH-distributed). \item Exception: NIG
 \end{itemize}
 
-}
+
 \subsection{Copula-based Modelling}
 \frame{\frametitle{Copula Approach Outline} %\vspace{-1cm}
 \begin{itemize}
@@ -329,7 +329,7 @@ distributions \item Applications: \textbf{Risk Management} (VaR,
 ES, Portfolio Analysis)
 \end{itemize}
 
-}
+
 
 \subsubsection{Marginal Distributions}
 \frame{\frametitle{Marginal Distributions}
@@ -346,7 +346,7 @@ the most general model we consider)
 are provided.
 
 
-}
+
 
 \frame{\frametitle{Marginal Distributions - Example: Power}
 
@@ -372,7 +372,7 @@ are provided.
         \end{table}
 }
 
-}
+
 \subsubsection{Copulas}
 \frame{\frametitle{Copula Modelling}
 
@@ -390,7 +390,7 @@ features of the dependence
 structure.
 
 
-}
+
 
 \frame{
 \frametitle{Facts on Copula Functions}
@@ -413,7 +413,7 @@ where $u_{j,1}=a_j$ and $u_{j,2}=b_j$ for all $j \in
 \{1,\ldots,m\}$.
 \end{itemize}
 
-}
+
 
 \frame{
 \frametitle{Facts on Copula Functions}
@@ -438,7 +438,7 @@ F(x_1,\ldots,x_m)=C(F_1(x_1),\ldots,F_m(x_m)).
 $$
 
 
-}
+
 
 \frame{
 \frametitle{Examples of Copula Functions}
@@ -462,7 +462,7 @@ linear correlation matrix $\Gamma$. Furthermore, $t^{-1}_\nu$ is
 the inverse of  the univariate $t$-distribution function with
 parameter $\nu$.
 
-}
+
 
 
 \frame{\frametitle{Examples of Copulas}
@@ -474,7 +474,7 @@ parameter $\nu$.
 \end{center}
 
 
-}
+
 
 
 
@@ -500,7 +500,7 @@ Gumbel: $\varphi(t)=(-\log t)^{\theta},
 \varphi^{-1}(s)=e^{-s1/\theta},\; \theta\geq 1$.\\
 Upper tail dependency, no lower tail dependency.
 \end{itemize}
-}
+
 
 \frame{ \frametitle{Copula Examples}
 
@@ -508,7 +508,7 @@ Upper tail dependency, no lower tail dependency.
 \includegraphics<1>[height=6cm]{../../../pics/copula_examples.pdf}%
 
 
-}
+
 
 \frame{\frametitle{Copulas}
 
@@ -524,7 +524,7 @@ copulas by their AIC values.
 
 \end{itemize}
 
-}
+
 
 \frame{\frametitle{Copula fit}
 
@@ -544,7 +544,7 @@ copulas by their AIC values.
         \end{table}
 
 
-}
+
 
 \frame{\frametitle{Copula fit -- Results}
 
@@ -556,7 +556,7 @@ between the margins of our models.
 \end{itemize}
 
 
-}
+
 
 
 \subsubsection{Risk Management Application}
@@ -576,7 +576,7 @@ loss distribution.
 
 \end{itemize}
 
-} \frame{\frametitle{Coal-fired Power Plant}
+ \frame{\frametitle{Coal-fired Power Plant}
 
 We consider a coal-fired power plant with an output of $1000000$
 MWh of electricity. To produce this amount of electricity one
@@ -589,7 +589,7 @@ is nothing else than the following portfolio:
             \item and a short position of $900000$ tons of CO$_2$.
         \end{itemize}
 
-} \frame{\frametitle{Coal-fired Power Plant -- Margins} {\tiny
+ \frame{\frametitle{Coal-fired Power Plant -- Margins} \tiny
 \begin{table}[ht]
                 \begin{center}
                     \begin{tabular}{c|c|c|c|c|c|c|c|c}
@@ -610,7 +610,7 @@ is nothing else than the following portfolio:
                     \caption{Marginal models for the 3-variate coal-fired power plant data}
                 \end{center}
             \end{table}
-}} \frame{\frametitle{Coal-fired Power Plant -- Copula} {\small
+} \frame{\frametitle{Coal-fired Power Plant -- Copula} \small
 \begin{table}[ht]
                 \begin{center}
                     \begin{tabular}{c|c|c|c}
@@ -655,7 +655,7 @@ is nothing else than the following portfolio:
                     \caption{Risk measures for the coal-fired power plant (with CO$_2$)}
                 \end{center}
             \end{table}
-}} \frame{\frametitle{Coal-fired Power Plant}
+} \frame\frametitle{Coal-fired Power Plant}
 \begin{figure}
 \begin{center}
 %\includegraphics[width=0.49\textwidth]{pics/EScoal09ret.pdf}
@@ -681,4 +681,4 @@ Power Plant} %\vspace{-2cm}
 \item<2-> Marginal tails seem to be more important than joint tail behavior (see copulas)
 \item<3-> Parametric approach allows dynamic modelling
 \end{itemize}
-}
+

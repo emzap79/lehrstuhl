@@ -14,51 +14,51 @@ We may have two "equally sound" but different models, which give considerably di
 \end{itemize}
 
 
-}
+
 
 \frame{\frametitle{Comparing equally sound models}
 What are the crucial risk factors for the payoff to be priced (these are more important than the relevant factors)?
 \begin{itemize}
-\item<1-> Reality Check: analyse the crucial risk factors to decide which ones will be important for future price movements. This is not so important in case we do not have a liquid market and intend to keep a derivative until maturity. 
+\item<1-> Reality Check: analyse the crucial risk factors to decide which ones will be important for future price movements. This is not so important in case we do not have a liquid market and intend to keep a derivative until maturity.
 \item<2-> Market Intelligence: perform reverse engineering on prices from other market participants we observe in order to judge the market opinion.
 \end{itemize}
-}
+
 \frame{\frametitle{Example: Leveraged Credit Default Note}
 \begin{itemize}
 \item<1-> The banks sells credit default protection to a client (notational 1).
-\item<2-> For a leveraged credit default note the banks sells protection for a notational $l_v>1$. 
+\item<2-> For a leveraged credit default note the banks sells protection for a notational $l_v>1$.
 \item<3-> Bank pays $l_v \times S_T(0)$, with $S_T(0)$ the spread for the reference entity for maturity at $T$.
 \item<4-> At maturity clients receives notational in case of no default. Otherwise, the client will receive the notational minus the leveraged default loss (nothing if this is below 0).
 \end{itemize}
 
 
-}
+
 
 \frame{\frametitle{Gap Risk}
 \begin{itemize}
-\item<1-> Which fee should the client pay to the bank? 
-\item<2-> In case of default the clients loss is not larger than the notational $1$, but the loss may be higher $I_v \times l_d$, with $l_d$ the loss-given-default. 
-\item<3-> The bank has to cover a gap $l_v \times l_d -1$. 
-\item<4-> Pricing the gap risk by risk neutral valuation leads to 
+\item<1-> Which fee should the client pay to the bank?
+\item<2-> In case of default the clients loss is not larger than the notational $1$, but the loss may be higher $I_v \times l_d$, with $l_d$ the loss-given-default.
+\item<3-> The bank has to cover a gap $l_v \times l_d -1$.
+\item<4-> Pricing the gap risk by risk neutral valuation leads to
 $$
-\EX\left[\IF_{\{\tau_d < T\}} p(0,\tau_d)(l_v \times l_d -1)^+\right], 
+\EX\left[\IF_{\{\tau_d < T\}} p(0,\tau_d)(l_v \times l_d -1)^+\right],
 $$
 with $\tau_d$ the default time.
 
 \end{itemize}
 
 
-}
+
 
 \frame{\frametitle{Specifying a Trigger}
 \begin{itemize}
 \item<1-> To mitigate the gap risk and thus reduce the price of the leveraged note a trigger can be introduced: the contract is terminated early if $S_T(t)$, the spread of the CDS of the reference entity touches a certain level  $s_{tr}$.
-\item<2-> We set $\tau_{tr}= \inf\{t: S_T(t) \geq s_{tr}\}$, then the leveraged note is unwind at $\tau_{term}= \min\{\tau_{tr}, \tau_{d} \}$.  
-\item<3-> The bank can try to set $s_{tr}$ in such a way that the cost of unwinding the leveraged note is just the notational, i.e. there should be no gap risk. 
+\item<2-> We set $\tau_{tr}= \inf\{t: S_T(t) \geq s_{tr}\}$, then the leveraged note is unwind at $\tau_{term}= \min\{\tau_{tr}, \tau_{d} \}$.
+\item<3-> The bank can try to set $s_{tr}$ in such a way that the cost of unwinding the leveraged note is just the notational, i.e. there should be no gap risk.
 \end{itemize}
 
 
-}
+
 
 
 \section{Credit Risk Models}
@@ -79,7 +79,7 @@ Buyer & $\longrightarrow $& Seller\\
 \end{center}
 \end{table}
 
-}
+
 \frame{ \frametitle{Structure}
 
 The ingredients of the basic structure are the specification of
@@ -90,23 +90,23 @@ underlying: corporate or sovereign, \item<3-> credit event:
 default, bankruptcy, downgrade.
 \end{itemize}
 
-}
+
 \frame{ \frametitle{Valuation}
 
 \begin{itemize}
 \item<1-> Assume a deterministic term structure of interest rates with short rate $r>0$.
 \item<2->Let $S_T(0)$ be the fixed coupon that the protection buyer pays at coupon dates
-$t_i, i=1,\ldots, n; t_n=T$. 
+$t_i, i=1,\ldots, n; t_n=T$.
 \item<3->The
 payment continues until either default or maturity. In case of
 default, assume that the payment from the protection seller to the
 protection buyer is equal to the difference between the notional
-amount of the bond and the recovery value $\delta$, i.e. the loss given default is paid. 
+amount of the bond and the recovery value $\delta$, i.e. the loss given default is paid.
 \item<4->The fixed side
 of the payment is set so that contract value is zero at
 initiation.
 \end{itemize}
-}
+
 \frame{ \frametitle{Valuation}
 
 Thus, since the cash flow at coupon date $t_i$ for the protection
@@ -125,7 +125,7 @@ T\}}\right)} {\DSE\sum_{i=1}^n e^{-rt_i} \EX^*\left(\IF_{\{\tau
 >t_i\}}\right)}.
 $$
 
-}
+
 \frame{ \frametitle{Spread Calculation}
 
 \begin{itemize}
@@ -136,12 +136,12 @@ T\} }  | \{\tau >t\}\right)} {\DSE\sum_{i=j}^n e^{-rt_i} \EX^*\left(\IF_{\{\tau
 >t_i\}}| \{\tau >t\}\right)}.
 $$
 
-\item<1-> We need to obtain 
+\item<1-> We need to obtain
 $$\prb^*\left(\tau\leq T\ | \tau >t \right)$$ and
 $$\prb^*\left(\tau >t_i | \tau >t\right)$$ within our models.
 \item<2-> So, to evaluate the gap risk these quantities are crucial.  \end{itemize}
 
-}
+
 
 \subsection{Structural Models}
 \frame{
@@ -160,7 +160,7 @@ under an equivalent martingale (pricing) measure $\mathbb{P^*},$ with $r,
 \sigma$ constant, $W$ Brownian motion and constant payout
 (dividend) rate $\delta,$ which may be negative (i.e. pay-in).
 
-}
+
 \frame{ \frametitle{Basic Merton Model}
 
 Default is only possible at maturity. There are two possibilities:
@@ -171,7 +171,7 @@ or
 $$
 V_T < F, \quad \mbox{thus} \quad p^d(T,T)=V_T.
 $$
-}
+
 \frame{ \frametitle{Equity Owners}
 
 For equity owners the payoff  is
@@ -187,7 +187,7 @@ and
 $$
 d_1=\frac{\log(\bar{V}_t/F)+(r-\delta+\sigma^2/2)(T-t)}{\sigma\sqrt{T-t}}=d_2+\sigma\sqrt{T-t}.
 $$
-}
+
 \frame{ \frametitle{Bond Owners}
 
 For bond owners the payoff is
@@ -212,7 +212,7 @@ Fe^{-r(T-t)}\Phi(d_2(\bar{V}_t,T-t)).
 $$
 
 
-}
+
 
 \frame{ \frametitle{Bond Credit Spreads}
 
@@ -227,13 +227,13 @@ l_t=\frac{F e^{-rt}}{V_t}
 $$
 the leverage ratio.
 
-}
+
 \frame{ \frametitle{Calculated Bond Credit Spreads  }
 
 \includegraphics<1>[height=6cm]{../../../pics/merton_spreads.pdf}%
 
 
-}
+
 
 
 \subsection{Reduced Form  Models}
@@ -248,7 +248,7 @@ $$
 N(t) = \begin{cases} 0 \;\;\; \mbox{if $\tau >t$}\\ 1 \;\;\; \mbox{if $\tau \leq t$}\end{cases}
 $$
 $N(t)$ is the number of defaults up to and including time $t$.
-}
+
 \frame{ \frametitle{Calculation in Standard Model}
 
 Let $r_t$ be the (stochastic) short rate, $\delta$ the (stochastic, independent) recovery rate.
@@ -270,7 +270,7 @@ $$
 $$
 
 
-}
+
 \frame{ \frametitle{Calculation in Standard Model II}
 
 Now $\delta=0$ i.e. zero recovery
@@ -285,18 +285,18 @@ $$
 p^d (t,T) =  p(t,T) \EX^* \left[ \left.e^{-\int_t^T \lambda_s ds} \right| \F_t\right].
 $$
 
-}
+
 \frame{ \frametitle{Survival Probability}
 
 The standard "memory-less" property of exponential random variables gives for deterministic intensity
 $$
 \prb(\tau > T | \tau >s) =   e^{-\int_s^T \lambda_udu}.
 $$
-This coincides with the forward survival probabilities at time $t=0$ 
+This coincides with the forward survival probabilities at time $t=0$
 $$
-\frac{\prb(\tau > T)}{\prb(\tau>s)}=  e^{-\int_s^T \lambda_udu}.  
+\frac{\prb(\tau > T)}{\prb(\tau>s)}=  e^{-\int_s^T \lambda_udu}.
 $$
-}
+
 
 \section{Assessing the Gap Risk}
 
@@ -316,20 +316,20 @@ $$
 \item<3-> No gap risk
 \end{itemize}
 
-}
+
 
 \frame{
 \frametitle{Reduced Form Model}
 
 \begin{itemize}
-\item<1-> 
-For deterministic intensity we know the behaviour of the spread  in advance! 
-\item<2-> 
-Even with stochastic intensity the default event and the spread level show little correlation. 
+\item<1->
+For deterministic intensity we know the behaviour of the spread  in advance!
+\item<2->
+Even with stochastic intensity the default event and the spread level show little correlation.
 \item<3->  So, in any case  -- maximal gap risk!
 \end{itemize}
 
-}
+
 
 
 

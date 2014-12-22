@@ -12,7 +12,7 @@ European Energy Exchange (EEX), http://www.eex.com/en. All exchanges have establ
 spot and futures markets.
 
 
-}
+
 
 
 %\subsection{Spot market}
@@ -24,7 +24,7 @@ spot and futures markets.
 \item<3-> Continuous day-ahead block trading for France 7:30 am to 11:30 am, 7 days a week, including holidays.
 \item<4->Continuous Power intraday trading for Germany and France until 75 minutes before the beginning of delivery with delivery on the same or the following day in single hours or blocks.
 \end{itemize}
-}
+
 
 \frame{\frametitle{EEX spot market}
 \begin{itemize}
@@ -32,21 +32,21 @@ spot and futures markets.
 \item<2-> EEX day prices are the average of the 24-single hours.
 \item<3-> similar structures can be found on other power exchanges(Nord Pool, APX, etc.).
 \end{itemize}
-}
+
 
 \frame{\frametitle{EEX Spot Market Price Processes}
 
 \includegraphics[width=\textwidth, height=6.7cm]{../../../pics/PhelixBase2002_12}
-}
+
 \frame{\frametitle{EEX Spot Market Price Processes}
 
 \includegraphics[width=\textwidth, height=6.7cm]{../../../pics/PhelixBase2002_08}
-}
+
 
 \frame{\frametitle{EEX Spot Market Price Processes}
 
 \includegraphics[width=\textwidth, height=6.7cm]{../../../pics/PhelixBase2008_12}
-}
+
 
 
 \frame{\frametitle{Electricity is special}
@@ -57,9 +57,9 @@ spot and futures markets.
 \item<4-> it has to be produced when it is needed
 \item<5-> there is a high fluctuation in demand
 \item<6-> there is no short-term elasticity in demand
-\item<7-> there is a high price volatility due to renewable in-feed 
+\item<7-> there is a high price volatility due to renewable in-feed
 \end{itemize}
-}
+
 
 
 %\subsection{Futures market}
@@ -74,24 +74,24 @@ spot and futures markets.
 \item<5-> In addition, OTC transactions.
 \end{itemize}
 
-}
 
 
 
 
 
-%\frame{\frametitle{Futures Market}
+
+\frame{\frametitle{Futures Market}
 
 %\includegraphics[width=\textwidth, height=6cm]{../../../pics/bbgfutures}
 
 %}
 
 
-%\frame{\frametitle{Futures Market}
+\frame{\frametitle{Futures Market}
 
 %\includegraphics[width=\textwidth, height=6cm]{../../../pics/future}
 
-%} \frame{\frametitle{Futures Market}
+} \frame{\frametitle{Futures Market}
 
 
 %\includegraphics[width=\textwidth, height=6cm]{../../../pics/future1}
@@ -103,19 +103,19 @@ spot and futures markets.
 
 \includegraphics[width=\textwidth, height=6cm]{../../../pics/lec2_2}
 
-}
+
 
  \frame{\frametitle{Futures Market}
 Returns seem to be stationary, no seasonality.
 \includegraphics[width=\textwidth, height=6cm]{../../../pics/lec2_3}
 
-}
+
 
 
 \frame{\frametitle{Forward Selling Activity}
 \includegraphics[width=\textwidth, height=6cm]{../../../pics/RWE-forward-activity}
 
-}
+
 
 
 
@@ -128,14 +128,14 @@ Returns seem to be stationary, no seasonality.
 \item<2-> Futures show a decreasing volatility term structure.
 \item<3-> Level of volatility depends on length of delivery period.
 \end{itemize}
-}
+
 
 \frame{ \frametitle{Prices of Futures}
 \begin{center}
 \includegraphics[height=6cm, width=10cm]{../../../pics/forwardcurve}
 \end{center}
 
-}
+
 
 
 
@@ -149,7 +149,7 @@ $$
 \item<2-> But since it costs nothing to enter a futures position, we can constantly change our futures portfolio.
 Thus financing for buying a traded asset is not relevant.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Black's Formula}
 
@@ -171,7 +171,7 @@ $$
 \sigma \sqrt{\tau}}.
 $$
 }
-}
+
 
 \frame{\frametitle{Black's Formula}
 
@@ -182,7 +182,7 @@ consisting of a position in futures options and an offsetting
 position in the underlying futures contract. The portfolio
 requires no initial investment and therefore should not earn any
 interest.
-}
+
 
 
 \subsection{Basic Pricing Relations for Futures}
@@ -201,7 +201,7 @@ owner of the physical commodity but not to the holder of a forward contract.
 allows to put the commodity to the market when prices are high
 and hold it when the prices are low.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Spot-Forward Relationship in Commodity Markets }
 Under the no-arbitrage assumption we have
@@ -211,7 +211,7 @@ F(t,T)=S(t)e^{(r-y)(T-t)}
 where $r$ is the interest rate at time $t$ for maturity $T$ and $y$ is the convenience yield.
 
 
-}
+
 
 \frame{\frametitle{Spot-Forward Relationship in Commodity Markets }
 
@@ -224,7 +224,7 @@ linear relationship (unlike options)
 \item<3-> knowledge of $S(t)$ and $y$ allows us to construct the whole forward curve
 \item<4-> for $r-y <0$ we have backwardation; for $r-y>0$ we have contango.
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Spot-Forward Relationship: Classical theory}
@@ -240,7 +240,7 @@ where $\F_t$ is the accumulated available market information (in most models the
 \item fixed by calibration to market prices or a market price of risk argument
 \end{itemize}
 \end{itemize}
-}
+
 
 \frame{\frametitle{Futures Prices and Expectation of Future Spot Prices}
 The rational expectation hypothesis (REH) states that the current futures price $f(t,T)$ for a commodity with
@@ -251,7 +251,7 @@ f(t,T) = \EX[S(T) |\F_t].
 \end{equation}
 where $\F_t$ represents the information available at time $t$. The REH has been statistically
 tested in many studies for a wide range of commodities.
-}
+
 
 \frame{\frametitle{Futures Prices and Expectation of Future Spot Prices}
 When equality in (\ref{REH}) does not hold futures prices are biased estimators of
@@ -263,7 +263,7 @@ spot price in order to secure access to the commodity at time $T$ (political unr
 \item[$<$] holds, then $f(t,T)$ is an down-ward biased estimate, this may reflect a
 perception of excess supply in the future.
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Market Risk Premium}
@@ -280,7 +280,7 @@ Here $\EX^\prb$ is the expectation operator, under the
 historical measure $\prb$, with information up until time $t$ and
 $S(T)$ is the spot price at time $T$.
 \end{itemize}
-}
+
 
 
 \subsection[Mean-Reversion Model]{A Mean-Reversion Diffusion Model}
@@ -300,7 +300,7 @@ Thus, the logarithm of the prices follow a mean reverting diffusion process, the
 \item $\sigma$ - Volatility of the process
 \item $dW_t$ - Brownian increments
 \end{itemize}
-}
+
 
 \frame{\frametitle{Sample paths of the model}
 We simulate $S_t$ (with $S_0=20, \theta = 20, \kappa = 1, \sigma = 0.2$) and get sample paths
@@ -309,7 +309,7 @@ We simulate $S_t$ (with $S_0=20, \theta = 20, \kappa = 1, \sigma = 0.2$) and get
 		\includegraphics[width=1.00\textwidth]{../../../pics/samplepaths}
 	\label{fig:samplepahts}
 \end{figure}
-}
+
 
 
 
@@ -318,7 +318,7 @@ We simulate $S_t$ (with $S_0=20, \theta = 20, \kappa = 1, \sigma = 0.2$) and get
 \item<1-> The \textcolor{red}{mean-reversion} process has been considered the natural choice for commodities. Basic microeconomics theory tells that, in the long run, the price of a commodity ought to be tied to its long-run marginal production cost or, "in case of a cartelized commodity like oil, the long-run profit-maximizing price sought by cartel managers" (Laughton \& Jacoby, 1995, p.188).
 \item<2->  The model was introduced by Eduardo Schwartz ("The Stochastic Behavior of Commodity Prices: Implications for Valuation and Hedging", Journal of Finance, vol.52, n. 3, July 1997, pp.923-973) and is often used in academic studies (and for practical pricing?).
 \end{itemize}
-}
+
 
 \frame{\frametitle{Properties of the model}
 \begin{itemize}
@@ -329,7 +329,7 @@ We simulate $S_t$ (with $S_0=20, \theta = 20, \kappa = 1, \sigma = 0.2$) and get
 \item<5-> \textcolor{red}{Analytic results} for the forward-curve and option prices exist
 \item<6-> \textcolor{red}{Calibration} easily possible
 \end{itemize}
-}
+
 
 %\subsection{Prices in the Model}
 
@@ -338,7 +338,7 @@ The spot price at any time $t$ is
 \begin{align*}
 	S_t = \exp \left( e^{-\kappa t} \ln S_0 + (1-e^{-\kappa t}) \ln \theta + \int_0^t{\sigma e^{-\kappa (t-s)}}dW_s \right).
 \end{align*}
-}
+
 
 \frame{\frametitle{Forward prices in the model}
 Using that the forward price is the expected value of future spot prices,
@@ -349,7 +349,7 @@ we get the formula for the forward price at time $t$ for the forward expiring in
 	&\exp \left( e^{-\kappa(T-t)} \ln S_t + (1-e^{-\kappa(T-t)}) \ln \theta + \frac{\sigma^2}{4\kappa}(1-e^{-2\kappa(T-t)}) \right).
 \end{align*}
 We can see that the forward prices converge to the spot price with time to maturity tending to zero.
-}
+
 
 \frame{\frametitle{Forward curves in the model}
 Assuming the same parameters as before and varying $S_t$ we get the forward curves:
@@ -358,7 +358,7 @@ Assuming the same parameters as before and varying $S_t$ we get the forward curv
 		\includegraphics[width=1.00\textwidth]{../../../pics/forwardcurves}
 	\label{fig:forwardcurves}
 \end{figure}
-}
+
 
 
 
@@ -369,7 +369,7 @@ Assuming the same parameters as before and varying $S_t$ we get the forward curv
 \item<3-> If the spot price is high compared to the long term mean, the forward curve is downward sloping (backwardation).
 \item<4-> If the spot price is close to the long term mean, the forward curve might be humped-shaped.
 \end{itemize}
-}
+
 
 \subsection{A structural model -- Barlow (2002)}
 
@@ -383,19 +383,19 @@ u_t(S_t)=d_t(S_t)
 $$
 \item<4-> Need to specify $u_t$ and $d_t$.
 \end{itemize}
-}
+
 \frame{\frametitle{Barlow (2002) specification}
 \begin{itemize}
 \item<1-> Supply is non-random, independent of $t$
-$$u_t(x)=g(x).$$ 
+$$u_t(x)=g(x).$$
 \item<2-> Demand is inelastic, independent of $x$
-$$d_t(x)=D_t$$ 
-a random process. 
+$$d_t(x)=D_t$$
+a random process.
 \item<3-> With
 $$
 f_\alpha(x) = (1+\alpha x)^\frac{1}{\alpha}, \;\alpha \not=0, \; f_0(x)=\exp(x)
 $$
-and 
+and
 $$
 X_t= -\lambda (X_t-a)dt +\sigma dW_t
 $$
@@ -404,11 +404,11 @@ $$
 S_t= \left \{ \begin{array}{ll}
 \displaystyle
 f_\alpha(X_t) & 1+\alpha  X_t> \epsilon_0 \\*[12pt]
-\epsilon_0^\frac{1}{\alpha} & 1+\alpha X_t \leq \epsilon_0  
+\epsilon_0^\frac{1}{\alpha} & 1+\alpha X_t \leq \epsilon_0
 \end{array}
-\right.  
+\right.
 $$
 
 \end{itemize}
-}
+
 

@@ -42,7 +42,7 @@
 \begin{frame}
   \frametitle{Approximation Approaches}
 \begin{itemize}
-\item<1-> Linear approximation approach 
+\item<1-> Linear approximation approach
    $$
      q_{[t_1,t_2]} \approx \tilde{q}^{Lin}_{[t_1,t_2]} = Q_{t_2} (t_2 - t_1)
    $$
@@ -112,13 +112,13 @@ $$
 where \\
 $\tau = T - t$ is the time to compliance. \\
 $\Phi(\cdot)$ denotes the c.d.f. of a standard normal random variable.
-  
+
 \end{frame}
 
 %12. Folie
 \begin{frame}
   \frametitle{Permit price - log-normal moment matching}
-  
+
     The permit price at time t is given by
 $$
 S_t^{Log} = \ \left\{
@@ -132,7 +132,7 @@ where \\
 $\tau = T - t$ is the time to compliance and \\
 $\alpha_{\tau}, \beta_{\tau}$ are obtained by calculating the first and the second moment of the integral over a geometric Brownian motion. \\
 $\Phi(\cdot)$ denotes the c.d.f. of a standard normal random variable.
-  
+
 \end{frame}
 
 
@@ -179,7 +179,7 @@ $$
 \item<2-> In particular, policy makers have been concerned about permit prices that are either too low or too high.
 \item<3-> Thus setting a price floor and/or ceiling has been proposed.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Price Floor Using a Subsidy -- Regulation}
 \begin{itemize}
@@ -187,7 +187,7 @@ $$
 \item<2-> If a company ends up with an excess of permits, it receives a subsidy $S$ per unit of permit.
 \item<3-> Let $0<S\leq P$ and let $N$ be the initial amount of permits allocated to relevant companies.
 \end{itemize}
-}
+
 \frame{\frametitle{Permit Price in hybrid system}
 Denote the futures permit price by $\tilde{F}(t,T)$:
 \begin{align*}
@@ -198,7 +198,7 @@ Denote the futures permit price by $\tilde{F}(t,T)$:
   =& \ S + \frac{P-S}{P} \cdot F(t,T) = \ F(t,T) + S\left(1 - \frac{F(t,T)}{P}\right),
 \end{align*}
 where $F(t,T) = P \cdot \PM \left( q_{[0,T]} > N \mid \Ft \right)$ is the futures permit price in an ordinary system.
-}
+
 
 \frame{\frametitle{Decomposition of permit price in hybrid system}
 Computing the value of a put with strike $S$ shows that the price in the hybrid scheme is the price in the ordinary scheme plus the value of a put option on the price in the ordinary scheme with strike $S$ and maturity $T$:
@@ -210,7 +210,7 @@ $$
  \stackrel{S<P}{=}& \ S \cdot \PM \left( q_{[0,T]} \le N \mid \Ft \right).
 \end{array}
 $$
-}
+
 
 
 \frame{\frametitle{Enforcement costs for regulator}
@@ -220,7 +220,7 @@ $$
 \item<3-> However, the implementation of such a hybrid system might result in a significant financial burden for the environmental policy regulator. The current magnitude of this burden can be obtained by calculating the price of the put option.
 \end{itemize}
 
-}
+
 
 
 %\subsection{Dynamic Reduced Form Models}
@@ -298,7 +298,7 @@ with
 $$
 z_t=\frac{\sigma_t^2}{\int_t^T \sigma^2_u du}
 $$
-}
+
 \frame{\frametitle{Reduced-Form Dynamics -- Proof}
 \begin{itemize}
 \item<1-> $a_t$ formula is straightforward calculation
@@ -312,7 +312,7 @@ $$
 $$
 Starting with the dynamics of $\xi_t$ an application of It{\^o}'s formula gives the result.
 \end{itemize}
-}
+
 
 %\subsection{Historical Calibration}
 \frame{\frametitle{Model Parametrization}
@@ -338,7 +338,7 @@ $$
 \end{array}
 $$
 \end{itemize}
-}
+
 \frame{\frametitle{Objective Measure}
 \begin{itemize}
 \item<1-> We do a historical calibration and change measure to the objective measure.
@@ -353,7 +353,7 @@ $$
 $$
 is a $\prb$ Brownian motion.
 \end{itemize}
-}
+
 \frame{\frametitle{Objective Measure}
 \begin{itemize}
 \item<1->
@@ -365,7 +365,7 @@ so $\xi_{\tau}$ given $\xi_t$ is Gaussian.
 \item<2-> So we can invert permit prices to obtain $\xi$ values and calculate the log-likelihood to obtain
 estimates for $\alpha$ and $\beta$.
 \end{itemize}
-}
+
 
 
 %\subsection{Option Pricing}
@@ -395,7 +395,7 @@ $$
 \right.
 $$
 
-}
+
 
 
 
@@ -407,7 +407,7 @@ $$
 be the futures contracts which are $\Q$ martingales.
 \item<3-> Let $N\in \F_T$ resp. $N' \in \F_{T'}$ be non-compliance in the first resp. second period.
 \end{itemize}
-}
+
 \frame{\frametitle{(Non-) Compliance at $T$}
 \begin{itemize}
 \item<1-> In case of compliance, i.e. event $\Omega-N$, since $A_T$ is the spot price at $T$ and the permit can be banked,  we have
@@ -424,7 +424,7 @@ $$
 A_t-\kappa A'_t = \EX_t^\Q[A_T-\kappa A'_T]= \EX^\Q_t[P \IF_N]
 $$
 \end{itemize}
-}
+
 
 \frame{\frametitle{Reduced-Form Model}
 \begin{itemize}
@@ -439,7 +439,7 @@ A'_t = P \Phi(\xi^2_t)
 $$
 with $\xi^2_t$ a Gaussian process driven by a Brownian motion $W^2_t$.
 \end{itemize}
-}
+
 \frame{\frametitle{Pricing Formula}
 For a European call written on a futures in the first period with strike $K$ and maturity $\tau$ we decompose the payoff
 $$
@@ -452,7 +452,7 @@ $$
 where the parameters of the two-dimensional Gaussian distribution depend on the individual drift and volatility terms and the correlation
 of $\xi^1$ and $\xi^2$.
 
-}
+
 \subsection{Renewable Energy Projects on Capital Markets}
 
 \frame{\frametitle{Carbon Revenue Bonds}
@@ -466,7 +466,7 @@ of $\xi^1$ and $\xi^2$.
 \item<3-> Only revenue from environmental credits is used for bond
 \item<4-> Rigorous forecast analysis of revenues, sensitivity tests and risk analysis is required.
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Structure of Bond}
@@ -484,7 +484,7 @@ $$
 x= \sum_{i=1}^T \frac{c_i}{(1+r)^i}
 $$
 \end{itemize}
-}
+
 
 \frame{\frametitle{EUA Time Series}
 \begin{figure}[h!]
@@ -493,7 +493,7 @@ $$
 %\caption{EUA Time Series}
 \label{fig:EUA-TS}
 \end{figure}
-}
+
 \frame{\frametitle{QQ-Plots for EUA fits}
 \begin{figure}[h!]
 \centering
@@ -501,7 +501,7 @@ $$
 %\caption{EUA fits}
 \label{fig:EUA-fits}
 \end{figure}
-}
+
 \frame{\frametitle{Carbon Bond Histogram}
 \begin{figure}[h!]
 \centering
@@ -510,7 +510,7 @@ $$
 \label{fig:Carbon-Bond-Histogram}
 \end{figure}
 
-}
+
 
 %\subsection{Impact of Carbon Markets on Investment Markets}
 
@@ -520,7 +520,7 @@ $$
 \item<2-> Regulatory risk (reduction targets for carbon emissions) transforms into financial risk  for several asset classes.
 \item<3-> Carbon inefficient firms tend to have a higher credit spread and higher refinancing costs.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Factors Affecting Carbon Risk}
 \begin{itemize}
@@ -529,7 +529,7 @@ $$
 \item<3-> Marginal abatement costs.
 \item<4-> Technology trajectory -- progress in adapting low-carbon emission technologies.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Motivation for Investors to Invest in Carbon-related Assets}
 \begin{itemize}
@@ -546,7 +546,7 @@ $$
 \item Incentivizing the corporate sector by taking carbon credits from the market
 \end{itemize}
 \end{itemize}
-}
+
 
 \frame{\frametitle{Risk In Renewable Energy Companies}
 \begin{itemize}
@@ -558,7 +558,7 @@ substitution will occur.
 \item<5-> Consumers: demand products with less impact on the economy
 \item<6-> Climate Change: will be tackled by investment in greener technologies.
 \end{itemize}
-}
+
 
 \frame{\frametitle{CAPM Analysis of RE Companies}
 \begin{itemize}
@@ -572,7 +572,7 @@ $R$ returns, $\alpha$ component that is independent of the market.
 through higher expected returns in order to take on the higher risk. A higher equity cost of capital can affect borrowing costs and
 it can also affect the discount rate used in net present value calculations.
 \end{itemize}
-}
+
 
 \frame{\frametitle{CAPM Analysis of RE Companies II}
 \begin{itemize}
@@ -584,7 +584,7 @@ it can also affect the discount rate used in net present value calculations.
 \end{itemize}
 \item<3-> In order to foster RE companies governments can implement policies to increase sales of such companies (e.g. PV-industry and feed-in tariffs).
 \end{itemize}
-}
 
 
-	
+
+

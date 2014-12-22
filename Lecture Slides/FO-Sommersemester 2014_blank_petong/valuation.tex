@@ -22,7 +22,7 @@ $t=0$ and $t=T$(say).
   \item Our aim is to value at $t=0$  a European
 derivative on a stock $S$ with maturity $T$.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Valuation by Replication - Idea}
 \begin{itemize}
@@ -31,7 +31,7 @@ using a portfolio $V$ of underlying (basic) securities, the price of the
 portfolio at $t=0$ must equal the price of the derivative at
 $t=0$.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Valuation by Replication - Example (1)}
 \begin{itemize}
@@ -45,7 +45,7 @@ $t=0$.
   \item up: $20 (1+u)=22 \Rightarrow u=0.1$
   \item down: $20 (1+d)=18 \Rightarrow d=-0.1$
 \end{itemize}
-}
+
 
 \frame{\frametitle{Valuation by Replication - Example (2)}
 \begin{itemize}
@@ -59,7 +59,7 @@ as the price of constructing the portfolio $V(0)$, otherwise investors
 could just restructure their holdings in the assets and obtain a
 riskfree profit today.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Valuation by Replication - Example (3)}
 We construct the portfolio from
@@ -73,7 +73,7 @@ possible values at $t=T$,
 \item $S_1(d)=18$
 \end{itemize}
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Valuation by Replication - Example (4)}
@@ -85,7 +85,7 @@ possible values at $t=T$,
     \item $V(0) = \theta_0 + \theta_1 \cdot S(0)$.
   \end{itemize}
 \end{itemize}
-}
+
 
 \frame{\frametitle{Valuation by Replication - Example (5)}
 \begin{itemize}
@@ -95,7 +95,7 @@ possible values at $t=T$,
   \end{itemize}
   \item the Payoff from the call option in $t=T$ is given with 1 or 0.
  \end{itemize}
-}
+
 
 \frame{\frametitle{Valuation by Replication - Example (6)}
 \begin{itemize}
@@ -108,7 +108,7 @@ possible values at $t=T$,
   \item The solution of this equations is $\theta_0 = -4.286$ and $\theta_1 = 0.25$
 
 \end{itemize}
-}
+
 
 \frame{\frametitle{Valuation by Replication - Example (7)}
 \begin{itemize}
@@ -121,7 +121,7 @@ T = 1) this is riskfree because you own the option. If on the
 other hand the option is too dear, write it (i.e. sell it in the
 market) and cover yourself by setting up the above portfolio.
 \end{itemize}
-}
+
 
 \frame{\frametitle{No-Arbitrage and Expectation (1)}
 \begin{itemize}
@@ -131,7 +131,7 @@ market) and cover yourself by setting up the above portfolio.
   \item Still, the market has a perception of the probability and it will  be called $q$
   \item And of course, under what market participants think, the market must be free of Arbitrage!
 \end{itemize}
-}
+
 
 \frame{\frametitle{No-Arbitrage and Expectation (2)}
 \begin{itemize}
@@ -149,7 +149,7 @@ market) and cover yourself by setting up the above portfolio.
   \item This is the so-called Arbitrage-free Risk-neutral probability!
   \item In our example it takes the value $q = \frac{0.05 + 0.1}{0.1 + 0.1} = 0.75$ and $1-q=0.25$
 \end{itemize}
-}
+
 
 \frame{\frametitle{No-Arbitrage and Expectation - General Principle}
 \begin{itemize}
@@ -167,7 +167,7 @@ market) and cover yourself by setting up the above portfolio.
   \end{align*}
   \item The same price as before!
 \end{itemize}
-}
+
 
 \subsection{The Cox-Ross-Rubinstein model}
 \subsubsection{The Model}
@@ -188,7 +188,7 @@ interval $[t,t+1]$, i.e.
 \end{itemize}
 \item So its price process is $ B(t) = (1+r)^t, \A t = 0,1, \ldots, T. $
 \end{itemize}
-}
+
 
 \frame{\frametitle{ The CRR Model}
 
@@ -206,7 +206,7 @@ with $-1 < d < u, S_0 \in {\setR}_0^+$ and
 for $ t = 0,1,\ldots,T-1.$
 \end{itemize}
 \end{itemize}
-}
+
 
 \frame{\frametitle{ The CRR Model}
 
@@ -223,7 +223,7 @@ for $ t = 0,1,\ldots,T-1.$
 \end{center}
 \end{figure}
 
-}
+
 
 
 \frame{\frametitle{ The CRR Model}
@@ -239,7 +239,7 @@ easy. Unfortunately we can hardly defend the assumption of
 independent and identically distributed price movements at each
 time period in practical applications.
 \end{itemize}
-}
+
 
 
 %\section{Derivative Pricing}
@@ -257,7 +257,7 @@ Cox-Ross-Rubinstein model. In trying to do this we use (as is
 quite natural and customary) the bond price process $B(t)$ as
 num\'{e}raire.
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Pricing measure}
@@ -273,7 +273,7 @@ d < r < u.
 q=\frac{r-d}{u-d}.
 \end{equation}
 
-}
+
 
 
 
@@ -291,7 +291,7 @@ where $\EX^\mathbb{Q}$ is the expectation with respect to the
 unique probabilities
 $q= (r-d)/(u-d).$
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Pricing Formula}
@@ -312,7 +312,7 @@ probability-weighted paths of the price process. Accordingly, $j$,
 $\tau-j$ are the numbers of times $Z(i)$ takes the two possible
 values $d, u$.
 \end{itemize}
-}
+
 
 \frame{\frametitle{European claims}
 \begin{itemize}
@@ -323,7 +323,7 @@ $X=f(S_T)$. The arbitrage price process $\pi_X(t), \; t=0, 1,
 \pi_X(t) = (1+r)^{-\tau} F_\tau(S_t,q).
 \end{equation}
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{European call}
@@ -341,7 +341,7 @@ process $\Pi_C(t), \; t=0, 1, \ldots, T$ of the option is given by
 \item For a European put option, we can either argue similarly or use
 put-call parity.
 \end{itemize}
-}
+
 
 \frame{\frametitle{ A Three-period Example (1)}
 
@@ -349,7 +349,7 @@ put-call parity.
   \item<1->  We consider a continuous-time model with one-year risk-free interest rate (continuously compounded) $\rho=0.06$ and the volatility of the stock is 20\%, so $\s = 0.2$.
   \item<2-> The corresponding 3-step CRR-quantities are $\Delta =1/3$
 \begin{itemize}
-  \item   
+  \item
 the up and down movements of the stock price
 $$
 1+u=e^{\sigma \sqrt{\Delta}} = 1.1224, \; \;
@@ -367,7 +367,7 @@ q=\frac{r-d}{u-d}= 0.5584.
 $$
 \end{itemize}
 \end{itemize}
-}
+
 
 \frame{\frametitle{ A Three-period Example (2)}
 \begin{itemize}
@@ -407,7 +407,7 @@ Prices of the stock and the call  with strike $K=100$ are given below.
 %It is interesting to compare the approxinative Cox-Ross-Rubinstein
 %prices $c_n$ (discrete model with $n$ time steps, see
 %(\ref{crrcallprice}), (\ref{crrpricen}) to the Black-Scholes price.
-}
+
 
 \frame{\frametitle{ A Three-period Example (3)}
 \begin{itemize}
@@ -417,7 +417,7 @@ strike $K=100)$ we can either use the explicit valuation formula or work our way
 the BS-models and compare the values. The figure (\ref{BSCRR}) below is for
 $S=100, K=90, \rho=0.06, \s=0.2, T=1$.
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Delta  of an option}
@@ -430,7 +430,7 @@ create a riskfree portfolio -- the delta hedge.
 
 \end{itemize}
 
-}
+
 
 \frame{\frametitle{Example of the Delta}
 \begin{itemize}
@@ -449,7 +449,7 @@ $$
 \item<4-> Observe that the delta is time and state dependent.
 \end{itemize}
 
-}
+
 
 
 \subsubsection{Binomial approximation}
@@ -473,14 +473,14 @@ discrete-time stochastic processes in a suitable sense.
 \item  We follow the second approach and obtain the asymptotics
  of a sequence of Cox-Ross-Rubinstein models.
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Binomial Approximations (2)}
 
 \begin{itemize}
- \item 
- With $B^{n, p}$ the Binomial cumulative distribution function of 
+ \item
+ With $B^{n, p}$ the Binomial cumulative distribution function of
  $\bar{B}^{n, p} = 1- B^{n, p}$, we find in the $n$th
 Cox-Ross-Rubinstein model for the price of a European call at time
 $t=0$ the following formula
@@ -495,7 +495,7 @@ $$
 $$
 with $\Pi_C^{BS}(0)$ given by the Black-Scholes formula.
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{The Black-Scholes Formula}
@@ -518,7 +518,7 @@ d_1(s,t) -\sigma \sqrt{t}\\*[12pt]
 \end{array}
 $$
 \end{itemize}
-}
+
 
 \subsubsection{American Options}
 
@@ -532,7 +532,7 @@ divided into $N$ equal subintervals of length $\Delta $ say.
 we have $1+r = e^{\rho \Delta}$ (where we denote the risk-free
 rate of interest in each subinterval by $r$).
 \end{itemize}
-}
+
 
 \frame{\frametitle{ American Options in the CRR model (2)}
 \begin{itemize}
@@ -552,7 +552,7 @@ p^*= \frac{r-d}{u-d} = \frac{e^{\rho \Delta}-e^{-\sigma
 \sqrt{\Delta}}}.
 $$
 \end{itemize}
-}
+
 
 \frame{\frametitle{ American Options in the CRR model (3)}
 \begin{itemize}
@@ -563,7 +563,7 @@ after $N$ steps, there are $N+1$ possible prices, $S (1+u)^i
 (1+d)^{N-i}$ ($i = 0, \ldots, N$). There are $2^N$ possible paths
 through the tree.
 \end{itemize}
-}
+
 
 \frame{\frametitle{ American Options in the CRR model (4)}
 \begin{itemize}
@@ -578,7 +578,7 @@ comfortably handled by computers (recall that $2^{10} = 1,024$, so
 $2^{30}$ is somewhat over a billion).
 \end{itemize}
 \end{itemize}
-}
+
 
 \frame{\frametitle{ American Options in the CRR model (5)}
 
@@ -592,7 +592,7 @@ due to Richard Bellman, which is important in many areas of
 optimisation and Operational Research.
 \end{itemize}
 
-}
+
 
 \frame{\frametitle{American Options in the CRR model - Step (1)}
 
@@ -612,7 +612,7 @@ nodes, fill in the payoffs $f^A_{N,j} = \max\{K - S (1+u)^j
 (1+d)^{N-j}, 0\}$ from the option
 at the terminal nodes underneath the terminal prices.
 \end{enumerate}
-}
+
 
 \frame{\frametitle{American Options in the CRR model - Step (2)}
 \begin{enumerate}
@@ -634,7 +634,7 @@ K - S (1+u)^j (1+d)^{i-j}
 $$
 (when this is non-negative, and so has any value).
 \end{enumerate}
-}
+
 
 \frame{\frametitle{American Options in the CRR model - Step (3)}
 \begin{itemize}
@@ -649,7 +649,7 @@ f^A_{i+1,j})\right.,\\*[12pt]
 \end{array}
 $$
 \end{itemize}
-}
+
 
 \frame{\frametitle{American Options in the CRR model - Step (4)}
 \begin{enumerate}
@@ -661,7 +661,7 @@ root of the tree.
 early-exercise value there exceeds the value $f_{ij}$ there of
 expected discounted future payoff.
 \end{enumerate}
-}
+
 
 
 
@@ -681,7 +681,7 @@ expected discounted future payoff.
 %{\boldsymbol n}& \mbox{ c(n)}\\ 5 & 11.33\\10 & 10.79\\ 50 & 10.95\\
 %100 & 10.97\\ 200 & 10.98\\ 500 & 10.99 \end{array} $$
 
-}
+
 
 \frame{\frametitle{ A Three-period Example (5)}
 
@@ -696,7 +696,7 @@ type. Recall that the discrete-time rule is to exercise if the
 intrinsic value $K-S(t)$ is larger than the value of the
 corresponding European put.
 \end{itemize}
-}
+
 
 \frame{\frametitle{ A Three-period Example (6)}
 
@@ -732,4 +732,4 @@ corresponding European put.
 \end{center}
 \caption{European $p(.)$ and American $P(.)$ put prices}
 \end{figure}
-}
+

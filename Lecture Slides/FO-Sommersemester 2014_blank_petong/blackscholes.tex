@@ -1,7 +1,7 @@
 % !TEX root = FuturesOptions_ss14UDE.tex
 \section{The Black-Scholes Model}
 
-\begin{frame}  
+\begin{frame}
     \frametitle{}
 \vspace{0cm}
 \begin{center}
@@ -20,10 +20,10 @@
    \subfigure[Fisher Black]{\includegraphics[height=3cm]{../../../pics/black.jpg}}
 \end{figure}
 \end{center}
-}
 
 
-%\frame{\frametitle{ Black-Scholes Model}
+
+\frame{\frametitle{ Black-Scholes Model}
 
 %\begin{itemize}
 %  \item The classical Black-Scholes model is
@@ -58,7 +58,7 @@ d_1(s,\tau) &=&\DSE \frac{\log(s/K) + (r +
 \frac{\sigma^2}{2})\tau}{\sigma \sqrt{\tau}}
 \end{array}
 $$
-}
+
 
 \subsection{The Greeks}
 \frame{\frametitle{Greeks (1)}
@@ -77,7 +77,7 @@ depend on the
 \item the strike price.
 \end{enumerate}
 \end{itemize}
-}
+
 \frame{\frametitle{Greeks (2)}
 \begin{itemize}
 \item<1-> The
@@ -88,7 +88,7 @@ hedging purposes.
 We can determine the impact of these parameters
 by taking partial derivatives.
 \end{itemize}
-}
+
 \frame{\frametitle{Greeks}
 
 $$
@@ -106,7 +106,7 @@ C}{\partial r} &=& \DSE \tau K e^{-r\tau} \Phi(d_2) >0,\\*[12pt] \Gamma
 \frac{\varphi(d_1)}{S \s \sqrt{\tau}} >0.\\*[12pt]
 \end{array}
 $$
-} \frame{\frametitle{Greeks} From the definitions it is clear that
+ \frame{\frametitle{Greeks} From the definitions it is clear that
 \begin{itemize}
 \item<1->
 $\Delta$ -- delta -- measures the change in the value of the
@@ -116,20 +116,20 @@ asset,
 compared with the change in the volatility of the underlying,
 \item<3-> similar statements hold for $\Theta$ -- theta -- and $\rho$ -- rho
 \end{itemize}
-}
+
 \frame{\frametitle{Greeks}
 \includegraphics<1>[height=7cm]{../../../pics/Delta.pdf}
 
-} \frame{\frametitle{Greeks}
+ \frame{\frametitle{Greeks}
 \includegraphics<1>[height=7cm]{../../../pics/DeltaToZero.pdf}
 
-} \frame{\frametitle{Greeks}
+ \frame{\frametitle{Greeks}
 \includegraphics<1>[height=7cm]{../../../pics/gamma.pdf}
 
-} \frame{\frametitle{Greeks}
+ \frame{\frametitle{Greeks}
 \includegraphics<1>[height=7cm]{../../../pics/Vega2.pdf}
 
-}
+
 
 
 \frame{\frametitle{Greeks}
@@ -142,7 +142,7 @@ $$
 r C = \frac{1}{2} s^2 \s^2 \Gamma +rs \Delta -\Theta.
 $$
 \end{itemize}
-}
+
 
 \frame{\frametitle{Vega}
 \begin{itemize}
@@ -162,7 +162,7 @@ $$
 $$
 \item<3-> Note here is that vega is always positive.
 \end{itemize}
-}
+
 
 \subsection{Volatility}
  \frame{\frametitle{Implied Volatility}
@@ -182,7 +182,7 @@ Thus the value $\s = \s(C)$ corresponding to the actual value $C =
 C(\s)$ at which call options are observed to be traded in the
 market can be read off.  The value of $\s$ obtained in this way is
 called the {\it implied volatility}.
-\end{itemize}}
+\end{itemize}
 \frame{\frametitle{The Black-Scholes Implied Volatility}
 \begin{itemize}
 \item<1-> The Black-Scholes model assumes a constant volatility over all maturities and strikes.
@@ -192,18 +192,18 @@ called the {\it implied volatility}.
 \item<5-> Furthermore, volatility can be made an own "asset class".
 \end{itemize}
 
-}
+
 
 \frame{\frametitle{Volatility Smile}
 Volatility Index VDAX-NEW (in percentage points)
 \begin{center}
 \includegraphics[scale=0.55]{../../../pics/Volatility-Smile-char.pdf}
 \end{center}
-}
+
 \frame{\frametitle{Volatility Surface}
 Volatility Index VDAX-NEW (in percentage points)
 $$\includegraphics[scale=0.25]{../../../pics/VolatilitySurface.jpg}$$
-}
+
 
 
 \frame{\frametitle{VDAX-NEW: Definition}
@@ -211,7 +211,7 @@ $$\includegraphics[scale=0.25]{../../../pics/VolatilitySurface.jpg}$$
   \item The volatility index VDAX-NEW was developed by Deutsche B{\"o}rse and Goldman Sachs. It tracks the degree of fluctuation expected by the derivatives market, i.e. the implied volatility, for the DAX index. The index expresses in percentage terms what degree of volatility is to be expected for the following 30 days.
   \item VDAX-NEW started on 20 April 2005 and will replace VDAX in the medium-term.
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{VDAX-NEW: Examples}
@@ -223,13 +223,13 @@ Examples:\\
   \item<2-> A DAX of 4,000 and a VDAX-NEW of 20 indicate that the DAX stock index is expected to fluctuate between 3,770 and 4,230 over the next thirty days:
     $$4000\pm4000\times0.2\times\sqrt{\frac{30}{365}}\approx4000\pm230.$$
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{VDAX-NEW}
 Volatility Index VDAX-NEW (in percentage points)
 $$\includegraphics[scale=0.6]{../../../pics/VDaxNew.png}$$
-}
+
 
 
 \frame{\frametitle{VDAX-NEW: Calculation}
@@ -239,7 +239,7 @@ $$\includegraphics[scale=0.6]{../../../pics/VDaxNew.png}$$
   \item <3-> In addition to at-the-money options (VDAX), out-of-the-money options are also considered (VDAX-NEW).
   \item <4-> Calculation frequency: Once a minute on every trading day at Eurex between 8.50am and 5.30pm CET.
 \end{itemize}
-}
+
 
 \frame{\frametitle{VDAX-NEW: Features}
 \begin{itemize}
@@ -249,7 +249,7 @@ $$\includegraphics[scale=0.6]{../../../pics/VDaxNew.png}$$
   \item <4-> Due to ATM and OTM options VDAX-NEW captures more of the volatility skew than VDAX.
   \item <5-> Index establishes volatiliy as a tradable and separate asset class for investors.
 \end{itemize}
-}
+
 
 \frame{\frametitle{VDAX-NEW: Use}
 \begin{itemize}
@@ -258,7 +258,7 @@ $$\includegraphics[scale=0.6]{../../../pics/VDaxNew.png}$$
   \item <3-> Diversification of German equity portfolios (correlation to DAX is -0.5689, correlation to MDAX is -0.4668).
   \item <4-> Benchmark for German equity volatility.
 \end{itemize}
-}
+
 
 \frame{\frametitle{VDAX-NEW: Diversification}
 \begin{itemize}
@@ -268,7 +268,7 @@ points on average higher yield than investments in
 DAX only. And this with lower risk!
 $$\includegraphics[scale=0.45]{../../../pics/VDax_div.png}$$
 \end{itemize}
-}
+
 
 \subsection{Derivatives Risk Management}
 
@@ -479,49 +479,49 @@ trade in the $97$ call.
 \frame{\frametitle{Option Portfolio}
 
 $$\includegraphics[scale=0.4]{../../../pics/gs-akademie-OS.pdf}$$
-}
+
 
 \frame{\frametitle{Delta Position}
 
 $$\includegraphics[scale=0.6]{../../../pics/gs-akademie-Delta.pdf}$$
-}
+
 
 \frame{\frametitle{Gamma Position}
 
 $$\includegraphics[scale=1.3]{../../../pics/gs-akademie-Gamma.pdf}$$
-}
+
 
 \frame{\frametitle{Vega Position}
 
 $$\includegraphics[scale=1.2]{../../../pics/gs-akademie-Vega.pdf}$$
-}
+
 
 \frame{\frametitle{Gamma vs Vega Position}
 
 $$\includegraphics[scale=1.3]{../../../pics/gs-akademie-GammaVega.pdf}$$
-}
+
 
 \frame{\frametitle{Total Hedge}
 
 $$\includegraphics[scale=0.91]{../../../pics/gs-akademie-TotalHedge.pdf}$$
-}
+
 
 \frame{\frametitle{Partial Hedges}
 
 $$\includegraphics[scale=1.4]{../../../pics/gs-akademie-PartialHedges.pdf}$$
-}
+
 
 
 \frame{\frametitle{Hedged Delta Position}
 
 $$\includegraphics[scale=1.2]{../../../pics/gs-akademie-HedgedDelta.pdf}$$
-}
+
 \frame{\frametitle{Hedged Gamma Position}
 
 $$\includegraphics[scale=1.2]{../../../pics/gs-akademie-HedgedGamma.pdf}$$
-}
+
 \frame{\frametitle{Hedged Vega Position}
 
 $$\includegraphics[scale=1.2]{../../../pics/gs-akademie-HedgedVega.pdf}$$
-}
+
 

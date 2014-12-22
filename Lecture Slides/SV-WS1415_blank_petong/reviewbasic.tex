@@ -11,7 +11,7 @@
 \begin{itemize}
  \item<1->  An option is a financial instrument giving one the {\it right, but
 not the obligation} to make a specified transaction at (or by) a
-specified date at a specified price. 
+specified date at a specified price.
 \item<2->{\it Call} options give one
 the right to buy. {\it Put} options give one the right to sell.
 \item<3-> {\it European} options give one the right to buy/sell on the
@@ -19,14 +19,14 @@ specified date, the expiry date, on which the option expires or
 matures. {\it American} options give one the right to buy/sell at any time
 prior to or at expiry.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Options - Terminology (1)}
 
 \begin{itemize}
 \item<1-> The asset to which the option refers is called the {\it underlying
-asset} or the {\it underlying}. 
-\item<2-> 
+asset} or the {\it underlying}.
+\item<2->
 The price at which the transaction
 to buy/sell the underlying, on/by the expiry date (if exercised),
 is made, is called the {\it exercise price} or {\it strike price}.
@@ -36,7 +36,7 @@ seller of the option is struck), time $t = T$ for the expiry or
 final time.
 \end{itemize}
 
-}
+
 
 
 \frame{\frametitle{Options - Terminology (2)}
@@ -49,7 +49,7 @@ $t$.\\*[12pt]
   \item<2-> if $S(t) = K$, the option is {\it at the money},
   \item<3-> if $S(t) < K$, the option is {\it out of the money}.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Options - Payoff}
 
@@ -60,7 +60,7 @@ written as  $(S(T) - K)^+$).
 \item<2-> The profit from a call option is the payoff $(S(T) - K)^+$) minus the call premium $c$.
 \end{itemize}
 %}
-}
+
 
 \frame{\frametitle{Options - Payoff/Profit diagram }
 
@@ -69,7 +69,7 @@ Considering only the option payoff, we obtain the payoff diagram, taking into ac
 \begin{center}
 \includegraphics[height=5cm]{../../../pics/payoffprofit.png}
 \end{center}
-}
+
 
 \frame{\frametitle{Options - Profit diagrams of vanilla options}
 \begin{figure}
@@ -79,7 +79,7 @@ Considering only the option payoff, we obtain the payoff diagram, taking into ac
    \subfigure[long put]{\includegraphics[height=3cm]{../../../pics//longput.png}}
    \subfigure[short put]{\includegraphics[height=3cm]{../../../pics//shortput.png}}
 \end{figure}
-}
+
 
 %\subsection{Forwards and Futures}
 
@@ -98,7 +98,7 @@ the other agent assumes a {\it short} position.
 date is called {\it delivery date} and the specified price is
 referred to as {\it delivery price}.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Forwards}
 \begin{itemize}
@@ -113,7 +113,7 @@ The forward prices $F(t,T)$ need not (and will not)
 necessarily be equal to the delivery price $K$ during the
 life-time of the contract.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Forwards}
 \begin{itemize}
@@ -125,7 +125,7 @@ $$ S(T)-K.$$
 and strike price $K$ we see that the investor now faces a downside
 risk, too. He has the obligation to buy the asset for price $K$.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Spot-Forward Relationship}
 Under the no-arbitrage assumption we have
@@ -143,7 +143,7 @@ Under the no-arbitrage assumption we have
 \end{center}
 
 All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow at T needs to be zero so we have $$F(t,T) = S(t)e^{r(T-t)}$$
-}
+
 
 
 
@@ -157,7 +157,7 @@ All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow 
 \end{itemize}
 
 
-}
+
 
 
 \frame{\frametitle{Payoff from a forward/futures contract}
@@ -166,7 +166,7 @@ All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow 
    \subfigure[long position]{\includegraphics[height=4cm]{../../../pics//forwardlong.png}}\qquad
    \subfigure[short position]{\includegraphics[height=4cm]{../../../pics//forwardshort.png}}
 \end{figure}
-}
+
 
 \frame{\frametitle{Swaps}
 \begin{itemize}
@@ -175,14 +175,14 @@ A {\it swap} is an agreement whereby two parties
 undertake to exchange, at known dates in the future, various
 financial assets (or cash flows) according to a prearranged
 formula that depends on the value of one or more underlying
-assets. 
+assets.
 \item<2->
 Examples are currency swaps (exchange currencies) and
 interest-rate swaps (exchange of fixed for floating set of
 interest payments).
 \end{itemize}
 
-}
+
 
 
 \section{How to Model Price Movements?}
@@ -208,7 +208,7 @@ governs how volatile the price is, and is called the {\it
 volatility} of the
 stock.
 \end{itemize}
-}
+
 
 
 
@@ -225,7 +225,7 @@ The economic importance of geometric
 Brownian motion was recognised by Paul A. Samuelson in his work, for which Samuelson received the Nobel
 Prize in Economics in 1970, and by Robert Merton, in work for which he was similarly
 honoured in 1997.
-}
+
 
 
 \frame{\frametitle{Brownian Motion I}
@@ -241,7 +241,7 @@ t)$ for $u \geq 0$, \item[(iii)]  $X$ has {\it stationary
 increments}: the law of $X(t+u) - X(t)$ depends only on $u$,
 \end{itemize}
 and (iv), (v)
-}
+
 
 
 \frame{\frametitle{Brownian Motion II}
@@ -254,7 +254,7 @@ normally distributed with mean $0$ and variance $u$, $X(t+u) -
 X(t) \sim N(0,u)$, \item[(v)]  $X$ has {\it continuous paths}:
 $X(t)$ is a continuous function of $t$.
 \end{itemize}
-}
+
 
 \subsection{Basic Stochastic Calculus}
 
@@ -277,7 +277,7 @@ df(X(t)) &=& f'(X(t)) dX(t)\\*[12pt]
 \end{array}
 $$
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Multiplication rules}
@@ -304,7 +304,7 @@ dW & 0 &dt \\\hline
 \end{itemize}
 
 
-}
+
 \frame{\frametitle{ General It{\^o} Formula}
 
 If $X(t)$ is an It{\^o} process  and $f(t,x)$ a function with time and location variable, then
@@ -314,7 +314,7 @@ df = \left(f_t + b f_x + \frac{1}{2} \s^2 f_{xx}\right) dt + \s
 f_x dW.
 $$
 Observe, that we left out all function arguments
-}
+
 
 
 \frame{\frametitle{ Example: Geometric Brownian Motion}
@@ -339,7 +339,7 @@ and with $x = W(t)$, one has
 $$
 dx = dW(t), \A (dx)^2 = dt.
 $$
-}
+
 
 
 \frame{\frametitle{ Example: GBM}
@@ -355,7 +355,7 @@ $$
 dW).
 \end{array}
 $$
-}
+
 
 \section{Electricity Trading}
 \frame{\frametitle{Electricity Markets}
@@ -366,14 +366,14 @@ the electrical network.
 
 
 \begin{itemize}
-\item<1-> Fixed Gate Auction 
+\item<1-> Fixed Gate Auction
 \begin{itemize}
 \item Participants submit sell or buy orders for several areas, several hours,
 \item the submissions are closed at a pre-specified time (closure)
-\item the market is cleared. 
+\item the market is cleared.
 \item Example: day-ahead.
 \end{itemize}
-\item<2-> Continuous-time Auction 
+\item<2-> Continuous-time Auction
 \begin{itemize}
 \item Participants continuously submit orders. Orders are stored,
 \item Each time a deal is feasible, it is executed,
@@ -381,29 +381,29 @@ the electrical network.
 \end{itemize}
 
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Electricity Exchanges}
 
-Electricity related contracts  can be traded at exchanges such as 
+Electricity related contracts  can be traded at exchanges such as
 \begin{itemize}
-\item<1-> the Nord Pool, mainly Northern European countries, \url{http://www.nordpoolspot.com/}  
-\item<2-> the European Energy Exchange (EEX), \url{http://www.eex.com/en} 
+\item<1-> the Nord Pool, mainly Northern European countries, \url{http://www.nordpoolspot.com/}
+\item<2-> the European Energy Exchange (EEX), \url{http://www.eex.com/en}
 \item<3-> EPEX, located in Paris, founded by EEX and Powernext (French Energy Exchange);
-Electricity spot market for Germany, Austria, France and Switzerland;   
+Electricity spot market for Germany, Austria, France and Switzerland;
 \url{http://www.epexspot.com/en/}
 \item<4-> Amsterdam Power Exchange (APX), covers the Netherlands, Belgium and the UK, \url{http://www.apxgroup.com}
 \end{itemize}
-}
+
 
 \frame{\frametitle{EEX -- traded products}
 \begin{itemize}
-\item<1-> Futures contracts for Germany and France with delivery periods week, month, quarter, year. 
-\item<2-> For Germany single days and weekends are available. 
+\item<1-> Futures contracts for Germany and France with delivery periods week, month, quarter, year.
+\item<2-> For Germany single days and weekends are available.
 \item<3-> European style options on futures.
 \end{itemize}
-}
+
 
 \frame{\frametitle{EPEX -- traded products}
 \begin{itemize}
@@ -412,7 +412,7 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 \item<3-> Intraday market is open 24 hours a day, 7 days a week and products can be traded until 45 minutes before delivery.
 \item<4-> in Germany 15 minutes contracts can be traded.
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Auction EPEX}
@@ -421,7 +421,7 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 \end{center}
 
 
-}
+
 
 \frame{\frametitle{Spot price EPEX}
 \begin{center}
@@ -429,23 +429,23 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 \end{center}
 
 
-}
+
 
 
 \frame{\frametitle{Day-Ahead Market }
 \begin{itemize}
 \item<1-> Possibility to correct long-term production schedule  (build on the forward markets) in terms of hourly production schedule of power plants (Delta Hedging) -- sell more expensive hours, buy cheaper hours for flexible power plants.
-\item<2-> Adjust for residual load profiles on an hourly basis 
-\item<3-> Market for production from renewable energy sources (wind, solar) as on long-term markets only averages can be traded 
+\item<2-> Adjust for residual load profiles on an hourly basis
+\item<3-> Market for production from renewable energy sources (wind, solar) as on long-term markets only averages can be traded
 \end{itemize}
-}
+
 
 \frame{\frametitle{Intra-Day Market }
 \begin{itemize}
-\item<1-> Trading of hours, quarter-hours until 45 min before start of period continuously during the day 
-\item<2-> From 15:00 hours of next day, from 16:00 quarter-hours of next day 
+\item<1-> Trading of hours, quarter-hours until 45 min before start of period continuously during the day
+\item<2-> From 15:00 hours of next day, from 16:00 quarter-hours of next day
 \end{itemize}
-}
+
 
 \frame{\frametitle{Motivation for Trading Intra-Day Market }
 \begin{itemize}
@@ -456,21 +456,21 @@ Electricity spot market for Germany, Austria, France and Switzerland;
 \item optimisation of demand (costumer)
 \item renewable energy producer -- changes of forecasts
 \end{itemize}
-\item<2-> Balancing quarter hour ramps with quarter-hour contracts 
-\item<3-> proprietary trading 
+\item<2-> Balancing quarter hour ramps with quarter-hour contracts
+\item<3-> proprietary trading
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Structure of Balancing and Reserve Markets }
-In Europe, the {\it European Network of Transmission System Operators for Electricity,(ENTSO-E)} coordinates overarching grid topics. The main task of a TSO is to ensure a constant power frequency in the transmission system. The following control actions are applied 
+In Europe, the {\it European Network of Transmission System Operators for Electricity,(ENTSO-E)} coordinates overarching grid topics. The main task of a TSO is to ensure a constant power frequency in the transmission system. The following control actions are applied
 \begin{itemize}
-\item<1->{\it Primary Reserve}   starts within seconds as a joined action of all TSOs in the system. 
-\item<2-> {\it Secondary Reserve} replaces the primary reserve after a few minutes and is put into action by the responsible TSOs only. 
+\item<1->{\it Primary Reserve}   starts within seconds as a joined action of all TSOs in the system.
+\item<2-> {\it Secondary Reserve} replaces the primary reserve after a few minutes and is put into action by the responsible TSOs only.
 \item<3->{\it Tertiary Reserve} frees secondary reserves by rescheduling generation by the responsible TSOs.
 \end{itemize}
 The TSO tenders the required products for fulfilling these functions. Reserve products may involve payments for the availability of the reserved capacity.
-}
+
 
 
 
@@ -480,7 +480,7 @@ The TSO tenders the required products for fulfilling these functions. Reserve pr
 \end{center}
 
 
-}
+
 
 \section{A structural model -- Barlow (2002)}
 
@@ -494,19 +494,19 @@ u_t(S_t)=d_t(S_t)
 $$
 \item<4-> Need to specify $u_t$ and $d_t$.
 \end{itemize}
-}
+
 \frame{\frametitle{Barlow (2002) Specification}
 \begin{itemize}
 \item<1-> Supply is non-random, independent of $t$
-$$u_t(x)=g(x).$$ 
+$$u_t(x)=g(x).$$
 \item<2-> Demand is inelastic, independent of $x$
-$$d_t(x)=D_t$$ 
-a random process. 
+$$d_t(x)=D_t$$
+a random process.
 \item<3-> With
 $$
 f_\alpha(x) = (1+\alpha x)^\frac{1}{\alpha}, \;\alpha \not=0, \; f_0(x)=\exp(x)
 $$
-and 
+and
 $$
 X_t= -\lambda (X_t-a)dt +\sigma dW_t
 $$
@@ -515,13 +515,13 @@ $$
 S_t= \left \{ \begin{array}{ll}
 \displaystyle
 f_\alpha(X_t) & 1+\alpha  X_t> \epsilon_0 \\*[12pt]
-\epsilon_0^\frac{1}{\alpha} & 1+\alpha X_t \leq \epsilon_0  
+\epsilon_0^\frac{1}{\alpha} & 1+\alpha X_t \leq \epsilon_0
 \end{array}
-\right.  
+\right.
 $$
 
 \end{itemize}
-}
+
 
 \frame{\frametitle{Mean-reverting Processes}
 $X_t$ follows a stochastic process which can be described as follows:
@@ -529,12 +529,12 @@ $$
 dX_t= \kappa \left( \theta -X_t \right) dt + \sigma dW_t.
 $$
 This is  a mean reverting diffusion process, the so-called Ornstein-Uhlenbeck-Process.
-The parameters can be interpreted as 
+The parameters can be interpreted as
 \begin{itemize}
 \item $\kappa$ - speed of mean reversion
 \item $\theta$ - level of mean reversion
 \item $\sigma$ - volatility of the process
 \end{itemize}
-}
+
 
 

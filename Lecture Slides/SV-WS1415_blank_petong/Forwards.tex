@@ -17,7 +17,7 @@ owner of the physical commodity but not to the holder of a forward contract.
 allows to put the commodity to the market when prices are high
 and hold it when the prices are low.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Spot-Forward Relationship in Commodity Markets }
 Under the no-arbitrage assumption we have
@@ -27,7 +27,7 @@ F(t,T)=S(t)e^{(r-y)(T-t)}
 where $r$ is the interest rate at time $t$ for maturity $T$ and $y$ is the convenience yield.
 
 
-}
+
 
 \frame{\frametitle{Spot-Forward Relationship in Commodity Markets }
 
@@ -40,7 +40,7 @@ linear relationship (unlike options)
 \item<3-> knowledge of $S(t)$ and $y$ allows us to construct the whole forward curve
 \item<4-> for $r-y <0$ we have backwardation; for $r-y>0$ we have contango.
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Spot-Forward Relationship: Classical theory}
@@ -56,7 +56,7 @@ where $\F_t$ is the accumulated available market information (in most models the
 \item fixed by calibration to market prices or a market price of risk argument
 \end{itemize}
 \end{itemize}
-}
+
 
 \frame{\frametitle{Market Risk Premium}
 \begin{itemize}
@@ -72,7 +72,7 @@ Here $\EX^\prb$ is the expectation operator, under the
 historical measure $\prb$, with information up until time $t$ and
 $S(T)$ is the spot price at time $T$.
 \end{itemize}
-}
+
 
 
 \subsection{Black's Formula}
@@ -85,7 +85,7 @@ $$
 \item<2-> But since it costs nothing to enter a futures position, we can constantly change our futures portfolio.
 Thus financing for buying a traded asset is not relevant.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Black's Formula}
 
@@ -104,13 +104,13 @@ d_{1,2} (f,\tau) := \frac{\log (f/K) \pm \frac{1}{2} {\sigma}^2 \tau}{
 \sigma \sqrt{\tau}}.
 $$
 \end{itemize}
-}
+
 
 \frame{\frametitle{Black's Formula}
 \begin{itemize}
 \item<1->
 Observe that the quantities $d_1$ and $d_2$ do not depend on the
-interest rate $r$. 
+interest rate $r$.
 \item<2-> This is intuitively clear from the classical
 Black approach: one sets up a replicating risk-free portfolio
 consisting of a position in futures options and an offsetting
@@ -118,7 +118,7 @@ position in the underlying futures contract. The portfolio
 requires no initial investment and therefore should not earn any
 interest.
 \end{itemize}
-}
+
 
 \section{Bessembinder - Lemon model}
 \frame{\frametitle{Bessembinder- Lemon Model specification}
@@ -129,7 +129,7 @@ interest.
 \item<4-> $P_R$ fixed unit price that consumers pay
 \item<5-> $Q_{R_i}$ an exogenous random variable that denotes the realized demand for retailer $i$
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{The cost function}
@@ -143,7 +143,7 @@ where $F$ are fixed costs, $Q_{P_i}$ is the output of producer $i$, and $c\geq 2
 \item<3-> If $c>2$ marginal costs increase at an increasing rate with output.
 \item<4-> Moreover, the distribution of power prices will be positively skewed even when the distribution of power demand is symmetric.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Clearing prices}
 \begin{itemize}
@@ -151,7 +151,7 @@ where $F$ are fixed costs, $Q_{P_i}$ is the output of producer $i$, and $c\geq 2
 \item<2-> Obtain optimal behaviour in the spot market
 \item<3-> Work back and find optimal positions in the forward market.
 \end{itemize}
-}
+
 
 \frame{\frametitle{The wholesale spot market}
 \begin{itemize}
@@ -164,7 +164,7 @@ $$
 -F-\frac{a}{c}(Q_{P_i})^c,$$
 where each producer's physical production, $Q_{P_i}$, is the sum of its spot and forward sales $Q_{P_i}^W+Q_{P_i}^F$.
 \end{itemize}
-}
+
 
 \frame{\frametitle{The wholesale spot market}
 \begin{itemize}
@@ -177,7 +177,7 @@ $$
 $$Q_{P_i}^W=\left(\frac{P_W}{a}\right)^{x}-Q_{P_i}^F$$
 with $x=1/(c-1)$
 \end{itemize}
-}
+
 \frame{\frametitle{The wholesale spot market}
 \begin{itemize}
 \item<1-> The equilibrium total retail demand is equal to total production and forward contracts are in zero net supply
@@ -186,7 +186,7 @@ $$
 N_P\left(\frac{P_W}{a}\right)^{x}=\sum_{i=1}^{N_R}Q_{R_i}^F
 $$
 \end{itemize}
-}
+
 
 \frame{\frametitle{The wholesale spot market}
 \begin{itemize}
@@ -200,7 +200,7 @@ Q_{P_i}^W= \frac{Q^D}{N_P}-Q_{P_i}^F.
 $$
 \end{itemize}
 
-}
+
 \frame{\frametitle{Demand for forward positions}
 \begin{itemize}
 \item<1-> Producers profit (with no forwards) is
@@ -212,7 +212,7 @@ $$
 $$
 \end{itemize}
 
-}
+
 
 \frame{\frametitle{Mean-Variance Analysis for optimal forward position}
 Assume that market players
@@ -227,7 +227,7 @@ FOCs imply
 $$
 Q^F_{\{P_i,R_j\}}= \frac{P^F-\EX[P_W]}{A\var[P_W]}+\frac{\Cov[\rho_{\{P_i,R_j\}},P_W]}{\var[P_W]}.
 $$
-}
+
 
 \frame{\frametitle{Mean-Variance Analysis for optimal forward position}
 \begin{itemize}
@@ -238,7 +238,7 @@ $$
 \end{itemize}
 \item<2-> Forward hedging can reduce risk precisely because the covariance term is generally non-zero.
 \end{itemize}
-}
+
 
 
 
@@ -253,7 +253,7 @@ where $N=(N_R+N_P)/A$ reflects the number of firms in the industry and the degre
 larger than the second term, which reflects production cost risk.
 %\item<3-> The equilibrium forward price will depend only on the risks borne by the industry as a whole: variability in retail revenue and in %production costs
 \end{itemize}
-}
+
 
 
 

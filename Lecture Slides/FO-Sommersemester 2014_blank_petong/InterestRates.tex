@@ -8,20 +8,20 @@
 \item<2-> Investors, Firms, banks pay compensation for the willingness to postpone
 \item<3-> A common interest rate (equilibrium) emerges which allows to fulfill the aggregate liquidity demand.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Yield Curves}
 
 \includegraphics<1>[height=6cm, width=11cm]{../../../pics/Zinsstruktur2013}
 
-}
+
 
 
 \frame{\frametitle{Yield Curves}
 
 \includegraphics<1>[height=6cm,width=11cm]{../../../pics/Zinsstruktur2013Bb}
 
-}
+
 
 \frame{\frametitle{Yield Curves}
 
@@ -29,7 +29,7 @@
 
 {\tiny Daten: Staatsanleihen July 2013.}
 
-}
+
 \frame{\frametitle{Fixed-rate Bond}
 With a fixed-rate bond the seller promises the buyer to pay fixed coupons $C$ over time, until the bond matures, and when it matures the seller will repay the principal amount borrowed. The price of a bond is determined by its cashflow and the discount factor ($T=t+n$ maturity, $N$ notional value)
 $$
@@ -38,14 +38,14 @@ p_c(t,T)&=&\DSE\frac{C}{(1+r_1)^1}+\frac{C}{(1+r_2)^2}+\ldots+\frac{C+N}{(1+r_n)
 &=&\DSE\sum_{i=1}^n \frac{C}{(1+r_i)^i}+\frac{N}{(1+r_n)^n}
 \end{array}
 $$
-}
+
 
 \frame{\frametitle{Yield to Maturity}
 The yield to maturity $y$ can be calculated from the coupon bond prices
 $$
 p_c(t,T)=\frac{C}{(1+y)^1}+\frac{C}{(1+y)^2}+\ldots+\frac{C+N}{(1+y)^n}
 $$
-}
+
 
 
 %\subsection{Basic Interest Rates -- Continuous Version}
@@ -57,7 +57,7 @@ $t$ that pays one unit of currency at time $T$.
 We will use continuous compounding, i.e. a zero bond with interest
 rate $r(t,T)$ maturing at $T$ will have the price
 $$p(t,T)=e^{-r(t,T)(T-t)}.$$
-}
+
 
 \frame{ \frametitle{Forward Rates}
 Given three dates $t < T_1 <
@@ -81,7 +81,7 @@ $+\frac{p(t,T_1)}{p(t,T_2)}$\\*[2mm] \hline
 \caption{Arbitrage table for forward rates}
 \end{table}
 
-}
+
 
 \frame{ \frametitle{Forward Rates}
 
@@ -91,7 +91,7 @@ receive $e^{R(T_2-T_1)}$ at $T_2$) has thus to be given by
 $$
 e^{R(T_2-T_1)} = \frac{p(t, T_1)}{p(t, T_2)}.
 $$
-}
+
 \frame{ \frametitle{Various Interest Rates}
 
 \begin{itemize}
@@ -115,7 +115,7 @@ r(t)=f(t,t)
 \]
 \end{itemize}
 
-} \frame{ \frametitle{Rates}
+ \frame{ \frametitle{Rates}
 \begin{itemize}
 \item<1-> The forward rate is the interest rate at which parties
 at time $t$ agree to exchange $K$ units of currency at time $T_1$
@@ -128,7 +128,7 @@ forward and spot rate are the corresponding interest rates at
 which one can borrow money for an infinitesimal short period of
 time.
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Simple Relations}
@@ -150,7 +150,7 @@ $$
 p(t,T) = \exp\left\{-\int_t^T f(t,s) ds\right\}\!.
 $$
 
-}
+
 
 
 \subsection{Market Rates}
@@ -166,7 +166,7 @@ L(t,T)=\frac{1-p(t,T)}{\tau(t,T)p(t,T)}
 \end{equation}
 Here $\tau(t,T)$ is the
 daycount for the period $[t,T]$ (typically $T-t$).
-}
+
 
 \frame{\frametitle{Simple Spot Rate}
 \begin{itemize}
@@ -178,7 +178,7 @@ Other 'daycounts' denoted  by $\tau(t,T)$ are possible.
 \item<2-> Notation is motivated by LIBOR rates (London InterBank Offered
 Rates).
 \end{itemize}
-}
+
 
 %\section{Derivative Instruments}
 
@@ -192,7 +192,7 @@ contract gives its holder an interest-rate payment for the period
 between $T$ and $S$. At maturity $S$, a fixed payment based on a
 fixed rate $K$ is exchanged against a floating payment based on
 the spot rate $L(T,S)$ resetting in $T$ with maturity $S$.
-}
+
 \frame{\frametitle{Forward Rate Agreements}
 
 Formally, at time $S$ one receives $\tau(T,S)K\cdot N$ units of
@@ -207,7 +207,7 @@ we write this in terms of bond prices as
 $$
 N\tau(T,S)\left(K-\frac{1-p(T,S)}{\tau(T,S)p(T,S)}\right)=N\left(K\tau(T,S)-\frac{1}{p(T,S)}+1\right).
 $$
-}
+
 \frame{\frametitle{Forward Rate Agreements}
 
 Now we discount to obtain the value of this time $S$ cashflow at
@@ -221,7 +221,7 @@ $$
 There is only one value of $K$ that renders the contract value $0$
 at $t$. The resulting rate defines the simply-compounded forward
 rate.
-}
+
 \frame{\frametitle{Simply-Compounded Forward Interest Rate}
 
 The simply-compounded forward interest rate prevailing at time $t$
@@ -230,7 +230,7 @@ and is defined by
 \begin{equation}
 F(t;T,S):=\frac{1}{\tau(T,S)} \left[\frac{p(t,T)}{p(t,S)}-1\right].
 \end{equation}
-}
+
 \frame{\frametitle{Simply-Compounded Forward Interest Rate}
 
 \begin{itemize}
@@ -240,7 +240,7 @@ equivalent definition.
 the corresponding forward rate $F(t;T,S)$ and take the present
 value of the resulting quantity.
 \end{itemize}
-}
+
 
 %\subsection{Interest-Rate Swaps}
 %{\bf Proof (i)}
@@ -268,7 +268,7 @@ Corresponding to the interest rate
 $L(T_{i-1},T)$ resetting at the previous instant $T_{i-1}$ for the
 maturity given by the current payment instant $T_i$, with
 $T_{\alpha}$ a given date.
-}
+
 %%%%%%%%%% Skizze %%%%%%%%%%%%%
 \frame{\frametitle{Interest-Rate Swap}
 
@@ -290,7 +290,7 @@ For a RFS we have
 $$
 \sum_{i=\alpha+1}^{\beta}D(t,T_i)N\tau_i(K-L(T_{i-1},T_i)).
 $$
-}
+
 \frame{\frametitle{Interest-Rate Swap}
 We
 can view the last contract as a portfolio of FRAs and find
@@ -304,7 +304,7 @@ $$
 The two legs of an IRS can be viewed as
 coupon-bearing bond (fixed leg) and floating rate note (floating
 leg).
-}
+
 \frame{\frametitle{Interest-Rate Swap}
 A floating-rate note is a
 contract ensuring the payment at future times
@@ -312,7 +312,7 @@ $T_{\alpha+1},\ldots,T_{\beta}$ of the LIBOR rates that reset at the previous in
 $T_{\alpha},\ldots,T_{\beta-1}$. Moreover, the note pays a last
 cash flow consisting of the reimbursement of the notational value
 of the note at the final time $T_{\beta}$.
-}
+
 \frame{\frametitle{Interest-Rate Swap}
 We can value the note by changing sign and setting $K=0$ in the
 RFS formula and adding it to $Np(t,T_{\beta})$, the present value
@@ -321,7 +321,7 @@ $$
 \underbrace{-RFS(t,T,\tau,N,0)+Np(t,T_{\beta})}_{\mbox{value of note}}=
 \underbrace{Np(t,T_{\alpha})}_{\mbox{from RFS formula}}.
 $$
-}
+
 \frame{\frametitle{Interest-Rate Swap}
 
 This implies that the note is always equivalent to $N$ units at
@@ -337,7 +337,7 @@ $RFS(t,T,\tau,N,K)=0$. We obtain
 \begin{equation}\label{FSR-1}
 S_{\alpha,\beta}(t)=\frac{p(t,T_{\alpha})-p(t,T_{\beta})}{\sum_{i=\alpha+1}^{\beta}\tau_ip(t,T_i)}.
 \end{equation}
-}
+
 \frame{\frametitle{Interest-Rate Swap}
 
 We write (\ref{FSR-1}) in terms of forward rates. First divide numerator
@@ -352,7 +352,7 @@ S_{\alpha,\beta}(t)=
 \frac{1-\prod_{j=\alpha+1}^{\beta}\frac{1}{1+\tau_jF_j(t)}}
 {\sum_{i=\alpha+1}^{\beta}\tau_i\prod_{j=\alpha+1}^{i}\frac{1}{1+\tau_jF_j(t)}}.
 \end{equation}
-}
+
 \subsection{Interest Rate Derivatives}
 %\subsection{Caps and Floors}
 \frame{\frametitle{Caps}
@@ -370,7 +370,7 @@ $$
 $$
 \item<4->Each individual term is a caplet.
 \end{itemize}
-}
+
 \frame{\frametitle{Floors}
 \begin{itemize}
 \item<1->A floor is
@@ -383,7 +383,7 @@ $$
 $$
 \item<3->Each individual term is a floorlet.
 \end{itemize}
-}
+
 %{\bf Motivation.} Protection against LIBOR increase.
 
 
@@ -396,7 +396,7 @@ $$
 The cap is instead said to be in-the-money (ITM) if $K<K_{ATM}$,
 and out-of-the-money (OTM) if $K>K_{ATM}$, with the converse
 holding for a floor.
-}
+
 
 \frame{\frametitle{Simple Properties Cap}
 \begin{itemize}
@@ -404,7 +404,7 @@ holding for a floor.
 \item<2-> Strike is the maximal interest to be paid
 \item<3-> Advantageous only if market expectation becomes true
 \end{itemize}
-}
+
 
 
 %\subsection{Swaptions}
@@ -426,7 +426,7 @@ N\sum_{i=\alpha+1}^{\beta} p(T_{\alpha},T_i)\tau_i(F(T_{\alpha};T_{i-1},T_i)-K).
 $$
 
 \end{itemize}
-}
+
 \frame{\frametitle{Swaptions Payoff}
 The option will be exercised only if this
 value is positive. So the current value is
@@ -434,7 +434,7 @@ $$
 ND(t,T_{\alpha})\left(\sum_{i=\alpha+1}^{\beta}p(T_{\alpha},T_i)\tau_i
 (F(T_{\alpha};T_{i+1},T_i)-K)\right)^+.
 $$
-}
+
 \frame{\frametitle{Swaptions Payoff}
 
 Since the positive part operator is a
@@ -447,7 +447,7 @@ $$\begin{array}{ll}
 $$
 with strict inequality in general. Thus an additive decomposition is not
 feasible.
-}
+
 %\underline{Excercise:} Compare value of payer swaption and
 %corresponding cap.
 
@@ -460,7 +460,7 @@ $$
 The payer swaption is instead said to be in-the-money (ITM) if
 $K<K_{ATM}$, and out-of-the-money (OTM) if $K>K_{ATM}$. The
 receiver swaption is ITM if $K>K_{ATM}$, and OTM if $K<K_{ATM}$.
-}
+
 \subsection{Valuation of Structured Products}
 %\subsection{General Principles}
 \frame{\frametitle{Product Buyer}
@@ -470,14 +470,14 @@ receiver swaption is ITM if $K>K_{ATM}$, and OTM if $K<K_{ATM}$.
 \item<3-> At terminal date (maturity) the nominal is paid back.
 \item<4-> Investor wants to receive as high as possible coupon payments. Therefore Investor is willing to take a point of view towards market development.
 \end{itemize}
-}
+
 \frame{\frametitle{Product Buyer}
 \begin{itemize}
 \item<1-> Investor has a liability and has to pay floating or fixed interest
 \item<2-> Investor can enter a swap which pays the liability cash-flow
 \item<3-> Investor pays coupons on a structured product in return, which (in case that the market view of the investor becomes true) are cheaper than the original cash flow
 \end{itemize}
-}
+
 %\subsection{Simple Products}
 \frame{\frametitle{Cap}
 \begin{itemize}
@@ -485,15 +485,15 @@ receiver swaption is ITM if $K>K_{ATM}$, and OTM if $K<K_{ATM}$.
 \item<2-> Strike is the maximal interest to be paid
 \item<3-> Advantageous only if market expectation becomes true
 \end{itemize}
-}
+
 
 \frame{\frametitle{Cap}
 \includegraphics<1>[height=6cm,width=\textwidth]{../../../pics/cap-structure-german.pdf}
-}
+
 
 \frame{\frametitle{Cap}
 \includegraphics<1>[height=6cm,width=\textwidth]{../../../pics/cap-payoff-german.pdf}
-}
+
 
 \frame{\frametitle{Instruments for Interest Rate Management}
 \begin{itemize}
@@ -513,7 +513,7 @@ receiver swaption is ITM if $K>K_{ATM}$, and OTM if $K<K_{ATM}$.
 \end{itemize}
 
 \end{itemize}
-}
+
 
 \frame{\frametitle{Interest Rate Swap}
 \begin{itemize}
@@ -527,12 +527,12 @@ receiver swaption is ITM if $K>K_{ATM}$, and OTM if $K<K_{ATM}$.
 \item<2-> Benefit: Insurance against rising rates, no initial payment
 \item<3-> Risk: No participation if interest rates fall
 \end{itemize}
-}
+
 
 
 \frame{\frametitle{Interest Rate Swap}
 \includegraphics<1>[height=6cm,width=\textwidth]{../../../pics/swap-structure-german.pdf}
-}
+
 
 \frame{\frametitle{Constant Maturity Swap}
 \begin{itemize}
@@ -541,7 +541,7 @@ receiver swaption is ITM if $K>K_{ATM}$, and OTM if $K<K_{ATM}$.
 \item<3-> For standard term structure CMS has a positive value, so Euribor + spread is paid
 \end{itemize}
 
-}
+
 
 \frame{\frametitle{Constant Maturity Swap}
 \begin{itemize}
@@ -549,18 +549,18 @@ receiver swaption is ITM if $K>K_{ATM}$, and OTM if $K<K_{ATM}$.
 \item<2-> Disadvantages: Unfavourable movements of term structure generate losses; losses are potentially unlimited
 \end{itemize}
 
-}
+
 
 
 %\subsection{Structured Products}
 
 \frame{\frametitle{Interest Rate Swap with Optionality}
 \includegraphics<1>[height=6cm,width=\textwidth]{../../../pics/swap-structure-chance-german.pdf}
-}
+
 
 \frame{\frametitle{IRS with Optionality: Risk Profile}
 \includegraphics<1>[height=6cm,width=\textwidth]{../../../pics/swap-structure-riskprofile-german.pdf}
-}
+
 
 
 \frame{\frametitle{Interest Rate Swap with Optionality}
@@ -577,7 +577,7 @@ receiver swaption is ITM if $K>K_{ATM}$, and OTM if $K<K_{ATM}$.
 \end{itemize}
 \item<3-> Chance/Risk the swap can be traded (i.e. be sold).
 \end{itemize}
-}
+
 
 
 

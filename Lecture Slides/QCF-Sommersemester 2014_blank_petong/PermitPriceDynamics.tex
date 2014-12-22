@@ -222,7 +222,7 @@ with deterministic drift and volatility.
 whether to costly abate some of the CO2 emissions or not.
 \item<4-> At the end of the period actual accumulated emissions and penalty costs are determined.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Basic Model II}
 \begin{itemize}
@@ -234,7 +234,7 @@ x_t=-\int_0^tu_s ds + \EX_t\left[\int_0^T y_s ds \right]
 \item<3-> $u_t$ is the optimal rate of abatement which is  actively chosen by the central planner.
 \item<4-> So $x_t$ is a controlled stochastic process.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Total Emissions}
 \begin{itemize}
@@ -250,7 +250,7 @@ dx_t=-u_t dt + G(t) dW_t
 \item<4-> $G(t)$ is the volatility of the uncontrolled part of $x_t$ and depends both on the drift $\mu(t, y_t)$
 and the volatility $\sigma(t,y_t)$ of the emission rate.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Optimisation problem of the central planner I}
 \begin{equation}
@@ -263,7 +263,7 @@ C(t,u_t) &=& - \frac{1}{2}c u_t^2 \\*[12pt]
 P(x_T) &=& \min[0,p(e_0-x_T)]
 \end{array}
 $$
-}
+
 
 \frame{\frametitle{Optimisation problem of the central planner II}
 \begin{itemize}
@@ -272,7 +272,7 @@ The quadratic form implies linearly increasing marginal abatement costs.
 \item<2-> $P(x_T)$ is the penalty function, with $p$ the penalty including all costs.
 \item<3-> $r$ is the constant interest rate.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Solution of the control problem}
 Let $V(t,x_t)$ be the expected value of the optimal policy given $x_t$. By a standard
@@ -288,7 +288,7 @@ and optimal control
 $$
 u_t=-\frac{1}{c} e^{rt}V_x
 $$
-}
+
 \begin{frame}
   \frametitle{Permit Prices}
 \begin{center}
@@ -314,7 +314,7 @@ S(t,x_t) = c u_t = -e^{rt} V_x(t,x_t)
 dS(t,x_t)= G(t)S_x(t,x_t) dW_t
 \end{equation}
 \end{itemize}
-}
+
 
 \begin{frame}
   \frametitle{Implied Permit Price Volatility}
@@ -339,7 +339,7 @@ dy_{it}= \mu(t, y_{it})dt + \sigma(t, y_{it})dW_{it}
 \end{equation}
 with deterministic drift and volatility.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Individual Emissions}
 \begin{itemize}
@@ -351,7 +351,7 @@ x_{it}=-\int_0^tu_{is} ds -\int_0^tz_{is}ds + \EX_t\left[\int_0^T y_{is} ds \rig
 \item<3-> $u_{it}$ is the individual rate of abatement
 \item<4-> and $z_{it}$ is the instantaneous amount of permits bought or sold.
 \end{itemize}
-}
+
 \frame{\frametitle{Individual Emissions Dynamics}
 \begin{itemize}
 \item<1-> The dynamics of the total expected emissions are
@@ -361,7 +361,7 @@ dx_{it}=-[u_{it}+z_{it}] dt + G_i(t) dW_{it}
 \item<2-> $G_i(t)$ is the volatility of the uncontrolled part of $x_{it}$ and depends both on the drift $\mu_i(t, y_{it})$
 and the volatility $\sigma_i(t,y_{it})$ of the emission rate.
 \end{itemize}
-}
+
 
 \frame{\frametitle{Optimisation Problem for the individual Company}
 \begin{equation}
@@ -374,7 +374,7 @@ C_i(t,u_{it}) &=& - \frac{1}{2}c_i u_{it}^2 \\*[12pt]
 P_i(x_{iT}) &=& \min[0,p(e_{i0}-x_{iT})]
 \end{array}
 $$
-}
+
 
 \frame{\frametitle{Solution of the control problem}
 Let $V^i(t,x_{it})$ be the expected value of the optimal policy for company $i$. By a standard
@@ -389,7 +389,7 @@ with boundary condition
 $$
 V^i(T, x_{iT})=e^{-rT}P_i(x_{iT}).
 $$
-}
+
 
 \frame{\frametitle{Equilibrium Solution}
 \begin{itemize}
@@ -409,7 +409,7 @@ $$
 S(t) = c_i u_{it}^*, \; i=1, \ldots N.
 $$
 \end{itemize}
-}
+
 \frame{\frametitle{Joint Cost Problem I}
 Again we image a central planner who has to solve
 \begin{equation}
@@ -424,7 +424,7 @@ $$
 
 %Here, $z_{it}$ are irrelevant due to the market clearing condition.
 
-}
+
 \frame{\frametitle{Joint Cost Problem II}
 The joint cost problem now is
 $$
@@ -437,7 +437,7 @@ with boundary condition
 $$
 \sum_{i=1}^N V^i(T, x_{iT})=e^{-rT}\sum_{i=1}^N P_i(x_{iT}).
 $$
-}
+
 
 \frame{\frametitle{Joint Problem Solution}
 \begin{itemize}
@@ -455,7 +455,7 @@ $$
 S(t) = c_i u_{it}^{**}= -e^{rt}V^i_x, \; i=1, \ldots N.
 $$
 \end{itemize}
-}
+
 
 \frame{\frametitle{Equivalence to Equilibrium Solution}
 $$
@@ -469,7 +469,7 @@ $$
 \right\}\\*[12pt]
 =&u_{it}^*&
 \end{array}
-$$}
+$$
 
 
 
@@ -548,7 +548,7 @@ with
 $$
 z_t=\frac{\sigma_t^2}{\int_t^T \sigma^2_u du}
 $$
-}
+
 \frame{\frametitle{Reduced-Form Dynamics -- Proof}
 \begin{itemize}
 \item<1-> $a_t$ formula is straightforward calculation
@@ -562,7 +562,7 @@ $$
 $$
 Starting with the dynamics of $\xi_t$ an application of It{\^o}'s formula gives the result.
 \end{itemize}
-}
+
 
 %\subsection{Historical Calibration}
 \frame{\frametitle{Model Parametrization}
@@ -588,7 +588,7 @@ $$
 \end{array}
 $$
 \end{itemize}
-}
+
 \frame{\frametitle{Objective Measure}
 \begin{itemize}
 \item<1-> We do a historical calibration and change measure to the objective measure.
@@ -603,7 +603,7 @@ $$
 $$
 is a $\prb$ Brownian motion.
 \end{itemize}
-}
+
 \frame{\frametitle{Objective Measure}
 \begin{itemize}
 \item<1->
@@ -615,7 +615,7 @@ so $\xi_{\tau}$ given $\xi_t$ is Gaussian.
 \item<2-> So we can invert permit prices to obtain $\xi$ values and calculate the log-likelihood to obtain
 estimates for $\alpha$ and $\beta$.
 \end{itemize}
-}
+
 
 
 %\subsection{Option Pricing}
@@ -645,7 +645,7 @@ $$
 \right.
 $$
 
-}
+
 
 
 
@@ -657,7 +657,7 @@ $$
 be the futures contracts which are $\Q$ martingales.
 \item<3-> Let $N\in \F_T$ resp. $N' \in \F_{T'}$ be non-compliance in the first resp. second period.
 \end{itemize}
-}
+
 \frame{\frametitle{(Non-) Compliance at $T$}
 \begin{itemize}
 \item<1-> In case of compliance, i.e. event $\Omega-N$, since $A_T$ is the spot price at $T$ and the permit can be banked,  we have
@@ -674,7 +674,7 @@ $$
 A_t-\kappa A'_t = \EX_t^\Q[A_T-\kappa A'_T]= \EX^\Q_t[P \IF_N]
 $$
 \end{itemize}
-}
+
 
 \frame{\frametitle{Reduced-Form Model}
 \begin{itemize}
@@ -689,7 +689,7 @@ A'_t = P \Phi(\xi^2_t)
 $$
 with $\xi^2_t$ a Gaussian process driven by a Brownian motion $W^2_t$.
 \end{itemize}
-}
+
 \frame{\frametitle{Pricing Formula}
 For a European call written on a futures in the first period with strike $K$ and maturity $\tau$ we decompose the payoff
 $$
@@ -702,7 +702,7 @@ $$
 where the parameters of the two-dimensional Gaussian distribution depend on the individual drift and volatility terms and the correlation
 of $\xi^1$ and $\xi^2$.
 
-}
+
 
 \frame{\frametitle{Parameters of the Pricing Formula}
 The means are
@@ -717,5 +717,5 @@ and the covariance matrix is
 \nu^{1,2}_{t,\tau}= \nu^{2,1}_{t,\tau} &=& \beta_1^\frac{1}{2}\beta_2^\frac{1}{2}
 \frac{\int_t^\tau (T-u)^\frac{\beta_1-1}{2} (T'-u)^\frac{\beta_2-1}{2} \rho du}{(T-\tau)^\frac{\beta_1}{2} (T'-\tau)^\frac{\beta_2}{2}} \\\nonumber
 \end{eqnarray}
-}
+
 

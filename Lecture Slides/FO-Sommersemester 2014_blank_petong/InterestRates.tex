@@ -5,24 +5,15 @@
 % frametitle
 {Basic Interest Rates}
 
-
 % begin itemize
-
-
-
 
 	Economic agents have to be rewarded for postponing consumption; in addition, there is a risk premium for the uncertainty of the size of future consumption.
 
-
 	Investors, Firms, banks pay compensation for the willingness to postpone
-
 
 	A common interest rate (equilibrium) emerges which allows to fulfill the aggregate liquidity demand.
 
-
 % end itemize
-
-
 
 % frametitle
 {Yield Curves}
@@ -106,51 +97,36 @@ $$
 % frametitle
 {Various Interest Rates}
 
-
-
 % begin itemize
 
-
-
-
-	<1-> The forward rate at time $t$ for time period
+	 The forward rate at time $t$ for time period
 $[T_1,T_2]$ is defined as
 \[
 R(t,T_1,T_2)=\frac{\log(p(t,T_1))-\log(p(t,T_2))}{T_2-T_1}
 \]
 
-
-	<2->The spot rate for the time period $[T_1,T_2]$ is defined
+	The spot rate for the time period $[T_1,T_2]$ is defined
 as
 \[
 R(T_1,T_2)=R(T_1,T_1,T_2)
 \]
-
 
 	The instantaneous forward rate is
 \[
 f(t,T)=-\frac{\partial \log(p(t,T))}{\partial T}
 \]
 
-
-	<4-> The instantaneous spot rate is
+	 The instantaneous spot rate is
 \[
 r(t)=f(t,t)
 \]
 
-
 % end itemize
-
-
 
 % frametitle
 {Rates}
 
-
 % begin itemize
-
-
-
 
 	The forward rate is the interest rate at which parties
 at time $t$ agree to exchange $K$ units of currency at time $T_1$
@@ -158,19 +134,16 @@ and give back $Ke^{R(t,T_1,T_2)(T_2-T_1)}$ units at time $T_2$.
 This means, one can lock in an interest rate for a future time
 period today.
 
-	<2->The spot rate $R(t,T_1)$ is the interest
+	The spot rate $R(t,T_1)$ is the interest
 rate (continuous compounding) at which one can borrow money today
 and has to pay it back at $T_1$.
 
-	<3->The instantaneous
+	The instantaneous
 forward and spot rate are the corresponding interest rates at
 which one can borrow money for an infinitesimal short period of
 time.
 
-
 % end itemize
-
-
 
 % frametitle
 {Simple Relations}
@@ -211,11 +184,7 @@ daycount for the period $[t,T]$ (typically $T-t$).
 % frametitle
 {Simple Spot Rate}
 
-
 % begin itemize
-
-
-
 
 	The bond price can be expressed as
 $$
@@ -223,14 +192,10 @@ p(t,T)=\frac{1}{1+L(t,T)\tau(t,T)}.
 $$
 Other 'daycounts' denoted  by $\tau(t,T)$ are possible.
 
-
 	Notation is motivated by LIBOR rates (London InterBank Offered
 Rates).
 
-
 % end itemize
-
-
 
 %\section{Derivative Instruments}
 
@@ -290,25 +255,16 @@ F(t;T,S):=\frac{1}{\tau(T,S)} \left[\frac{p(t,T)}{p(t,S)}-1\right].
 % frametitle
 {Simply-Compounded Forward Interest Rate}
 
-
-
 % begin itemize
-
-
-
 
 	$FRA(\ldots)=Np(t,S)\tau(T,S)(K-F(t; T,S))$ is an
 equivalent definition.
-
 
 	To value a FRA (typically with a different $K$) replace the LIBOR rate in (\ref{FRA-1}) by
 the corresponding forward rate $F(t;T,S)$ and take the present
 value of the resulting quantity.
 
-
 % end itemize
-
-
 
 %\subsection{Interest-Rate Swaps}
 %{\bf Proof (i)}
@@ -436,63 +392,42 @@ S_{\alpha,\beta}(t)=
 % frametitle
 {Caps}
 
-
 % begin itemize
 
-
-
-
-	
 A cap is a contract where the seller of the contract promises to
 pay a certain amount of cash to the holder of the contract if the
 interest rate exceeds a certain predetermined level (the cap rate)
 at a set of future dates.
 
-
 	It can be viewed as a payer IRS where
 each exchange payment is executed only if it has positive value.
-
 
 	The cap discounted payoff is
 $$
 \sum_{i=\alpha+1}^{\beta}D(t,T_i)N\tau_i(L(T_{i-1},T_i)-K)^+.
 $$
 
-
 	Each individual term is a caplet.
 
-
 % end itemize
-
-
 
 % frametitle
 {Floors}
 
-
 % begin itemize
-
-
-
 
 	A floor is
 equivalent to a receiver IRS where each exchange is executed only
 if it has positive value.
 
-
-	
 The floor discounted payoff is
 $$
 \sum_{i=\alpha+1}^{\beta}D(t,T_i)N\tau_i(K-L(T_{i-1},T_i))^+.
 $$
 
-
 	Each individual term is a floorlet.
 
-
 % end itemize
-
-
 
 %{\bf Motivation.} Protection against LIBOR increase.
 
@@ -510,35 +445,22 @@ holding for a floor.
 % frametitle
 {Simple Properties Cap}
 
-
 % begin itemize
-
-
-
 
 	Simple protection against rising interest rates, but requires the payment of a premium (of course)
 
-
 	Strike is the maximal interest to be paid
-
 
 	Advantageous only if market expectation becomes true
 
-
 % end itemize
-
-
 
 %\subsection{Swaptions}
 
 % frametitle
 {Swaptions}
 
-
 % begin itemize
-
-
-
 
 	Swap options or more commonly swaptions are options on an IRS. A
 European payer swaption is an option giving the right (and not the
@@ -546,11 +468,8 @@ obligation ) to enter a payer IRS at a given future time, the
 swaption maturity. Usually the swaption maturity coincides with
 the first reset date of the underlying IRS.
 
-
-	
 The underlying-IRS
 length $(T_{\beta}-T_{\alpha})$ is called the tenor of the swap.
-
 
 	The discounted payoff of a payer swaption can be written by
 considering the value of the underlying payer IRS at its first
@@ -559,11 +478,7 @@ $$
 N\sum_{i=\alpha+1}^{\beta} p(T_{\alpha},T_i)\tau_i(F(T_{\alpha};T_{i-1},T_i)-K).
 $$
 
-
-
 % end itemize
-
-
 
 % frametitle
 {Swaptions Payoff}
@@ -608,73 +523,45 @@ receiver swaption is ITM if $K>K_{ATM}$, and OTM if $K<K_{ATM}$.
 % frametitle
 {Product Buyer}
 
-
 % begin itemize
-
-
-
 
 	(Institutional) Investor buys product for certain nominal value $N$
 
-
 	Receives coupons at prespecified time points.
-
 
 	At terminal date (maturity) the nominal is paid back.
 
-
 	Investor wants to receive as high as possible coupon payments. Therefore Investor is willing to take a point of view towards market development.
 
-
 % end itemize
-
-
 
 % frametitle
 {Product Buyer}
 
-
 % begin itemize
-
-
-
 
 	Investor has a liability and has to pay floating or fixed interest
 
-
 	Investor can enter a swap which pays the liability cash-flow
-
 
 	Investor pays coupons on a structured product in return, which (in case that the market view of the investor becomes true) are cheaper than the original cash flow
 
-
 % end itemize
-
-
 
 %\subsection{Simple Products}
 
 % frametitle
 {Cap}
 
-
 % begin itemize
-
-
-
 
 	Simple protection against rising interest rates, but requires the payment of a premium (of course)
 
-
 	Strike is the maximal interest to be paid
-
 
 	Advantageous only if market expectation becomes true
 
-
 % end itemize
-
-
 
 % frametitle
 {Cap}
@@ -687,110 +574,62 @@ receiver swaption is ITM if $K>K_{ATM}$, and OTM if $K<K_{ATM}$.
 % frametitle
 {Instruments for Interest Rate Management}
 
-
 % begin itemize
-
-
-
 
 	Agreements to exchange rates
 
-
 % begin itemize
-
-
-
 
 	Exchange of rate payments
 
-
 	fixed tenor
-
 
 	no costs to enter the contract
 
-
 	Examples: FRA, Swaps
 
-
 % end itemize
-
-
-
 
 	Insurance against rates movements
 
-
 % begin itemize
-
-
-
 
 	Option on payment
 
-
 	fixed maturity
-
 
 	buyer pays premium
 
-
 	Examples: Caps, Floors, Swaptions
 
-
 % end itemize
 
-
-
-
-
 % end itemize
-
-
 
 % frametitle
 {Interest Rate Swap}
 
-
 % begin itemize
-
-
-
 
 	Buyer of a swap
 
-
 % begin itemize
-
-
-
 
 	receives fixed swap rate $S(0,T)$
 
-
 	no initial payment (since this is the fair rate)
-
 
 	expects an increase of rates above the swap rate $S(0,T)$ during life-time of the contract
 
-
 	to be profitable the increase must be higher than suggested by current swap rate
 
-
 % end itemize
-
-
-
 
 	Benefit: Insurance against rising rates, no initial payment
 
-
 	Risk: No participation if interest rates fall
 
-
 % end itemize
-
-
 
 % frametitle
 {Interest Rate Swap}
@@ -799,43 +638,26 @@ receiver swaption is ITM if $K>K_{ATM}$, and OTM if $K<K_{ATM}$.
 % frametitle
 {Constant Maturity Swap}
 
-
 % begin itemize
-
-
-
 
 	For a constant maturity swap (CMS) one of the reference rates is a variable market rate
 
-
 	Example: 3 -Month Euribor vs 5 year swap rate
-
 
 	For standard term structure CMS has a positive value, so Euribor + spread is paid
 
-
 % end itemize
-
-
 
 % frametitle
 {Constant Maturity Swap}
 
-
 % begin itemize
-
-
-
 
 	Advantages: It is possible to take advantage of favourable movements of the term structure; starts with lower costs
 
-
 	Disadvantages: Unfavourable movements of term structure generate losses; losses are potentially unlimited
 
-
 % end itemize
-
-
 
 %\subsection{Structured Products}
 
@@ -850,54 +672,29 @@ receiver swaption is ITM if $K>K_{ATM}$, and OTM if $K<K_{ATM}$.
 % frametitle
 {Interest Rate Swap with Optionality}
 
-
 % begin itemize
-
-
-
 
 	Chance
 
-
 % begin itemize
-
-
-
 
 	Rates are capped at 5,45 \% for the next 8 years
 
-
 	Participation on low rates is still possible
 
-
 % end itemize
-
-
-
 
 	Risk
 
-
 % begin itemize
-
-
-
 
 	Participation on lower than 3,75 \% rates is not possible
 
-
 	In case rates are lower than 3,75 \% Rates a high rate (5,45 \%) has to be paid
 
-
 % end itemize
-
-
-
 
 	Chance/Risk the swap can be traded (i.e. be sold).
 
-
 % end itemize
-
-
 

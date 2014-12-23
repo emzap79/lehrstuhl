@@ -89,18 +89,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{0.3cm}
 
-\item[]{\bf Q1}
+
+
+	{\bf Q1}
 
 
 
 % begin itemize
 
 
-\item[(a)]
+
+
+
+	
 Describe the difference between a Bayesian Model Averaging and a Utility-based Worst-Case
 approach.
-\item[(b)] Assume that you need to price a derivative instrument in an incomplete market situation. What is Cont's suggestion to measure model risk?
-\item[(c)]
+
+
+	Assume that you need to price a derivative instrument in an incomplete market situation. What is Cont's suggestion to measure model risk?
+
+
+	
 Consider in a basic GBM world the pricing of a call option with maturity $T$.
 Assume alternative diffusion models
 \begin{equation}
@@ -111,35 +120,53 @@ We observe prices of a traded European call (strike $K$, maturity $T$) with pric
 $\Sigma$ the implied Black-Scholes volatility.
 
 
+
 % begin itemize
 
 
-\item[(i)]
+
+
+
+	
 Formulate the calibration condition for the given models.
-\item[(ii)]
+
+
+	
 Let $0< T_1 <T$ and consider two models. The first on with constant volatility $\sigma_1$ and the second one with a volatility $\sigma_2 < \sigma _1$ for $0 \leq t <T_1$ and a constant volatility for $T_1\leq t \leq T$. Specify  the  volatilities of the models in terms of the implied volatility $\Sigma $.
-\item[(iii)]
+
+
+	
 Consider the $\Delta$ at $t=0$ and $t=T_1$ for both models for the European call with maturity $T$. Which is more sensitive to changes of the underlying at $t=0$ and $t=T_1$?
-\item[(iv)]
+
+
+	
 Consider  a  European call with strike $K$ and maturity $T_1$. What is Cont's measure of model risk for this option regarding the two models.
 
 
-% end itemize
-
-
-
 
 % end itemize
 
 
 
-\item[]{\bf Solution}
+
+
+% end itemize
+
+
+
+
+
+	{\bf Solution}
+
 
 
 % begin itemize
 
 
-\item[(a)]
+
+
+
+	
 Describe the difference between a Bayesian Model Averaging and a Utility-based Worst-Case
 approach.
 
@@ -147,7 +174,9 @@ approach.
 the worst case approach considers
 $\max _X \min_{\prob \in {\cal P}} \EX_{\prob}(U(X))$.
 
-\item[(b)] Assume that you need to price a derivative instrument in an incomplete market situation. What is Cont's suggestion to measure model risk?
+
+
+	Assume that you need to price a derivative instrument in an incomplete market situation. What is Cont's suggestion to measure model risk?
 
 {\it Answer:}
 For $X$ a derivative we associate with
@@ -163,7 +192,9 @@ $$
 \Gamma^l(X).
 $$
 
-\item[(c)]
+
+
+	
 Consider in a basic GBM world the pricing of a call option with maturity $T$.
 Assume alternative diffusion models
 \begin{equation}
@@ -174,27 +205,34 @@ We observe prices of a traded European call (strike $K$, maturity $T$) with pric
 $\Sigma$ the implied Black-Scholes volatility.
 
 
+
 % begin itemize
 
 
-\item[(i)]
+
+
+
+	
 Formulate the calibration condition for the given models.
 
 {\it Answer:}
 \begin{equation}
 \frac{1}{T} \int_0^T  \sigma_i(s)^2 ds = \Sigma^2,
 \end{equation}
-\item[(ii)]
+
+
+	
 Let $0< T_1 <T$ and consider two models. The first one with constant volatility $\sigma_1$ and the second one with a volatility $\sigma_2 < \sigma _1$ for $0 \leq t <T_1$ and a constant volatility for $T_1\leq t \leq T$. Specify  the  volatilities of the models in terms of the implied volatility $\Sigma $.
 
 {\it Answer:}
 $$
 \sigma_1 = \Sigma,
 $$
-$$
 \sigma_2(t) = \sigma_2 \IF_{[0,T_1]}+ \sqrt{\frac{T\Sigma^2 -T_1\sigma_2^2}{T-T_1}}\IF_{]T_1, T]}.
 $$
-\item[(iii)]
+
+
+	
 Consider the $\Delta$ at $t=0$ and $t=T_1$ for both models for the European call with maturity $T$. Which is more sensitive to changes of the underlying at $t=0$ and $t=T_1$?
 
 {\it Answer:}
@@ -210,7 +248,9 @@ where, as usual, $\Phi$ denotes the c.d.f. of the standard normal distribution a
 At $t=0$ both models have the same $\Delta$ as they are both valued with the implied volatility $\Sigma$.
 At $t=T_1$ the  $\Delta$ of model 2 is higher as the remaining volatility is higher. So it is more sensitive.
 
-\item[(iv)]
+
+
+	
 Consider  a  European call with strike $K$ and maturity $T_1$. What is Cont's measure of model risk for this option regarding the two models.
 
 {\it Answer:}
@@ -221,6 +261,7 @@ $$
 
 
 % end itemize
+
 
 
 

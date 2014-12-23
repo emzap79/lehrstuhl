@@ -7,7 +7,6 @@
 \begin{center}
 \color{beamer@blendedblue}{\large{The Black-Scholes Model}}
 \end{center}
-\end{frame}
 
 \subsection{The Pricing Formula}
 
@@ -72,74 +71,45 @@ $$
 % frametitle
 {Greeks (1)}
 
-
 % begin itemize
-
-
-
 
 	We will now analyse the impact of the
 underlying parameters in the standard Black-Scholes model on the
 prices of call and put options.
 
-
-	
-The Black-Scholes option values
+	The Black-Scholes option values
 depend on the
-
 
 % begin enumerate
 
-
-
-
 	(current) stock price,
-
 
 	the volatility,
 
-
 	the time to maturity,
-
 
 	the interest rate
 
-
 	the strike price.
-
 
 % end enumerate
 
-
-
-
 % end itemize
-
-
 
 % frametitle
 {Greeks (2)}
 
-
 % begin itemize
-
-
-
 
 	The
 sensitivities of the option price with respect to the first four
 parameters are called the {\it Greeks} and are widely used for
 hedging purposes.
 
-
-	
-We can determine the impact of these parameters
+	We can determine the impact of these parameters
 by taking partial derivatives.
 
-
 % end itemize
-
-
 
 % frametitle
 {Greeks}
@@ -163,28 +133,18 @@ $$
 % frametitle
 {Greeks} From the definitions it is clear that
 
-
 % begin itemize
 
-
-
-
-	
-$\Delta$ -- delta -- measures the change in the value of the
+	$\Delta$ -- delta -- measures the change in the value of the
 option compared with the change in the value of the underlying
 asset,
-
 
 	${\cal V}$ -- vega -- measures the change of the option
 compared with the change in the volatility of the underlying,
 
-
 	similar statements hold for $\Theta$ -- theta -- and $\rho$ -- rho
 
-
 % end itemize
-
-
 
 % frametitle
 {Greeks}
@@ -205,44 +165,27 @@ compared with the change in the volatility of the underlying,
 % frametitle
 {Greeks}
 
-
 % begin itemize
 
-
-
-
-	
-The Black-Scholes partial differential equation can be used to
+	The Black-Scholes partial differential equation can be used to
 obtain the relation between the Greeks,
 
-
-	
 $$
 r C = \frac{1}{2} s^2 \s^2 \Gamma +rs \Delta -\Theta.
 $$
 
-
 % end itemize
-
-
 
 % frametitle
 {Vega}
 
-
 % begin itemize
 
-
-
-
-	
-Before we can implement
+	Before we can implement
 the Black-Scholes formula to price options, we have to estimate
 $\s$.
 
-
-	
-Because the formula is explicit, we can, determine the ${\cal V}$
+	Because the formula is explicit, we can, determine the ${\cal V}$
 -- the partial derivative
 $$
 {\cal V} = \partial C/\partial \s,
@@ -252,29 +195,19 @@ $$
 {\cal V} = S \sqrt{T} \Phi(d_1).
 $$
 
-
 	Note here is that vega is always positive.
 
-
 % end itemize
-
-
 
 \subsection{Volatility}
 
 % frametitle
 {Implied Volatility}
 
-
 % begin itemize
 
-
-
-
-	
-Since vega is positive, $C$ is a continuous -- indeed,
+	Since vega is positive, $C$ is a continuous -- indeed,
 differentiable -- strictly increasing function of $\s$.
-
 
 	Turning
 this round, $\s$ is a continuous (differentiable) strictly
@@ -284,45 +217,29 @@ $$
 \frac{1}{\cal V} = \frac{\partial \s}{\partial C}.
 $$
 
-
-	
-Thus the value $\s = \s(C)$ corresponding to the actual value $C =
+	Thus the value $\s = \s(C)$ corresponding to the actual value $C =
 C(\s)$ at which call options are observed to be traded in the
 market can be read off.  The value of $\s$ obtained in this way is
 called the {\it implied volatility}.
 
-
 % end itemize
-
-
 
 % frametitle
 {The Black-Scholes Implied Volatility}
 
-
 % begin itemize
-
-
-
 
 	The Black-Scholes model assumes a constant volatility over all maturities and strikes.
 
-
 	One can calculate the implicit volatility given the market price of options.
-
 
 	The implicit volatility is changing over time and maturity, so contradicting the modelling assumptions.
 
-
 	However, it can be used to predict future volatility.
-
 
 	Furthermore, volatility can be made an own "asset class".
 
-
 % end itemize
-
-
 
 % frametitle
 {Volatility Smile}
@@ -339,44 +256,34 @@ $$\includegraphics[scale=0.25]{../../../pics/VolatilitySurface.jpg}$$
 % frametitle
 {VDAX-NEW: Definition}
 
-
 % begin itemize
 
-
-
-
-	The volatility index VDAX-NEW was developed by Deutsche B{\"o}rse and Goldman Sachs. It tracks the degree of fluctuation expected by the derivatives market, i.e. the implied volatility, for the DAX index. The index expresses in percentage terms what degree of volatility is to be expected for the following 30 days.
-
+	The volatility index VDAX-NEW was developed by Deutsche B{\"o}rse and
+Goldman Sachs. It tracks the degree of fluctuation expected by the
+derivatives market, i.e. the implied volatility, for the DAX index. The
+index expresses in percentage terms what degree of volatility is to be
+expected for the following 30 days.
 
 	VDAX-NEW started on 20 April 2005 and will replace VDAX in the medium-term.
 
-
 % end itemize
-
-
 
 % frametitle
 {VDAX-NEW: Examples}
 Examples:\\
 \vspace{0.3cm}
 
-
 % begin itemize
 
+	A DAX of 4,000 and a VDAX-NEW of 10 indicate that the DAX stock index is
+expected to fluctuate between 3,885 and 4,115 over the next thirty days:
+$$4000\pm4000\times0.1\times\sqrt{\frac{30}{365}}\approx4000\pm115.$$
 
-
-
-	A DAX of 4,000 and a VDAX-NEW of 10 indicate that the DAX stock index is expected to fluctuate between 3,885 and 4,115 over the next thirty days:
-  $$4000\pm4000\times0.1\times\sqrt{\frac{30}{365}}\approx4000\pm115.$$
-
-
-	A DAX of 4,000 and a VDAX-NEW of 20 indicate that the DAX stock index is expected to fluctuate between 3,770 and 4,230 over the next thirty days:
-    $$4000\pm4000\times0.2\times\sqrt{\frac{30}{365}}\approx4000\pm230.$$
-
+	A DAX of 4,000 and a VDAX-NEW of 20 indicate that the DAX stock index is
+expected to fluctuate between 3,770 and 4,230 over the next thirty days:
+$$4000\pm4000\times0.2\times\sqrt{\frac{30}{365}}\approx4000\pm230.$$
 
 % end itemize
-
-
 
 % frametitle
 {VDAX-NEW}
@@ -386,89 +293,54 @@ $$\includegraphics[scale=0.6]{../../../pics/VDaxNew.png}$$
 % frametitle
 {VDAX-NEW: Calculation}
 
-
 % begin itemize
 
+	 Index is based on 8 sub-indices (option series) which include DAX Options from 2-24 months expiration.
 
+	 The main rolling index is calculated 30 days to expiration on linear interpolation of the two sub-indices closest to the 30 days expiration.
 
+	 In addition to at-the-money options (VDAX), out-of-the-money options are also considered (VDAX-NEW).
 
-	<1-> Index is based on 8 sub-indices (option series) which include DAX Options from 2-24 months expiration.
-
-
-	<2-> The main rolling index is calculated 30 days to expiration on linear interpolation of the two sub-indices closest to the 30 days expiration.
-
-
-	<3-> In addition to at-the-money options (VDAX), out-of-the-money options are also considered (VDAX-NEW).
-
-
-	<4-> Calculation frequency: Once a minute on every trading day at Eurex between 8.50am and 5.30pm CET.
-
+	 Calculation frequency: Once a minute on every trading day at Eurex between 8.50am and 5.30pm CET.
 
 % end itemize
-
-
 
 % frametitle
 {VDAX-NEW: Features}
 
-
 % begin itemize
 
+	 Expresses market expectation of the amplitude of fluctuation in DAX.
 
+	 Index is able to react only to changes in volatility.
 
+	 Allows better replication for derivatives and structured products.
 
-	<1-> Expresses market expectation of the amplitude of fluctuation in DAX.
+	 Due to ATM and OTM options VDAX-NEW captures more of the volatility skew than VDAX.
 
-
-	<2-> Index is able to react only to changes in volatility.
-
-
-	<3-> Allows better replication for derivatives and structured products.
-
-
-	<4-> Due to ATM and OTM options VDAX-NEW captures more of the volatility skew than VDAX.
-
-
-	<5-> Index establishes volatiliy as a tradable and separate asset class for investors.
-
+	 Index establishes volatiliy as a tradable and separate asset class for investors.
 
 % end itemize
-
-
 
 % frametitle
 {VDAX-NEW: Use}
 
-
 % begin itemize
 
+	 Investment/Trading: Speculation on future levels of volatility.
 
+	 Hedging: Cover short volatility positions.
 
+	 Diversification of German equity portfolios (correlation to DAX is -0.5689, correlation to MDAX is -0.4668).
 
-	<1-> Investment/Trading: Speculation on future levels of volatility.
-
-
-	<2-> Hedging: Cover short volatility positions.
-
-
-	<3-> Diversification of German equity portfolios (correlation to DAX is -0.5689, correlation to MDAX is -0.4668).
-
-
-	<4-> Benchmark for German equity volatility.
-
+	 Benchmark for German equity volatility.
 
 % end itemize
-
-
 
 % frametitle
 {VDAX-NEW: Diversification}
 
-
 % begin itemize
-
-
-
 
 	Portfolio of 80\% DAX and 20\% VDAX-NEW between
 1992 and 2004 would have generated a 3.8 percentage
@@ -476,10 +348,7 @@ points on average higher yield than investments in
 DAX only. And this with lower risk!
 $$\includegraphics[scale=0.45]{../../../pics/VDax_div.png}$$
 
-
 % end itemize
-
-
 
 \subsection{Derivatives Risk Management}
 
@@ -489,131 +358,84 @@ $$\includegraphics[scale=0.45]{../../../pics/VDax_div.png}$$
 {Motivation}
 A bank (option seller) tries to control the risk of its short position and has to ask the folkowing questions:
 
-
 % begin itemize
-
-
-
 
 	How does the value of the position change if the value of the underlying changes?
 
-
 	How can you protect (i.e., hedge) yourself against those risk?
 
-
 % end itemize
-
-
-\end{frame}
 
 % frametitle
 {Some Terms}
 A \emph{hedge} is a trade that reduces the risk of a position.
 
-
 % begin itemize
-
-
-
 
 	A \emph{static} hedge is set up once and not touched until maturity of
   the derivative/position that is hedged.
 
-
 	A \emph{dynamic} hedge is set up and adjusted continuously (in practice:
   regularly).
-
 
 	A \emph{semi-static} hedge is set up and adjusted at infrequent
   intervals.
 
-
 % end itemize
-
 
 A position for which no hedge is in place is called \emph{naked}, a position
 that is fully hedged is called \emph{covered} (e.g., sell a forward and buy the
 underlying stock).
-\end{frame}
 
 % frametitle
 {A simple Hedging Strategy: Stop-Loss}
 We consider a short position in one European call option with strike $K$.
 
-
 % begin itemize
-
-
-
 
 	A stop-loss hedge involves buying one share of the underlying stock when
   the price moves above $K$ and selling it again when the price falls below $K$.
-
 
 	The strategy usually does not work well in practice because the trader
   cannot know whether the stock price moves above $K$ or falls below $K$ until
   it is too late. Therefore, he buys the stock at $K+\epsilon$ and sells at
   $K-\epsilon$, resulting in a loss.
 
-
 	Also, discounting has to be taken into account.
 
-
 % end itemize
-
-
-\end{frame}
 
 % frametitle
 {Delta Hedging I}
 
-
 % begin itemize
-
-
-
 
 	Assume that you have an options position with delta $\Delta$. This means
   that if the price of the underlying moves by a (very) small amount $\epsilon$, the
   price of the option position moves approximately by $\Delta \epsilon$.
-
 
 	A \emph{delta hedge} consists of selling $\Delta$ units of the
   underlying (buying if $\Delta <0$) and gives a portfolio that does not
   change its value if the price of the underlying changes by a marginal amount.
   The portfolio has a delta of zero and is called \emph{delta neutral}.
 
-
 % end itemize
-
-
-\end{frame}
 
 % frametitle
 {Delta Hedging II}
 
-
 % begin itemize
-
-
-
 
 	BUT: Delta is not constant, so the portfolio has to be rebalanced.
 
-
 	In the Black-Scholes model, a delta hedge with continuous rebalancing is
   a perfect hedge.
-
 
 	In practice, continuous rebalancing is not possible so that the
   portfolio is not protected against larger market movements. Transaction
   costs and bid-ask spread also result in losses.
 
-
 % end itemize
-
-
-\end{frame}
 
 % frametitle
 {Example: Delta Hedge}
@@ -621,42 +443,26 @@ You are long USD $1,000$ in the $104$ call. Interest rate is $5\%$,
 stock price today is $99$, time to maturity $1$ month, and implied volatility is
 $15.7\%$.
 
-
 % begin itemize
 
-
-
-
 	How can you make your portfolio delta neutral by investing in the stock?
-
 
 	You set up the delta neutral portfolio and the stock price jumps to
   USD$100$ immediately. What is your P/L for the portfolio?
 
-
 % end itemize
-
-
-
-\end{frame}
 
 % frametitle
 {Example: Delta Hedge}
 
-
 % begin itemize
-
-
-
 
 	Compute the price of the call with the BS formula:
   \begin{align*}
     Call_{BS} = 0.3858 \text{USD}.
   \end{align*}
 
-
 	The position consists of $N=1,000/Call_{BS}=2592$ call options.
-
 
 	The delta of each option is
   \begin{align*}
@@ -667,48 +473,29 @@ $15.7\%$.
      	&= 0.1654.
   \end{align*}
 
-
 % end itemize
-
-
-\end{frame}
 
 % frametitle
 {Example: Delta Hedge}
 
-
 % begin itemize
-
-
-
 
 	The delta of the position is long $\Delta_P=N\cdot \Delta=428.70$.
 
-
 	The stock has $\Delta=1$.
-
 
 	To make the position delta neutral, you have to enter a short position
   of $428.70$ shares.
 
-
 % end itemize
-
-
-\end{frame}
 
 % frametitle
 {Example: Delta Hedge}
 
-
 % begin itemize
-
-
-
 
 	The loss from the short position in the stock is $428.70 \cdot
   1=428.70$.
-
 
 	To compute the gain from the long options position, we have to compute
   the option price for $S=100$. Using the BS formula, we obtain
@@ -716,168 +503,108 @@ $15.7\%$.
     Call_{BS}(S=100) = 0.5808.
   \end{align*}
 
-
 	The gain from the options position is $2592\cdot(0.5808-0.3858)=505.37$.
-
 
 	Our profit is $505.37-428.70=76.67$.
 
-
 % end itemize
-
-
-\end{frame}
 
 % frametitle
 {Gamma Neutral Portfolios}
 As the delta of a portfolio changes with the price of the underlying, a delta
 hedge has to be rebalanced frequently.
 
-
 % begin itemize
-
-
-
 
 	A delta hedge for a portfolio with a high (absolute) gamma has to be
   monitored more carefully than a delta hedge of a portfolio with gamma close to
   zero.
 
-
 	To decrease the hedging error, a trader might want to make a delta
   neutral portfolio gamma neutral.
-
 
 	The gamma cannot be changed by investing in the underlying because its
   gamma is zero.
 
-
 	Strategy: Make the portfolio gamma neutral by investing in an option,
   then make it delta neutral by investing in the underlying.
 
-
 % end itemize
-
-
-\end{frame}
 
 % frametitle
 {Example: Gamma Neutral Portfolio}
 You are in the same position as in the previous example. Additionally, you can
 trade in the $97$ call.
 
-
 % begin itemize
-
-
-
 
 	Put together a portfolio that is delta and gamma neutral.
 
-
 	What is your P/L if the stock price jumps to $100$?
 
-
 % end itemize
-
-
-\end{frame}
 
 % frametitle
 {Example: Gamma Neutral Portfolio}
 
-
 % begin itemize
-
-
-
 
 	The gamma of the $104$ call is
   \begin{align*}
   \Gamma_{104C} = \frac{\varphi(d_1)}{S\sigma \sqrt{T-t}} = 0.0554.
   \end{align*}
 
-
 	The gamma of the $97$ call is
   \begin{align*}
   \Gamma_{97C} = \frac{\varphi(d_1)}{S\sigma \sqrt{T-t}} = 0.0758.
   \end{align*}
 
-
 	To make the portfolio gamma neutral, we have to build up a position of
   $n$ $97$ calls so that $2592\cdot 0.0554 +n\cdot 0.0758 = 0$.
-
 
 	We find that $n=-1894.74$ makes the portfolio gamma neutral, i.e., we
   sell $1894.74$ units of the $97$ call.
 
-
 % end itemize
-
-
-\end{frame}
 
 % frametitle
 {Example: Gamma Neutral Portfolio}
 
-
 % begin itemize
-
-
-
 
 	We compute the delta of the portfolio consisting of the two positions in
   the calls.
 
-
 	The $97$ call has a delta of $\Delta_{97C}=0.7139$.
-
 
 	The delta of the position is
   \begin{align*}
     \Delta_{P'} = 2592 \cdot 0.1654 - 1894.74 \cdot 0.7139 = -924.02
   \end{align*}
 
-
 	We have to buy $924.02$ units of the underlying to make the portfolio
   delta neutral. By buying the underlying, we do not change the gamma of the
   portfolio, it remains zero.
 
-
 % end itemize
-
-
-\end{frame}
 
 % frametitle
 {Example: Gamma Neutral Portfolio}
 
-
 % begin itemize
-
-
-
 
 	The price of the $97$ call for $S=99$ is $Call_{BS,97}(S=99)=3.2235$.
 
-
 	The price of the $97$ call for $S=100$ is $Call_{BS,97}(S=100)=3.9735$.
-
 
 	The P/L from the position in the $97$ call is
   $-1894.97*(3.9735-3.2235)=-1421.11$.
 
-
 	The P/L from the position in the stock is $924.02$.
-
 
 	The portfolio P/L is $924.02-1421.11+505.37=-8.28.$
 
-
 % end itemize
-
-
-\end{frame}
 
 \subsection{Goldman-Sachs Example}
 
@@ -930,4 +657,3 @@ $$\includegraphics[scale=1.2]{../../../pics/gs-akademie-HedgedGamma.pdf}$$
 {Hedged Vega Position}
 
 $$\includegraphics[scale=1.2]{../../../pics/gs-akademie-HedgedVega.pdf}$$
-

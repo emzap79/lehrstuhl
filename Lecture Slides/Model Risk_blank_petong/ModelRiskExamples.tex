@@ -9,13 +9,12 @@
 {Problem Setting}
 
 
+
 % begin itemize
 
 
 
-
 	Consider in a basic GBM world the pricing of a call option with maturity $T$.
-
 
 	Assume alternative diffusion models
 \begin{equation}
@@ -23,13 +22,12 @@
 \end{equation}
 where $ \sigma_i: [0,t] \rightarrow [0, \infty[ $ is a bounded deterministic volatility function.
 
-
-	
 Assume traded European calls with prices $C^*$, then we calibrate the models such that
 \begin{equation}\label{volcalibration}
 \frac{1}{T} \int_0^T  \sigma_i(s)^2 ds = \Sigma^2,
 \end{equation}
 where $\Sigma$ is the implied Black-Scholes volatility.
+
 
 
 % end itemize
@@ -40,32 +38,27 @@ where $\Sigma$ is the implied Black-Scholes volatility.
 {Calibration}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	Clearly (\ref{volcalibration}) has many solutions, e.g. piecewise constant or piecewise linear functions.
 
-
-	
 $$
 \sigma_1(t) = \Sigma,
 $$
 
-
-	
 $$
 \sigma_i(t) = a_i \IF_{[0,T_1]}+ \sqrt{\frac{T\Sigma^2 -T_1a_i^2}{T-T_1}}\IF_{]T_1, T]}, \A i=2, \ldots n,
 $$
 with $\Sigma < a_i < \Sigma \sqrt{T/T_1}$ for  $ i =2, \ldots n$.
 
-
-	
 Set $a_1 = \Sigma$ and
 $$
 \bar{a}=\max\{a_i, i=1, \ldots n\}, \A \underline{a}=\min\{a_i, i=1, \ldots n\}.
 $$
+
 
 
 % end itemize
@@ -76,20 +69,16 @@ $$
 {Model Risk}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	Consider a call $X$ with maturity $T_1 <T$. For $i=1, \ldots, n$ the models
 $(\Omega, \F, \fil^S, \Q_i)$ are complete, so the call can be perfectly hedged. There is no market risk!
 
-
-	
 However, the corresponding $\Delta-$ hedging strategy depends on the volatility -- it is not model-free. It is even a random variable for each $\Q_j, j \not = i$.
 
-
-	
 The Cont model bounds are
 $$
 \Gamma^u(X)=C^{BS}(K, T_1; \bar{a})  \A \Gamma^l(X)=C^{BS}(K, T_1; \underline{a}).$$
@@ -111,24 +100,22 @@ Consider a jump-diffusion model
 where
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	$\mu, \sigma>0$ are a constant;
 
-
 	$W(t)$ is a standard Brownian motion;
 
-
 	$N_t$ is a Poisson process with intensity $\lambda$;
-
 
 	$(\epsilon_i)$ is a family of independent random variables with distribution $F$
 (shown in (\ref{CFig43})), such that
 $V_i= 1+\epsilon_i$ are log-normally distributed and
 with $k = \int x F(dx)$.
+
 
 
 % end itemize
@@ -172,20 +159,18 @@ $$
 {Local Volatility Model}
 
 
+
 % begin itemize
 
 
 
-
-	
 \begin{equation}\label{Local-Volatility Model}
 \Q_2\;:\; dS(t) = S(t)(r dt + \sigma(t, S(t)) dW(t))
 \end{equation}
 where $ \sigma(t, S)$ is calibrated to the implied volatilities in figure (\ref{CFig44})
 
-
-
 	The resulting volatility function is in figure (\ref{CFig43})
+
 
 
 % end itemize
@@ -221,14 +206,12 @@ where $ \sigma(t, S)$ is calibrated to the implied volatilities in figure (\ref{
 {Pricing a Barrier Option}
 
 
+
 % begin itemize
 
 
 
-
-	
 Consider a knock-out call with strike at the money, maturity $T=0.2 $ and knock-out barrier $B=110$.
-
 
 	Due to the high-short end volatiles in the local-vol model, it will produce higher barrier prices.
 
@@ -240,9 +223,8 @@ Barrier & 2.73 & 1.63 \\\hline
 \end{tabular}
 \end{table}
 
-
-	
 The value of Cont's measure for model risk is then $1.1$.
+
 
 
 % end itemize
@@ -263,7 +245,6 @@ where, as usual, $\Phi$ denotes the c.d.f. of the standard normal distribution a
   d_1 = \frac{\log \left( \frac{S}{K} \right) + \left( r + \frac{\sigma^2}{2}
   \right)(T-t)}{\sigma \sqrt{T-t}}.
 \end{align*}
-\end{frame}
 
 % frametitle
 {Delta of a Call Option in the Black-Scholes Model}
@@ -276,7 +257,6 @@ where, as usual, $\Phi$ denotes the c.d.f. of the standard normal distribution a
   \label{fig:deltaBS}
 \end{center}
 \end{figure}
-\end{frame}
 
 % frametitle
 {Example: Delta Hedge}
@@ -285,30 +265,28 @@ stock price today is $99$, time to maturity $1$ month, and implied volatility is
 $15.7\%$.
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	How can you make your portfolio delta neutral by investing in the stock?
 
-
 	You set up the delta neutral portfolio and the stock price jumps to
   USD$100$ immediately. What is your P/L for the portfolio?
+
 
 
 % end itemize
 
 
 
-\end{frame}
-
 % frametitle
 {Example: Delta Hedge}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
@@ -317,9 +295,7 @@ $15.7\%$.
     Call_{BS} = 0.3858 \text{USD}.
   \end{align*}
 
-
 	The position consists of $N=1,000/Call_{BS}=2592$ call options.
-
 
 	The delta of each option is
   \begin{align*}
@@ -331,47 +307,44 @@ $15.7\%$.
   \end{align*}
 
 
+
 % end itemize
 
 
-\end{frame}
 
 % frametitle
 {Example: Delta Hedge}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	The delta of the position is long $\Delta_P=N\cdot \Delta=428.70$.
 
-
 	The stock has $\Delta=1$.
-
 
 	To make the position delta neutral, you have to enter a short position
   of $428.70$ shares.
 
 
+
 % end itemize
 
 
-\end{frame}
 
 % frametitle
 {Example: Delta Hedge}
+
 
 
 % begin itemize
 
 
 
-
 	The loss from the short position in the stock is $428.70 \cdot
   1=428.70$.
-
 
 	To compute the gain from the long options position, we have to compute
   the option price for $S=100$. Using the BS formula, we obtain
@@ -379,43 +352,36 @@ $15.7\%$.
     Call_{BS}(S=100) = 0.5808.
   \end{align*}
 
-
 	The gain from the options position is $2592\cdot(0.5808-0.3858)=505.37$.
 
-
 	Our profit is $505.37-428.70=76.67$.
+
 
 
 % end itemize
 
 
-\end{frame}
 
 % frametitle
 {$\Delta-$ Hedging Strategies}
+
 
 
 % begin itemize
 
 
 
-
 	Consider a European call which is hedges according to a simple Black-Scholes Delta hedge.
 
-
-	
 Use a jump-diffusion model to generate the underlying
 $$
  S(t)=S(0) \exp\left\{\mu t + \sigma  W(t) + \sum_{i=1}^{N_t} \epsilon_i\right\}
 $$
 
-
-	
 Calculate $\Delta-$Hedges according to a Black-Scholes model with (updated) implied volatilities.
 
-
-	
 Figure (\ref{CFig46}) shows the distribution of the P\&L of such hedges as a percentage of the option price at inception.
+
 
 
 % end itemize
@@ -482,24 +448,20 @@ swap price as a linear combination of zero-coupon bond prices.
 
 
 
-
 	We require the IRS to be fair at time $t$ to obtain the
 forward swap rate.
 
-
-	
 The forward swap rate $S_{\alpha,\beta}(t)$ at time $t$ for the
 sets of time $\cal T$ and year fractions $\tau$ is the rate in the
 fixed leg of the above IRS that makes the IRS a fair contract at
 the present time, i.e. it is the $K$ for which
 it has the value $0$.
 
-
-	
  We obtain
 \begin{equation}\label{FSR-1}
 S_{\alpha,\beta}(t)=\frac{p(t,T_{\alpha})-p(t,T_{\beta})}{\sum_{i=\alpha+1}^{\beta}\tau_ip(t,T_i)}.
 \end{equation}
+
 
 
 % end itemize
@@ -510,8 +472,8 @@ S_{\alpha,\beta}(t)=\frac{p(t,T_{\alpha})-p(t,T_{\beta})}{\sum_{i=\alpha+1}^{\be
 {Swaptions}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
@@ -521,16 +483,14 @@ obligation ) to enter a payer IRS at a given future time, the
 swaption maturity. Usually the swaption maturity coincides with
 the first reset date of the underlying IRS.
 
-
-	
 A Bermudan swaption allows to enter into a swap at any time $T_{ex}$ in $T_\alpha, \ldots,
 T_\beta$.
-
 
 	The value of  a swaption can be written as
 $$
 S_{T_{ex}}^{ex,b}(K)= \sum_{i=ex+1}^{\beta} p(T_{ex},T_i)\tau_i(S_{\alpha,\beta}(T_{ex})-K).
 $$
+
 
 
 % end itemize
@@ -541,8 +501,8 @@ $$
 {Vasicek model:}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
@@ -551,12 +511,12 @@ $$
 dr(t) = (\alpha -\beta r(t))dt +\gamma dW(t)
 $$
 
-
 	Bond prices are
 $$
 p(t,T) = \EX_{\Q} \left[\left. e^{- \int_t^T r(u) du} 1
 \right| \F_t \right].
 $$
+
 
 
 % end itemize
@@ -567,12 +527,11 @@ $$
 {Swap Market Models (SMM)}
 
 
+
 % begin itemize
 
 
 
-
-	
 We assume that $S_{\alpha,\beta}(\cdot)$ follows a
 lognormal martingale:
 \begin{eqnarray*}
@@ -583,15 +542,14 @@ where $\sigma$ is a deterministic function and
 $W_{\alpha,\beta}(\cdot)$ is a standard $\mathbb
 Q^{\alpha,\beta}$-Brownian motion.
 
-
 	The fact that the forward swap
 rate $S_{\alpha,\beta}(t)$ is lognormally distributed under
 $\mathbb Q^{\alpha,\beta}$motivates the name {\em lognormal
 forward swap model.}
 
-
 	For a Bermudan swaption we would consider all swap rates
 $S_{\alpha,\beta}, S_{\alpha+1,\beta}, \ldots, S_{\beta-1,\beta}$ and their correlations $\rho_{i,j}$ simultanously.
+
 
 
 % end itemize
@@ -602,17 +560,14 @@ $S_{\alpha,\beta}, S_{\alpha+1,\beta}, \ldots, S_{\beta-1,\beta}$ and their corr
 {Bermudan Pricing}
 
 
+
 % begin itemize
 
 
 
-
-	
 If the correlation of the swap rates is high, then the payoffs behaviour simultaneously and there is not much value in the right to exercise in the future.
 
-
 	If the correlation of the swap rates is low (or even negative), then the payoff structure may change  and the right to exercise in the future may become valuable.
-
 
 	One-factor models, such as the Vasicek model, do not allow for a correlation structure. On the other hand SMM allow to model a more realistic correlation structure. % end itemize
 
@@ -622,18 +577,17 @@ If the correlation of the swap rates is high, then the payoffs behaviour simulta
 {Problem Setting}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	Model risk has hardly been discussed in the context of energy markets (to our knowledge).
 
-
 	A topical question is the need for reinvestment (replacement investments and building more capacity) in the power plant park. The financial streams of such an investment can be generated on the market for energy derivatives in terms of spread options.
 
-
 	We use the Bann{\"o}r, Scherer (2011) approach to discuss the model risk in such a valuation problem.
+
 
 
 % end itemize
@@ -668,16 +622,14 @@ Market participants are exposed to the difference of
 commodity prices. Examples are
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	the dark spread between power and coal (model for a coal-fired power plant)
 
-
 	the spark spread between power and gas (model for a gas-fired power plant)
-
 
 	In countries covered by the European Union Emissions Trading Scheme, utilities have to consider also the cost of carbon dioxide emission allowances. Emission trading has started in the EU in January 2005.
 
@@ -704,19 +656,17 @@ where $P_\tau$ is the power price, $G_\tau$ is the gas price, $E_\tau$ is the ca
 %$$
 
 
+
 % begin itemize
 
 
 
-
-	
 The clean spark spread reflects the profit/loss of generating power from gas after taking into account gas and carbon allowance costs.
-
 
 	A positive spread effectively means that it is profitable to generate electricity, while a negative spread means that generation would be a loss-making activity.
 
-
 	Note that the clean spark spreads do not take into account additional generating charges beyond gas and carbon.
+
 
 
 % end itemize
@@ -729,19 +679,18 @@ The clean spark spread reflects the profit/loss of generating power from gas aft
 {Spread Options to Manage Market Risk}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	Spread options can be used by owners of corresponding plants to
 manage the market risk. Instead of spread trading with futures the owner of a power plant can directly purchase/sell a spread option.
 
-
-	
 The payoff of a typical spread option with maturity $\tau$ is
 $$C_{\mbox{spread}}{(\tau)}=\max(S_1(\tau)-S_2(\tau)-K,0)$$ with $S_i$ the
 underlyings, $K$ the strike.
+
 
 
 % end itemize
@@ -784,13 +733,15 @@ $$\tiny\text{$S_1=S_2=100$, $\tau=3$, $r=0.02$, $\sigma_1=0.6$, $\sigma_2=0.4$.}
 $$\includegraphics[scale=0.3]{../../../pics/corr}$$
 
 
+
 % begin itemize
+
 
 
 \vspace{-1cm}
 
-
 	The higher the correlation between the two underlyings the lower is the volatility of the spread and hence the value of the spread option.
+
 
 
 % end itemize
@@ -801,15 +752,15 @@ $$\includegraphics[scale=0.3]{../../../pics/corr}$$
 {Approximative Spread Option Valuation}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	A very good reference is Carmona, Durrleman (2003), Siam Review 45 (4), 627-685.
 
-
 	There is also a survey by Krekel, de Kok, Korn, Man in Wilmott Magazine (2004) available.
+
 
 
 % end itemize
@@ -842,35 +793,34 @@ and $\rho_{ij}$ is the correlation between the underlying $i,j$.
 {Present Value of a Power Plant}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	The operator acts on the spot market. The specific daily configuration of the power plant is not traded, so we use historical probabilities. We use a strip of clean spark spreads.
 
-
 	R.Carmona, M. Coulon, D. Schwarz (2012)
 present a valuation approach using a full structural model
+
 
 
 % begin itemize
 
 
 
-
 	the difference between reduced form models (which we use) and the structural model is relatively small for high-efficiency gas plants, but reduced-form overprices for low-efficiency plants
 
-
 	we also define the power price exogeneously.
+
 
 
 % end itemize
 
 
 
-
 	We aim to study the model risk within a simulation approach.
+
 
 
 % end itemize
@@ -892,8 +842,8 @@ We model the emission price as a geometric Brownian motion
 {Gas Price}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
@@ -904,8 +854,8 @@ G_t & = & e^{g(t) + Z_t},  \nonumber \\
 \label{gas}
 \end{eqnarray}
 
-
 	$\alpha^G$ is the speed of mean-reversion for gas prices.
+
 
 
 % end itemize
@@ -916,8 +866,8 @@ G_t & = & e^{g(t) + Z_t},  \nonumber \\
 {Power Price}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
@@ -929,14 +879,12 @@ P_t & = & e^{f(t) + X_t + Y_t},  \nonumber \\
 \label{power}
 \end{eqnarray}
 
-
 	$\alpha^P$ and $\beta$ are speeds of mean-reversion for the smooth and the jump component of power prices.
-
 
 	$N$ is a Poisson process with intensity $\lambda$.
 
-
 	$J_t$ are independent identically distributed (i.i.d) random variables representing the jump size.
+
 
 
 % end itemize
@@ -968,18 +916,17 @@ In the current setting we also assume that $W^E$, $W^G$ and $N$ are mutually ind
 {Parameter Uncertainty}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	The total set of parameters includes $\{\alpha^E, \sigma^E, g(t), \alpha^G, \sigma^G, f(t), \alpha^P, \beta, \sigma^P, \lambda, \E[J], \E[J^2], \rho\}$.
 
-
 	Hence, the hybrid model we have chosen for modelling the clean spark spread is not parsimonious and allows for several degrees of freedom.
 
-
 	Consequently, the risk of determining parameters in a wrong way is considerable.
+
 
 
 % end itemize
@@ -992,28 +939,27 @@ In the current setting we also assume that $W^E$, $W^G$ and $N$ are mutually ind
 {Data sources}
 
 
+
 % begin itemize
+
 
 
 %
 
 	All the data sets are taken from the European Energy Exchange, \texttt{www.eex.com}.
 
-
 	Phelix Day Base: It is the average price of the hours 1 to 24 for electricity traded on the spot market.
 It is calculated for all calendar days of the year as the simple average of the auction prices for the
 hours 1 to 24 in the market area Germany/Austria. (EUR/MWh),
 
-
 	NCG: Delivery is possible at the virtual trading hub in the market areas of
 NetConnect Germany GmbH \& Co KG. daily price (EUR/MWh),
-
 
 	Emission certificate daily price: One EU emission allowance confers the right to emit one tonne of carbon dioxide or one tonne of
 carbon dioxide equivalent. (EUR/EUA).
 
-
 	We cover the last three years: 25.09.2009 - 08.06.2012.
+
 
 
 % end itemize
@@ -1044,18 +990,17 @@ carbon dioxide equivalent. (EUR/EUA).
 {Emissions and Gas}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	Apply a standard procedure to de-seasonalize gas (don't change notation).
 
-
 	$\log E_t$ and $\log G_t$ are normally distributed.
 
-
 	Thus, we can use standard Maximum Likelihood Methods.
+
 
 
 % end itemize
@@ -1067,18 +1012,17 @@ carbon dioxide equivalent. (EUR/EUA).
 The estimation procedure for the power price includes several steps:
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	Estimation of the seasonal trend and deseasonalisation.
 
-
 	With an iterative procedure we filter out returns with absolute values greater than three times the standard deviation of the returns of the series at the current iteration. The process is repeated until no further outliers can be found.
 
-
 	As a result we obtain a standard deviation of the jumps, $\sigma_j$, and a cumulative frequency of jumps, $l$. The latter is defined as the total number of filtered jumps divided by the annualised number of observations.
+
 
 
 % end itemize
@@ -1089,8 +1033,8 @@ The estimation procedure for the power price includes several steps:
 {Power II}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
@@ -1098,6 +1042,7 @@ The estimation procedure for the power price includes several steps:
 %
 
 	To estimate the mean-reversion rate for the jump process one can take an advantage of the approach based on the autocorrelation function (ACF) suggested by Barndorff-Nielsen, %Shephard (2001) (implemented Benth, Nazarova, Kiesel 2011).
+
 
 
 % end itemize
@@ -1149,49 +1094,42 @@ Interest rate  &   &  $r$ = 3\%&  \\
 \vspace{0cm}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	Jump size distribution;
 
-
 	Correlation;
-
 
 	Gas alone;
 
-
 	Gas and power base signal;
 
-
 	Gas, power and emissions (all the parameters, except of jump size).
+
 
 
 % end itemize
 
 
-\end{frame}
 
 % frametitle
 { General Procedure}
+
 
 
 % begin itemize
 
 
 
-
 	We reduce the problem here by considering the distributions of the single parameters separately (e.g.\ the correlation coefficient, the jump size distribution parameters). Hence, we do some kind of ``sensitivity analysis'' w.r.t.\ different parameters, disregarding the remaining parameter risk.
 
-
-	
 Each parameter $\theta_j$ is to be estimated by an estimator $\hat{\theta}_j(X_1,\dots,X_N)$ under the real-world measure and we assume the other parameters $\theta_1,\dots,\theta_{j-1},\theta_{j+1},\theta_N$ to be known. We use plug-in estimators as the true values and figure out the asymptotic distribution of the estimators.
 
-
-	
  We calculate the parameter risk-captured prices which are generated by the Average-Value-at-Risk (AVaR) w.r.t.\ different significance levels $\alpha\in(0,1]$.
+
 
 
 % end itemize
@@ -1214,21 +1152,19 @@ where $P_t$ is the power price, $G_t$ is the gas price, $E_t$ is the carbon cert
 {Spark Spread Analysis II}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	We compute the spark spread value $V_t$ given in (\ref{spark_spread_value}) for every day $t$ for a time period of three years.
 
-
 	The general formula is
 $$VPP(t,T) = \int_{t}^{T}e^{-r(s-t)}\,V(s)\,\uds{s},$$
 with $i$ referring to the simulation run.
 
-
-
 	Then, by fixing all the parameters except of one (e.g. correlation) and setting the shift value (e.g. 1\%), we compute shifted up and down spark spread values, i.e. $V^{up}_t$ and $V^{down}_t$.
+
 
 
 % end itemize
@@ -1243,18 +1179,17 @@ with $i$ referring to the simulation run.
 {Power Plant Analysis II}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	We also compute shifted both up and down power plant values, i.e. $VPP^{up}(t,T)$ and $VPP^{down}(t,T)$ (i.e. w.r.t. shifted spark spread values) and calculate the sensitivity $$sVPP(\theta_0) = \frac{VPP^{up}(t,T) - VPP^{down}(t,T)}{2 \cdot shift}.$$
 
-
 	Finally, we compute the bid and ask prices, i.e. we use the closed formula for AVaR to get the risk-captured prices by subtracting and adding risk-adjustment value to $VPP(t,T)$ respectively.
 
-
 	For a specified significance level $\alpha \in (0, 1)$ this risk-adjustment value is computed as $$\frac{\varphi(\Phi^{-1}(\alpha))}{\alpha}\sqrt{\frac{sVPP(\theta_0)' \cdot \Sigma \cdot sVPP(\theta_0) }{N}}.$$
+
 
 
 % end itemize
@@ -1273,7 +1208,6 @@ with $i$ referring to the simulation run.
 \includegraphics[width=\textwidth]{../../../pics/ba_width_alpha_corr_laplace_5000.pdf}
 \end{column}
 \end{columns}
-\end{frame}
 
 %\subsection{Base Price Risk}
 
@@ -1287,7 +1221,6 @@ with $i$ referring to the simulation run.
 \includegraphics[width=\textwidth]{../../../pics/ba_width_alpha_base_multivar_normal_5000.pdf}
 \end{column}
 \end{columns}
-\end{frame}
 
 % frametitle
 {Parameter-risk implied bid-ask spread w.r.t. jump size distribution: Gaussian.}
@@ -1299,7 +1232,6 @@ with $i$ referring to the simulation run.
 \includegraphics[width=\textwidth]{../../../pics/ba_width_alpha_normal_5000.pdf}
 \end{column}
 \end{columns}
-\end{frame}
 
 % frametitle
 {Parameter-risk implied bid-ask spread w.r.t. jump size distribution: Laplace.}
@@ -1311,7 +1243,6 @@ with $i$ referring to the simulation run.
 \includegraphics[width=\textwidth]{../../../pics/ba_width_alpha_laplace_5000.pdf}
 \end{column}
 \end{columns}
-\end{frame}
 
 %\subsection{Risk Table}
 
@@ -1337,7 +1268,6 @@ with $i$ referring to the simulation run.
 %\caption{Resulting values for the relative width of the bid-ask spread for various model risk sources. ${\alpha}_{1}$ = 0.01 (the highest risk-aversion), ${\alpha}_{2}$ = 0.1, ${\alpha}_{3}$= 0.5.}
 \label{model_risk}
 \end{table}
-\end{frame}
 
 \subsection{Political Risk}
 
@@ -1433,4 +1363,3 @@ with $i$ referring to the simulation run.
 \includegraphics[width=0.9\textwidth, heigth= 0.9 \textheigth]{../../../pics/RWE-Decommission}
 %\caption{Wind, Sonne und Strompreise}
 \end{figure}
-

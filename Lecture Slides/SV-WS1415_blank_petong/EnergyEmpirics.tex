@@ -74,34 +74,29 @@ Skewness: 1.95 \hspace{2cm} Excess Kurtosis: 25.93\\
 {-1.5cm}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	Distribution must reflect statistical properties, at least:
     % begin itemize
 
-
 	non-normality
 
-
 	peaked center, heavy tails
-
 
 	skewness and excess kurtosis
     % end itemize
 
-
 	Distribution must be tractable, i. e. it should allow for:
     % begin itemize
 
-
 	Conclusion of portfolio distribution from joint distribution (stable under convolution)
-
 
 	Computation of value-at-risk/expected shortfall
     % end itemize
+
 
 
 % end itemize
@@ -127,32 +122,27 @@ $$X\stackrel{d}{=}\mu+W\gamma+\sqrt{W}AZ$$
 %\vspace{-1cm}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	Moments of $X$:
     % begin itemize
 
-
 	$\E[X]=\mu+\gamma\E[W]$
-
 
 	$\Var[X]=AA'\E[W]+\gamma\gamma'\Var[W]$\\[-1.5cm]
     % end itemize
 
-
 	$\mu$ controls mean value\\[-1.5cm]
-
 
 	$\gamma$ controls skewness ($\gamma=0$: symmetric)\\[-1.5cm]
 
-
 	$\Sigma:=AA'$ controls covariance\\[-1.5cm]
 
-
 	$W\sim GIG(\lambda,\chi,\psi)$ controls tail-behaviour
+
 
 
 % end itemize
@@ -165,8 +155,8 @@ Further important properties
 are: %\vspace{-0.5cm}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
@@ -175,12 +165,12 @@ are: %\vspace{-0.5cm}
 	Density is explicitly
 known $\rightarrow$ Maximum-Likelihood estimation.
 
-	
 Distribution is closed under linear combinations $\rightarrow$
 Portfolio is GH-distributed.
 
 	GH-distribution is infinitely
 divisible $\rightarrow$ Levy-processes
+
 
 
 % end itemize
@@ -193,19 +183,18 @@ divisible $\rightarrow$ Levy-processes
 Well-known special cases are:
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	NIG ($\lambda=-1/2$, successful in power markets)\\[-1.5cm]
 
-
 	Hyperbolic ($\lambda=1$, successful in power, gas and oil markets)\\[-1.5cm]
-
 
 	$t$-distribution ($\lambda=-1/2\nu, \chi=\nu, \psi=0,
 \gamma=0, \nu>0$)
+
 
 
 % end itemize
@@ -237,18 +226,18 @@ energy portfolios, e. g. compute risk measures. We use the
 following setting:
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	$X_{t+1}^{(i)}:=\frac{S_{t+1}^{(i)}-S_t^{(i)}}{S_t^{(i)}}$
 denotes relative returns of commodity $i$.
 
-	
-$X:=-\sum\omega_iS_t^{(i)}X_{t+1}^{(i)}$ denotes loss of a
+	$X:=-\sum\omega_iS_t^{(i)}X_{t+1}^{(i)}$ denotes loss of a
 portfolio consisting of $\omega_i$ shares of commodity $i$ during
 the period $[t,t+1]$.
+
 
 
 % end itemize
@@ -258,14 +247,12 @@ the period $[t,t+1]$.
 % frametitle
 {itemize}
 
-
 	If $X_t^{(i)}$ are jointly GH-distributed, then $X$ is
 univariate GH-distributed
 
 	Compute value-at-risk
 (numerically) via $ VaR_{\alpha}(X)=F^{-1}_X(\alpha) $
 
-	
 Expected shortfall is defined (for absolute continuous
 distributions) via $ ES_{\alpha}(X)
 =\frac{1}{1-\alpha}\int_{\alpha}^1VaR_u(X)du$. In case of
@@ -273,6 +260,7 @@ GH-distributions this can be computed explicitly:
 \begin{eqnarray*}
 ES_{\alpha}(X)&=&\mu+\gamma\BE(W)+\sigma\frac{\varphi(\Phi^{-1}(\alpha))}{1-\alpha}\BE(\sqrt{W})
 \end{eqnarray*}
+
 
 
 % end itemize
@@ -290,18 +278,17 @@ CO$_2$) with delivery during 2007. We worked on time series with
 Results are: %\vspace{-0.5cm}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	Mardia's tests reject the use of multivariate normal distribution.\\[-1.3cm]
 
-
 	Likelihood ratio tests prefer any of the alternative distributions to the Normal\\[-1.3cm]
 
-
 	Among all the tested alternatives, we recommend the NIG.
+
 
 
 % end itemize
@@ -314,18 +301,17 @@ that can be viewed roughly as the year production/consumption of a
 coal-fired power plant that has a total output capacity of 1TW:
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	$10^6$ power contracts (1 contract delivers 1MW during the entire year), long \\[-1.5cm]
 
-
 	330,000 t coal, short\\[-1.5cm]
 
-
 	900,000 t CO$_2$, short
+
 
 
 % end itemize
@@ -427,13 +413,12 @@ QQplot using a fitted joint NIG
 {Shortcomings -- Marginals} %\vspace{-1.5cm}
 
 
+
 % begin itemize
 
 
-%
 
 	Unterschiedliches Tail-Verhalten macht auch die implizite Kalibrierung an Optionen mit unterschiedlichen Lieferperioden/Underlyings instabil.
-
 
 	Same tail-behaviour in all components of
 $$X\stackrel{d}{=}\mu+W\gamma+\sqrt{W}AZ$$
@@ -447,6 +432,7 @@ property ($X+Y$ is not GH-distributed).
 	Exception: NIG
 
 
+
 % end itemize
 
 
@@ -457,8 +443,8 @@ property ($X+Y$ is not GH-distributed).
 {Copula Approach Outline} %\vspace{-1cm}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
@@ -470,6 +456,7 @@ distributions
 
 	Applications: \textbf{Risk Management} (VaR,
 ES, Portfolio Analysis)
+
 
 
 % end itemize
@@ -484,8 +471,8 @@ ES, Portfolio Analysis)
 For each model
 
 
-% begin itemize
 
+% begin itemize
 
 
 
@@ -495,7 +482,6 @@ For each model
 Criterion (AIC), which is defined to be
     \[AIC(M_j)=-2log(L_j(\hat{\theta}_j; X))+2k_j\ ,j\in\{1,\ldots,n\}\]
 
-
 	the log-likelihood
 
 	the p-value of a likelihood ratio
@@ -503,7 +489,9 @@ test against the asymmetric generalized hyperbolic model (which is
 the most general model we consider)
 
 
+
 % end itemize
+
 
 
 are provided.
@@ -559,17 +547,15 @@ marginal distributions. That is $C$ is a mapping $[0,1]^m
 \rightarrow [0,1]$ with
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	$C(u_1,\ldots,u_m)$ is increasing in each component $u_i$
 
-
 	$C(1,\ldots,1,u_i,1,\ldots,1)=u_i$ for all
 $i\in\{1,\ldots,m\}$, $u_i\in[0,1]$
-
 
 	For all $(a_1,\ldots,a_m), (b_1,\ldots,b_m)\in[0,1]^m$ with
 $a_i\leq b_i$ we have:
@@ -579,6 +565,7 @@ $$
 $$
 where $u_{j,1}=a_j$ and $u_{j,2}=b_j$ for all $j \in
 \{1,\ldots,m\}$.
+
 
 
 % end itemize
@@ -651,8 +638,8 @@ called the generator of the copula.
 Examples of this class are
 
 
-% begin itemize
 
+% begin itemize
 
 
 
@@ -660,11 +647,10 @@ Examples of this class are
 \varphi^{-1}(s)=(1+s)^{-1/\theta},\; \theta\geq 0$.\\
 Lower tail dependency, no upper tail dependency.
 
-
-	
 Gumbel: $\varphi(t)=(-\log t)^{\theta},
 \varphi^{-1}(s)=e^{-s1/\theta},\; \theta\geq 1$.\\
 Upper tail dependency, no lower tail dependency.
+
 
 
 % end itemize
@@ -682,7 +668,6 @@ Upper tail dependency, no lower tail dependency.
 
 
 % begin itemize
-
 
 
 
@@ -731,8 +716,8 @@ copulas by their AIC values.
 t and normal copula provide the best fit,  because
 
 
-% begin itemize
 
+% begin itemize
 
 
 
@@ -741,6 +726,7 @@ structure
 
 	they have more flexibility to fit the dependence
 between the margins of our models.
+
 
 
 % end itemize
@@ -763,13 +749,10 @@ Now we need to simulate the loss distribution of the portfolio
 
 
 
-
 	Generate $N:=100000$ realizations of our multivariate copula
 based model; i.e. $N$ realizations of the estimated copula.
 
-	
-Employ the quantile transform for each margin to get $S_t^{(i)}$.
-
+	Employ the quantile transform for each margin to get $S_t^{(i)}$.
 
 	Transform these samples into realizations of our portfolio
 loss distribution.
@@ -790,12 +773,9 @@ generates $900000$ tons of CO$_2$. So our coal-fired power plant
 is nothing else than the following portfolio:
         % begin itemize
 
-
 	a long position of $1000000$ MWh of electricity,
 
-
 	a short position of $330000$ tons of coal,
-
 
 	and a short position of $900000$ tons of CO$_2$.
         % end itemize
@@ -890,21 +870,19 @@ Power Plant} %\vspace{-2cm}
 {Comparison of Models}
 
 
-% begin itemize
 
+% begin itemize
 
 
 
 	Copula-based models produce more accurate Risk Numbers
 
-
 	Marginal tails seem to be more important than joint tail behavior (see copulas)
-
 
 	Parametric approach allows dynamic modelling
 
 
-% end itemize
 
+% end itemize
 
 

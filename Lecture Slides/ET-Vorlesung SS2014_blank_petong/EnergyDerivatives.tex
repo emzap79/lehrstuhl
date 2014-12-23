@@ -11,11 +11,25 @@ $t_1,\ldots,t_N$ during the delivery period at a fixed strike
 price $K$. It can be viewed as a strip of
 independent call options, for each time $t_i$ the holder of the cap holds call options with maturity $t_i$ and Strike $K$. \\
 The static factors describing the cap are:
+
+
 % begin itemize
-\item times $t_1,\ldots,t_N$ (how often? when?)
-\item strike $K$ (price?)
-\item amount of the underlying (how much?)
+
+
+
+
+	times $t_1,\ldots,t_N$ (how often? when?)
+
+
+	strike $K$ (price?)
+
+
+	amount of the underlying (how much?)
+
+
 % end itemize
+
+
 
 % frametitle
 {Cap - Payoff}
@@ -132,10 +146,22 @@ An energy consuming manufacturer bought the energy needed on the futures market.
 \vspace{-0.4cm}
 $$\includegraphics[scale=0.7]{../../../pics/hedge1}$$
 \vspace{-0.7cm}
+
+
 % begin itemize
-  \item An airline buys a fixed-price swap from a bank or trader against its jet-fuel price exposure.
-  \item Buying a swap it must lock in its minimum net price receivable at the current perceived swap value.
+
+
+
+
+	An airline buys a fixed-price swap from a bank or trader against its jet-fuel price exposure.
+
+
+	Buying a swap it must lock in its minimum net price receivable at the current perceived swap value.
+
+
 % end itemize
+
+
 
 % frametitle
 {Jet Fuel Hedge by an Airline: Collar}
@@ -144,12 +170,28 @@ $$\includegraphics[scale=0.6]{../../../pics/hedge2}$$
 
 % frametitle
 {Jet Fuel Hedge by an Airline: Collar}
+
+
 % begin itemize
-  \item Using a collar structure the airline can still protect itself from a price increase, but can keep its minimum net price receivable locked in at a lower rate than the current swap price.
-  \item The purchase of the cap protects against jet-fuel prices rising above the strike of the cap.
-  \item The sale of the floor reduces the cost of the premium in the purchase of the cap.
-  \item A popular strategy is a zero-cost collar.
+
+
+
+
+	Using a collar structure the airline can still protect itself from a price increase, but can keep its minimum net price receivable locked in at a lower rate than the current swap price.
+
+
+	The purchase of the cap protects against jet-fuel prices rising above the strike of the cap.
+
+
+	The sale of the floor reduces the cost of the premium in the purchase of the cap.
+
+
+	A popular strategy is a zero-cost collar.
+
+
 % end itemize
+
+
 
 % frametitle
 {Collars - 3-way-collars}
@@ -198,14 +240,28 @@ To calculate the option value various mathematical techniques are used.
 
 \underline{Strategy}\\
 For deterministic spot prices, we
+
+
 % begin itemize
-  \item  Calculate the discounted payoffs
+
+
+
+
+	Calculate the discounted payoffs
   $P(t_i)=e^{-r(t_i-t)}(S(t_i)-K)$.
-  \item  Sort the discounted payoffs $P(t_i)$ in descending order.
-  \item Take the first $E_{\min}$ payoffs regardless of their
+
+
+	Sort the discounted payoffs $P(t_i)$ in descending order.
+
+
+	Take the first $E_{\min}$ payoffs regardless of their
   value and subsequent payoffs up to $E_{\max}$ until their sign
   become negative.
+
+
 % end itemize
+
+
 
 % frametitle
 {Bounds for Swing Options}
@@ -225,49 +281,121 @@ where $\phi_i^F=\IF_{\{F(t,t_i)>K\}}$, unless the restriction on $E_{\min}$ is i
 {Spread Options}
 Some market participants are exposed to the difference of
 commodity prices. Examples are
+
+
 % begin itemize
-  \item<1-> the dark spread between power and coal (model for a coal-fired power plant)
-  \item<2-> the spark spread between power and gas (model for a gas-fired power plant)
-  \item<3-> the crack spread between different refinements of oil (model for a refinement plant)
+
+
+
+
+	the dark spread between power and coal (model for a coal-fired power plant)
+
+
+	the spark spread between power and gas (model for a gas-fired power plant)
+
+
+	the crack spread between different refinements of oil (model for a refinement plant)
+
+
 % end itemize
+
+
 
 % frametitle
 {Spread Trading}
 Spreads are used to describe power plants, refineries, storage facilities and transmission lines. Spread positions may be initiated in futures contracts
+
+
 % begin itemize
-  \item<1-> for different, but related commodities,
-  \item<2-> for different delivery month of the same commodity,
-  \item<3-> for same commodity traded on different exchanges.
+
+
+
+
+	for different, but related commodities,
+
+
+	for different delivery month of the same commodity,
+
+
+	for same commodity traded on different exchanges.
+
+
 % end itemize
+
+
 
 % frametitle
 {Spread Trading}
 Spread trading involves taking a long position in one futures contract and simultaneously taking a short position in another, related futures contract.
+
+
 % begin itemize
-  \item<1-> Spread position neutralizes price risk.
-  \item<2-> A profit or loss results only if the relative prices of the two contracts change.
-  \item<3-> If spreads are expected to narrow, buy the lower-priced contract and sell the higher-priced contract.
-  \item<4-> If spreads are expected to widen, buy the higher-priced contract and sell the lower-priced contract.
+
+
+
+
+	Spread position neutralizes price risk.
+
+
+	A profit or loss results only if the relative prices of the two contracts change.
+
+
+	If spreads are expected to narrow, buy the lower-priced contract and sell the higher-priced contract.
+
+
+	If spreads are expected to widen, buy the higher-priced contract and sell the lower-priced contract.
+
+
 % end itemize
+
+
 
 % frametitle
 {Spark Spread}
+
+
 % begin itemize
-  \item<1-> Differential between the price of electricity (output) and the price of natural gas (input).
-  \item<2-> Can be used to financially replicate the physical reality of a gas-fired power plant: Short position in fuels and long position in electricity.
-  \item<3-> Spark spreads are traded OTC.
+
+
+
+
+	Differential between the price of electricity (output) and the price of natural gas (input).
+
+
+	Can be used to financially replicate the physical reality of a gas-fired power plant: Short position in fuels and long position in electricity.
+
+
+	Spark spreads are traded OTC.
+
+
 % end itemize
+
+
 
 % frametitle
 {Spark Spread}
 
 $$\text{Spark\_Spread}=\text{Power\_Price} - \text{Heat\_Rate}\cdot\text{Fuel\_Price}.$$
 \vspace{0.2cm}
+
+
 % begin itemize
-  \item<1-> Heat rate provides a conversion factor between fuels used to generate power and the power itself.
-  \item<2-> Heat rate is the number of Btus needed to make 1kWh of electricity.
-  \item<3-> In the absence of any inefficiency it takes 3412Btu to produce 1kWh of electricity.
+
+
+
+
+	Heat rate provides a conversion factor between fuels used to generate power and the power itself.
+
+
+	Heat rate is the number of Btus needed to make 1kWh of electricity.
+
+
+	In the absence of any inefficiency it takes 3412Btu to produce 1kWh of electricity.
+
+
 % end itemize
+
+
 
 % frametitle
 {Example: Spark Spread}
@@ -282,11 +410,25 @@ The positive spark spread means that it is economical to run the plant (without 
 % frametitle
 {Clean Spreads}
 In countries covered by the European Union Emissions Trading Scheme, utilities have to consider also the cost of carbon dioxide emission allowances. Emission trading has started in the EU in January 2005.
+
+
 % begin itemize
-  \item Clean spark spread represents the net revenue a gas-fired power plant makes from selling power, having bought gas and the required number of carbon allowances.
-  \item Clean dark spread represents the net revenue a coal-fired power plant makes from selling power, having bought coal and the required number of carbon allowances.
-  \item The difference between the clean dark spread and the clean spark spread is known as the climate spread.
+
+
+
+
+	Clean spark spread represents the net revenue a gas-fired power plant makes from selling power, having bought gas and the required number of carbon allowances.
+
+
+	Clean dark spread represents the net revenue a coal-fired power plant makes from selling power, having bought coal and the required number of carbon allowances.
+
+
+	The difference between the clean dark spread and the clean spark spread is known as the climate spread.
+
+
 % end itemize
+
+
 
 % frametitle
 {Clean Spark Spread}
@@ -315,10 +457,22 @@ V:\qquad\quad Variable cost of running the plant (beyond coal and\\
 % frametitle
 {Power Plant as a Clean Dark Spread}
 Indeed, the decision to run or not to run the power plant can be described as follows:
+
+
 % begin itemize
-  \item If $P-HR\cdot Coal - I\cdot Carbon - V\geq0$, then run the plant. In this case buying fuel and paying variable costs ($HR\cdot Coal + I\cdot Carbon + V$) to run the plant and then selling the generated power for P results in the positive gain.
-  \item If $P-HR\cdot Coal - I\cdot Carbon - V<0$, then do not run the plant. In this case buying fuel and paying variable costs ($HR\cdot Coal + I\cdot Carbon + V$) to run the plant will not be compensated by sold power.
+
+
+
+
+	If $P-HR\cdot Coal - I\cdot Carbon - V\geq0$, then run the plant. In this case buying fuel and paying variable costs ($HR\cdot Coal + I\cdot Carbon + V$) to run the plant and then selling the generated power for P results in the positive gain.
+
+
+	If $P-HR\cdot Coal - I\cdot Carbon - V<0$, then do not run the plant. In this case buying fuel and paying variable costs ($HR\cdot Coal + I\cdot Carbon + V$) to run the plant will not be compensated by sold power.
+
+
 % end itemize
+
+
 
 %\subsection{Climate Spread}
 
@@ -377,29 +531,87 @@ The clean dark spread becomes negative (-0.026EUR/MWh), implying that electricit
 
 % frametitle
 {Political Risk}
+
+
 % begin itemize
-\item<1-> Installed capacity: 876 MW
-\item<2-> Variable cost ca. 60 EUR/MWh
-\item<3-> Profitable hours per year
+
+
+
+
+	Installed capacity: 876 MW
+
+
+	Variable cost ca. 60 EUR/MWh
+
+
+	Profitable hours per year
+
+
 % begin itemize
-\item  2010 (993),
-\item 2011 (2309),
-\item 2012 (737),
-% end itemize
-with average profit 6.9 EUR per MWh.
-\item<4-> Typical assumption on investing
-% begin itemize
-\item 3500 profitable hours
-\item 10 EUR per MWh profit
-% end itemize
-\item<5-> loss per year
-% begin itemize
-\item  2010: (3500-993)*876*10=21961320 EUR,
-\item 2011:  (3500-2309)*876*10 = 10433160 EUR,
-\item 2012: (3500-737)*876*10= 24203880 EUR.
-% end itemize
+
+
+
+
+	2010 (993),
+
+
+	2011 (2309),
+
+
+	2012 (737),
+
 
 % end itemize
+
+
+with average profit 6.9 EUR per MWh.
+
+
+	Typical assumption on investing
+
+
+% begin itemize
+
+
+
+
+	3500 profitable hours
+
+
+	10 EUR per MWh profit
+
+
+% end itemize
+
+
+
+
+	loss per year
+
+
+% begin itemize
+
+
+
+
+	2010: (3500-993)*876*10=21961320 EUR,
+
+
+	2011:  (3500-2309)*876*10 = 10433160 EUR,
+
+
+	2012: (3500-737)*876*10= 24203880 EUR.
+
+
+% end itemize
+
+
+
+
+
+% end itemize
+
+
 
 % frametitle
 {A day in august}
@@ -421,108 +633,248 @@ with average profit 6.9 EUR per MWh.
 
 % frametitle
 {Standard Specification of Energy Swap}
+
+
 % begin itemize
-\item<1-> An Energy Swaps is a contract between two parties to exchange - or swap - cash flows, one of which is a fixed price normally agreed at execution; the other is based on the average of a floating price index during the contract period.
-\item<2-> Thus the two counterparties of the deal, the buyer and the seller, exchange fixed cash-flows agreed at the contract time for unknown floating cash-flows in the future.
-\item<3->
+
+
+
+
+	An Energy Swaps is a contract between two parties to exchange - or swap - cash flows, one of which is a fixed price normally agreed at execution; the other is based on the average of a floating price index during the contract period.
+
+
+	Thus the two counterparties of the deal, the buyer and the seller, exchange fixed cash-flows agreed at the contract time for unknown floating cash-flows in the future.
+
+
+	
 No physical delivery of the underlying energy takes place; there is only financial settlement.
+
+
 % end itemize
+
+
 
 % frametitle
 {Specification of a Swap Contract}
 When traders are negotiating a swap contact (OTC deal) they have to define
+
+
 % begin itemize
-  \item<1-> the fixed price
-  \item<2-> the floating-price reference
-  \item<3-> the pricing period (e.g. one month, quarterly, calender year)
-  \item<4-> the start date (effective date)
-  \item<5-> the end date (termination)
-  \item<6-> the payment-due date
+
+
+
+
+	the fixed price
+
+
+	the floating-price reference
+
+
+	the pricing period (e.g. one month, quarterly, calender year)
+
+
+	the start date (effective date)
+
+
+	the end date (termination)
+
+
+	the payment-due date
+
+
 % end itemize
+
+
 
 % frametitle
 {Pricing Period}
+
+
 % begin itemize
-\item<1-> In energy and general commodity markets, OTC derivatives are priced monthly.
-\item<2-> So even if a quarterly contract is traded, after each month during the pricing period, one-third of the volume will be priced out and a settlement will become due or a payment will be received by the organization.
+
+
+
+
+	In energy and general commodity markets, OTC derivatives are priced monthly.
+
+
+	So even if a quarterly contract is traded, after each month during the pricing period, one-third of the volume will be priced out and a settlement will become due or a payment will be received by the organization.
+
+
 % end itemize
+
+
 
 % frametitle
 {Payment-due Date}
+
+
 % begin itemize
-\item<1-> For a swap priced against an American or European floating price reference, the payment due date is normally the 5. business day after the last pricing day of each pricing period.
-\item<2->
+
+
+
+
+	For a swap priced against an American or European floating price reference, the payment due date is normally the 5. business day after the last pricing day of each pricing period.
+
+
+	
 For contracts priced against an Asian-based floating-price reference, payment for settlement is generally due 10 business days, sometimes up to 14 business days, after each pricing period.
+
+
 % end itemize
+
+
 
 %\subsection{Basic Swap Contracts}
 
 % frametitle
 {Plain Vanilla Swap}
+
+
 % begin itemize
-  \item<1-> Simple monthly averaging swap in which a fixed price is exchanged against a floating price in the future.
-  \item<2-> Extensively used in oil, LPG (liquified petrolium/propane gas), and LNG (liquified natural gas)-related trading and hedging.
-  \item<3-> When executing the deal, the counterparties agree on the fixed price for that day, and which floating price reference they will use to calculate the settlement.
-      \item<4->
+
+
+
+
+	Simple monthly averaging swap in which a fixed price is exchanged against a floating price in the future.
+
+
+	Extensively used in oil, LPG (liquified petrolium/propane gas), and LNG (liquified natural gas)-related trading and hedging.
+
+
+	When executing the deal, the counterparties agree on the fixed price for that day, and which floating price reference they will use to calculate the settlement.
+
+
+	
 $$\includegraphics[scale=0.3]{../../../pics/ex1}$$
+
+
 % end itemize
+
+
 
 % frametitle
 {Plain Vanilla Swap}
 \textcolor[rgb]{0.00,0.25,0.50}{Cash-flow example of plain vanilla swap:}\\
+
+
 % begin itemize
-\item<1->
+
+
+
+
+	
 A buys fixed price$\qquad\qquad$\$15.00 (buys fixed, sells floating)
-\item<2-> B sells fixed price$\qquad\qquad\;$\$15.00 (sells fixed, buys floating)
-\item<3->
+
+
+	B sells fixed price$\qquad\qquad\;$\$15.00 (sells fixed, buys floating)
+
+
+	
 Floating price reference (e.g. Platts) average during the pricing period \$16.00
-\item<4->
+
+
+	
 \vspace{0.3cm}
 \textcolor[rgb]{0.00,0.25,0.50}{Net result:}$\quad$Counterparty A = +\$1.00 (floating-fixed)\\
 $\qquad\qquad\quad\,$  Counterparty B = -\$1.00
-\item<5->
+
+
+	
 $\textcolor[rgb]{0.00,0.25,0.50}{\Rightarrow}$ B pays A \$1.00. Only the difference is exchanged, NOT the \\
 $\quad\;\,$principal national amount.
+
+
 % end itemize
+
+
 
 %\subsection{Differential Swap}
 
 % frametitle
 {Differential Swap}
+
+
 % begin itemize
-  \item<1-> Instead of having one fixed price against a floating price, it is based on the difference between a fixed price in two products.
-  \item<2-> In the oil sector, the most popular differential swap is the jet kero against gasoil (regrade swap).
-  \item<3-> Use across the whole energy spectrum, e.g. spark spread, dark spread.
-\item<4->
+
+
+
+
+	Instead of having one fixed price against a floating price, it is based on the difference between a fixed price in two products.
+
+
+	In the oil sector, the most popular differential swap is the jet kero against gasoil (regrade swap).
+
+
+	Use across the whole energy spectrum, e.g. spark spread, dark spread.
+
+
+	
 $$\includegraphics[scale=0.3]{../../../pics/ex2}$$
+
+
 % end itemize
+
+
 
 % frametitle
 {Differential Swap}
 \textcolor[rgb]{0.00,0.25,0.50}{Cash-flow example of differential swap:}
+
+
 % begin itemize
-\item<1->
+
+
+
+
+	
 A buys fixed-price kero and sells fixed-price gasoil at a difference of \$0.50 per barrel kero premium
-\item<2-> B sells fixed-price kero and buys fixed-price gasoil at a difference of \$0.50 per barrel kero premium
-\item<3-> Floating price reference (Platts) kero and gasoil average difference during the pricing period $\;\,$ \$0.60 per barrel kero premium
-\item<4->
+
+
+	B sells fixed-price kero and buys fixed-price gasoil at a difference of \$0.50 per barrel kero premium
+
+
+	Floating price reference (Platts) kero and gasoil average difference during the pricing period $\;\,$ \$0.60 per barrel kero premium
+
+
+	
 \textcolor[rgb]{0.00,0.25,0.50}{Net result:}$\quad$Counterparty A = +\$0.10 per barrel (floating-fixed)\\
 $\qquad\qquad\quad\,$  Counterparty B = -\$0.10 per barrel
-\item<5->
+
+
+	
 $\textcolor[rgb]{0.00,0.25,0.50}{\Rightarrow}$ B pays A \$0.10 per barrel. Only the difference is exchanged,\\
 $\quad\;\,$NOT the principal national amount.
+
+
 % end itemize
+
+
 
 %\subsection{Margin Swap}
 
 % frametitle
 {Margin Swap}
+
+
 % begin itemize
-\item<1->
+
+
+
+
+	
 An organization can take its overall price risks from several energy inputs and outputs of the business process and get a complete swap structure that guarantees its profit margin.
-\item<2-> Instead of managing many individual positions with several counterparties it can be more cost-efficient to enter into a margin swap with one counterparty that is willing to provide a contract that covers all the price risk.
-\item<3-> Single swap contract protects the \textcolor{red}{net} overall margin.
+
+
+	Instead of managing many individual positions with several counterparties it can be more cost-efficient to enter into a margin swap with one counterparty that is willing to provide a contract that covers all the price risk.
+
+
+	Single swap contract protects the \textcolor{red}{net} overall margin.
+
+
 % end itemize
+
+
 
 % frametitle
 {Margin Swap}
@@ -536,10 +888,22 @@ $$\includegraphics[scale=0.25]{../../../pics/ex4}$$
 \vspace{-0.4cm}
 $$\includegraphics[scale=0.35]{../../../pics/hedge1}$$
 \vspace{-0.7cm}
+
+
 % begin itemize
-  \item<1-> An airline buys a fixed-price swap from a bank or trader against its jet-fuel price exposure.
-  \item<2-> Buying a swap it must lock in its minimum net price receivable at the current perceived swap value.
+
+
+
+
+	An airline buys a fixed-price swap from a bank or trader against its jet-fuel price exposure.
+
+
+	Buying a swap it must lock in its minimum net price receivable at the current perceived swap value.
+
+
 % end itemize
+
+
 
 % frametitle
 {Example: Jet Fuel Swap}
@@ -560,19 +924,45 @@ $$\includegraphics[scale=0.63]{../../../pics/ex7}$$
 % frametitle
 {Example: Jet Fuel Swap}
 Clearing:
+
+
 % begin itemize
-  \item<1-> The payment settlement date is the 1. bank business day (1. November 2011) after the last pricing day (31. October 2011) of the pricing period (1.-31. October 2011).
-  \item<2-> The payment due date is the 5. bank business day (7. November 2011) after the last pricing day of the pricing period.
-  \item<3-> Bank holidays according to \url{http://www.chicagofed.org/webpages/utilities/about_us/bank_holidays.cfm}.
+
+
+
+
+	The payment settlement date is the 1. bank business day (1. November 2011) after the last pricing day (31. October 2011) of the pricing period (1.-31. October 2011).
+
+
+	The payment due date is the 5. bank business day (7. November 2011) after the last pricing day of the pricing period.
+
+
+	Bank holidays according to \url{http://www.chicagofed.org/webpages/utilities/about_us/bank_holidays.cfm}.
+
+
 % end itemize
+
+
 
 % frametitle
 {Example: Jet Fuel Swap}
 Payment:
+
+
 % begin itemize
-  \item Payment =(Float-Fix)$\times$Volume,$\quad$if Float$\geq$Fix.
-  \item Payment=(Fix-Float)$\times$Volume,$\quad$if Float$<$Fix.
+
+
+
+
+	Payment =(Float-Fix)$\times$Volume,$\quad$if Float$\geq$Fix.
+
+
+	Payment=(Fix-Float)$\times$Volume,$\quad$if Float$<$Fix.
+
+
 % end itemize
+
+
 \vspace{0.3cm}
 Payment in USD\\
 Floating/fixed price in USD/mt\\
@@ -580,12 +970,24 @@ Volume in mt (metric tones)
 
 % frametitle
 {Example: Jet Fuel Swap}
+
+
 % begin itemize
-  \item<1-> Suppose that the average Jet Fuel reference index for October 2011 is 700USD/mt. The airline buys the fuel for 600USD/mt (fixed price) and sells for 700USD/mt (floating price reference for October 2011). Thus the airline's profit is
+
+
+
+
+	Suppose that the average Jet Fuel reference index for October 2011 is 700USD/mt. The airline buys the fuel for 600USD/mt (fixed price) and sells for 700USD/mt (floating price reference for October 2011). Thus the airline's profit is
       $$(700\text{USD/mt} - 600\text{USD/mt})\times2000\text{mt} = 200\;000\text{USD}.$$
-  \item<2-> Suppose that the average Jet Fuel reference index for October 2011 is 550USD/mt. The airline buys the fuel for 600USD/mt (fixed price) and sells for 550USD/mt (floating price reference for October 2011). Thus the airline's loss is
+
+
+	Suppose that the average Jet Fuel reference index for October 2011 is 550USD/mt. The airline buys the fuel for 600USD/mt (fixed price) and sells for 550USD/mt (floating price reference for October 2011). Thus the airline's loss is
       $$(600\text{USD/mt} - 550\text{USD/mt})\times2000\text{mt} = 100\;000\text{USD}.$$
+
+
 % end itemize
+
+
 
 \subsection{Options on Electricity Swaps}
 
@@ -607,15 +1009,31 @@ $$
 
 % frametitle
 {The Model Framework for Electricity Swaps}
+
+
 % begin itemize
-\item<1-> Use observable products, e.g. month futures as building blocks,
-\item<2-> Under a risk-neutral measure month forward prices $F(t,T,T+m)=F(t,T)$ have to be martingales,
-\item<3-> Assume the dynamics
+
+
+
+
+	Use observable products, e.g. month futures as building blocks,
+
+
+	Under a risk-neutral measure month forward prices $F(t,T,T+m)=F(t,T)$ have to be martingales,
+
+
+	Assume the dynamics
 $$dF(t,T)=\sigma(t,T)F(t,T)dW(t),$$
 where $\sigma(t,T)$ is an adapted $d$-dimensional deterministic function and
 $W(t)$ a $d$-dimensional Brownian motion.
-\item<4-> Initial value of this SDE is the initial forward curve observed at the market.
+
+
+	Initial value of this SDE is the initial forward curve observed at the market.
+
+
 % end itemize
+
+
 
 % frametitle
 {Options on Building Blocks}
@@ -632,14 +1050,28 @@ d_2 & = & d_1 - \sqrt{\Sigma(T_0,T)}
 
 % frametitle
 {The Model Framework -- $n$-period futures}
+
+
 % begin itemize
-\item<1-> Use observable products, e.g. month futures as building blocks,
-\item<2-> Express an $n$-period delivery futures as
+
+
+
+
+	Use observable products, e.g. month futures as building blocks,
+
+
+	Express an $n$-period delivery futures as
 $$Y_{T_1, \ldots, T_n}(t)=\frac{\sum_{i=1}^n e^{-r(T_i-t)}F(t,T_i)}{\sum_{i=1}^n e^{-r(T_i-t)}}.$$
 (Compare modelling of forward swap rates in terms of forward LIBOR rates)
-\item<3-> In case of 1-year-futures, the swap rate is the forward price of the 1-year-futures,
+
+
+	In case of 1-year-futures, the swap rate is the forward price of the 1-year-futures,
 which can be also observed in the market.
+
+
 % end itemize
+
+
 
 % frametitle
 {Implied Prices of Futures}
@@ -649,22 +1081,38 @@ which can be also observed in the market.
 
 % frametitle
 {Options on $n$-period futures}
+
+
 % begin itemize
-\item<1-> We need to compute
+
+
+
+
+	We need to compute
 $$e^{-rT_0} \EX \left[\left(Y(T_0)-K\right)^+\right],$$
 where the distribution of $Y$ as a sum of lognormals is unknown.
-\item<2->
+
+
+	
 We approximate $Y$ by a random variable $\hat{Y}$,
 which is lognormal and matches $Y$ in mean and variance.
-\item<3->
+
+
+	
 Then,
 $$\log \hat{Y} \sim \Phi(m,s)$$
 with $s^2$ depending on the choice of the volatility functions
 $\sigma(t,T_i)$.
-\item<4->
+
+
+	
 An analysis of the goodness of the approximation
 can be found in Brigo-Mercurio (2003).
+
+
 % end itemize
+
+
 
 % frametitle
 {Options on $n$-period futures}
@@ -686,17 +1134,35 @@ d_2 & = & d_1 - s
 % frametitle
 {Specific  Two-Factor Model}
 
+
+
 % begin itemize
-\item<1-> For a fixed delivery start $T$ and delivery period 1 month, let the dynamics of a Future $F_{t,T}$ be given by the two factor model:
+
+
+
+
+	For a fixed delivery start $T$ and delivery period 1 month, let the dynamics of a Future $F_{t,T}$ be given by the two factor model:
 \begin{eqnarray*}
 F(t,T)& =&F(0,T)\exp\left\{\mu(t,T)  +\int_0^t\hat{\sigma_1}(s,T)dW_s^{(1)}+\sigma_2W_t^{(2)}\right\}
 \end{eqnarray*}
 
-\item<2-> $W^{(1)}$ and $W^{(2)}$ independent Brownian motions
-\item<3-> $\hat{\sigma_1}(s,T)=\sigma_1e^{-\kappa(T-s)}$
-\item<4-> $\sigma_1$, $\sigma_2$, $\kappa>0$ constants
-\item<5-> $\mu(t,T)$ being the risk-neutral martingale drift
+
+
+	$W^{(1)}$ and $W^{(2)}$ independent Brownian motions
+
+
+	$\hat{\sigma_1}(s,T)=\sigma_1e^{-\kappa(T-s)}$
+
+
+	$\sigma_1$, $\sigma_2$, $\kappa>0$ constants
+
+
+	$\mu(t,T)$ being the risk-neutral martingale drift
+
+
 % end itemize
+
+
 
 % frametitle
 {Model Parameters}
@@ -724,42 +1190,84 @@ $\sigma_2$ affects the level at the long end of the volatility curve
 
 % frametitle
 {Pricing of Futures}
+
+
 % begin itemize
-\item<1-> In this model, all products are expressed using Month-Futures
-\item<2-> Prices of quarterly and yearly Futures are given as an
+
+
+
+
+	In this model, all products are expressed using Month-Futures
+
+
+	Prices of quarterly and yearly Futures are given as an
 average of the  $n$ corresponding monthly Futures.
-\item<3-> $Y_{t,T_1, \ldots T_n}=Y=\frac{\sum e^{-rT_i}F_{t,T_i}}{\sum e^{-rT_i}}$
+
+
+	$Y_{t,T_1, \ldots T_n}=Y=\frac{\sum e^{-rT_i}F_{t,T_i}}{\sum e^{-rT_i}}$
 is the forward price of a $n$-month forward quoted in the market (cp. swap rate)
+
+
 % end itemize
+
+
 
 % frametitle
 {Pricing of Options on Month-Futures}
+
+
 % begin itemize
-\item<1-> At time $t=0$, the price of a  Call-Option with strike $K$ and maturity $T_0$ on a Month-Future $F_{t,T}$ is given by
+
+
+
+
+	At time $t=0$, the price of a  Call-Option with strike $K$ and maturity $T_0$ on a Month-Future $F_{t,T}$ is given by
 $$e^{-rT_0}\EX\left[\left(F_{T_0,T}-K\right)^+\right]$$
-\item<2-> Within the model,  $F_{T_0,T}$ is log-normally distributed with known variance
+
+
+	Within the model,  $F_{T_0,T}$ is log-normally distributed with known variance
 $$
 \Sigma(T_0,T) =   \frac{\sigma_1^2}{2\kappa}(e^{-2\kappa (T-T_0)}-e^{-2\kappa T})+\sigma_2^2T_0
 $$
-\item<3-> Thus the option's value is given by the formula (Black 76):
+
+
+	Thus the option's value is given by the formula (Black 76):
 \begin{eqnarray*}
 e^{-rT_0}\EX\left[\left(F_{T_0,T}-K\right)^+\right] & = &
 e^{-rT_0}\left(F_{0,T}\Phi(d_1)-K\Phi(d_2)\right)
 \end{eqnarray*}with $d_{1,2}$ depending on the parameters $\sigma_1, \sigma_2, \kappa$.
+
+
 % end itemize
+
+
 
 % frametitle
 {Pricing of Options on quarterly and yearly Futures}
+
+
 % begin itemize
-\item<1-> At time $t=0$, the price of a  Call-Option with strike $K$ and maturity $T_0$ on a $n$-Month-Future
+
+
+
+
+	At time $t=0$, the price of a  Call-Option with strike $K$ and maturity $T_0$ on a $n$-Month-Future
 $Y$ is given by
 $$
 e^{-rT_0}\EX\left[\left(Y-K\right)^+\right]=e^{-rT_0}\EX
 \left[\left(\frac{\sum e^{-rT_i}F_{t,T_i}}{\sum e^{-rT_i}}-K\right)^+\right]$$
-\item<2-> The distribution of the sum is not known within the model. There is no explicit solution to this integral.
-\item<3-> Approximate the random variable $Y$ by a log-normal random variable $\hat{Y}$
+
+
+	The distribution of the sum is not known within the model. There is no explicit solution to this integral.
+
+
+	Approximate the random variable $Y$ by a log-normal random variable $\hat{Y}$
 with same mean and variance (depending on the model parameters)
+
+
 % end itemize
+
+
 
 % frametitle
 {Matching the Variance}
@@ -801,8 +1309,14 @@ with $d_{1,2}$ depending on the parameters $\sigma_1, \sigma_2, \kappa$.
 
 % frametitle
 {Parameter Estimation}
+
+
 % begin itemize
-\item<1-> Use the approximating Black-formula
+
+
+
+
+	Use the approximating Black-formula
     \begin{eqnarray*}
         \textrm{Option value}&=&    e^{-rT_0}\left(Y(0)\Phi (d_1)-K\Phi(d_2) \right)
 \\
@@ -810,10 +1324,18 @@ with $d_{1,2}$ depending on the parameters $\sigma_1, \sigma_2, \kappa$.
     \end{eqnarray*}
         Only the variance $Var(\log \hat{Y}(T_0))$ depends on the unknown parameters
 
-\item<2-> Compute the variances $Var(\log\hat{Y}(T_0))$ for products observable in the market
-\item<3-> Choose parameter $\sigma_1$, $\sigma_2$ and $\kappa$ to minimize the distance of the model variances
+
+
+	Compute the variances $Var(\log\hat{Y}(T_0))$ for products observable in the market
+
+
+	Choose parameter $\sigma_1$, $\sigma_2$ and $\kappa$ to minimize the distance of the model variances
 to the market variances in a given metric (in the least-square sense)
+
+
 % end itemize
+
+
 
 % frametitle
 {Data}

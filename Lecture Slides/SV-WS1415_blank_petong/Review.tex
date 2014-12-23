@@ -14,20 +14,50 @@ spot and futures markets.
 
 % frametitle
 {EEX spot market}
+
+
 % begin itemize
-\item<1->Trading in Power, Natural Gas and $CO_2$ Emission Rights.
-\item<2->Power day-ahead auctions for Germany, Austria, France and Switzerland 7 days a week, including holidays. The 24 hours of the respective next day can be traded in one-hour intervals or block orders (e.g. Baseload: 1-24h, Peakload: 9-20h, Night: 1-6, Rush Hour: 17-20h, Business: 9-16h, etc.).
-\item<3-> Continuous day-ahead block trading for France 7:30 am to 11:30 am, 7 days a week, including holidays.
-\item<4->Continuous Power intraday trading for Germany and France until 75 minutes before the beginning of delivery with delivery on the same or the following day in single hours or blocks.
+
+
+
+
+	Trading in Power, Natural Gas and $CO_2$ Emission Rights.
+
+
+	Power day-ahead auctions for Germany, Austria, France and Switzerland 7 days a week, including holidays. The 24 hours of the respective next day can be traded in one-hour intervals or block orders (e.g. Baseload: 1-24h, Peakload: 9-20h, Night: 1-6, Rush Hour: 17-20h, Business: 9-16h, etc.).
+
+
+	Continuous day-ahead block trading for France 7:30 am to 11:30 am, 7 days a week, including holidays.
+
+
+	Continuous Power intraday trading for Germany and France until 75 minutes before the beginning of delivery with delivery on the same or the following day in single hours or blocks.
+
+
 % end itemize
+
+
 
 % frametitle
 {EEX spot market}
+
+
 % begin itemize
-\item<1-> participants submit their price offer/bid curves, the EEX system prices are equilibrium prices that clear the market.
-\item<2-> EEX day prices are the average of the 24-single hours.
-\item<3-> similar structures can be found on other power exchanges(Nord Pool, APX, etc.).
+
+
+
+
+	participants submit their price offer/bid curves, the EEX system prices are equilibrium prices that clear the market.
+
+
+	EEX day prices are the average of the 24-single hours.
+
+
+	similar structures can be found on other power exchanges(Nord Pool, APX, etc.).
+
+
 % end itemize
+
+
 
 % frametitle
 {EEX Spot Market Price Processes}
@@ -46,27 +76,67 @@ spot and futures markets.
 
 % frametitle
 {Electricity is special}
+
+
 % begin itemize
-\item<1-> it is not storable
-\item<2-> it is homogeneous
-\item<3-> it can be produced in different ways
-\item<4-> it has to be produced when it is needed
-\item<5-> there is a high fluctuation in demand
-\item<6-> there is no short-term elasticity in demand
-\item<7-> there is a high price volatility due to renewable in-feed
+
+
+
+
+	it is not storable
+
+
+	it is homogeneous
+
+
+	it can be produced in different ways
+
+
+	it has to be produced when it is needed
+
+
+	there is a high fluctuation in demand
+
+
+	there is no short-term elasticity in demand
+
+
+	there is a high price volatility due to renewable in-feed
+
+
 % end itemize
+
+
 
 %\subsection{Futures market}
 
 % frametitle
 {Futures Market} Traded products are
+
+
 % begin itemize
-\item<1->Futures contracts for Power, Natural Gas, Emissions and Coal.
-\item<2->Phelix Futures on Phelix Baseload or Peakload monthly power index for the current month, the next nine months, eleven quarters and six years with cash settlement.
-\item<3-> Baseload and Peakload French/German Power Futures for the current month, the next six months, seven quarters and six years with physical settlement, obliging for continuous delivery of 1MW during a month, quarter or a year.
-\item<4-> Actively exchange traded are the next 7 months, 5 quarters and 2-3 years.
-\item<5-> In addition, OTC transactions.
+
+
+
+
+	Futures contracts for Power, Natural Gas, Emissions and Coal.
+
+
+	Phelix Futures on Phelix Baseload or Peakload monthly power index for the current month, the next nine months, eleven quarters and six years with cash settlement.
+
+
+	Baseload and Peakload French/German Power Futures for the current month, the next six months, seven quarters and six years with physical settlement, obliging for continuous delivery of 1MW during a month, quarter or a year.
+
+
+	Actively exchange traded are the next 7 months, 5 quarters and 2-3 years.
+
+
+	In addition, OTC transactions.
+
+
 % end itemize
+
+
 
 % frametitle
 {Futures Market}
@@ -102,11 +172,25 @@ Returns seem to be stationary, no seasonality.
 
 % frametitle
 {Characteristics}
+
+
 % begin itemize
-\item<1-> \textbf{Electricity Futures} -- Obligation to buy/sell a specified amount of electricity during a \textbf{delivery period}, typically a month, quarter or year.
-\item<2-> Futures show a decreasing volatility term structure.
-\item<3-> Level of volatility depends on length of delivery period.
+
+
+
+
+	\textbf{Electricity Futures} -- Obligation to buy/sell a specified amount of electricity during a \textbf{delivery period}, typically a month, quarter or year.
+
+
+	Futures show a decreasing volatility term structure.
+
+
+	Level of volatility depends on length of delivery period.
+
+
 % end itemize
+
+
 
 % frametitle
 {Prices of Futures}
@@ -116,14 +200,26 @@ Returns seem to be stationary, no seasonality.
 
 % frametitle
 {Simple Futures Market Model}
+
+
 % begin itemize
-\item<1-> We assume for the futures dynamics
+
+
+
+
+	We assume for the futures dynamics
 $$
 df(t) = \mu f(t) dt + \sigma f(t) dW(t).
 $$
-\item<2-> But since it costs nothing to enter a futures position, we can constantly change our futures portfolio.
+
+
+	But since it costs nothing to enter a futures position, we can constantly change our futures portfolio.
 Thus financing for buying a traded asset is not relevant.
+
+
 % end itemize
+
+
 
 % frametitle
 {Black's Formula}
@@ -162,20 +258,38 @@ interest.
 
 % frametitle
 {Storage, Inventory and Convenience Yield}
+
+
 % begin itemize
-\item<1-> The theory of storage aims to explain the differences between spot
+
+
+
+
+	The theory of storage aims to explain the differences between spot
 and Futures (Forward) prices by analyzing why agents hold inventories.
-\item<2-> Inventories
+
+
+	Inventories
 allow to meet unexpected demand, avoid the cost of frequent revisions in
 the production schedule and eliminate manufacturing disruption.
-\item<3-> This
+
+
+	This
 motivates the concept of convenience yield as a benefit, that accrues to the
 owner of the physical commodity but not to the holder of a forward contract.
-\item<4-> Thus the convenience yield is comparable to the dividend yield for stocks.
-\item<5-> A modern view is to view storage (inventory) as a timing option, that
+
+
+	Thus the convenience yield is comparable to the dividend yield for stocks.
+
+
+	A modern view is to view storage (inventory) as a timing option, that
 allows to put the commodity to the market when prices are high
 and hold it when the prices are low.
+
+
 % end itemize
+
+
 
 % frametitle
 {Spot-Forward Relationship in Commodity Markets }
@@ -189,28 +303,68 @@ where $r$ is the interest rate at time $t$ for maturity $T$ and $y$ is the conve
 {Spot-Forward Relationship in Commodity Markets }
 
 Observe that (\ref{SF-rel}) implies
+
+
 % begin itemize
-\item<1-> spot and forward are redundant (one can replace the other) and form a
+
+
+
+
+	spot and forward are redundant (one can replace the other) and form a
 linear relationship (unlike options)
-\item<2-> with two forward prices we can derive the value of $S(t)$ and $y$
-\item<3-> knowledge of $S(t)$ and $y$ allows us to construct the whole forward curve
-\item<4-> for $r-y <0$ we have backwardation; for $r-y>0$ we have contango.
+
+
+	with two forward prices we can derive the value of $S(t)$ and $y$
+
+
+	knowledge of $S(t)$ and $y$ allows us to construct the whole forward curve
+
+
+	for $r-y <0$ we have backwardation; for $r-y>0$ we have contango.
+
+
 % end itemize
+
+
 
 % frametitle
 {Spot-Forward Relationship: Classical theory}
+
+
 % begin itemize
-\item<1-> In a stochastic model we use
+
+
+
+
+	In a stochastic model we use
 $$
 F(t,T)=\EX_{\Q}(S(T)|\F_t)
 $$
 where $\F_t$ is the accumulated available market information (in most models the information generated by the spot price).
-\item<2-> $\Q$ is a risk-neutral probability
+
+
+	$\Q$ is a risk-neutral probability
+
+
 % begin itemize
-\item discounted spot price is a $\Q$-martingale
-\item fixed by calibration to market prices or a market price of risk argument
+
+
+
+
+	discounted spot price is a $\Q$-martingale
+
+
+	fixed by calibration to market prices or a market price of risk argument
+
+
 % end itemize
+
+
+
+
 % end itemize
+
+
 
 % frametitle
 {Futures Prices and Expectation of Future Spot Prices}
@@ -227,20 +381,40 @@ tested in many studies for a wide range of commodities.
 {Futures Prices and Expectation of Future Spot Prices}
 When equality in (\ref{REH}) does not hold futures prices are biased estimators of
 future spot prices. If
+
+
 % begin itemize
-\item[$>$] holds, then $f(t,T)$ is an up-ward biased estimate, then risk-aversion
+
+
+
+
+	holds, then $f(t,T)$ is an up-ward biased estimate, then risk-aversion
 among market participants is such that buyers are willing to pay more than the expected
 spot price in order to secure access to the commodity at time $T$ (political unrest);
-\item[$<$] holds, then $f(t,T)$ is an down-ward biased estimate, this may reflect a
+
+
+	holds, then $f(t,T)$ is an down-ward biased estimate, this may reflect a
 perception of excess supply in the future.
+
+
 % end itemize
+
+
 
 % frametitle
 {Market Risk Premium}
+
+
 % begin itemize
-\item<1-> The \emph{market risk premium} or \emph{forward bias} $\pi (t,T)$
+
+
+
+
+	The \emph{market risk premium} or \emph{forward bias} $\pi (t,T)$
 relates forward and expected spot prices.
-\item<2-> It is defined as the difference, calculated at time $t$, between
+
+
+	It is defined as the difference, calculated at time $t$, between
 the forward $F(t,T)$ at time $t$ with delivery at $T$ and expected
 spot price:
 \begin{equation}\label{forward risk premium}
@@ -249,7 +423,11 @@ spot price:
 Here $\EX^\prb$ is the expectation operator, under the
 historical measure $\prb$, with information up until time $t$ and
 $S(T)$ is the spot price at time $T$.
+
+
 % end itemize
+
+
 
 \subsection[Mean-Reversion Model]{A Mean-Reversion Diffusion Model}
 %\subsection{A simple Valuation Framework}
@@ -262,12 +440,28 @@ Let $X_t = \ln S_t$ and
 	dX_t = \kappa (\ln \theta - X_t)dt + \sigma dW_t~~,~~X_0 = \ln(S_0)
 \end{align*}
 Thus, the logarithm of the prices follow a mean reverting diffusion process, the so-called \textcolor{red}{Ornstein-Uhlenbeck-Process}.\\
+
+
 % begin itemize
-\item $\kappa$ - Speed of mean reversion
-\item $\theta$ - Level of mean reversion
-\item $\sigma$ - Volatility of the process
-\item $dW_t$ - Brownian increments
+
+
+
+
+	$\kappa$ - Speed of mean reversion
+
+
+	$\theta$ - Level of mean reversion
+
+
+	$\sigma$ - Volatility of the process
+
+
+	$dW_t$ - Brownian increments
+
+
 % end itemize
+
+
 
 % frametitle
 {Sample paths of the model}
@@ -280,21 +474,53 @@ We simulate $S_t$ (with $S_0=20, \theta = 20, \kappa = 1, \sigma = 0.2$) and get
 
 % frametitle
 {Why this model?}
+
+
 % begin itemize
-\item<1-> The \textcolor{red}{mean-reversion} process has been considered the natural choice for commodities. Basic microeconomics theory tells that, in the long run, the price of a commodity ought to be tied to its long-run marginal production cost or, "in case of a cartelized commodity like oil, the long-run profit-maximizing price sought by cartel managers" (Laughton \& Jacoby, 1995, p.188).
-\item<2->  The model was introduced by Eduardo Schwartz ("The Stochastic Behavior of Commodity Prices: Implications for Valuation and Hedging", Journal of Finance, vol.52, n. 3, July 1997, pp.923-973) and is often used in academic studies (and for practical pricing?).
+
+
+
+
+	The \textcolor{red}{mean-reversion} process has been considered the natural choice for commodities. Basic microeconomics theory tells that, in the long run, the price of a commodity ought to be tied to its long-run marginal production cost or, "in case of a cartelized commodity like oil, the long-run profit-maximizing price sought by cartel managers" (Laughton \& Jacoby, 1995, p.188).
+
+
+	The model was introduced by Eduardo Schwartz ("The Stochastic Behavior of Commodity Prices: Implications for Valuation and Hedging", Journal of Finance, vol.52, n. 3, July 1997, pp.923-973) and is often used in academic studies (and for practical pricing?).
+
+
 % end itemize
+
+
 
 % frametitle
 {Properties of the model}
+
+
 % begin itemize
-\item<1-> Mean reverting
-\item<2-> Bounded volatility
-\item<3-> Continuous paths
-\item<4-> Relative price changes are normally distributed
-\item<5-> \textcolor{red}{Analytic results} for the forward-curve and option prices exist
-\item<6-> \textcolor{red}{Calibration} easily possible
+
+
+
+
+	Mean reverting
+
+
+	Bounded volatility
+
+
+	Continuous paths
+
+
+	Relative price changes are normally distributed
+
+
+	\textcolor{red}{Analytic results} for the forward-curve and option prices exist
+
+
+	\textcolor{red}{Calibration} easily possible
+
+
 % end itemize
+
+
 
 %\subsection{Prices in the Model}
 
@@ -327,36 +553,78 @@ Assuming the same parameters as before and varying $S_t$ we get the forward curv
 
 % frametitle
 {Properties of the forward curve in the model}
+
+
 % begin itemize
-\item<1-> $F(t,T) \rightarrow \exp(\ln \theta + \frac{\sigma^2}{4 \kappa}) = \theta \exp{(\frac{\sigma^2}{4\kappa})}$ as $T \rightarrow \infty$.
-\item<2-> If the spot price is low compared to the long term mean, the forward curve is upward sloping (contango).
-\item<3-> If the spot price is high compared to the long term mean, the forward curve is downward sloping (backwardation).
-\item<4-> If the spot price is close to the long term mean, the forward curve might be humped-shaped.
+
+
+
+
+	$F(t,T) \rightarrow \exp(\ln \theta + \frac{\sigma^2}{4 \kappa}) = \theta \exp{(\frac{\sigma^2}{4\kappa})}$ as $T \rightarrow \infty$.
+
+
+	If the spot price is low compared to the long term mean, the forward curve is upward sloping (contango).
+
+
+	If the spot price is high compared to the long term mean, the forward curve is downward sloping (backwardation).
+
+
+	If the spot price is close to the long term mean, the forward curve might be humped-shaped.
+
+
 % end itemize
+
+
 
 \subsection{A structural model -- Barlow (2002)}
 
 % frametitle
 {Set-up}
+
+
 % begin itemize
-\item<1-> $u_t(x)$ is supply at time $t$, if price is $x$; an increasing function.
-\item<2-> $d_t(x)$ is demand at time $t$, if price is $x$; a decreasing function.
-\item<3-> The electricity price at time $t$ is the unique number $S_t$ such that
+
+
+
+
+	$u_t(x)$ is supply at time $t$, if price is $x$; an increasing function.
+
+
+	$d_t(x)$ is demand at time $t$, if price is $x$; a decreasing function.
+
+
+	The electricity price at time $t$ is the unique number $S_t$ such that
 $$
 u_t(S_t)=d_t(S_t)
 $$
-\item<4-> Need to specify $u_t$ and $d_t$.
+
+
+	Need to specify $u_t$ and $d_t$.
+
+
 % end itemize
+
+
 
 % frametitle
 {Barlow (2002) specification}
+
+
 % begin itemize
-\item<1-> Supply is non-random, independent of $t$
+
+
+
+
+	Supply is non-random, independent of $t$
 $$u_t(x)=g(x).$$
-\item<2-> Demand is inelastic, independent of $x$
+
+
+	Demand is inelastic, independent of $x$
 $$d_t(x)=D_t$$
 a random process.
-\item<3-> With
+
+
+	With
 $$
 f_\alpha(x) = (1+\alpha x)^\frac{1}{\alpha}, \;\alpha \not=0, \; f_0(x)=\exp(x)
 $$
@@ -374,5 +642,9 @@ f_\alpha(X_t) & 1+\alpha  X_t> \epsilon_0 \\*[12pt]
 \right.
 $$
 
+
+
 % end itemize
+
+
 

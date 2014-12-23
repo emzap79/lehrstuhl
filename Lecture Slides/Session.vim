@@ -8,42 +8,41 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +778 Model\ Risk_blank_petong/ModelRiskExamples.tex
-badd +811 Model\ Risk_blank_petong/ModelRiskBasics.tex
-badd +1 Model\ Risk_blank_petong/ModelRiskRobust.tex
-badd +1 SV-WS1415_blank_petong/Review.tex
-badd +1 SV-WS1415_blank_petong/StructuredContracts.tex
-badd +358 SV-WS1415_blank_petong/ForwardsPart2.tex
-badd +651 SV-WS1415_blank_petong/EnergyEmpirics.tex
-badd +268 SV-WS1415_blank_petong/EnergyDerivatives.tex
-badd +688 SV-WS1415_blank_petong/forwards-2.tex
-badd +556 SV-WS1415_blank_petong/PowerPlants.tex
-badd +589 SV-WS1415_blank_petong/RenewableEnergyFinance.tex
-badd +371 SV-WS1415_blank_petong/ForwardModels.tex
-badd +251 SV-WS1415_blank_petong/Forwards.tex
-badd +507 SV-WS1415_blank_petong/reviewbasic.tex
-badd +594 FO-Sommersemester\ 2014_blank_petong/InterestRates.tex
-badd +79 FO-Sommersemester\ 2014_blank_petong/blackscholes.tex
-badd +298 FO-Sommersemester\ 2014_blank_petong/derivatives.tex
-badd +644 FO-Sommersemester\ 2014_blank_petong/valuation.tex
-badd +138 FO-Sommersemester\ 2014_blank_petong/introduction.tex
-badd +816 ET-Vorlesung\ SS2014_blank_petong/EnergyDerivatives.tex
-badd +265 ET-Vorlesung\ SS2014_blank_petong/ForwardModels.tex
-badd +106 ET-Vorlesung\ SS2014_blank_petong/MarketObjects.tex
-badd +518 QCF-Sommersemester\ 2014_blank_petong/Cap-and-trade-Design.tex
-badd +277 QCF-Sommersemester\ 2014_blank_petong/Introduction.tex
-badd +186 QCF-Sommersemester\ 2014_blank_petong/PermitPriceDynamics.tex
-badd +207 QCF-Sommersemester\ 2014_blank_petong/FlexibleMechanism.tex
-badd +598 QCF-Sommersemester\ 2014_blank_petong/ReducedFormModels.tex
-badd +134 QCF-Sommersemester\ 2014_blank_petong/CDM.tex
-badd +237 QCF-Sommersemester\ 2014_blank_petong/EquilibriumModels.tex
+badd +1100 Model\ Risk_blank_petong/ModelRiskExamples.tex
+badd +1160 Model\ Risk_blank_petong/ModelRiskBasics.tex
+badd +164 Model\ Risk_blank_petong/ModelRiskRobust.tex
+badd +627 SV-WS1415_blank_petong/Review.tex
+badd +681 SV-WS1415_blank_petong/StructuredContracts.tex
+badd +471 SV-WS1415_blank_petong/ForwardsPart2.tex
+badd +770 SV-WS1415_blank_petong/EnergyEmpirics.tex
+badd +996 SV-WS1415_blank_petong/EnergyDerivatives.tex
+badd +893 SV-WS1415_blank_petong/forwards-2.tex
+badd +867 SV-WS1415_blank_petong/PowerPlants.tex
+badd +966 SV-WS1415_blank_petong/RenewableEnergyFinance.tex
+badd +511 SV-WS1415_blank_petong/ForwardModels.tex
+badd +504 SV-WS1415_blank_petong/Forwards.tex
+badd +404 SV-WS1415_blank_petong/reviewbasic.tex
+badd +165 FO-Sommersemester\ 2014_blank_petong/InterestRates.tex
+badd +42 FO-Sommersemester\ 2014_blank_petong/blackscholes.tex
+badd +550 FO-Sommersemester\ 2014_blank_petong/derivatives.tex
+badd +1231 FO-Sommersemester\ 2014_blank_petong/valuation.tex
+badd +32 FO-Sommersemester\ 2014_blank_petong/introduction.tex
+badd +1332 ET-Vorlesung\ SS2014_blank_petong/EnergyDerivatives.tex
+badd +398 ET-Vorlesung\ SS2014_blank_petong/ForwardModels.tex
+badd +247 ET-Vorlesung\ SS2014_blank_petong/MarketObjects.tex
+badd +939 QCF-Sommersemester\ 2014_blank_petong/Cap-and-trade-Design.tex
+badd +149 QCF-Sommersemester\ 2014_blank_petong/Introduction.tex
+badd +1050 QCF-Sommersemester\ 2014_blank_petong/PermitPriceDynamics.tex
+badd +424 QCF-Sommersemester\ 2014_blank_petong/FlexibleMechanism.tex
+badd +813 QCF-Sommersemester\ 2014_blank_petong/ReducedFormModels.tex
+badd +238 QCF-Sommersemester\ 2014_blank_petong/CDM.tex
+badd +833 QCF-Sommersemester\ 2014_blank_petong/EquilibriumModels.tex
 badd +29 ET-Vorlesung\ SS2014_blank_petong/EnergyTrading_ss14UDE.tex
-badd +240 FO-Sommersemester\ 2014_blank_petong/Uebungen/Klausur_Termin_1_140806_1648.tex
-badd +196 Model\ Risk_blank_petong/question.tex
+badd +280 FO-Sommersemester\ 2014_blank_petong/Uebungen/Klausur_Termin_1_140806_1648.tex
+badd +236 Model\ Risk_blank_petong/question.tex
 badd +1 FO-Sommersemester\ 2014_blank_petong/FuturesOptions_ss14UDE.tex
 badd +1 QCF-Sommersemester\ 2014_blank_petong/QCF_ss14UDE.tex
-badd +0 Model\ Risk_blank_petong/ModelRisk_spring14UDE.tex
-badd +0 SV-WS1415_blank_petong/StructuringValuation_ws1415UDE.tex
+badd +1 SV-WS1415_blank_petong/StructuringValuation_ws1415UDE.tex
 argglobal
 silent! argdel *
 argadd Model\ Risk_blank_petong/question.tex
@@ -82,7 +81,7 @@ argadd QCF-Sommersemester\ 2014_blank_petong/FlexibleMechanism.tex
 argadd QCF-Sommersemester\ 2014_blank_petong/ReducedFormModels.tex
 argadd QCF-Sommersemester\ 2014_blank_petong/CDM.tex
 argadd QCF-Sommersemester\ 2014_blank_petong/EquilibriumModels.tex
-edit SV-WS1415_blank_petong/StructuredContracts.tex
+edit QCF-Sommersemester\ 2014_blank_petong/ReducedFormModels.tex
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -128,10 +127,7 @@ wincmd _ | wincmd |
 split
 wincmd _ | wincmd |
 split
-wincmd _ | wincmd |
-split
-23wincmd k
-wincmd w
+22wincmd k
 wincmd w
 wincmd w
 wincmd w
@@ -156,7 +152,7 @@ wincmd w
 wincmd w
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 17 + 22) / 44)
+exe '1resize ' . ((&lines * 18 + 22) / 44)
 exe '2resize ' . ((&lines * 0 + 22) / 44)
 exe '3resize ' . ((&lines * 0 + 22) / 44)
 exe '4resize ' . ((&lines * 0 + 22) / 44)
@@ -179,40 +175,24 @@ exe '20resize ' . ((&lines * 0 + 22) / 44)
 exe '21resize ' . ((&lines * 0 + 22) / 44)
 exe '22resize ' . ((&lines * 0 + 22) / 44)
 exe '23resize ' . ((&lines * 0 + 22) / 44)
-exe '24resize ' . ((&lines * 0 + 22) / 44)
-argglobal
-8argu
-setlocal fdm=expr
-setlocal fde=TeXFold(v:lnum)
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=3
-setlocal fml=2
-setlocal fdn=2
-setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 8) / 17)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-wincmd w
 argglobal
 9argu
-setlocal fdm=expr
-setlocal fde=TeXFold(v:lnum)
+edit QCF-Sommersemester\ 2014_blank_petong/ReducedFormModels.tex
+setlocal fdm=manual
+setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=0
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 0) / 0)
+silent! normal! zE
+let s:l = 2 - ((1 * winheight(0) + 9) / 18)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+2
+normal! 05|
 wincmd w
 argglobal
 10argu
@@ -241,11 +221,11 @@ setlocal fdl=0
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 268 - ((267 * winheight(0) + 0) / 0)
+let s:l = 388 - ((387 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-268
+388
 normal! 0
 wincmd w
 argglobal
@@ -588,7 +568,7 @@ normal! zt
 1
 normal! 0
 wincmd w
-exe '1resize ' . ((&lines * 17 + 22) / 44)
+exe '1resize ' . ((&lines * 18 + 22) / 44)
 exe '2resize ' . ((&lines * 0 + 22) / 44)
 exe '3resize ' . ((&lines * 0 + 22) / 44)
 exe '4resize ' . ((&lines * 0 + 22) / 44)
@@ -611,7 +591,6 @@ exe '20resize ' . ((&lines * 0 + 22) / 44)
 exe '21resize ' . ((&lines * 0 + 22) / 44)
 exe '22resize ' . ((&lines * 0 + 22) / 44)
 exe '23resize ' . ((&lines * 0 + 22) / 44)
-exe '24resize ' . ((&lines * 0 + 22) / 44)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

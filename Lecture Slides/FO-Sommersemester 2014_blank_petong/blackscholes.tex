@@ -25,14 +25,14 @@
 % frametitle
 { Black-Scholes Model}
 
-%\begin{itemize}
+%% begin itemize
 %  \item The classical Black-Scholes model is
-%\begin{itemize}
+%% begin itemize
 %  \item $dB(t) = \DSE r B(t) dt, \A B(0)= 1$
 %  \item $dS(t) = \DSE S(t) (b dt + \sigma dW(t) \!, \A &S(0) = p$
-%\end{itemize}
+%% end itemize
 %\item with constant coefficients $b \in \setR,\; r,\s \in \setR_+$.
-%\end{itemize}
+%% end itemize
 %}
 
 % frametitle
@@ -63,25 +63,25 @@ $$
 
 % frametitle
 {Greeks (1)}
-\begin{itemize}
+% begin itemize
 \item<1-> We will now analyse the impact of the
 underlying parameters in the standard Black-Scholes model on the
 prices of call and put options.
 \item<2->
 The Black-Scholes option values
 depend on the
-\begin{enumerate}
+% begin enumerate
 \item (current) stock price,
 \item the volatility,
 \item the time to maturity,
 \item the interest rate
 \item the strike price.
-\end{enumerate}
-\end{itemize}
+% end enumerate
+% end itemize
 
 % frametitle
 {Greeks (2)}
-\begin{itemize}
+% begin itemize
 \item<1-> The
 sensitivities of the option price with respect to the first four
 parameters are called the {\it Greeks} and are widely used for
@@ -89,7 +89,7 @@ hedging purposes.
 \item<1->
 We can determine the impact of these parameters
 by taking partial derivatives.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Greeks}
@@ -112,7 +112,7 @@ $$
 
 % frametitle
 {Greeks} From the definitions it is clear that
-\begin{itemize}
+% begin itemize
 \item<1->
 $\Delta$ -- delta -- measures the change in the value of the
 option compared with the change in the value of the underlying
@@ -120,7 +120,7 @@ asset,
 \item<2-> ${\cal V}$ -- vega -- measures the change of the option
 compared with the change in the volatility of the underlying,
 \item<3-> similar statements hold for $\Theta$ -- theta -- and $\rho$ -- rho
-\end{itemize}
+% end itemize
 
 % frametitle
 {Greeks}
@@ -140,7 +140,7 @@ compared with the change in the volatility of the underlying,
 
 % frametitle
 {Greeks}
-\begin{itemize}
+% begin itemize
 \item<1->
 The Black-Scholes partial differential equation can be used to
 obtain the relation between the Greeks,
@@ -148,11 +148,11 @@ obtain the relation between the Greeks,
 $$
 r C = \frac{1}{2} s^2 \s^2 \Gamma +rs \Delta -\Theta.
 $$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Vega}
-\begin{itemize}
+% begin itemize
 \item<1->
 Before we can implement
 the Black-Scholes formula to price options, we have to estimate
@@ -168,13 +168,13 @@ $$
 {\cal V} = S \sqrt{T} \Phi(d_1).
 $$
 \item<3-> Note here is that vega is always positive.
-\end{itemize}
+% end itemize
 
 \subsection{Volatility}
 
 % frametitle
 {Implied Volatility}
-\begin{itemize}
+% begin itemize
 \item<1->
 Since vega is positive, $C$ is a continuous -- indeed,
 differentiable -- strictly increasing function of $\s$.
@@ -190,17 +190,17 @@ Thus the value $\s = \s(C)$ corresponding to the actual value $C =
 C(\s)$ at which call options are observed to be traded in the
 market can be read off.  The value of $\s$ obtained in this way is
 called the {\it implied volatility}.
-\end{itemize}
+% end itemize
 
 % frametitle
 {The Black-Scholes Implied Volatility}
-\begin{itemize}
+% begin itemize
 \item<1-> The Black-Scholes model assumes a constant volatility over all maturities and strikes.
 \item<2-> One can calculate the implicit volatility given the market price of options.
 \item<3-> The implicit volatility is changing over time and maturity, so contradicting the modelling assumptions.
 \item<4-> However, it can be used to predict future volatility.
 \item<5-> Furthermore, volatility can be made an own "asset class".
-\end{itemize}
+% end itemize
 
 % frametitle
 {Volatility Smile}
@@ -216,21 +216,21 @@ $$\includegraphics[scale=0.25]{../../../pics/VolatilitySurface.jpg}$$
 
 % frametitle
 {VDAX-NEW: Definition}
-\begin{itemize}
+% begin itemize
   \item The volatility index VDAX-NEW was developed by Deutsche B{\"o}rse and Goldman Sachs. It tracks the degree of fluctuation expected by the derivatives market, i.e. the implied volatility, for the DAX index. The index expresses in percentage terms what degree of volatility is to be expected for the following 30 days.
   \item VDAX-NEW started on 20 April 2005 and will replace VDAX in the medium-term.
-\end{itemize}
+% end itemize
 
 % frametitle
 {VDAX-NEW: Examples}
 Examples:\\
 \vspace{0.3cm}
-\begin{itemize}
+% begin itemize
   \item<1-> A DAX of 4,000 and a VDAX-NEW of 10 indicate that the DAX stock index is expected to fluctuate between 3,885 and 4,115 over the next thirty days:
   $$4000\pm4000\times0.1\times\sqrt{\frac{30}{365}}\approx4000\pm115.$$
   \item<2-> A DAX of 4,000 and a VDAX-NEW of 20 indicate that the DAX stock index is expected to fluctuate between 3,770 and 4,230 over the next thirty days:
     $$4000\pm4000\times0.2\times\sqrt{\frac{30}{365}}\approx4000\pm230.$$
-\end{itemize}
+% end itemize
 
 % frametitle
 {VDAX-NEW}
@@ -239,41 +239,41 @@ $$\includegraphics[scale=0.6]{../../../pics/VDaxNew.png}$$
 
 % frametitle
 {VDAX-NEW: Calculation}
-\begin{itemize}
+% begin itemize
   \item <1-> Index is based on 8 sub-indices (option series) which include DAX Options from 2-24 months expiration.
   \item <2-> The main rolling index is calculated 30 days to expiration on linear interpolation of the two sub-indices closest to the 30 days expiration.
   \item <3-> In addition to at-the-money options (VDAX), out-of-the-money options are also considered (VDAX-NEW).
   \item <4-> Calculation frequency: Once a minute on every trading day at Eurex between 8.50am and 5.30pm CET.
-\end{itemize}
+% end itemize
 
 % frametitle
 {VDAX-NEW: Features}
-\begin{itemize}
+% begin itemize
   \item <1-> Expresses market expectation of the amplitude of fluctuation in DAX.
   \item <2-> Index is able to react only to changes in volatility.
   \item <3-> Allows better replication for derivatives and structured products.
   \item <4-> Due to ATM and OTM options VDAX-NEW captures more of the volatility skew than VDAX.
   \item <5-> Index establishes volatiliy as a tradable and separate asset class for investors.
-\end{itemize}
+% end itemize
 
 % frametitle
 {VDAX-NEW: Use}
-\begin{itemize}
+% begin itemize
   \item <1-> Investment/Trading: Speculation on future levels of volatility.
   \item <2-> Hedging: Cover short volatility positions.
   \item <3-> Diversification of German equity portfolios (correlation to DAX is -0.5689, correlation to MDAX is -0.4668).
   \item <4-> Benchmark for German equity volatility.
-\end{itemize}
+% end itemize
 
 % frametitle
 {VDAX-NEW: Diversification}
-\begin{itemize}
+% begin itemize
   \item Portfolio of 80\% DAX and 20\% VDAX-NEW between
 1992 and 2004 would have generated a 3.8 percentage
 points on average higher yield than investments in
 DAX only. And this with lower risk!
 $$\includegraphics[scale=0.45]{../../../pics/VDax_div.png}$$
-\end{itemize}
+% end itemize
 
 \subsection{Derivatives Risk Management}
 
@@ -282,23 +282,23 @@ $$\includegraphics[scale=0.45]{../../../pics/VDax_div.png}$$
 % frametitle
 {Motivation}
 A bank (option seller) tries to control the risk of its short position and has to ask the folkowing questions:
-\begin{itemize}
+% begin itemize
   \item How does the value of the position change if the value of the underlying changes?
   \item How can you protect (i.e., hedge) yourself against those risk?
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
 {Some Terms}
 A \emph{hedge} is a trade that reduces the risk of a position.
-\begin{itemize}
+% begin itemize
   \item A \emph{static} hedge is set up once and not touched until maturity of
   the derivative/position that is hedged.
   \item A \emph{dynamic} hedge is set up and adjusted continuously (in practice:
   regularly).
   \item A \emph{semi-static} hedge is set up and adjusted at infrequent
   intervals.
-\end{itemize}
+% end itemize
 A position for which no hedge is in place is called \emph{naked}, a position
 that is fully hedged is called \emph{covered} (e.g., sell a forward and buy the
 underlying stock).
@@ -307,7 +307,7 @@ underlying stock).
 % frametitle
 {A simple Hedging Strategy: Stop-Loss}
 We consider a short position in one European call option with strike $K$.
-\begin{itemize}
+% begin itemize
   \item A stop-loss hedge involves buying one share of the underlying stock when
   the price moves above $K$ and selling it again when the price falls below $K$.
   \item The strategy usually does not work well in practice because the trader
@@ -315,12 +315,12 @@ We consider a short position in one European call option with strike $K$.
   it is too late. Therefore, he buys the stock at $K+\epsilon$ and sells at
   $K-\epsilon$, resulting in a loss.
   \item Also, discounting has to be taken into account.
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
 {Delta Hedging I}
-\begin{itemize}
+% begin itemize
   \item Assume that you have an options position with delta $\Delta$. This means
   that if the price of the underlying moves by a (very) small amount $\epsilon$, the
   price of the option position moves approximately by $\Delta \epsilon$.
@@ -328,19 +328,19 @@ We consider a short position in one European call option with strike $K$.
   underlying (buying if $\Delta <0$) and gives a portfolio that does not
   change its value if the price of the underlying changes by a marginal amount.
   The portfolio has a delta of zero and is called \emph{delta neutral}.
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
 {Delta Hedging II}
-\begin{itemize}
+% begin itemize
   \item BUT: Delta is not constant, so the portfolio has to be rebalanced.
   \item In the Black-Scholes model, a delta hedge with continuous rebalancing is
   a perfect hedge.
   \item In practice, continuous rebalancing is not possible so that the
   portfolio is not protected against larger market movements. Transaction
   costs and bid-ask spread also result in losses.
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
@@ -348,17 +348,17 @@ We consider a short position in one European call option with strike $K$.
 You are long USD $1,000$ in the $104$ call. Interest rate is $5\%$,
 stock price today is $99$, time to maturity $1$ month, and implied volatility is
 $15.7\%$.
-\begin{itemize}
+% begin itemize
   \item How can you make your portfolio delta neutral by investing in the stock?
   \item You set up the delta neutral portfolio and the stock price jumps to
   USD$100$ immediately. What is your P/L for the portfolio?
-\end{itemize}
+% end itemize
 
 \end{frame}
 
 % frametitle
 {Example: Delta Hedge}
-\begin{itemize}
+% begin itemize
   \item Compute the price of the call with the BS formula:
   \begin{align*}
     Call_{BS} = 0.3858 \text{USD}.
@@ -372,22 +372,22 @@ $15.7\%$.
     }{0.157\sqrt{1/12}}\right)\\
      	&= 0.1654.
   \end{align*}
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
 {Example: Delta Hedge}
-\begin{itemize}
+% begin itemize
   \item The delta of the position is long $\Delta_P=N\cdot \Delta=428.70$.
   \item The stock has $\Delta=1$.
   \item To make the position delta neutral, you have to enter a short position
   of $428.70$ shares.
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
 {Example: Delta Hedge}
-\begin{itemize}
+% begin itemize
   \item The loss from the short position in the stock is $428.70 \cdot
   1=428.70$.
   \item To compute the gain from the long options position, we have to compute
@@ -397,14 +397,14 @@ $15.7\%$.
   \end{align*}
   \item The gain from the options position is $2592\cdot(0.5808-0.3858)=505.37$.
   \item Our profit is $505.37-428.70=76.67$.
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
 {Gamma Neutral Portfolios}
 As the delta of a portfolio changes with the price of the underlying, a delta
 hedge has to be rebalanced frequently.
-\begin{itemize}
+% begin itemize
   \item A delta hedge for a portfolio with a high (absolute) gamma has to be
   monitored more carefully than a delta hedge of a portfolio with gamma close to
   zero.
@@ -414,22 +414,22 @@ hedge has to be rebalanced frequently.
   gamma is zero.
   \item Strategy: Make the portfolio gamma neutral by investing in an option,
   then make it delta neutral by investing in the underlying.
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
 {Example: Gamma Neutral Portfolio}
 You are in the same position as in the previous example. Additionally, you can
 trade in the $97$ call.
-\begin{itemize}
+% begin itemize
   \item Put together a portfolio that is delta and gamma neutral.
   \item What is your P/L if the stock price jumps to $100$?
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
 {Example: Gamma Neutral Portfolio}
-\begin{itemize}
+% begin itemize
   \item The gamma of the $104$ call is
   \begin{align*}
   \Gamma_{104C} = \frac{\varphi(d_1)}{S\sigma \sqrt{T-t}} = 0.0554.
@@ -442,12 +442,12 @@ trade in the $97$ call.
   $n$ $97$ calls so that $2592\cdot 0.0554 +n\cdot 0.0758 = 0$.
   \item We find that $n=-1894.74$ makes the portfolio gamma neutral, i.e., we
   sell $1894.74$ units of the $97$ call.
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
 {Example: Gamma Neutral Portfolio}
-\begin{itemize}
+% begin itemize
   \item We compute the delta of the portfolio consisting of the two positions in
   the calls.
   \item The $97$ call has a delta of $\Delta_{97C}=0.7139$.
@@ -458,19 +458,19 @@ trade in the $97$ call.
   \item We have to buy $924.02$ units of the underlying to make the portfolio
   delta neutral. By buying the underlying, we do not change the gamma of the
   portfolio, it remains zero.
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
 {Example: Gamma Neutral Portfolio}
-\begin{itemize}
+% begin itemize
   \item The price of the $97$ call for $S=99$ is $Call_{BS,97}(S=99)=3.2235$.
   \item The price of the $97$ call for $S=100$ is $Call_{BS,97}(S=100)=3.9735$.
   \item The P/L from the position in the $97$ call is
   $-1894.97*(3.9735-3.2235)=-1421.11$.
   \item The P/L from the position in the stock is $924.02$.
   \item The portfolio P/L is $924.02-1421.11+505.37=-8.28.$
-\end{itemize}
+% end itemize
 \end{frame}
 
 \subsection{Goldman-Sachs Example}

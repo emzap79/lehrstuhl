@@ -51,7 +51,7 @@ $$
 
 % frametitle
 {Modelling Approach}
-\begin{itemize}
+% begin itemize
 \item<1-> We use the HJM-framework to model the forward dynamics directly.
 \item<2-> We distinguish between forward contracts with a fixed time delivery and forward contracts with a delivery period, called \emph{swaps}.
 \item<3-> A typical lognormal dynamics of the swap price is,
@@ -60,7 +60,7 @@ dF(t,T_1,T_2)=\Sigma(t,T_1,T_2)F(t,T_1,T_2)\, dW(t). \label{eqn: lognormal dynam
 \end{equation}
 The only parameter in this model is the volatility function $\Sigma$ which has to capture all movements of the swap price and especially the time to maturity effect.
 
-\end{itemize}
+% end itemize
 
 
 
@@ -91,10 +91,10 @@ where $a,b >0 $ are constant.
 % frametitle
 {Schwartz Volatility}
 The time to maturity effect is modeled by a negative exponential function.
-\begin{itemize}
+% begin itemize
 \item<1-> When the time to maturity tends to infinity the volatility function converges to zero.
 \item<2-> The exponential function causes that the volatility increases as the time to maturity decreases which leads to an increased volatility when the contract approaches the maturity.
-\end{itemize}
+% end itemize
 
 
 
@@ -125,7 +125,7 @@ The associated swap price volatility is then given by $\Sigma(t,T_1,T_2)=a$.
 
 % frametitle
 {The Model Framework}
-\begin{itemize}
+% begin itemize
 \item<1-> Use observable products, e.g. month futures as building blocks,
 \item<2-> Under a risk-neutral measure month forward prices $F(t,T,T+m)=F(t,T)$ have to be martingales,
 \item<3-> Assume the dynamics
@@ -133,7 +133,7 @@ $$dF(t,T)=\sigma(t,T)F(t,T)dW(t),$$
 where $\sigma(t,T)$ is an adapted $d$-dimensional deterministic function and
 $W(t)$ a $d$-dimensional Brownian motion.
 \item<4-> Initial value of this SDE is the initial forward curve observed at the market.
-\end{itemize}
+% end itemize
 
 
 
@@ -155,14 +155,14 @@ d_2 & = & d_1 - \sqrt{\Sigma(T_0,T)}
 
 % frametitle
 {The Model Framework -- $n$-period futures}
-\begin{itemize}
+% begin itemize
 \item<1-> Use observable products, e.g. month futures as building blocks,
 \item<2-> Express an $n$-period delivery futures as
 $$Y_{T_1, \ldots, T_n}(t)=\frac{\sum_{i=1}^n e^{-r(T_i-t)}F(t,T_i)}{\sum_{i=1}^n e^{-r(T_i-t)}}.$$
 (Compare modelling of forward swap rates in terms of forward LIBOR rates)
 \item<3-> In case of 1-year-futures, the swap rate is the forward price of the 1-year-futures,
 which can be also observed in the market.
-\end{itemize}
+% end itemize
 
 
 
@@ -178,7 +178,7 @@ which can be also observed in the market.
 
 % frametitle
 {Options on $n$-period futures}
-\begin{itemize}
+% begin itemize
 \item<1-> We need to compute
 $$e^{-rT_0} \EX \left[\left(Y(T_0)-K\right)^+\right],$$
 where the distribution of $Y$ as a sum of lognormals is unknown.
@@ -193,7 +193,7 @@ $\sigma(t,T_i)$.
 \item<4->
 An analysis of the goodness of the approximation
 can be found in Brigo-Mercurio (2003).
-\end{itemize}
+% end itemize
 
 
 
@@ -222,7 +222,7 @@ d_2 & = & d_1 - s
 % frametitle
 {A Two-Factor Model}
 
-\begin{itemize}
+% begin itemize
 \item<1-> For a fixed delivery start $T$ and delivery period 1 month, let the dynamics of a Future $F_{t,T}$ be given by the two factor model:
 \begin{eqnarray*}
 F(t,T)& =&F(0,T)\exp\left\{\mu(t,T)  +\int_0^t\hat{\sigma_1}(s,T)dW_s^{(1)}+\sigma_2W_t^{(2)}\right\}
@@ -232,7 +232,7 @@ F(t,T)& =&F(0,T)\exp\left\{\mu(t,T)  +\int_0^t\hat{\sigma_1}(s,T)dW_s^{(1)}+\sig
 \item<3-> $\hat{\sigma_1}(s,T)=\sigma_1e^{-\kappa(T-s)}$
 \item<4-> $\sigma_1$, $\sigma_2$, $\kappa>0$ constants
 \item<5-> $\mu(t,T)$ being the risk-neutral martingale drift
-\end{itemize}
+% end itemize
 
 
 
@@ -271,18 +271,18 @@ $\sigma_2$ affects the level at the long end of the volatility curve
 
 % frametitle
 {Pricing of Futures}
-\begin{itemize}
+% begin itemize
 \item<1-> In this model, all products are expressed using Month-Futures
 \item<2-> Prices of quarterly and yearly Futures are given as an
 average of the  $n$ corresponding monthly Futures.
 \item<3-> $Y_{t,T_1, \ldots T_n}=Y=\frac{\sum e^{-rT_i}F_{t,T_i}}{\sum e^{-rT_i}}$
 is the forward price of a $n$-month forward quoted in the market (cp. swap rate)
-\end{itemize}
+% end itemize
 
 
 % frametitle
 {Pricing of Options on Month-Futures}
-\begin{itemize}
+% begin itemize
 \item<1-> At time $t=0$, the price of a  Call-Option with strike $K$ and maturity $T_0$ on a Month-Future $F_{t,T}$ is given by
 $$e^{-rT_0}\EX\left[\left(F_{T_0,T}-K\right)^+\right]$$
 \item<2-> Within the model,  $F_{T_0,T}$ is log-normally distributed with known variance
@@ -294,12 +294,12 @@ $$
 e^{-rT_0}\EX\left[\left(F_{T_0,T}-K\right)^+\right] & = &
 e^{-rT_0}\left(F_{0,T}\mathcal{N}(d_1)-K\mathcal{N}(d_2)\right)
 \end{eqnarray*}with $d_{1,2}$ depending on the parameters $\sigma_1, \sigma_2, \kappa$.
-\end{itemize}
+% end itemize
 
 
 % frametitle
 {Pricing of Options on quarterly and yearly Futures}
-\begin{itemize}
+% begin itemize
 \item<1-> At time $t=0$, the price of a  Call-Option with strike $K$ and maturity $T_0$ on a $n$-Month-Future
 $Y$ is given by
 $$
@@ -308,7 +308,7 @@ e^{-rT_0}\EX\left[\left(Y-K\right)^+\right]=e^{-rT_0}\EX
 \item<2-> The distribution of the sum is not known within the model. There is no explicit solution to this integral.
 \item<3-> Approximate the random variable $Y$ by a log-normal random variable $\hat{Y}$
 with same mean and variance (depending on the model parameters)
-\end{itemize}
+% end itemize
 
 
 % frametitle
@@ -356,7 +356,7 @@ with $d_{1,2}$ depending on the parameters $\sigma_1, \sigma_2, \kappa$.
 
 % frametitle
 {Parameter Estimation}
-\begin{itemize}
+% begin itemize
 \item<1-> Use the approximating Black-formula
     \begin{eqnarray*}
         \textrm{Option value}&=&    e^{-rT_0}\left(Y(0)\mathcal{N} (d_1)-K\mathcal{N} (d_2) \right)
@@ -368,7 +368,7 @@ with $d_{1,2}$ depending on the parameters $\sigma_1, \sigma_2, \kappa$.
 \item<2-> Compute the variances $Var(\log\hat{Y}(T_0))$ for products observable in the market
 \item<3-> Choose parameter $\sigma_1$, $\sigma_2$ and $\kappa$ to minimize the distance of the model variances
 to the market variances in a given metric (in the least-square sense)
-\end{itemize}
+% end itemize
 
 
 

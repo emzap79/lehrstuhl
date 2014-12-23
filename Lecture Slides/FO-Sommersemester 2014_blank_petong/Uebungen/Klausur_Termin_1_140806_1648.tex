@@ -64,11 +64,11 @@
 \newcommand{\ftext}[1]{\text{\ind\footnotesize #1}}
 \newcommand{\comments}[1]{}
 
-\newcommand{\answerbox}[1]{\\ ~\\ 
+\newcommand{\answerbox}[1]{\\ ~\\
 \renewcommand{\arraystretch}{#1}
 \begin{tabular}{|p{12cm}|p{1cm}|}
- \hline  
- &  \\  
+ \hline
+ &  \\
  \hline
 \end{tabular} \\ }
 \renewcommand{\answerbox}[1]{}
@@ -89,7 +89,7 @@
 
         \bf Lehrstuhl f\"ur Energiehandel und Finanzdienstleistungen\\
         \sf Prof. Dr. Rüdiger Kiesel \\
-		\sf Sascha Kollenberg  \\      
+		\sf Sascha Kollenberg  \\
 
 \hfill
 \parbox[t]{39mm}
@@ -118,102 +118,102 @@
 %\end{flushleft}
 %\newpage
 
-\begin{enumerate}
+% begin enumerate
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{0.3cm}
 
 %\renewcommand{\arraystretch}{4}
 %\begin{tabular}{|p{12cm}|p{1cm}|}
-% \hline  
-% &  \\  
 % \hline
-%\end{tabular} \\ 
+% &  \\
+% \hline
+%\end{tabular} \\
 %\renewcommand{\arraystretch}{10}
 %\begin{tabular}{|p{12cm}|p{1cm}|}
-% \hline  
-% &  \\  
 % \hline
-%\end{tabular} \\ 
+% &  \\
+% \hline
+%\end{tabular} \\
 
 
 \item[]{\bf Aufgabe 1 (Strategien) (20 Punkte)}
-Eine Händlerin kaufe einen sogenannten Bear-Call-Spread, dessen Profit-Diagramm unten aufgetragen ist. Dabei ergibt sich der Profit aus dem Payoff abzüglich dem Preis des Portfolios. Diese Optionsstrategie wird mittels zwei europäischer Call-Optionen konstruiert. Seien $K_1$ und $K_2$ die beiden Strike-Preise und es gelte $K_1<K_2$. 
+Eine Händlerin kaufe einen sogenannten Bear-Call-Spread, dessen Profit-Diagramm unten aufgetragen ist. Dabei ergibt sich der Profit aus dem Payoff abzüglich dem Preis des Portfolios. Diese Optionsstrategie wird mittels zwei europäischer Call-Optionen konstruiert. Seien $K_1$ und $K_2$ die beiden Strike-Preise und es gelte $K_1<K_2$.
 %\begin{figure}[H]
 \begin{center}
-\includegraphics[scale=0.3]{bear.pdf} 
+\includegraphics[scale=0.3]{bear.pdf}
 \end{center}
 %\end{figure}
 \vspace*{0.1cm}
-\begin{enumerate}
+% begin enumerate
 \item Wie sieht das Portfolio für einen Bear-Call-Spread aus? Geben Sie auch die Werte der jeweiligen Strike-Preise der Optionen, sowie den Payoff jeder Einzelposition an. \answerbox{4}
 \item Was ist offensichtlich die Erwartung der Händlerin über den zukünftigen Verlauf des Preises dieses Underlyings, sofern sie ihren erwarteten Payoff maximieren möchte? \answerbox{2}
 \item Wie wird ein Bull-Call-Spread konstruiert? \answerbox{2}
-\item Skizzieren Sie das \emph{Payoff}-Diagramm eines Bull-Spreads in obige Grafik. 
-\end{enumerate}
+\item Skizzieren Sie das \emph{Payoff}-Diagramm eines Bull-Spreads in obige Grafik.
+% end enumerate
 
 \newpage
 
 
-\item[]{\bf Aufgabe 2 (Arbitrage) (30 Punkte)} Begründen Sie Ihre Antworten für folgende Fragen jeweils mittels Argumentation über Arbitrage. Verwenden Sie hierzu Arbitragetabellen. Wir nehmen stetige Verzinsung mit konstantem Zinsatz $r$ an. Derivatepreise $\hat X(S,K,T)$ hängen vom Underlying $S$, dem Strike $K$ und der Maturität $T$ ab. 
-Zeitangaben sind in Jahren. Verwenden Sie Arbitragetabellen in folgendem Format: \\~\\ 
+\item[]{\bf Aufgabe 2 (Arbitrage) (30 Punkte)} Begründen Sie Ihre Antworten für folgende Fragen jeweils mittels Argumentation über Arbitrage. Verwenden Sie hierzu Arbitragetabellen. Wir nehmen stetige Verzinsung mit konstantem Zinsatz $r$ an. Derivatepreise $\hat X(S,K,T)$ hängen vom Underlying $S$, dem Strike $K$ und der Maturität $T$ ab.
+Zeitangaben sind in Jahren. Verwenden Sie Arbitragetabellen in folgendem Format: \\~\\
 \begin{tabular}{|c|c|c||c|c|c|c|}
-\hline 
-$t$ & Positionswert & Cashflow & $T$ & Payoff im Fall $1$ & Payoff im Fall $2$ & ... \\ 
-\hline 
-Position 1 &&&&&& \\ 
-\hline  
-Position 2 &&&&&& \\ 
-\hline 
-... &&&&&& \\ 
-\hline 
-$\sum$ &&&&&& \\ 
+\hline
+$t$ & Positionswert & Cashflow & $T$ & Payoff im Fall $1$ & Payoff im Fall $2$ & ... \\
+\hline
+Position 1 &&&&&& \\
+\hline
+Position 2 &&&&&& \\
+\hline
+... &&&&&& \\
+\hline
+$\sum$ &&&&&& \\
 \hline
 \end{tabular}
 \vspace{0.5cm}
-\begin{enumerate}
+% begin enumerate
  \item Was ist der Gegenwartswert (Wert zum Zeitpunkt $t=0$) einer Zahlung in Höhe von $K$ zum Zeitpunkt $T$? \answerbox{2}
- \item Nehmen Sie Arbitragefreiheit an. Leiten Sie die Put-Call-Parität her: 
+ \item Nehmen Sie Arbitragefreiheit an. Leiten Sie die Put-Call-Parität her:
  \begin{equation}
-  S(0) + \hat P_0(S,K,T) - \hat C_0(S,K,T) = K e^{-rT} \nonumber 
+  S(0) + \hat P_0(S,K,T) - \hat C_0(S,K,T) = K e^{-rT} \nonumber
 \end{equation}  Verwenden Sie hierzu eine Arbitragetabelle. \answerbox{30}
- \item Man beobachte zum Zeitpunkt $0$ am Markt folgende Preise für europäische Calls: 
+ \item Man beobachte zum Zeitpunkt $0$ am Markt folgende Preise für europäische Calls:
 \begin{equation}
- \quad \hat C_0(S,50,1)=2 \quad \hat C_0(S,50,2)=1 \nonumber 
+ \quad \hat C_0(S,50,1)=2 \quad \hat C_0(S,50,2)=1 \nonumber
 \end{equation}
 Sind diese Preise mit der Annahme der Arbitragefreiheit vereinbar? Verwenden Sie eine bekannte Preisrelation. \answerbox{8}
  \item Betrachten Sie zwei europäische Calls mit identischer Maturität auf das gleiche Underlying jedoch zu unterschiedlichen Strikes $K_1<K_2$. Nehmen Sie Arbitragefreiheit an. Welcher der beiden Calls ist teurer? Begründen Sie Ihre Antwort mittels Arbitragetabelle. \answerbox{34}
 % \newpage
  \item Ist der Wert eines Bull-Call-Spreads positiv oder negativ? Beweisen Sie Ihre Antwort mittels Arbitragetabelle. \answerbox{22}
- \item Es gelte $r=\ln(1,5)$. Man beobachte nun zum Zeitpunkt $0$ am Markt folgende Preise: 
+ \item Es gelte $r=\ln(1,5)$. Man beobachte nun zum Zeitpunkt $0$ am Markt folgende Preise:
  \begin{align}
-  \quad S_0=20 \quad \hat P_0(S,30,1)=3 \quad \hat C_0(S,30,1)=2 \nonumber  
-\end{align}  
-Sind diese Preise mit der Annahme der Arbitragefreiheit vereinbar?  Beweisen Sie ihre Antwort mittels einer bekannten Preisrelation. \answerbox{20} 
-\end{enumerate}
+  \quad S_0=20 \quad \hat P_0(S,30,1)=3 \quad \hat C_0(S,30,1)=2 \nonumber
+\end{align}
+Sind diese Preise mit der Annahme der Arbitragefreiheit vereinbar?  Beweisen Sie ihre Antwort mittels einer bekannten Preisrelation. \answerbox{20}
+% end enumerate
 
 \vspace*{1cm}
 
 \newpage
 
 
-\item[]{\bf Aufgabe 3 (Diskrete Modelle) (15 Punkte)} 
-Sei $S_t$ der Wert eines Underlyings zum Zeitpunkt $t$, wobei $t$ nur Werte in der diskreten Menge $\{1,...,N\}$ annehmen kann. Der jetzige Zeitpunkt sei $t=1$. Wir nehmen diskrete Verzinsung zum Zinssatz $r$ an. 
-Nehmen Sie zunächst an, $S_{t+1}=(1+u)S_t$ mit Wahrscheinlichkeit $q$ und $S_{t+1}=(1+d)S_t$ mit Wahrscheinlichkeit $(1-q)$. 
-\begin{enumerate}
+\item[]{\bf Aufgabe 3 (Diskrete Modelle) (15 Punkte)}
+Sei $S_t$ der Wert eines Underlyings zum Zeitpunkt $t$, wobei $t$ nur Werte in der diskreten Menge $\{1,...,N\}$ annehmen kann. Der jetzige Zeitpunkt sei $t=1$. Wir nehmen diskrete Verzinsung zum Zinssatz $r$ an.
+Nehmen Sie zunächst an, $S_{t+1}=(1+u)S_t$ mit Wahrscheinlichkeit $q$ und $S_{t+1}=(1+d)S_t$ mit Wahrscheinlichkeit $(1-q)$.
+% begin enumerate
  \item Geben Sie den erwarteten Wert des Underlyings zum Zeitpunkt $2$ an. \answerbox{3}
  \item Berechnen Sie die arbitragefreien Wahrscheinlichkeiten $q$ und $1-q$. Begründen Sie Ihre Berechnung mittels Arbitragetabelle. \answerbox{40}
  \item Zeichnen Sie den Binomialbaum für $N=3$. \answerbox{20}
  \item Wie viele Pfade führen zum Preis $S_3=(1+u)(1+d)S_1$? \answerbox{4}
  \item Berechnen Sie den erwarteten Preis zum Zeitpunkt $3$.  \answerbox{4}
- %\item Sei $N$ wieder beliebig. Wie viele Pfade führen zum Preis $S_t=(1+u)^{t-2}(1+d)S_1$? 
+ %\item Sei $N$ wieder beliebig. Wie viele Pfade führen zum Preis $S_t=(1+u)^{t-2}(1+d)S_1$?
  \item Wie viele Pfade führen zum Preis $S_{n+1}=(1+u)^k(1+d)^{n-k}S_1$ mit $k<n<N$? \answerbox{4}
  \item Geben Sie eine Formel für den Erwartungswert $\mathbb E[S_{5}]$ an. \answerbox{10}
-\end{enumerate}
+% end enumerate
 
 \newpage
 
-\item[]{\bf Aufgabe 4 (Black-Scholes) (25 Punkte)} 
+\item[]{\bf Aufgabe 4 (Black-Scholes) (25 Punkte)}
 Die berühmte Black-Scholes Formel für einen europäischen Call ist
 \begin{align*}
 C(t) = S(t) \Phi(d_1) - K e^{-r(T-t)} \Phi(d_2)
@@ -222,25 +222,25 @@ wobei
 \begin{align*}
 d_1 = \frac{\log(\tfrac{S(t)}{K}) + (r + \tfrac{\sigma^2}{2}) (T-t)}{\sigma \sqrt{T-t}} ~~ , ~~ d_2 = \frac{\log(\tfrac{S(t)}{K}) + (r - \tfrac{\sigma^2}{2}) (T-t)}{\sigma \sqrt{T-t}} = d_1 - \sigma \sqrt{T-t}
 \end{align*}
-und $\Phi(\cdot)$ die Verteilungsfunktion der Standardnormalverteilung bezeichne. 
-Für den Preis des Underlyings gilt (unter $\mathbb Q$) 
+und $\Phi(\cdot)$ die Verteilungsfunktion der Standardnormalverteilung bezeichne.
+Für den Preis des Underlyings gilt (unter $\mathbb Q$)
 \begin{equation}
- S_T=S_t \exp\left(\sigma \sqrt{T-t} X + (r-\frac{\sigma^2}{2})(T-t)\right), \quad X\sim\mathcal N(0,1), \quad S_t\geq 0. \nonumber 
+ S_T=S_t \exp\left(\sigma \sqrt{T-t} X + (r-\frac{\sigma^2}{2})(T-t)\right), \quad X\sim\mathcal N(0,1), \quad S_t\geq 0. \nonumber
 \end{equation}
-Die Dichte der Standardnormalverteilung ist gegeben durch $f(y)=\frac{1}{\sqrt{2\pi}}e^{-\frac{y^2}{2}}$. Es gilt die Formel $S_t f(d_1) = K e^{-r(T-t)} f(d_2)$, welche unbewiesen verwendet werden darf. 
-\begin{enumerate}
+Die Dichte der Standardnormalverteilung ist gegeben durch $f(y)=\frac{1}{\sqrt{2\pi}}e^{-\frac{y^2}{2}}$. Es gilt die Formel $S_t f(d_1) = K e^{-r(T-t)} f(d_2)$, welche unbewiesen verwendet werden darf.
+% begin enumerate
 \item Leiten Sie eine Formel zur Berechnung des Rho ($\rho$) eines europäischen Calls her.  \answerbox{35}
 \item Steigt oder sinkt der Preis $C(t)$ eines europäischen Calls mit steigendem Zinssatz $r$? Beweisen Sie ihre Behauptung mathematisch. \answerbox{14}
 %\item Leiten Sie eine Formel für die Berechnung des Vega eines europäischen Calls her. \answerbox{35}
 %\item Steigt oder sinkt der Preis $C(t)$ des Calls bei steigender Volatilität? Beweisen Sie ihre Behauptung mathematisch \emph{oder} geben Sie eine knappe ökonomische Begründung. \answerbox{22}
 \item Steigt oder sinkt der Preis $S_T$ des Underlyings zum Zeitpunkt $T$ bei steigendem Zinssatz? Beweisen Sie ihre Behauptung mathematisch \emph{oder} geben Sie eine knappe ökonomische Begründung. \answerbox{22}
-%\item Eine Bank verkaufe einen europäischen Call. Der momentane Kurs sei $S_t = 100$ und es werde eine Volatilität von $35\%$ angenommen. Der Kunde wünsche den Strike $K = 110$ und Maturität in $24$ Monaten. Der risikofreie Zinssatz p.a. sei $r = 1.5\%$. \\ 
+%\item Eine Bank verkaufe einen europäischen Call. Der momentane Kurs sei $S_t = 100$ und es werde eine Volatilität von $35\%$ angenommen. Der Kunde wünsche den Strike $K = 110$ und Maturität in $24$ Monaten. Der risikofreie Zinssatz p.a. sei $r = 1.5\%$. \\
 %Um sich abzusichern möchte die Bank für die Option einen Delta-Hedge aufsetzen. Stellen Sie in $t=0$ das Delta-Portfolio zusammen.
-\end{enumerate}
-\end{enumerate}
+% end enumerate
+% end enumerate
 
 %\newpage ~
 %\newpage ~
 
 
-\end{document} 
+\end{document}

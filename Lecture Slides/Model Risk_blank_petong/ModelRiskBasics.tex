@@ -22,58 +22,58 @@
 
 % frametitle
 {Deutsche Bank Annual Report 2012}
-\begin{itemize}
+% begin itemize
 \item<1->
 Credit risk, market risk and operational risk attract regulatory capital.
 \item<2-> Liquidity risk is the risk arising from our potential inability to meet all payment obligations when they come due or only being able to meet these obligations at excessive costs.
 \item<3->Business risk describes the risk we assume due to potential changes in general business conditions, such as our market environment, client behavior and technological progress.
 \item<4->Reputational risk is the risk that publicity concerning a transaction, counterparty or business practice involving a client will negatively impact the public's trust in our organization.
 \item<5->Furthermore, they mention Insurance specific risk and risk concentration.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Basel Regulation I}
 Regulators formulate some principles for models
-\begin{itemize}
+% begin itemize
 \item<1-> Uncertainty is specific to the instrument and the point in time the valuation is effected.
 \item<2-> A bank is expected to consider all relevant market information likely to have a material effect on an instrument's fair value when selecting the appropriate inputs.
 \item<3->Observable inputs or transactions may not be relevant. In such cases, the observable data should be considered, but   may not be determinative.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Basel Regulation II}
-\begin{itemize}
+% begin itemize
 
 \item<1-> There are also operative recommendations
-\begin{itemize}
+% begin itemize
 \item Validation includes evaluation of the model's theoretical soundness and mathematical integrity and the appropriateness of model assumptions, including consistency with the market.
 \item A bank should use a range of approaches and cross-check validations.
 \item Valuation models should be tested and reviewed under possible stress conditions. There should be defined triggers for such reviews.
-\end{itemize}
+% end itemize
 
 \item<2->
 Basel III introduces a risk-invariant leverage ratio of 3 percent in recognition that models may be biased.
 
-\end{itemize}
+% end itemize
 
 % frametitle
 {Motivation}
-\begin{itemize}
+% begin itemize
 \item<1-> Model risk has been recognized as one of the fundamental reasons for financial distress for banks and insurance companies.
 Recently, a number of authors addressed this issue:
-\begin{itemize}
+% begin itemize
 \item Schoutens et. al. (2004): A perfect calibration - now what?
 \item Cont (2006): Model uncertainty and its impact on the pricing of derivative instruments.
 \item Bann{\"o}r, Scherer (2011): Quantifying the degree of parameter uncertainty in complex stochastic models
 \item Morini, M. (2011): Understanding and Managing Model Risk, Wiley.
-\end{itemize}
+% end itemize
 \item<2-> Important questions:
-\begin{itemize}
+% begin itemize
 \item How sensitive is the value of a given derivative to the choice of the pricing model (parametric setting)?
 \item Can one quantify a provision for model risk (as for market and credit risk)?
-\end{itemize}
+% end itemize
 
-\end{itemize}
+% end itemize
 
 % frametitle
 {Schoutens - CallFit, NIGCIR}
@@ -105,48 +105,48 @@ Recently, a number of authors addressed this issue:
 
 % frametitle
 {How to define model risk?}
-\begin{itemize}
+% begin itemize
 \item {\it Simple Idea:} Model risk is the possibility that a (financial) institution suffers losses due to mistakes in the development and application of (validation) models.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Derman (1996) -- Value Approach}
-\begin{itemize}
+% begin itemize
 \item Is the payoff accurately described?
 \item Is the software reliable?
 \item Has the model been appropriately calibrated to the prices of the simpler, liquid constituents that comprise the derivative?
 \item Does the model provide a realistic description of the factors that affect the derivative's value?
-\end{itemize}
+% end itemize
 Last point: Residual risk relating to the factors -- model risk?
 
 % frametitle
 {Rebonato (2003) -- Price Approach}
 
-\begin{itemize}
+% begin itemize
 \item<1-> Model risk is the risk of occurrence of a significant difference between the mark-to-model value of a complex and/or illiquid instrument and the price at which the same instrument is revealed to have traded in the market.
 \item<2-> Thus, models can be counterintuitive, unreasonable, maybe not even free of arbitrage, as long as the market agrees with the valuation.
 \item<3-> So, large losses  can only happen when a sudden gap opens between market prices and model valuation.
-\end{itemize}
+% end itemize
 
 % frametitle
 {J. Hull: Risk Management and Financial Institutions}
 For pricing models are used to
-\begin{itemize}
+% begin itemize
 \item<1-> observe model prices for similar instruments that trade
 \item<2-> imply model parameters and interpolate as appropriate
 \item<3-> value new instrument
 \item<4-> perform reverse engineering from prices observed from counterparty quotes to understand their models
-\end{itemize}
+% end itemize
 Model Risk can lead to ..
-\begin{itemize}
+% begin itemize
 \item<1->
 Incorrect price at time product is bought or sold
 \item<2-> Incorrect hedging
-\end{itemize}
+% end itemize
 
 % frametitle
 {Marking Prices of an Instrument to Market}
-\begin{itemize}
+% begin itemize
 \item<1->
 Use price quoted by market maker (usually financial institutions mark to mid of bid and offer)
 \item<2-> Use price at which financial institution has traded product
@@ -154,73 +154,73 @@ Use price quoted by market maker (usually financial institutions mark to mid of 
 \item<4-> Use interdealer price indications
 \item<5-> Use model (marking to model)
 \item<6-> Contact member of the trading community
-\end{itemize}
+% end itemize
 
 % frametitle
 {Products}
-\begin{itemize}
+% begin itemize
 \item<1-> Linear products: Very little uncertainty about the right model, but mistakes do happen
 \item<2-> Standard Products
-\begin{itemize}
+% begin itemize
 \item We do not need usually a model to know the price of an actively traded product. The market tells us the price.
 \item The model is a communication tool (e.g., implied volatilities are quoted for options)
 \item It is also an interpolation tool (e.g., a tool for interpolating between strike prices and maturities)
-\end{itemize}
+% end itemize
 \item<3-> Non-Standard Products
-\begin{itemize}
+% begin itemize
 \item In the case of nonstandard products models play a key role in both pricing and hedging
 \item It is a good idea to use more that one model whenever possible
-\end{itemize}
-\end{itemize}
+% end itemize
+% end itemize
 
 % frametitle
 {Hull: Model Risk}
-\begin{itemize}
+% begin itemize
 \item<1->  Dangers in Model Building
-\begin{itemize}
+% begin itemize
 \item Overfitting
 \item Overparametrization
-\end{itemize}
+% end itemize
 \item<2-> Detecting Model Problems
-\begin{itemize}
+% begin itemize
 \item<1-> Monitor types of trading a financial institution is doing with other financial institutions
 \item<2-> Monitor profits being recorded from trading of different products (over- reap. under-pricing).
 \item<3-> Use Model Audit Group
-\begin{itemize}
+% begin itemize
 \item Check that a model has been implemented correctly
 \item Examine whether there is a sound rationale for the model
 \item Compare the model with others that can accomplish the same task
 \item Specify limitations of model
 \item Assess uncertainties in prices and hedge parameters given by model
-\end{itemize}
-\end{itemize}
-\end{itemize}
+% end itemize
+% end itemize
+% end itemize
 
 \section{Tools to Assess Model Risk}
 \subsection{Risk, Uncertainty, and Ambiguity}
 
 % frametitle
 {Definitions}
-\begin{itemize}
+% begin itemize
 \item<1-> Typically a stochastic model $(\Omega, \F)$ defining future scenarios and a
 probability measure $\prob$ on these outcomes.
 \item<2->  We have to distinguish between
-\begin{itemize}
+% begin itemize
 \item {\it Risk:}  we are able to specify a unique $\prob$
 \item {\it (Knightian) Uncertainty:} we are not able to specify a precise $\prob$
-\item {\it Ambiguity:}  we are facing several possible specifications $\prob_1, \prob_2, \ldots$\end{itemize}
+\item {\it Ambiguity:}  we are facing several possible specifications $\prob_1, \prob_2, \ldots$% end itemize
 \item<3-> Approaches to deal with ambiguity are "averaging" and "worst-case".
-\end{itemize}
+% end itemize
 
 % frametitle
 {Bayesian Model Averaging}
-\begin{itemize}
+% begin itemize
 \item<1-> Let ${\cal M}= \{M_1, \dots, M_J\}$ be a family of models and  $\{\Theta_1, \dots, \Theta_J\}$ the corresponding parameter spaces.
 \item<2->  A Bayesian observer has
-\begin{itemize}
+% begin itemize
 \item a prior on model parameters $p(\theta_j|M_j)$
 \item a prior on model weights $\prob(M_j)$
-\end{itemize}
+% end itemize
 \item<3-> Given a set of observations $y$ the posterior probabilities are
 $$
 \prob(M_j|y) = \frac{p(y|M_j)\prob(M_j)}{\sum_{k=1}^{J}p(y|M_k)\prob(M_k)}
@@ -229,38 +229,38 @@ with
 $$
 p(y|M_j)=\int_{\Theta_j} \prob(y|\theta_j, M_j)p(\theta_j|M_j) d\theta_j.
 $$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Bayesian Model Averaging -- Valuation}
-\begin{itemize}
+% begin itemize
 \item<1-> If we want to compute a model dependent quantity $X$ given by an expectation we average over models.
 \item<2-> Given a set of observations $y$ the posterior expectation is
 $$
 \EX(X|y) = \sum_{j=1}^{J} \EX(X |y, M_j) \prob(M_j |y).
 $$
 \item<3-> Problems:
-\begin{itemize}
+% begin itemize
 \item how to specify priors (stock vol vs jump diffusion?)
 \item computational intensive
-\end{itemize}
+% end itemize
 
-\end{itemize}
+% end itemize
 
 % frametitle
 {Worst-Case Approach}
-\begin{itemize}
+% begin itemize
 \item<1-> The worst-case approach has its foundations in the "MaxMin" approach as a robust version of expected utility. \item<2-> Assume $U$ is a utility function, then
 $$
 \max _X \min_{\prob \in {\cal P}} \EX_{\prob}(U(X)).
 $$
 \item<3-> Separation of risk-aversion and aversion to ambiguity
-\begin{itemize}
+% begin itemize
 \item risk aversion is captured in $U$
 \item aversion to ambiguity is captured in $\min$
-\end{itemize}
+% end itemize
 
-\end{itemize}
+% end itemize
 
 \subsection{Risk Measures}
 
@@ -273,38 +273,38 @@ $\pi \in {\cal Y}^*$.
 \rho: {\cal X} \rightarrow \setR
 \end{equation}
 is a convex risk measure with $\pi$ translation invariance iff
-\begin{itemize}
+% begin itemize
 \item $\rho$ is monotone: $$X \leq Y \;  \implies \; \rho(X) \geq \rho(Y).$$
 \item $\rho$ is convex: $$\forall \lambda \in [0,1]: \rho(\lambda X + (1-\lambda) Y) \leq \lambda \rho(X) + (1-\lambda) \rho(Y).$$
 \item $\rho$ is $\pi$-translation invariant: $$\forall Y \in {\cal Y}: \rho(X+Y) = \rho(X) + \pi(Y).$$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Coherent Risk Measures}
 
 A coherent risk measure is a function $\rho$ on abstract risk positions such that
-\begin{itemize}
+% begin itemize
 \item<1-> \emph{Monotonicity}: if $X\geq 0$, then $\rho(X)\leq 0$;
 \item<2-> \emph{Translation invariance}: if $k \in \R$, then
 $\rho(X+k)=\rho(X)-k$;
 \item<3-> \emph{Homogeneity}: if $\lambda \geq 0$ in $\R$, then $\rho(\lambda X)
 = \lambda \rho (X)$;
 \item<4-> \emph{Subadditivity}: $\rho(X+Y)\leq \rho(X)+\rho(Y)$.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Convex Risk Measures -- Properties}
 
-\begin{itemize}
+% begin itemize
 \item $\rho$ is coherent $\Leftrightarrow \; \rho(cX) = c \rho(X), \; \forall c>0$.
 \item $\rho$ is normalized $\Leftrightarrow \; \rho(0) = 0$.
 \item Let $\prb$ be a probability measure on $(\Omega, \F)$.\\
 $\rho$ is $\prb$-law invariant $\Leftrightarrow \; \prb^X = \prb^Y $ implies $\rho(X) = \rho(Y)$.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Examples: VaR and AVaR}
-\begin{itemize}
+% begin itemize
 \item general probability space $(\Omega, \F, \prb)$, $\beta \in (0,1]$, $X\in L^1(\prb)$, then
 $$
 VaR_\beta(X) = q_{-X}^{\prb}(1-\beta).
@@ -315,7 +315,7 @@ $$
 AVaR_\alpha(X) = \frac{1}{\alpha} \int_0^\alpha VaR_\beta(X) d\beta.
 $$
 \item AVaR$_\alpha$ is a convex risk measure (coherent and law-invariant).
-\end{itemize}
+% end itemize
 
 % frametitle
 {Value at Risk}
@@ -337,11 +337,11 @@ The figure illustrates a portfolio with a low VaR compared to its risk.
 
 % frametitle
 {Average Value-at-Risk (AVaR) }
-\begin{itemize}
+% begin itemize
 \item<1-> The AVaR specifies the expectation of the loss in case the loss is above the VaR.
 \item<2-> AVaR is also called Tail Value-at-Risk (TVaR) or Conditional
 Value-at-Risk (CVaR) or  Expected Shortfall (ES).
-\end{itemize}
+% end itemize
 
 % frametitle
 {Illustration of AVaR}
@@ -356,7 +356,7 @@ Value-at-Risk (CVaR) or  Expected Shortfall (ES).
 
 % frametitle
 { Financial Market Model}
-\begin{itemize}
+% begin itemize
 \item<1->
 $T>0$ is a fixed a planning horizon.
 \item<2->
@@ -374,12 +374,12 @@ positive for each $t \in [0,T]$.
 \lq {Historically}' the money market account $B(t)=e^{rt}$ with a
 positive constant $r$ was used as a
 num\'{e}raire.
-\end{itemize}
+% end itemize
 
 % frametitle
 { Trading Strategies}
 
-\begin{itemize}
+% begin itemize
 \item<1->  We call an $\setR^{d+1}$-valued process
 $$
 \varphi(t) = (\varphi_0(t), \ldots, \varphi_d(t)), \A t \in [0,T]
@@ -390,11 +390,11 @@ Here $\varphi_i(t)$ denotes the number of shares of asset $i$ held
 in the portfolio at time $t$ - to be determined on the basis of
 information available {\it before} time $t$; i.e. the investor
 selects his time $t$ portfolio after observing the prices $S(t-)$.
-\end{itemize}
+% end itemize
 
 % frametitle
 { Trading Strategies}
-\begin{itemize}
+% begin itemize
 \item<1->  The value of the portfolio $\varphi$ at time $t$ is
 given by
 $$
@@ -413,7 +413,7 @@ $$
 V_\varphi(t) = V_\varphi(0) + G_\varphi(t)\A \mbox{for all}\; t\in
 [0,T].
 $$
-\end{itemize}
+% end itemize
 
 % frametitle
 { Discounted Processes}
@@ -532,7 +532,7 @@ and hence the result follows.\hfill \eb
 { Contingent Claims}
 
 A contingent claims $X$ is a random variable with existing expected value.
-\begin{itemize}
+% begin itemize
 \item<1-> A contingent claim $X$ is called attainable if there
 exists at least one admissible trading strategy such that
 $$
@@ -542,7 +542,7 @@ We call such a  trading strategy $\varphi$ a replicating strategy
 for $X$. \item<2-> The financial market model ${\cal M}$ is said
 to be complete if any contingent claim is attainable.
 
-\end{itemize}
+% end itemize
 
 % frametitle
 { No-Arbitrage Price}
@@ -632,7 +632,7 @@ $$
 
 % frametitle
 {Parameter uncertainty}
-\begin{itemize}
+% begin itemize
 \item $(\Omega, \F, \fil)$ filtered measurable space
 \item $S= (S_t)$ basic instruments, contingent claim $X=F(S)$
 %\item contingent claims discounted with matching numer{\'a}ire
@@ -642,45 +642,45 @@ $$
 \theta \rightarrow \EX_\theta(X) := \EX_{\Q_\theta}(X).
 $$
 
-\end{itemize}
+% end itemize
 
 % frametitle
 {Parameter Uncertainty}
 To use models we need to specify the parameters
-\begin{itemize}
+% begin itemize
 \item<1-> estimation
-\begin{itemize}
+% begin itemize
 \item some estimator $\hat{\vartheta}$ is used instead the true parameter $\vartheta$
 \item bias and volatility of the estimator have to be considered
-\end{itemize}
+% end itemize
 \item<2-> calibration
-\begin{itemize}
+% begin itemize
 \item search for parameter that minimizes some pricing error condition, e.g.
 $$
 \vartheta_c = \argmin_{\vartheta} \left| \sum_{\mbox{\tiny set of derivatives}} \mbox{model price} (\vartheta) - \mbox{market price} \right|
 $$
 \item parameters may not be uniquely identified
-\end{itemize}
+% end itemize
 \item<3-> Both approaches
-\begin{itemize}
+% begin itemize
 \item produce parameter uncertainty,
 \item may disregard information.
-\end{itemize}
-\end{itemize}
+% end itemize
+% end itemize
 
 % frametitle
 {Bann{\"o}r-Scherer Approach}
-\begin{itemize}
+% begin itemize
 \item<1-> distribution R for likelihood of parameter on parameter space $\Theta$  available
 \item<2-> convex risk measures gauge extent of parameter risk
 \item<3-> this allows to calculate parameter risk-induced spreads
 \item<4-> Advantages
-\begin{itemize}
+% begin itemize
 \item  parameter's distribution is exploited
  \item risk aversion can be incorporated without being maximally conservative
 \item Cont's (2006, Math. Finance, 16(3), 519 -547) suggestion is an extreme points
-\end{itemize}
-\end{itemize}
+% end itemize
+% end itemize
 
 % frametitle
 {Risk Capturing Functionals}
@@ -693,18 +693,18 @@ $$
 \Gamma: {\cal D} \rightarrow \setR
 $$
 a risk-capturing functional with properties
-\begin{itemize}
+% begin itemize
 \item<1-> order preservation $X \geq Y \; \Rightarrow \; \Gamma(X) \geq \Gamma(Y)$
 \item<2-> diversification $\forall \; \lambda \in [0,1]: \; \Gamma(\lambda X + (1-\lambda) Y) \leq \lambda \Gamma(X) + (1-\lambda) \Gamma(Y).$
 \item<3-> parameter independence consistency
 $$
 \theta \rightarrow \EX_\theta(X) \equiv \mbox{constant} \; \Rightarrow \; \Gamma(X) = \EX_\theta(X).
 $$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Model Risk -- Cont's Suggestion}
-\begin{itemize}
+% begin itemize
 \item<1-> For $X$ a derivative we associate with
 $\Gamma(X)$ the ask price and with $-\Gamma(-X)$ its bid price.
 \item<2-> Cont's suggestion
@@ -713,13 +713,13 @@ $$
 \Gamma^l(X)= -\Gamma^u(-X)=\inf_{\Q \in {\cal Q}} \EX_{\Q}.
 $$
 This approach produces typically a wide bid-ask spread.
-\end{itemize}
+% end itemize
 
 \subsection{Risk Capturing Functional}
 
 % frametitle
 {Construction of Risk Capturing Functionals}
-\begin{itemize}
+% begin itemize
 \item<1-> $R$ a probability measure on $\Theta$
 \item<1-> Let ${\cal A} \subset L^0(R)$ be a vector space of measurable functions containing the constants
 \begin{equation}
@@ -732,7 +732,7 @@ Define the parameter risk capturing function
 \begin{equation}
 \Gamma: {\cal D^A} \rightarrow \setR, \; \Gamma(X) = \rho\left(\theta \rightarrow \EX_\theta(X)\right)
 \end{equation}
-\end{itemize}
+% end itemize
 
 % frametitle
 {Parameter Risk-Capturing Valuation}
@@ -745,7 +745,7 @@ Define the parameter risk capturing function
 
 % frametitle
 {Definition AVaR}
-\begin{itemize}
+% begin itemize
 \item general probability space $(\Omega, \F, \prb)$, $\beta \in (0,1]$, $X\in L^1(\prb)$, then
 $$
 VaR_\beta(X) = q_{-X}^{\prb}(1-\beta).
@@ -755,11 +755,11 @@ $$
 AVaR_\alpha(X) = \frac{1}{\alpha} \int_0^\alpha VaR_\beta(X) d\beta.
 $$
 \item AVaR$_\alpha$ is a convex risk measure (coherent and law-invariant).
-\end{itemize}
+% end itemize
 
 % frametitle
 {Definition AVaR risk capturing functional}
-\begin{itemize}
+% begin itemize
 \item Assume a  parametrized family of (martingale) measures ${\cal Q}_\Theta = (\Q_\theta)_{\theta \in \Theta}$.
 \item Let $R$ be a distribution on $\Theta$.
 \item Consider the ${\cal L}^1(R)$ admissible functionals, so $AVaR_\alpha:  {\cal L}^1(R) \rightarrow \setR$.
@@ -771,11 +771,11 @@ as
 $$
 R \star AVaR_\alpha(X) := AVaR_\alpha\left(\theta \rightarrow \EX_\theta(X) \right).
 $$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Convergence Property of AVaR}
-\begin{itemize}
+% begin itemize
 \item Assume $R_N \rightarrow R_0, \; (N\rightarrow \infty) $ weakly on ${\cal Q}_\Theta$;
 \item $\rho_N$ a sequence of convex risk measures with $\rho_N$ is $R_N$ invariant;
 \item A sequence $\Gamma_N$ with $\Gamma_N= \rho_N\left({\cal Q}_\Theta \rightarrow \EX_\theta(X) \right)$ has the convergence property (CP) if and only if
@@ -783,18 +783,18 @@ $$
 \lim_{N \rightarrow \infty} \Gamma_N(X) = \Gamma_0(X) = \rho_0 \left({\cal Q}_\Theta \rightarrow \EX_\theta(X) \right) \; \forall X \in C^{\cal A}.
 $$
 \item AVaR -induced risk-capturing functionals fulfill (CP) for $\Theta$ compact.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Using asymptotic distributions}
-\begin{itemize}
+% begin itemize
 \item (CP) allows us, if the parameter distribution $R$ is complicated to calculate or even unknown, to use a parameter distribution $\tilde{R}$ which is ``close'' to the original distribution $R$ (in the sense of weak convergence, like, e.g., some asymptotic distribution) and calculate the risk-captured price with the parameter distribution $\tilde{R}$ instead.
 \item In particular, if the distribution $R$ is propagated from an estimator $\hat{\theta}_N$ and the asymptotic distribution of the estimator $\hat{\theta}_N$ is known (let us, e.g., denote the asymptotic distribution by $R_\infty$), we can use the distribution $R_\infty$ instead, if the sample size $N\in\setN$ is large enough.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Calculating AVaR}
-\begin{itemize}
+% begin itemize
 \item Assume $(\theta_N)_{N \in \setN}$ is an asymptotically normal sequence of estimators for the true parameter $\theta_0 \in \Theta \subset \setR_m$  with positive definite covariance matrix $\Sigma$, so
 $$
 \sqrt{N}\left(\theta_N -\theta_0\right) \rightarrow {\cal N}_m \left(0,\Sigma\right).
@@ -808,5 +808,5 @@ $$
 \theta_N \star AVaR_\alpha(X) \approx \EX_{\theta_0}(X) + \frac{\varphi\left(\Phi^{-1}(\alpha)\right)}{\alpha\sqrt{N}} \sqrt{\left(\nabla \EX_{\theta_0}\right)' \Sigma \nabla \EX_{\theta_0}},
 $$
 %$\varphi$resp. $\Phi$ density resp. distribution function of a standard normal.
-\end{itemize}
+% end itemize
 

@@ -59,16 +59,16 @@ The value of a spread option depends strongly on the correlation between the two
 $$\tiny\text{$S_1=S_2=100$, $T=3$, $r=0.02$, $\sigma_1=0.6$, $\sigma_2=0.4$.}$$
 \vspace{-0.76cm}
 $$\includegraphics[scale=0.3]{../../../pics/corr}$$
-\begin{itemize}
+% begin itemize
 \vspace{-1cm}
 \item The higher the correlation between the two underlyings the lower is the volatility of the spread and hence the value of the spread option.
-\end{itemize}
+% end itemize
 
 \subsection{Caps and  Floors}
 
 % frametitle
 {Caps}
-\begin{itemize}
+% begin itemize
 \item<1->
 A Cap gives the option holder the right (but not the
 obligation) to buy a certain amount of energy at stipulated times
@@ -82,7 +82,7 @@ Typically, the price of a cap is quoted as price per delivery hours to make
 different delivery periods comparable. In this case we get a price
 per MWh. The formula is
 $$U_c(t)=\frac{1}{N}\sum_{i=1}^Ne^{-r(t_i-t)}\EX[\max(S(t_i)-K,0)].$$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Cap - Payoff}
@@ -100,7 +100,7 @@ On the other hand, the option holder is still able to profit from low energy pri
 
 % frametitle
 {Floors}
-\begin{itemize}
+% begin itemize
 \item<1-> A floor gives the holder the right (but not the
 obligation) to sell a certain amount of energy at stipulated times
 $t_1,\ldots,t_N$ during the delivery period at a fixed strike
@@ -111,7 +111,7 @@ independent put options, for each time $t_i$ the holder of the floor holds put o
 Similar to the case of a cap, the pricing formula is
 $$U_f(t)=\frac{1}{N}\sum_{i=1}^Ne^{-r(t_i-t)}\EX[\max(K-S(t_i),0)].$$
 As with the cap, the price is quoted in Euro/MWh.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Floor - Payoff}
@@ -171,20 +171,20 @@ The holder of the 3-way-collar is protected against increases in the underlying 
 
 % frametitle
 {Swing Options Definition}
-\begin{itemize}
+% begin itemize
 \item<1-> Swing options are contracts that allow the option holder buy a predetermined quantity of energy at a predetermined price while having some flexibility in the amount purchased and the price paid.
 
 \item<2-> A swing option contract states the least and most energy an option holder can buy (or "take") per day and per month, how much that energy will cost (its strike price) and how many times during the month the option holder can change (or "swing") the daily quantity of energy purchased.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Swing Options Terminology}
-\begin{itemize}
+% begin itemize
   \item Swing direction: The holder of a call swing option has the right to purchase energy. The holder of a put swing option has the right to sell energy.
   \item Swing rights: The contract defines the number of exercise opportunities and the exercise period.
   \item Quantity limits: The contract defines the maximum quantity for both the individual exercise as well as for the overall quantity.
   \item Delivery: Might be for the next day or for the remainder of the term of the option.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Swing Options}
@@ -212,14 +212,14 @@ To calculate the option value various mathematical techniques are used.
 
 \underline{Strategy}\\
 For deterministic spot prices, we
-\begin{itemize}
+% begin itemize
   \item  Calculate the discounted payoffs
   $P(t_i)=e^{-r(t_i-t)}(S(t_i)-K)$.
   \item  Sort the discounted payoffs $P(t_i)$ in descending order.
   \item Take the first $E_{\min}$ payoffs regardless of their
   value and subsequent payoffs up to $E_{\max}$ until their sign
   become negative.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Bounds for Swing Options}
@@ -237,26 +237,26 @@ where $\phi_i^F=\IF_{\{F(t,t_i)>K\}}$, unless the restriction on $E_{\min}$ is i
 
 % frametitle
 {Indexed Supply Contracts}
-\begin{itemize}
+% begin itemize
   \item<1-> Total or partial price linkage between energy products (electricity, natural gas) and retail prices for commodities or industrial end-products.
   \item<2-> The price linkage might be linear (indexation to the price of an output product), inverse (indexation to the price of an input product) or captures individual price dependency structures.
   \item<3-> Example: Price linkage between electricity and metals like aluminium, zinc, copper, nickel (products with liquid futures market).
   \item<4-> Example: An aluminium supplier has an interest to purchase power at a lower price if aluminium price falls.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Indexed Supply Contracts}
 Indexed supply contracts have two components:
-\begin{itemize}
+% begin itemize
   \item Energy supply contract for the physical delivery.
   \item Financially settled contract of the price linkage.
-\end{itemize}
+% end itemize
 \vspace{0.5cm}
 Advantages:
-\begin{itemize}
+% begin itemize
   \item Help to mitigate price risks, risk of input or output price fluctuations.
   \item Help to lock in profit margins.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Zinc Indexed Power Supply Contract with Cap}
@@ -268,21 +268,21 @@ $$\includegraphics[scale=0.29]{../../../pics/index1.png}$$
 {Zinc Indexed Power Supply Contract with Cap}
 Assume that the market price for July base power contract is \textcolor[rgb]{1.00,0.00,0.00}{55€/MWh} (no zinc linkage). July base power price $P$ with zinc linkage:\\
 \vspace{0.2cm}
-\begin{itemize}
+% begin itemize
   \item<2-> If the zinc price (monthly average of the LME spot price) $Zn=1\;700$€/mt, then \textcolor[rgb]{0.00,0.00,1.00}{$P=52$€/MWh}.
   \item<3-> If the zinc price $Zn=2\;200$€/mt, then \textcolor[rgb]{0.00,0.00,1.00}{$P=58.8$€/MWh}:
   $$P=52\frac{\text{€}}{\text{MWh}}+(2\;200-1\;800)\frac{\text{€}}{\text{mt}}\times\frac{1.7\text{€/MWh}}{100\text{€/mt}}=58.8\frac{\text{€}}{\text{MWh}}.$$
   \item<4-> If the zinc price $Zn=2\;600$€/mt, then \textcolor[rgb]{0.00,0.00,1.00}{$P=62.2$€/MWh}.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Zinc Indexed Power Supply Contract with Cap}
-\begin{itemize}
+% begin itemize
   \item<1-> Zinc linkage is only possible in connection with a power supply contract.
   \item<2-> Slope can be adjusted according to the production costs of the customer.
   \item<3-> Floor and cap can be adjusted.
   \item<4-> Equivalent (from the customer point of view) to a short collar position in zinc and a long swap position.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Zinc Indexed Power Supply Contract without Cap}
@@ -294,11 +294,11 @@ $$\includegraphics[scale=0.29]{../../../pics/index2.png}$$
 {Zinc Indexed Power Supply Contract with Cap}
 Assume that the market price for April base power contract is \textcolor[rgb]{1.00,0.00,0.00}{55€/MWh} (no zinc linkage). April base power price $P$ with zinc linkage embedded in the electricity supply contract:
 \vspace{0.4cm}
-\begin{itemize}
+% begin itemize
   \item<2-> If the zinc price (e.g. monthly average of the LME spot price) $Zn=2\;000$€/mt, then \textcolor[rgb]{0.00,0.00,1.00}{$P=52$€/MWh}.
   \item<3-> If the zinc price $Zn=2\;700$€/mt, then \textcolor[rgb]{0.00,0.00,1.00}{$P=58$€/MWh}:
   $$P=52\frac{\text{€}}{\text{MWh}}+(2\;700-2\;200)\frac{\text{€}}{\text{mt}}\times\frac{1.2\text{€/MWh}}{100\text{€/mt}}=58\frac{\text{€}}{\text{MWh}}.$$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Aluminium Indexed Gas Supply Contract}
@@ -310,11 +310,11 @@ $$\includegraphics[scale=0.27]{../../../pics/index3.png}$$
 {Zinc Indexed Power Supply Contract with Cap}
 Assume that the gas price for a gas business year is fixed to \textcolor[rgb]{1.00,0.00,0.00}{42€/MWh} (no aluminium linkage). The gas price $G$ with aluminium linkage embedded in the supply contract:
 \vspace{0.4cm}
-\begin{itemize}
+% begin itemize
   \item<2-> If the aluminium price (e.g. monthly average of the LME spot price) $Al=1\;750$€/mt, then \textcolor[rgb]{0.00,0.00,1.00}{$G=36$€/MWh}.
   \item<3-> If the aluminium price $Al=2\;400$€/mt, then \textcolor[rgb]{0.00,0.00,1.00}{$G=42.75$€/MWh}:
   $$G=36\frac{\text{€}}{\text{MWh}}+(2\;400-1\;750)\frac{\text{€}}{\text{mt}}\times\frac{1.5\text{€/MWh}}{100\text{€/mt}}=42.75\frac{\text{€}}{\text{MWh}}.$$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Aluminium Indexed Gas Supply Contract with inverse price dependency}
@@ -323,18 +323,18 @@ $$\includegraphics[scale=0.28]{../../../pics/index4.png}$$
 
 % frametitle
 {Aluminium Indexed Gas Supply Contract with inverse price dependency}
-\begin{itemize}
+% begin itemize
   \item<1-> Increasing aluminium prices will decrease the price of natural gas.
   \item<2-> Decreasing aluminium prices will increase the price of natural gas.
   \item<3-> No cap, no floor.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Indexed Contracts}
-\begin{itemize}
+% begin itemize
   \item The energy price is not fixed all at ones - diversification.
   \item The risk of buying the energy at the wrong moment when prices are near a local maximum is reduced.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Indexed Contracts}
@@ -350,34 +350,34 @@ The buyer has the possibility of fixing the energy price 4-times for $1/4$ of th
 
 % frametitle
 {Indexed Contracts}
-\begin{itemize}
+% begin itemize
   \item<1-> Index as a convex combination of two or more forwards or futures contracts:
   $$I(t)=(1-a)F_{Base}(t,T_1,T_2)+aF_{Peak}(t,T_1,T_2),\;a\in[0,1].$$
   \item<2-> Primary energy index, e.g. Euro-based coal index:
   $$P_m=(P+R+M)\left(1+c\left(\frac{X_mC_m}{X_0C_0}-1\right)\right),$$
   where $P_m$ denotes the monthly adapted power price valid for delivery month $m$, $C_m$ the monthly average of the coal index for the month $m$, $X_m$ the average value of one Dollar in Euros for the month $m$ and $c$ the coal price ratio.
-\end{itemize}
+% end itemize
 %The coal price ratio determines the influence of coal prices to the power supply price. If one tonne coal is needed for generating three MWh electricity, a value for the ratio $c=33\%$ can be calculated.
 
 \subsection{Pricing Volume Flexibility}
 
 % frametitle
 {Example: Gas Delivery with Tolerance Band}
-\begin{itemize}
+% begin itemize
 \item<1-> Consider a customer who needs around 1000 MWh Gas per day, depending on the temperature and other factors sometimes 600 MWh, sometimes up to 1400 MWh.
 \item<2-> The customer wants to enter a delivery contract with maturity end of this year which should supply the amount of gas needed.
 \item<3-> The relevant gas market for the customer is the GTS system, i.e. the customer has access to the TTF.
 \item<3-> The customer is able to trade gas spot at TTF market prices, i.e. we have to assume that the customer uses his contract in a rational way.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Example: Gas Delivery}
 Possible contracts are:
-\begin{itemize}
+% begin itemize
 \item<1->  C1: The customer enters into a contract which delivers him 1000 MWh/day for a fixed and constant price without any flexibility. That means that he has to buy gas at the spot market if he needs more or has to sell gas at the spot market if he has too much. The gas is paid at delivery.
 \item<2-> C2: This contract delivers 1000 MWh/day with an option for 400 MWh/day more if needed (for fixed price).
 \item<3-> C3: This contract gives him the right to get between 600 MWh and 1400 WMh delivered at a fixed price.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Definition of the model}
@@ -387,19 +387,19 @@ Let $X_t = \ln S_t$ and
 	dX_t = \kappa (\ln \theta - X_t)dt + \sigma dW_t~~,~~X_0 = \ln(S_0)
 \end{align*}
 Thus, the logarithm of the prices follow a mean reverting diffusion process, the so-called \textcolor{red}{Ornstein-Uhlenbeck-Process}.\\
-\begin{itemize}
+% begin itemize
 \item $\kappa$ - Speed of mean reversion
 \item $\theta$ - Level of mean reversion
 \item $\sigma$ - Volatility of the process
 \item $dW_t$ - Brownian increments
-\end{itemize}
+% end itemize
 
 % frametitle
 {Example: The market}
 We assume the market parameters to be:
-\begin{itemize}
+% begin itemize
 \item $S_0 = 18.95 EUR/MWh, \kappa = 0.5, \sigma = 0.8, r= 5\%$
-\end{itemize}
+% end itemize
 The forward curve has the following shape:
 \begin{figure}
 	\centering
@@ -409,11 +409,11 @@ The forward curve has the following shape:
 
 % frametitle
 {Contract C1}
-\begin{itemize}
+% begin itemize
 \item<1-> The contract consists of 191 deliveries of 1000 MWh of TTF gas.
 \item<2-> For each delivery, it is clear how much gas is needed.
 \item<3-> Thus, the gas can be bought today at the forward market in order to offset any risk.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Contract C1}
@@ -435,11 +435,11 @@ Summing up all the discounted prices of each delivery of 1000 MWh of gas we see 
 
 % frametitle
 {Contract C1 Price}
-\begin{itemize}
+% begin itemize
 \item<1-> The fair price of the contract is the fixed and constant price which makes the payments be worth today the same as the gas.
 \item<2-> Let $P_1$ be the fixed and constant price for one MWh of gas under contract 1.
 \item<3-> The customer will pay $1000 \cdot P_1$ at each delivery day.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Contract C1 Price}
@@ -457,12 +457,12 @@ This is the fair price for contract C1.
 
 % frametitle
 {Contract C2}
-\begin{itemize}
+% begin itemize
 \item<1-> Contract C2 gives the customer exactly the same rights as the first one and \textcolor{red}{additionally} the right to buy up to 400 MWh/day more, if it is advantageous for the customer.
 \item<2-> This right can be seen as an \textcolor{red}{option on the gas spot price at each delivery day}.
 \item<3-> Thus, the contract consists of the forward portfolio as before \textcolor{red}{and} a strip of call options on the gas spot price.
 \item<4-> The strip has length 191 days and a volume of 400 MWh per delivery day. The strike price is the price $P_2$ which was agreed as a fixed and constant price for all gas deliveries during the lifetime of contract 2.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Contract C2 - Value of the Option}
@@ -475,7 +475,7 @@ Depending on the strike price we get the following prices for call options in th
 
 % frametitle
 {C2 - Fair Price}
-\begin{itemize}
+% begin itemize
 \item<1->
 Writing $C(T,K)$ for the price of a call with maturity $T$ and strike $K$ we get the present value of the oil delivery side of the contract:
 $$
@@ -483,11 +483,11 @@ $$
 $$
 with $P_2$ to be determined.
 \item<2-> The present value of the payments is as before $187,594.98 \cdot P_2$ EUR.
-\end{itemize}
+% end itemize
 
 % frametitle
 {C2 - Fair Price}
-\begin{itemize}
+% begin itemize
 \item<1->
 Equating those two values leads to an equation which can be solved for $P_2$ leading to the fair price of
 $$
@@ -495,26 +495,26 @@ $$
 $$
 \item<2->
 \textcolor{red}{The premium which makes contract 2 more expensive as contract 1 is exactly the premium of the call options.}
-\end{itemize}
+% end itemize
 
 % frametitle
 {Contract C2 - Fair Price depending on Volume}
-\begin{itemize}
+% begin itemize
 \item<1-> We could imagine to have to add to each forward contract price $(400 [optional]/1000 [fixed]) = \frac 2 5$-th of a call option price.
 \item<2-> Thus, it is obvious that the premium would be a lot higher, if only a delivery of e.g. 200 MWh fix and 400 optional would have been agreed.
 \item<3-> In this case, one would have to add to each forward the price of two whole call options. However, the premium would not be 5 times as high as before, as the call would be written on a higher strike.
-\end{itemize}
+% end itemize
 
 %\subsection{3. Contract}
 
 % frametitle
 {Contract C3}
-\begin{itemize}
+% begin itemize
 \item<1-> Contract C3 gives the customer exactly the same rights as the second and \textcolor{red}{additionally} the right to sell up to 400 MWh/day at the fixed price, if it is advantageous for the customer, i.e. to buy only 600 MWh/day.
 \item<2-> This right - which does not imply any obligation - can be seen as a put option on the gas spot price at each delivery day.
 \item<3-> Thus, the contract consists of the forward portfolio \textcolor{red}{and} the call option strip as before \textcolor{red}{and} a strip of put options on the oil spot price.
 \item<4-> The strip has length 191 days and a volume of 400 MWh per delivery day. The strike price is the price $P_3$ which was agreed as a fixed and constant price for all oil deliveries during the lifetime of contract C3.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Contract C3  - Put Option Value}
@@ -527,7 +527,7 @@ Depending on the strike price we get the following prices for put options in the
 
 % frametitle
 {Contract C3 - Fair Price}
-\begin{itemize}
+% begin itemize
 \item<1-> Writing $P(T,K)$ for the price of a put with maturity $T$ and strike $K$ we get the present value of the oil delivery side of the contract:
 \begin{align*}
 	PV &= \sum_{k=0}^{190} \frac{1000}{(1+r)^{k/365}} \cdot F(0,\frac k {365}) + \sum_{k=0}^{190} 400 \cdot C(\frac k {365},P_3)\\
@@ -535,11 +535,11 @@ Depending on the strike price we get the following prices for put options in the
 \end{align*}
 with $P_3$ to be determined.
 \item<2-> The present value of the payments is as before $187,594.98 \cdot P_3$ EUR.
-\end{itemize}
+% end itemize
 
 % frametitle
 {3. Contract - Fair Price}
-\begin{itemize}
+% begin itemize
 \item<1-> Equating those two values leads to an equation which can be solved for $P_3$ leading to the fair price of
 $$
 	P_3 = 24.22 EUR
@@ -547,20 +547,20 @@ $$
 per MWh.
 \item<2->
 There is an other way of seeing this contract. One could argue that the company has to buy 600 MWh/day for sure and has the additional right of buying up to 800 MWh/day if it wants. Indeed, both approaches are equivalent and thus the prices calculated coincide.
-\end{itemize}
+% end itemize
 
 %\subsection{Generalization}
 
 % frametitle
 {Ratio fixed vs. optional}
-\begin{itemize}
+% begin itemize
 \item<1-> We are able to generalize the above results. Assume any volume flexibility between the minimum volume $K_{min}$ and the maximum volume $K_{max}$ (per day).
 \item<2-> The price one has to pay for a contract with this flexibility only depends on the ratio
 $$
 	\rho = \frac{K_{max}}{K_{min}}
 $$
 in the following way:
-\end{itemize}
+% end itemize
 
 % frametitle
 {Ratio fixed vs. optional}
@@ -572,11 +572,11 @@ in the following way:
 
 % frametitle
 {Summary}
-\begin{itemize}
+% begin itemize
 \item<1-> Optionalities increase the price.
 \item<2-> If it is possible to act financially-driven, optionalities have to be priced accordingly.
 \item<3-> If the customer acts demand driven, it might be possible to offer flexibility cheaper.
 \item<4-> In this case, monetarization of optionalities has to be excluded legally.
 \item<5-> The size of flexibility in a contract is one parameter to influence the price.
-\end{itemize}
+% end itemize
 

@@ -77,29 +77,29 @@
 
 % frametitle
 {Value lost -- back on the envelope calculations}
-\begin{itemize}
+% begin itemize
 \item<1-> Installed capacity 876 MW
 \item<2-> Variable costs ca. 60 Euro/MWh
 \item<3-> Profitable hours per year
-\begin{itemize}
+% begin itemize
 \item  2010 (993),
 \item 2011 (2309),
 \item 2012 (737),
-\end{itemize}
+% end itemize
 with an average profit 6.9 Euro per MWh.
 \item<4-> Typical investment assumption
-\begin{itemize}
+% begin itemize
 \item 3500 profitable hours
 \item 10 Euro profit per MWh
-\end{itemize}
+% end itemize
 \item<5-> loss per year
-\begin{itemize}
+% begin itemize
 \item  2010: (3500-993)*876*10=21961320 Euro,
 \item 2011:  (3500-2309)*876*10 = 10433160 Euro,
 \item 2012: (3500-737)*876*10= 24203880 Euro.
-\end{itemize}
+% end itemize
 
-\end{itemize}
+% end itemize
 
  %%%%%%%%%% Clean Spark Spread
 
@@ -122,7 +122,7 @@ with an average profit 6.9 Euro per MWh.
 
 % frametitle
 {Clean Spark Spreads}
-\begin{itemize}
+% begin itemize
 \item<1-> A gas power plant is  long electricity, short gas and short carbon.
 \item<2-> Financially, we can express that as the Clean Spark Spread
 \begin{equation}
@@ -130,7 +130,7 @@ V_t = \max\{P_t - h\,G_t - c_E\;E_t - C, 0\},
 \label{spark_spread_value}
 \end{equation}
 here  $P_t$ is the price of electricity, $G_t$ the price of gas, $E_t$ the price of emission certificates  and $C$ fixed costs ($h$ and $c_E$ are conversion factors).
-\end{itemize}
+% end itemize
 
 %\subsection{Valuation of Spread Options}
 
@@ -158,10 +158,10 @@ The value of a spread option depends strongly on the correlation between the two
 $$\tiny\text{$S_1=S_2=100$, $T=3$, $r=0.02$, $\sigma_1=0.6$, $\sigma_2=0.4$.}$$
 \vspace{-0.76cm}
 $$\includegraphics[scale=0.3]{../../../pics/corr}$$
-\begin{itemize}
+% begin itemize
 \vspace{-1cm}
 \item The higher the correlation between the two underlyings the lower is the volatility of the spread and hence the value of the spread option.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Approximation by Kirk's Formula (2 Assets)}
@@ -189,14 +189,14 @@ $$
 
 % frametitle
 {Approximation for three asset case}
-\begin{itemize}
+% begin itemize
 \item<1-> We consider the payoff
 \begin{equation}
 \max\{S_1(T) - S_2(T)- S_3(T)-K, 0\},
 \label{Three_asset_value}
 \end{equation}
 \item<2-> We value this as a classical vanilla option with random strike $S_2+S_3+K$ and appropriate volatility.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Approximation by Kirk's Formula (3 Assets)}
@@ -234,7 +234,7 @@ d{E}_t = \alpha^E\,E_t\,d{t} + \sigma^E\,E_t\,d{W}^E_t,
 
 % frametitle
 {Gas Price}
-\begin{itemize}
+% begin itemize
 \item We model the gas price as a mean-reverting process
 \begin{eqnarray}
 G_t & = & e^{g(t) + Z_t},  \nonumber \\
@@ -242,11 +242,11 @@ d{Z}_t & = & -\alpha^G\,Z_t\,d{t} + \sigma^G\,d{W}^G_t,
 \label{gas}
 \end{eqnarray}
 \item $\alpha^G$ is the speed of mean-reversion for gas prices.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Power Price}
-\begin{itemize}
+% begin itemize
 \item We model the power price as a sum of two mean-reverting processes
 \begin{eqnarray}
 P_t & = & e^{f(t) + X_t + Y_t},  \nonumber \\
@@ -257,7 +257,7 @@ d{Y}_t & = & -\beta\,Y_t\,d{t} + J_t\,d{N}_t,
 \item $\alpha^P$ and $\beta$ are speeds of mean-reversion for the smooth and the jump component of power prices.
 \item $N$ is a Poisson process with intensity $\lambda$.
 \item $J_t$ are independent identically distributed (i.i.d) random variables representing the jump size.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Seasonal components}
@@ -282,7 +282,7 @@ d{W}^P_t\,d{W}^G_t = \rho\,d{t}.
 
 % frametitle
 {Data sources}
-\begin{itemize}
+% begin itemize
 %\item All the data sets are taken from the European Energy Exchange, \texttt{www.eex.com}.
 \item Phelix Day Base: It is the average price of the hours 1 to 24 for electricity traded on the spot market.
 It is calculated for all calendar days of the year as the simple average of the auction prices for the
@@ -292,7 +292,7 @@ NetConnect Germany GmbH \& Co KG. daily price (EUR/MWh),
 \item Emission certificate daily price: One EU emission allowance confers the right to emit one tonne of carbon dioxide or one tonne of
 carbon dioxide equivalent. (EUR/EUA).
 \item We cover the last three years: 25.09.2009 - 08.06.2012.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Price Paths, 25.09.2009 - 08.06.2012.}
@@ -316,20 +316,20 @@ carbon dioxide equivalent. (EUR/EUA).
 
 % frametitle
 {Real Option Approach}
-\begin{itemize}
+% begin itemize
 \item<1-> Here we value the flexibility of the power plant as well. In particular, the impact of the volatility of the underlying price process on the plant value becomes clear.
 \item<2-> The approach allows to formulate optimisation problems which allow to maximise the value of the flexibility.
 \item<3-> Flexibility adds value compared to the discounted cash flow approach.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Real Option Approach -- Forward Based}
-\begin{itemize}
+% begin itemize
 \item<1-> A first step is to consider the flexibility within a period exactly as in traded forwards (e.g. flexibility only for a whole month), which need to be liquidly traded.
 \item<2-> Then the power plant is just a sequence of call-options on the clean (spark) spread
 (as we assume that there are no further restrictions)
 \item<3-> We can then use Kirk's approximation with the appropriate forward specification.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Heath-Jarrow-Morton (HJM) Approach}
@@ -348,7 +348,7 @@ which prevails at time $0$.
 
 % frametitle
 {Factor GBM Specification}
-\begin{itemize}
+% begin itemize
 \item<1-> {\bf One-Factor GBM:} Here the volatility is
 $$
 \sigma_1(t,T)=e^{-\kappa (T-t)}\sigma
@@ -366,11 +366,11 @@ and
 $$
 \frac{dF(t,T)}{F(t,T)}=\sigma_1(t,T)dW_1(t)+\sigma_2dW_2(t)
 $$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Modelling Approach}
-\begin{itemize}
+% begin itemize
 \item<1-> We use the HJM-framework to model the forward dynamics directly.
 \item<2-> We distinguish between forward contracts with a fixed time delivery and forward contracts with a delivery period, called \emph{swaps}.
 \item<3-> A typical lognormal dynamics of the swap price is,
@@ -379,7 +379,7 @@ dF(t,T_1,T_2)=\Sigma(t,T_1,T_2)F(t,T_1,T_2)\, dW(t). \label{eqn: lognormal dynam
 \end{equation}
 The only parameter in this model is the volatility function $\Sigma$ which has to capture all movements of the swap price and especially the time to maturity effect.
 
-\end{itemize}
+% end itemize
 
 % frametitle
 {Volatility Functions}
@@ -393,7 +393,7 @@ Starting out with a given volatility function for a fixed time forward contract 
 
 % frametitle
 {Forward Schwartz Volatility}
-\begin{itemize}
+% begin itemize
 \item<1-> For the related volatility function of the forward we obtain
 \begin{equation}\label{vol-schwartz}
 \sigma(t,u)=a e^{-b(u-t)}
@@ -401,11 +401,11 @@ Starting out with a given volatility function for a fixed time forward contract 
 where $a,b >0 $ are constant.
 \item<2->
 The time to maturity effect is modeled by a negative exponential function.
-\begin{itemize}
+% begin itemize
 \item When the time to maturity tends to infinity the volatility function converges to zero.
 \item The exponential function causes that the volatility increases as the time to maturity decreases which leads to an increased volatility when the contract approaches the maturity.
-\end{itemize}
-\end{itemize}
+% end itemize
+% end itemize
 
 % frametitle
 {Swap Schwartz Volatility}
@@ -426,7 +426,7 @@ The associated swap price volatility is then given by $\Sigma(t,T_1,T_2)=a$.
 
 % frametitle
 {A Two-Factor Model}
-\begin{itemize}
+% begin itemize
 \item<1-> For a fixed delivery start $T$ and delivery period 1 month, let the dynamics of a Forward $F_{t,T}$ be given by the two factor model:
 \begin{eqnarray*}
 F(t,T)& =&F(0,T)\exp\left\{\mu(t,T)  +\int_0^t\hat{\sigma_1}(s,T)dW_s^{(1)}+\sigma_2W_t^{(2)}\right\}
@@ -436,7 +436,7 @@ F(t,T)& =&F(0,T)\exp\left\{\mu(t,T)  +\int_0^t\hat{\sigma_1}(s,T)dW_s^{(1)}+\sig
 \item<3-> $\hat{\sigma_1}(s,T)=\sigma_1e^{-\kappa(T-s)}$
 \item<4-> $\sigma_1$, $\sigma_2$, $\kappa>0$ constants
 \item<5-> $\mu(t,T)$ being the risk-neutral martingale drift
-\end{itemize}
+% end itemize
 
 % frametitle
 {Model Parameters}
@@ -466,11 +466,11 @@ $\sigma_2$ affects the level at the long end of the volatility curve
 
 % frametitle
 {Present Value of a Power Plant}
-\begin{itemize}
+% begin itemize
 \item<1-> The operator acts on the spot market. The specific daily configuration of the power plant is not traded, so we use historical probabilities.
 \item<2-> We don't consider any further restrictions.
 \item<3-> The plant runs for another few years, so future values will be discounted.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Spark Spread Analysis I}
@@ -486,14 +486,14 @@ where $P_t$ is the power price, $G_t$ is the gas price, $E_t$ is the carbon cert
 
 % frametitle
 {Spark Spread Analysis II}
-\begin{itemize}
+% begin itemize
 \item<1-> We compute the spark spread value $V_t$ given in (\ref{spark_spread_value}) for every day $t$ for a time period of three years.
 \item<2->
 The formula for the total value then read
 $$VPP(t,T) = \int_{t}^{T}e^{-r(s-t)}\,V(s)\,ds.$$
 
 \item<3-> Then, by fixing all the parameters except of one (e.g. correlation) and setting the shift value (e.g. 1\%), we compute shifted up and down spark spread values, i.e. $V^{up}_t$ and $V^{down}_t$, which we may use for sensitivity analysis.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Power Plant Analysis I}
@@ -501,11 +501,11 @@ $$VPP(t,T) = \int_{t}^{T}e^{-r(s-t)}\,V(s)\,ds.$$
 
 % frametitle
 {Power Plant Analysis II}
-\begin{itemize}
+% begin itemize
 \item<1-> We also compute shifted both up and down power plant values, i.e. $VPP^{up}(t,T)$ and $VPP^{down}(t,T)$ (i.e. w.r.t. shifted spark spread values) and calculate the sensitivity $$sVPP(\theta_0) = \frac{VPP^{up}(t,T) - VPP^{down}(t,T)}{2 \cdot shift}.$$
 \item<2-> Finally, we compute the bid and ask prices, i.e. we use the closed formula for AVaR to get the risk-captured prices by subtracting and adding risk-adjustment value to $VPP(t,T)$ respectively.
 \item<3-> For a specified significance level $\alpha \in (0, 1)$ this risk-adjustment value is computed as $$\frac{\varphi(\Phi^{-1}(\alpha))}{\alpha}\sqrt{\frac{sVPP(\theta_0)' \cdot \Sigma \cdot sVPP(\theta_0) }{N}}.$$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Parameter-risk implied bid-ask spread w.r.t. correlation parameter, Gaussian jumps.}
@@ -533,25 +533,25 @@ $$VPP(t,T) = \int_{t}^{T}e^{-r(s-t)}\,V(s)\,ds.$$
 
 % frametitle
 {Estimation Procedures: Emissions and Gas}
-\begin{itemize}
+% begin itemize
 \item Apply a standard procedure to de-seasonalize gas (don't change notation).
 \item $\log E_t$ and $\log G_t$ are normally distributed.
 \item Thus, we can use standard Maximum Likelihood Methods.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Estimation Procedures: Power I}
 The estimation procedure for the power price includes several steps:
-\begin{itemize}
+% begin itemize
 \item Estimation of the seasonal trend and deseasonalisation.
 \item With an iterative procedure we filter out returns with absolute values greater than three times the standard deviation of the returns of the series at the current iteration. The process is repeated until no further outliers can be found.
 \item As a result we obtain a standard deviation of the jumps, $\sigma_j$, and a cumulative frequency of jumps, $l$. The latter is defined as the total number of filtered jumps divided by the annualised number of observations.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Estimation Procedures: Power II}
-\begin{itemize}
+% begin itemize
 \item Once we have filtered the $X_t$ process, we can identify it as a first order autoregressive model in continuous time, i.e. so-called AR(1) process. Discretizing the process and estimating it by maximum likelihood method (MLE) yields the estimates.
 %\item To estimate the mean-reversion rate for the jump process one can take an advantage of the approach based on the autocorrelation function (ACF) suggested by Barndorff-Nielsen, %Shephard (2001) (implemented Benth, Nazarova, Kiesel 2011).
-\end{itemize}
+% end itemize
 

@@ -15,109 +15,109 @@
 % frametitle
 {Derivative Background (1)}
 
-\begin{itemize}
+% begin itemize
   \item A derivative security, or contingent claim, is a financial
 contract whose value
-\begin{itemize}
+% begin itemize
 \item at expiration date $T$ (more briefly, expiry)
 is determined exactly \index{contingent claim} by the price (or
 prices within a prespecified time-interval) of
 \item the underlying
 financial assets (or instruments) at time $T$ (within the time
 interval $[0,T]$).
-\end{itemize}
-\end{itemize}
+% end itemize
+% end itemize
 
 % frametitle
 {Derivative Background (2)}
-\begin{itemize}
+% begin itemize
   \item Derivative securities can be grouped under three general headings:
 {\it Options, Forwards and Futures} and {\it Swaps}.
 \item During this lectures we will encounter all this structures and further variants.
-\end{itemize}
+% end itemize
 
 % frametitle
 { Modelling Assumptions (1)}
 
  We impose the following set of assumptions on the financial
 markets:
-\begin{itemize}
+% begin itemize
 \item<1-> {\it No market frictions: } No transaction costs, no bid/ask
 spread, no taxes,
  no margin requirements, no restrictions on short sales.\\*[12pt]
 \item<2-> {\it No default risk:} Implying same interest for borrowing
 and lending
-\end{itemize}
+% end itemize
 
 % frametitle
 { Modelling Assumptions (2)}
-\begin{itemize}
+% begin itemize
 \item<1-> {\it Competitive markets:}  Market participants
 act as price takers, infinite number of participants\\*[12pt]
 \item<2-> {\it Rational agents} Market
 participants prefer more to less
-\end{itemize}
+% end itemize
 
 % frametitle
 { Arbitrage (1)}
-\begin{itemize}
+% begin itemize
   \item The concept of arbitrage lies at
 the centre of the relative pricing theory. All we need to assume additionally is
 that economic agents prefer
 more to less, or more precisely, an increase in consumption
 without any costs will always be accepted.
-\end{itemize}
+% end itemize
 
 % frametitle
 { Arbitrage (2)}
-\begin{itemize}
+% begin itemize
   \item The essence of the technical sense of arbitrage is that it should
 not be possible to guarantee a profit without exposure to risk.
 Were it possible to do so, arbitrageurs would do so, in unlimited quantity,
 using the market as a \lq {money-pump}' to extract arbitrarily
 large quantities of riskless profit.
   \item {\it We assume that arbitrage opportunities do not exist!}
-\end{itemize}
+% end itemize
 
 % frametitle
 {Continuous and Discrete Compounding}
-\begin{itemize}
+% begin itemize
   \item <1->Discrete compounding applies when we consider discrete time points, i.e. interest payments at the end of a period.\\
-      \begin{itemize}
+      % begin itemize
         \item $S_t = S_0 (1+r)^t$
-      \end{itemize}
+      % end itemize
 
   \item<2-> Continuous compounding applies when interest payments are done at a constant rate through the time period. \\
-      \begin{itemize}
+      % begin itemize
         \item $S_t = S_0e^{rt}$
-      \end{itemize}
- \end{itemize}
+      % end itemize
+ % end itemize
 
 % frametitle
 {Derivate Markets}
-\begin{itemize}
+% begin itemize
   \item<1-> Financial derivatives are basically traded in two ways: on organized exchanges and over-the counter (OTC).
   \item<2-> Products at exchanges are standardized contracts that are defined by the exchange. Important exchanges for commodities are the Chicago Mercantile Exchange (CME), the Intercontinental Exchange (ICE) in London or the European Energy Exchange (EEX) in Leipzig.
   \item<3-> OTC trading takes place via computers and phones between various commercials and investment banks. OTC contracts are non-standardized and can be flexible adjusted to the demand of the parties.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Underlying Securities}
 
-\begin{itemize}
+% begin itemize
 \item<1-> Stocks (one or several);
 \item<2-> Fixed income instruments: T-Bonds, Interest Rates (LIBOR, EURIBOR);
 \item<3-> Commodities or Commodity Futures;
 \item<4-> Currencies (FX);
 \item<5-> Also Derivatives may be used as underlying for compound derivatives (call on call).
-\end{itemize}
+% end itemize
 
 \subsection{Options}
 
 % frametitle
 {Options}
 
-\begin{itemize}
+% begin itemize
  \item<1->  An option is a financial instrument giving one the {\it right, but
 not the obligation} to make a specified transaction at (or by) a
 specified date at a specified price.
@@ -127,25 +127,25 @@ the right to buy. {\it Put} options give one the right to sell.
 specified date, the expiry date, on which the option expires or
 matures. {\it American} options give one the right to buy/sell at any time
 prior to or at expiry.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Exotic Options}
 Many kinds of options now exist, including so-called {\it exotic}
 options.  Types include:
-\begin{itemize}
+% begin itemize
   \item<1-> {\it Asian} options, which depend on the
 {\it average} price over a period,
 \item<2-> {\it barrier} options, which depend on some price level being
 attained or not.
 \item<3-> {\it lookback} options, which
 depend on the  {\it maximum} or {\it minimum} price over a period.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Options - Terminology (1)}
 
-\begin{itemize}
+% begin itemize
 \item<1-> The asset to which the option refers is called the {\it underlying
 asset} or the {\it underlying}.
 \item<2->
@@ -156,7 +156,7 @@ is made, is called the {\it exercise price} or {\it strike price}.
 the initial time (when the contract between the buyer and the
 seller of the option is struck), time $t = T$ for the expiry or
 final time.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Options - Terminology (2)}
@@ -164,21 +164,21 @@ final time.
 Consider, say, a European call option, with strike price $K$;
 write $S(t)$ for the value (or price) of the underlying at time
 $t$.\\*[12pt]
-\begin{itemize}
+% begin itemize
   \item<1-> If $S(t) > K$, the option is {\it in the money},
   \item<2-> if $S(t) = K$, the option is {\it at the money},
   \item<3-> if $S(t) < K$, the option is {\it out of the money}.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Options - Payoff}
 
-\begin{itemize}
+% begin itemize
   \item<1-> The payoff from a call option is $$ S(T) - K \mbox{ if } S(T)
 > K\A \mbox{ and }\A 0 \;\; \mbox{otherwise} $$ (more briefly
 written as  $(S(T) - K)^+$).
 \item<2-> The profit from a call option is the payoff $(S(T) - K)^+$) minus the call premium $c$.
-\end{itemize}
+% end itemize
 %}
 
 % frametitle
@@ -205,7 +205,7 @@ Considering only the option payoff, we obtain the payoff diagram, taking into ac
 % frametitle
 {Forwards - Basic Structure}
 
-\begin{itemize}
+% begin itemize
 \item<1->
 A {\it forward contract}
 is an agreement to buy or sell an asset $S$ at a certain future
@@ -217,11 +217,11 @@ the other agent assumes a {\it short} position.
 \item<3-> The settlement
 date is called {\it delivery date} and the specified price is
 referred to as {\it delivery price}.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Forwards}
-\begin{itemize}
+% begin itemize
 \item<1-> The {\it forward
 price} $F(t,T)$ is the delivery price which would make the
 contract have zero value at time $t$.
@@ -232,11 +232,11 @@ $F(0,T) = K$.
 The forward prices $F(t,T)$ need not (and will not)
 necessarily be equal to the delivery price $K$ during the
 life-time of the contract.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Forwards}
-\begin{itemize}
+% begin itemize
 \item<1->
 The payoff from a long position in a forward contract on one unit
 of an asset with price $S(T)$ at the maturity of the contract is
@@ -244,7 +244,7 @@ $$ S(T)-K.$$
 \item<2-> Compared with a call option with the same maturity
 and strike price $K$ we see that the investor now faces a downside
 risk, too. He has the obligation to buy the asset for price $K$.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Spot-Forward Relationship}
@@ -266,13 +266,13 @@ All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow 
 
 % frametitle
 {Futures}
-\begin{itemize}
+% begin itemize
 \item<1-> Futures can be defined as standardised forward contracts traded at exchanges where a clearing house acts as a central counterparty for all transactions.
 \item<2-> Usually an initial margin is paid as a guarantee.
 \item<3-> Each trading day a settlement price is determined and gains or losses are immediately realized at a margin account.
 \item<4-> Thus credit risk is eliminated, but there is exposure to interest rate risk.
 
-\end{itemize}
+% end itemize
 
 % frametitle
 {Payoff from a forward/futures contract}
@@ -284,7 +284,7 @@ All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow 
 
 % frametitle
 {Swaps}
-\begin{itemize}
+% begin itemize
 \item<1->
 A {\it swap} is an agreement whereby two parties
 undertake to exchange, at known dates in the future, various
@@ -295,5 +295,5 @@ assets.
 Examples are currency swaps (exchange currencies) and
 interest-rate swaps (exchange of fixed for floating set of
 interest payments).
-\end{itemize}
+% end itemize
 

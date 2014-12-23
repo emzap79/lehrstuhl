@@ -4,11 +4,11 @@
 
 % frametitle
 {Basic idea of cap-and-trade systems}
-  \begin{itemize}
+  % begin itemize
   \item<1-> \textbf{At the beginning} of the compliance period, the regulator \textbf{allocates} permits to the companies
   \item<2-> \textbf{During} the compliance period, the companies can \textbf{trade} permits among each other
   \item<3-> \textbf{At the end} of the compliance period, a regulated company has to \textbf{hand in} one permit or \textbf{pay a penalty fee} per unit of emission
-  \end{itemize}
+  % end itemize
 \end{frame}
 
 % frametitle
@@ -42,7 +42,7 @@
 
 % frametitle
 {Approximation Approaches}
-\begin{itemize}
+% begin itemize
 \item<1-> Linear approximation approach
    $$
      q_{[t_1,t_2]} \approx \tilde{q}^{Lin}_{[t_1,t_2]} = Q_{t_2} (t_2 - t_1)
@@ -53,14 +53,14 @@ $$
 q_{[t_1,t_2]} \approx \tilde{q}^{Log}_{[t_1,t_2]} = logN \left(\mu_L(t_1,t_2), \sigma^2_L(t_1,t_2) \right) \label{ECumApprox2}
 $$
 where the parameters $\mu_L(t_1,t_2)$, $\sigma_L(t_1,t_2)$ are chosen such that the first two moments of $\tilde{q}^{Log}_{[t_1,t_2]}$ and $\tilde{q}^{IG}_{[t_1,t_2]}$, respectively, match those of $q_{[t_1,t_2]}$.
-\end{itemize}
+% end itemize
 \end{frame}
 
 %9. Folie
 
 % frametitle
 {Moment matching requires two steps}
-    \begin{itemize}
+    % begin itemize
    \item<1-> Compute the first two moments $m_k$ of a log-normal random variable and solve for the parameters. \\
      In the log-normal case we have that $m_k = e^{k\mu + k^2 \frac{\sigma^2}{2}}$ and
      $$
@@ -73,7 +73,7 @@ where the parameters $\mu_L(t_1,t_2)$, $\sigma_L(t_1,t_2)$ are chosen such that 
 \end{array}
 $$
     and plug those into the above equation.
-    \end{itemize}
+    % end itemize
 \end{frame}
 
 % frametitle
@@ -174,19 +174,19 @@ $$
 
 % frametitle
 {Price Floor Using a Subsidy}
-\begin{itemize}
+% begin itemize
 \item<1-> The severe permit price drop, followed by a price hovering above zero for more than five months during the first phase of the EU ETS, persuaded several policy makers that new cap-and-trade schemes would need additional safety-valve features.
 \item<2-> In particular, policy makers have been concerned about permit prices that are either too low or too high.
 \item<3-> Thus setting a price floor and/or ceiling has been proposed.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Price Floor Using a Subsidy -- Regulation}
-\begin{itemize}
+% begin itemize
 \item<1-> A company with a permit shortage at compliance date faces a penalty $P$.
 \item<2-> If a company ends up with an excess of permits, it receives a subsidy $S$ per unit of permit.
 \item<3-> Let $0<S\leq P$ and let $N$ be the initial amount of permits allocated to relevant companies.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Permit Price in hybrid system}
@@ -214,17 +214,17 @@ $$
 
 % frametitle
 {Enforcement costs for regulator}
-\begin{itemize}
+% begin itemize
 \item<1-> A price floor ensured by the presence of a subsidy is relatively easy to implement and has the further advantage of lowering the expected enforcement costs for regulated companies.
 \item<2-> The presence of the subsidy could induce a higher stimulus in technology and abatement investments, favoring the achievement of emission reduction targets.
 \item<3-> However, the implementation of such a hybrid system might result in a significant financial burden for the environmental policy regulator. The current magnitude of this burden can be obtained by calculating the price of the put option.
-\end{itemize}
+% end itemize
 
 %\subsection{Dynamic Reduced Form Models}
 
 % frametitle
 {Permit Prices}
-\begin{itemize}
+% begin itemize
 \item<1-> Recall the emission rate
 $$
 dQ_t = Q_t(\mu dt + \sigma dW_t)
@@ -239,12 +239,12 @@ The futures permit price is given as
 $$
 F(t,T) = P \prb\left[q_{[0,T]}>N |\F_t\right]
 $$
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
 {Approximative Pricing}
-\begin{itemize}
+% begin itemize
 \item<1-> Linear approximation approach
 $$
 \begin{array}{lll}
@@ -260,13 +260,13 @@ q_{[t_1,t_2]} &\approx& \tilde{q}^{Log}_{[t_1,t_2]}\\*[12pt]
 \end{array}
 $$
 where the functions $\mu_t$ and $\sigma_t$ are defined by the functions $\alpha_t, \beta_t$ from the moment matching.
-\end{itemize}
+% end itemize
 \end{frame}
 %\subsection[Reduced Form Dynamics]{Dynamics of the permit process in the reduced form model}
 
 % frametitle
 {Carmona-Hinz Approach}
-\begin{itemize}
+% begin itemize
 \item<1-> Use a lognormal process
 $$
 \Gamma_{T}= \Gamma_0  \exp{\left\{\int_{0}^{T}\sigma_t dW_t -\frac{1}{2}\int_0^T \sigma^2_t dt\right\}}
@@ -276,7 +276,7 @@ with $\Gamma_0 >0$ and $\sigma(.)$ a deterministic square-integrable function.
 $$
 F(t,T) = P \Q\left[\Gamma_T>1 |\F_t\right]
 $$
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
@@ -300,7 +300,7 @@ $$
 
 % frametitle
 {Reduced-Form Dynamics -- Proof}
-\begin{itemize}
+% begin itemize
 \item<1-> $a_t$ formula is straightforward calculation
 \item<2-> For dynamics use that
 $$
@@ -311,13 +311,13 @@ $$
 \xi_t = \frac{\xi_{0,T}+\int_0^t\sigma_s dW_s}{\sqrt{\int_t^T\sigma_s^2ds}}\; \mbox{and}\;  \xi_{0,T}=\log \Gamma_0 - \frac{1}{2} \int_0^T\sigma_s^2ds.
 $$
 Starting with the dynamics of $\xi_t$ an application of It{\^o}'s formula gives the result.
-\end{itemize}
+% end itemize
 
 %\subsection{Historical Calibration}
 
 % frametitle
 {Model Parametrization}
-\begin{itemize}
+% begin itemize
 \item<1-> For constant $\sigma$ we find $z_t=(T-t)^{-1}$, so a richer specification is needed.
 \item<2-> A standard model is
 $$
@@ -338,11 +338,11 @@ $$
 \right.
 \end{array}
 $$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Objective Measure}
-\begin{itemize}
+% begin itemize
 \item<1-> We do a historical calibration and change measure to the objective measure.
 \item<2-> The standard change of measure gives
 $$
@@ -354,11 +354,11 @@ $$
 \tilde{W}_t = W_t - ht
 $$
 is a $\prb$ Brownian motion.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Objective Measure}
-\begin{itemize}
+% begin itemize
 \item<1->
 Under $\prb$
 $$
@@ -367,7 +367,7 @@ $$
 so $\xi_{\tau}$ given $\xi_t$ is Gaussian.
 \item<2-> So we can invert permit prices to obtain $\xi$ values and calculate the log-likelihood to obtain
 estimates for $\alpha$ and $\beta$.
-\end{itemize}
+% end itemize
 
 %\subsection{Option Pricing}
 
@@ -402,16 +402,16 @@ $$
 
 % frametitle
 {Two-period Model}
-\begin{itemize}
+% begin itemize
 \item<1-> We consider a two-period model, $[0,T]$ and $[T,T']$, with banking and withdrawal
 \item<2-> Let $\Q$ be a martingale measure and $(A_t)_{t\in[0,T]}$ and $(A'_t)_{t\in[0,T']}$
 be the futures contracts which are $\Q$ martingales.
 \item<3-> Let $N\in \F_T$ resp. $N' \in \F_{T'}$ be non-compliance in the first resp. second period.
-\end{itemize}
+% end itemize
 
 % frametitle
 {(Non-) Compliance at $T$}
-\begin{itemize}
+% begin itemize
 \item<1-> In case of compliance, i.e. event $\Omega-N$, since $A_T$ is the spot price at $T$ and the permit can be banked,  we have
 $$
 A_T\IF_{\{\Omega-N\}}= \kappa A'_T \IF_{\{\Omega-N\}}
@@ -425,11 +425,11 @@ $$
 $$
 A_t-\kappa A'_t = \EX_t^\Q[A_T-\kappa A'_T]= \EX^\Q_t[P \IF_N]
 $$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Reduced-Form Model}
-\begin{itemize}
+% begin itemize
 \item<1-> As in the one period case,  we set
 $$
 A_t-\kappa A'_t = P \Phi(\xi_t^1)
@@ -440,7 +440,7 @@ $$
 A'_t = P \Phi(\xi^2_t)
 $$
 with $\xi^2_t$ a Gaussian process driven by a Brownian motion $W^2_t$.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Pricing Formula}
@@ -459,33 +459,33 @@ of $\xi^1$ and $\xi^2$.
 
 % frametitle
 {Carbon Revenue Bonds}
-\begin{itemize}
+% begin itemize
 \item<1-> To finance high initial cost for Renewable Energy (RE) projects future returns of the project are securitized
 \item<2->
-\begin{itemize}
+% begin itemize
 \item Sell future electricity from RE project
 \item Sell environmental credits from RE project
-\end{itemize}
+% end itemize
 \item<3-> Only revenue from environmental credits is used for bond
 \item<4-> Rigorous forecast analysis of revenues, sensitivity tests and risk analysis is required.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Structure of Bond}
-\begin{itemize}
+% begin itemize
 \item<1-> pass-through: all revenues are directly passed trough to the owner of the bond
 \item<2->
-\begin{itemize}
+% begin itemize
 \item maturity: T
 \item revenues in year 1: $c_i$
 \item rate of return: $r$
 \item initial price: $x$
-\end{itemize}
+% end itemize
 \item<3-> Fair price
 $$
 x= \sum_{i=1}^T \frac{c_i}{(1+r)^i}
 $$
-\end{itemize}
+% end itemize
 
 % frametitle
 {EUA Time Series}
@@ -518,41 +518,41 @@ $$
 
 % frametitle
 {Financial Implications of Carbon Policies}
-\begin{itemize}
+% begin itemize
 \item<1-> Modern risk management has to include the consequences of climate change.
 \item<2-> Regulatory risk (reduction targets for carbon emissions) transforms into financial risk  for several asset classes.
 \item<3-> Carbon inefficient firms tend to have a higher credit spread and higher refinancing costs.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Factors Affecting Carbon Risk}
-\begin{itemize}
+% begin itemize
 \item<1-> Energy intensity and fuel mix -- firms that are dependent on fossil fuels face higher costs.
 \item<2-> Direct, indirect and embedded emissions of a firm's product affect market position.
 \item<3-> Marginal abatement costs.
 \item<4-> Technology trajectory -- progress in adapting low-carbon emission technologies.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Motivation for Investors to Invest in Carbon-related Assets}
-\begin{itemize}
+% begin itemize
 \item<1-> Financial Motivation
-\begin{itemize}
+% begin itemize
 \item Portfolio diversification
 \item Potential fundamental price appreciation of carbon
 \item Hedging financial risk due to carbon price increases
-\end{itemize}
+% end itemize
 \item<2-> Green Motivation
-\begin{itemize}
+% begin itemize
 \item Compliance with UN principles of responsible investment (UN PRI)
 \item Public opinion, behaviour as corporate citizen
 \item Incentivizing the corporate sector by taking carbon credits from the market
-\end{itemize}
-\end{itemize}
+% end itemize
+% end itemize
 
 % frametitle
 {Risk In Renewable Energy Companies}
-\begin{itemize}
+% begin itemize
 \item<1-> Costs: as the costs of producing RE come down while the costs of producing fossil fuels rise, a
 substitution will occur.
 \item<2-> Capital: Government and private capita
@@ -560,11 +560,11 @@ substitution will occur.
 \item<4-> China: huges efforts to establish a green economy
 \item<5-> Consumers: demand products with less impact on the economy
 \item<6-> Climate Change: will be tackled by investment in greener technologies.
-\end{itemize}
+% end itemize
 
 % frametitle
 {CAPM Analysis of RE Companies}
-\begin{itemize}
+% begin itemize
 \item<1-> Empirical evidence shows that RE companies have a $\beta$ close to two.
 \item<2-> Model: $i$ firm, $t$ time
 $$
@@ -574,17 +574,17 @@ $R$ returns, $\alpha$ component that is independent of the market.
 \item<3-> Higher beta values indicate a higher equity cost of capital.Investors must then be compensated
 through higher expected returns in order to take on the higher risk. A higher equity cost of capital can affect borrowing costs and
 it can also affect the discount rate used in net present value calculations.
-\end{itemize}
+% end itemize
 
 % frametitle
 {CAPM Analysis of RE Companies II}
-\begin{itemize}
+% begin itemize
 \item<1-> Which factors affect systematic risk (the $\beta$)?
 \item<2-> Empirical analysis shows:
-\begin{itemize}
+% begin itemize
 \item Increases in sales growth reduce market risk
 \item Increases in oil price returns increases systematic risk
-\end{itemize}
+% end itemize
 \item<3-> In order to foster RE companies governments can implement policies to increase sales of such companies (e.g. PV-industry and feed-in tariffs).
-\end{itemize}
+% end itemize
 

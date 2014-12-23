@@ -37,7 +37,7 @@ $\qquad E^*(t) = (e^*_1(t), \ldots, e^*_N(t))$ (vector of optimal emission level
 such that for a given $P^*(t)$,
 $\theta^*(t)$ and $E^*(t)$ minimize each firm's costs subject to each firm's constraints as given in (2) - (4) and \\
 the following two conditions hold
-\begin{itemize}
+% begin itemize
 \item Market clearing condition on permits \\
 $
 \qquad \sum_{i=1}^N \theta_i^*(t) = 0
@@ -46,7 +46,7 @@ $
 $
 \qquad P^*(T)\sum_{i=1}^N B^*_i(T) = 0
 $
-\end{itemize}
+% end itemize
 \end{frame}
 
 %17. Folie
@@ -76,7 +76,7 @@ $r$ & interest rate \\
 
 % frametitle
 {Rubin 1996: Theorem (Market equilibrium and joint optimization problem)}
-\begin{enumerate}[(a)]
+% begin enumerate
 \item There exists an intertemporal market equilibrium in emission permits over a T-period horizon
 \item The market equilibrium solution is at least as inexpensive as the result of the joint cost optimization
 \item The permit price equals the marginal abatement costs
@@ -84,7 +84,7 @@ $r$ & interest rate \\
 P(t) = - C'_i(e_i)
 \]
 
-\end{enumerate}
+% end enumerate
 \end{frame}
 
 \subsection{Stochastic Equilibrium Model}
@@ -126,13 +126,13 @@ $e_t^{i,j,k}$ & emission factor of firm i, production technology j and product k
 % frametitle
 {Market equilibrium}
 A market equilibrium in emission permits consists of
-\begin{itemize}
+% begin itemize
 \item<1->
 $\quad A^*$ (one-dimensional stochastic process for forward price on permits)
 \item<2-> $\quad S^*$ (multi-dim. stochastic process for the prices of the products)
 \item<3-> $\quad \theta^*$ (multi-dim. stochastic process of optimal trading strategies)
 \item<4-> $\quad \xi^*$ (multi-dim. stochastic process of optimal production strategies)
-\end{itemize}
+% end itemize
 such that for given $A^*$ and $S^*$,
 $\theta^*$ and $\xi^*$ lead to a situation where all the firms are satisfied by their strategy.
 \end{frame}
@@ -144,7 +144,7 @@ $
 \qquad \mathbb{E}\left[ L^{A^*, S^*, i}\left(\theta^{*i},\xi^{*i}\right) \right] \ge \mathbb{E}\left[ L^{A^*, S^*, i}\left(\theta^{i},\xi^{i}\right) \right] \textnormal{ for all } \left(\theta^i, \xi^i \right)
 $ \\
 and the following two conditions hold
-\begin{itemize}
+% begin itemize
 \item<1-> Market clearing condition on permits
 $$
 \sum_{i} \theta^{*i}_t = 0
@@ -153,7 +153,7 @@ $$
 $$
 \sum_{i, j} \xi^{*i,j,k}_t = D_t^k
 $$
-\end{itemize}
+% end itemize
 \end{frame}
 
 %23. Folie
@@ -179,11 +179,11 @@ $\Pi$ & penalty per emission unit \\
 
 % frametitle
 {Theorem: Market equilibrium and joint optimization problem}
-\begin{enumerate}[(a)]
+% begin enumerate
 \item If $(A^*,S^*)$ is a market equilibrium with associated strategies $(\theta^*,\xi^*)$ then $\xi^*$ is a solution of the global optimization problem
 \item There exists a solution $\bar{\xi}$ of the global optimization problem
 \item If $\bar{\xi}$ is a a solution of the global optimization problem then $(\bar{A}, \bar{S})$ is a market equilibrium and the equilibrium allowance price process is almost surely unique
-\end{enumerate}
+% end enumerate
 \end{frame}
 
 %25. Folie
@@ -202,11 +202,11 @@ A^*_t = \Pi \cdot \mathbb{E} \left[ \IF_{\left\{ \varepsilon + e(\xi) - \Delta \
 % frametitle
 {Theorem: Equilibrium prices}
  Spot prices $S^{*k}$ of the goods and the optimal production strategy $\xi^{*i}$ correspond to a merit-order-type equilibrium with adjusted costs $C_t^{i,j,k} + e^{i,j,k} A_t^*$, i.e. at time t and for each good k
-\begin{itemize}
+% begin itemize
 \item all the production means of the economy are ranked by increasing adjusted production costs
 \item demand is met by producing from the cheapest production means
 \item k's equilibrium spot price is the marginal cost of production of the most expensive production means used to meet demand $D_t^k$
-\end{itemize}
+% end itemize
 \[
 S_t^{*k} = \max_{i,j} \left\{ \left(C_t^{i,j,k} + e^{i,j,k} A_t^* \right) \IF_{\left\{\xi_t^{i,j,k}>0\right\}}\right\}
 \]
@@ -216,7 +216,7 @@ S_t^{*k} = \max_{i,j} \left\{ \left(C_t^{i,j,k} + e^{i,j,k} A_t^* \right) \IF_{\
 
 % frametitle
 {Basic Model}
-\begin{itemize}
+% begin itemize
 \item<1-> Risk-neutral companies with total initial endowment $e_0$
 \item<2-> Total emissions dynamics are
 \begin{equation}
@@ -226,11 +226,11 @@ with deterministic drift and volatility.
 \item<3-> Central planner who minimizes total expected cost over a trading period $[0,T]$ by deciding at any time instant
 whether to costly abate some of the CO2 emissions or not.
 \item<4-> At the end of the period actual accumulated emissions and penalty costs are determined.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Basic Model II}
-\begin{itemize}
+% begin itemize
 \item<1-> $x_t$ are the total expected emissions over the trading period
 \item<2-> Then
 \begin{equation}
@@ -238,11 +238,11 @@ x_t=-\int_0^tu_s ds + \EX_t\left[\int_0^T y_s ds \right]
 \end{equation}
 \item<3-> $u_t$ is the optimal rate of abatement which is  actively chosen by the central planner.
 \item<4-> So $x_t$ is a controlled stochastic process.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Total Emissions}
-\begin{itemize}
+% begin itemize
 \item<1-> $x_T$ are the realized emissions that relate to a potential penalty function
 \item<2-> Without abatement total expected emissions  are
 $$
@@ -254,7 +254,7 @@ dx_t=-u_t dt + G(t) dW_t
 \end{equation}
 \item<4-> $G(t)$ is the volatility of the uncontrolled part of $x_t$ and depends both on the drift $\mu(t, y_t)$
 and the volatility $\sigma(t,y_t)$ of the emission rate.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Optimisation problem of the central planner I}
@@ -271,12 +271,12 @@ $$
 
 % frametitle
 {Optimisation problem of the central planner II}
-\begin{itemize}
+% begin itemize
 \item<1-> $C(t,u_t)$ are the abatement costs per unit of time. $c$ constant implies no change in technology occurs.
 The quadratic form implies linearly increasing marginal abatement costs.
 \item<2-> $P(x_T)$ is the penalty function, with $p$ the penalty including all costs.
 \item<3-> $r$ is the constant interest rate.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Solution of the control problem}
@@ -309,7 +309,7 @@ $$
 
 % frametitle
 {Permit Price Dynamics}
-\begin{itemize}
+% begin itemize
 \item<1-> Recall that the permit price must equal the marginal abatement costs, so
 \begin{equation}
 S(t,x_t) = c u_t = -e^{rt} V_x(t,x_t)
@@ -319,7 +319,7 @@ S(t,x_t) = c u_t = -e^{rt} V_x(t,x_t)
 \begin{equation}
 dS(t,x_t)= G(t)S_x(t,x_t) dW_t
 \end{equation}
-\end{itemize}
+% end itemize
 
 % frametitle
 {Implied Permit Price Volatility}
@@ -338,18 +338,18 @@ dS(t,x_t)= G(t)S_x(t,x_t) dW_t
 
 % frametitle
 {Individual Company Models}
-\begin{itemize}
+% begin itemize
 \item<1-> Each individual company has an endowment $e_{i0}$
 \item<2-> Individual emissions dynamics are
 \begin{equation}
 dy_{it}= \mu(t, y_{it})dt + \sigma(t, y_{it})dW_{it}
 \end{equation}
 with deterministic drift and volatility.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Individual Emissions}
-\begin{itemize}
+% begin itemize
 \item<1-> $x_{it}$ are the total expected emissions of company $i$ over the trading period
 \item<2-> Then
 \begin{equation}
@@ -357,18 +357,18 @@ x_{it}=-\int_0^tu_{is} ds -\int_0^tz_{is}ds + \EX_t\left[\int_0^T y_{is} ds \rig
 \end{equation}
 \item<3-> $u_{it}$ is the individual rate of abatement
 \item<4-> and $z_{it}$ is the instantaneous amount of permits bought or sold.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Individual Emissions Dynamics}
-\begin{itemize}
+% begin itemize
 \item<1-> The dynamics of the total expected emissions are
 \begin{equation}
 dx_{it}=-[u_{it}+z_{it}] dt + G_i(t) dW_{it}
 \end{equation}
 \item<2-> $G_i(t)$ is the volatility of the uncontrolled part of $x_{it}$ and depends both on the drift $\mu_i(t, y_{it})$
 and the volatility $\sigma_i(t,y_{it})$ of the emission rate.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Optimisation Problem for the individual Company}
@@ -400,7 +400,7 @@ $$
 
 % frametitle
 {Equilibrium Solution}
-\begin{itemize}
+% begin itemize
 \item<1-> We solve the HJB for $N$ companies and use the market clearing condition
 $$
 \sum_{i=1}^N z_{it}^*=0
@@ -416,7 +416,7 @@ $$
 $$
 S(t) = c_i u_{it}^*, \; i=1, \ldots N.
 $$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Joint Cost Problem I}
@@ -449,7 +449,7 @@ $$
 
 % frametitle
 {Joint Problem Solution}
-\begin{itemize}
+% begin itemize
 \item<1-> The first-order conditions give
 $$
 u_{it}^{**}= -\frac{1}{c_i} e^{rt} V^i_x, \; i=1, \ldots N
@@ -463,7 +463,7 @@ $$
 $$
 S(t) = c_i u_{it}^{**}= -e^{rt}V^i_x, \; i=1, \ldots N.
 $$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Equivalence to Equilibrium Solution}
@@ -484,7 +484,7 @@ $$
 
 % frametitle
 {Permit Prices}
-\begin{itemize}
+% begin itemize
 \item<1-> Model  the emission rate as
 $$
 dQ_t = Q_t(\mu dt + \sigma dW_t)
@@ -499,12 +499,12 @@ The futures permit price is given as
 $$
 F(t,T) = P \prb\left[q_{[0,T]}>N |\F_t\right]
 $$
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
 {Approximative Pricing}
-\begin{itemize}
+% begin itemize
 \item<1-> Linear approximation approach
 $$
 \begin{array}{lll}
@@ -520,13 +520,13 @@ q_{[t_1,t_2]} &\approx& \tilde{q}^{Log}_{[t_1,t_2]}\\*[12pt]
 \end{array}
 $$
 where the functions $\mu_t$ and $\sigma_t$ are defined by the functions $\alpha_t, \beta_t$ from the moment matching.
-\end{itemize}
+% end itemize
 \end{frame}
 %\subsection[Reduced Form Dynamics]{Dynamics of the permit process in the reduced form model}
 
 % frametitle
 {Carmona-Hinz Approach}
-\begin{itemize}
+% begin itemize
 \item<1-> Use a lognormal process
 $$
 \Gamma_{T}= \Gamma_0  \exp{\left\{\int_{0}^{T}\sigma_t dW_t -\frac{1}{2}\int_0^T \sigma^2_t dt\right\}}
@@ -536,7 +536,7 @@ with $\Gamma_0 >0$ and $\sigma(.)$ a deterministic square-integrable function.
 $$
 F(t,T) = P \Q\left[\Gamma_T>1 |\F_t\right]
 $$
-\end{itemize}
+% end itemize
 \end{frame}
 
 % frametitle
@@ -560,7 +560,7 @@ $$
 
 % frametitle
 {Reduced-Form Dynamics -- Proof}
-\begin{itemize}
+% begin itemize
 \item<1-> $a_t$ formula is straightforward calculation
 \item<2-> For dynamics use that
 $$
@@ -571,13 +571,13 @@ $$
 \xi_t = \frac{\xi_{0,T}+\int_0^t\sigma_s dW_s}{\sqrt{\int_t^T\sigma_s^2ds}}\; \mbox{and}\;  \xi_{0,T}=\log \Gamma_0 - \frac{1}{2} \int_0^T\sigma_s^2ds.
 $$
 Starting with the dynamics of $\xi_t$ an application of It{\^o}'s formula gives the result.
-\end{itemize}
+% end itemize
 
 %\subsection{Historical Calibration}
 
 % frametitle
 {Model Parametrization}
-\begin{itemize}
+% begin itemize
 \item<1-> For constant $\sigma$ we find $z_t=(T-t)^{-1}$, so a richer specification is needed.
 \item<2-> A standard model is
 $$
@@ -598,11 +598,11 @@ $$
 \right.
 \end{array}
 $$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Objective Measure}
-\begin{itemize}
+% begin itemize
 \item<1-> We do a historical calibration and change measure to the objective measure.
 \item<2-> The standard change of measure gives
 $$
@@ -614,11 +614,11 @@ $$
 \tilde{W}_t = W_t - ht
 $$
 is a $\prb$ Brownian motion.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Objective Measure}
-\begin{itemize}
+% begin itemize
 \item<1->
 Under $\prb$
 $$
@@ -627,7 +627,7 @@ $$
 so $\xi_{\tau}$ given $\xi_t$ is Gaussian.
 \item<2-> So we can invert permit prices to obtain $\xi$ values and calculate the log-likelihood to obtain
 estimates for $\alpha$ and $\beta$.
-\end{itemize}
+% end itemize
 
 %\subsection{Option Pricing}
 
@@ -662,16 +662,16 @@ $$
 
 % frametitle
 {Two-period Model}
-\begin{itemize}
+% begin itemize
 \item<1-> We consider a two-period model, $[0,T]$ and $[T,T']$, with banking and withdrawal
 \item<2-> Let $\Q$ be a martingale measure and $(A_t)_{t\in[0,T]}$ and $(A'_t)_{t\in[0,T']}$
 be the futures contracts which are $\Q$ martingales.
 \item<3-> Let $N\in \F_T$ resp. $N' \in \F_{T'}$ be non-compliance in the first resp. second period.
-\end{itemize}
+% end itemize
 
 % frametitle
 {(Non-) Compliance at $T$}
-\begin{itemize}
+% begin itemize
 \item<1-> In case of compliance, i.e. event $\Omega-N$, since $A_T$ is the spot price at $T$ and the permit can be banked,  we have
 $$
 A_T\IF_{\{\Omega-N\}}= \kappa A'_T \IF_{\{\Omega-N\}}
@@ -685,11 +685,11 @@ $$
 $$
 A_t-\kappa A'_t = \EX_t^\Q[A_T-\kappa A'_T]= \EX^\Q_t[P \IF_N]
 $$
-\end{itemize}
+% end itemize
 
 % frametitle
 {Reduced-Form Model}
-\begin{itemize}
+% begin itemize
 \item<1-> As in the one period case,  we set
 $$
 A_t-\kappa A'_t = P \Phi(\xi_t^1)
@@ -700,7 +700,7 @@ $$
 A'_t = P \Phi(\xi^2_t)
 $$
 with $\xi^2_t$ a Gaussian process driven by a Brownian motion $W^2_t$.
-\end{itemize}
+% end itemize
 
 % frametitle
 {Pricing Formula}

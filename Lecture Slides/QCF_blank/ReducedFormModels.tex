@@ -1,0 +1,598 @@
+
+% !TEX root = QCF_ss13UDE.tex
+\section{Reduced Form Models}
+\subsection{EU ETS First Phase Price Collapse}
+
+	Permit price in the EU ETS during the first phase}
+		\begin{center}
+		\begin{figure}[h!]
+		\centering
+		\rotatebox{0}{
+		\scalebox{0.6}{
+		\includegraphics[width=1.45\textwidth, height=\textheight]{../../../pics/car-00-1-data.pdf}}}
+		\caption{EUA-Dec07 futures price (22 April 2005 - 17 December 2007).}
+		\label{fig:plotCar00-Data}
+		\end{figure}
+		\end{center}
+
+
+%\subsection{Calculating Permit Prices}
+Cumulative Emissions
+	To calculate permit prices, we specify the process for the cumulative emissions in the framework of Carmona et al. by
+		$$
+			q_{[0,t]} = \int_0^t Q_s ds
+		$$
+	where the emission rate $Q_t$ follows a Geometric Brownian motion.
+
+	There is no closed-form density for $q_{[0,t]}$ available.
+
+
+%8. Folie
+Approximation Approaches
+	Linear approximation approach of Chesney and Taschini (2008)
+		 $$
+			 q_{[t_1,t_2]} \approx \tilde{q}^{Lin}_{[t_1,t_2]} = Q_{t_2} (t_2 - t_1)
+		 $$
+		 %has the shortcoming that the moments of the cumulative emissions do not match the true ones.
+	Moment matching of Gr{\"u}ll and Kiesel (2009): Log-normal (moment matching)
+		$$
+		q_{[t_1,t_2]} \approx \tilde{q}^{Log}_{[t_1,t_2]} = logN \left(\mu_L(t_1,t_2), \sigma^2_L(t_1,t_2) \right) \label{ECumApprox2}
+		$$
+	where the parameters $\mu_L(t_1,t_2)$, $\sigma_L(t_1,t_2)$ are chosen such that the first two moments 
+	of $\tilde{q}^{Log}_{[t_1,t_2]}$ and $\tilde{q}^{IG}_{[t_1,t_2]}$, respectively, match those of $q_{[t_1,t_2]}$.
+
+
+%9. Folie
+Moment matching requires two steps
+		Compute the first two moments $m_k$ of a log-normal random variable and solve for the parameters. \\
+    In the log-normal case we have that $m_k = e^{k\mu + k^2 \frac{\sigma^2}{2}}$ and
+			 $$
+			 \sigma^2 = \ \ln\left( \frac{m_2}{m^2_1}\right)  \qquad \mu = \ \ln(m_1) - \frac{1}{2}  \sigma^2
+			 $$
+		Compute the first two moments of the integral over a geometric Brownian motion
+			$$\begin{array}{lll}
+				\EW \left[ q_{[t_1,t_2]} \right] &=& \ Q_{t_1} \alpha_{t_2-t_1} \\
+				\EW \left[ \left( q_{[t_1,t_2]} \right)^2 \right] &=& \ 2 Q_{t_1}^2 \beta_{t_2-t_1}
+				\end{array}
+			$$
+		and plug those into the above equation.
+    
+
+Auxiliary functions for moments of integral over GBM
+\begin{align}
+\alpha_{t_2-t_1}    =& \ \left\{
+         \begin{array}{ll}
+            \frac{1}{\mu} \left( e^{\mu \left( t_2 - t_1 \right)} - 1 \right)
+            & \quad \mbox{if $\mu \ne 0$} \\
+            t_2 - t_1
+            & \quad \mbox{if $\mu = 0$} \\
+         \end{array} \right. \label{MomIntAlpha} \\
+%\beta_{t_2-t_1} =& \  \frac{ \mu e^{(2 \mu + \sigma^2) \left( t_2 - t_1 \right)} + \mu + \sigma^2 - \left( 2\mu + \sigma^2\right) e^{\mu \left( t_2 - t_1 \right)}}{\mu(\mu + \sigma^2)(2\mu + \sigma^2)} \label{MomIntBeta}
+\beta_{t_2-t_1}    =& \ \left\{
+         \begin{array}{ll}
+            \frac{ \mu e^{(2 \mu + \sigma^2) \left( t_2 - t_1 \right)} + \mu + \sigma^2 - \left( 2\mu + \sigma^2\right) e^{\mu \left( t_2 - t_1 \right)}}{\mu(\mu + \sigma^2)(2\mu + \sigma^2)}
+            & \quad \mbox{if $\mu \ne 0$} \\
+            \frac{1}{\sigma^4} \left( e^{\sigma^2\left(t_2-t_1\right)} - 1\right)
+            & \quad \mbox{if $\mu = 0$} \\
+         \end{array} \right. \label{MomIntBeta}
+\end{align}
+
+
+%11. Folie
+%\subsection[Permit Prices]{Permit prices for different approximation approaches}
+Permit price - linear approximation
+\begin{block}{}
+The permit price at time t is given by
+  $$
+  S_t^{Lin} = \ \left\{
+         \begin{array}{ll}
+            P e^{-r\tau}
+            & \quad \mbox{if $q_{[0,t]} \ge N$} \\
+            P e^{-r\tau} \cdot \Phi \left(\frac{-\ln\left( \frac{1}{\tau} \left[ \frac{N - q_{[0,t]}}{Q_t} \right] \right) + \left( \mu - \frac{\sigma^2}{2}\right)\tau}{\sigma \sqrt{\tau}} \right) & \quad 						\mbox{if $q_{[0,t]} < N$} \\
+         \end{array} \right.
+	$$
+	where \\
+	$\tau = T - t$ is the time to compliance. \\
+	$\Phi(\cdot)$ denotes the c.d.f. of a standard normal random variable.
+\end{block}
+
+
+%12. Folie
+Permit price - log-normal moment matching
+\begin{block}{}
+    The permit price at time t is given by
+	$$
+	S_t^{Log} = \ \left\{
+		\begin{array}{ll}
+			P e^{-r\tau}
+			&\mbox{if $q_{[0,t]} \ge N$} \\
+			P e^{-r\tau} \cdot \Phi \left(\frac{-\ln\left( \frac{N - q_{[0,t]}}{Q_t} \right) + 2\ln(\alpha_{\tau}) - \frac{1}{2} \ln(2\beta_{\tau})}{\sqrt{\ln(2\beta_{\tau}) - 2\ln(\alpha_{\tau})}} \right) 					& \mbox{if $q_{[0,t]} < N$} \\
+		\end{array} \right.
+	$$
+where \\
+	$\tau = T - t$ is the time to compliance and \\
+	$\alpha_{\tau}, \beta_{\tau}$ are obtained by calculating the first and the second moment of the integral over a geometric Brownian motion. \\
+	$\Phi(\cdot)$ denotes the c.d.f. of a standard normal random variable.
+\end{block}
+
+
+Permit price - reciprocal gamma moment matching
+    \begin{block}{}
+    The permit price at time t is given by
+$$
+S_t^{IG}  = \ \left\{
+         \begin{array}{ll}
+            P e^{-r\tau}
+            & \quad \mbox{if $q_{[0,t]} \ge N$} \\
+            P e^{-r\tau} \cdot G \left(\frac{Q_t}{N - q_{[0,t]}} | \frac{4\beta_{\tau} - \alpha^2_{\tau}}{2\beta_{\tau} - \alpha^2_{\tau}} , \frac{2\beta_{\tau} - \alpha^2_{\tau}}{2 \alpha_{\tau} \beta_{\tau}}  \right)
+            & \quad \mbox{if $q_{[0,t]} < N$} \\
+         \end{array} \right.
+$$
+where \\
+$\tau = T - t$ is the time to compliance and \\
+$\alpha_{\tau}, \beta_{\tau}$ are obtained by calculating the first and the second moment of the integral over a geometric Brownian motion. \\
+$G(x|a,b)$ denotes the c.d.f. of a gamma random variable with shape parameter $a$ and scale parameter $b$.
+    \end{block}
+
+
+%14. Folie
+Relating theoretical permit prices to allocation
+	We introduce the following two random variables that are very easy to interpret
+    \begin{block}{Time needed to exhaust the remaining permits}
+			$$
+			x_t := \frac{N - q_{[0,t]}}{Q_t}
+			$$
+    \end{block}
+	and
+		\begin{block}{Over-/Underallocation in years}
+			$$
+			x_t - (T-t)
+			$$
+    \end{block}
+
+
+%15. Folie
+Numerical illustrations 
+	\begin{center}
+	\begin{figure}[h!]
+	\centering
+	\rotatebox{0}{
+	\scalebox{0.6}{
+	\includegraphics[width=1.45\textwidth, height=\textheight]{../../../pics/fig05a.pdf}}}
+	\caption{Trajectory of $x_t$ for $t \in [0,1]$,  $N = Q_0 = 100$, $\mu = 0.02$ and $\sigma = 0.05$.}
+	\label{fig:plot4}
+	\end{figure}
+	\end{center}
+
+
+Numerical illustrations
+	\begin{center}
+	\begin{figure}[h!]
+	\centering
+	\rotatebox{0}{
+	\scalebox{0.6}{
+	\includegraphics[width=1.45\textwidth, height=\textheight]{../../../pics/fig08.pdf}}}
+	\caption{Trajectory of $S_t^{Lin}(x_t)$ (left), $S_t^{Log}(x_t)$ (middle) and $S_t^{IG}(x_t)$ (right) for $t \in [0,1]$,  $N = Q_0 = 100$, $\mu = 0.02$ and $\sigma = 0.05$.}
+	\label{fig:plot8}
+	\end{figure}
+	\end{center}
+
+
+Implied over-/underallocation during the first phase of the EU ETS}
+	\begin{center}
+	\begin{figure}[h!]
+	\centering
+	\rotatebox{0}{
+	\scalebox{0.6}{
+	\includegraphics[width=1.35\textwidth, height=1.05\textheight]{../../../pics/fig-implied1.pdf}}}
+	\caption{\tiny Implied $x_t - (T-t)$ for first phase for fixed  $\mu = 0.02$ and $\sigma = 0.05$. Linear approximation approach (straight line), log-normal moment matching (dashed line). Positive values correspond to overallocation.}
+	\label{fig:plot10}
+	\end{figure}
+	\end{center}
+
+
+
+%\subsection[2006 Price Slump]{Theoretical discussion of permit price slump in 2006}
+
+%18. Folie
+Permit price Delta
+	For $t \in [0,T)$ and $q_{[0,t]} < N$
+		$$
+		\frac{dS_t^{Lin}}{dx_t}(x_t) := \ - \frac{P e^{-r \tau}}{\sigma\sqrt{\tau}} \cdot \frac{1}{x_t} \phi \left( \frac{-\ln\left( \frac{1}{\tau} x_t \right) + 
+		\left( \mu - \frac{\sigma^2}{2} \right) \tau}{\sigma \sqrt{\tau}}\right) < 0
+		$$
+
+		$$
+		\frac{S_t^{Lin}((1+h)x_t)-S_t^{Lin}(x_t)}{S_t^{Lin}(x_t)}=
+			-\frac{\phi \left( \frac{-\ln\left( \frac{1}{\tau} x_t \right) + 
+			\left( \mu - \frac{\sigma^2}{2} \right) \tau}{\sigma \sqrt{\tau}}\right)}{\Phi \left( \frac{-\ln\left( \frac{1}{\tau} x_t \right) + 
+			\left( \mu - \frac{\sigma^2}{2} \right) \tau}{\sigma \sqrt{\tau}}\right)}\cdot \frac{h}{\sigma \sqrt{\tau}}
+		$$
+
+
+Price slumps and allocation
+	We show that a price slump of more than 50\% can be related to an implicit change in $x_t$ of less than $5\%$.\\
+
+	We introduce the following notation
+		$t - \Delta$ is the date before the publication of verified emissions that affected the permit price (28 April 2006)
+		$t$ is the date of the announcement of cumulative emissions (15 May 2006)
+	
+	Using
+		the cumulative emissions until $t$ denoted by $q_{[0,t]}$
+		
+		the futures permit price at and before publication of emission data denoted by $F(t,T)$ and $F(t - \Delta,T)$, respectively
+
+		the implicit time needed to exhaust the remaining permits before the announcement was $h(\sigma)$ per cent larger than the previous estimate $\bar{x}_t$ where
+		$$
+		h(\sigma) = \frac{F(t,T) - F(t-\Delta,T)}{P \phi\left( \Phi^{-1}\left(\frac{F(t,T)}{P}\right) \right)} \cdot f^{approx}(\sigma,t,\bar{x}_t)
+		$$
+
+
+%19. Folie
+Price slumps and allocation
+\begin{center}
+\begin{figure}[h!]
+\centering
+\rotatebox{0}{
+\scalebox{0.6}{
+\includegraphics[width=1.45\textwidth, height=\textheight]{../../../pics/fig-implied2.pdf}}}
+\caption{Linear approximation ("1"), log-normal moment matching ("2").}
+\label{fig:plot11}
+\end{figure}
+\end{center}
+
+
+Price Floor Using a Subsidy
+	The severe permit price drop, followed by a price hovering above zero for more than five months
+	during the first phase of the EU ETS, persuaded several policy makers that new cap-and-trade
+	schemes would need additional safety-valve features.
+	
+	In particular, policy makers have been concerned about permit prices that are either too low or too high.
+	
+	Thus setting a price floor and/or ceiling has been proposed.
+
+
+
+Price Floor Using a Subsidy -- Regulation
+	A company with a permit shortage at compliance date faces a penalty $P$.
+	
+	If a company ends up with an excess of permits, it receives a subsidy $S$ per unit of permit.
+	
+	Let $0<S\leq P$ and let $N$ be the initial amount of permits allocated to relevant companies.
+
+
+Permit Price in hybrid system
+	Denote the futures permit price by $\tilde{F}(t,T)$:
+		\begin{align*}
+		\tilde{F}(t,T) =& \ P \cdot \PM \left( q_{[0,T]} > N \mid \Ft \right) + S \cdot \PM \left( q_{[0,T]} \le N \mid \Ft \right) \\
+			=& \ P \cdot \PM \left( q_{[0,T]} > N \mid \Ft \right) + S \cdot \left( 1 - \PM \left( q_{[0,T]} > N \mid \Ft \right)\right) \\
+		 % =& \ S + (P-S) \cdot \PM \left( q_{[0,T]} > N \mid \Ft \right)
+			=& \ S + \frac{P-S}{P} \cdot P \cdot \PM \left( q_{[0,T]} > N \mid \Ft \right) \\
+			=& \ S + \frac{P-S}{P} \cdot F(t,T) = \ F(t,T) + S\left(1 - \frac{F(t,T)}{P}\right),
+		\end{align*}
+	where $F(t,T) = P \cdot \PM \left( q_{[0,T]} > N \mid \Ft \right)$ is the futures permit price in an ordinary system.
+
+
+Decomposition of permit price in hybrid system
+	Computing the value of a put with strike $S$ shows that the price in the hybrid scheme is the price in the ordinary 
+	scheme plus the value of a put option on the price in the ordinary scheme with strike $S$ and maturity $T$:
+		$$
+		\begin{array}{ll}
+		&\EW\left[ (S-F(T,T))^+ \mid \Ft \right]\\*[12pt]
+		=& \ \EW\left[ \left( S- P \textbf{1}_{\left\{ q_{[0,T]} > N \right\}} \right)^+ \mid \Ft \right] \\*[12pt]
+		=& \ \left( S- P \right)^+ \PM \left( q_{[0,T]} > N \mid \Ft \right) + \left( S- 0 \right)^+ \PM \left( q_{[0,T]} \le N \mid \Ft \right) \\*[12pt]
+		 \stackrel{S<P}{=}& \ S \cdot \PM \left( q_{[0,T]} \le N \mid \Ft \right).
+		\end{array}
+		$$
+
+
+Expected enforcement costs for regulated companies
+	Let $f_q$ be the probability density function of the cumulative emissions $q_{[0,T]}$ in the entire regulated period. The expected enforcement costs for relevant companies in an ordinary system are
+		$$
+		EEC = \ P \int_N^{\infty} (x-N) f_q(x) dx \ge 0.
+		$$
+	Similarly, the expected enforcement costs for regulated companies in this hybrid system are
+		$$
+		EEC^{PF} = \ P \int_N^{\infty} (x-N) f_q(x) dx - S \int_0^N (N-x) f_q(x) dx.
+		$$
+	So, the total expected enforcement costs for regulated companies under this hybrid system are lower than under an ordinary system.
+		$$
+		EEC - EEC^{PF} = \ S \int_0^N (N-x) f_q(x) dx \ \ge 0.
+		$$
+
+
+Enforcement costs for regulator
+	A price floor ensured by the presence of a subsidy is relatively easy to implement
+	and has the further advantage of lowering the expected enforcement costs for regulated companies.
+
+	The presence of the subsidy could induce a higher stimulus in technology and abatement investments, 
+	favoring the achievement of emission reduction targets.
+	
+	However, the implementation of such a hybrid system might result in a significant financial burden 
+	for the environmental policy regulator. The current magnitude of this burden can be obtained by calculating 
+	the price of the put option.
+	
+
+Hybrid systems }
+{\tiny
+	\begin{table}
+	\centering
+	\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	Scheme & Price bound & Prices can & Link with & Description of the mechanism \\
+	 &  & exceed bounds & offsets market &  \\
+	\hline
+	\hline
+	\multicolumn{5}{|l|}{\textbf{Existing cap-and-trade scheme}} \\
+	\hline
+	%EU ETS & - & - & Yes & Fixed limit on the use of CERs \\
+	% &  &  & & Possibility to trade options quoted on exchanges \\
+	%\hline
+	Offset safety-valve & Upper & Yes & Yes & Flexible limit on the use of offsets \\
+	\hline
+	\hline
+	\multicolumn{5}{|l|}{\textbf{Proposed safety-valve mechanisms for cap-and-trade schemes}} \\
+	\hline
+	Subsidy price floor & Lower & No & No & Subsidy \\
+	\hline
+	Price collar & Upper \&  & No & No & Regulator sells unlimited amount of \\
+	& Lower & & &                                   permits at the price ceiling and\\
+		&   &  &  &                               buys unlimited amount of permits    \\
+	 &   &  &  &                              at the price floor \\
+	\hline
+	Allowance reserve & Upper \&  & Yes & No & Regulator sells limited amount of  \\
+	 & Lower  & &  &                                     permits at the price ceiling and buys  \\
+	 &   & &  &                                     limited amount permits at price floor \\
+	\hline
+	Regulator offers  & Upper \&  & No (for owner & No & Regulator sells options  \\
+	options                        &       Lower         & of options)    &    &  at a market price\\
+	\hline
+	\end{tabular}
+	%\caption{Overview on the main results of the mechanisms under investigation in this paper and description of how they work in practice.}
+	\end{table}
+}
+
+
+
+\subsection{Dynamic Reduced Form Models}
+
+Permit Prices
+	Recall the emission rate
+		$$
+		dQ_t = Q_t(\mu dt + \sigma dW_t)
+		$$
+
+	The cumulative emissions are
+		$$
+		q_{[0,t]} = \int_0^t Q_s ds
+		$$
+
+	The futures permit price is given as
+		$$
+		F(t,T) = P \prb\left[q_{[0,T]}>N |\F_t\right]
+		$$
+
+
+Approximative Pricing
+	Linear approximation approach
+		$$
+		\begin{array}{lll}
+		q_{[t_1,t_2]} &\approx& \tilde{q}^{Lin}_{[t_1,t_2]} = Q_{t_2} (t_2 - t_1) \\*[12pt]
+		&=&\displaystyle   Q_{t_1} e^{\left\{\log (t_2 - t_1) + \left(\mu-\frac{\sigma^2}{2}\right)(t_2-t_1)+\int_{t_1}^{t_2}\sigma dW_t\right\}}
+		\end{array}
+		$$
+	Moment matching
+		$$
+		\begin{array}{lll}
+		q_{[t_1,t_2]} &\approx& \tilde{q}^{Log}_{[t_1,t_2]}\\*[12pt]
+		&=& Q_{t_1} \exp\left\{ \int_{t_1}^{t_2}\mu_t dt + \int_{t_1}^{t_2} \sigma_t dW_t\right\}
+		\end{array}
+		$$
+	where the functions $\mu_t$ and $\sigma_t$ are defined by the functions $\alpha_t, \beta_t$ from the moment matching.
+
+
+%\subsection[Reduced Form Dynamics]{Dynamics of the permit process in the reduced form model}
+
+
+Carmona-Hinz Approach
+	Use a lognormal process
+		$$
+		\Gamma_{T}= \Gamma_0  \exp{\left\{\int_{0}^{T}\sigma_t dW_t -\frac{1}{2}\int_0^T \sigma^2_t dt\right\}}
+		$$
+	with $\Gamma_0 >0$ and $\sigma(.)$ a deterministic square-integrable function.
+ 
+	Define the futures price under a risk-neutral measure $\Q$ as
+		$$
+		F(t,T) = P \Q\left[\Gamma_T>1 |\F_t\right]
+		$$
+
+
+
+Reduced-Form Dynamics
+	The martingale
+		$$
+		a_t = \EX^\Q\left[\IF_{\{\Gamma_T>1\}} |\F_t\right]
+		$$
+	is given by
+		$$
+		a_t= \Phi \left[\frac{\Phi^{-1}(a_0) \sqrt{\int_0^T \sigma^2_s ds}+\int_0^t \sigma_s dW_s}{\sqrt{\int_t^T \sigma^2_s ds}}\right]
+		$$
+	and solves the stochastic differential equation
+		$$
+		da_t = \Phi'\left(\Phi^{-1}(a_t)\right)\sqrt{z_t}dW_t
+		$$
+	with
+		$$
+		z_t=\frac{\sigma_t^2}{\int_t^T \sigma^2_u du}
+		$$
+
+
+Reduced-Form Dynamics -- Proof
+	$a_t$ formula is straightforward calculation
+	
+	For dynamics use that
+		$$
+		a_t = \Phi(\xi_t)
+		$$
+	with
+		$$
+		\xi_t = \frac{\xi_{0,T}+\int_0^t\sigma_s dW_s}{\sqrt{\int_t^T\sigma_s^2ds}}\; \mbox{and}\;  \xi_{0,T}=\log \Gamma_0 - \frac{1}{2} \int_0^T\sigma_s^2ds.
+		$$
+	
+	Starting with the dynamics of $\xi_t$ an application of It{\^o}'s formula gives the result.
+
+
+
+%\subsection{Historical Calibration}
+Model Parametrization
+	For constant $\sigma$ we find $z_t=(T-t)^{-1}$, so a richer specification is needed.
+	
+	A standard model is
+		$$
+		da_t = \Phi'\left(\Phi^{-1}(a_t)\right)\sqrt{\beta(T-t)^{-\alpha}}dW_t
+		$$
+	which specifies a family $\sigma_s(\alpha,\beta)$.
+
+	So $z_t(\alpha, \beta) = \beta(T-t)^{-\alpha}$ and
+		$$
+		\begin{array}{lll}
+		\sigma_t^2(\alpha,\beta)&=& \displaystyle z_t(\alpha, \beta) \exp\left\{-\int_0^t z_s(\alpha, \beta) ds \right\}\\*[12pt]
+		&=&\displaystyle
+		\left\{
+		\begin{array}{ll}
+		\beta(T-t)^{-\alpha} e^{-\frac{\beta}{1-\alpha}[T^{1-\alpha}-(T-1)^{1-\alpha}]} &\alpha \not=1\\
+		\beta(T-t)^{\beta-1}T^{-\beta} &\alpha=1.
+		\end{array}
+		\right.
+		\end{array}
+		$$
+
+
+Objective Measure
+	We do a historical calibration and change measure to the objective measure.
+	
+	The standard change of measure gives
+		$$
+		\frac{d\prb}{d\Q} = \exp\left\{\int_0^T H_s dW_s -\frac{1}{2} \int_0^T H_s^2ds \right\}).
+		$$
+
+	Under constant market price of risk $H_t \equiv h$ and by Girsanov's theorem
+		$$
+		\tilde{W}_t = W_t - ht
+		$$
+	is a $\prb$ Brownian motion.
+
+	Under $\prb$
+		$$
+		d\xi_t = \left(\frac{1}{2} z_t \xi_t + h \sqrt{z_t} \right)dt + \sqrt{z_t} d\tilde{W}_t,
+		$$	
+	so $\xi_{\tau}$ given $\xi_t$ is Gaussian.
+	
+	So we can invert permit prices to obtain $\xi$ values and calculate the log-likelihood to obtain
+	estimates for $\alpha$ and $\beta$.
+
+
+%\subsection{Option Pricing}
+Pricing Formula
+For a European call with strike $K$ and maturity $\tau$ the option price is
+		$$
+		C_t = e^{-\int_t^\tau r_s ds} \int_{-\infty}^\infty (P\Phi(x)-K)^+ \Phi_{\mu_{t,\tau}, \sigma_{t,\tau}}(dx)
+		$$
+	with
+		$$
+		\mu_{t,\tau}=
+		\left\{
+		\begin{array}{ll}
+		\xi_t \left(\frac{T-t}{T-\tau}\right)^{\frac{\beta}{2}} & \alpha =1\\
+		\xi_t \exp\left\{\frac{\beta}{2(1-\alpha)}[(T-t)^{1-\alpha}-(T-\tau)^{1-\alpha}]\right\} & \alpha \not= 1.
+		\end{array}
+		\right.
+		$$
+	and
+		$$
+		\sigma^2_{t,\tau}=
+		\left\{
+		\begin{array}{ll}
+		\left(\frac{T-t}{T-\tau}\right)^\beta-1 & \alpha =1\\
+		\exp\left\{\frac{\beta}{1-\alpha}[(T-t)^{1-\alpha}-(T-\tau)^{1-\alpha}]\right\}-1 & \alpha \not= 1.
+		\end{array}
+		\right.
+		$$
+
+
+
+%\subsection{Reduced Form Option Pricing in Multi-period Models}
+Two-period Model
+	We consider a two-period model, $[0,T]$ and $[T,T']$, with banking and withdrawal
+	
+	Let $\Q$ be a martingale measure and $(A_t)_{t\in[0,T]}$ and $(A'_t)_{t\in[0,T']}$
+	be the futures contracts which are $\Q$ martingales.
+	
+	Let $N\in \F_T$ resp. $N' \in \F_{T'}$ be non-compliance in the first resp. second period.
+
+
+(Non-) Compliance at $T$
+	In case of compliance, i.e. event $\Omega-N$, since $A_T$ is the spot price at $T$ and the permit can be banked,  we have
+		$$
+		A_T\IF_{\{\Omega-N\}}= \kappa A'_T \IF_{\{\Omega-N\}}
+		$$
+	with $\kappa= \exp\{-\int_T^{T'}r_s ds\}$ a discount factor.
+ 
+	In case of non-compliance
+		$$
+		A_T\IF_{N}= \kappa A'_T \IF_{N} + P\IF_N
+		$$
+	
+	Thus
+		$$
+		A_t-\kappa A'_t = \EX_t^\Q[A_T-\kappa A'_T]= \EX^\Q_t[P \IF_N]
+		$$
+
+
+
+Reduced-Form Model
+	As in the one period case,  we set
+		$$
+		A_t-\kappa A'_t = P \Phi(\xi_t^1)
+		$$
+	with $\xi^1_t$ a Gaussian process driven by a Brownian motion $W^1_t$.
+	
+	Assume that the ETS ends after the second period, then
+		$$
+		A'_t = P \Phi(\xi^2_t)
+		$$
+	with $\xi^2_t$ a Gaussian process driven by a Brownian motion $W^2_t$.
+
+
+Pricing Formula
+	For a European call written on a futures in the first period with strike $K$ and maturity $\tau$ we decompose the payoff
+		$$
+		(A_\tau-K)^+= (A_\tau - \kappa A'_\tau + \kappa A'_\tau -K )^+= (P\Phi(\xi^1_t) + \kappa P \Phi(\xi_t^2) -K)^+
+		$$
+	
+	We obtain for the option price
+		$$
+		C_t = e^{-\int_t^\tau r_s ds} \int_{\setR^2} (P\Phi(x_1)+\kappa P \Phi(x_2) -K)^+ \Phi_{\mu_\tau, \sigma_\tau}(dx_1dx_2)
+		$$
+	where the parameters of the two-dimensional Gaussian distribution depend on the individual drift and volatility terms and the correlation
+	of $\xi^1$ and $\xi^2$.
+
+
+
+Parameters of the Pricing Formula}
+The means are
+	\begin{eqnarray}\nonumber
+	\mu^1_{t,\tau} &=& \Phi^{-1}\left(\frac{A_t - \kappa A'_t}{P}\right) \sqrt{\left(\frac{T-t}{T-\tau}\right)\beta_1}\\\nonumber
+	\mu^2_{t,\tau} &=& \Phi^{-1}\left(\frac{\kappa A'_t}{P}\right) \sqrt{\left(\frac{T'-t}{T'-\tau}\right)\beta_2}\\\nonumber
+	\end{eqnarray}
+and the covariance matrix is
+	\begin{eqnarray}\nonumber
+	\nu^{1,1}_{t,\tau} &=& \var(\xi_\tau^1) =  \left(\frac{T-t}{T-\tau}\right)^{\beta_1}-1\\\nonumber
+	\nu^{2,2}_{t,\tau} &=& \var(\xi_\tau^2) =  \left(\frac{T'-t}{T'-\tau}\right)^{\beta_2}-1\\\nonumber
+	\nu^{1,2}_{t,\tau}= \nu^{2,1}_{t,\tau} &=& \beta_1^\frac{1}{2}\beta_2^\frac{1}{2}
+	\frac{\int_t^\tau (T-u)^\frac{\beta_1-1}{2} (T'-u)^\frac{\beta_2-1}{2} \rho du}{(T-\tau)^\frac{\beta_1}{2} (T'-\tau)^\frac{\beta_2}{2}} \\\nonumber
+	\end{eqnarray}
+
+
+
+

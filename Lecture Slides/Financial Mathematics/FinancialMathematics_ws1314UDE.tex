@@ -38,13 +38,17 @@
 \usepackage[T1]{fontenc}        % Zeichen-Codierung
 \usepackage{textcomp}
 
+
+
 %\usepackage{harvard}
 \usepackage{natbib}
 %\usepackage[longnamesfirst]{natbib}
 %\usepackage{har2nat}
 
+
 %\usepackage{biblatex}
 %\bibliography{QCF-literature}
+
 
 \definecolor{purelightblue}{rgb}{0.93,0.93,1}
 \definecolor{pureblue}{rgb}{0.1882,0.2510,0.5647}
@@ -57,23 +61,25 @@
 \definecolor{qcolor}{rgb}{0.75,0.0,0.0}
 \definecolor{obscolor}{rgb}{0.58,0.70,0.84}
 
+
 \newcounter{realpage}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 %Anfang der Kopfzeile
 \newcommand{\zwischentitel}{}
-\newcommand{\leitthema}{Quantitative Climate Finance}
+\newcommand{\leitthema}{Financial Mathematics}
 \newcommand{\ort}{Essen}
-%Datum kann weiter unten geändert werden (\presdatum{})
-%Ende der Kopfzeile
+
 
 %Anfang zur Titelseite
-\title[QCF]{Quantitative Climate Finance}
+\title[Financial Mathematics]{Financial Mathematics}
 \author{Professor Dr. R{\"u}diger Kiesel}
-\newcommand{\presdatum}{SS 2014}
+\newcommand{\presdatum}{WS 2013/14}
 \institute{Chair for Energy Trading and Finance}
-\subtitle{Lecture - Summer 2014}
+\subtitle{Lecture - Winter 2013/14}
 %Ende der Titelseite
 \AtBeginPart{
 \frame[plain]{\titlepage}
@@ -81,28 +87,35 @@
 \frame{\tableofcontents[part=\insertpartnumber]}
 }
 
+
+
 \AtBeginSection[] % Do nothing for \section*
-{
-\begin{frame}{Agenda}{\quad}
-\only{\tableofcontents[currentsection,hideothersubsections]}
-\end{frame}
-}
+%{
+%\begin{frame}{Agenda}{\quad}
+%\only{\tableofcontents[currentsection,hideothersubsections]}
+%\end{frame}
+%}
 
 \input{../../def}
 \begin{document}
 
-\frame[plain]{\titlepage}
 
-\input{Introduction}
-%\setcounter{part}{2}
-\input{Cap-and-trade-Design}
+
+	
+
+\input{Derivate}
+%\setcounter{part}{1}
+\input{StochasticAnalysis}
 %\setcounter{part}{3}
-\input{PermitPriceDynamics}
+\input{DynamicBlackScholes}
 %\setcounter{part}{4}
-%\input{ReducedFormModels}
-\input{FlexibleMechanism}
+\input{Exotics}
+\input{InterestRates}
 %\setcounter{part}{5}
-\input{ClimateFinance}
+%\input{OtherRisks}
+
+
+
 
 %\begin{frame}
 %\tiny
@@ -111,4 +124,4 @@
 %\nocite{*}
 %\end{frame}
 
-\end{document}
+\end{document} 

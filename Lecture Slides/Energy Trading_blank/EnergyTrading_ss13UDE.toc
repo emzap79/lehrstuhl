@@ -1,0 +1,17 @@
+\beamer@endinputifotherversion {3.20pt}
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Energy Markets}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Options, Forwards and Swaps}{17}{0}{1}
+\beamer@sectionintoc {2}{Stochastic Processes for Price Movements}{52}{0}{2}
+\beamer@subsectionintoc {2}{1}{How to Model Price Movements?}{53}{0}{2}
+\beamer@subsectionintoc {2}{2}{Basic Stochastic Calculus}{60}{0}{2}
+\beamer@subsectionintoc {2}{3}{A Mean-Reversion Diffusion Model}{74}{0}{2}
+\beamer@sectionintoc {3}{Energy Derivatives}{89}{0}{3}
+\beamer@subsectionintoc {3}{1}{Basic Pricing Relations for Forwards/Futures}{90}{0}{3}
+\beamer@subsectionintoc {3}{2}{HJM-type models}{106}{0}{3}
+\beamer@subsectionintoc {3}{3}{A Market Model}{109}{0}{3}
+\beamer@sectionintoc {4}{Energy Derivatives}{120}{0}{4}
+\beamer@subsectionintoc {4}{1}{Caps and Floors}{121}{0}{4}
+\beamer@subsectionintoc {4}{2}{Swing Options}{141}{0}{4}
+\beamer@subsectionintoc {4}{3}{Spread Options}{145}{0}{4}
+\beamer@subsectionintoc {4}{4}{Basket Options}{187}{0}{4}

@@ -1,0 +1,577 @@
+% !TEX root = StructuringValuation_ws1314UDE.tex
+\section{Empirical Analysis of Commodity Returns}
+\subsection{Marginal Distributions}
+{Marginal Distributions}
+%\vspace{-1cm}
+The analysis consists of following commodities:\\
+Power (Baseload), Brent Crude Oil, Coal, Natural Gas, CO$_2$
+allowances
+
+We highlight important features using some of them.
+
+The commodities have a wide variety of different statistical
+properties, e. g.
+\begin{center}
+\begin{figure}
+\includegraphics[width=0.45\textwidth]{../../../pics/qqoil.pdf}
+\includegraphics[width=0.45\textwidth]{../../../pics/qqpower.pdf}
+\end{figure}
+\end{center}
+
+} {Marginal Distributions -- Basic Statistics}
+{\small
+\begin{table}[ht]
+            \vspace{0.5cm}
+            \begin{center}
+                \begin{tabular}{c|c|c|c|c}
+                    &Power2007&Brent2007&Coal2007&Carbon2007\\\hline
+                    Length&\multicolumn{4}{c}{- 314 -}\\
+                    Minimum&-0.070490&-0.037960&-0.034940&-0.336500\\
+                    Maximum&0.088390&0.059270&0.025550&0.569600\\
+                    Mean&0.001237&0.001497&0.000180&0.000094\\
+                    Median&0.001185&0.001427&0.000658&0.002574\\
+                    SE Mean&0.000721&0.000796&0.000551&0.003025\\
+                    Variance&0.000163&0.000199&0.000095&0.002873\\
+                    Skewness&-0.185179&0.212642&-0.332898&1.967920\\
+                    Excess kurtosis&11.680823&0.584996&0.452510&48.843905\\
+                \end{tabular}
+                \caption{Basic statistics of the 2007 log-return series}
+            \end{center}
+        \end{table}
+}
+}
+
+
+Stylized facts
+	%\vspace{-1.5cm}
+	\begin{center}
+	How non-normal are power prices?\\
+	\end{center}
+	
+	%\vspace{-1.5cm}
+	\begin{center}
+	How non-normal are power prices?\\
+	Skewness: 0.07 \hspace{2cm} Excess Kurtosis: 2.31\\
+	\includegraphics[width=0.7\textwidth,  height=0.7\textheight]{../../../pics/DChistogram.pdf}
+	\end{center}
+	
+	\begin{center}
+	How non-normal are power prices?\\
+	Skewness: 1.95 \hspace{2cm} Excess Kurtosis: 25.93\\
+	\includegraphics[width=0.7\textwidth,height=0.7\textheight]{../../../pics/powerhistogram.pdf}
+	\end{center}
+
+
+\subsection{Multivariate Parametric Modelling}
+\subsubsection{Requirements for a Joint Distribution}
+
+Towards a multivariate distribution -- Requirements
+ Distribution must reflect statistical properties, at least:
+     non-normality
+     peaked center, heavy tails
+     skewness and excess kurtosis
+ Distribution must be tractable, i. e. it should allow for:
+     Conclusion of portfolio distribution from joint distribution (stable under convolution)
+     Computation of value-at-risk/expected shortfall
+  
+
+Towards a multivariate distribution -- Requirements
+	Univariate analyses support the use of NIG (applied to spot power
+	by Benth \& Saltyte-Benth) and hyperbolic distributions (applied
+	to power futures by Eberlein \& Stahl, to oil and natural gas by
+	Kat \& Oomen), Multivariate distributional analysis are not
+	available thus far.\\
+
+	Suggestion: Use a multivariate extension of the distributions
+	above, i. e. multivariate generalized hyperbolic distributions
+	(GH)
+
+
+\subsubsection{Generalized Hyperbolic Distributions}
+GH-distributions
+	GH-distribution has a representation as Normal mean-variance mixture, i. e. $X\sim GH$
+	(multivariate) if
+	$$X\stackrel{d}{=}\mu+W\gamma+\sqrt{W}AZ$$
+	where $Z$ is a $k$-dimensional standard Normal, $W$ Generalized
+	Inverse Gaussian random variable (mixture variable) independent of
+	$Z$, $A\in\mathbb{R}^{d\times k}$ and $\mu, \gamma \in
+	\mathbb{R}^d$.
+	
+	$$X\stackrel{d}{=}\mu+W\gamma+\sqrt{W}AZ$$
+	%\vspace{-1cm}
+	 Moments of $X$:
+			 $\E[X]=\mu+\gamma\E[W]$
+			 $\Var[X]=AA'\E[W]+\gamma\gamma'\Var[W]$\\[-1.5cm]
+	 $\mu$ controls mean value\\[-1.5cm]
+	 $\gamma$ controls skewness ($\gamma=0$: symmetric)\\[-1.5cm]
+	 $\Sigma:=AA'$ controls covariance\\[-1.5cm]
+	 $W\sim GIG(\lambda,\chi,\psi)$ controls tail-behaviour
+
+
+	Further important properties are: %\vspace{-0.5cm}
+		GH-distribution has heavy tails.  Density is explicitly
+		known $\rightarrow$ Maximum-Likelihood estimation. 
+		Distribution is closed under linear combinations $\rightarrow$
+		Portfolio is GH-distributed.  GH-distribution is infinitely
+		divisible $\rightarrow$ Levy-processes
+
+
+	Well-known special cases are:
+	 NIG ($\lambda=-1/2$, successful in power markets)\\[-1.5cm]
+	 Hyperbolic ($\lambda=1$, successful in power, gas and oil markets)\\[-1.5cm]
+	 $t$-distribution ($\lambda=-1/2\nu, \chi=\nu, \psi=0, \gamma=0, \nu>0$)
+
+
+%\vspace{-2cm}
+\begin{center}
+\begin{figure}
+\includegraphics[width=0.9\textwidth]{../../../pics/densitiespower.pdf}
+%\includegraphics[width=0.49\textwidth]{pics/logdensitiespower.pdf}
+\end{figure}
+\end{center}
+
+%\vspace{-2cm}
+\begin{center}
+\begin{figure}
+%\includegraphics[width=\textwidth]{pics/densitiespower.pdf}
+\includegraphics[width=0.9\textwidth]{../../../pics/logdensitiespower.pdf}
+\end{figure}
+\end{center}
+
+Further properties of GH-distributions -- Computation of VaR/ES} 
+	%\vspace{-1.5cm}
+	Once the joint distribution is specified, we want to analyze
+	energy portfolios, e. g. compute risk measures. We use the
+	following setting:
+
+		$X_{t+1}^{(i)}:=\frac{S_{t+1}^{(i)}-S_t^{(i)}}{S_t^{(i)}}$
+		denotes relative returns of commodity $i$. 
+		
+		$X:=-\sum\omega_iS_t^{(i)}X_{t+1}^{(i)}$ denotes loss of a
+		portfolio consisting of $\omega_i$ shares of commodity $i$ during
+		the period $[t,t+1]$.
+
+		If $X_t^{(i)}$ are jointly GH-distributed, then $X$ is
+		univariate GH-distributed  
+		
+		Compute value-at-risk (numerically) via $ VaR_{\alpha}(X)=F^{-1}_X(\alpha) $ 
+
+		Expected shortfall is defined (for absolute continuous
+		distributions) via $ ES_{\alpha}(X) =\frac{1}{1-\alpha}\int_{\alpha}^1VaR_u(X)du$. In case of
+		GH-distributions this can be computed explicitly:
+			\begin{eqnarray*}
+			ES_{\alpha}(X)&=&\mu+\gamma\BE(W)+\sigma\frac{\varphi(\Phi^{-1}(\alpha))}{1-\alpha}\BE(\sqrt{W})
+			\end{eqnarray*}
+
+\subsubsection{Risk Management Application}
+Some statistical results %\vspace{-1.5cm}
+	Results are reported for commodity futures/swaps (power, oil, gas,
+	CO$_2$) with delivery during 2007. We worked on time series with
+	1.5 years of daily prices.
+
+	Results are: %\vspace{-0.5cm}
+	 Mardia's tests reject the use of multivariate normal distribution.\\[-1.3cm]
+	 Likelihood ratio tests prefer any of the alternative distributions to the Normal\\[-1.3cm]
+	 Among all the tested alternatives, we recommend the NIG.
+
+
+Coal-fired Power Plant
+	We consider a portfolio that can be viewed roughly as the year production/consumption of a
+	coal-fired power plant that has a total output capacity of 1TW:
+		 $10^6$ power contracts (1 contract delivers 1MW during the entire year), long \\[-1.5cm]
+		 330,000 t coal, short\\[-1.5cm]
+		 900,000 t CO$_2$, short
+
+	\begin{figure}
+	\begin{center}
+	%\includegraphics[width=0.49\textwidth]{pics/EScoal09ret.pdf}
+	\includegraphics[width=0.85\textwidth]{../../../pics/VARcoal09ret.pdf}
+	\end{center}
+	\end{figure}
+
+	\begin{figure}
+	\begin{center}
+	\includegraphics[width=0.85\textwidth]{../../../pics/EScoal09ret.pdf}
+	%\includegraphics[width=0.49\textwidth]{pics/VARcoal09ret.pdf}
+	\end{center}
+	\end{figure}
+
+	\begin{center}
+	Normal VaR $>$ NIG VaR?
+	\end{center}
+	%%\vspace{-2cm}
+	95\%-quantile: \hspace{2cm} 0.034 (Normal) \hspace{1cm}\\
+	\begin{center}
+	%\vspace{-1cm}
+	\includegraphics[width=0.7\textwidth, height= 0.7\textheight]{../../../pics/DChistogram.pdf}
+	\end{center}
+
+	\begin{center}
+	Normal VaR $>$ NIG VaR?
+	\end{center}
+
+	%%\vspace{-2cm}
+	95\%-quantile: \hspace{1cm} 0.034 (Normal)  \hspace{1cm}$<$ \hspace{1cm} 0.041 (NIG)\\
+	%\vspace{-1cm}
+
+	\begin{center}
+	\includegraphics[width=0.7\textwidth, height= 0.7\textheight]{../../../pics/DCNIG.pdf}
+	\end{center}
+
+	\begin{center}
+	Normal VaR $>$ NIG VaR?
+	\end{center}
+	95\%-quantile: \hspace{1cm} 0.073 (Normal) \hspace{1cm} \\
+
+	\begin{center}
+	%\vspace{-1cm}
+	\includegraphics[width=0.7\textwidth, , height= 0.7\textheight]{../../../pics/powerhistogram.pdf}
+	\end{center}
+
+	\begin{center}
+	Normal VaR $>$ NIG VaR?
+	\end{center}
+	95\%-quantile: \hspace{1cm} 0.073 (Normal) \hspace{1cm}$>$ \hspace{1cm} 0.053 (NIG) \\
+
+	\begin{center}
+	%\vspace{-1cm}
+	\includegraphics[width=0.7\textwidth, , height= 0.7\textheight]{../../../pics/powerNIG.pdf}
+	\end{center}
+
+ 
+\subsubsection{Discussion of multivariate GH-model}
+%\subsection{Marginals}
+Shortcomings -- Marginals %\vspace{-1.5cm}
+	\begin{center}
+	QQplot using a fitted joint NIG
+	\begin{figure}
+	\begin{center}
+	\includegraphics[width=0.4\textwidth]{../../../pics/marginalpower.pdf}
+	\includegraphics[width=0.4\textwidth]{../../../pics/marginalcoal.pdf}
+	\end{center}
+	\end{figure}
+	\end{center}
+
+	\begin{center}
+	QQplot using a fitted joint NIG
+	\begin{figure}
+	\begin{center}
+	\includegraphics[width=0.4\textwidth]{../../../pics/marginaloil.pdf}
+	\includegraphics[width=0.4\textwidth]{../../../pics/marginalcarbon.pdf}
+	\end{center}
+	\end{figure}
+	\end{center}
+
+% Unterschiedliches Tail-Verhalten macht auch die implizite Kalibrierung an Optionen mit unterschiedlichen Lieferperioden/Underlyings instabil.
+	Same tail-behaviour in all components of $$X\stackrel{d}{=}\mu+W\gamma+\sqrt{W}AZ$$
+	since $W$ is the determinant for tail - and common to all marginals.  If $X$ and $Y$ are two GH-distributed random
+	variables driven by different $W$s, we loose the convolution property ($X+Y$ is not GH-distributed).  
+	
+	Exception: NIG
+
+
+\subsection{Copula-based Modelling}
+Estimation of marginal  distribution of several commodity
+returns  Estimation of several Copulas to obtain joint
+distributions  Applications: \textbf{Risk Management} (VaR,
+ES, Portfolio Analysis)
+
+
+\subsubsection{Marginal Distributions}
+For each model
+	the estimated parameters  
+	
+	the Akaike Information Criterion (AIC), which is defined to be \[AIC(M_j)=-2log(L_j(\hat{\theta}_j; X))+2k_j\ ,j\in\{1,\ldots,n\}\]
+	
+	the log-likelihood  the p-value of a likelihood ratio test against the asymmetric generalized hyperbolic model (which is the most general model we consider)
+are provided.
+
+
+Marginal Distributions - Example: Power
+{\tiny
+
+\begin{table}[ht]
+            \vspace{0.5cm}
+            %\begin{center}
+                \begin{tabular}{c|c|c|c|c|c|c|c|c}
+                    model&$\lambda$&$\overline{\alpha}$&$\mu$&$\sigma$&$\gamma$&AIC&log-likelihood&p-value\\\hline
+                    t&-1.227624&0&0.001529&0.015459&0&-1976.120&991.0599&0.793012\\
+                    NIG-s&-0.5&0.316160&0.001429&0.012340&0&-1974.458&990.2291&0.345514\\
+                    sk- t&-1.239572&0&0.001713&0.015189&-0.000614&-1974.355&991.1773&0.632315\\
+                    ghyp-s&-1.119172&0.129836&0.001511&0.012967&00&-1974.338&991.1689&0.620085\\
+                    NIG&-0.5&0.319912&0.001582&0.012314&-0.000346&-1972.594&990.2971&0.158394\\
+                    ghyp&-1.131927&0.130704&0.001714&0.012900&-0.000477&-1972.584&991.2918&NA\\
+                    hyp-s&1&0.000126&0.001184&0.011303&0&-1963.430&984.7149&0.001392\\
+                    hyp&1&0.000003&0.001174&0.011305&0.000057&-1961.439&984.7197&0.000288\\
+                    N &0&0&0.001237&0.000163&0&-1846.459&924.2295&0
+                \end{tabular}
+                \caption{Marginal models for the Power2007 log-return series}
+            %\end{center}
+        \end{table}
+}
+
+}
+\subsubsection{Copulas}
+{Copula Modelling}
+
+	Let $F_i(t)$ be a marginal return distribution
+	of asset $i$.
+
+	One can use of a copula function $C$ to obtain the multivariate distribution
+		$$
+		F(t_1, \ldots t_n)=C(F_1(t_1),\ldots,F_n(t_n)).
+		$$
+
+	Flexibility in the choice of copulae allows to consider several
+	features of the dependence
+	structure.
+
+	A copula $C$ is a multivariate distribution with standard uniform
+	marginal distributions. That is $C$ is a mapping $[0,1]^m
+	\rightarrow [0,1]$ with
+		$C(u_1,\ldots,u_m)$ is increasing in each component $u_i$
+		$C(1,\ldots,1,u_i,1,\ldots,1)=u_i$ for all $i\in\{1,\ldots,m\}$, $u_i\in[0,1]$
+		For all $(a_1,\ldots,a_m), (b_1,\ldots,b_m)\in[0,1]^m$ with $a_i\leq b_i$ we have:
+			$$
+			\sum_{i_1=1}^2\cdots\sum_{i_d=1}^2(-1)^{i_1+\ldots+i_d}C(u_{1,i_1},\ldots,u_{m,u_m})
+			\geq 0,
+			$$
+	where $u_{j,1}=a_j$ and $u_{j,2}=b_j$ for all $j \in \{1,\ldots,m\}$.
+
+
+Facts on Copula Functions
+	Thus a copula function is a multivariate distribution function
+	such that its marginal distributions are standard uniform. We use
+	the notation
+	$$
+	C:[0,1]^m \rightarrow [0,1], \A (u_1, \ldots, u_m)\rightarrow
+	C(u_1, \ldots, u_m).
+	$$
+
+	If $\bv{X}=(X_1,\ldots,X_m)'$ has joint distribution $F$ with
+	continuous marginals $F_1,\ldots,F_m$, then the distribution
+	function of the transformed vector
+	$$
+	(F_1(X_1),\ldots,F_m(X_m))
+	$$
+	is a copula $C$, and
+	$$
+	F(x_1,\ldots,x_m)=C(F_1(x_1),\ldots,F_m(x_m)).
+	$$
+
+
+Examples of Copula Functions
+	The Gaussian copula is given by:
+	$$
+	C^m_{\Phi,\Gamma}(\bv{u})=\bv{\Phi}_{\Gamma}(\Phi^{-1}(u_1),\ldots,\Phi^{-1}(u_m)),
+	$$
+	where $\bv{\Phi}_{\Gamma}$ denotes the multivariate Gaussian
+	distribution function with linear correlation matrix $\Gamma$.
+
+
+	The $t$-copula can be expressed by:
+	$$
+	C^m_{t,\nu,\Gamma}(\bv{u})=t^m_{\nu,\Gamma}(t_\nu^{-1}(u_1),\ldots,t_{\nu}^{-1}(u_m)),
+	$$
+	where $t^m_{\nu,\Gamma}$ denotes the distribution function of an
+	m-variate $t$-distributed random vector with parameter $\nu>2$ and
+	linear correlation matrix $\Gamma$. Furthermore, $t^{-1}_\nu$ is
+	the inverse of  the univariate $t$-distribution function with
+	parameter $\nu$.
+
+
+Examples of Copulas
+	\begin{center}
+	\begin{figure}
+	\includegraphics[width=0.6\textwidth]{../../../pics/copula-density.pdf}
+	\end{figure}
+	\end{center}
+
+
+Archimedean copula
+	An Archimedean copula function $C:[0,1]^{I}\rightarrow[0,1]$ is a
+	copula function which can be represented in the following form
+		$$
+		C(\bv{x})=\varphi^{-1}\left(\sum_{i=1}^{I}\varphi(x_i)\right)
+		$$
+	with a suitable function $\varphi:[0,1]\rightarrow\mathbb{R}_t$
+	with $\varphi(0)=\infty, \varphi(1)=0$. The function $\varphi$ is
+	called the generator of the copula.
+
+	Examples of this class are
+		Clayton: $\varphi(t)=(t^{-\theta}-1);
+		\varphi^{-1}(s)=(1+s)^{-1/\theta},\; \theta\geq 0$.\\
+		Lower tail dependency, no upper tail dependency.
+
+		Gumbel: $\varphi(t)=(-\log t)^{\theta},
+		\varphi^{-1}(s)=e^{-s1/\theta},\; \theta\geq 1$.\\
+		Upper tail dependency, no lower tail dependency.
+
+
+Copula Examples
+
+
+\includegraphics<1>[height=6cm]{../../../pics/copula_examples.pdf}%
+
+
+Copulas
+	We fit 5 copula models (Normal, t, Frank, Gumbel, Clayton) to the data.  
+	
+	Fitting is done via the IFM (Inference for margins) method, which means we fit the marginal models
+	separately, employ the quantile transformation on each margin and then fit the copula on this transformed dataset.  
+
+	For each margin we choose the best (ranked by its AIC) generalized
+	hyperbolic model as seen in the tables before.   
+
+	We rank the copulas by their AIC values.
+	
+	
+Copula fit
+\begin{table}[ht]
+            \vspace{0.5cm}
+            \begin{center}
+                \begin{tabular}{c|c|c|c}
+                    name&\parbox{3cm}{\centering number of\\ fitted parameters}&AIC&log-likelihood\\\hline
+                    t&7&-229.780909&121.890455\\
+                    normal&6&-225.226240&118.613120\\
+                    clayton&1&-92.833737&47.416868\\
+                    frank&1&-67.382373&34.691187\\
+                    gumbel&1&-62.799001&32.399500\\
+                \end{tabular}
+                \caption{Copula models for the year 2007 log-return series}
+            \end{center}
+        \end{table}
+
+
+}
+
+
+Copula fit -- Results
+	t and normal copula provide the best fit,  because
+		they have way more parameters to capture the dependence structure  
+		
+		they have more flexibility to fit the dependencebetween the margins of our models.
+
+
+\subsubsection{Risk Management Application}
+Coal-fired Power Plant
+	We again compute the Value at Risk (VaR) and the one-day Expected
+	Shortfall (ES).
+
+	Now we need to simulate the loss distribution of the portfolio
+		Generate $N:=100000$ realizations of our multivariate copula
+		based model; i.e. $N$ realizations of the estimated copula. 
+		
+		Employ the quantile transform for each margin to get $S_t^{(i)}$.
+		
+		Transform these samples into realizations of our portfolio
+		loss distribution.
+
+	We consider a coal-fired power plant with an output of $1000000$
+	MWh of electricity. To produce this amount of electricity one
+	needs $330000$ tons of coal and as a byproduct the firing process
+	generates $900000$ tons of CO$_2$. So our coal-fired power plant
+	is nothing else than the following portfolio:
+      a long position of $1000000$ MWh of electricity,
+			
+			a short position of $330000$ tons of coal,
+		  
+			and a short position of $900000$ tons of CO$_2$.
+        
+
+Coal-fired Power Plant -- Margins
+\tiny
+\begin{table}[ht]
+                \begin{center}
+                    \begin{tabular}{c|c|c|c|c|c|c|c|c}
+                        model&$\lambda$&$\overline{\alpha}$&$\mu$&$\sigma$&$\gamma$&AIC&log-likelihood&p-value\\\hline
+                        &\multicolumn{8}{c}{Power2007}\\\cline{2-9}
+                        t&-1.203832&0&0.001321&0.014477&0&-2561.138&1283.569&0.843597\\\hline
+                        &\multicolumn{8}{c}{Coal2007}\\\cline{2-9}
+                        hyp&1&3.139811&0.003589&0.009880&-0.003154&-2510.830&1259.415&0.715009\\\hline
+                        &\multicolumn{8}{c}{Carbon2007}\\\cline{2-9}
+                        t&-1.007697&0&0.003084&0.193450&0&-1655.236&830.6180&0.719724\\\hline
+                        &\multicolumn{8}{c}{Power2008}\\\cline{2-9}
+                        t&-1.535741&0&0.000637&0.009909&0&-3937.290&1971.645&0.782617\\\hline
+                        &\multicolumn{8}{c}{Coal2008}\\\cline{2-9}
+                        NIG&-0.5&4.107861&0.004122&0.009177&-0.003702&-3804.225&1906.112&1\\\hline
+                        &\multicolumn{8}{c}{Carbon2008}\\\cline{2-9}
+                        sk t&-1.481606&0&0.004414&0.032939&-0.004633&-2548.610&1278.305&0.352221\\\hline
+                    \end{tabular}
+                    \caption{Marginal models for the 3-variate coal-fired power plant data}
+                \end{center}
+            \end{table}
+						
+						
+Coal-fired Power Plant -- Copula					
+\small
+\begin{table}[ht]
+                \begin{center}
+                    \begin{tabular}{c|c|c|c}
+                        name&\parbox{3cm}{\centering number of\\ fitted parameters}&AIC&log-likelihood\\\hline
+                        &\multicolumn{3}{c}{2007}\\\cline{2-4}
+                        t&4&-238.455625&123.227812\\
+                        normal&3&-236.101537&121.050768\\
+                        gumbel&1&-115.395942&58.697971\\
+                        frank&1&-114.767269&58.383634\\
+                        clayton&1&-114.432476&58.216238\\\hline
+                        &\multicolumn{3}{c}{2008}\\\cline{2-4}
+                        normal&3&-308.304908&157.152454\\
+                        t&4&-306.578106&157.289053\\
+                        frank&1&-130.467471&66.233736\\
+                        clayton&1&-118.717110&60.358555\\
+                        gumbel&1&-99.941605&50.970803\\
+                    \end{tabular}
+                    \caption{Copula models for the 3-variate coal-fired power plant data}
+                \end{center}
+            \end{table}
+						
+						
+One Day Risk Measures (Mio EURO)
+	\tiny
+	\begin{table}[!ht]
+                \begin{center}
+                    \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
+                        &t&normal&gumbel&clayton&frank&t&normal&gumbel&clayton&frank\\\hline
+                        &\multicolumn{5}{c|}{2007, 0,9M t CO$_2$}&\multicolumn{5}{|c}{2007, 0,1M t CO$_2$}\\\cline{2-11}
+                        VaR$_{0.9}$&0.53&0.54&0.70&0.77&0.72&0.50&0.50&0.50&0.29&0.50\\
+                        VaR$_{0.95}$&0.77&0.77&1.01&1.13&1.07&0.75&0.74&0.76&0.44&0.76\\
+                        VaR$_{0.99}$&1.65&1.74&2.16&2.79&2.38&1.63&1.64&1.68&0.86&1.68\\
+                        ES$_{0.9}$&1.21&1.20&9.23&2.39&1.59&1.01&1.00&1.89&0.64&1.02\\
+                        ES$_{0.95}$&1.79&1.77&17.63&3.86&2.32&1.41&1.40&3.17&0.91&1.44\\
+                        ES$_{0.99}$&4.81&4.60&82.61&12.85&5.68&2.96&2.87&11.62&2.21&2.95\\\cline{2-11}
+                        &\multicolumn{5}{c|}{2008, 0,9M t CO$_2$}&\multicolumn{5}{|c}{2008, 0,1M t CO$_2$}\\\cline{2-11}
+                        VaR$_{0.9}$&0.53&0.53&0.71&0.79&0.72&0.49&0.49&0.49&0.28&0.48\\
+                        VaR$_{0.95}$&0.71&0.71&0.97&1.04&0.98&0.69&0.69&0.71&0.40&0.69\\
+                        VaR$_{0.99}$&1.18&1.20&1.65&1.73&1.73&1.28&1.29&1.35&0.67&1.35\\
+                        ES$_{0.9}$&0.83&0.84&1.13&1.20&1.16&0.84&0.84&0.87&0.46&0.86\\
+                        ES$_{0.95}$&1.04&1.06&1.43&1.50&1.50&1.11&1.10&1.15&0.59&1.15\\
+                        ES$_{0.99}$&1.72&1.74&2.35&2.38&2.52&1.99&1.95&2.06&0.92&2.11
+                    \end{tabular}
+                    \caption{Risk measures for the coal-fired power plant (with CO$_2$)}
+                \end{center}
+            \end{table}
+						
+						
+Coal-fired Power Plant
+	\begin{figure}
+	\begin{center}
+	%\includegraphics[width=0.49\textwidth]{pics/EScoal09ret.pdf}
+	\includegraphics[heigth=5cm, width=7cm]{../../../pics/VaRPowerCoalCarbon2007.pdf}
+	\end{center}
+	\end{figure}
+
+	\begin{figure}
+	\begin{center}
+	\includegraphics[heigth= 5cm,width=7cm]{../../../pics/ESPowerCoalCarbon2007.pdf}
+	%\includegraphics[width=0.49\textwidth]{pics/VARcoal09ret.pdf}
+	\end{center}
+	\end{figure}
+
+
+Comparison of Models
+	Copula-based models produce more accurate Risk Numbers
+	Marginal tails seem to be more important than joint tail behavior (see copulas)
+	Parametric approach allows dynamic modelling
+
+

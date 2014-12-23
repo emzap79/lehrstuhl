@@ -8,10 +8,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+badd +13 /tmp/bla.tex
+badd +1 ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/QCF_ss14UDE.tex
+badd +748 forwards-2.tex
 badd +201 Forwards.tex
 badd +702 RenewableEnergyFinance.tex
 badd +678 ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/ReducedFormModels.tex
-badd +487 EnergyDerivatives.tex
+badd +722 EnergyDerivatives.tex
 badd +437 ForwardModels.tex
 badd +495 ForwardsPart2.tex
 badd +1197 ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/Model\ Risk_blank_petong/ModelRiskExamples.tex
@@ -20,7 +23,6 @@ badd +155 ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/Model\ Risk_blank_pet
 badd +620 Review.tex
 badd +665 StructuredContracts.tex
 badd +888 EnergyEmpirics.tex
-badd +748 forwards-2.tex
 badd +663 PowerPlants.tex
 badd +639 reviewbasic.tex
 badd +141 ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/InterestRates.tex
@@ -40,8 +42,9 @@ badd +838 ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/QCF-Sommersemester\ 2
 badd +87 ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/ET-Vorlesung\ SS2014_blank_petong/EnergyTrading_ss14UDE.tex
 badd +330 ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/Uebungen/Klausur_Termin_1_140806_1648.tex
 badd +253 ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/Model\ Risk_blank_petong/question.tex
-badd +1 ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/QCF_ss14UDE.tex
 badd +78 ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/Model\ Risk_blank_petong/ModelRisk_spring14UDE.tex
+badd +0 StructuringValuation_ws1415UDE.tex
+badd +0 ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/FO-Sommersemester\ 2014_blank_petong/FuturesOptions_ss14UDE.tex
 argglobal
 silent! argdel *
 argadd ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/Model\ Risk_blank_petong/question.tex
@@ -80,7 +83,7 @@ argadd ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/QCF-Sommersemester\ 2014
 argadd ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/ReducedFormModels.tex
 argadd ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/CDM.tex
 argadd ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/EquilibriumModels.tex
-edit EnergyDerivatives.tex
+edit ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/QCF_ss14UDE.tex
 set splitbelow splitright
 wincmd _ | wincmd |
 split
@@ -116,10 +119,7 @@ wincmd _ | wincmd |
 split
 wincmd _ | wincmd |
 split
-wincmd _ | wincmd |
-split
-18wincmd k
-wincmd w
+17wincmd k
 wincmd w
 wincmd w
 wincmd w
@@ -139,7 +139,7 @@ wincmd w
 wincmd w
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 0 + 22) / 44)
+exe '1resize ' . ((&lines * 23 + 22) / 44)
 exe '2resize ' . ((&lines * 0 + 22) / 44)
 exe '3resize ' . ((&lines * 0 + 22) / 44)
 exe '4resize ' . ((&lines * 0 + 22) / 44)
@@ -156,32 +156,24 @@ exe '14resize ' . ((&lines * 0 + 22) / 44)
 exe '15resize ' . ((&lines * 0 + 22) / 44)
 exe '16resize ' . ((&lines * 0 + 22) / 44)
 exe '17resize ' . ((&lines * 0 + 22) / 44)
-exe '18resize ' . ((&lines * 22 + 22) / 44)
-exe '19resize ' . ((&lines * 0 + 22) / 44)
+exe '18resize ' . ((&lines * 0 + 22) / 44)
 argglobal
-11argu
+36argu
+edit ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/QCF_ss14UDE.tex
 setlocal fdm=expr
 setlocal fde=TeXFold(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=3
+setlocal fdl=0
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-2
-normal! zo
-3
-normal! zo
-71
-normal! zo
-434
-normal! zo
-let s:l = 722 - ((19 * winheight(0) + 0) / 0)
+let s:l = 1 - ((0 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-722
-normal! 0
+1
+normal! 02|
 lcd ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/SV-WS1415_blank_petong
 wincmd w
 argglobal
@@ -202,11 +194,11 @@ normal! zo
 normal! zo
 608
 normal! zo
-let s:l = 729 - ((5 * winheight(0) + 0) / 0)
+let s:l = 748 - ((22 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-729
+748
 normal! 0
 wincmd w
 argglobal
@@ -229,11 +221,11 @@ normal! zo
 normal! zo
 365
 normal! zo
-let s:l = 652 - ((6 * winheight(0) + 0) / 0)
+let s:l = 663 - ((15 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-652
+663
 normal! 0
 wincmd w
 argglobal
@@ -252,7 +244,7 @@ normal! zo
 normal! zo
 507
 normal! zo
-let s:l = 626 - ((10 * winheight(0) + 0) / 0)
+let s:l = 626 - ((5 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -271,11 +263,11 @@ setlocal fdn=2
 setlocal fen
 3
 normal! zo
-let s:l = 321 - ((5 * winheight(0) + 0) / 0)
+let s:l = 320 - ((5 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-321
+320
 normal! 0
 lcd ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/SV-WS1415_blank_petong
 wincmd w
@@ -291,7 +283,7 @@ setlocal fdn=2
 setlocal fen
 210
 normal! zo
-let s:l = 628 - ((8 * winheight(0) + 0) / 0)
+let s:l = 628 - ((5 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -314,11 +306,11 @@ normal! zo
 normal! zo
 353
 normal! zo
-let s:l = 469 - ((5 * winheight(0) + 0) / 0)
+let s:l = 430 - ((11 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-469
+430
 normal! 0
 wincmd w
 argglobal
@@ -337,12 +329,12 @@ normal! zo
 normal! zo
 263
 normal! zo
-let s:l = 370 - ((16 * winheight(0) + 0) / 0)
+let s:l = 171 - ((11 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-370
-normal! 05|
+171
+normal! 0
 wincmd w
 argglobal
 23argu
@@ -364,11 +356,11 @@ normal! zo
 normal! zo
 639
 normal! zo
-let s:l = 804 - ((10 * winheight(0) + 0) / 0)
+let s:l = 886 - ((22 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-804
+886
 normal! 0
 wincmd w
 argglobal
@@ -377,15 +369,15 @@ setlocal fdm=expr
 setlocal fde=TeXFold(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=1
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 180 - ((172 * winheight(0) + 0) / 0)
+let s:l = 29 - ((10 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-180
+29
 normal! 0
 wincmd w
 argglobal
@@ -394,15 +386,15 @@ setlocal fdm=expr
 setlocal fde=TeXFold(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=3
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 0) / 0)
+let s:l = 1036 - ((22 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+1036
 normal! 0
 wincmd w
 argglobal
@@ -411,15 +403,15 @@ setlocal fdm=expr
 setlocal fde=TeXFold(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=3
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 0) / 0)
+let s:l = 359 - ((21 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+359
 normal! 0
 wincmd w
 argglobal
@@ -428,15 +420,15 @@ setlocal fdm=expr
 setlocal fde=TeXFold(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=2
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 0) / 0)
+let s:l = 188 - ((22 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+188
 normal! 0
 wincmd w
 argglobal
@@ -445,15 +437,15 @@ setlocal fdm=expr
 setlocal fde=TeXFold(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=4
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 668 - ((667 * winheight(0) + 0) / 0)
+let s:l = 2 - ((1 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-668
+2
 normal! 0
 wincmd w
 argglobal
@@ -462,15 +454,15 @@ setlocal fdm=expr
 setlocal fde=TeXFold(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=3
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 0) / 0)
+let s:l = 834 - ((22 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+834
 normal! 0
 wincmd w
 argglobal
@@ -479,15 +471,15 @@ setlocal fdm=expr
 setlocal fde=TeXFold(v:lnum)
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=0
+setlocal fdl=4
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 291 - ((290 * winheight(0) + 0) / 0)
+let s:l = 91 - ((11 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-291
+91
 normal! 0
 wincmd w
 argglobal
@@ -500,9 +492,7 @@ setlocal fdl=3
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-2
-normal! zo
-let s:l = 678 - ((21 * winheight(0) + 0) / 0)
+let s:l = 678 - ((5 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -519,34 +509,16 @@ setlocal fdl=3
 setlocal fml=2
 setlocal fdn=2
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 11) / 22)
+2
+normal! zo
+let s:l = 1 - ((0 * winheight(0) + 0) / 0)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 1
 normal! 0
 wincmd w
-argglobal
-36argu
-edit ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/QCF-Sommersemester\ 2014_blank_petong/QCF_ss14UDE.tex
-setlocal fdm=expr
-setlocal fde=TeXFold(v:lnum)
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=2
-setlocal fdn=2
-setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 0) / 0)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 02|
-lcd ~/tmp/tmpcruzer/Prof_Kiesel_copy/Lecture\ Slides/SV-WS1415_blank_petong
-wincmd w
-19wincmd w
-exe '1resize ' . ((&lines * 0 + 22) / 44)
+exe '1resize ' . ((&lines * 23 + 22) / 44)
 exe '2resize ' . ((&lines * 0 + 22) / 44)
 exe '3resize ' . ((&lines * 0 + 22) / 44)
 exe '4resize ' . ((&lines * 0 + 22) / 44)
@@ -563,8 +535,7 @@ exe '14resize ' . ((&lines * 0 + 22) / 44)
 exe '15resize ' . ((&lines * 0 + 22) / 44)
 exe '16resize ' . ((&lines * 0 + 22) / 44)
 exe '17resize ' . ((&lines * 0 + 22) / 44)
-exe '18resize ' . ((&lines * 22 + 22) / 44)
-exe '19resize ' . ((&lines * 0 + 22) / 44)
+exe '18resize ' . ((&lines * 0 + 22) / 44)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

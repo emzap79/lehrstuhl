@@ -1,0 +1,246 @@
+% !TEX root = FuturesOptions_ss13UDE.tex
+
+\section{Basic Derivatives}
+
+\begin{center}
+\color{beamer@blendedblue}{\large{Basic Derivatives}}
+\end{center}
+
+
+\subsection{Modelling Assumptions}
+
+Derivative Background (1)
+	A derivative security, or contingent claim, is a financial contract whose value
+		
+		at expiration date $T$ (more briefly, expiry) is determined exactly \index{contingent claim} by the price (or
+		prices within a prespecified time-interval) of
+	
+		the underlying financial assets (or instruments) at time $T$ (within the time
+		interval $[0,T]$).
+
+
+Derivative Background (2)
+	Derivative securities can be grouped under three general headings:
+	{\it Options, Forwards and Futures} and {\it Swaps}.
+	
+	During this lectures we will encounter all this structures and further variants.
+
+
+Modelling Assumptions (1)
+	We impose the following set of assumptions on the financial markets:
+	
+		{\it No market frictions: } No transaction costs, no bid/ask spread, no taxes,
+		no margin requirements, no restrictions on short sales.\\*[12pt]
+ 
+		{\it No default risk:} Implying same interest for borrowing and lending
+
+		{\it Competitive markets:}  Market participants act as price takers, infinite number of participants\\*[12pt]
+ 
+		{\it Rational agents} Market participants prefer more to less
+
+
+Arbitrage (1)
+	The concept of arbitrage lies at the centre of the relative pricing theory. All we need to assume
+	additionally is that economic agents prefer more to less, or more precisely, an increase in 
+	consumptionwithout any costs will always be accepted.
+
+
+Arbitrage (2)
+	The essence of the technical sense of arbitrage is that it should
+	not be possible to guarantee a profit without exposure to risk.
+	Were it possible to do so, arbitrageurs would do so, in unlimited quantity,
+	using the market as a \lq {money-pump}' to extract arbitrarily
+	large quantities of riskless profit.
+  
+	{\it We assume that arbitrage opportunities do not exist!}
+
+ 
+Continuous and Discrete Compounding}
+	Discrete compounding applies when we consider discrete time points, i.e. interest payments at the end of a period.\\
+		$S_t = S_0 (1+r)^t$
+  
+	Continuous compounding applies when interest payments are done at a constant rate through the time period. \\
+    $S_t = S_0e^{rt}$
+      
+
+Derivate Markets
+	Financial derivatives are basically traded in two ways: on organized exchanges and over-the counter (OTC).
+	
+  Products at exchanges are standardized contracts that are defined by the exchange. Important exchanges for 
+	commodities are the Chicago Mercantile Exchange (CME), the Intercontinental Exchange (ICE) in London 
+	or the European Energy Exchange (EEX) in Leipzig.
+  
+	OTC trading takes place via computers and phones between various commercials and investment banks. OTC 
+	contracts are non-standardized and can be flexible adjusted to the demand of the parties.
+
+
+Underlying Securities
+	Stocks (one or several);
+	
+	Fixed income instruments: T-Bonds, Interest Rates (LIBOR, EURIBOR);
+	
+	Commodities or Commodity Futures;
+	
+	Currencies (FX);
+	
+	Also Derivatives may be used as underlying for compound derivatives (call on call).
+
+
+\subsection{Options}
+
+Options
+	An option is a financial instrument giving one the {\it right, but
+	not the obligation} to make a specified transaction at (or by) a
+	specified date at a specified price. 
+	
+	{\it Call} options give one the right to buy. {\it Put} options give one the right to sell.
+	
+	{\it European} options give one the right to buy/sell on the
+	specified date, the expiry date, on which the option expires or
+	matures. {\it American} options give one the right to buy/sell at any time
+	prior to or at expiry.
+
+
+Exotic Options
+	Many kinds of options now exist, including so-called {\it exotic}
+	options.  Types include:
+		{\it Asian} options, which depend on the {\it average} price over a period,
+		
+		{\it barrier} options, which depend on some price level being attained or not.
+		
+		{\it lookback} options, which depend on the  {\it maximum} or {\it minimum} price over a period.
+
+
+Options - Terminology (1)
+	The asset to which the option refers is called the {\it underlying
+	asset} or the {\it underlying}. 
+ 
+	The price at which the transaction
+	to buy/sell the underlying, on/by the expiry date (if exercised),
+	is made, is called the {\it exercise price} or {\it strike price}.
+	
+	We shall usually use $K$ for the strike price, time $t = 0$ for
+	the initial time (when the contract between the buyer and the
+	seller of the option is struck), time $t = T$ for the expiry or
+	final time.
+
+
+Options - Terminology (2)
+	Consider, say, a European call option, with strike price $K$;
+	write $S(t)$ for the value (or price) of the underlying at time
+	$t$.\\*[12pt]
+		If $S(t) > K$, the option is {\it in the money},
+		if $S(t) = K$, the option is {\it at the money},
+		if $S(t) < K$, the option is {\it out of the money}.
+
+
+Options - Payoff
+	The payoff from a call option is $$ S(T) - K \mbox{ if } S(T)
+	> K\A \mbox{ and }\A 0 \;\; \mbox{otherwise} $$ (more briefly
+	written as  $(S(T) - K)^+$).
+	
+	The profit from a call option is the payoff $(S(T) - K)^+$) minus the call premium $c$.
+
+
+Options - Payoff/Profit diagram 
+	Considering only the option payoff, we obtain the payoff diagram, taking into account the initial payment of an investor one obtains the profit diagram below.\\*[12pt]
+
+	\begin{center}
+	\includegraphics[height=5cm]{../../../pics/payoffprofit.png}
+	\end{center}
+
+
+Options - Profit diagrams of vanilla options
+	\begin{figure}
+		\centering
+		 \subfigure[long call]{\includegraphics[height=3cm]{../../../pics//longcall.png}}\qquad
+		 \subfigure[short call]{\includegraphics[height=3cm]{../../../pics//shortcall.png}}
+		 \subfigure[long put]{\includegraphics[height=3cm]{../../../pics//longput.png}}
+		 \subfigure[short put]{\includegraphics[height=3cm]{../../../pics//shortput.png}}
+	\end{figure}
+
+
+\subsection{Forwards and Futures}
+
+Forwards - Basic Structure
+	A {\it forward contract} is an agreement to buy or sell an asset $S$ at a certain future
+	date $T$ for a certain price $K$.
+
+	The agent who agrees to buy the underlying asset is said to have a {\it long} position,
+	the other agent assumes a {\it short} position.
+	
+	The settlement date is called {\it delivery date} and the specified price is
+	referred to as {\it delivery price}.
+
+
+Forwards
+	The {\it forward price} $F(t,T)$ is the delivery price which would make the
+	contract have zero value at time $t$.
+	
+	At the time the contract is set up, $t=0$, the forward price therefore equals 
+	the delivery price, hence $F(0,T) = K$.
+	
+	The forward prices $F(t,T)$ need not (and will not) necessarily be equal 
+	to the delivery price $K$ during the life-time of the contract.
+
+
+Forwards
+	The payoff from a long position in a forward contract on one unit
+	of an asset with price $S(T)$ at the maturity of the contract is
+	$$ S(T)-K.$$
+ 
+	Compared with a call option with the same maturity
+	and strike price $K$ we see that the investor now faces a downside
+	risk, too. He has the obligation to buy the asset for price $K$.
+
+
+Spot-Forward Relationship
+	Under the no-arbitrage assumption we have
+			\begin{center}
+				\begin{tabular}[ht]{|l|c|c|}
+			\hline
+			$$ & $t$ & $T$\\
+			\hline\hline
+			buy stock & $-S(t)$ & delivery\\
+			borrow to finance & $S(t)$ & $-S(t)e^{r(T-t)}$\\
+			sell forward on S & $$ & $F(t,T)$\\
+			\hline
+		\end{tabular}
+		\end{center}
+	All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow at T needs to be zero so we have $$F(t,T) = S(t)e^{r(T-T)}$$
+
+
+Forwards
+	\begin{center}
+	\includegraphics[height=5cm]{../../../pics/forwardpricevalue.pdf}
+	\end{center}
+
+
+Futures
+	Futures can be defined as standardised forward contracts traded at exchanges where a clearing house acts as a central counterparty for all transactions.
+	
+	Usually an initial margin is paid as a guarantee.
+	
+	Each trading day a settlement price is determined and gains or losses are immediately realized at a margin account.
+	
+	Thus credit risk is eliminated, but there is exposure to interest rate risk.
+
+
+Payoff from a forward/futures contract
+	\begin{figure}
+		\centering
+		 \subfigure[long position]{\includegraphics[height=4cm]{../../../pics//forwardlong.png}}\qquad
+		 \subfigure[short position]{\includegraphics[height=4cm]{../../../pics//forwardshort.png}}
+	\end{figure}
+
+
+Swaps
+	A {\it swap} is an agreement whereby two parties
+	undertake to exchange, at known dates in the future, various
+	financial assets (or cash flows) according to a prearranged
+	formula that depends on the value of one or more underlying
+	assets. 
+
+	Examples are currency swaps (exchange currencies) and
+	interest-rate swaps (exchange of fixed for floating set of
+	interest payments).

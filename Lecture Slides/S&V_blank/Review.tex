@@ -1,0 +1,339 @@
+% !TEX root = StructuringValuation_ws1314UDE.tex
+\section{Review -- Markets and Objects}
+\subsection{Energy Markets}
+
+Markets
+	Since the deregulation of electricity markets in the end of the 1990s,
+	power can be traded at exchanges like the Nordpool, http://www.nordpoolspot.com/
+	or the European Energy Exchange (EEX), http://www.eex.com/en. All
+	exchanges have established spot and futures markets.
+
+
+%\subsectionSpot market
+EEX spot market 
+	Trading in Power, Natural Gas and $CO_{2}$ Emission Rights. 
+	
+	Power day-ahead auctions for Germany, Austria, France and Switzerland 7 days a week, including holidays. 
+	The 24 hours of the respective next day can be traded in one-hour intervals or block orders (e.g. Baseload: 1-24h, Peakload: 9-20h, Night: 1-6, Rush Hour: 17-20h, Business: 9-16h, etc.). 
+	
+	Continuous day-ahead block trading for France 7:30 am to 11:30 am, 7 days a week, including holidays. 
+	
+	Continuous Power intraday trading for Germany and France until 75 minutes before the beginning of delivery with delivery on the same or the following day in single hours or blocks. 
+
+	participants submit their price offer/bid curves, the EEX system prices are equilibrium prices that clear the market. 
+
+	EEX day prices are the average of the 24-single hours. 
+
+	similar structures can be found on other power exchanges(Nord Pool, APX, etc.). 
+
+
+EEX Spot Market Price Processes
+	\includegraphics[width=\textwidth, height=6.7cm]{../../../pics/PhelixBase2002_12}
+	\includegraphics[width=\textwidth, height=6.7cm]{../../../pics/PhelixBase2002_08}
+	\includegraphics[width=\textwidth, height=6.7cm]{../../../pics/PhelixBase2008_12}
+
+
+Electricity is special 
+	it is not storable 
+	
+	it is homogeneous 
+	
+	it can be produced in different ways 
+	
+	it has to be produced when it is needed 
+	
+	there is a high fluctuation in demand 
+	
+	there is no short-term elasticity in demand 
+	
+	there is a high price volatility due to renewable in-feed 
+
+
+%\subsectionFutures market
+Futures Market 
+	Traded products are 
+
+	Futures contracts for Power, Natural Gas, Emissions and Coal. 
+
+	Phelix Futures on Phelix Baseload or Peakload monthly power index
+	for the current month, the next nine months, eleven quarters and six
+	years with cash settlement. 
+
+	Baseload and Peakload French/German Power Futures for the current
+	month, the next six months, seven quarters and six years with physical
+	settlement, obliging for continuous delivery of 1MW during a month,
+	quarter or a year. 
+
+	Actively exchange traded are the next 7 months, 5 quarters and 2-3 years. 
+
+	In addition, OTC transactions. 
+
+
+%Futures Market
+	%\includegraphics[width=\textwidth, height=6cm]../../../pics/bbgfutures
+	%\includegraphics[width=\textwidth, height=6cm]../../../pics/future
+	%\includegraphics[width=\textwidth, height=6cm]../../../pics/future1
+
+
+Futures Market
+	\includegraphics[width=\textwidth, height=6cm]{../../../pics/lec2_2}
+
+	Returns seem to be stationary, no seasonality.
+	\includegraphics[width=\textwidth, height=6cm]{../../../pics/lec2_3}
+
+	Forward Selling Activity 
+	\includegraphics[width=\textwidth, height=6cm]{../../../pics/RWE-forward-activity}
+
+
+Characteristics 
+ \textbf{Electricity Futures} -- Obligation to buy/sell a specified amount of electricity during a \textbf{delivery period}, typically a month, quarter or year. 
+
+ Futures show a decreasing volatility term structure. 
+
+ Level of volatility depends on length of delivery period. 
+
+
+Prices of Futures 
+	\begin{center}
+	\includegraphics[height=6cm, width=10cm]{../../../pics/forwardcurve}
+	\end{center}
+
+
+Simple Futures Market Model 
+	We assume for the futures dynamics 
+	$$
+	df(t)=\mu f(t)dt+\sigma f(t)dW(t).
+	$$
+	But since it costs nothing to enter a futures position, we can constantly change our futures portfolio. Thus financing for buying a traded asset is not relevant. 
+
+
+Black's Formula
+	We use the usual notation - strike $K$, expiry $T$ as in the spot
+	case, and write $\Phi$ for the standard normal distribution function.
+	\foreignlanguage{english}{\textit{The arbitrage price $C$ of a European
+	futures call option is 
+	$$
+	C(t)=c(f(t),T-t),
+	$$
+	where $c(f,t)$ is given by Black's futures options formula: 
+	$$
+	c(f,\tau):=e^{-r\tau}(f\Phi(\tilde{d}_{1}(f,\tau))-K\Phi(\tilde{d}_{2}(f,\tau))),
+	$$
+	where 
+	$$
+	\tilde{d}_{1,2}(f,\tau):=\frac{\log(f/K)\pm\frac{1}{2}{\sigma}^{2}\tau}{\sigma\sqrt{\tau}}.
+	$$
+	} }
+
+	Observe that the quantities $\tilde{d}_{1}$ and $\tilde{d}_{2}$
+	do not depend on the interest rate $r$. This is intuitively clear
+	from the classical Black approach: one sets up a replicating risk-free
+	portfolio consisting of a position in futures options and an offsetting
+	position in the underlying futures contract. The portfolio requires
+	no initial investment and therefore should not earn any interest.
+
+
+\subsection Pricing Relations for Futures 
+
+Storage, Inventory and Convenience Yield 
+	The theory of storage aims to explain the differences between spot and Futures (Forward) prices by analyzing why agents hold inventories. 
+
+	Inventories allow to meet unexpected demand, avoid the cost of frequent revisions in the production schedule and eliminate manufacturing disruption. 
+
+	This motivates the concept of convenience yield as a benefit, that accrues to the owner of the physical commodity but not to the holder
+	of a forward contract. 
+
+	Thus the convenience yield is comparable to the dividend yield for stocks. 
+
+	A modern view is to view storage (inventory) as a timing option, that allows to put the commodity to the market when prices are high
+	and hold it when the prices are low. 
+
+
+Spot-Forward Relationship in Commodity Markets  
+	Under the no-arbitrage assumption we have 
+	\begin{equation}
+	F(t,T)=S(t)e^{(r-y)(T-t)}\label{SF-rel}
+	\end{equation}
+	where $r$ is the interest rate at time $t$ for maturity $T$ and $y$ is the convenience yield.
+
+	Observe that (\ref{SF-rel}) implies 
+		spot and forward are redundant (one can replace the other) and for a linear relationship (unlike options) 
+
+		with two forward prices we can derive the value of $S(t)$ and $y$ 
+
+		knowledge of $S(t)$ and $y$ allows us to construct the whole forward curve 
+
+		for $r-y<0$ we have backwardation; for $r-y>0$ we have contango. 
+
+
+Spot-Forward Relationship: Classical theory 
+	In a stochastic model we use 
+		$$
+		F(t,T)=\EX_{\Q}(S(T)|\F_{t})
+		$$
+		where $\F_{t}$ is the accumulated available market information (in most models the information generated by the spot price). 
+
+	$\Q$ is a risk-neutral probability 
+	
+	discounted spot price is a $\Q$-martingale 
+	
+	fixed by calibration to market prices or a market price of risk argument 
+
+
+Futures Prices and Expectation of Future Spot Prices 
+	The rational expectation hypothesis (REH) states that the current futures price $f(t,T)$ for a commodity with 
+	delivery a time $T>t$ is the best estimator for the price $S(T)$ of the commodity. 
+	
+	In mathematical terms 
+		\begin{equation}
+		f(t,T)=\EX[S(T)|\F_{t}].\label{REH}
+		\end{equation}
+		where $\F_{t}$ represents the information available at time $t$. The REH has been statistically tested in many studies for a wide range of commodities. 
+
+
+Futures Prices and Expectation of Future Spot Prices When equality
+	in (\ref{REH}) does not hold futures prices are biased estimators of future spot prices. If 
+
+	$>$ holds, then $f(t,T)$ is an up-ward biased estimate, then risk-aversion among market participants is such that buyers are willing to pay more
+	than the expected spot price in order to secure access to the commodity at time $T$ (political unrest); 
+
+	$<$ holds, then $f(t,T)$ is an down-ward biased estimate, this may reflect a perception of excess supply in the future. 
+
+
+Market Risk Premium 
+	The \emph{market risk premium} or \emph{forward bias} $\pi(t,T)$ relates forward and expected spot prices. 
+
+	It is defined as the difference, calculated at time $t$, between the forward $F(t,T)$ at time $t$ with delivery at $T$ and expected spot price: 
+		\begin{equation}
+		\pi(t,T)=F(t,T)-\EX^{\prb}[S(T)|\mathcal{F}_{t}].\label{forward risk premium}
+		\end{equation}
+	Here $\EX^{\prb}$ is the expectation operator, under the historical measure $\prb$, with information up until time $t$ and $S(T)$ is
+	the spot price at time $T$. 
+
+
+\subsection[Mean-Reversion Model]A Mean-Reversion Diffusion Model
+%\subsectionA simple Valuation Framework
+
+
+Definition of the model 
+	We assume a simple market model in which the price of the underlying commodity, $S_{t}$, follows a stochastic
+	process which can be described as follows: Let $X_{t}=\ln S_{t}$ and 
+		\begin{align*}
+		dX_{t}=\kappa(\ln\theta-X_{t})dt+\sigma dW_{t}~~,~~X_{0}=\ln(S_{0})
+		\end{align*}
+	Thus, the logarithm of the prices follow a mean reverting diffusionCprocess, the so-called \textcolor{red}{Ornstein-Uhlenbeck-Process}.\\
+		$\kappa$ - Speed of mean reversion 
+		$\theta$ - Level of mean reversion 
+		$\sigma$ - Volatility of the process 
+		$dW_{t}$ - Brownian increments 
+
+
+Sample paths of the model 
+	We simulate $S_{t}$ (with $S_{0}=20,\theta=20,\kappa=1,\sigma=0.2$) and get sample paths 
+		\begin{figure}
+			\centering
+				\includegraphics[width=1.00\textwidth]{../../../pics/samplepaths}
+			\label{fig:samplepahts}
+		\end{figure}
+
+
+Why this model? 
+	The \textcolor{red}{mean-reversion} process has been considered the natural choice for commodities. Basic microeconomics theory tells
+	that, in the long run, the price of a commodity ought to be tied to its long-run marginal production cost or, \textquotedbl{}in case of
+	a cartelized commodity like oil, the long-run profit-maximizing price sought by cartel managers\textquotedbl{} (Laughton \& Jacoby, 1995, p.188). 
+
+	The model was introduced by Eduardo Schwartz (\textquotedbl{}The Stochastic Behavior of Commodity Prices: Implications for Valuation
+	and Hedging\textquotedbl{}, Journal of Finance, vol.52, n. 3, July 1997, pp.923-973) and is often used in academic studies (and for practical pricing?). 
+
+
+Properties of the model 
+	Mean reverting 
+	Bounded volatility 
+	Continuous paths 
+	Relative price changes are normally distributed 
+	\textcolor{red}{Analytic results} for the forward-curve and option prices exist 
+	\textcolor{red}{Calibration} easily possible 
+
+
+%\subsectionPrices in the Model
+
+
+Spot prices in the model 
+	The spot price at any time $t$ is 
+		\begin{align*}
+		S_{t}=\exp\left(e^{-\kappa t}\ln S_{0}+(1-e^{-\kappa t})\ln\theta+\int_{0}^{t}{\sigma e^{-\kappa(t-s)}}dW_{s}\right).
+		\end{align*}
+
+
+Forward prices in the model 
+	Using that the forward price is the expected value of future spot prices, %$F(t,T) = \EX^Q[S_T | \Ft]$,
+	we get the formula for the forward price at time $t$ for the forward expiring in $T$ as 
+		\begin{align*}
+			& F(t,T)=\\
+			& \exp\left(e^{-\kappa(T-t)}\ln S_{t}+(1-e^{-\kappa(T-t)})\ln\theta+\frac{\sigma^{2}}{4\kappa}(1-e^{-2\kappa(T-t)})\right).
+		\end{align*}
+	We can see that the forward prices converge to the spot price with time to maturity tending to zero. 
+
+
+Forward curves in the model 
+	Assuming the same parameters as before and varying $S_{t}$ we get the forward curves: 
+		\begin{figure}
+			\centering
+				\includegraphics[width=1.00\textwidth]{../../../pics/forwardcurves}
+			\label{fig:forwardcurves}
+		\end{figure}
+
+
+Properties of the forward curve in the model 
+	$F(t,T)\rightarrow\exp(\ln\theta+\frac{\sigma^{2}}{4\kappa})=\theta\exp{(\frac{\sigma^{2}}{4\kappa})}$ as $T\rightarrow\infty$. 
+	If the spot price is low compared to the long term mean, the forward curve is upward sloping (contango). 
+	If the spot price is high compared to the long term mean, the forward curve is downward sloping (backwardation). 
+	If the spot price is close to the long term mean, the forward curve might be humped-shaped. 
+
+
+\subsectionA structural model -- Barlow (2002)
+
+Set-up 
+	$u_{t}(x)$ is supply at time $t$, if price is $x$; an increasing function. 
+	$d_{t}(x)$ is demand at time $t$, if price is $x$; a decreasing function. 
+	The electricity price at time $t$ is the unique number $S_{t}$ such that 
+		$$
+		u_{t}(S_{t})=d_{t}(S_{t})
+		$$
+	Need to specify $u_{t}$ and $d_{t}$. 
+
+ 
+Barlow (2002) specification 
+	Supply is non-random, independent of $t$ 
+		$$
+		u_{t}(x)=g(x).
+		$$
+		
+	Demand is inelastic, independent of $x$ 
+		$$
+		d_{t}(x)=D_{t}
+		$$
+		a random process. 
+
+	With 
+		$$
+		f_{\alpha}(x)=(1+\alpha x)^{\frac{1}{\alpha}},\;\alpha\not=0,\; f_{0}(x)=\exp(x)
+		$$
+		and 
+		$$
+		X_{t}=-\lambda(X_{t}-a)dt+\sigma dW_{t}
+		$$
+		
+	Barlow (2002) motivates the model 
+		$$
+			S_{t}=\left\{ \begin{array}{ll}
+			{\displaystyle 
+			f_{\alpha}(X_{t})} & 1+\alpha X_{t}>\epsilon_{0}\\* {}[12pt]
+			\epsilon_{0}^{\frac{1}{\alpha}} & 1+\alpha X_{t}\leq\epsilon_{0}
+			\end{array}
+			\right.
+		$$
+
+
+
+

@@ -1,0 +1,930 @@
+
+
+section{Derivatives Risk Management}
+
+\subsection{Introduction}
+[fragile]
+Motivation}
+A company that has a position in options, as a financial derivative or implicit
+in a contract, has to think about managing the risk of the position. The risk
+manager should ask the following questions:
+
+   What are the risk drivers influencing the value of the position?
+   How does the value of the position change if risk drivers change?
+   How can you protect (i.e., hedge) yourself against those risk?
+
+We focus on answering the last two questions.
+
+
+[fragile]
+Some Terms}
+A \emph{hedge} is a trade that reduces the risk of a position.
+
+   A \emph{static} hedge is set up once and not touched until maturity of
+  the derivative/position that is hedged.
+   A \emph{dynamic} hedge is set up and adjusted continuously (in practice:
+  regularly).
+   A \emph{semi-static} hedge is set up and adjusted at infrequent
+  intervals.
+
+A position for which no hedge is in place is called \emph{naked}, a position
+that is fully hedged is called \emph{covered} (e.g., sell a forward and buy the
+underlying stock).
+
+
+[fragile]
+A simple Hedging Strategy: Stop-Loss}
+We consider a short position in one European call option with strike $K$.
+
+   A stop-loss hedge involves buying one share of the underlying stock when
+  the price moves above $K$ and selling it again when the price falls below $K$.
+   The strategy usually does not work well in practice because the trader
+  cannot know whether the stock price moves above $K$ or falls below $K$ until
+  it is too late. Therefore, he buys the stock at $K+\epsilon$ and sells at
+  $K-\epsilon$, resulting in a loss.
+   Also, discounting has to be taken into account.
+
+
+
+\subsection{The Greeks}
+[fragile]
+The Greeks}
+
+ In order to quantify the risk associated with an instrument, one looks at
+\emph{ how much the price of the instrument changes if one of the underlying
+risk drivers changes} its value. Those risk measures are often called
+Greeks.
+ Mathematically speaking, the Greeks are just the derivative of the price
+of the instrument with respect to the value of the risk driver.
+ Once those Greeks are known for a portfolio, one can easily calculate how
+much the value of an option or a portfolio changes \emph{marginally}, if one of
+the variables changes \emph{marginally}, all others remain fixed.
+ The most important Greeks are Delta, Gamma, Vega, Rho, and Theta.
+
+
+
+[fragile]
+The Delta}
+
+ Delta is the derivative of the instrument price with respect to the price
+of the underlying.
+ The delta of the underlying security is one.
+ If the payoff is not linear (for example if the instrument is an option),
+Delta is not constant.
+ As Delta is the derivative with respect to the underlying, it tells how
+much the value of the instrument changes if the value of the underlying changes
+marginally.
+ Thus in a continuous time model, Delta is the amount of the underlying
+needed to be sold in order to offset the price change of the instrument. The
+ability to neutralize the trading book with respect to price changes in the
+underlying makes Delta the most important Greek.
+
+
+
+[fragile]
+Delta Hedging I}
+
+   Assume that you have an options position with delta $\Delta$. This means
+  that if the price of the underlying moves by a (very) small amount $\epsilon$, the
+  price of the option position moves approximately by $\Delta \epsilon$.
+   A \emph{delta hedge} consists of selling $\Delta$ units of the
+  underlying (buying if $\Delta <0$) and gives a portfolio that does not
+  change its value if the price of the underlying changes by a marginal amount.
+  The portfolio has a delta of zero and is called \emph{delta neutral}.
+
+
+
+[fragile]
+Delta Hedging II}
+
+   BUT: Delta is not constant, so the portfolio has to be rebalanced.
+   In the Black-Scholes model, a delta hedge with continuous rebalancing is
+  a perfect hedge.
+   In practice, continuous rebalancing is not possible so that the
+  portfolio is not protected against larger market movements. Transaction
+  costs and bid-ask spread also result in losses.
+
+
+
+
+
+[fragile]
+Delta in the Black-Scholes Model}
+In the Black-Scholes model, the Greeks can be computed explicitly for
+European call and put options. We have:
+\begin{align*}
+  \Delta = \frac{\partial}{\partial S}Call_{BS}(S,K,\sigma,r,t,T) = N(d_1)
+\end{align*}
+where, as usual, $N$ denotes the c.d.f. of the standard normal distribution and
+\begin{align*}
+  d_1 = \frac{\log \left( \frac{S}{K} \right) + \left( r + \frac{\sigma^2}{2}
+  \right)(T-t)}{\sigma \sqrt{T-t}}.
+\end{align*}
+
+
+[fragile]
+Delta of a Call Option in the Black-Scholes Model}
+%\usepackage{graphics} is needed for \includegraphics
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../pics/delta}
+  \caption{Delta for a European call in the BS model, $T=1$, $r=1\%$,
+  $\sigma=20\%$, $K=100$.}
+  \label{fig:deltaBS}
+\end{center}
+\end{figure}
+
+
+[fragile]
+Example: Delta Hedge}
+You are long USD $1,000$ in the $104$ call. Interest rate is $5\%$,
+stock price today is $99$, time to maturity $1$ month, and implied volatility is
+$15.7\%$.
+
+   How can you make your portfolio delta neutral by investing in the stock?
+   You set up the delta neutral portfolio and the stock price jumps to
+  USD$100$ immediately. What is your P/L for the portfolio?
+
+
+
+
+[fragile]
+Example: Delta Hedge}
+
+   Compute the price of the call with the BS formula:
+  \begin{align*}
+    Call_{BS} = 0.3858 \text{USD}.
+  \end{align*}
+   The position consists of $N=1,000/Call_{BS}=2592$ call options.
+   The delta of each option is
+  \begin{align*}
+    \Delta &= N(d_1) =N(\frac{\log \left( S/K \right) + (r+\sigma^2/2)(T-t)
+    }{\sigma\sqrt{T-t}}) \\
+    	&= N(\frac{\log \left( 99/104 \right) + (0.05+0.157^2/2)(1/12)
+    }{0.157\sqrt{1/12}})\\
+     	&= 0.1654.
+  \end{align*}
+
+
+
+
+[fragile]
+Example: Delta Hedge}
+
+   The delta of the position is long $\Delta_P=N\cdot \Delta=428.70$.
+   The stock has $\Delta=1$.
+   To make the position delta neutral, you have to enter a short position
+  of $428.70$ shares.
+
+
+
+[fragile]
+Example: Delta Hedge}
+
+   The loss from the short position in the stock is $428.70 \cdot
+  1=428.70$.
+   To compute the gain from the long options position, we have to compute
+  the option price for $S=100$. Using the BS formula, we obtain
+  \begin{align*}
+    Call_{BS}(S=100) = 0.5808.
+  \end{align*}
+   The gain from the options position is $2592\cdot(0.5808-0.3858)=505.37$.
+   Our profit is $505.37-428.70=76.67$.
+
+
+
+[fragile]
+The Gamma}
+
+   Gamma is the second derivative of the instrument price with respect to
+  the price of the underlying.
+   If the instrument has a linear payoff, Gamma is zero.
+   As delta is the first derivative of the option price with respect to the
+  underlying, gamma is the derivative of delta with respect to the underlying
+  and thus measures, how much Delta changes if the underlying changes.
+   This is an important information in risk management as it tells the
+  trader how much of the underlying he has to buy or sell if the underlying
+  itself changes price.
+   Geometrically, gamma might be seen as the slope of Delta.
+
+
+
+[fragile]
+Gamma Neutral Portfolios}
+As the delta of a portfolio changes with the price of the underlying, a delta
+hedge has to be rebalanced frequently.
+
+   A delta hedge for a portfolio with a high (absolute) gamma has to be
+  monitored more carefully than a delta hedge of a portfolio with gamma close to
+  zero.
+   To decrease the hedging error, a trader might want to make a delta
+  neutral portfolio gamma neutral.
+   The gamma cannot be changed by investing in the underlying because its
+  gamma is zero.
+   Strategy: Make the portfolio gamma neutral by investing in an option,
+  then make it delta neutral by investing in the underlying.
+
+
+
+
+[fragile]
+Gamma in the Black-Scholes Model}
+The gamma of a European call option in the Black-Scholes model is given by
+\begin{align*}
+  \Gamma = \frac{\partial^2}{\partial S^2}Call_{BS}(S,K,\sigma,r,t,T) =
+  \frac{\varphi(d_1)}{S\sigma \sqrt{T-t}}.
+\end{align*}
+Here, $\varphi(x)$ denotes the p.d.f. of the standard normal distribution.
+
+
+[fragile]
+Gamma of a Call Option in the Black-Scholes Model}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../pics/gamma}
+  \caption{Gamma for a European call in the BS model, $T=1$, $r=1\%$,
+  $\sigma=20\%$, $K=100$.}
+  \label{fig:gammaBS}
+\end{center}
+\end{figure}
+
+
+[fragile]
+Gamma of a Call Option in the Black-Scholes Model}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../pics/gamma2}
+  \caption{Gamma for a European call in the BS model, $T=10$, $r=1\%$,
+  $\sigma=20\%$, $K=100$.}
+  \label{fig:gamma2BS}
+\end{center}
+\end{figure}
+
+
+[fragile]
+Example: Gamma Neutral Portfolio}
+You are in the same position as in the previous example. Additionally, you can
+trade in the $97$ call.
+
+   Put together a portfolio that is delta and gamma neutral.
+   What is your P/L if the stock price jumps to $100$?
+
+
+
+[fragile]
+Example: Gamma Neutral Portfolio}
+
+   The gamma of the $104$ call is
+  \begin{align*}
+  \Gamma_{104C} = \frac{\varphi(d_1)}{S\sigma \sqrt{T-t}} = 0.0554.
+  \end{align*}
+   The gamma of the $97$ call is
+  \begin{align*}
+  \Gamma_{97C} = \frac{\varphi(d_1)}{S\sigma \sqrt{T-t}} = 0.0758.
+  \end{align*}
+   To make the portfolio gamma neutral, we have to build up a position of
+  $n$ $97$ calls so that $2592\cdot 0.0554 +n\cdot 0.0758 = 0$.
+   We find that $n=-1894.74$ makes the portfolio gamma neutral, i.e., we
+  sell $1894.74$ units of the $97$ call.
+
+
+
+[fragile]
+Example: Gamma Neutral Portfolio}
+
+   We compute the delta of the portfolio consisting of the two positions in
+  the calls.
+   The $97$ call has a delta of $\Delta_{97C}=0.7139$.
+   The delta of the position is
+  \begin{align*}
+    \Delta_{P'} = 2592 \cdot 0.1654 - 1894.74 \cdot 0.7139 = -924.02
+  \end{align*}
+   We have to buy $924.02$ units of the underlying to make the portfolio
+  delta neutral. By buying the underlying, we do not change the gamma of the
+  portfolio, it remains zero.
+
+
+
+[fragile]
+Example: Gamma Neutral Portfolio}
+
+   The price of the $97$ call for $S=99$ is $Call_{BS,97}(S=99)=3.2235$.
+   The price of the $97$ call for $S=100$ is $Call_{BS,97}(S=100)=3.9735$.
+   The P/L from the position in the $97$ call is
+  $-1894.97*(3.9735-3.2235)=-1421.11$.
+   The P/L from the position in the stock is $924.02$.
+   The portfolio P/L is $924.02-1421.11+505.37=-8.28.$
+
+
+
+[fragile]
+The Vega}
+
+   Vega is the derivative of the instrument price with respect to
+  implied volatility.
+   Thus, vega indicates how much the option price changes if the implied
+  volatility changes.
+   Vega is not a Greek letter.
+
+
+
+[fragile]
+Vega in the Black-Scholes Model}
+The vega of a European call option in the Black-Scholes model is given by
+\begin{align*}
+  \nu = \frac{\partial}{\partial \sigma}Call_{BS}(S,K,\sigma,r,t,T) =
+  S\sqrt{T-t} \varphi(d_1).
+\end{align*}
+Therefore, we have
+\begin{align*}
+  \nu = S^2 \sigma (T-t) \Gamma.
+\end{align*}
+
+
+[fragile]
+Vega of a Call Option in the Black-Scholes Model II}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../pics/vega}
+  \caption{Vega for a European call in the BS model, $T=1$, $r=1\%$,
+  $\sigma=20\%$, $K=100$.}
+  \label{fig:vegaBS}
+\end{center}
+\end{figure}
+
+
+[fragile]
+Vega of a Call Option in the Black-Scholes Model III}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../pics/vega_impliedvol}
+  \caption{Vega for a European call in the BS model, $T=1$, $r=1\%$, $K=100$.}
+  \label{fig:vega2BS}
+\end{center}
+\end{figure}
+
+
+[fragile]
+The Theta}
+
+   Theta is the derivative of the instrument price with respect to
+  time to maturity.
+   Thus, theta indicates how much the option price changes as time moves
+  closer to maturity.
+   Theta is usually negative and therefore is also called \emph{time decay}
+  or \emph{rent}.
+   Note: The passage of time is deterministic. It does not make sense to
+  hedge against these losses.
+
+
+
+[fragile]
+Theta of a Call Option in the Black-Scholes Model}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../pics/theta}
+  \caption{Theta for a European call in the BS model, $\sigma=20\%$, $r=1\%$,
+  $K=100$.}
+  \label{fig:thetaBS}
+\end{center}
+\end{figure}
+
+
+[fragile]
+The Rho}
+
+   Rho is the derivative of the instrument price with respect to the risk
+  free interest rate.
+   It measures, how the price of the instrument changes if the interest
+  rate changes.
+   Rho is particular important for fixed-income portfolios. If the hedging
+  portfolio of the instrument consists of a large portion of debt and only a
+  small amount of initial capital, the influence of changes in the risk free
+  rate might become quite big.
+
+
+
+[fragile]
+Rho of a Call Option in the Black-Scholes Model}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../pics/rho}
+  \caption{Rho for a European call in the BS model, $\sigma=20\%$, $T=1$,
+  $K=100$.}
+  \label{fig:rhoBS}
+\end{center}
+\end{figure}
+
+
+\subsection{Applications}
+
+[fragile]
+Portfolio Insurance}
+
+   Portfolio managers are often interested in acquiring put options on
+  their portfolio. This protects them from losses while retaining the upside
+  potential. This is especially important if fixed targets have to be met as,
+  e.g., for guaranteed pensions.
+   Such options are usually not traded because each portfolio manager has
+  her individual portfolio.
+   To achieve his goal, the portfolio manager can use options on market
+  indices to approximate the option on the portfolio, or he can create the
+  option synthetically by replication. The latter technique is called portfolio
+  insurance in this context.
+
+
+
+[fragile]
+Creating a Put Option}
+A put option on a portfolio can be created synthetically by
+
+   calculating the delta $\Delta$ of a put on the portfolio in the BS model;
+   selling a proportion of $\vert \Delta \vert$ of the original portfolio;
+   repurchasing the original portfolio so that it again matches the
+  portfolio delta after an increase of the portfolio value;
+   selling additional parts of the original portfolio after a decrease in
+  portfolio value to match the new delta.
+
+
+
+[fragile]
+Portfolio Insurance: Problems}
+
+   The portfolio manager buys after prices have increased and sells after
+  prices have declined.
+   Frequent monitoring is necessary to obtain a good replication.
+   Transaction costs and bis-ask spread generate losses.
+
+
+
+[fragile]
+Portfolio Insurance and the Black Monday 1987}
+
+   On Friday, Oct. 16, 1987, the DJIA fell by almost $5\%$, having declined
+  significantly in the days before.
+   Consequently, portfolio insurers had to sell large portions of their
+  portfolios to maintain their hedge.
+   They could not complete the necessary transactions until the market
+  closed on Friday afternoon.
+   The additional sales were conducted on Monday, Oct. 19, and contributed
+  to the largest one-day percentage decline in the history of the DJIA, nearly
+  $23\%$.
+   Other traders added to this by anticipating the actions of portfolio
+  insurers.
+
+
+
+
+
+\subsection{Manipulating VaR}
+Changing VaR using Options}
+\begin{figure}
+	\centering
+		\includegraphics[width=1\textwidth]{../pics/VaR-options}
+\end{figure}
+}
+
+Changing VaR using Options}
+
+ The red line depicts the distribution function of the profit/loss of a portfolio of common stock. The $95\%$ VaR
+of this portfolio is about $3500$.
+ Write put options with a strike price so that the real world probability of the options being in the money at maturity is less than $5\%$.
+The blue line depicts the distribution function of the profit/loss after buying and selling the options (VaR is now just $2400$).
+ The VaR is decreased, i.e. we are  able to decrease VaR to an arbitrary level by selling put options of this security.
+However, the trading strategy increases the potential for large loss.
+
+}
+\subsection{Calculating Portfolio VaR}
+Delta-Gamma Approach}
+
+
+The portfolio value can be written as a polynomial expansion in the market prices.
+ The \textcolor{red}{Delta-Gamma} approach considers---additional to
+the linear terms---the quadratic terms to calculate the changes in the value of
+the portfolio.
+ We write the change in the portfolio value as:
+\begin{align*}
+	\Delta V(F_1,F_2,\ldots,F_n)& \approx \sum_{i=1}^n \frac{\partial V}{\partial F_i} \Delta F_i \\
+	&+ \frac 1 2 \sum_{i=1}^n \sum_{j=1}^n \frac{\partial^2 V}{\partial F_i \partial F_j} \Delta F_i \Delta F_j.
+\end{align*}
+
+}
+
+Delta-Gamma Approach}
+
+ This approach is adequate for non-linear positions, such as options, because their Gamma is also considered.
+ Qualitatively a portfolio with a positive Gamma (a convex payoff structure) reduces its market price sensitivity (i.e. its Delta position) in the case of decreasing market prices.
+ If market prices are increasing there is a positive effect from an increasing Delta.
+ A VaR calculated with the Delta-Gamma method is therefore too high. Vice versa, the calculated VaR will be too low if the portfolio has a negative Gamma.
+
+}
+
+\section{Monte Carlo Simulation}
+\subsection{Basics}
+
+[fragile]
+Simulation}
+``\emph{simulation},  in industry, science, and education, a research or
+teaching technique that reproduces actual events and processes under test conditions.
+Developing a simulation is often a highly complex mathematical process.
+Initially a set of rules, relationships, and operating procedures are
+specified, along with other variables. The interaction of these phenomena
+create new situations, even new rules, which further evolve as the simulation
+proceeds. Simulation implements range from paper-and-pencil and board-game
+reproductions of situations to complex computer-aided interactive systems.''
+
+from Encyclop{\ae}dia Brittanica
+
+
+[fragile]
+Monte Carlo Simulation}
+Monte Carlo simulation methods work as follows:
+
+  \label{l:enum1} Randomly draw from a set of possible outcomes (the
+  simulation).
+   Repeat step \ref{l:enum1} multiple times and record the results.
+   This provides us with a (empirical) probability distribution.
+   We take this empirical distribution as an approximation of the
+  underlying distribution and use it to compute quantities such as
+  expectation, variance, and quantiles.
+
+Mathematically, this works because
+
+   The law of large numbers ensures that our results get better as we
+  	increase the number of random draws (i.e., the estimate converges).
+   The central limit theorem gives us error estimates.
+
+
+
+
+[fragile]
+Example: Rolling Dice}
+We have a random variable $X$ representing a fair 6-sided die. Of course,
+\begin{align*}
+  \E[X] = \sum_{i=1}^6 \Pr(X=i)i=\frac{1}{6}\left( 1 + 2 + 3 + 4 + 5 + 6
+  \right)= 3.5
+\end{align*}
+How can we get this result with MC-simulation?
+
+   Roll the dice many times.
+   Record the numbers rolled.
+   Compute the mean of those numbers.
+
+
+
+[fragile]
+Example: Rolling Dice II}
+\begin{center}
+\includemedia[
+label=roll_dice, % defines JavaScript object annotRM
+width=0.6\textwidth,height=0.6\textwidth,
+activate=pageopen,
+addresource=video/rollDice.mp4, %two video files
+flashvars={
+source=video/rollDice.mp4
+&loop=false % loop video
+&scaleMode=letterbox % preserve aspect ratio while scaling the video
+}
+]{}{VPlayer.swf}\\
+\PushButton[
+onclick={
+annotRM['roll_dice'].activated=true;
+annotRM['roll_dice'].callAS('playPause');
+}]{\fbox{Play/Pause}}
+
+\end{center}
+
+
+[fragile]
+Monte Carlo Methods in Finance: Motivation}
+Why would we use Monte Carlo methods for option pricing if we have the
+Black-Scholes formula? There usually are no formulas for the prices of
+
+   many exotic options or path dependent options.
+   vanilla options in complex models that include, e.g., stochastic
+  volatility and jumps.
+   options that depend on multiple correlated assets.
+
+Monte Carlo methods work in all of these settings.
+
+
+[fragile]
+Option Pricing via Monte Carlo Methods I}
+Recall: In the binomial option pricing model, we can find so
+called risk neutral probabilities for up- and down-movements of the underlying
+such that the  expectation of the discounted option payoffs gives us the price
+of the option. This generalizes to other, time-continuous models.
+
+For the time-$0$ price $V_0$ of a European option with payoff $f(S_T)$ at time
+$T$, we can write
+\begin{align*}
+  V_0 = \E^\mathbb{\Q}[D_T f(S_T)]
+\end{align*}
+where $D_T$ is a discount factor and $E^\mathbb{\Q}$ denotes the expectation
+under the risk-neutral measure.
+
+
+[fragile]
+Option Pricing via Monte Carlo Methods II}
+We can obtain a Monte Carlo estimate of the price as follows.
+
+   Develop a model for the price process $S_t$ of the underlying security
+  using risk-neutral probabilities.
+   Generate realizations of $S_T$ (and the discount factor $D_T$ if it is
+  stochastic).
+   Compute the option-payoff for each realization.
+   Estimate the expectation of the discounted cash flows as above. This is
+  the price.
+
+The technique can be generalized easily to include path-dependent options.
+
+
+
+[fragile]
+Example: European Call in the Black-Scholes Model}
+In the Black-Scholes model, the log-returns follow a normal distribution. Under
+the risk-neutral measure, we have
+\begin{align*}
+  \log\left(\frac{S(t+\delta)}{S(t)} \right) \sim
+  N\left(\left( r-\frac{\sigma^2}{2}\right)\delta,\sigma \sqrt{\delta}\right).
+\end{align*}
+
+   Generate $n$ realizations of $\log(S_{T}/S_0)$ and calculate
+  $p_i=(S_{T,i}-K)^+, i=1,\ldots,n$.
+   Compute the mean payoff $\hat{p}_n=\sum_{i=1}^n p_i/n$.
+   Then, $\hat{V}_0 = e^{-rT}\hat{p}_n$.
+
+
+
+[fragile]
+Example: European Call in the Black-Scholes Model}
+\begin{center}
+\includemedia[
+label=sim_BS, % defines JavaScript object annotRM
+width=0.6\textwidth,height=0.6\textwidth,
+activate=pageopen,
+addresource=video/simBSCall.mp4, %two video files
+flashvars={
+source=video/simBSCall.mp4
+&loop=false % loop video
+&scaleMode=letterbox % preserve aspect ratio while scaling the video
+}
+]{}{VPlayer.swf}\\
+\PushButton[
+onclick={
+annotRM['sim_BS'].activated=true;
+annotRM['sim_BS'].callAS('playPause');
+}]{Play/Pause}
+% \PushButton[
+% onclick={
+% annotRM['sim_BS'].activated=true;
+% annotRM['sim_BS'].callAS('pause');
+% }]{Pause}
+
+\end{center}
+
+
+[fragile]
+Example: European Call in the Black-Scholes Model}
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.9\textwidth]{../pics/BS_Call15K}
+  \caption{MC simulation for a European Option in the Black-Scholes model.}
+\end{center}
+\end{figure}
+
+
+
+[fragile]
+Strengths and Weaknesses of Monte Carlo Methods}
+
+  [+] Very flexible method for pricing, works for path dependent options
+  and with sophisticated models;
+  [+] Does not suffer from ``curse of dimensions'';
+  [+] Provides error estimates;
+  [o\hspace{1px}] Implementation
+  [\textendash\hspace{1px}] Computationally expensive, slow convergence;
+  [\textendash\hspace{1px}] No ``exact'' prices;
+  [\textendash\hspace{1px}] Numerical problems (discretization,\ldots).
+
+
+
+
+
+
+
+
+
+[fragile]
+Example: A Portfolio Based on Two Risk Factors}
+From the property of normal log-returns, we can construct a discretized process
+of the stock price. If we want to evaluate the stock price at times $0 \leq t_1
+\leq \ldots \leq t_n=T$ with $t_{i+1}-t_i=\delta$ for $i=1,\ldots,n-1$:
+\begin{align*}
+  S_{t+1} &= S_t \exp\left( \mu \delta + \sigma \sqrt{\delta} \epsilon_t
+  \right)\\
+  &\approx S_{t} + S_{t} \left( \mu \delta + \sigma
+  \sqrt{\delta} \epsilon_{t} \right)
+\end{align*}
+where $\epsilon_t\sim N(0,1)$ and the $\epsilon_t$ are independent over time.
+
+
+[fragile]
+Example: A Portfolio Based on Two Risk Factors II}
+If we want to model at the same time, we can generalize the model simply by
+setting $S_{t}=(S_{t,1},S_{t,2})$ and
+\begin{align*}
+  S_{t+1,j} = S_{t,j} + S_{t,j} \left( \mu_j \delta + \sigma_j
+  \sqrt{\delta} \epsilon_{t,j} \right), j=1,2.
+\end{align*}
+Stock returns are rarely independent. How can we select $\epsilon_{t,j}$ such
+that the correlation is $\rho$, that is
+\begin{align*}
+  C= \Cor(S_{t}) = \left[ \begin{array}{cc}1 & \rho \\ \rho &1
+  \end{array}\right] ?
+\end{align*}
+
+
+[fragile]
+Example: A Portfolio Based on Two Risk Factors III}
+
+   Computer programs can generate realizations of random vectors
+	$Z_t=(Z_{t,1},Z_{t,2})$ with independent standard normal components and
+	independent over time.
+   We want to use $Z_t$ to obtain correlated random numbers by using a
+	transformation: find a matrix $A$ such that $\epsilon_t=AZ^T_t$ has two
+	standard normal components with correlation $\rho$.
+   We can do this with the Cholesky decomposition.
+
+
+
+
+
+
+
+[fragile]
+Example: A Portfolio Based on Two Risk Factors IV}
+If $C$ is a positive semi-definite correlation matrix, we can write
+		\begin{align*}
+		  C = AA^T
+		\end{align*}
+where $A$ is a lower triangular matrix. In two dimensions we have:
+\begin{align*}
+  C = \left[\begin{array}{cc} 1& \rho \\
+  	\rho &1 \end{array}\right] &= \left[\begin{array}{cc} a_{11}& 0 \\
+  	a_{12} &a_{22} \end{array}\right] \cdot \left[\begin{array}{cc} a_{11}&
+  	a_{12} \\ 0 &a_{22} \end{array}\right]
+   &= \left[\begin{array}{cc} a^2_{11}&
+   a_{11}a_{12} \\ a_{11}a_{12} &a^2_{12}+a^2_{22} \end{array}\right].
+\end{align*}
+We find that
+\begin{align*}
+  a_{11} &= a^2_{11} = 1 \\
+  a_{11} a_{12} &= \rho \\
+  a^2_{12}+a^2_{22} &= 1
+\end{align*}
+so that $a_{12}=\rho$ and $a_{22}=\sqrt{1-\rho^2}$.
+
+
+[fragile]
+Example: A Portfolio Based on Two Risk Factors V}
+We set
+\begin{align*}
+  \left[\begin{array}{c} \epsilon_{t,1}\\
+  	\epsilon_{t,2} \end{array}\right] = A Z_t^T =
+  	\left[\begin{array}{cc} 1& 0 \\
+  	\rho &\sqrt{1-\rho^2} \end{array}\right]\left[\begin{array}{c} Z_{t,1} \\
+  	Z_{t,2} \end{array}\right] = \left[\begin{array}{c} Z_{t,1}\\
+  	\rho Z_{t,1} +\sqrt{1-\rho^2}Z_{t,2} \end{array}\right].
+\end{align*}
+Let us check that we did the right thing:
+
+   $\epsilon_{t,1}=Z_{t,1}$ is a standard normal random variable.
+   The sum of two independent normally distributed random variables has a
+  normal distribution, so $\epsilon_{t,2}=\rho Z_{t,1} +\sqrt{1-\rho^2}Z_{t,2}$
+  also has a normal distribution.
+   We have
+  \abovedisplayskip=2pt
+  	\begin{align*}
+  		\E[\rho Z_{t,1} +\sqrt{1-\rho^2}Z_{t,2}] &= \rho\E[Z_{t,1}] +
+  		\sqrt{1-\rho^2}\E[Z_{t,2}] = 0\\
+  	\intertext{and}
+  	\Var(\rho Z_{t,1} +\sqrt{1-\rho^2}Z_{t,2}) &= \rho^2\Var(z_{t,1}) + (\sqrt{1-\rho^2})^2
+  \Var(z_{t,2})\\
+   &= \rho^2 + 1 -\rho^2 =1
+	\end{align*}
+
+
+
+[fragile]
+Example: A Portfolio Based on Two Risk Factors VI}
+
+   Therefore $\epsilon_{t,2}$ has a normal distribution with mean $zero$ and
+	variance $1$, i.e., a standard normal distribution.
+   It remains to check the correlation:
+	\begin{align*}
+	  \Cor(\epsilon_{t,1},\epsilon_{t,2}) &= \Cor\left(z_{t,1},\rho z_{t,1} +
+	  \sqrt{1-\rho^2}z_{t,2}\right)\\
+	   &= \rho \Cor(z_{t,1},z_{t,1}) =\rho.
+	\end{align*}
+
+This principle generalizes to dimensions $n>2$ although estimation of the
+covariance matrix becomes more difficult.
+
+
+[fragile]
+Example: A Portfolio Based on Two Risk Factors VII}
+\begin{center}
+\includemedia[
+label=sim_Assets, % defines JavaScript object annotRM
+width=0.6\textwidth,height=0.6\textwidth,
+activate=pageopen,
+addresource=video/sim2assets.mp4, %two video files
+flashvars={
+source=video/sim2assets.mp4
+&loop=false % loop video
+&scaleMode=letterbox % preserve aspect ratio while scaling the video
+}
+]{}{VPlayer.swf}\\
+\PushButton[
+onclick={
+annotRM['sim_Assets'].activated=true;
+annotRM['sim_Assets'].callAS('playPause');
+}]{\fbox{Play/Pause}}
+
+\end{center}
+
+
+\subsection{Monte Carlo Methods in Risk Management}
+[fragile]
+Computing VaR and ES based on Simulations}
+VaR and ES can be computed based on MC simulations as follows:
+
+   Develop a model for the development of the $m$ risk factors
+  $S=(S_1,\ldots,S_m)$ that influence the portfolio value using real-world
+  probabilities.
+   Generate paths $(S_t)_{0\leq t\leq T}\in \R^m$ of the risk factors
+  from $t=0$ to up to the target horizon $T$.
+   For each path, price the portfolio at $T$.
+   Compute the risk measure from the empirical distribution.
+
+
+
+[fragile]
+Risk Management vs. Pricing}
+\begin{block}{Probability Measures}
+To price options and derivatives, you have to model the underlying securities
+(and interest rates, exchange rates,\ldots) under a risk-neutral measure!
+
+To compute risk measures, you have to model the risk factors of your portfolio
+under the real-world measure!
+\end{block}
+
+
+
+
+[fragile]
+Calculating the Greeks with Monte Carlo Methods}
+The conceptually easiest way to calculate the Greeks in a Monte Carlo setting
+is the following finite-difference approximation:
+
+   Compute a MC-estimate $\hat{V}$.
+   Change a single model parameter $\theta$ by ``a little bit'' to
+  $\theta_\epsilon=\theta+\epsilon$.
+   Compute the MC-estimate $\hat{V}_\epsilon$ using this new parameter
+  $\theta_\epsilon$, keeping all other parameters fixed.
+   Approximate the derivative with the difference quotient
+   	\begin{align*}
+  		\frac{\partial V}{\partial \theta} \approx \frac{\hat{V}_\epsilon
+  		- \hat{V}}{\epsilon}.
+	\end{align*}
+
+
+
+[fragile]
+Finite-Difference Monte Carlo Greeks}
+The finite difference method introduced in the previous slide is easy to
+understand but has some serious drawbacks:
+
+   It requires (at least) a full MC simulation and pricing run for each
+  Greek.
+   It does not work well for options with discontinuous
+  payoffs, e.g., digital options (=binary options = cash-or-nothing options).
+
+Alternative methods such as pathwise derivatives, likelihood ratio method and
+Malliavin Greeks are much more complex, but can yield vastly improved results.
+
+
+[fragile]
+Example: Finite Difference vs. Mallivin Greeks}
+%\usepackage{graphics} is needed for \includegraphics
+\begin{figure}[htp]
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{../pics/Gamma_Digital_BS}
+  \caption{Gamma for a Digital Option in the Black-Scholes model.}
+\end{center}
+\end{figure}
+
+
+
+

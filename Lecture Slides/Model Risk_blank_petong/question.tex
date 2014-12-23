@@ -10,6 +10,7 @@
 %Silbentrennung nach neuer deutscher Rechtschreibung
 \usepackage[ngerman]{babel} % Neue Rechtschreibung
 
+
 %TimesNewRoman Schrift,
 %\usepackage{times}
 
@@ -31,6 +32,8 @@
 \parindent 0.0cm
 \sloppy
 \frenchspacing
+
+
 
 \newcommand{\sF}{\mathcal{F}}
 \newcommand{\sH}{\mathcal{H}}
@@ -70,9 +73,11 @@
 
 \setlength{\topmargin}{-2.5cm}
 
+
 \begin{center} {\LARGE \bf Pricing II } \\[5mm]
                 {\large Model Risk Question }
 \end{center}
+
 
 \vspace{0.3cm}
 
@@ -80,37 +85,20 @@
 
 %-----------hier-beginnen-die-Aufgaben----------------------
 
-
-
-% begin enumerate
-
-
+\begin{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{0.3cm}
 
+\item[]{\bf Q1} 
 
-
-	{\bf Q1}
-
-
-
-% begin itemize
-
-
-
-
-
-	
+\begin{itemize}
+\item[(a)]
 Describe the difference between a Bayesian Model Averaging and a Utility-based Worst-Case
-approach.
-
-
-	Assume that you need to price a derivative instrument in an incomplete market situation. What is Cont's suggestion to measure model risk?
-
-
-	
-Consider in a basic GBM world the pricing of a call option with maturity $T$.
+approach. 
+\item[(b)] Assume that you need to price a derivative instrument in an incomplete market situation. What is Cont's suggestion to measure model risk?
+\item[(c)] 
+Consider in a basic GBM world the pricing of a call option with maturity $T$. 
 Assume alternative diffusion models
 \begin{equation}
 \Q_i\;:\; dS(t) = S(t)(r dt + \sigma_i(t) dW(t))
@@ -118,67 +106,31 @@ Assume alternative diffusion models
 where $ \sigma_i: [0,t] \rightarrow [0, \infty[ $ is a bounded deterministic volatility function.
 We observe prices of a traded European call (strike $K$, maturity $T$) with prices $C^*$ and
 $\Sigma$ the implied Black-Scholes volatility.
-
-
-
-% begin itemize
-
-
-
-
-
-	
+\begin{itemize}
+\item[(i)]
 Formulate the calibration condition for the given models.
-
-
-	
+\item[(ii)]
 Let $0< T_1 <T$ and consider two models. The first on with constant volatility $\sigma_1$ and the second one with a volatility $\sigma_2 < \sigma _1$ for $0 \leq t <T_1$ and a constant volatility for $T_1\leq t \leq T$. Specify  the  volatilities of the models in terms of the implied volatility $\Sigma $.
+\item[(iii)]
+Consider the $\Delta$ at $t=0$ and $t=T_1$ for both models for the European call with maturity $T$. Which is more sensitive to changes of the underlying at $t=0$ and $t=T_1$? 
+\item[(iv)]
+Consider  a  European call with strike $K$ and maturity $T_1$. What is Cont's measure of model risk for this option regarding the two models. 
+\end{itemize}
+\end{itemize}
 
-
-	
-Consider the $\Delta$ at $t=0$ and $t=T_1$ for both models for the European call with maturity $T$. Which is more sensitive to changes of the underlying at $t=0$ and $t=T_1$?
-
-
-	
-Consider  a  European call with strike $K$ and maturity $T_1$. What is Cont's measure of model risk for this option regarding the two models.
-
-
-
-% end itemize
-
-
-
-
-
-% end itemize
-
-
-
-
-
-	{\bf Solution}
-
-
-
-% begin itemize
-
-
-
-
-
-	
+\item[]{\bf Solution}
+\begin{itemize}
+\item[(a)]
 Describe the difference between a Bayesian Model Averaging and a Utility-based Worst-Case
 approach.
 
 {\it Answer:} The Bayesian Model is calculates model dependent quantities by averaging over  expectation of the models. The worst-case approach has its foundations in the {\it MaxMin} approach as a robust version of expected utility. Assume $U$ is a utility function, then
-the worst case approach considers
-$\max _X \min_{\prob \in {\cal P}} \EX_{\prob}(U(X))$.
+the worst case approach considers 
+$\max _X \min_{\prob \in {\cal P}} \EX_{\prob}(U(X))$. 
+ 
+\item[(b)] Assume that you need to price a derivative instrument in an incomplete market situation. What is Cont's suggestion to measure model risk?
 
-
-
-	Assume that you need to price a derivative instrument in an incomplete market situation. What is Cont's suggestion to measure model risk?
-
-{\it Answer:}
+{\it Answer:} 
 For $X$ a derivative we associate with
 $\Gamma(X)$ the ask price and with $-\Gamma(-X)$ its bid price.
 Cont's suggestion is
@@ -186,16 +138,16 @@ $$
 \Gamma^u(X)=\sup_{\Q \in {\cal Q}} \EX_{\Q} \; \mbox{ and } \;
 \Gamma^l(X)= -\Gamma^u(-X)=\inf_{\Q \in {\cal Q}} \EX_{\Q}.
 $$
-Cont measures the model risk as
+Cont measures the model risk as 
 $$
-\Gamma^u(X)-
+\Gamma^u(X)- 
 \Gamma^l(X).
 $$
 
 
 
-	
-Consider in a basic GBM world the pricing of a call option with maturity $T$.
+\item[(c)] 
+Consider in a basic GBM world the pricing of a call option with maturity $T$. 
 Assume alternative diffusion models
 \begin{equation}
 \Q_i\;:\; dS(t) = S(t)(r dt + \sigma_i(t) dW(t))
@@ -203,40 +155,29 @@ Assume alternative diffusion models
 where $ \sigma_i: [0,t] \rightarrow [0, \infty[ $ is a bounded deterministic volatility function.
 We observe prices of a traded European call (strike $K$, maturity $T$) with prices $C^*$ and
 $\Sigma$ the implied Black-Scholes volatility.
-
-
-
-% begin itemize
-
-
-
-
-
-	
+\begin{itemize}
+\item[(i)] 
 Formulate the calibration condition for the given models.
 
-{\it Answer:}
+{\it Answer:}  
 \begin{equation}
 \frac{1}{T} \int_0^T  \sigma_i(s)^2 ds = \Sigma^2,
 \end{equation}
-
-
-	
+\item[(ii)]
 Let $0< T_1 <T$ and consider two models. The first one with constant volatility $\sigma_1$ and the second one with a volatility $\sigma_2 < \sigma _1$ for $0 \leq t <T_1$ and a constant volatility for $T_1\leq t \leq T$. Specify  the  volatilities of the models in terms of the implied volatility $\Sigma $.
 
 {\it Answer:}
 $$
 \sigma_1 = \Sigma,
 $$
+$$
 \sigma_2(t) = \sigma_2 \IF_{[0,T_1]}+ \sqrt{\frac{T\Sigma^2 -T_1\sigma_2^2}{T-T_1}}\IF_{]T_1, T]}.
 $$
-
-
-	
-Consider the $\Delta$ at $t=0$ and $t=T_1$ for both models for the European call with maturity $T$. Which is more sensitive to changes of the underlying at $t=0$ and $t=T_1$?
+\item[(iii)]
+Consider the $\Delta$ at $t=0$ and $t=T_1$ for both models for the European call with maturity $T$. Which is more sensitive to changes of the underlying at $t=0$ and $t=T_1$? 
 
 {\it Answer:}
-We know
+We know 
 \begin{align*}
   \Delta = \frac{\partial}{\partial S}Call_{BS}(S,K,\sigma,r,t,T) = \Phi(d_1)
 \end{align*}
@@ -246,12 +187,10 @@ where, as usual, $\Phi$ denotes the c.d.f. of the standard normal distribution a
   \right)(T-t)}{\sigma \sqrt{T-t}}.
 \end{align*}
 At $t=0$ both models have the same $\Delta$ as they are both valued with the implied volatility $\Sigma$.
-At $t=T_1$ the  $\Delta$ of model 2 is higher as the remaining volatility is higher. So it is more sensitive.
+At $t=T_1$ the  $\Delta$ of model 2 is higher as the remaining volatility is higher. So it is more sensitive.  
 
-
-
-	
-Consider  a  European call with strike $K$ and maturity $T_1$. What is Cont's measure of model risk for this option regarding the two models.
+\item[(iv)]
+Consider  a  European call with strike $K$ and maturity $T_1$. What is Cont's measure of model risk for this option regarding the two models. 
 
 {\it Answer:}
 By monotonicity of the BS-formula in terms of volatility the Cont model bounds are
@@ -259,24 +198,15 @@ $$
 \Gamma^u(X)=C^{BS}(K, T_1; \sigma_1)  \A \Gamma^l(X)=C^{BS}(K, T_1; \sigma_2).$$
 
 
-
-% end itemize
-
-
+\end{itemize}
+\end{itemize}
 
 
 
-% end itemize
-
-
-
-
-
-% end enumerate
-
-
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{0.5cm}
 
-\end{document}
+
+\end{document} 

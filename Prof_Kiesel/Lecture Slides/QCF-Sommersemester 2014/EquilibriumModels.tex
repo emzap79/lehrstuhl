@@ -1,0 +1,611 @@
+% !TEX root = QCF_ss14UDE.tex
+\section{Modelling Permit Price Dynamics}
+\section{Equilibrium Models}
+\subsection{Deterministic Equilibrium Model}
+\begin{frame}
+\frametitle{Rubin 1996: Firm i's optimization problem}
+Firm i minimizes its cost by buying/selling an optimal quantity of emission permits and by emitting an optimal quantity of emissions, i.e.
+\begin{align}
+\min_{\theta_i, e_i} & \left\{ \int_0^T e^{-rt} [C_i(e_i(t)) + P(t)\theta_i(t)]dt \right\} \\
+\textnormal{subject to }
+&\dot{B}_i = S_i(t) - e_i(t) + \theta_i(t) \\
+&            B_i(0) = 0 \textnormal{ and } B_i(t) \ge 0 \\
+&            e_i(t) \ge 0
+\end{align}
+
+
+{Explanation of variables}
+\begin{tiny}
+\begin{tabular}{cl}
+$e_i(t)$ & quantity of emissions \\
+$\theta_i(t)$ & quantity of emission permits bought or sold \\
+$S_i(t)$ & endowment of emissions \\
+$B_i(t)$ & level of emissions in the bank\\
+$C_i(e_i(t))$ & abatement cost function where $C'_i(e_i) < 0$ and $C''_i(e_i) > 0$ \\
+$r$ & interest rate \\
+\end{tabular}
+\end{tiny}
+\end{frame}
+
+%16. Folie
+\begin{frame}
+\frametitle{Rubin 1996: Market equilibrium}
+An intertemporal market equilibrium in emission permits over a T-period horizon consists of \\
+$\qquad P^*(t) \ge 0$ (permit price) \\
+$\qquad \theta^*(t) = (\theta^*_1(t), \ldots, \theta^*_N(t))$ (vector of optimal trading volumes) \\
+$\qquad E^*(t) = (e^*_1(t), \ldots, e^*_N(t))$ (vector of optimal emission levels) \\
+such that for a given $P^*(t)$,
+$\theta^*(t)$ and $E^*(t)$ minimize each firm's costs subject to each firm's constraints as given in (2) - (4) and \\
+the following two conditions hold
+\begin{itemize}
+\item Market clearing condition on permits \\
+$
+\qquad \sum_{i=1}^N \theta_i^*(t) = 0
+$
+\item Terminal stock condition \\
+$
+\qquad P^*(T)\sum_{i=1}^N B^*_i(T) = 0
+$
+\end{itemize}
+\end{frame}
+
+%17. Folie
+\begin{frame}
+\frametitle{Rubin 1996: Joint optimization problem}
+A fictitious central planner minimizes total costs by choosing optimal quantities of emissions, i.e.
+\begin{align}
+\min_{e_1, \ldots, e_N} &\left\{ \int_0^T e^{-rt} \sum_{i=1}^N C_i(e_i(t)) dt \right\} \\
+\textnormal{subject to }
+&\dot{B}(t) = \sum_{i=1}^N \left(S_i(t) - e_i(t)\right) \\
+&            B(0) = 0 \textnormal{ and } B(t) \ge 0 \\
+&            e_i(t) \ge 0 \quad \textnormal{ for all } i = 1, \ldots, N
+\end{align}
+{Explanation of variables}
+\begin{tiny}
+\begin{tabular}{cl}
+$S_i(t)$ & firm i's endowment of emissions \\
+$B(t)$ & sum of emissions banked by the firms at time t\\
+$C_i(e_i(t))$ & firm i's abatement cost when emitting $e_i(t)$ where $C'_i(e_i) < 0$ and $C''_i(e_i) > 0$ \\
+$r$ & interest rate \\
+\end{tabular}
+\end{tiny}
+\end{frame}
+
+%18. Folie
+\begin{frame}
+\frametitle{Rubin 1996: Theorem (Market equilibrium and joint optimization problem)}
+\begin{enumerate}[(a)]
+\item There exists an intertemporal market equilibrium in emission permits over a T-period horizon
+\item The market equilibrium solution is at least as inexpensive as the result of the joint cost optimization
+\end{enumerate}
+\end{frame}
+
+
+%19. Folie
+\begin{frame}
+\frametitle{Rubin 1996: Theorem (Permit price)}
+\begin{enumerate}[(a)]
+\item The permit price equals the marginal abatement costs
+\[
+P(t) = - C'_i(e_i)
+\]
+\item The permit price
+\begin{itemize}
+\item follows Hotelling's rule if banking/borrowing are allowed
+\item grows at a rate less than the interest rate r if there are restrictions on borrowing
+\[
+\frac{\dot{P}}{P} =
+		\left\{ \begin{array}{ll}
+		  r  &
+			  \mbox{if $\Phi_i = 0$ } \\
+			r - \frac{e^{rt}\Phi_i}{P} &
+			  \mbox{if $\Phi_i > 0$}
+		\end{array}
+	  \right.
+\]
+where $\Phi_i$ is the adjoint variable of the borrowing constraint
+\end{itemize}
+\end{enumerate}
+Proof: \\
+Follows from evaluating the necessary conditions (hereby use the Hamiltonian)
+\end{frame}
+
+
+
+%20. Folie
+\begin{frame}
+\frametitle{Rubin 1996: Necessary (and sufficient) conditions for firm i's minimization problem}
+\begin{tiny}
+The \textbf{Hamiltonian} is given by
+\[
+H_i = e^{-rt} [C_i(e_i(t)) + P(t)\theta_i(t)] + \lambda_i[S_i - e_i + \theta_i]
+\]
+and the \textbf{generalized Hamiltonian} is given by
+$
+L_i = H_i  - \Phi_i B_i - \tau_i e_i
+$ \\
+Hence
+\begin{align}
+\dot{B}_i &= \frac{\partial L_i}{\partial \lambda_i} = S_i - e_i + \theta_i \\
+\dot{\lambda}_i &= -\frac{\partial L_i}{\partial B_i} = \Phi_i \\
+B_i &\ge 0, \quad \Phi_i \ge 0, \quad \Phi_i B_i = 0 \\
+\frac{\partial L_i}{\partial e_i} &= e^{-rt}C'_i(e_i) - \lambda_i \ge 0 \\
+e_i &\ge 0, \quad \tau_i \ge 0, \quad e_i \frac{\partial H_i}{\partial e_i} = 0 \\
+B_i(T) &\ge 0, \quad \lambda_i(T) \le 0, \quad B_i(T) \lambda_i(T) = 0
+\end{align}
+\end{tiny}
+\end{frame}
+
+\subsection{Stochastic Equilibrium Model}
+%\subsubsection{Full Economy Model}
+\begin{frame}
+\frametitle{Carmona et al. 2008: Firm i's optimization problem}
+For given forward permit price $A$ and prices of the produced goods $S$ the firm i maximizes its expected terminal wealth by  buying/selling an optimal number of permits and producing an optimal quantity of goods, i.e.
+\begin{align}
+\sup_{\theta^i, \xi^i} \mathbb{E} \left[ \underbrace{S^i(\xi^i) - C^i(\xi^i)}_{production} + \underbrace{T^i(\theta^i)}_{trading} - \underbrace{\Pi \left(\varepsilon^i + e^i(\xi^i) - \Delta^i - \theta^i_T \right)^+}_{penalty} \right]
+\end{align}
+\end{frame}
+
+\begin{frame}
+\frametitle{Variables}
+
+\begin{tiny}
+\begin{tabular}{ll}
+$S^i(\xi^i) =    \sum_{t=0}^{T-1} \sum_{j, k} S^k_t \xi^{i,j,k}_t$ & revenues from selling the produced goods \\
+$C^i(\xi^i) =    \sum_{t=0}^{T-1} \sum_{j, k} C^k_t \xi^{i,j,k}_t$ & costs from producing the goods \\
+$T^i(\theta^i) = \sum_{t=0}^{T-1} \theta^i_t (A_{t+1} - A_t) - \theta_T^i A_T$ & profit/loss from trading emission permits \\
+$e^i(\xi^i) =    \sum_{t=0}^{T-1} \sum_{j, k} S^k_t \xi^{i,j,k}_t$ & firm i's emissions in [0,T] from the production\\
+$\Delta^i = \sum_{t=0}^{T-1} \Delta^i_t$ & number of emission permits allocated to firm i in [0,T] \\*[12pt]
+\end{tabular}
+
+\begin{tabular}{ll}
+$\varepsilon^i$ & quantity of firm i's emissions in [0,T] that cannot be controlled\\
+$\theta^i_t$ & number of forward contracts on emission permits held by firm i at time t\\
+$\Pi$ & penalty per emission unit \\
+$S_t^k$ & price of product k\\
+$C_t^{i,j,k}$ & firm i's marginal production costs of product k using production technology j\\
+$e_t^{i,j,k}$ & emission factor of firm i, production technology j and product k \\
+\end{tabular}
+\end{tiny}
+\end{frame}
+
+%22. Folie
+\begin{frame}
+\frametitle{Market equilibrium}
+A market equilibrium in emission permits consists of
+\begin{itemize}
+\item<1->
+$\quad A^*$ (one-dimensional stochastic process for forward price on permits)
+\item<2-> $\quad S^*$ (multi-dim. stochastic process for the prices of the products)
+\item<3-> $\quad \theta^*$ (multi-dim. stochastic process of optimal trading strategies)
+\item<4-> $\quad \xi^*$ (multi-dim. stochastic process of optimal production strategies)
+\end{itemize}
+such that for given $A^*$ and $S^*$,
+$\theta^*$ and $\xi^*$ lead to a situation where all the firms are satisfied by their strategy.
+\end{frame}
+
+\begin{frame}
+\frametitle{Market equilibrium}
+Formally
+$
+\qquad \mathbb{E}\left[ L^{A^*, S^*, i}\left(\theta^{*i},\xi^{*i}\right) \right] \ge \mathbb{E}\left[ L^{A^*, S^*, i}\left(\theta^{i},\xi^{i}\right) \right] \textnormal{ for all } \left(\theta^i, \xi^i \right)
+$ \\
+and the following two conditions hold
+\begin{itemize}
+\item<1-> Market clearing condition on permits
+$$
+\sum_{i} \theta^{*i}_t = 0
+$$
+\item<2-> Supply meets demand for each good
+$$
+\sum_{i, j} \xi^{*i,j,k}_t = D_t^k
+$$
+\end{itemize}
+\end{frame}
+
+
+%23. Folie
+\begin{frame}
+\frametitle{Global optimization problem}
+A fictitious central planner minimizes expected total costs by producing an optimal quantity of goods $\xi^*$, i.e. it faces the optimization problem
+\begin{align}
+\inf_{\xi} \mathbb{E} \left[ \underbrace{C(\xi)}_{production} - \underbrace{\Pi \left(\varepsilon + e(\xi) - \Delta \right)^+}_{penalty} \right]
+\end{align}
+where \\
+\begin{tabular}{ll}
+$C(\xi) =  \sum_{i} C^i(\xi^i)$ & total production costs\\
+$e(\xi) = \sum_{i} e^i(\xi^i)$ & total emissions from production in [0,T] \\
+$\varepsilon = \sum_{i} \varepsilon^i$ & total emissions in [0,T] that are not controllable \\
+$\Delta = \sum_{i} \Delta^i$ & total emission certificates handed out by the regulator \\
+$\Pi$ & penalty per emission unit \\
+\end{tabular}
+
+\end{frame}
+
+
+%24. Folie
+\begin{frame}
+\frametitle{Theorem: Market equilibrium and joint optimization problem}
+\begin{enumerate}[(a)]
+\item If $(A^*,S^*)$ is a market equilibrium with associated strategies $(\theta^*,\xi^*)$ then $\xi^*$ is a solution of the global optimization problem
+\item There exists a solution $\bar{\xi}$ of the global optimization problem
+\item If $\bar{\xi}$ is a a solution of the global optimization problem then $(\bar{A}, \bar{S})$ is a market equilibrium and the equilibrium allowance price process is almost surely unique
+\end{enumerate}
+\end{frame}
+
+
+%25. Folie
+\begin{frame}\frametitle{Theorem: Equilibrium prices}
+Let $(A^*,S^*)$ be a market equilibrium with associated strategies $(\theta^*,\xi^*)$ then
+%\vspace{-0.5cm}
+
+Forward prices on permits are almost surely given by \[
+A^*_t = \Pi \cdot \mathbb{E} \left[ \chi_{\left\{ \varepsilon + e(\xi) - \Delta \ge 0 \right\}} | \mathcal{F}_t \right]
+\]
+
+\end{frame}
+
+
+\begin{frame}\frametitle{Theorem: Equilibrium prices}
+ Spot prices $S^{*k}$ of the goods and the optimal production strategy $\xi^{*i}$ correspond to a merit-order-type equilibrium with adjusted costs $C_t^{i,j,k} + e^{i,j,k} A_t^*$, i.e. at time t and for each good k
+\begin{itemize}
+\item all the production means of the economy are ranked by increasing adjusted production costs
+\item demand is met by producing from the cheapest production means
+\item k's equilibrium spot price is the marginal cost of production of the most expensive production means used to meet demand $D_t^k$
+\end{itemize}
+\[
+S_t^{*k} = \max_{i,j} \left\{ \left(C_t^{i,j,k} + e^{i,j,k} A_t^* \right) \chi_{\left\{\xi_t^{i,j,k}>0\right\}}\right\}
+\]
+\end{frame}
+
+\subsection{Dynamics of CO2 permit prices}
+\subsubsection{Reduced Equilibrium Model}
+\frame{\frametitle{Basic Model}
+\begin{itemize}
+\item<1-> Risk-neutral companies with total initial endowment $e_0$
+\item<2-> Total emissions dynamics are
+\begin{equation}
+dy_t= \mu(t, y_t)dt + \sigma(t, y_t)dW_t
+\end{equation}
+with deterministic drift and volatility.
+\item<3-> Central planner who minimizes total expected cost over a trading period $[0,T]$ by deciding at any time instant
+whether to costly abate some of the CO2 emissions or not.
+\item<4-> At the end of the period actual accumulated emissions and penalty costs are determined.
+\end{itemize}
+}
+
+\frame{\frametitle{Basic Model II}
+\begin{itemize}
+\item<1-> $x_t$ are the total expected emissions over the trading period
+\item<2-> Then
+\begin{equation}
+x_t=-\int_0^tu_s ds + \EX_t\left[\int_0^T y_s ds \right]
+\end{equation}
+\item<3-> $u_t$ is the optimal rate of abatement which is  actively chosen by the central planner.
+\item<4-> So $x_t$ is a controlled stochastic process.
+\end{itemize}
+}
+
+\frame{\frametitle{Total Emissions}
+\begin{itemize}
+\item<1-> $x_T$ are the realized emissions that relate to a potential penalty function
+\item<2-> Without abatement total expected emissions  are
+$$
+x_0=\EX\left[\int_0^T y_s ds \right]
+$$
+\item<3-> The dynamics of the total expected emissions are
+\begin{equation}
+dx_t=-u_t dt + G(t) dW_t
+\end{equation}
+\item<4-> $G(t)$ is the volatility of the uncontrolled part of $x_t$ and depends both on the drift $\mu(t, y_t)$
+and the volatility $\sigma(t,y_t)$ of the emission rate.
+\end{itemize}
+}
+
+\frame{\frametitle{Optimisation problem of the central planner I}
+\begin{equation}
+\max_{u_t} \EX_0\left[\int_0^Te^{-rt}C(t,u_t)dt + e^{-rT}P(x_T)\right]
+\end{equation}
+with
+$$
+\begin{array}{lll}
+C(t,u_t) &=& - \frac{1}{2}c u_t^2 \\*[12pt]
+P(x_T) &=& \min[0,p(e_0-x_T)]
+\end{array}
+$$
+}
+
+\frame{\frametitle{Optimisation problem of the central planner II}
+\begin{itemize}
+\item<1-> $C(t,u_t)$ are the abatement costs per unit of time. $c$ constant implies no change in technology occurs.
+The quadratic form implies linearly increasing marginal abatement costs.
+\item<2-> $P(x_T)$ is the penalty function, with $p$ the penalty including all costs.
+\item<3-> $r$ is the constant interest rate.
+\end{itemize}
+}
+
+\frame{\frametitle{Solution of the control problem}
+Let $V(t,x_t)$ be the expected value of the optimal policy given $x_t$. By a standard
+Hamilton-Jacobi-Bellman argument we arrive at
+\begin{equation}
+V_t=-\frac{1}{2}(G(t))^2 V_{xx}-\frac{1}{2c}e^{rt}(V_x)^2
+\end{equation}
+with boundary condition
+$$
+V(T, x_T)=e^{-rT}P(x_T)
+$$
+and optimal control
+$$
+u_t=-\frac{1}{c} e^{rt}V_x
+$$
+}
+\begin{frame}
+  \frametitle{Permit Prices}
+\begin{center}
+\begin{figure}[h!]
+\centering
+\rotatebox{0}{
+\scalebox{0.6}{
+\includegraphics[width=1.45\textwidth, height= 1.2\textheight]{../pics/pic1-SUHW.pdf}}}
+
+\end{figure}
+\end{center}
+\end{frame}
+
+\frame{\frametitle{Permit Price Dynamics}
+\begin{itemize}
+\item<1-> Recall that the permit price must equal the marginal abatement costs, so
+\begin{equation}
+S(t,x_t) = c u_t = -e^{rt} V_x(t,x_t)
+\end{equation}
+\item<2-> Using It{\^o}'s formula and the HJB-PDE we find that the discounted permit price is a martingale.
+\item<3-> Its dynamics are
+\begin{equation}
+dS(t,x_t)= G(t)S_x(t,x_t) dW_t
+\end{equation}
+\end{itemize}
+}
+
+\begin{frame}
+  \frametitle{Implied Permit Price Volatility}
+\begin{center}
+\begin{figure}[h!]
+\centering
+\rotatebox{0}{
+\scalebox{0.6}{
+\includegraphics[width=1.45\textwidth, height= 1.2\textheight]{../pics/pic2-SUHW.pdf}}}
+
+\end{figure}
+\end{center}
+\end{frame}
+
+\subsubsection{Central Planner and Equilibrium}
+\frame{\frametitle{Individual Company Models}
+\begin{itemize}
+\item<1-> Each individual company has an endowment $e_{i0}$
+\item<2-> Individual emissions dynamics are
+\begin{equation}
+dy_{it}= \mu(t, y_{it})dt + \sigma(t, y_{it})dW_{it}
+\end{equation}
+with deterministic drift and volatility.
+\end{itemize}
+}
+
+\frame{\frametitle{Individual Emissions}
+\begin{itemize}
+\item<1-> $x_{it}$ are the total expected emissions of company $i$ over the trading period
+\item<2-> Then
+\begin{equation}
+x_{it}=-\int_0^tu_{is} ds -\int_0^tz_{is}ds + \EX_t\left[\int_0^T y_{is} ds \right]
+\end{equation}
+\item<3-> $u_{it}$ is the individual rate of abatement
+\item<4-> and $z_{it}$ is the instantaneous amount of permits bought or sold.
+\end{itemize}
+}
+\frame{\frametitle{Individual Emissions Dynamics}
+\begin{itemize}
+\item<1-> The dynamics of the total expected emissions are
+\begin{equation}
+dx_{it}=-[u_{it}+z_{it}] dt + G_i(t) dW_{it}
+\end{equation}
+\item<2-> $G_i(t)$ is the volatility of the uncontrolled part of $x_{it}$ and depends both on the drift $\mu_i(t, y_{it})$
+and the volatility $\sigma_i(t,y_{it})$ of the emission rate.
+\end{itemize}
+}
+
+\frame{\frametitle{Optimisation Problem for the individual Company}
+\begin{equation}
+\max_{u_{it}, z_{it}} \EX\left[\int_0^Te^{-rt}C_i(t,u_{it})dt - \int_0^T e^{-rt}S(t)z_{it}dt+ e^{-rT}P_i(x_{iT})\right]
+\end{equation}
+with $S(t)$ the permit price and
+$$
+\begin{array}{lll}
+C_i(t,u_{it}) &=& - \frac{1}{2}c_i u_{it}^2 \\*[12pt]
+P_i(x_{iT}) &=& \min[0,p(e_{i0}-x_{iT})]
+\end{array}
+$$
+}
+
+\frame{\frametitle{Solution of the control problem}
+Let $V^i(t,x_{it})$ be the expected value of the optimal policy for company $i$. By a standard
+Hamilton-Jacobi-Bellman argument we arrive at
+$$
+\begin{array}{lll}
+0&=\max_{u_{it},z_{it}}&\left[e^{-rt}(C_i(t,u_{it}) - S(t) z_{it})\right.\\*[12pt]
+&&+\left.V^i_t -V_x^i(u_{it}+z_{it}) + \frac{1}{2}(G_i(t))^2 V^i_{xx}\right]
+\end{array}
+$$
+with boundary condition
+$$
+V^i(T, x_{iT})=e^{-rT}P_i(x_{iT}).
+$$
+}
+
+\frame{\frametitle{Equilibrium Solution}
+\begin{itemize}
+\item<1-> We solve the HJB for $N$ companies and use the market clearing condition
+$$
+\sum_{i=1}^N z_{it}^*=0
+$$
+\item<2-> The first-order conditions give
+$$
+\begin{array}{llll}
+u_{it}^* &=& -\frac{1}{c_i} e^{rt} V^i_x & i=1, \ldots N \\*[12pt]
+S(t) &=& - e^{rt} V^i_{x} & i=1, \ldots N
+\end{array}
+$$
+\item<3-> So again
+$$
+S(t) = c_i u_{it}^*, \; i=1, \ldots N.
+$$
+\end{itemize}
+}
+\frame{\frametitle{Joint Cost Problem I}
+Again we image a central planner who has to solve
+\begin{equation}
+\max_{u_{it}} \EX\left[\int_0^Te^{-rt}\sum_{i=1}^N C_i(t,u_{it})dt + e^{-rT} \sum_{i=1}^N P_i(x_{iT})\right]
+\end{equation}
+with $C_i$ and $P_i$ as before.
+
+We assume only one source of randomness, i.e. $W_{it}= W_t$, then we have the  joint value function as
+$$
+V(t, x_{1t}, \ldots, x_{Nt}) = \sum_{i=1}^N V_i(t,x_{it}).
+$$
+
+%Here, $z_{it}$ are irrelevant due to the market clearing condition.
+
+}
+\frame{\frametitle{Joint Cost Problem II}
+The joint cost problem now is
+$$
+\begin{array}{lll}
+0&=\displaystyle \max_{\{u_{it},i=1, \ldots, N\}}&\displaystyle \left[e^{-rt}\sum_{i=1}^N C_i(t,u_{it})\right.\\*[12pt]
+&&+\displaystyle \left.\sum_{i=1}^N (V^i_t -V_x^iu_{it}) + \frac{1}{2}\sum_{i=1}^N(G_i(t))^2 V^i_{xx}\right]
+\end{array}
+$$
+with boundary condition
+$$
+\sum_{i=1}^N V^i(T, x_{iT})=e^{-rT}\sum_{i=1}^N P_i(x_{iT}).
+$$
+}
+
+\frame{\frametitle{Joint Problem Solution}
+\begin{itemize}
+\item<1-> The first-order conditions give
+$$
+u_{it}^{**}= -\frac{1}{c_i} e^{rt} V^i_x, \; i=1, \ldots N
+$$
+\item<2-> Due to linearity we also have
+$$
+u_{it}^{**}= \argmax \left\{ \max_{u_{it}} \left[e^{-rt} C_i(t,u_{it}) + V^i_t -V_x^iu_{it} + \frac{1}{2}(G_i(t))^2 V^i_{xx}\right]
+\right\}
+$$
+\item<3-> Again
+$$
+S(t) = c_i u_{it}^{**}= -e^{rt}V^i_x, \; i=1, \ldots N.
+$$
+\end{itemize}
+}
+
+\frame{\frametitle{Equivalence to Equilibrium Solution}
+$$
+\begin{array}{lll}
+&u_{it}^{**}&\\*[12pt]
+=&  \argmax \left\{ \displaystyle \max_{u_{it},z_{it}} \right. &\left[e^{-rt} C_i(t,u_{it}) -e^{-rt}S(t)z_{it} +e^{-rt}S(t)z_{it} \right.\\*[12pt]
+ &&\left.\left. + V^i_t -V_x^iu_{it} + \frac{1}{2}(G_i(t))^2 V^i_{xx}\right]
+\right\}\\*[12pt]
+=&  \argmax \left\{ \displaystyle \max_{u_{it},z_{it}} \right. &\left[e^{-rt} (C_i(t,u_{it}) -S(t)z_{it}) \right. \\*[12pt]
+&&\left.\left. + V^i_t +V_x^i(-u_{it}-z_{it}) + \frac{1}{2}(G_i(t))^2 V^i_{xx}\right]
+\right\}\\*[12pt]
+=&u_{it}^*&
+\end{array}
+$$}
+
+\subsubsection{Multi-Period Models}
+% \subsection{General Equilibrium model}
+\frame{\frametitle{Basic Model}
+\begin{itemize}
+\item<1-> Total emissions dynamics are
+\begin{equation}
+dy_t= \mu(y_t)dt + \sigma(y_t)dW_t
+\end{equation}
+with deterministic drift and volatility.
+\item<2-> buy or sell $z_t$  permits in the market
+\item<3-> abate $u_t$ with cost function $C(u_t)$
+\item<4-> pay penalty costs
+\end{itemize}
+}
+
+\frame{\frametitle{Basic Model II}
+\begin{itemize}
+\item<1-> $x_{t,T_k}$ are the total expected emissions in $[0,T_k]$
+\item<2-> Then
+\begin{equation}
+x_{t,T_k}=-\int_0^tu_s ds  -\int_0^t z_u du + \EX_t\left[\int_0^{T_k} y_s ds \right]
+\end{equation}
+\end{itemize}
+}
+
+\frame{\frametitle{Multi-period Framework}
+\begin{itemize}
+\item<1-> Consider $n$ consecutive trading periods $[0,T_1], [T_1, T_2], \ldots [T_{n-1}, T_n]$ with inter-period banking (no borrowing).
+\item<2-> Initial endowment of $e_{T_{k-1}}$ at the beginning of each period $[T_{k-1}, T_k]$.
+\item<3-> Have to pay penalty if emissions $x_{T_k}$ from $0$ to $T_k$ exceed the total allocated permits
+$$
+e_{T_k}= \sum_{T_j < T_k}e_{T_j}.
+$$
+\item<4-> With $R(x_{T_k})=e_{T_k}-x_{T_k}$ penalty cost are
+$$
+P(x_{T_k}) = P \min\{0, R(x_{T_k})\}
+$$
+\end{itemize}
+}
+\frame{\frametitle{Multi-period Optimisation problem}
+$$
+\begin{array}{lll}
+\max_{u_t, z_t} & \EX_0& \left[ \displaystyle\int_0^{T_n}e^{-rt}C(u_t)dt - \int_0^{T_n}e^{-rt}S(t) z_tdt \right. \\*[12pt]
+& & \displaystyle \left. + \sum_{j=1}^n e^{-rT_j}P(x_{T_j}) + R(X_{T_n}) S_{end}\right]
+\end{array}
+$$
+}
+\frame{\frametitle{Equilibrium Solution}
+N companies with
+\begin{itemize}
+\item<1-> $u_{it}$ is the individual rate of abatement
+\item<2-> and $z_{it}$ is the instantaneous amount of permits bought or sold
+\item<3-> solve their individual cost problem
+\item<4-> with market clearing condition
+$$
+\sum_{i=1}^N z_{it}^*=0 \;\;  \forall t \in [0, T_n]
+$$
+\end{itemize}
+}
+\frame{\frametitle{Permit Price Process}
+\begin{itemize}
+\item<1-> The general structure is still
+$$
+S(t) = \sum_{T_j >t} e^{-r(T_t-t)} P \EX_t\left[\IF_{\{R(x_{T_j})<0\}}\right] + e^{rt} S_{end}
+$$
+\item<2-> The first-order conditions give
+$$
+S(t) = c_i u_{it}^*, \; i=1, \ldots N.
+$$
+\end{itemize}
+}
+
+
+\frame{\frametitle{Solution Strategy}
+\begin{itemize}
+\item<1-> Start with the last period
+\begin{itemize}
+\item find the characteristic PDE with boundary conditions from optimality principle of stochastic control
+\item solve for strategy value function $V_n$
+\end{itemize}
+\item<2-> step back one period
+\begin{itemize}
+\item find the characteristic PDE
+\item solve for strategy value with boundary condition from next periods value
+\end{itemize}
+\item<3-> derive abatement strategy from HJB
+\end{itemize}
+}

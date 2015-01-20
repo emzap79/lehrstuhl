@@ -1,0 +1,124 @@
+\pdfminorversion=4
+\makeatletter\let\ifGm@compatii\relax\makeatother
+\documentclass[%
+    %presentation,
+    11pt,
+   handout, % Erstellen eines Handouts
+]{beamer}
+\mode<presentation>
+{
+  \usetheme{myulm}
+  \setbeamercovered{transparent}
+}
+%\usepackage[ngerman]{babel}
+%\usepackage[utf8]{inputenc}
+\usepackage[ansinew]{inputenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage[OT1]{fontenc}
+\usepackage{amsthm}
+\usepackage{pdfpages}
+\usepackage{bbm}
+\usepackage{sidecap}
+\usepackage[]{subfigure}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{rotating}
+\usepackage{totpages}
+\usepackage[left]{eurosym}
+\usepackage{hyperref}
+\usepackage{booktabs}
+%\usepackage[breaklinks]{hyperref}
+
+%\usepackage[ansinew]{inputenc}  % ANSI
+\usepackage[T1]{fontenc}        % Zeichen-Codierung
+\usepackage{textcomp}
+
+
+
+%\usepackage{harvard}
+\usepackage{natbib}
+%\usepackage[longnamesfirst]{natbib}
+%\usepackage{har2nat}
+
+
+%\usepackage{biblatex}
+%\bibliography{QCF-literature}
+
+
+\definecolor{purelightblue}{rgb}{0.93,0.93,1}
+\definecolor{pureblue}{rgb}{0.1882,0.2510,0.5647}
+\definecolor{UDE}{rgb}{0.1882,0.2510,0.5647}
+\setbeamertemplate{blocks}[shadow=true]%[rounded]
+\setbeamercolor*{block title}{fg=purelightblue,bg=pureblue}
+\setbeamercolor*{block body}{bg=purelightblue}
+
+\definecolor{pcolor}{rgb}{0.0,0.6,0.0}
+\definecolor{qcolor}{rgb}{0.75,0.0,0.0}
+\definecolor{obscolor}{rgb}{0.58,0.70,0.84}
+
+
+\newcounter{realpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%Anfang der Kopfzeile
+\newcommand{\zwischentitel}{}
+\newcommand{\leitthema}{Energy Trading}
+\newcommand{\ort}{Essen}
+%Datum kann weiter unten geändert werden (\presdatum{})
+%Ende der Kopfzeile
+
+
+%Anfang zur Titelseite
+\title[Energy Trading]{Energy Trading}
+\author{Professor Dr. R{\"u}diger Kiesel}
+\newcommand{\presdatum}{SS 2014}
+\institute{Chair for Energy Trading and Finance}
+\subtitle{Lecture - Summer 2014}
+%Ende der Titelseite
+\AtBeginPart{
+\frame[plain]{\titlepage}
+\frame{\partpage}
+\frame{\tableofcontents[part=\insertpartnumber]}
+}
+
+
+
+\AtBeginSection[] % Do nothing for \section*
+{
+\begin{frame}{Agenda}{\quad}
+\only{\tableofcontents[currentsection,hideothersubsections]}
+\end{frame}
+}
+
+\input{../../def}
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+	
+
+\input{MarketObjects}
+\input{BasicStochasticCalculus}
+\input{ForwardModels}
+\input{EnergyDerivatives}
+%\input{EmissionCertificates}
+%\input{RenewableEnergyFinance}
+
+
+
+
+%\begin{frame}
+%\tiny
+%\bibliographystyle{apalike}
+%\bibliography{QCF-literature}
+%\nocite{*}
+%\end{frame}
+
+\end{document} 

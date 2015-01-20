@@ -1,0 +1,369 @@
+\section{HJM-models with delivery period}
+\subsection{Classical Model Specification}
+
+\frame{\frametitle{ Heath-Jarrow-Morton (HJM) model}
+
+The Heath-Jarrow-Morton model uses the entire forward rate curve as
+(infinite-dimensional) state variable. The dynamics of the forward rates $f(t,T)$ are {\it exogenously} given by
+$$
+%\label{forward rate dynamics}
+df(t,T) = \alpha(t,T) dt + \s(t,T) dW(t).
+$$
+For any fixed maturity $T$, the
+initial condition of the stochastic differential equation
+is determined by the current value
+of the empirical (observed) forward rate for the future date $T$
+which prevails at time $0$.
+
+}
+
+
+
+\frame{\frametitle{One-Factor GBM Specification}
+Here the volatility is
+$$
+\sigma_1(t,T)=e^{-\kappa (T-t)}\sigma
+$$
+and
+$$
+dF(t,T)=F(t,T)\sigma_1(t,T)dW(t)
+$$
+}
+
+\frame{\frametitle{Two-Factor GBM Specification}
+Here the volatilities are
+$$
+\sigma_1(t,T)=e^{-\kappa (T-t)}\sigma_1 \; \mbox{ and } \; \sigma_2>0
+$$
+and
+$$
+\frac{dF(t,T)}{F(t,T)}=\sigma_1(t,T)dW_1(t)+\sigma_2dW_2(t)
+$$
+}
+
+\subsection{HJM-type Forward Models}
+\frame{\frametitle{Modelling Approach}
+\begin{itemize}
+\item<1-> We use the HJM-framework to model the forward dynamics directly.
+\item<2-> We distinguish between forward contracts with a fixed time delivery and forward contracts with a delivery period, called \emph{swaps}.
+\item<3-> A typical lognormal dynamics of the swap price is,
+\begin{equation}
+dF(t,T_1,T_2)=\Sigma(t,T_1,T_2)F(t,T_1,T_2)\, dW(t). \label{eqn: lognormal dynamics}
+\end{equation}
+The only parameter in this model is the volatility function $\Sigma$ which has to capture all movements of the swap price and especially the time to maturity effect.
+
+\end{itemize}
+
+}
+
+
+\frame{\frametitle{Volatility Functions}
+We assume that the swap price dynamics for all swaps is given by (\ref{eqn: lognormal dynamics})
+where $\Sigma(t,T_1,T_2)$ is a continuously differentiable and positive function.
+
+Starting out with a given volatility function for a fixed time forward contract the volatility function $\Sigma$ for the swap contract is given by
+\begin{equation}
+\Sigma(t,T_1,T_2)=\int_{T_1}^{T_2} \hat{w}(u,T_1,T_2) \sigma(t,u) \, du. \label{eqn: swap volatility creation}
+\end{equation}
+
+}
+\frame{\frametitle{Schwartz Volatility}
+For the related volatility function of the forward we obtain
+\begin{equation}\label{vol-schwartz}
+\sigma(t,u)=a e^{-b(u-t)}
+\end{equation}
+where $a,b >0 $ are constant.
+}
+
+\frame{\frametitle{Schwartz Volatility}
+The time to maturity effect is modeled by a negative exponential function.
+\begin{itemize}
+\item<1-> When the time to maturity tends to infinity the volatility function converges to zero.
+\item<2-> The exponential function causes that the volatility increases as the time to maturity decreases which leads to an increased volatility when the contract approaches the maturity.
+\end{itemize}
+
+
+}
+
+\frame{\frametitle{Schwartz Volatility}
+
+Applying this forward volatility to (\ref{eqn: swap volatility creation}) the swap volatility is:
+\begin{align}
+\Sigma(t,T_1,T_2)&=a\,\varphi(T_1,T_2)
+\end{align}
+where
+\begin{align}
+\varphi(T_1,T_2)= \frac{e^{-b(T_1-t)}-e^{-b(T_2-t)}}{b(T_2-T_1)}
+\label{volatility function varphi}
+\end{align}
+The Black-76 specification of the forward volatility can be obtained if $\varphi(T_1,T_2) =1$, that is $b=0$
+in (\ref{vol-schwartz}).
+
+The associated swap price volatility is then given by $\Sigma(t,T_1,T_2)=a$.
+
+
+}
+
+\subsection{The Brownian Factor Model}
+
+\frame{ \frametitle{The Model Framework}
+\begin{itemize}
+\item<1-> Use observable products, e.g. month futures as building blocks,
+\item<2-> Under a risk-neutral measure month forward prices $F(t,T,T+m)=F(t,T)$ have to be martingales,
+\item<3-> Assume the dynamics
+$$dF(t,T)=\sigma(t,T)F(t,T)dW(t),$$
+where $\sigma(t,T)$ is an adapted $d$-dimensional deterministic function and
+$W(t)$ a $d$-dimensional Brownian motion.
+\item<4-> Initial value of this SDE is the initial forward curve observed at the market.
+\end{itemize}
+}
+
+\frame{ \frametitle{Options on Building Blocks}
+A European call option on $F(t,T)$ with maturity $T_0$ and strike
+$K$ can be easily evaluated by the Black-formula
+\begin{eqnarray}\label{eq:month-option}
+V^{option}(0)=e^{-rT_0}\left(F(0,T)\mathcal{N}(d_1)-K\mathcal{N} (d_2)\right),
+\end{eqnarray}
+where $\mathcal{N}$ denotes the normal distribution, $\Sigma(T_0,T)=\int_0^{T_0}||\sigma(s,T)||^2ds$ and
+\begin{eqnarray*}
+d_1& = & \frac{\log \frac{F(0,T)}{K}+\frac{1}{2}\Sigma(T_0,T)}{\sqrt{\Sigma(T_0,T)}}\\
+d_2 & = & d_1 - \sqrt{\Sigma(T_0,T)}
+\end{eqnarray*}
+
+}
+
+\frame{ \frametitle{The Model Framework -- $n$-period futures}
+\begin{itemize}
+\item<1-> Use observable products, e.g. month futures as building blocks,
+\item<2-> Express an $n$-period delivery futures as
+$$Y_{T_1, \ldots, T_n}(t)=\frac{\sum_{i=1}^n e^{-r(T_i-t)}F(t,T_i)}{\sum_{i=1}^n e^{-r(T_i-t)}}.$$
+(Compare modelling of forward swap rates in terms of forward LIBOR rates)
+\item<3-> In case of 1-year-futures, the swap rate is the forward price of the 1-year-futures,
+which can be also observed in the market.
+\end{itemize}
+}
+
+\frame{ \frametitle{Implied Prices of Futures}
+\begin{center}
+\includegraphics[height=6cm, width=10cm]{../../../pics/forwardcurve2}
+\end{center}
+
+}
+
+
+\frame{ \frametitle{Options on $n$-period futures}
+\begin{itemize}
+\item<1-> We need to compute
+$$e^{-rT_0} \EX \left[\left(Y(T_0)-K\right)^+\right],$$
+where the distribution of $Y$ as a sum of lognormals is unknown.
+\item<2->
+We approximate $Y$ by a random variable $\hat{Y}$,
+which is lognormal and matches $Y$ in mean and variance.
+\item<3->
+Then,
+$$\log \hat{Y} \sim \mathcal{N}(m,s)$$
+with $s^2$ depending on the choice of the volatility functions
+$\sigma(t,T_i)$.
+\item<4->
+An analysis of the goodness of the approximation
+can be found in Brigo-Mercurio (2003).
+\end{itemize}
+
+}
+
+\frame{ \frametitle{Options on $n$-period futures}
+
+Using this approximation, it
+is possible to apply a Black-Option formula again to obtain the
+option value as
+\begin{eqnarray}\label{eq:approx-option}
+V^{option} & = & e^{-rT_0} \EX \left[\left(Y(T_0)-K\right)^+\right] \nonumber \\
+& \approx & e^{-rT_0} \EX \left[\left(\hat{Y}(T_0)-K\right)^+\right]\nonumber \\
+& = &  e^{-rT_0} \left(Y(0)\mathcal{N}(d_1)-K\mathcal{N}(d_2)\right)
+\end{eqnarray}
+with
+\begin{eqnarray*}
+d_1& = & \frac{\log \frac{Y(0)}{K}+\frac{1}{2}s^2}{s}\\
+d_2 & = & d_1 - s
+\end{eqnarray*}
+}
+
+
+\subsection{A two-factor model}
+\frame{ \frametitle{A Two-Factor Model}
+
+\begin{itemize}
+\item<1-> For a fixed delivery start $T$ and delivery period 1 month, let the dynamics of a Future $F_{t,T}$ be given by the two factor model:
+\begin{eqnarray*}
+F(t,T)& =&F(0,T)\exp\left\{\mu(t,T)  +\int_0^t\hat{\sigma_1}(s,T)dW_s^{(1)}+\sigma_2W_t^{(2)}\right\}
+\end{eqnarray*}
+
+\item<2-> $W^{(1)}$ and $W^{(2)}$ independent Brownian motions
+\item<3-> $\hat{\sigma_1}(s,T)=\sigma_1e^{-\kappa(T-s)}$
+\item<4-> $\sigma_1$, $\sigma_2$, $\kappa>0$ constants
+\item<5-> $\mu(t,T)$ being the risk-neutral martingale drift
+\end{itemize}
+}
+
+\frame{ \frametitle{Model Parameters}
+$\sigma_1$ affects the level at the short end of the volatility curve
+
+\begin{center}
+\includegraphics[height=6cm, width=10cm]{../../../pics/sigma1}
+\end{center}
+
+}
+
+\frame{ \frametitle{Model Parameters}
+$\kappa$ affects the slope of the volatility curve at the short end
+
+\begin{center}
+\includegraphics[height=6cm, width=10cm]{../../../pics/kappa}
+\end{center}
+
+}
+
+\frame{ \frametitle{Model Parameters}
+$\sigma_2$ affects the level at the long end of the volatility curve
+
+\begin{center}
+\includegraphics[height=6cm, width=10cm]{../../../pics/sigma2}
+\end{center}
+
+}
+
+\frame{ \frametitle{Pricing of Futures}
+\begin{itemize}
+\item<1-> In this model, all products are expressed using Month-Futures
+\item<2-> Prices of quarterly and yearly Futures are given as an
+average of the  $n$ corresponding monthly Futures.
+\item<3-> $Y_{t,T_1, \ldots T_n}=Y=\frac{\sum e^{-rT_i}F_{t,T_i}}{\sum e^{-rT_i}}$
+is the forward price of a $n$-month forward quoted in the market (cp. swap rate)
+\end{itemize}
+}
+\frame{ \frametitle{Pricing of Options on Month-Futures}
+\begin{itemize}
+\item<1-> At time $t=0$, the price of a  Call-Option with strike $K$ and maturity $T_0$ on a Month-Future $F_{t,T}$ is given by
+$$e^{-rT_0}\EX\left[\left(F_{T_0,T}-K\right)^+\right]$$
+\item<2-> Within the model,  $F_{T_0,T}$ is log-normally distributed with known variance
+$$
+\Sigma(T_0,T) =   \frac{\sigma_1^2}{2\kappa}(e^{-2\kappa (T-T_0)}-e^{-2\kappa T})+\sigma_2^2T_0
+$$
+\item<3-> Thus the option's value is given by the formula (Black 76):
+\begin{eqnarray*}
+e^{-rT_0}\EX\left[\left(F_{T_0,T}-K\right)^+\right] & = &
+e^{-rT_0}\left(F_{0,T}\mathcal{N}(d_1)-K\mathcal{N}(d_2)\right)
+\end{eqnarray*}with $d_{1,2}$ depending on the parameters $\sigma_1, \sigma_2, \kappa$.
+\end{itemize}
+}
+\frame{ \frametitle{Pricing of Options on quarterly and yearly Futures}
+\begin{itemize}
+\item<1-> At time $t=0$, the price of a  Call-Option with strike $K$ and maturity $T_0$ on a $n$-Month-Future
+$Y$ is given by
+$$
+e^{-rT_0}\EX\left[\left(Y-K\right)^+\right]=e^{-rT_0}\EX
+\left[\left(\frac{\sum e^{-rT_i}F_{t,T_i}}{\sum e^{-rT_i}}-K\right)^+\right]$$
+\item<2-> The distribution of the sum is not known within the model. There is no explicit solution to this integral.
+\item<3-> Approximate the random variable $Y$ by a log-normal random variable $\hat{Y}$
+with same mean and variance (depending on the model parameters)
+\end{itemize}
+}
+\frame{ \frametitle{Matching the Variance}
+Using the moment-generating function of a normal random variable, we get
+$$
+\exp (s^2) = \frac{\textrm{Var}(Y)}{\left(\EX (Y)\right)^2} + 1  = \frac{\EX(Y^2)}{\EX(Y)^2}
+$$
+From the martingale property
+$\EX (F_{T_0,T_i}) =  F_{0,T_i} $ and
+$$ \EX (Y_{T_1, \ldots T_n}(T_0))  =
+\frac{\sum e^{-r(T_i-T_0)} F_{0,T_i}}{\sum e^{-r(T_i-T_0)}}.$$
+}
+\frame{ \frametitle{Matching the Variance}
+
+So
+$$
+\EX (Y_{T_1, \ldots T_n}(T_0)^2)
+=  \frac{\sum_{i, j}e^{-r(T_i+T_j-2T_0)} F_{0,T_i}F_{0,T_j}\cdot \exp Cov_{ij}}{\left(\sum e^{-r(T_i-T_0)}\right)^2}
+$$ with
+$Cov_{ij} = \textrm{Cov}(\log F(T_0,T_i), \log F(T_0,T_j))$.
+
+The covariance can be computed directly from the explicit solution of the SDE
+$$\begin{array}{ll}
+& \DSE \textrm{Cov}(\log F(T_0,T_i), \log F(T_0,T_j)) \\*[12pt]
+ = & \DSE
+ e^{-\kappa(T_i+T_j-2T_0)}\frac{\sigma_1^2}{2\kappa}(1-e^{-2\kappa T_0})+\sigma_2^2 T_0
+\end{array}
+$$}
+
+\frame{ \frametitle{Pricing of Options on quarterly and yearly Futures}
+The option value can be computed by Black's formula
+\begin{eqnarray*}
+e^{-rT_0}\EX\left[\left(Y-K\right)^+\right]&\approx & e^{-rT_0}\EX\left[\left(\hat{Y}-K\right)^+\right]\\
+& = &e^{-rT_0}\left(Y(0)\mathcal{N}(d_1) - K\mathcal{N}(d_2)\right)
+\end{eqnarray*}
+with $d_{1,2}$ depending on the parameters $\sigma_1, \sigma_2, \kappa$.
+
+}
+
+\frame{ \frametitle{Parameter Estimation}
+\begin{itemize}
+\item<1-> Use the approximating Black-formula
+    \begin{eqnarray*}
+        \textrm{Option value}&=&    e^{-rT_0}\left(Y(0)\mathcal{N} (d_1)-K\mathcal{N} (d_2) \right)
+\\
+        d_{1,2} & = & d_{1,2}\left(Y(0),K,Var(\log \hat{Y}(T_0))\right)
+    \end{eqnarray*}
+        Only the variance $Var(\log \hat{Y}(T_0))$ depends on the unknown parameters
+
+\item<2-> Compute the variances $Var(\log\hat{Y}(T_0))$ for products observable in the market
+\item<3-> Choose parameter $\sigma_1$, $\sigma_2$ and $\kappa$ to minimize the distance of the model variances
+to the market variances in a given metric (in the least-square sense)
+\end{itemize}
+}
+
+\frame{ \frametitle{Data}
+{\small \begin{table}[btp]
+\begin{center}
+\begin{tabular}{ccrrrr}
+Product     & Delivery Start    & Strike    &   Forward & Market Price  &Implied Vola \\
+\hline
+Month   &October 05     &48 &48.90&2.023&43.80\%\\
+Month   &November 05        &49 &50.00&3.064&37.66\%\\
+Month   &December 05        &49 &49.45&3.244&34.72\%\\
+\hline
+Quarter & October 05        &48 &49.44&2.086&35.15\%\\
+Quarter & January 06        &47 &48.59&3.637&28.43\%\\
+Quarter & April 06          &40 &40.71&3.421&26.84\%\\
+Quarter & July 06           &42 &41.80&3.758&27.19\%\\
+Quarter & October 06        &43 &43.71&4.566&25.35\%\\
+\hline
+Year    &January 06     &44 &43.68&1.521&20.19\%\\
+Year    &January 07     &43 &42.62&3.228&19.14\%\\
+Year    &January 08     &42 &42.70&4.286&17.46\%\\
+\end{tabular}
+\caption{ATM calls and implied Black-volatility, Sep 14}
+\label{fig:data}
+\end{center}
+\end{table}
+}}
+\frame{ \frametitle{Parameter Estimates}
+ \begin{table}[btp]
+ \begin{center}
+\begin{tabular}{p{4cm}cccrrrrcc}
+Method  &Constraints    &$\sigma_1$ &$\sigma_2$ &$\kappa$   &Time&\\
+\hline
+Function calls and numerical gradient       &yes            &0.37       &0.15       &1.40       &$<$1min&\\
+Least Square Algorithm  &no&0.37&0.15&1.41      &$<$1min&\\
+\end{tabular}
+\caption{Parameter estimates with different optimizers, market data as of Sep 14}
+\label{fig:estimates18}
+\end{center}
+\end{table}
+
+Options, which are far away from maturity, will have a volatility of about $15\%$,
+which can add up to more than $50\%$, when time to maturity decreases.
+
+A $\kappa$ value of 1.40 indicates, that disturbances in the futures market
+halve in $\frac{1}{\kappa}\cdot \log 2 \approx 0.69$ years.
+}
+

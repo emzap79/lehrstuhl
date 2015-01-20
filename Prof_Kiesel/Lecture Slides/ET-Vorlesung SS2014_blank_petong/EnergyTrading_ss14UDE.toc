@@ -1,0 +1,19 @@
+\beamer@endinputifotherversion {3.20pt}
+\beamer@sectionintoc {1}{Markets and Objects}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Energy Markets and Basic Objects}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Energy Trading}{12}{0}{1}
+\beamer@subsectionintoc {1}{3}{Specific Derivatives}{27}{0}{1}
+\beamer@sectionintoc {2}{Stochastic Processes for Price Movements}{39}{0}{2}
+\beamer@subsectionintoc {2}{1}{How to Model Price Movements?}{40}{0}{2}
+\beamer@subsectionintoc {2}{2}{Basic Stochastic Calculus}{44}{0}{2}
+\beamer@subsectionintoc {2}{3}{A Mean-Reversion Diffusion Model}{52}{0}{2}
+\beamer@sectionintoc {3}{Forward Models}{59}{0}{3}
+\beamer@subsectionintoc {3}{1}{Basic Pricing Relations for Forwards/Futures}{60}{0}{3}
+\beamer@subsectionintoc {3}{2}{HJM-type models}{67}{0}{3}
+\beamer@subsectionintoc {3}{3}{A Market Model}{70}{0}{3}
+\beamer@sectionintoc {4}{Energy Derivatives}{88}{0}{4}
+\beamer@subsectionintoc {4}{1}{Caps and Floors}{89}{0}{4}
+\beamer@subsectionintoc {4}{2}{Swing Options}{109}{0}{4}
+\beamer@subsectionintoc {4}{3}{Spread Options}{113}{0}{4}
+\beamer@subsectionintoc {4}{4}{Energy Swaps}{133}{0}{4}
+\beamer@subsectionintoc {4}{5}{Options on Electricity Swaps}{150}{0}{4}

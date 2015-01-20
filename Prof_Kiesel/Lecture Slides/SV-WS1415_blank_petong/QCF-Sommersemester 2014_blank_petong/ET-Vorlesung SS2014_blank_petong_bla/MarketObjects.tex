@@ -1,0 +1,188 @@
+% !TEX root = EnergyTrading_ss14UDE.tex
+
+\subsection{Energy Trading}
+
+% frametitle
+{Organisation of the Power System}
+\begin{center}
+\includegraphics[heigth=0.8\textheight, width=0.8 \textwidth]{../../../pics/OrganisationElectricityMarket}
+%\caption{Source: Slides Cornelusse}
+\end{center}
+
+% frametitle
+{System Balancing}
+
+% begin itemize
+
+	The transmission system operator (TSO) has the task to match demand and supply (to balance the system).
+
+	The TSO defines a balancing period (15 minutes in Germany), which is the granularity of the measured electric energy supply and during which a constant power supply takes place (by the energy merchant).
+
+	The power balancing during the balancing period (not smaller than the granularity, in Germany an hour) is the task of the TSO.
+
+	The TSO usually has no own generation capacities and has to act on the reserve market to compensate imbalances.
+
+% end itemize
+
+% frametitle
+{Balancing and Reserve Markets}
+We use the following definitions
+
+% begin itemize
+
+	Reserve Market: allows the TSO to purchase the products needed for compensating imbalances between supply and demand
+
+	Balancing Market: allows merchants to purchase or sell additional energy for balancing their accounting grid. Typically, the only market partner is the TSO.
+
+% end itemize
+
+% frametitle
+{Balancing and Reserve Markets}
+In Europe, the {\it European Network of Transmission System Operators for Electricity,(ENTSO-E)} coordinates overarching grid topics. The main task of a TSO is to ensure a constant power frequency in the transmission system. The following control actions are applied
+
+% begin itemize
+
+	{\it Primary Reserve}   starts within seconds as a joined action of all TSOs in the system.
+
+	{\it Secondary Reserve} replaces the primary reserve after a few minutes and is put into action by the responsible TSOs only.
+
+	{\it Tertiary Reserve} frees secondary reserves by rescheduling generation by the responsible TSOs.
+
+% end itemize
+
+The TSO tenders the required products for fulfilling these functions. Reserve products may involve payments for the availability of the reserved capacity.
+
+% frametitle
+{Market Coupling}
+
+% begin itemize
+
+	Neighbouring electricity markets are typically coupled via transmission capacities owned by the TSOs.
+
+	Transmission capacities can be integrated in the price finding algorithm of cooperating exchanges via implicit auctioning.
+
+	With implicit auctions  players do not  receive allocations of cross-border capacity themselves but bid for energy on their Exchange. The Exchanges then use the available cross-border transmission capacity to minimize the price difference between two or more areas.
+
+	Currently, the Central Western Europe (CWE) initiative couples Belgium, France, the Netherlands, Germany and Luxemburg.
+
+% end itemize
+
+% frametitle
+{Market Coupling}
+\begin{center}
+\includegraphics[heigth=0.6\textheight, width=0.6 \textwidth]{../../../pics/ENTSO-E-flow}
+\end{center}
+
+% frametitle
+{Electricity Markets}
+
+A centralized platform where participants can exchange electricity transparently
+according to the price they are will to pay or receive, and according to the capacity of
+the electrical network.
+
+% begin itemize
+
+	Fixed Gate Auction
+
+% begin itemize
+
+	Participants submit sell or buy orders for several areas, several hours,
+
+	the submissions are closed at a pre-specified time (closure)
+
+	the market is cleared.
+
+	Example: day-ahead.
+
+% end itemize
+
+	Continuous-time Auction
+
+% begin itemize
+
+	Participants continuously submit orders. Orders are stored,
+
+	Each time a deal is feasible, it is executed,
+
+	Example: intra-day.
+
+% end itemize
+
+% end itemize
+
+% frametitle
+{Electricity Exchanges}
+
+Electricity related contracts  can be traded at exchanges such as
+
+% begin itemize
+
+	the Nord Pool, mainly Northern European countries, \url{http://www.nordpoolspot.com/}
+
+	the European Energy Exchange (EEX), \url{http://www.eex.com/en}
+
+	EPEX, located in Paris, founded by EEX and Powernext (French Energy Exchange);
+Electricity spot market for Germany, Austria, France and Switzerland;
+\url{http://www.epexspot.com/en/}
+
+	Amsterdam Power Exchange (APX), covers the Netherlands, Belgium and the UK, \url{http://www.apxgroup.com}
+
+% end itemize
+
+% frametitle
+{EPEX -- traded products}
+
+% begin itemize
+
+	Auction day-ahead and continuous intra-day market.
+
+	Products are individual hours, baseload, peakload, blocks of contiguous hours.
+
+	Intraday market is open 24 hours a day, 7 days a week and products can be traded until 45 minutes before delivery.
+
+	in Germany 15 minutes contracts can be traded.
+
+% end itemize
+
+% frametitle
+{EEX -- traded products}
+
+% begin itemize
+
+	Futures contracts for Germany and France with delivery periods week, month, quarter, year.
+
+	For Germany single days and weekends are available.
+
+	European style options on futures.
+
+% end itemize
+
+% frametitle
+{Auction EPEX}
+\begin{center}
+\includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/auction-epex07042014}
+\end{center}
+
+% frametitle
+{Spot price EPEX}
+\begin{center}
+\includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/pricevolume-epex07042014}
+\end{center}
+
+% frametitle
+{Spot prices}
+\begin{center}
+\includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/phelixBase2002_12.pdf}
+\end{center}
+
+% frametitle
+{Spot prices}
+\begin{center}
+\includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/phelixBase2002_08.pdf}
+\end{center}
+
+% frametitle
+{Spot prices}
+\begin{center}
+\includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/phelixBase2008_12.pdf}
+\end{center}

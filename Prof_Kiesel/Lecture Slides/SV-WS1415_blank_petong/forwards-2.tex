@@ -1,95 +1,93 @@
 \subsection{An Equilibrium Approach}
 
-\frame{\frametitle{Equilibrium Approach -- Players}
+% frametitle
+{Equilibrium Approach -- Players}
 
-\begin{itemize}
-\item<1->
-The main
-motivation for players to engage in forward contracts is that of
-risk diversification.
-\item<2->
-Producers have made large investments with the
-aim of recouping them over a long period of time as well as making a
-return on them.
-\item<3->
-Retailers (which might be intermediaries and/or use the commodity in
-their production process) also have an incentive to hedge their
-positions in the market by contracting forwards that help diversify
-their risks.
-\item<4->
-Exposure to the market will differ both between producers and
-retailers as well as within their own group.
-So the need for risk-diversification has a temporal dimension.
-\end{itemize}
-}
+% begin itemize
 
+	The main motivation for players to engage in forward contracts is that of risk diversification.
 
-\frame{\frametitle{Market Risk Premium}
+	Producers have made large investments with the aim of recouping them over a long period of time as well as making a return on them.
 
-\begin{itemize}
-\item<1-> These differences in the
+	Retailers (which might be intermediaries and/or use the commodity in their production process) also have an incentive to hedge their positions in the market by contracting forwards that help diversify their risks.
+
+	Exposure to the market will differ both between producers and retailers as well as within their own group. So the need for risk-diversification has a temporal dimension.
+
+% end itemize
+
+% frametitle
+{Market Risk Premium}
+
+% begin itemize
+
+	These differences in the
 desire to hedge positions are employed to explain the market risk premium and
 its sign.
-\item<2-> Retailers are less incentivized to contract commodity forwards
+
+	Retailers are less incentivized to contract commodity forwards
 the further out we look into the market.
-\item<3-> In contrast, on the producers' side the need to hedge in the long-term
+
+	In contrast, on the producers' side the need to hedge in the long-term
 does not fade away as quickly.
-\end{itemize}
 
-}
+% end itemize
 
-\frame{\frametitle{Market Risk Premium}
-\begin{itemize}
-\item<1-> We associate situations where
+% frametitle
+{Market Risk Premium}
+
+% begin itemize
+
+	We associate situations where
 $\pi(t,T)>0$ with the fact that retailers' desire to cover their
 positions `outweighs' those of the producers, resulting in a
 positive market risk premium.
-\item<2-> The mirror image is therefore one
+
+	The mirror image is therefore one
 where the producers' desire to hedge their positions outweighs that
 of the retailers resulting in a negative market risk premium.
 
-\end{itemize}
-}
+% end itemize
 
+% frametitle
+{Representative Agents}
 
+% begin itemize
 
-\frame{\frametitle{Representative Agents}
-
-\begin{itemize}
-\item<1-> We describe producers' and retailers'
+	We describe producers' and retailers'
 preferences via the utility function of two representative agents.
-\item<2-> Agents
+
+	Agents
 must decide how to manage their exposure to the spot and forward
 markets for every future date $T$.
-\item<3->
-A key question for the producer
-is how much of his future production, which cannot be predicted with
-total certainty, will he wish to sell on the forward market or, when
-the time comes, sell it on the spot market.
-\item<4-> Similarly, the retailer
+
+	A key question for the producer is how much of his future production, which cannot be predicted with total certainty, will he wish to sell on the forward market or, when the time comes, sell it on the spot market.
+
+	Similarly, the retailer
 must decide how much of her future needs, which cannot be predicted
 with full certainty either, will be acquired via the forward markets
 and how much on the spot.
-\end{itemize}
-}
 
-\frame{\frametitle{Representative Agents}
+% end itemize
+
+% frametitle
+{Representative Agents}
 We approach this financial decision and
 equilibrium price formation in two steps.
 
-\begin{itemize}
-\item<1-> First, we determine the
+% begin itemize
+
+	First, we determine the
 forward price that makes the agents indifferent between the forward
 and spot market.
-\item<2-> Second, we discuss how the relative willingness
+
+	Second, we discuss how the relative willingness
 of producers and retailers to hedge their exposures determines
 market clearing prices.
-\end{itemize}
 
+% end itemize
 
-}
-
-\frame{\frametitle{Representative Agents}
+% frametitle
+{Representative Agents}
 
 We assume that the risk preferences of the representative agents are
 expressed in terms of an exponential utility function parameterized
@@ -100,10 +98,8 @@ $$
 We let $\gamma:=\gamma_p$ for the producer and $\gamma:=\gamma_c$
 for the consumer.
 
-}
-
-
-\frame{\frametitle{The Model}
+% frametitle
+{The Model}
 %Let $(\Omega,\mathcal{F},P)$ be a probability space equipped with a
 %filtration $\mathcal{F}_t$.
 
@@ -126,10 +122,9 @@ $B_i(t)$, $i=1,\ldots,m$, are standard independent Brownian
 motions, $\sigma_i(t)$ are deterministic volatility functions
 and $L_j(t)$, $j=1,\ldots,n$ are independent L\'evy
 processes.
-}
 
-
-\frame{\frametitle{The Model}
+% frametitle
+{The Model}
 
 The processes $Y_j(t)$ are
 zero-mean reverting processes responsible for the spikes or large
@@ -144,11 +139,8 @@ mean-reversion $\alpha_i>0$.
 %of view to assume that $\max_i\alpha_i<\min_j\beta_j$, although this
 %is not necessary in what follows.
 
-}
-
-
-
-\frame{\frametitle{Indifference Prices}
+% frametitle
+{Indifference Prices}
 
 Assume that the producer will deliver the spot over the time
 interval $[T_1,T_2]$.\\*[12pt]
@@ -161,15 +153,13 @@ the same period.\\*[12pt]
 The producer takes this decision at time $t\leq
 T_1$.
 
-
-}
-\frame{\frametitle{Indifference Prices}
+% frametitle
+{Indifference Prices}
 We determine the forward price that makes the producer indifferent
 between the two alternatives: denote by $F_{\hbox{pr}}(t,T_1,T_2)$
 the forward price derived from the equation
 $$
 \begin{array}{ll}
-
 
 & 1-\E^P\left[\exp\left(-\gamma_p\int_{T_1}^{T_2}S(u)\,du\right)\,|\,
 \mathcal{F}_t\right]\\*[12pt]
@@ -177,8 +167,9 @@ $$
 \mathcal{F}_t\right]
 \end{array}
 $$
-}
-\frame{\frametitle{Indifference Prices}
+
+% frametitle
+{Indifference Prices}
 Equivalently,
 \begin{equation}
 \label{def-producer}
@@ -195,8 +186,8 @@ over the delivery period $[T_1,T_2]$, while he receives
 $(T_2-T_1)F_{\hbox{pr}}(t,T_1,T_2)$ from selling it on the forward
 market.
 
-}
-\frame{\frametitle{Notation}
+% frametitle
+{Notation}
 For $i=1,\ldots,m$ and $j=1,\ldots,n$,
 \begin{equation}\label{alpha bar}
 \bar{\alpha}_i(s,T_1,T_2)=\left\{\begin{array}{lll}
@@ -216,10 +207,8 @@ s\leq T_1\,, \\
 \end{array}\right.
 \end{equation}
 
-
-
-}
-\frame{\frametitle{Indifference Prices}
+% frametitle
+{Indifference Prices}
 The price for which the producer is indifferent between the forward
 and spot market is given by
 \begin{eqnarray*}
@@ -233,11 +222,9 @@ F_{\text{pr}}(t,T_1,T_2)&=&\frac{1}{T_2-T_1}\int_{T_1}^{T_2}\Lambda(u)\,du\\
 \end{eqnarray*}
 where $ \bar{\alpha}_i$ and $\bar{\beta}_j$ are given by
 \eqref{alpha bar} and \eqref{beta bar} respectively.
-}
 
-
-
-\frame{\frametitle{Indifference Price -- Consumer}
+% frametitle
+{Indifference Price -- Consumer}
 
 The consumer will derive the indifference price from the incurred expenses
 in the spot or forward market, which entails
@@ -255,8 +242,8 @@ F_{\text{c}}(t,T_1,T_2)=\frac1{\gamma_c}\frac1{T_2-T_1}\ln\E^P\left[
 \exp\left(\gamma_c\int_{T_1}^{T_2}S(u)\,du\right)\,|\,\mathcal{F}_t\right]\,.
 \end{equation}
 
-}
-\frame{\frametitle{Indifference Price -- Consumer}
+% frametitle
+{Indifference Price -- Consumer}
 The price that makes the consumer indifferent between the forward
 and the spot market is given by
 \begin{align*}
@@ -269,8 +256,8 @@ F_{\text{c}}(t,T_1,T_2)&=\frac1{T_2-T_1}\int_{T_1}^{T_2}\Lambda(u)\,du
 \phi_j\left(\gamma_c\bar{\beta}_j(s,T_1,T_2)\right)\,ds\,.
 \end{align*}
 
-}
-\frame{\frametitle{Indifference Price -- Bounds}
+% frametitle
+{Indifference Price -- Bounds}
 Note that the producer prefers to sell his production in the forward
 market as long as the market forward price $F(t,T_1,T_2)$ is higher
 than $F_{\text{pr}}(t,T_1,T_2)$. On the other hand, the consumer
@@ -281,28 +268,28 @@ Thus, we have the bounds
 F_{\text{pr}}(t,T_1,T_2)\leq F(t,T_1,T_2)\leq
 F_{\text{c}}(t,T_1,T_2)\,.
 \end{equation}
-}
 
-\frame{\frametitle{Market Power}
-\begin{itemize}
-\item<1-> We introduce the deterministic function $p(t,T_1,T_2)\in[0,1]$
+% frametitle
+{Market Power}
+
+% begin itemize
+
+	We introduce the deterministic function $p(t,T_1,T_2)\in[0,1]$
 describing the \emph{market power of the representative producer}.
-\item<2-> For $p(t,T_1,T_2)=1$ the
+
+	For $p(t,T_1,T_2)=1$ the
 producer has full market power and can charge the maximum price possible in the forward market (short-term positions),
 namely $F_{\text{c}}(t,T_1,T_2)$.
-\item<3-> If the
+
+	If the
 consumer has full power, ie $p(t,T_1,T_2)=0$ (long-term positions), she will drive the
 forward price as far down as possible which corresponds to
 $F_{\text{pr}}(t,T_1,T_2)$.
 
-\end{itemize}
+% end itemize
 
-
-
-
-
-}
-\frame{\frametitle{Market Power}
+% frametitle
+{Market Power}
 
 For any market power $0<p(t,T_1,T_2)<1$,\\
 the forward price $F^p(t,T_1,T_2)$ is defined to be
@@ -313,8 +300,8 @@ F^p(t,T_1,T_2)&=&p(t,T_1,T_2)F_{\text{c}}(t,T_1,T_2)\\*[12pt]
 F_{\text{pr}}(t,T_1,T_2).
 \end{eqnarray}
 
-}
-\frame{\frametitle{Market Power}
+% frametitle
+{Market Power}
 For $0\leq t\leq T_1<T_2$ the forward prices are
 $$\begin{array}{ll}
 & F^p(t,T_1,T_2)\\
@@ -332,11 +319,8 @@ $$\begin{array}{ll}
 \end{array}
 $$
 
-}
-
-
-
-\frame{\frametitle{Constant Market Power and Poisson jumps}
+% frametitle
+{Constant Market Power and Poisson jumps}
 We consider a forward market consisting of 52 contracts with weekly delivery.
 The market power is supposed to be constant $p(t,T_1,T_2)=p\in[0,1]$.
 Assume that the spot model has $m=52$ diffusion components $X_i(t)$, and
@@ -348,77 +332,93 @@ $$
 and the mean-reversion parameters for the diffusion components are
 $\alpha_i=0.067/i$, with volatility $\sigma_i=0.3/\sqrt{i}$, for
 $i=1,\ldots,52$.
-}
-\frame{\frametitle{Model Specification}
 
-\begin{itemize}
-\item<1-> We mimic here a sequence of mean-reverting
+% frametitle
+{Model Specification}
+
+% begin itemize
+
+	We mimic here a sequence of mean-reverting
 processes with decreasing speeds of mean reversion and with
 decreasing volatility.
-\item<2-> The speed of mean reversion equal to
+
+	The speed of mean reversion equal to
 $0.067$ means that a shock will be halved over 10 days.
-\item<3-> The jump
+
+	The jump
 process is driven by $L(t)=\eta N(t)$, where $N(t)$ is a Poisson
 process with intensity $\lambda$ and the jump
  size is constant, equal to $\eta$.
-\end{itemize}
-}
-\frame{\frametitle{Model Specification}
 
-\begin{itemize}
-\item<1-> The mean-reversion for the jump component is $\beta=0.5$, meaning
+% end itemize
+
+% frametitle
+{Model Specification}
+
+% begin itemize
+
+	The mean-reversion for the jump component is $\beta=0.5$, meaning
 that a jump will, on average, revert back in two days.
-\item<2-> We have
+
+	We have
 a combination of slow mean reverting normal variations and fast mean
 reverting spikes in the spot market.
-\item<3-> The frequency of spikes is set
+
+	The frequency of spikes is set
 to $\lambda=2/365$, i.e. two spikes, on average, per year.
 
-\end{itemize}
-}
-\frame{\frametitle{Model Specification}
-\begin{itemize}
-\item<1-> Time $t=0$ corresponds to January 1, and we assume that the initial spot
+% end itemize
+
+% frametitle
+{Model Specification}
+
+% begin itemize
+
+	Time $t=0$ corresponds to January 1, and we assume that the initial spot
 price is $S(0)=172$.
-\item<2-> We let
+
+	We let
 $X_1(0)=2$, and $X_i(0)=Y(0)=0$ for $i=2,\ldots,52$ to achieve this.
-\item<3-> The risk aversion coefficients of the producer and consumer are set
+
+	The risk aversion coefficients of the producer and consumer are set
 equal to $\gamma_c=\gamma_{pr}=0.5$.
-\item<4-> We derive
+
+	We derive
 forward curves for weakly settled forward contracts over a year.
 
-\end{itemize}
-}
-\frame{\frametitle{Indifference price with forward
-curves for positive jumps}
-%The indifference price curves together with the forward
-%curves for market powers equal to $p=0.25, 0.5$ and $p=0.75$, in
-%increasing order. The forecasted curve is depicted `+'. The jumps
-%are positive of size 10.
-\begin{center}
+% end itemize
+
+% frametitle
+{center}
 \includegraphics[width=10cm,height=6cm]{../../../pics/posjump}
 \end{center}
 
-}
-\frame{\frametitle{Market risk premium -- positive jumps}
-\begin{itemize}
-\item<1-> Market clearing
+% frametitle
+{Market risk premium -- positive jumps}
+
+% begin itemize
+
+	Market clearing
 forward prices are increasing with increasing market power, since
 the producer will command higher prices with more power.
-\item<2-> For a low market power of 0.25, we observe that the
+
+	For a low market power of 0.25, we observe that the
 forecasted price curve is below the forward curve in the shorter
 end, while in the medium to long end we see the opposite.
-\item<3-> This
+
+	This
 corresponds to a positive market risk premium in the shorter end,
 whereas it becomes negative in the medium and longer end.
-\item<4-> The consumer wishes to avoid upward jumps in the price and is, even for a weak producer,
+
+	The consumer wishes to avoid upward jumps in the price and is, even for a weak producer,
 willing to accept a positive market risk premium in
 the short end. In the long end, the effect of jumps vanish as a
 consequence of mean reversion, so the consumer will have more power.
-\end{itemize}
 
-}
-\frame{\frametitle{Market risk premium -- positive jumps}
+% end itemize
+
+% frametitle
+{Market risk premium -- positive jumps}
 
 To illustrate this particular example we have plotted
 the difference of the forward curve with market power 0.25 and the
@@ -427,8 +427,8 @@ delivery up to approximately week 20, the market premium is
 positive. The premium decreases with time to delivery, and becomes
 negative in the medium and long end.
 
-}
-\frame{\frametitle{Market risk premium -- positive jumps}
+% frametitle
+{Market risk premium -- positive jumps}
 
 %The market risk premium given by the difference of the forward
 %curve with market power 0.25 and the forecasted curve.
@@ -436,30 +436,40 @@ negative in the medium and long end.
 \includegraphics[width=10cm,height=6cm]{../../../pics/posjumpmp}
 \end{center}
 
-}
+% frametitle
+{Empirical Example: German Market}
 
-\frame{\frametitle{Empirical Example: German Market}
+% begin itemize
 
-\begin{itemize}
-\item  We need to estimate the physical parameters
+	We need to estimate the physical parameters
 of our two-factor model.
-\item From forward market data, denoted by
+
+	From forward market data, denoted by
 $F(t,T_1,T_2)$, we estimate the risk-aversion coefficients for both
 producers and retailers and estimate the producer's market power.
-\end{itemize}
-}
-\frame{\frametitle{Data used}
-\begin{itemize}
-\item Spot prices: Phelix base load traded at the EEX.
-\item Forward contract prices with delivery periods: monthly, quarterly and yearly.
-\item Period covered: January 2 2002 to January 1 2006 with 1461 spot price
+
+% end itemize
+
+% frametitle
+{Data used}
+
+% begin itemize
+
+	Spot prices: Phelix base load traded at the EEX.
+
+	Forward contract prices with delivery periods: monthly, quarterly and yearly.
+
+	Period covered: January 2 2002 to January 1 2006 with 1461 spot price
 observations.
-\item Forward data: $108$ contracts with
+
+	Forward data: $108$ contracts with
 monthly delivery, $35$ contracts with quarterly delivery and $12$
 contracts with yearly delivery.
-\end{itemize}
-}
-\frame{\frametitle{Spot model specification}
+
+% end itemize
+
+% frametitle
+{Spot model specification}
 
 We apply the model to
 \[S(t)=\Lambda(t)+X(t)+Y(t)\]
@@ -470,8 +480,8 @@ dX(t)=-\alpha X(t)dt+\sigma dB(t)
 where $\alpha\geq 0$,  $\sigma \geq 0$ and $B(t)$ is a
 standard Brownian motion,
 
-}
-\frame{\frametitle{Spot model specification}
+% frametitle
+{Spot model specification}
 
 \begin{equation}
 dY(t)=-\beta Y(t)dt+dL(t)
@@ -491,8 +501,8 @@ decay of the tails for the distribution.
 
 We assume that $N(t)$, $J$ and $B(t)$ are independent.
 
-}
-\frame{\frametitle{Spot model specification}
+% frametitle
+{Spot model specification}
 
 For the seasonal component we assume
 \begin{eqnarray*}
@@ -502,9 +512,8 @@ For the seasonal component we assume
 where the indicator function is acting on the different days of the
 week.
 
-}
-
-\frame{\frametitle{Risk aversion coefficients}
+% frametitle
+{Risk aversion coefficients}
 
 Recall that $F_c(t,T_1,T_2)$ (upper bound) and
 $F_{pr}(t,T_1,T_2)$ (lower bound) depend on the choice of
@@ -513,39 +522,40 @@ $\gamma_{c}$ by minimizing the distance between $F_c(t,T_1,T_2)$,
 $F_{pr}(t,T_1,T_2)$ and the market prices of forwards
 $F(t,T_1,T_2)$, respectively, in the following way.
 
-}
-\frame{\frametitle{Risk aversion coefficients}
+% frametitle
+{Risk aversion coefficients}
 
-\begin{itemize}
-\item For all trading days $t\in[1,1461]$,  we determine all values of $\gamma_{pr}$ and $\gamma_c$
+% begin itemize
+
+	For all trading days $t\in[1,1461]$,  we determine all values of $\gamma_{pr}$ and $\gamma_c$
 such that
 \begin{equation}\label{Ebounds2}
 F_{pr}(t,T_1,T_2)\leq F(t,T_1,T_2)\leq F_c(t,T_1,T_2).
 \end{equation}
-\item
-We define the intervals
-$I_{pr}^t$ and $I_{c}^t$ containing values for $\gamma_{pr}$ and
-$\gamma_{c}$ by guaranteeing that (\ref{Ebounds2}) holds.
-\item
-For the intersection of all these interval no forward prices $F(t,T_1,T_2)$ will
-lay outside the bounds $F_{pr}(t,T_1,T_2)$ and $F_{c}(t,T_1,T_2)$.
-\item
-We find that $\gamma_{pr}\in  [0.421,\infty)$
-and $\gamma_{c}\in [0.701,\infty)$.
-\item
-Thus we choose $\gamma_{pr}=0.421$ and $\gamma_{c}=0.701$.
-\end{itemize}
 
-}
-\frame{\frametitle{Market power and market risk }
+	We define the intervals $I_{pr}^t$ and $I_{c}^t$ containing values for
+$\gamma_{pr}$ and $\gamma_{c}$ by guaranteeing that (\ref{Ebounds2}) holds.
+
+	For the intersection of all these interval no forward prices $F(t,T_1,T_2)$
+will lay outside the bounds $F_{pr}(t,T_1,T_2)$ and $F_{c}(t,T_1,T_2)$.
+
+	We find that $\gamma_{pr}\in  [0.421,\infty)$
+and $\gamma_{c}\in [0.701,\infty)$.
+
+	Thus we choose $\gamma_{pr}=0.421$ and $\gamma_{c}=0.701$.
+
+% end itemize
+
+% frametitle
+{Market power and market risk }
 
 Recall
 \[p(t,T_1,T_2)=\frac{F(t,T_1,T_2)-F_{pr}(t,T_1,T_2)}{F_c(t,T_1,T_2)-F_{pr}(t,T_1,T_2)}\]
  and
  \[\pi(t,T_1,T_2)=F(t,T_1,T_2)-\mathbb{E}^{P}\left[\frac{1}{T_2-T_1}\int_{T_1}^{T_2}S(u)du|\mathcal{F}_t\right].\]
 
-}
-\frame{\frametitle{Market power and market risk }
+% frametitle
+{Market power and market risk }
 
 We consider three periods
 
@@ -571,57 +581,49 @@ $F(t,T_1,T_2)$\\ \hline
 contracts}
 \end{table}
 
-} \frame{\frametitle{Producer's market power and market risk
-premium, 18 monthly contracts with $t=$ January 2 2002}
-
-\begin{figure}[htbp]
+% frametitle
+{figure}[htbp]
 \includegraphics[width=10cm,height=6cm]{../../../pics/picFmonth1}
 %\caption{Producer's market power and market risk premium, 18
 %monthly contracts with $t=$ January 2 2002} \label{figure market
 %power monthly forwards 2002}
 \end{figure}
 
-
-} \frame{\frametitle{Producer's market power and market risk
-premium, 7 quarterly contracts with $t=$ second quarter 2002}
-
-\begin{figure}
+% frametitle
+{figure}
 \includegraphics[width=10cm,height=6cm]{../../../pics/picFquarter1}
 %\caption{Producer's market power and market risk premium, 7
 %quarterly contracts with $t=$ second quarter 2002} \label{figure
 %market power quarterly forwards 2002}
 \end{figure}
 
-} \frame{\frametitle{Producer's market power and market risk
-premium, 3 yearly contracts with $t=$ 2002}
-
-
-\begin{figure}[htbp]
+% frametitle
+{figure}[htbp]
 \includegraphics[width=10cm,height=6cm]{../../../pics/picFyear1}
 %\caption{Producer's market power and market risk premium, 3 yearly
 %contracts with $t=$ 2002} \label{figure market power yearly
 %forwards 2002}
 \end{figure}
 
-}
-
-
-
 \subsection{Information Approach}
 
+% frametitle
+{Information Approach}
 
-\frame{\frametitle{Information Approach}
-\begin{itemize}
-\item<1-> As electricity is non-storable future predictions about the market will not affect the current spot price, but will affect forward prices.
-\item<2-> Stylized example: planned outage of a power plant in one month
-\item<3-> Market example: in 2007 the market knew that in 2008 CO$_2$ emission costs will be introduced; this had a clearly observable effect on the forward prices!
-\item<4-> German moratorium 2011: shut-down 7 nuclear power plants for 3 months with possible complete shut-down.
-\end{itemize}
-}
+% begin itemize
 
+	As electricity is non-storable future predictions about the market will not affect the current spot price, but will affect forward prices.
 
-\begin{frame}
-  \frametitle{German Moratorium I}
+	Stylized example: planned outage of a power plant in one month
+
+	Market example: in 2007 the market knew that in 2008 CO$_2$ emission costs will be introduced; this had a clearly observable effect on the forward prices!
+
+	German moratorium 2011: shut-down 7 nuclear power plants for 3 months with possible complete shut-down.
+
+% end itemize
+
+% frametitle
+{German Moratorium I}
 %\vspace{-0.5cm}
 
 \begin{figure}[htbp]
@@ -630,10 +632,8 @@ premium, 3 yearly contracts with $t=$ 2002}
     \caption{EEX spot prices}
 \end{figure}
 
-\end{frame}
-
-\begin{frame}
-  \frametitle{German Moratorium II}
+% frametitle
+{German Moratorium II}
 %\vspace{-0.5cm}
 
 \begin{figure}[htbp]
@@ -642,9 +642,8 @@ premium, 3 yearly contracts with $t=$ 2002}
     \caption{EEX forward prices delivery May 2011}
 \end{figure}
 
-\end{frame}
-\begin{frame}
-  \frametitle{German Moratorium III}
+% frametitle
+{German Moratorium III}
 %\vspace{-0.5cm}
 
 \begin{figure}[htbp]
@@ -653,11 +652,8 @@ premium, 3 yearly contracts with $t=$ 2002}
     \caption{EEX forward prices delivery August 2011}
 \end{figure}
 
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{Example: 2008 CO$_2$ Emission Costs}
+% frametitle
+{Example: 2008 CO$_2$ Emission Costs}
 \vspace{-0.5cm}
 
 \begin{figure}[htbp]
@@ -671,64 +667,78 @@ premium, 3 yearly contracts with $t=$ 2002}
   \caption{EEX Forward prices observed on 01/10/06 (left) and 01/10/07 (right)}
 \end{figure}
 
-\begin{itemize}
-\item Typical winter and bank holidays behaviour in both graphs
-\item General upward shift in 2008 \\ \vspace{0.2cm}
+% begin itemize
+
+	Typical winter and bank holidays behaviour in both graphs
+
+	General upward shift in 2008 \\ \vspace{0.2cm}
 \textcolor{red}{$~~~~~~ \Rightarrow$ 2nd phase of $CO_2$ certificates}
-\end{itemize}
-\end{frame}
 
+% end itemize
 
-
-\begin{frame}
- \frametitle{Information Approach}
+% frametitle
+{Information Approach}
 \vspace{-0.5cm}
 
-\begin{itemize}
-\item<1-> Future information is incorporated in the forward price
-\item<2-> ... but not necessarily in the spot price due to \textcolor{red}{non-storability}
-\item<3-> ... buy-and-hold strategy does not work
-%\item Thus:
-\end{itemize}
+% begin itemize
+
+	Future information is incorporated in the forward price
+
+	... but not necessarily in the spot price due to \textcolor{red}{non-storability}
+
+	... buy-and-hold strategy does not work
+
+	Thus:
+
+% end itemize
+
 %\pause
 %\begin{block}{Efficient Markets Hypothesis (semi-strong)}
 %The price (spot) now reflects all publicly available information.
 %\end{block}
-%\begin{itemize}
-%\item ... is not valid on electricity markets!
-%\end{itemize}
-\end{frame}
+%% begin itemize
+%
 
+	... is not valid on electricity markets!
+%% end itemize
 
-\begin{frame}
-  \frametitle{Information Approach}
+% frametitle
+{Information Approach}
 \vspace{-0.5cm}
 
-\begin{itemize}
-\item The usual pricing relation between spot and forward:
+% begin itemize
+
+	The usual pricing relation between spot and forward:
 \begin{align*}
 F(t,T)=\Ef^\mathbb{Q}[S_T|\mathcal{F}_t]
 \end{align*}
-\item Not sufficient: natural filtration $\mathcal{F}_t = \sigma(S_s, s\leq t)$
+
+	Not sufficient: natural filtration $\mathcal{F}_t = \sigma(S_s, s\leq t)$
 \vspace{0.5cm}
 \pause
-\item Idea: \textcolor{red}{enlarge the filtration!}
+
+	Idea: \textcolor{red}{enlarge the filtration!}
 \vspace{0.5cm}
 \pause
-\item ... by information about the spot at some future time $T_\Upsilon$
-\item Info could be that spot will be in certain interval...
-\item ... or the value of a correlated process (temperature)
-\end{itemize}
-\end{frame}
 
+	... by information about the spot at some future time $T_\Upsilon$
 
-\begin{frame}
-  \frametitle{The Information Premium}
+	Info could be that spot will be in certain interval...
+
+	... or the value of a correlated process (temperature)
+
+% end itemize
+
+% frametitle
+{The Information Premium}
 \vspace{-0.5cm}
 
-\begin{itemize}
-\item Quantify the influence of future information using:
-\end{itemize}
+% begin itemize
+
+	Quantify the influence of future information using:
+
+% end itemize
+
 \begin{block}{Information Premium}
 The information premium is defined to be
 \begin{align*}
@@ -736,9 +746,3 @@ I(t,T) = \Ef[S_T | \mathcal{G}_t] - \Ef[S_T | \mathcal{F}_t]
 \end{align*}
 i.e. the difference between the prices of the forward under $\mathcal{G}$ and $\mathcal{F}$.
 \end{block}
-\end{frame}
-
-
-
-
-

@@ -1,77 +1,91 @@
 % !TEX root = StructuringValuation_ws1415UDE.tex
 
-
 %% This is taken from F&O Derivatives section
 \part{Review of Basic Objects}
 
-
 \section{Derivatives}
-\frame{\frametitle{Options}
 
-\begin{itemize}
- \item<1->  An option is a financial instrument giving one the {\it right, but
+% frametitle
+{Options}
+
+% begin itemize
+
+	An option is a financial instrument giving one the {\it right, but
 not the obligation} to make a specified transaction at (or by) a
-specified date at a specified price. 
-\item<2->{\it Call} options give one
+specified date at a specified price.
+
+	{\it Call} options give one
 the right to buy. {\it Put} options give one the right to sell.
-\item<3-> {\it European} options give one the right to buy/sell on the
+
+	{\it European} options give one the right to buy/sell on the
 specified date, the expiry date, on which the option expires or
 matures. {\it American} options give one the right to buy/sell at any time
 prior to or at expiry.
-\end{itemize}
-}
 
-\frame{\frametitle{Options - Terminology (1)}
+% end itemize
 
-\begin{itemize}
-\item<1-> The asset to which the option refers is called the {\it underlying
-asset} or the {\it underlying}. 
-\item<2-> 
-The price at which the transaction
+% frametitle
+{Options - Terminology (1)}
+
+% begin itemize
+
+	The asset to which the option refers is called the {\it underlying
+asset} or the {\it underlying}.
+
+	The price at which the transaction
 to buy/sell the underlying, on/by the expiry date (if exercised),
 is made, is called the {\it exercise price} or {\it strike price}.
-\item<3-> We shall usually use $K$ for the strike price, time $t = 0$ for
+
+	We shall usually use $K$ for the strike price, time $t = 0$ for
 the initial time (when the contract between the buyer and the
 seller of the option is struck), time $t = T$ for the expiry or
 final time.
-\end{itemize}
 
-}
+% end itemize
 
-
-\frame{\frametitle{Options - Terminology (2)}
+% frametitle
+{Options - Terminology (2)}
 
 Consider, say, a European call option, with strike price $K$;
 write $S(t)$ for the value (or price) of the underlying at time
 $t$.\\*[12pt]
-\begin{itemize}
-  \item<1-> If $S(t) > K$, the option is {\it in the money},
-  \item<2-> if $S(t) = K$, the option is {\it at the money},
-  \item<3-> if $S(t) < K$, the option is {\it out of the money}.
-\end{itemize}
-}
 
-\frame{\frametitle{Options - Payoff}
+% begin itemize
 
-\begin{itemize}
-  \item<1-> The payoff from a call option is $$ S(T) - K \mbox{ if } S(T)
+	If $S(t) > K$, the option is {\it in the money},
+
+	if $S(t) = K$, the option is {\it at the money},
+
+	if $S(t) < K$, the option is {\it out of the money}.
+
+% end itemize
+
+% frametitle
+{Options - Payoff}
+
+% begin itemize
+
+	The payoff from a call option is $$ S(T) - K \mbox{ if } S(T)
 > K\A \mbox{ and }\A 0 \;\; \mbox{otherwise} $$ (more briefly
 written as  $(S(T) - K)^+$).
-\item<2-> The profit from a call option is the payoff $(S(T) - K)^+$) minus the call premium $c$.
-\end{itemize}
-%}
-}
 
-\frame{\frametitle{Options - Payoff/Profit diagram }
+	The profit from a call option is the payoff $(S(T) - K)^+$) minus the call premium $c$.
+
+% end itemize
+
+%}
+
+% frametitle
+{Options - Payoff/Profit diagram }
 
 Considering only the option payoff, we obtain the payoff diagram, taking into account the initial payment of an investor one obtains the profit diagram below.\\*[12pt]
 
 \begin{center}
 \includegraphics[height=5cm]{../../../pics/payoffprofit.png}
 \end{center}
-}
 
-\frame{\frametitle{Options - Profit diagrams of vanilla options}
+% frametitle
+{Options - Profit diagrams of vanilla options}
 \begin{figure}
   \centering
    \subfigure[long call]{\includegraphics[height=3cm]{../../../pics//longcall.png}}\qquad
@@ -79,55 +93,64 @@ Considering only the option payoff, we obtain the payoff diagram, taking into ac
    \subfigure[long put]{\includegraphics[height=3cm]{../../../pics//longput.png}}
    \subfigure[short put]{\includegraphics[height=3cm]{../../../pics//shortput.png}}
 \end{figure}
-}
 
 %\subsection{Forwards and Futures}
 
-\frame{\frametitle{Forwards - Basic Structure}
+% frametitle
+{Forwards - Basic Structure}
 
-\begin{itemize}
-\item<1->
-A {\it forward contract}
+% begin itemize
+
+	A {\it forward contract}
 is an agreement to buy or sell an asset $S$ at a certain future
 date $T$ for a certain price $K$.
-\item<2->
-The agent who agrees to
+
+	The agent who agrees to
 buy the underlying asset is said to have a {\it long} position,
 the other agent assumes a {\it short} position.
-\item<3-> The settlement
+
+	The settlement
 date is called {\it delivery date} and the specified price is
 referred to as {\it delivery price}.
-\end{itemize}
-}
 
-\frame{\frametitle{Forwards}
-\begin{itemize}
-\item<1-> The {\it forward
+% end itemize
+
+% frametitle
+{Forwards}
+
+% begin itemize
+
+	The {\it forward
 price} $F(t,T)$ is the delivery price which would make the
 contract have zero value at time $t$.
-\item<2-> At the time the contract is set up, $t=0$,
+
+	At the time the contract is set up, $t=0$,
 the forward price therefore equals the delivery price, hence
 $F(0,T) = K$.
-\item<3->
-The forward prices $F(t,T)$ need not (and will not)
+
+	The forward prices $F(t,T)$ need not (and will not)
 necessarily be equal to the delivery price $K$ during the
 life-time of the contract.
-\end{itemize}
-}
 
-\frame{\frametitle{Forwards}
-\begin{itemize}
-\item<1->
-The payoff from a long position in a forward contract on one unit
+% end itemize
+
+% frametitle
+{Forwards}
+
+% begin itemize
+
+	The payoff from a long position in a forward contract on one unit
 of an asset with price $S(T)$ at the maturity of the contract is
 $$ S(T)-K.$$
-\item<2-> Compared with a call option with the same maturity
+
+	Compared with a call option with the same maturity
 and strike price $K$ we see that the investor now faces a downside
 risk, too. He has the obligation to buy the asset for price $K$.
-\end{itemize}
-}
 
-\frame{\frametitle{Spot-Forward Relationship}
+% end itemize
+
+% frametitle
+{Spot-Forward Relationship}
 Under the no-arbitrage assumption we have
 
 \begin{center}
@@ -143,76 +166,80 @@ Under the no-arbitrage assumption we have
 \end{center}
 
 All quantities are known at $t$, the time $t$ cashflow is zero, so the cashflow at T needs to be zero so we have $$F(t,T) = S(t)e^{r(T-t)}$$
-}
 
+% frametitle
+{Futures}
 
+% begin itemize
 
-\frame{\frametitle{Futures}
-\begin{itemize}
-\item<1-> Futures can be defined as standardised forward contracts traded at exchanges where a clearing house acts as a central counterparty for all transactions.
-\item<2-> Usually an initial margin is paid as a guarantee.
-\item<3-> Each trading day a settlement price is determined and gains or losses are immediately realized at a margin account.
-\item<4-> Thus credit risk is eliminated, but there is exposure to interest rate risk.
+	Futures can be defined as standardised forward contracts traded at exchanges where a clearing house acts as a central counterparty for all transactions.
 
-\end{itemize}
+	Usually an initial margin is paid as a guarantee.
 
+	Each trading day a settlement price is determined and gains or losses are immediately realized at a margin account.
 
-}
+	Thus credit risk is eliminated, but there is exposure to interest rate risk.
 
+% end itemize
 
-\frame{\frametitle{Payoff from a forward/futures contract}
+% frametitle
+{Payoff from a forward/futures contract}
 \begin{figure}
   \centering
    \subfigure[long position]{\includegraphics[height=4cm]{../../../pics//forwardlong.png}}\qquad
    \subfigure[short position]{\includegraphics[height=4cm]{../../../pics//forwardshort.png}}
 \end{figure}
-}
 
-\frame{\frametitle{Swaps}
-\begin{itemize}
-\item<1->
-A {\it swap} is an agreement whereby two parties
+% frametitle
+{Swaps}
+
+% begin itemize
+
+	A {\it swap} is an agreement whereby two parties
 undertake to exchange, at known dates in the future, various
 financial assets (or cash flows) according to a prearranged
 formula that depends on the value of one or more underlying
-assets. 
-\item<2->
-Examples are currency swaps (exchange currencies) and
+assets.
+
+	Examples are currency swaps (exchange currencies) and
 interest-rate swaps (exchange of fixed for floating set of
 interest payments).
-\end{itemize}
 
-}
-
+% end itemize
 
 \section{How to Model Price Movements?}
 \subsection{Price Processes}
-\frame{\frametitle{Stock Price Return}
-\begin{itemize}
-\item<1-> We wish to model the time evolution of a stock price
+
+% frametitle
+{Stock Price Return}
+
+% begin itemize
+
+	We wish to model the time evolution of a stock price
 $S(t)$ and consider how $S$
 will change in some small time-interval from the present time $t$
 to a time $t+dt$ in the near future.
-\item<2-> Writing $dS(t)$ for the
+
+	Writing $dS(t)$ for the
 change $S(t+dt)-S(t)$ in $S$, the {\it return} on $S$ in this
 interval is $dS(t)/S(t)$.
 We decompose the return into two components, a {\it systematic}
 part and a {\it random} part.
-\item<3-> The systematic is modelled by $\mu dt$, where $\mu$ is some parameter
+
+	The systematic is modelled by $\mu dt$, where $\mu$ is some parameter
 representing the mean rate of return of the stock.
-\item<4->
+
 The random part is modelled by $\sigma dW(t)$, where $dW(t)$
 represents the stochastic noise term driving the stock price dynamics, and
 $\sigma$ is a second parameter describing how much the stock price fluctuates. Thus $\sigma$
 governs how volatile the price is, and is called the {\it
 volatility} of the
 stock.
-\end{itemize}
-}
 
+% end itemize
 
-
-\frame{\frametitle{Geometric Brownian Motion}
+% frametitle
+{Geometric Brownian Motion}
 
 Putting this together, we have the stochastic differential
 equation (SDE)
@@ -225,73 +252,91 @@ The economic importance of geometric
 Brownian motion was recognised by Paul A. Samuelson in his work, for which Samuelson received the Nobel
 Prize in Economics in 1970, and by Robert Merton, in work for which he was similarly
 honoured in 1997.
-}
 
+% frametitle
+{Brownian Motion I}
 
-\frame{\frametitle{Brownian Motion I}
-\begin{itemize}
-\item<1-> For the random noise we use Brownian Motion (introduced by the Botanist Robert Brown in
+% begin itemize
+
+	For the random noise we use Brownian Motion (introduced by the Botanist Robert Brown in
 1828. It was introduced into finance by Louis Bachelier in 1900, and developed in physics by Albert Einstein in 1905.
 A mathematical theory was developed by Norbert Wiener)
 A stochastic process $X=(X(t))_{t \geq 0}$ is a standard
 Brownian motion, $BM$, if
-\item[(i)] $X(0) = 0$ a.s., \item[(ii)] $X$ has {\it independent
+
+	$X(0) = 0$ a.s.,
+
+	[(ii)] $X$ has {\it independent
 increments}: $X(t+u) - X(t)$ is independent of $\s (X(s): s \leq
-t)$ for $u \geq 0$, \item[(iii)]  $X$ has {\it stationary
+t)$ for $u \geq 0$,
+
+	[(iii)]  $X$ has {\it stationary
 increments}: the law of $X(t+u) - X(t)$ depends only on $u$,
-\end{itemize}
+
+% end itemize
+
 and (iv), (v)
-}
 
-
-\frame{\frametitle{Brownian Motion II}
+% frametitle
+{Brownian Motion II}
 
 A stochastic process $X=(X(t))_{t \geq 0}$ is a standard
 Brownian motion, $BM$, if (i) -- (iii) and
-\begin{itemize}
-\item[(iv)]  $X$ has {\it Gaussian increments}: $X(t+u) - X(t)$ is
+
+% begin itemize
+
+	$X$ has {\it Gaussian increments}: $X(t+u) - X(t)$ is
 normally distributed with mean $0$ and variance $u$, $X(t+u) -
-X(t) \sim N(0,u)$, \item[(v)]  $X$ has {\it continuous paths}:
+X(t) \sim N(0,u)$,
+
+	[(v)]  $X$ has {\it continuous paths}:
 $X(t)$ is a continuous function of $t$.
-\end{itemize}
-}
+
+% end itemize
 
 \subsection{Basic Stochastic Calculus}
 
+% frametitle
+{ It{\^o} Processes}
 
+% begin itemize
 
-\frame{\frametitle{ It{\^o} Processes}
-\begin{itemize}
-\item<1-> We will use the following type of process expressed
+	We will use the following type of process expressed
 in terms of the stochastic differential equation
 $$
 dX(t) = b(t) dt + \s(t) dW(t), \A X(0) = x_0.
 $$
-\item<2-> For functions $f$ we want to give  meaning to the stochastic differential
+
+	For functions $f$ we want to give  meaning to the stochastic differential
 $df(X(t))$ of the process $f(X(t))$.
-\item<3-> This is done by the {\it It{\^o} Formula}
+
+	This is done by the {\it It{\^o} Formula}
 $$
 \begin{array}{lll}
 df(X(t)) &=& f'(X(t)) dX(t)\\*[12pt]
 && \DSE+ \frac{1}{2} f''(X(t)) \sigma^2 dt.
 \end{array}
 $$
-\end{itemize}
-}
 
+% end itemize
 
-\frame{\frametitle{Multiplication rules}
-\begin{itemize}
-\item<1-> The second term above corrects for special path properties of
+% frametitle
+{Multiplication rules}
+
+% begin itemize
+
+	The second term above corrects for special path properties of
 Brownian Motion and needs the quadratic variation of the process.
-\item<2-> We find
+
+	We find
 $$
 \begin{array}{lll}
 (d X)^2 &=&\DSE (b dt + \s dW)^2 \\*[12pt]
 &=&\DSE \s^2 dt + 2 b \s dt dW + b^2 (dt)^2 = \s^2 dt.
 \end{array}
 $$
-\item<3-> The quadratic variation of any It{\^o} process can be calculated
+
+	The quadratic variation of any It{\^o} process can be calculated
 using the multiplication rules\\
 \begin{center}
 \begin{tabular}{|l|ll|}
@@ -301,11 +346,11 @@ dt& 0 & 0\\
 dW & 0 &dt \\\hline
 \end{tabular}
 \end{center}
-\end{itemize}
 
+% end itemize
 
-}
-\frame{\frametitle{ General It{\^o} Formula}
+% frametitle
+{ General It{\^o} Formula}
 
 If $X(t)$ is an It{\^o} process  and $f(t,x)$ a function with time and location variable, then
 $f = f(t,X(t))$ has stochastic differential
@@ -314,10 +359,9 @@ df = \left(f_t + b f_x + \frac{1}{2} \s^2 f_{xx}\right) dt + \s
 f_x dW.
 $$
 Observe, that we left out all function arguments
-}
 
-
-\frame{\frametitle{ Example: Geometric Brownian Motion}
+% frametitle
+{ Example: Geometric Brownian Motion}
 
 The SDE for GBM has the unique
 solution
@@ -339,11 +383,9 @@ and with $x = W(t)$, one has
 $$
 dx = dW(t), \A (dx)^2 = dt.
 $$
-}
 
-
-\frame{\frametitle{ Example: GBM}
-
+% frametitle
+{ Example: GBM}
 
 Thus It\^{o}'s lemma gives
 $$
@@ -351,162 +393,219 @@ $$
 \DSE df &=&\DSE f_t dt + f_x dW + \frac{1}{2} f_{xx}
 (dW)^2\\*[12pt] &=&\DSE f\left(\left(\mu -
 \frac{1}{2}{\sigma}^2\right) dt + \sigma dW +
-\frac{1}{2}{\sigma}^2 dt\right)\\*[12pt] &=&\DSE f(\mu dt + \sigma
-dW).
+\frac{1}{2}{\sigma}^2 dt\right)\\*[12pt] &=&\DSE f(\mu dt + \sigma dW).
 \end{array}
 $$
-}
 
 \section{Electricity Trading}
-\frame{\frametitle{Electricity Markets}
+
+% frametitle
+{Electricity Markets}
 
 A centralized platform where participants can exchange electricity transparently
 according to the price they are will to pay or receive, and according to the capacity of
 the electrical network.
 
+% begin itemize
 
-\begin{itemize}
-\item<1-> Fixed Gate Auction 
-\begin{itemize}
-\item Participants submit sell or buy orders for several areas, several hours,
-\item the submissions are closed at a pre-specified time (closure)
-\item the market is cleared. 
-\item Example: day-ahead.
-\end{itemize}
-\item<2-> Continuous-time Auction 
-\begin{itemize}
-\item Participants continuously submit orders. Orders are stored,
-\item Each time a deal is feasible, it is executed,
-\item Example: intra-day.
-\end{itemize}
+	Fixed Gate Auction
 
-\end{itemize}
-}
+% begin itemize
 
+	Participants submit sell or buy orders for several areas, several hours,
 
-\frame{\frametitle{Electricity Exchanges}
+	the submissions are closed at a pre-specified time (closure)
 
-Electricity related contracts  can be traded at exchanges such as 
-\begin{itemize}
-\item<1-> the Nord Pool, mainly Northern European countries, \url{http://www.nordpoolspot.com/}  
-\item<2-> the European Energy Exchange (EEX), \url{http://www.eex.com/en} 
-\item<3-> EPEX, located in Paris, founded by EEX and Powernext (French Energy Exchange);
-Electricity spot market for Germany, Austria, France and Switzerland;   
+	the market is cleared.
+
+	Example: day-ahead.
+
+% end itemize
+
+	Continuous-time Auction
+
+% begin itemize
+
+	Participants continuously submit orders. Orders are stored,
+
+	Each time a deal is feasible, it is executed,
+
+	Example: intra-day.
+
+% end itemize
+
+% end itemize
+
+% frametitle
+{Electricity Exchanges}
+
+Electricity related contracts  can be traded at exchanges such as
+
+% begin itemize
+
+	the Nord Pool, mainly Northern European countries, \url{http://www.nordpoolspot.com/}
+
+	the European Energy Exchange (EEX), \url{http://www.eex.com/en}
+
+	EPEX, located in Paris, founded by EEX and Powernext (French Energy Exchange);
+Electricity spot market for Germany, Austria, France and Switzerland;
 \url{http://www.epexspot.com/en/}
-\item<4-> Amsterdam Power Exchange (APX), covers the Netherlands, Belgium and the UK, \url{http://www.apxgroup.com}
-\end{itemize}
-}
 
-\frame{\frametitle{EEX -- traded products}
-\begin{itemize}
-\item<1-> Futures contracts for Germany and France with delivery periods week, month, quarter, year. 
-\item<2-> For Germany single days and weekends are available. 
-\item<3-> European style options on futures.
-\end{itemize}
-}
+	Amsterdam Power Exchange (APX), covers the Netherlands, Belgium and the UK, \url{http://www.apxgroup.com}
 
-\frame{\frametitle{EPEX -- traded products}
-\begin{itemize}
-\item<1-> Auction day-ahead and continuous intra-day market.
-\item<2-> Products are individual hours, baseload, peakload, blocks of contiguous hours.
-\item<3-> Intraday market is open 24 hours a day, 7 days a week and products can be traded until 45 minutes before delivery.
-\item<4-> in Germany 15 minutes contracts can be traded.
-\end{itemize}
-}
+% end itemize
 
+% frametitle
+{EEX -- traded products}
 
-\frame{\frametitle{Auction EPEX}
+% begin itemize
+
+	Futures contracts for Germany and France with delivery periods week, month, quarter, year.
+
+	For Germany single days and weekends are available.
+
+	European style options on futures.
+
+% end itemize
+
+% frametitle
+{EPEX -- traded products}
+
+% begin itemize
+
+	Auction day-ahead and continuous intra-day market.
+
+	Products are individual hours, baseload, peakload, blocks of contiguous hours.
+
+	Intraday market is open 24 hours a day, 7 days a week and products can be traded until 45 minutes before delivery.
+
+	in Germany 15 minutes contracts can be traded.
+
+% end itemize
+
+% frametitle
+{Auction EPEX}
 \begin{center}
 \includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/auction-epex07042014}
 \end{center}
 
-
-}
-
-\frame{\frametitle{Spot price EPEX}
+% frametitle
+{Spot price EPEX}
 \begin{center}
 \includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/pricevolume-epex07042014}
 \end{center}
 
+% frametitle
+{Day-Ahead Market }
 
-}
+% begin itemize
 
+	Possibility to correct long-term production schedule  (build on the forward markets) in terms of hourly production schedule of power plants (Delta Hedging) -- sell more expensive hours, buy cheaper hours for flexible power plants.
 
-\frame{\frametitle{Day-Ahead Market }
-\begin{itemize}
-\item<1-> Possibility to correct long-term production schedule  (build on the forward markets) in terms of hourly production schedule of power plants (Delta Hedging) -- sell more expensive hours, buy cheaper hours for flexible power plants.
-\item<2-> Adjust for residual load profiles on an hourly basis 
-\item<3-> Market for production from renewable energy sources (wind, solar) as on long-term markets only averages can be traded 
-\end{itemize}
-}
+	Adjust for residual load profiles on an hourly basis
 
-\frame{\frametitle{Intra-Day Market }
-\begin{itemize}
-\item<1-> Trading of hours, quarter-hours until 45 min before start of period continuously during the day 
-\item<2-> From 15:00 hours of next day, from 16:00 quarter-hours of next day 
-\end{itemize}
-}
+	Market for production from renewable energy sources (wind, solar) as on long-term markets only averages can be traded
 
-\frame{\frametitle{Motivation for Trading Intra-Day Market }
-\begin{itemize}
-\item<1-> Correction or optimisation of Day-Ahead position
-\begin{itemize}
-\item power plant outages
-\item optimisation of power plant usage (generator)
-\item optimisation of demand (costumer)
-\item renewable energy producer -- changes of forecasts
-\end{itemize}
-\item<2-> Balancing quarter hour ramps with quarter-hour contracts 
-\item<3-> proprietary trading 
-\end{itemize}
-}
+% end itemize
 
+% frametitle
+{Intra-Day Market }
 
-\frame{\frametitle{Structure of Balancing and Reserve Markets }
-In Europe, the {\it European Network of Transmission System Operators for Electricity,(ENTSO-E)} coordinates overarching grid topics. The main task of a TSO is to ensure a constant power frequency in the transmission system. The following control actions are applied 
-\begin{itemize}
-\item<1->{\it Primary Reserve}   starts within seconds as a joined action of all TSOs in the system. 
-\item<2-> {\it Secondary Reserve} replaces the primary reserve after a few minutes and is put into action by the responsible TSOs only. 
-\item<3->{\it Tertiary Reserve} frees secondary reserves by rescheduling generation by the responsible TSOs.
-\end{itemize}
+% begin itemize
+
+	Trading of hours, quarter-hours until 45 min before start of period continuously during the day
+
+	From 15:00 hours of next day, from 16:00 quarter-hours of next day
+
+% end itemize
+
+% frametitle
+{Motivation for Trading Intra-Day Market }
+
+% begin itemize
+
+	Correction or optimisation of Day-Ahead position
+
+% begin itemize
+
+	power plant outages
+
+	optimisation of power plant usage (generator)
+
+	optimisation of demand (costumer)
+
+	renewable energy producer -- changes of forecasts
+
+% end itemize
+
+	Balancing quarter hour ramps with quarter-hour contracts
+
+	proprietary trading
+
+% end itemize
+
+% frametitle
+{Structure of Balancing and Reserve Markets }
+In Europe, the {\it European Network of Transmission System Operators for
+Electricity,(ENTSO-E)} coordinates overarching grid topics. The main task
+of a TSO is to ensure a constant power frequency in the transmission system.
+The following control actions are applied
+
+% begin itemize
+
+	{\it Primary Reserve}   starts within seconds as a joined action of all TSOs in the system.
+
+	{\it Secondary Reserve} replaces the primary reserve after a few minutes and is put into action by the responsible TSOs only.
+
+	{\it Tertiary Reserve} frees secondary reserves by rescheduling generation by the responsible TSOs.
+
+% end itemize
+
 The TSO tenders the required products for fulfilling these functions. Reserve products may involve payments for the availability of the reserved capacity.
-}
 
-
-
-\frame{\frametitle{Timing Electricity Trading}
+% frametitle
+{Timing Electricity Trading}
 \begin{center}
 \includegraphics[heigth=0.9 \textheight, width=0.9 \textwidth]{../../../pics/TimeLineElectricityTrading}
 \end{center}
 
-
-}
-
 \section{A structural model -- Barlow (2002)}
 
-\frame{\frametitle{Set-up}
-\begin{itemize}
-\item<1-> $u_t(x)$ is supply at time $t$, if price is $x$; an increasing function.
-\item<2-> $d_t(x)$ is demand at time $t$, if price is $x$; a decreasing function.
-\item<3-> The electricity price at time $t$ is the unique number $S_t$ such that
+% frametitle
+{Set-up}
+
+% begin itemize
+
+	$u_t(x)$ is supply at time $t$, if price is $x$; an increasing function.
+
+	$d_t(x)$ is demand at time $t$, if price is $x$; a decreasing function.
+
+	The electricity price at time $t$ is the unique number $S_t$ such that
 $$
 u_t(S_t)=d_t(S_t)
 $$
-\item<4-> Need to specify $u_t$ and $d_t$.
-\end{itemize}
-}
-\frame{\frametitle{Barlow (2002) Specification}
-\begin{itemize}
-\item<1-> Supply is non-random, independent of $t$
-$$u_t(x)=g(x).$$ 
-\item<2-> Demand is inelastic, independent of $x$
-$$d_t(x)=D_t$$ 
-a random process. 
-\item<3-> With
+
+	Need to specify $u_t$ and $d_t$.
+
+% end itemize
+
+% frametitle
+{Barlow (2002) Specification}
+
+% begin itemize
+
+	Supply is non-random, independent of $t$
+$$u_t(x)=g(x).$$
+
+	Demand is inelastic, independent of $x$
+$$d_t(x)=D_t$$
+a random process.
+
+	With
 $$
 f_\alpha(x) = (1+\alpha x)^\frac{1}{\alpha}, \;\alpha \not=0, \; f_0(x)=\exp(x)
 $$
-and 
+and
 $$
 X_t= -\lambda (X_t-a)dt +\sigma dW_t
 $$
@@ -515,26 +614,28 @@ $$
 S_t= \left \{ \begin{array}{ll}
 \displaystyle
 f_\alpha(X_t) & 1+\alpha  X_t> \epsilon_0 \\*[12pt]
-\epsilon_0^\frac{1}{\alpha} & 1+\alpha X_t \leq \epsilon_0  
+\epsilon_0^\frac{1}{\alpha} & 1+\alpha X_t \leq \epsilon_0
 \end{array}
-\right.  
+\right.
 $$
 
-\end{itemize}
-}
+% end itemize
 
-\frame{\frametitle{Mean-reverting Processes}
+% frametitle
+{Mean-reverting Processes}
 $X_t$ follows a stochastic process which can be described as follows:
 $$
 dX_t= \kappa \left( \theta -X_t \right) dt + \sigma dW_t.
 $$
 This is  a mean reverting diffusion process, the so-called Ornstein-Uhlenbeck-Process.
-The parameters can be interpreted as 
-\begin{itemize}
-\item $\kappa$ - speed of mean reversion
-\item $\theta$ - level of mean reversion
-\item $\sigma$ - volatility of the process
-\end{itemize}
-}
+The parameters can be interpreted as
 
+% begin itemize
 
+	$\kappa$ - speed of mean reversion
+
+	$\theta$ - level of mean reversion
+
+	$\sigma$ - volatility of the process
+
+% end itemize
